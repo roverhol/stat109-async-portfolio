@@ -1,0 +1,591 @@
+/* Humboldt County Coastal Redwood Theme */
+/* Colors inspired by the natural beauty of Humboldt County */
+
+/* Color palette */
+:root {
+  --redwood-dark: #2d1810;      /* Deep redwood bark */
+  --redwood-medium: #8b4513;    /* Rich redwood brown */
+  --redwood-light: #d2691e;     /* Lighter redwood */
+  --forest-green: #228b22;      /* Forest green */
+  --sage-green: #9ca984;        /* Sage/coastal green */
+  --sand-light: #f5f5dc;        /* Light sand */
+  --ocean-blue: #4682b4;        /* Steel blue (ocean) */
+  --fog-gray: #d3d3d3;          /* Coastal fog */
+}
+
+/* Typography and base styling */
+body, body.quarto-light, body.quarto-dark {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  background-color: var(--redwood-dark) !important;
+  color: var(--sand-light) !important;
+}
+
+/* Override default theme colors */
+:root {
+  --bs-body-bg: var(--redwood-dark) !important;
+  --bs-body-color: var(--sand-light) !important;
+}
+
+/* Force background color on main content areas */
+#quarto-content, .quarto-container, .content, .column-page-left {
+  background-color: var(--redwood-dark) !important;
+  color: var(--sand-light) !important;
+}
+
+/* Override Bootstrap's default white background */
+.quarto-light, .quarto-light body, .quarto-light #quarto-content {
+  background-color: var(--redwood-dark) !important;
+  color: var(--sand-light) !important;
+}
+
+/* Target the main content wrapper specifically */
+#quarto-content {
+  background-color: var(--redwood-dark) !important;
+}
+
+/* Override any Bootstrap container backgrounds */
+.container, .container-fluid {
+  background-color: transparent !important;
+}
+
+/* Main content area with card-like appearance */
+#quarto-content > div {
+  background: var(--redwood-dark) !important;
+  color: var(--sand-light) !important;
+  padding: 2rem !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  margin: 1rem 0 !important;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--sand-light) !important;
+  border-bottom: 2px solid var(--redwood-light) !important;
+  padding-bottom: 0.5rem !important;
+}
+
+/* Navbar styling */
+.navbar, .navbar-default, .navbar-inverse {
+  background: linear-gradient(135deg, var(--redwood-dark) 0%, var(--redwood-medium) 100%) !important;
+  border-bottom: 3px solid var(--forest-green) !important;
+}
+
+.navbar-brand {
+  color: var(--sand-light) !important;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.navbar-nav .nav-link {
+  color: var(--sand-light) !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--sage-green) !important;
+}
+
+/* Sidebar navigation styling */
+.sidebar nav[role="doc-toc"] ul > li > a,
+.sidebar nav[role="doc-toc"] ul > li > a:hover,
+.sidebar nav[role="doc-toc"] ul > li > a:focus,
+.sidebar nav[role="doc-toc"] ul > li > a.active {
+  color: var(--sage-green) !important;
+  text-decoration: none !important;
+}
+
+.sidebar nav[role="doc-toc"] ul > li > a:hover,
+.sidebar nav[role="doc-toc"] ul > li > a:focus,
+.sidebar nav[role="doc-toc"] ul > li > a.active {
+  color: var(--redwood-light) !important;
+  background-color: rgba(139, 69, 19, 0.1) !important;
+}
+
+/* Sidebar container styling */
+.sidebar {
+  background-color: var(--redwood-dark) !important;
+  border-right: 2px solid var(--redwood-medium) !important;
+}
+
+/* Sidebar title */
+.sidebar-title {
+  color: var(--sand-light) !important;
+  border-bottom: 2px solid var(--redwood-light) !important;
+}
+
+/* Override any Bootstrap default sidebar colors */
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: var(--redwood-medium) !important;
+  color: var(--sand-light) !important;
+}
+
+.nav-pills .nav-link:hover {
+  background-color: rgba(139, 69, 19, 0.3) !important;
+  color: var(--redwood-light) !important;
+}
+
+/* Scrollspy progress bar styling */
+.sidebar nav[role="doc-toc"] ul > li > a.active {
+  color: var(--redwood-light) !important;
+  background-color: var(--redwood-medium) !important;
+  border-left: 3px solid var(--redwood-light) !important;
+}
+
+/* Keyboard navigation highlighting */
+.sidebar nav[role="doc-toc"] ul > li > a:focus,
+.sidebar nav[role="doc-toc"] ul > li > a:focus-visible {
+  color: var(--redwood-light) !important;
+  background-color: rgba(139, 69, 19, 0.2) !important;
+  outline: 2px solid var(--redwood-light) !important;
+  outline-offset: 2px !important;
+}
+
+/* Override any remaining Bootstrap blue colors in sidebar */
+.sidebar a,
+.sidebar .nav-link,
+.sidebar .nav-item .nav-link {
+  color: var(--sage-green) !important;
+}
+
+.sidebar a:hover,
+.sidebar .nav-link:hover,
+.sidebar .nav-item .nav-link:hover,
+.sidebar a:focus,
+.sidebar .nav-link:focus,
+.sidebar .nav-item .nav-link:focus {
+  color: var(--redwood-light) !important;
+  background-color: rgba(139, 69, 19, 0.1) !important;
+}
+
+.sidebar a.active,
+.sidebar .nav-link.active,
+.sidebar .nav-item .nav-link.active {
+  color: var(--redwood-light) !important;
+  background-color: var(--redwood-medium) !important;
+}
+
+/* Nested sidebar navigation items */
+.sidebar nav[role="doc-toc"] ul ul > li > a,
+.sidebar nav[role="doc-toc"] ul ul ul > li > a {
+  color: var(--sage-green) !important;
+  padding-left: 1.5rem !important;
+}
+
+.sidebar nav[role="doc-toc"] ul ul > li > a:hover,
+.sidebar nav[role="doc-toc"] ul ul ul > li > a:hover,
+.sidebar nav[role="doc-toc"] ul ul > li > a:focus,
+.sidebar nav[role="doc-toc"] ul ul ul > li > a:focus {
+  color: var(--redwood-light) !important;
+  background-color: rgba(139, 69, 19, 0.1) !important;
+}
+
+.sidebar nav[role="doc-toc"] ul ul > li > a.active,
+.sidebar nav[role="doc-toc"] ul ul ul > li > a.active {
+  color: var(--redwood-light) !important;
+  background-color: var(--redwood-medium) !important;
+  border-left: 3px solid var(--redwood-light) !important;
+}
+
+/* Target all nested levels generically */
+.sidebar nav[role="doc-toc"] ul li ul li a {
+  color: var(--sage-green) !important;
+}
+
+.sidebar nav[role="doc-toc"] ul li ul li a:hover,
+.sidebar nav[role="doc-toc"] ul li ul li a:focus {
+  color: var(--redwood-light) !important;
+  background-color: rgba(139, 69, 19, 0.1) !important;
+}
+
+.sidebar nav[role="doc-toc"] ul li ul li a.active {
+  color: var(--redwood-light) !important;
+  background-color: var(--redwood-medium) !important;
+  border-left: 3px solid var(--redwood-light) !important;
+}
+
+/* Page header styling */
+.page-header {
+  background: linear-gradient(135deg, var(--redwood-medium) 0%, var(--forest-green) 100%);
+  color: var(--sand-light);
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+.page-title {
+  color: var(--sand-light);
+  border-bottom: 3px solid var(--redwood-light);
+  padding-bottom: 0.5rem;
+}
+
+/* Course cards */
+.course-card {
+  background: var(--redwood-medium);
+  border: 2px solid var(--sage-green);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  transition: all 0.3s ease;
+  color: var(--sand-light);
+}
+
+.course-card:hover {
+  box-shadow: 0 4px 12px rgba(45, 24, 16, 0.4);
+  transform: translateY(-2px);
+}
+
+.course-card h3 {
+  color: var(--sand-light);
+  border-bottom: 2px solid var(--redwood-light);
+  padding-bottom: 0.5rem;
+}
+
+/* Links */
+a {
+  color: var(--sage-green);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--redwood-light);
+  text-decoration: underline;
+}
+
+/* Callouts */
+.callout-note {
+  background: linear-gradient(135deg, var(--redwood-medium) 0%, var(--redwood-dark) 100%) !important;
+  border-left: 4px solid var(--sage-green) !important;
+  border-right: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  padding: 1rem !important;
+  margin: 1rem 0 !important;
+  border-radius: 4px !important;
+  color: var(--sand-light) !important;
+  box-shadow: none !important;
+}
+
+.callout-tip {
+  background: linear-gradient(135deg, var(--forest-green) 0%, var(--sage-green) 100%);
+  border-left: 4px solid var(--redwood-light);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+  color: var(--sand-light);
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--ocean-blue);
+  border-color: var(--ocean-blue);
+}
+
+.btn-primary:hover {
+  background: var(--redwood-medium);
+  border-color: var(--redwood-medium);
+}
+
+/* Footer */
+.footer {
+  background: var(--redwood-dark);
+  color: var(--sand-light);
+  padding: 2rem 0;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+/* Main content area */
+.main-content {
+  background: var(--redwood-medium);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  margin: 1rem 0;
+  color: var(--sand-light);
+}
+
+/* Calendar-specific styling for a clean, minimalist look */
+
+/* Style for the main calendar container to ensure consistent theming */
+#course-calendar, .calendar {
+  padding: 2rem !important;
+  border-radius: 8px !important;
+  color: var(--sand-light) !important;
+}
+
+/* Weekly section headings - simple and elegant */
+#course-calendar h2,
+.calendar h2,
+h2[id*="week"],
+#course-calendar h3,
+.calendar h3,
+h3[id*="week"] {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-bottom: 2px solid var(--forest-green) !important; /* Earthy accent */
+  color: var(--sand-light) !important;
+  padding: 0.5rem 0 !important;
+  margin: 2.5rem 0 1.5rem 0 !important; /* More space between weeks */
+  font-weight: 600 !important;
+  text-shadow: none !important;
+}
+
+/* Clean and minimalist calendar tables */
+#course-calendar table,
+.calendar table,
+table {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: 100% !important;
+  border-collapse: collapse !important; /* For clean lines */
+  margin: 0 !important;
+}
+
+/* Table headers with subtle coloring */
+#course-calendar table thead th,
+.calendar table thead th,
+table thead th,
+th {
+  background: transparent !important;
+  color: var(--sage-green) !important; /* Softer color for headers */
+  border-bottom: 2px solid var(--forest-green) !important;
+  padding: 0.75rem !important;
+  text-align: left !important;
+  font-weight: 600 !important;
+}
+
+/* Table cells with very subtle row dividers */
+#course-calendar table tbody td,
+.calendar table tbody td,
+table tbody td,
+td {
+  background: transparent !important;
+  color: var(--sand-light) !important;
+  border-bottom: 1px solid var(--redwood-medium) !important;
+  padding: 1rem 0.75rem !important;
+  vertical-align: middle !important;
+}
+
+/* Subtle hover effect for table rows */
+#course-calendar table tbody tr:hover,
+.calendar table tbody tr:hover,
+table tbody tr:hover,
+tr:hover {
+  background: rgba(156, 169, 132, 0.1) !important; /* Faint sage green */
+}
+
+/* Ensure last row in a table has no bottom border */
+#course-calendar table tbody tr:last-child td,
+.calendar table tbody tr:last-child td {
+  border-bottom: none !important;
+}
+
+/* Links within the calendar */
+#course-calendar table a,
+.calendar table a {
+  color: var(--sage-green) !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease-in-out;
+}
+
+#course-calendar table a:hover,
+.calendar table a:hover {
+  color: var(--redwood-light) !important;
+  text-decoration: underline !important;
+}
+
+/* Section dividers (hr) - clean and simple */
+#course-calendar hr,
+.calendar hr {
+  border: none !important;
+  height: 1px !important;
+  background-color: var(--redwood-medium) !important;
+  margin: 3rem 0 !important;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  #course-calendar, .calendar {
+    padding: 1rem !important;
+  }
+
+  #course-calendar h2,
+  .calendar h2,
+  h2[id*="week"],
+  #course-calendar h3,
+  .calendar h3,
+  h3[id*="week"] {
+    margin: 2rem 0 1rem 0 !important;
+    font-size: 1.2rem !important;
+  }
+
+  #course-calendar table,
+  .calendar table {
+    font-size: 0.95rem !important;
+  }
+
+  #course-calendar table thead th,
+  .calendar table thead th,
+  #course-calendar table tbody td,
+  .calendar table tbody td {
+    padding: 0.75rem 0.5rem !important;
+  }
+}
+
+/* Override Bootstrap table styling more aggressively */
+.table, .table-striped, .table-bordered, .table-hover {
+  background-color: transparent !important;
+  color: var(--sand-light) !important;
+}
+
+/* Override Bootstrap callout styling */
+.callout, .callout-note, .callout-tip, .callout-warning, .callout-important {
+  border-right: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove Bootstrap callout header styling */
+.callout-header, .callout-note .callout-header, .callout-tip .callout-header {
+  background: none !important;
+  border: none !important;
+  border-bottom: none !important;
+  color: var(--sand-light) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.callout-note {
+  border-left: 4px solid var(--sage-green) !important;
+}
+
+.callout-tip {
+  border-left: 4px solid var(--redwood-light) !important;
+}
+
+.table > :not(caption) > * > * {
+  background-color: transparent !important;
+  color: var(--sand-light) !important;
+  border-color: var(--redwood-medium) !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: transparent !important;
+}
+
+.table-hover > tbody > tr:hover > * {
+  background-color: rgba(156, 169, 132, 0.1) !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Code blocks & inline code — light text on dark panel (readable on redwood) */
+/* -------------------------------------------------------------------------- */
+
+#quarto-content pre.sourceCode,
+#quarto-content div.sourceCode pre,
+#quarto-content .cell-code,
+#quarto-content .cell-code pre,
+#quarto-content div.cell div.sourceCode pre {
+  background-color: rgba(0, 0, 0, 0.42) !important;
+  color: var(--sand-light) !important;
+  border: 1px solid var(--redwood-medium) !important;
+  border-radius: 6px !important;
+  padding: 0.75rem 1rem !important;
+}
+
+#quarto-content pre.sourceCode code,
+#quarto-content .cell-code pre code {
+  color: var(--sand-light) !important;
+  background: transparent !important;
+}
+
+/* Skylighting / Pandoc token classes (R and other languages) */
+#quarto-content pre.sourceCode span,
+#quarto-content .cell-code pre span {
+  background: transparent !important;
+}
+
+#quarto-content pre.sourceCode .kw,
+#quarto-content pre.sourceCode .cf,
+#quarto-content pre.sourceCode .op {
+  color: #a8d4f0 !important;
+}
+
+#quarto-content pre.sourceCode .co {
+  color: #a8b89a !important;
+}
+
+#quarto-content pre.sourceCode .st,
+#quarto-content pre.sourceCode .ch {
+  color: #e8c896 !important;
+}
+
+#quarto-content pre.sourceCode .dv,
+#quarto-content pre.sourceCode .fl,
+#quarto-content pre.sourceCode .bn {
+  color: #d8c0f0 !important;
+}
+
+#quarto-content pre.sourceCode .fu,
+#quarto-content pre.sourceCode .ot {
+  color: #f0e0b0 !important;
+}
+
+#quarto-content pre.sourceCode .va,
+#quarto-content pre.sourceCode .at {
+  color: #c8e8d0 !important;
+}
+
+#quarto-content pre.sourceCode .er {
+  color: #ff9a9a !important;
+}
+
+/* Fallback: any span not matched above inherits readable light text */
+#quarto-content pre.sourceCode span:not([class]) {
+  color: var(--sand-light) !important;
+}
+
+/* Inline code (outside pre) */
+#quarto-content p code:not(pre code),
+#quarto-content li code:not(pre code),
+#quarto-content td code:not(pre code),
+#quarto-content .callout code:not(pre code) {
+  color: var(--fog-gray) !important;
+  background-color: rgba(0, 0, 0, 0.35) !important;
+  padding: 0.12em 0.45em;
+  border-radius: 4px;
+  border: 1px solid rgba(139, 69, 19, 0.5);
+}
+
+/* Chunk output text (stdout/results) */
+#quarto-content .cell-output,
+#quarto-content .cell-output pre,
+#quarto-content .cell-output code,
+#quarto-content .cell-output-stdout,
+#quarto-content .cell-output-stderr {
+  color: var(--sand-light) !important;
+  background-color: rgba(0, 0, 0, 0.35) !important;
+  border-radius: 6px !important;
+}
+
+/* Plot output panel so white plot regions are visible */
+#quarto-content .cell-output-display,
+#quarto-content .quarto-figure,
+#quarto-content .figure {
+  background-color: rgba(0, 0, 0, 0.35) !important;
+  border: 1px solid var(--redwood-medium) !important;
+  border-radius: 6px !important;
+  padding: 0.6rem !important;
+}
+
+/* Keep image plots visible and clean */
+#quarto-content .cell-output-display img,
+#quarto-content .quarto-figure img,
+#quarto-content .figure img {
+  background-color: #ffffff !important;
+  border-radius: 4px !important;
+}
