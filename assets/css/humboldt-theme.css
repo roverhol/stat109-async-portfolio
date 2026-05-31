@@ -285,13 +285,61 @@ a:hover {
   border-color: var(--redwood-medium);
 }
 
-/* Footer */
-.footer {
-  background: var(--redwood-dark);
-  color: var(--sand-light);
+/* Footer and license / reuse blocks */
+.footer,
+footer.footer {
+  background: var(--redwood-dark) !important;
+  color: var(--sand-light) !important;
   padding: 2rem 0;
   margin-top: 3rem;
   text-align: center;
+  border-top: 1px solid var(--redwood-medium) !important;
+}
+
+footer.footer .nav-footer {
+  background: var(--redwood-dark) !important;
+  color: var(--sand-light) !important;
+}
+
+footer.footer a {
+  color: var(--sage-green) !important;
+}
+
+footer.footer a:hover {
+  color: var(--redwood-light) !important;
+}
+
+/* Quarto "Reuse" license appendix (default is white) */
+#quarto-appendix.default {
+  background-color: var(--redwood-dark) !important;
+  color: var(--sand-light) !important;
+  border-top: 1px solid var(--redwood-medium) !important;
+}
+
+#quarto-appendix.default .quarto-appendix-heading {
+  color: var(--sand-light) !important;
+  border-bottom: none !important;
+}
+
+#quarto-appendix.default .quarto-appendix-contents,
+#quarto-appendix.default section,
+#quarto-appendix.default section *:not(a) {
+  color: var(--sand-light) !important;
+}
+
+#quarto-appendix.default a {
+  color: var(--sage-green) !important;
+}
+
+#quarto-appendix.default a:hover {
+  color: var(--redwood-light) !important;
+}
+
+#quarto-content blockquote,
+#quarto-content .blockquote {
+  background-color: rgba(139, 69, 19, 0.25) !important;
+  border-left: 4px solid var(--sage-green) !important;
+  color: var(--sand-light) !important;
 }
 
 /* Main content area */
