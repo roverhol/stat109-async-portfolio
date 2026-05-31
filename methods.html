@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Methods Map – STAT 109 - Introductory Biostatistics</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-94b323657c735dfe3b1bf6ebb2c33a55.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="assets/css/humboldt-theme.css">
+</head>
+
+<body class="floating quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#methods-table" id="toc-methods-table" class="nav-link active" data-scroll-target="#methods-table">Methods Table</a>
+  <ul class="collapse">
+  <li><a href="#methods-toolbox" id="toc-methods-toolbox" class="nav-link" data-scroll-target="#methods-toolbox">One toolbox table</a></li>
+  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="methods.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Methods Map</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<p class="subtitle lead">STAT 109: Introductory Biostatistics</p>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-right">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="methods-table" class="level1">
+<h1>Methods Table</h1>
+<p>This page is our statistics <strong>“toolbox.”</strong> It is organized by:</p>
+<ul>
+<li>what we want to do (<strong>descriptive</strong>: plot/number summary, or <strong>inferential</strong>: test/CI/prediction), and</li>
+<li>what we have (the <strong>number and type of variables</strong>).</li>
+</ul>
+<p>For the table below:</p>
+<ul>
+<li><strong>columns = what we have</strong> (number/type of variables),</li>
+<li><strong>rows = what we want to do</strong> (describe, infer a parameter, infer an individual value).</li>
+</ul>
+<hr>
+<section id="methods-toolbox" class="level2">
+<h2 class="anchored" data-anchor-id="methods-toolbox">One toolbox table</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>What we want</th>
+<th>One categorical</th>
+<th>One numerical</th>
+<th>Two categorical (2+ categories allowed)</th>
+<th>EV categorical + RV numerical (2 EV groups)</th>
+<th>EV categorical + RV numerical (3+ EV groups)</th>
+<th>Two numerical</th>
+<th>RV binary + EV predictor(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Describe: number summary</strong></td>
+<td>Counts, proportions, percentages (<code>count</code>, <code>mutate</code>)</td>
+<td>Mean/median; SD/range/IQR (<code>summarize</code>)</td>
+<td>Two-way counts + row/column/grand proportions</td>
+<td>Group-wise means/SDs by category (<code>group_by</code>)</td>
+<td>Group-wise means/SDs by category (<code>group_by</code>)</td>
+<td>Correlation <code>cor(x,y)</code> + slope/intercept summaries</td>
+<td>Class counts and proportions by predictor groups</td>
+</tr>
+<tr class="even">
+<td><strong>Describe: plot</strong></td>
+<td>Bar plot (<code>geom_bar</code> or <code>geom_col</code>)</td>
+<td>Histogram / boxplot / dotplot</td>
+<td>Stacked or 100% stacked bar (<code>geom_col(position = "fill")</code>)</td>
+<td>Boxplot/histogram/dotplot per group</td>
+<td>Boxplot per group (ANOVA context)</td>
+<td>Scatterplot (<code>geom_point</code>)</td>
+<td>Bar plots by class or probability plot vs predictor</td>
+</tr>
+<tr class="odd">
+<td><strong>Infer parameter: notation</strong></td>
+<td><span class="math inline">\(p\)</span></td>
+<td><span class="math inline">\(\mu\)</span></td>
+<td>Association (<span class="math inline">\(\chi^2\)</span> independence); 2×2: <span class="math inline">\(p_1 - p_2\)</span></td>
+<td><span class="math inline">\(\mu_1 - \mu_2\)</span> (numerical RV) or <span class="math inline">\(p_1 - p_2\)</span> (binary RV)</td>
+<td><span class="math inline">\(\mu_1,\ldots,\mu_k\)</span> (ANOVA across EV groups)</td>
+<td><span class="math inline">\(\beta_0, \beta_1\)</span></td>
+<td>Logistic <span class="math inline">\(\beta\)</span>; prob.&nbsp;RV given EV</td>
+</tr>
+<tr class="even">
+<td><strong>Infer parameter: test name + sample null</strong></td>
+<td>One-proportion test, <span class="math inline">\(H_0: p = p_0\)</span></td>
+<td>One-sample (or paired) <span class="math inline">\(t\)</span>-test, <span class="math inline">\(H_0: \mu = \mu_0\)</span></td>
+<td>Chi-square independence, <span class="math inline">\(H_0\)</span>: EV and RV independent</td>
+<td>Two-sample <span class="math inline">\(t\)</span>-test <span class="math inline">\(H_0: \mu_1 - \mu_2 = 0\)</span>, or two-proportion <span class="math inline">\(H_0: p_1 - p_2 = 0\)</span></td>
+<td>One-way ANOVA <span class="math inline">\(H_0: \mu_1 = \mu_2 = \cdots = \mu_k\)</span></td>
+<td>Slope test <span class="math inline">\(H_0: \beta_1 = 0\)</span></td>
+<td>Logistic slope <span class="math inline">\(H_0: \beta_1 = 0\)</span> (or relevant coefficient <span class="math inline">\(= 0\)</span>)</td>
+</tr>
+<tr class="odd">
+<td><strong>Infer parameter: test R code</strong></td>
+<td><code>binom.test()</code> (exact) or <code>prop.test()</code></td>
+<td><code>t.test(x)</code> or paired <code>t.test(x,y,paired=TRUE)</code></td>
+<td><code>chisq.test(tab)</code></td>
+<td><code>t.test(y ~ group, var.equal = FALSE)</code> or <code>prop.test(...)</code></td>
+<td><code>fit &lt;- lm(y ~ group); anova(fit)</code></td>
+<td><code>fit &lt;- lm(y ~ x); summary(fit)</code></td>
+<td><code>fit &lt;- glm(y ~ x_or_group, family = binomial); summary(fit)</code></td>
+</tr>
+<tr class="even">
+<td><strong>Infer parameter: test conditions</strong></td>
+<td>Binomial / SRS; for <span class="math inline">\(z\)</span> approx need <span class="math inline">\(np \ge 10\)</span> and <span class="math inline">\(n(1-p) \ge 10\)</span></td>
+<td>Random sample (or paired) + large <span class="math inline">\(n\)</span> or roughly normal population/differences</td>
+<td>Independent obs.; expected counts typically <span class="math inline">\(\ge 5\)</span></td>
+<td>Two samples or random assignment; conditions for chosen method</td>
+<td>Independent obs.; roughly normal within groups; similar spread</td>
+<td>Linear form; independent obs.; residual assumptions for <span class="math inline">\(t\)</span>-based inference</td>
+<td>Binary RV; independent obs.; appropriate model form</td>
+</tr>
+<tr class="odd">
+<td><strong>Infer parameter: CI name</strong></td>
+<td>One-proportion CI</td>
+<td>One-sample (or paired) <span class="math inline">\(t\)</span>-interval</td>
+<td>Context-dependent (cell/row/column or follow-up)</td>
+<td>Two-sample <span class="math inline">\(t\)</span>-interval or two-proportion CI</td>
+<td>Post-hoc / group-mean intervals after ANOVA</td>
+<td>CI for <span class="math inline">\(\beta_1\)</span>; CI for mean response at <span class="math inline">\(x_0\)</span></td>
+<td>CI for logistic <span class="math inline">\(\beta\)</span></td>
+</tr>
+<tr class="even">
+<td><strong>Infer parameter: CI R code</strong></td>
+<td><code>prop.test()</code></td>
+<td><code>t.test()</code></td>
+<td>(Context-dependent; often not a single omnibus CI)</td>
+<td><code>t.test(...)</code> or <code>prop.test(...)</code></td>
+<td><code>fit &lt;- lm(...);</code> then follow-up contrasts/intervals as needed</td>
+<td><code>confint(fit, "x")</code>; <code>predict(fit, newdata=..., interval="confidence")</code></td>
+<td><code>confint(fit, "x_or_group")</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Infer parameter: CI conditions</strong></td>
+<td>Same as proportion-test approximation</td>
+<td>Same as t-test conditions</td>
+<td>Depends on interval used; independence remains key</td>
+<td>Same as chosen two-group method</td>
+<td>Same assumptions as ANOVA model</td>
+<td>Same regression assumptions as above</td>
+<td>Same logistic-model assumptions as above</td>
+</tr>
+<tr class="even">
+<td><strong>Infer individual value: notation</strong></td>
+<td>Individual category outcome (usually not main target)</td>
+<td>Individual future RV</td>
+<td>Individual future cell/category (usually not main target)</td>
+<td>Individual future RV in a selected EV group</td>
+<td>Individual future RV in selected EV group level</td>
+<td>Individual future RV at <span class="math inline">\(x_0\)</span></td>
+<td>Individual <span class="math inline">\(P(\text{RV}=1 \mid \text{EV})\)</span> and class after cutoff</td>
+</tr>
+<tr class="odd">
+<td><strong>Infer individual value: method name</strong></td>
+<td>(Usually classify/report probability)</td>
+<td>Prediction interval for one value</td>
+<td>(Usually classify/report probability)</td>
+<td>EV-group-based prediction interval for one value</td>
+<td>EV-group-based prediction interval for one value</td>
+<td>Linear-model prediction interval</td>
+<td>Logistic probability prediction + cutoff classification</td>
+</tr>
+<tr class="even">
+<td><strong>Infer individual value: R code</strong></td>
+<td><code>prop.test</code>/model-based probability methods</td>
+<td><code>predict(fit, newdata=..., interval="prediction")</code></td>
+<td><code>chisq</code> context not usually individual prediction</td>
+<td><code>fit &lt;- lm(y ~ group); predict(fit, newdata=..., interval="prediction")</code></td>
+<td><code>fit &lt;- lm(y ~ group); predict(fit, newdata=..., interval="prediction")</code></td>
+<td><code>fit &lt;- lm(y ~ x); predict(fit, newdata=..., interval="prediction")</code></td>
+<td><code>fit &lt;- glm(..., family=binomial); predict(fit, newdata=..., type="response")</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Infer individual value: conditions</strong></td>
+<td>Use caution; not usually central target</td>
+<td>Linear-model assumptions; interval is for <strong>individual</strong> not mean</td>
+<td>Not usually the main inferential target</td>
+<td>Independent observations; prediction interval for individual not mean</td>
+<td>Same as linear-model assumptions across groups</td>
+<td>Linear form + residual diagnostics; independent observations</td>
+<td>Binary outcome; independent observations; choose and justify cutoff</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="notes" class="level2">
+<h2 class="anchored" data-anchor-id="notes">Notes</h2>
+<ul>
+<li><strong>EV</strong> = explanatory variable (sometimes called treatment/predictor, depending on context).</li>
+<li><strong>RV</strong> = response variable (aka outcome variable).</li>
+<li>For any inferential row, always check:
+<ol type="1">
+<li>sample size(s),</li>
+<li>sampling method (random sample or independent/binomial trials),</li>
+<li>study design (observational vs experimental, paired vs independent),</li>
+<li>model assumptions where relevant.</li>
+</ol></li>
+</ul>
+
+
+<!-- -->
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>Creative Commons Attribution-NonCommercial 4.0 International<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">(View License)</a></div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Methods Map"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "STAT 109: Introductory Biostatistics"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Methods Table</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>This page is our statistics **“toolbox.”** It is organized by:</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>what we want to do (**descriptive**: plot/number summary, or **inferential**: test/CI/prediction), and</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>what we have (the **number and type of variables**).</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>For the table below:</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**columns = what we have** (number/type of variables),</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**rows = what we want to do** (describe, infer a parameter, infer an individual value).</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## One toolbox table {#methods-toolbox}</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> What we want <span class="pp">|</span> One categorical <span class="pp">|</span> One numerical <span class="pp">|</span> Two categorical (2+ categories allowed) <span class="pp">|</span> EV categorical + RV numerical (2 EV groups) <span class="pp">|</span> EV categorical + RV numerical (3+ EV groups) <span class="pp">|</span> Two numerical <span class="pp">|</span> RV binary + EV predictor(s) <span class="pp">|</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------|---------|---------|---------|---------|---------|---------|---------|</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Describe: number summary** <span class="pp">|</span> Counts, proportions, percentages (<span class="in">`count`</span>, <span class="in">`mutate`</span>) <span class="pp">|</span> Mean/median; SD/range/IQR (<span class="in">`summarize`</span>) <span class="pp">|</span> Two-way counts + row/column/grand proportions <span class="pp">|</span> Group-wise means/SDs by category (<span class="in">`group_by`</span>) <span class="pp">|</span> Group-wise means/SDs by category (<span class="in">`group_by`</span>) <span class="pp">|</span> Correlation <span class="in">`cor(x,y)`</span> + slope/intercept summaries <span class="pp">|</span> Class counts and proportions by predictor groups <span class="pp">|</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Describe: plot** <span class="pp">|</span> Bar plot (<span class="in">`geom_bar`</span> or <span class="in">`geom_col`</span>) <span class="pp">|</span> Histogram / boxplot / dotplot <span class="pp">|</span> Stacked or 100% stacked bar (<span class="in">`geom_col(position = "fill")`</span>) <span class="pp">|</span> Boxplot/histogram/dotplot per group <span class="pp">|</span> Boxplot per group (ANOVA context) <span class="pp">|</span> Scatterplot (<span class="in">`geom_point`</span>) <span class="pp">|</span> Bar plots by class or probability plot vs predictor <span class="pp">|</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Infer parameter: notation** <span class="pp">|</span> $p$ <span class="pp">|</span> $\mu$ <span class="pp">|</span> Association ($\chi^2$ independence); 2×2: $p_1 - p_2$ <span class="pp">|</span> $\mu_1 - \mu_2$ (numerical RV) or $p_1 - p_2$ (binary RV) <span class="pp">|</span> $\mu_1,\ldots,\mu_k$ (ANOVA across EV groups) <span class="pp">|</span> $\beta_0, \beta_1$ <span class="pp">|</span> Logistic $\beta$; prob.\ RV given EV <span class="pp">|</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Infer parameter: test name + sample null** <span class="pp">|</span> One-proportion test, $H_0: p = p_0$ <span class="pp">|</span> One-sample (or paired) $t$-test, $H_0: \mu = \mu_0$ <span class="pp">|</span> Chi-square independence, $H_0$: EV and RV independent <span class="pp">|</span> Two-sample $t$-test $H_0: \mu_1 - \mu_2 = 0$, or two-proportion $H_0: p_1 - p_2 = 0$ <span class="pp">|</span> One-way ANOVA $H_0: \mu_1 = \mu_2 = \cdots = \mu_k$ <span class="pp">|</span> Slope test $H_0: \beta_1 = 0$ <span class="pp">|</span> Logistic slope $H_0: \beta_1 = 0$ (or relevant coefficient $= 0$) <span class="pp">|</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Infer parameter: test R code** <span class="pp">|</span> <span class="in">`binom.test()`</span> (exact) or <span class="in">`prop.test()`</span> <span class="pp">|</span> <span class="in">`t.test(x)`</span> or paired <span class="in">`t.test(x,y,paired=TRUE)`</span> <span class="pp">|</span> <span class="in">`chisq.test(tab)`</span> <span class="pp">|</span> <span class="in">`t.test(y ~ group, var.equal = FALSE)`</span> or <span class="in">`prop.test(...)`</span> <span class="pp">|</span> <span class="in">`fit &lt;- lm(y ~ group); anova(fit)`</span> <span class="pp">|</span> <span class="in">`fit &lt;- lm(y ~ x); summary(fit)`</span> <span class="pp">|</span> <span class="in">`fit &lt;- glm(y ~ x_or_group, family = binomial); summary(fit)`</span> <span class="pp">|</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Infer parameter: test conditions** <span class="pp">|</span> Binomial / SRS; for $z$ approx need $np \ge 10$ and $n(1-p) \ge 10$ <span class="pp">|</span> Random sample (or paired) + large $n$ or roughly normal population/differences <span class="pp">|</span> Independent obs.; expected counts typically $\ge 5$ <span class="pp">|</span> Two samples or random assignment; conditions for chosen method <span class="pp">|</span> Independent obs.; roughly normal within groups; similar spread <span class="pp">|</span> Linear form; independent obs.; residual assumptions for $t$-based inference <span class="pp">|</span> Binary RV; independent obs.; appropriate model form <span class="pp">|</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Infer parameter: CI name** <span class="pp">|</span> One-proportion CI <span class="pp">|</span> One-sample (or paired) $t$-interval <span class="pp">|</span> Context-dependent (cell/row/column or follow-up) <span class="pp">|</span> Two-sample $t$-interval or two-proportion CI <span class="pp">|</span> Post-hoc / group-mean intervals after ANOVA <span class="pp">|</span> CI for $\beta_1$; CI for mean response at $x_0$ <span class="pp">|</span> CI for logistic $\beta$ <span class="pp">|</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Infer parameter: CI R code** <span class="pp">|</span> <span class="in">`prop.test()`</span> <span class="pp">|</span> <span class="in">`t.test()`</span> <span class="pp">|</span> (Context-dependent; often not a single omnibus CI) <span class="pp">|</span> <span class="in">`t.test(...)`</span> or <span class="in">`prop.test(...)`</span> <span class="pp">|</span> <span class="in">`fit &lt;- lm(...);`</span> then follow-up contrasts/intervals as needed <span class="pp">|</span> <span class="in">`confint(fit, "x")`</span>; <span class="in">`predict(fit, newdata=..., interval="confidence")`</span> <span class="pp">|</span> <span class="in">`confint(fit, "x_or_group")`</span> <span class="pp">|</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Infer parameter: CI conditions** <span class="pp">|</span> Same as proportion-test approximation <span class="pp">|</span> Same as t-test conditions <span class="pp">|</span> Depends on interval used; independence remains key <span class="pp">|</span> Same as chosen two-group method <span class="pp">|</span> Same assumptions as ANOVA model <span class="pp">|</span> Same regression assumptions as above <span class="pp">|</span> Same logistic-model assumptions as above <span class="pp">|</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Infer individual value: notation** <span class="pp">|</span> Individual category outcome (usually not main target) <span class="pp">|</span> Individual future RV <span class="pp">|</span> Individual future cell/category (usually not main target) <span class="pp">|</span> Individual future RV in a selected EV group <span class="pp">|</span> Individual future RV in selected EV group level <span class="pp">|</span> Individual future RV at $x_0$ <span class="pp">|</span> Individual $P(\text{RV}=1 \mid \text{EV})$ and class after cutoff <span class="pp">|</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Infer individual value: method name** <span class="pp">|</span> (Usually classify/report probability) <span class="pp">|</span> Prediction interval for one value <span class="pp">|</span> (Usually classify/report probability) <span class="pp">|</span> EV-group-based prediction interval for one value <span class="pp">|</span> EV-group-based prediction interval for one value <span class="pp">|</span> Linear-model prediction interval <span class="pp">|</span> Logistic probability prediction + cutoff classification <span class="pp">|</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Infer individual value: R code** <span class="pp">|</span> <span class="in">`prop.test`</span>/model-based probability methods <span class="pp">|</span> <span class="in">`predict(fit, newdata=..., interval="prediction")`</span> <span class="pp">|</span> <span class="in">`chisq`</span> context not usually individual prediction <span class="pp">|</span> <span class="in">`fit &lt;- lm(y ~ group); predict(fit, newdata=..., interval="prediction")`</span> <span class="pp">|</span> <span class="in">`fit &lt;- lm(y ~ group); predict(fit, newdata=..., interval="prediction")`</span> <span class="pp">|</span> <span class="in">`fit &lt;- lm(y ~ x); predict(fit, newdata=..., interval="prediction")`</span> <span class="pp">|</span> <span class="in">`fit &lt;- glm(..., family=binomial); predict(fit, newdata=..., type="response")`</span> <span class="pp">|</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Infer individual value: conditions** | Use caution; not usually central target | Linear-model assumptions; interval is for **individual** not mean <span class="pp">|</span> Not usually the main inferential target <span class="pp">|</span> Independent observations; prediction interval for individual not mean <span class="pp">|</span> Same as linear-model assumptions across groups <span class="pp">|</span> Linear form + residual diagnostics; independent observations <span class="pp">|</span> Binary outcome; independent observations; choose and justify cutoff <span class="pp">|</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## Notes</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**EV** = explanatory variable (sometimes called treatment/predictor, depending on context).</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**RV** = response variable (aka outcome variable).</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>For any inferential row, always check:</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">    1.  </span>sample size(s),</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="ss">    2.  </span>sampling method (random sample or independent/binomial trials),</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">    3.  </span>study design (observational vs experimental, paired vs independent),</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="ss">    4.  </span>model assumptions where relevant.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

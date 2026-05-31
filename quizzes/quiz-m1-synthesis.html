@@ -1,0 +1,2067 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Module 1 — Synthesis Quiz – STAT 109 - Introductory Biostatistics</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-94b323657c735dfe3b1bf6ebb2c33a55.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/css/humboldt-theme.css">
+</head>
+
+<body class="floating quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#module-1-synthesis-quiz" id="toc-module-1-synthesis-quiz" class="nav-link active" data-scroll-target="#module-1-synthesis-quiz">Module 1, Synthesis quiz</a>
+  <ul class="collapse">
+  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#section-a-hypotheses-and-brp-read-2-1" id="toc-section-a-hypotheses-and-brp-read-2-1" class="nav-link" data-scroll-target="#section-a-hypotheses-and-brp-read-2-1">Section A — Hypotheses and BRP (Read 2 §1)</a>
+  <ul class="collapse">
+  <li><a href="#a1.-esp-hypotheses" id="toc-a1.-esp-hypotheses" class="nav-link" data-scroll-target="#a1.-esp-hypotheses">A1. ESP hypotheses</a></li>
+  <li><a href="#a2.-esp-brp-conditions" id="toc-a2.-esp-brp-conditions" class="nav-link" data-scroll-target="#a2.-esp-brp-conditions">A2. ESP BRP conditions</a></li>
+  </ul></li>
+  <li><a href="#section-b-n-p-and-tail-direction-read-2-2" id="toc-section-b-n-p-and-tail-direction-read-2-2" class="nav-link" data-scroll-target="#section-b-n-p-and-tail-direction-read-2-2">Section B — <span class="math inline">\(n\)</span>, <span class="math inline">\(p\)</span>, and tail direction (Read 2 §2)</a>
+  <ul class="collapse">
+  <li><a href="#b1.-n-and-p-under-h_0" id="toc-b1.-n-and-p-under-h_0" class="nav-link" data-scroll-target="#b1.-n-and-p-under-h_0">B1. <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span> under <span class="math inline">\(H_0\)</span></a></li>
+  <li><a href="#b2.-observed-data-and-p-value-direction" id="toc-b2.-observed-data-and-p-value-direction" class="nav-link" data-scroll-target="#b2.-observed-data-and-p-value-direction">B2. Observed data and p-value direction</a></li>
+  </ul></li>
+  <li><a href="#section-c-null-plots-mark-data-and-shade-p-value-read-2-3" id="toc-section-c-null-plots-mark-data-and-shade-p-value-read-2-3" class="nav-link" data-scroll-target="#section-c-null-plots-mark-data-and-shade-p-value-read-2-3">Section C — Null plots: mark data and shade p-value (Read 2 §3)</a>
+  <ul class="collapse">
+  <li><a href="#c1.-left-handed-students" id="toc-c1.-left-handed-students" class="nav-link" data-scroll-target="#c1.-left-handed-students">C1. Left-handed students</a></li>
+  <li><a href="#c2.-defective-items" id="toc-c2.-defective-items" class="nav-link" data-scroll-target="#c2.-defective-items">C2. Defective items</a></li>
+  <li><a href="#c3.-dice-sum-7-or-11" id="toc-c3.-dice-sum-7-or-11" class="nav-link" data-scroll-target="#c3.-dice-sum-7-or-11">C3. Dice (sum 7 or 11)</a></li>
+  <li><a href="#c4.-gym-use" id="toc-c4.-gym-use" class="nav-link" data-scroll-target="#c4.-gym-use">C4. Gym use</a></li>
+  </ul></li>
+  <li><a href="#section-d-test-workflow-and-one--vs-two-sided-read-2-3" id="toc-section-d-test-workflow-and-one--vs-two-sided-read-2-3" class="nav-link" data-scroll-target="#section-d-test-workflow-and-one--vs-two-sided-read-2-3">Section D — Test workflow and one- vs two-sided (Read 2 §3)</a>
+  <ul class="collapse">
+  <li><a href="#d1.-order-the-steps" id="toc-d1.-order-the-steps" class="nav-link" data-scroll-target="#d1.-order-the-steps">D1. Order the steps</a></li>
+  <li><a href="#d2.-one--vs-two-sided-shading" id="toc-d2.-one--vs-two-sided-shading" class="nav-link" data-scroll-target="#d2.-one--vs-two-sided-shading">D2. One- vs two-sided shading</a></li>
+  </ul></li>
+  <li><a href="#section-e-binomial-r-and-ggplot-after-demo-lab" id="toc-section-e-binomial-r-and-ggplot-after-demo-lab" class="nav-link" data-scroll-target="#section-e-binomial-r-and-ggplot-after-demo-lab">Section E — Binomial R and ggplot (after demo lab)</a>
+  <ul class="collapse">
+  <li><a href="#e1.-dbinom" id="toc-e1.-dbinom" class="nav-link" data-scroll-target="#e1.-dbinom">E1. <code>dbinom</code></a></li>
+  <li><a href="#e2.-pbinom-lower-tail" id="toc-e2.-pbinom-lower-tail" class="nav-link" data-scroll-target="#e2.-pbinom-lower-tail">E2. <code>pbinom</code> lower tail</a></li>
+  <li><a href="#e3.-pbinom-upper-tail" id="toc-e3.-pbinom-upper-tail" class="nav-link" data-scroll-target="#e3.-pbinom-upper-tail">E3. <code>pbinom</code> upper tail</a></li>
+  <li><a href="#e4.-rbinom" id="toc-e4.-rbinom" class="nav-link" data-scroll-target="#e4.-rbinom">E4. <code>rbinom</code></a></li>
+  <li><a href="#e5.-estimate-from-simulation" id="toc-e5.-estimate-from-simulation" class="nav-link" data-scroll-target="#e5.-estimate-from-simulation">E5. Estimate from simulation</a></li>
+  <li><a href="#e6.-aes-in-ggplot2" id="toc-e6.-aes-in-ggplot2" class="nav-link" data-scroll-target="#e6.-aes-in-ggplot2">E6. <code>aes()</code> in ggplot2</a></li>
+  <li><a href="#e7.-null-bar-plot-with-geom_col" id="toc-e7.-null-bar-plot-with-geom_col" class="nav-link" data-scroll-target="#e7.-null-bar-plot-with-geom_col">E7. Null bar plot with <code>geom_col</code></a></li>
+  </ul></li>
+  <li><a href="#section-f-r-basics-module-0-demo-exercise" id="toc-section-f-r-basics-module-0-demo-exercise" class="nav-link" data-scroll-target="#section-f-r-basics-module-0-demo-exercise">Section F — R basics (Module 0 demo / exercise)</a>
+  <ul class="collapse">
+  <li><a href="#f1.-arithmetic" id="toc-f1.-arithmetic" class="nav-link" data-scroll-target="#f1.-arithmetic">F1. Arithmetic</a></li>
+  <li><a href="#f2.-multiplication" id="toc-f2.-multiplication" class="nav-link" data-scroll-target="#f2.-multiplication">F2. Multiplication</a></li>
+  <li><a href="#f3.-assignment-and-sqrt" id="toc-f3.-assignment-and-sqrt" class="nav-link" data-scroll-target="#f3.-assignment-and-sqrt">F3. Assignment and <code>sqrt</code></a></li>
+  <li><a href="#f4.-vector" id="toc-f4.-vector" class="nav-link" data-scroll-target="#f4.-vector">F4. Vector</a></li>
+  <li><a href="#f5.-indexing" id="toc-f5.-indexing" class="nav-link" data-scroll-target="#f5.-indexing">F5. Indexing</a></li>
+  <li><a href="#f6.-vector-arithmetic" id="toc-f6.-vector-arithmetic" class="nav-link" data-scroll-target="#f6.-vector-arithmetic">F6. Vector arithmetic</a></li>
+  <li><a href="#f7.-mean" id="toc-f7.-mean" class="nav-link" data-scroll-target="#f7.-mean">F7. Mean</a></li>
+  <li><a href="#f8.-count-with-and-sum" id="toc-f8.-count-with-and-sum" class="nav-link" data-scroll-target="#f8.-count-with-and-sum">F8. Count with <code>==</code> and <code>sum</code></a></li>
+  </ul></li>
+  <li><a href="#section-g-vectors-matrices-loops-demo-section-b-exercise-part-i" id="toc-section-g-vectors-matrices-loops-demo-section-b-exercise-part-i" class="nav-link" data-scroll-target="#section-g-vectors-matrices-loops-demo-section-b-exercise-part-i">Section G — Vectors, matrices, loops (demo Section B / exercise Part I)</a>
+  <ul class="collapse">
+  <li><a href="#g1.-types-and-class" id="toc-g1.-types-and-class" class="nav-link" data-scroll-target="#g1.-types-and-class">G1. Types and <code>class()</code></a></li>
+  <li><a href="#g2.-vector-and-length" id="toc-g2.-vector-and-length" class="nav-link" data-scroll-target="#g2.-vector-and-length">G2. Vector and length</a></li>
+  <li><a href="#g3.-bracketing" id="toc-g3.-bracketing" class="nav-link" data-scroll-target="#g3.-bracketing">G3. Bracketing</a></li>
+  <li><a href="#g4.-matrix-and-dim" id="toc-g4.-matrix-and-dim" class="nav-link" data-scroll-target="#g4.-matrix-and-dim">G4. Matrix and <code>dim()</code></a></li>
+  <li><a href="#g5.-for-loop-squares" id="toc-g5.-for-loop-squares" class="nav-link" data-scroll-target="#g5.-for-loop-squares">G5. <code>for</code> loop squares</a></li>
+  <li><a href="#g6.-simulate-ptexteven-die" id="toc-g6.-simulate-ptexteven-die" class="nav-link" data-scroll-target="#g6.-simulate-ptexteven-die">G6. Simulate <span class="math inline">\(P(\text{even die})\)</span></a></li>
+  </ul></li>
+  <li><a href="#section-h-simulation-r-conditional-demo-exercise-part-ii" id="toc-section-h-simulation-r-conditional-demo-exercise-part-ii" class="nav-link" data-scroll-target="#section-h-simulation-r-conditional-demo-exercise-part-ii">Section H — Simulation R (conditional demo / exercise Part II)</a>
+  <ul class="collapse">
+  <li><a href="#h1.-rep-for-balls" id="toc-h1.-rep-for-balls" class="nav-link" data-scroll-target="#h1.-rep-for-balls">H1. <code>rep()</code> for balls</a></li>
+  <li><a href="#h2.-simulate-without-replacement" id="toc-h2.-simulate-without-replacement" class="nav-link" data-scroll-target="#h2.-simulate-without-replacement">H2. Simulate without replacement</a></li>
+  <li><a href="#h3.-which" id="toc-h3.-which" class="nav-link" data-scroll-target="#h3.-which">H3. <code>which()</code></a></li>
+  <li><a href="#h4.-modify-if-for-exactly-one-red" id="toc-h4.-modify-if-for-exactly-one-red" class="nav-link" data-scroll-target="#h4.-modify-if-for-exactly-one-red">H4. Modify <code>if</code> for exactly one red</a></li>
+  <li><a href="#h5.-sample-with-prob" id="toc-h5.-sample-with-prob" class="nav-link" data-scroll-target="#h5.-sample-with-prob">H5. <code>sample()</code> with <code>prob</code></a></li>
+  <li><a href="#h6.-joint-probability-from-simulation" id="toc-h6.-joint-probability-from-simulation" class="nav-link" data-scroll-target="#h6.-joint-probability-from-simulation">H6. Joint probability from simulation</a></li>
+  </ul></li>
+  <li><a href="#section-i-assumptions-and-interpretation-new" id="toc-section-i-assumptions-and-interpretation-new" class="nav-link" data-scroll-target="#section-i-assumptions-and-interpretation-new">Section I — Assumptions and interpretation (new)</a>
+  <ul class="collapse">
+  <li><a href="#i1.-p-value-meaning" id="toc-i1.-p-value-meaning" class="nav-link" data-scroll-target="#i1.-p-value-meaning">I1. p-value meaning</a></li>
+  <li><a href="#i2.-which-brp-condition-fails" id="toc-i2.-which-brp-condition-fails" class="nav-link" data-scroll-target="#i2.-which-brp-condition-fails">I2. Which BRP condition fails?</a></li>
+  <li><a href="#i3.-choosing-pbinom-for-h_a-p-0.2" id="toc-i3.-choosing-pbinom-for-h_a-p-0.2" class="nav-link" data-scroll-target="#i3.-choosing-pbinom-for-h_a-p-0.2">I3. Choosing <code>pbinom</code> for <span class="math inline">\(H_a: p &gt; 0.2\)</span></a></li>
+  <li><a href="#i4.-purpose-of-geom_vline" id="toc-i4.-purpose-of-geom_vline" class="nav-link" data-scroll-target="#i4.-purpose-of-geom_vline">I4. Purpose of <code>geom_vline</code></a></li>
+  <li><a href="#i5.-dbinom-vs-pbinom" id="toc-i5.-dbinom-vs-pbinom" class="nav-link" data-scroll-target="#i5.-dbinom-vs-pbinom">I5. <code>dbinom</code> vs <code>pbinom</code></a></li>
+  <li><a href="#i6.-conclusion-language" id="toc-i6.-conclusion-language" class="nav-link" data-scroll-target="#i6.-conclusion-language">I6. Conclusion language</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="quiz-m1-synthesis.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Module 1 — Synthesis Quiz</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<p class="subtitle lead">Question bank · After exercise lab · open notes · two attempts</p>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-right">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="module-1-synthesis-quiz" class="level1">
+<h1>Module 1, Synthesis quiz</h1>
+<p><strong>Readings:</strong> <a href="../lectures/module-1-read-00">Read 0</a>, <a href="../lectures/module-1-read-01">Read 1</a>, <a href="../lectures/module-1-read-02">Read 2</a><br>
+<strong>Labs:</strong> <a href="../labs/module-1-lab-demo">Demo</a>, <a href="../labs/module-1-lab-exercise">Exercise</a><br>
+<strong>Canvas:</strong> Synthesis quiz (Module 1) · <strong>two attempts</strong>, highest score counts</p>
+<p>Full integration: binomial test workflow, <strong>all Module 1 R practice</strong>, plus interpretation items. Work sections in order — earlier sections match Read 2; R sections match the demo and exercise labs.</p>
+<hr>
+<section id="instructions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<ul>
+<li>Open notes (reference sheets + methods map).</li>
+<li><strong>Graph items (Section C):</strong> Run the R chunks to build each null plot; on your copy, add <strong><code>geom_vline</code> at observed <span class="math inline">\(x\)</span></strong> and <strong>shade the p-value region</strong> matching <span class="math inline">\(H_a\)</span>.</li>
+<li>Connect every step to <a href="../projects/project-1">Project 1</a>.</li>
+</ul>
+<hr>
+</section>
+<section id="section-a-hypotheses-and-brp-read-2-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-a-hypotheses-and-brp-read-2-1">Section A — Hypotheses and BRP (Read 2 §1)</h2>
+<section id="a1.-esp-hypotheses" class="level3">
+<h3 class="anchored" data-anchor-id="a1.-esp-hypotheses">A1. ESP hypotheses</h3>
+<p>ESP test: 25 trials, 5 symbols, guess each trial. Let <span class="math inline">\(p\)</span> = probability of a correct guess on one trial.</p>
+<ol type="1">
+<li>Write <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_a\)</span> in symbols.</li>
+<li>In words: if <span class="math inline">\(H_0\)</span> is true? If we believe <span class="math inline">\(H_a\)</span>?</li>
+</ol>
+</section>
+<section id="a2.-esp-brp-conditions" class="level3">
+<h3 class="anchored" data-anchor-id="a2.-esp-brp-conditions">A2. ESP BRP conditions</h3>
+<p>Same ESP setting (25 trials, open deck, one guess per trial). List the <strong>four BRP conditions</strong> and briefly say why each holds.</p>
+<div class="{.content-visible-when-format=&quot;html&quot;}">
+<details>
+<summary>
+Click to reveal answers — Section A — Hypotheses and BRP (Read 2 §1)
+</summary>
+<ol type="1">
+<li><p><span class="math inline">\(H_0: p=0.2\)</span> vs <span class="math inline">\(H_a: p&gt;0.2\)</span>. <span class="math inline">\(H_0\)</span>: guessing only (no ESP). <span class="math inline">\(H_a\)</span>: better than chance.</p></li>
+<li><p>Binary (correct/incorrect); fixed <span class="math inline">\(n=25\)</span>; fixed <span class="math inline">\(p=0.2\)</span> under null; independent trials (open deck).</p></li>
+</ol>
+</details>
+</div>
+<div class="{.content-visible-when-format=&quot;pdf&quot;}">
+<div style="page-break-after: always;"></div>
+<section id="answer-key-section-a-hypotheses-and-brp-read-2-1" class="level4">
+<h4 class="anchored" data-anchor-id="answer-key-section-a-hypotheses-and-brp-read-2-1">Answer key — Section A — Hypotheses and BRP (Read 2 §1)</h4>
+<ol type="1">
+<li><p><span class="math inline">\(H_0: p=0.2\)</span> vs <span class="math inline">\(H_a: p&gt;0.2\)</span>. <span class="math inline">\(H_0\)</span>: guessing only (no ESP). <span class="math inline">\(H_a\)</span>: better than chance.</p></li>
+<li><p>Binary (correct/incorrect); fixed <span class="math inline">\(n=25\)</span>; fixed <span class="math inline">\(p=0.2\)</span> under null; independent trials (open deck).</p></li>
+</ol>
+</section>
+</div>
+<hr>
+</section>
+</section>
+<section id="section-b-n-p-and-tail-direction-read-2-2" class="level2">
+<h2 class="anchored" data-anchor-id="section-b-n-p-and-tail-direction-read-2-2">Section B — <span class="math inline">\(n\)</span>, <span class="math inline">\(p\)</span>, and tail direction (Read 2 §2)</h2>
+<section id="b1.-n-and-p-under-h_0" class="level3">
+<h3 class="anchored" data-anchor-id="b1.-n-and-p-under-h_0">B1. <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span> under <span class="math inline">\(H_0\)</span></h3>
+<p>ESP test (Part A): under <span class="math inline">\(H_0\)</span>, what are <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>?</p>
+</section>
+<section id="b2.-observed-data-and-p-value-direction" class="level3">
+<h3 class="anchored" data-anchor-id="b2.-observed-data-and-p-value-direction">B2. Observed data and p-value direction</h3>
+<p>Same test; <span class="math inline">\(H_0: p=0.2\)</span> vs <span class="math inline">\(H_a: p&gt;0.2\)</span>. You observe <strong>7</strong> correct out of 25.</p>
+<ol type="1">
+<li>What is <span class="math inline">\(x\)</span>?</li>
+<li>Write the p-value as <span class="math inline">\(P(X \geq \ldots)\)</span> or <span class="math inline">\(P(X \leq \ldots)\)</span>.</li>
+<li>Which tail(s) of the null distribution?</li>
+</ol>
+<div class="{.content-visible-when-format=&quot;html&quot;}">
+<details>
+<summary>
+Click to reveal answers — Section B — <span class="math inline">\(n\)</span>, <span class="math inline">\(p\)</span>, and tail direction (Read 2 §2)
+</summary>
+<ol type="1">
+<li><p><span class="math inline">\(n=25\)</span>; <span class="math inline">\(p=0.2\)</span>.</p></li>
+<li><p><span class="math inline">\(x=7\)</span>; <span class="math inline">\(P(X\geq 7)\)</span>; <strong>right tail</strong>.</p></li>
+</ol>
+</details>
+</div>
+<div class="{.content-visible-when-format=&quot;pdf&quot;}">
+<div style="page-break-after: always;"></div>
+<section id="answer-key-section-b-n-p-and-tail-direction-read-2-2" class="level4">
+<h4 class="anchored" data-anchor-id="answer-key-section-b-n-p-and-tail-direction-read-2-2">Answer key — Section B — <span class="math inline">\(n\)</span>, <span class="math inline">\(p\)</span>, and tail direction (Read 2 §2)</h4>
+<ol type="1">
+<li><p><span class="math inline">\(n=25\)</span>; <span class="math inline">\(p=0.2\)</span>.</p></li>
+<li><p><span class="math inline">\(x=7\)</span>; <span class="math inline">\(P(X\geq 7)\)</span>; <strong>right tail</strong>.</p></li>
+</ol>
+</section>
+</div>
+<hr>
+</section>
+</section>
+<section id="section-c-null-plots-mark-data-and-shade-p-value-read-2-3" class="level2">
+<h2 class="anchored" data-anchor-id="section-c-null-plots-mark-data-and-shade-p-value-read-2-3">Section C — Null plots: mark data and shade p-value (Read 2 §3)</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"ggplot2"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>, <span class="at">repos =</span> <span class="st">"https://cloud.r-project.org"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>Each plot below shows the <strong>null distribution</strong> (<span class="math inline">\(x\)</span> vs <span class="math inline">\(P(X=x)\)</span> under <span class="math inline">\(H_0\)</span>). Plots are <strong>unshaded</strong> — on your copy (print or sketch), add a <strong>vertical line</strong> at the observed <span class="math inline">\(x\)</span> and <strong>shade the p-value region</strong> in the direction of <span class="math inline">\(H_a\)</span>.</p>
+<p>Run the R chunks to reproduce each null distribution in Colab or RStudio (same pattern as <a href="../projects/project-1">Project 1</a> and the <a href="../labs/module-1-lab-demo">demo lab</a>).</p>
+<section id="c1.-left-handed-students" class="level3">
+<h3 class="anchored" data-anchor-id="c1.-left-handed-students">C1. Left-handed students</h3>
+<p><strong>Research question:</strong> Is the proportion of left-handed students at our school higher than the national rate of 10%?</p>
+<p><strong>Parameter:</strong> <span class="math inline">\(p\)</span> = proportion of students at our school who are left-handed.</p>
+<p><strong>Hypotheses:</strong> <span class="math inline">\(H_0: p = 0.10\)</span> vs <span class="math inline">\(H_a: p &gt; 0.10\)</span>. Under <span class="math inline">\(H_0\)</span>, use <span class="math inline">\(n = 25\)</span> and the null value of <span class="math inline">\(p\)</span> shown in the R chunk.</p>
+<p><strong>Data:</strong> observed <span class="math inline">\(x = 6\)</span>.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.10</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>null_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">0</span><span class="sc">:</span>n, <span class="at">prob =</span> <span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span>n, <span class="at">size =</span> n, <span class="at">prob =</span> p))</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(null_df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> prob)) <span class="sc">+</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="fu">expression</span>(<span class="fu">P</span>(X <span class="sc">==</span> x))) <span class="sc">+</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="quiz-m1-synthesis_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="480"></p>
+<figcaption>Null distribution: left-handed students, n = 25, p = 0.10 under H0</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ol type="1">
+<li>On the plot (or a printout), add a <strong>vertical line</strong> at <span class="math inline">\(x = 6\)</span> and <strong>shade</strong> the p-value region (right tail).</li>
+<li>p-value = <span class="math inline">\(P(X \geq 6 \mid H_0)\)</span> is <strong>small</strong> or <strong>large</strong>?</li>
+<li>Conclusion in context (one sentence).</li>
+</ol>
+</section>
+<section id="c2.-defective-items" class="level3">
+<h3 class="anchored" data-anchor-id="c2.-defective-items">C2. Defective items</h3>
+<p><strong>Research question:</strong> Is the proportion of defective items from the new supplier less than 15%?</p>
+<p><strong>Parameter:</strong> <span class="math inline">\(p\)</span> = proportion of items from the new supplier that are defective.</p>
+<p><strong>Hypotheses:</strong> <span class="math inline">\(H_0: p = 0.15\)</span> vs <span class="math inline">\(H_a: p &lt; 0.15\)</span>. Under <span class="math inline">\(H_0\)</span>, use <span class="math inline">\(n = 25\)</span> and the null value of <span class="math inline">\(p\)</span> shown in the R chunk.</p>
+<p><strong>Data:</strong> observed <span class="math inline">\(x = 3\)</span>.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.15</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>null_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">0</span><span class="sc">:</span>n, <span class="at">prob =</span> <span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span>n, <span class="at">size =</span> n, <span class="at">prob =</span> p))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(null_df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> prob)) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="fu">expression</span>(<span class="fu">P</span>(X <span class="sc">==</span> x))) <span class="sc">+</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="quiz-m1-synthesis_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="480"></p>
+<figcaption>Null distribution: defective items, n = 25, p = 0.15 under H0</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ol type="1">
+<li>On the plot (or a printout), add a <strong>vertical line</strong> at <span class="math inline">\(x = 3\)</span> and <strong>shade</strong> the p-value region (left tail).</li>
+<li>p-value = <span class="math inline">\(P(X \leq 3 \mid H_0)\)</span> is <strong>small</strong> or <strong>large</strong>?</li>
+<li>Conclusion in context (one sentence).</li>
+</ol>
+</section>
+<section id="c3.-dice-sum-7-or-11" class="level3">
+<h3 class="anchored" data-anchor-id="c3.-dice-sum-7-or-11">C3. Dice (sum 7 or 11)</h3>
+<p><strong>Research question:</strong> When we roll two dice, is the probability that the sum is 7 or 11 equal to the fair-dice value (<span class="math inline">\(8/36\)</span>)?</p>
+<p><strong>Parameter:</strong> <span class="math inline">\(p\)</span> = probability that one roll of two dice gives sum 7 or 11.</p>
+<p><strong>Hypotheses:</strong> <span class="math inline">\(H_0: p = 8/36\)</span> vs <span class="math inline">\(H_a: p \neq 8/36\)</span>. Under <span class="math inline">\(H_0\)</span>, use <span class="math inline">\(n = 25\)</span> and the null value of <span class="math inline">\(p\)</span> shown in the R chunk.</p>
+<p><strong>Data:</strong> observed <span class="math inline">\(x = 2\)</span>.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="dv">8</span><span class="sc">/</span><span class="dv">36</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>null_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">0</span><span class="sc">:</span>n, <span class="at">prob =</span> <span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span>n, <span class="at">size =</span> n, <span class="at">prob =</span> p))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(null_df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> prob)) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="fu">expression</span>(<span class="fu">P</span>(X <span class="sc">==</span> x))) <span class="sc">+</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="quiz-m1-synthesis_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="480"></p>
+<figcaption>Null distribution: dice sum 7 or 11, n = 25, p = 8/36 under H0</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ol type="1">
+<li>On the plot (or a printout), add a <strong>vertical line</strong> at <span class="math inline">\(x = 2\)</span> and <strong>shade</strong> the p-value region (both tails (two-sided)).</li>
+<li>p-value = <span class="math inline">\(P(X \leq 2) + P(X \geq 9)\)</span> under <span class="math inline">\(H_0\)</span> is <strong>small</strong> or <strong>large</strong>?</li>
+<li>Conclusion in context (one sentence).</li>
+</ol>
+</section>
+<section id="c4.-gym-use" class="level3">
+<h3 class="anchored" data-anchor-id="c4.-gym-use">C4. Gym use</h3>
+<p><strong>Research question:</strong> Do more than 20% of students at our school use the gym at least once per week?</p>
+<p><strong>Parameter:</strong> <span class="math inline">\(p\)</span> = proportion of students who use the gym at least once per week.</p>
+<p><strong>Hypotheses:</strong> <span class="math inline">\(H_0: p = 0.20\)</span> vs <span class="math inline">\(H_a: p &gt; 0.20\)</span>. Under <span class="math inline">\(H_0\)</span>, use <span class="math inline">\(n = 25\)</span> and the null value of <span class="math inline">\(p\)</span> shown in the R chunk.</p>
+<p><strong>Data:</strong> observed <span class="math inline">\(x = 5\)</span>.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.20</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>null_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">0</span><span class="sc">:</span>n, <span class="at">prob =</span> <span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span>n, <span class="at">size =</span> n, <span class="at">prob =</span> p))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(null_df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> prob)) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="fu">expression</span>(<span class="fu">P</span>(X <span class="sc">==</span> x))) <span class="sc">+</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="quiz-m1-synthesis_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="480"></p>
+<figcaption>Null distribution: gym use, n = 25, p = 0.20 under H0</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<ol type="1">
+<li>On the plot (or a printout), add a <strong>vertical line</strong> at <span class="math inline">\(x = 5\)</span> and <strong>shade</strong> the p-value region (right tail).</li>
+<li>p-value = <span class="math inline">\(P(X \geq 5 \mid H_0)\)</span> is <strong>small</strong> or <strong>large</strong>?</li>
+<li>Conclusion in context (one sentence).</li>
+</ol>
+<div class="{.content-visible-when-format=&quot;html&quot;}">
+<details>
+<summary>
+Click to reveal answers — Section C — Null plots: mark data and shade p-value (Read 2 §3)
+</summary>
+<ol type="1">
+<li><p>Shade bars <span class="math inline">\(x\geq 6\)</span>; <strong>small</strong> (about 0.04); reject <span class="math inline">\(H_0\)</span> — evidence proportion at school <strong>exceeds</strong> 10%.</p></li>
+<li><p>Shade <span class="math inline">\(x\leq 3\)</span>; <strong>large</strong> (about 0.5); <strong>fail to reject</strong> — data consistent with 15% defect rate.</p></li>
+<li><p>Shade <span class="math inline">\(x\leq 2\)</span> and <span class="math inline">\(x\geq 9\)</span>; typically <strong>large</strong>; <strong>fail to reject</strong> fair-dice proportion.</p></li>
+<li><p>Shade <span class="math inline">\(x\geq 5\)</span>; <strong>large</strong> (about 0.5); <strong>fail to reject</strong> — no strong evidence share exceeds 20%.</p></li>
+</ol>
+</details>
+</div>
+<div class="{.content-visible-when-format=&quot;pdf&quot;}">
+<div style="page-break-after: always;"></div>
+<section id="answer-key-section-c-null-plots-mark-data-and-shade-p-value-read-2-3" class="level4">
+<h4 class="anchored" data-anchor-id="answer-key-section-c-null-plots-mark-data-and-shade-p-value-read-2-3">Answer key — Section C — Null plots: mark data and shade p-value (Read 2 §3)</h4>
+<ol type="1">
+<li><p>Shade bars <span class="math inline">\(x\geq 6\)</span>; <strong>small</strong> (about 0.04); reject <span class="math inline">\(H_0\)</span> — evidence proportion at school <strong>exceeds</strong> 10%.</p></li>
+<li><p>Shade <span class="math inline">\(x\leq 3\)</span>; <strong>large</strong> (about 0.5); <strong>fail to reject</strong> — data consistent with 15% defect rate.</p></li>
+<li><p>Shade <span class="math inline">\(x\leq 2\)</span> and <span class="math inline">\(x\geq 9\)</span>; typically <strong>large</strong>; <strong>fail to reject</strong> fair-dice proportion.</p></li>
+<li><p>Shade <span class="math inline">\(x\geq 5\)</span>; <strong>large</strong> (about 0.5); <strong>fail to reject</strong> — no strong evidence share exceeds 20%.</p></li>
+</ol>
+</section>
+</div>
+<hr>
+</section>
+</section>
+<section id="section-d-test-workflow-and-one--vs-two-sided-read-2-3" class="level2">
+<h2 class="anchored" data-anchor-id="section-d-test-workflow-and-one--vs-two-sided-read-2-3">Section D — Test workflow and one- vs two-sided (Read 2 §3)</h2>
+<section id="d1.-order-the-steps" class="level3">
+<h3 class="anchored" data-anchor-id="d1.-order-the-steps">D1. Order the steps</h3>
+<p>Number these binomial-test steps <strong>1–4</strong> in order:</p>
+<ul>
+<li><strong>(A)</strong> Verify the four BRP conditions.</li>
+<li><strong>(B)</strong> State research question, parameter <span class="math inline">\(p\)</span>, <span class="math inline">\(H_0\)</span>, <span class="math inline">\(H_a\)</span>, and <span class="math inline">\(n\)</span>, <span class="math inline">\(p\)</span> under <span class="math inline">\(H_0\)</span>.</li>
+<li><strong>(C)</strong> Plot null distribution (<span class="math inline">\(x\)</span> vs <span class="math inline">\(P(X=x)\)</span> under <span class="math inline">\(H_0\)</span>).</li>
+<li><strong>(D)</strong> Collect <span class="math inline">\(x\)</span>, add observed value to plot, shade p-value region, compute p-value, conclude.</li>
+</ul>
+</section>
+<section id="d2.-one--vs-two-sided-shading" class="level3">
+<h3 class="anchored" data-anchor-id="d2.-one--vs-two-sided-shading">D2. One- vs two-sided shading</h3>
+<ol type="1">
+<li>One-sided <span class="math inline">\(H_a\)</span> (e.g.&nbsp;<span class="math inline">\(p&gt;0.2\)</span>): shade <strong>one tail</strong> or <strong>both tails</strong>?</li>
+<li>Two-sided <span class="math inline">\(H_a\)</span> (e.g.&nbsp;<span class="math inline">\(p\neq 8/36\)</span>): shade <strong>one tail</strong> or <strong>both tails</strong>?</li>
+</ol>
+<div class="{.content-visible-when-format=&quot;html&quot;}">
+<details>
+<summary>
+Click to reveal answers — Section D — Test workflow and one- vs two-sided (Read 2 §3)
+</summary>
+<ol type="1">
+<li><p>1=B, 2=A, 3=C, 4=D.</p></li>
+<li><ol type="1">
+<li><strong>One tail</strong> (direction of <span class="math inline">\(H_a\)</span>). 2. <strong>Both tails</strong>.</li>
+</ol></li>
+</ol>
+</details>
+</div>
+<div class="{.content-visible-when-format=&quot;pdf&quot;}">
+<div style="page-break-after: always;"></div>
+<section id="answer-key-section-d-test-workflow-and-one--vs-two-sided-read-2-3" class="level4">
+<h4 class="anchored" data-anchor-id="answer-key-section-d-test-workflow-and-one--vs-two-sided-read-2-3">Answer key — Section D — Test workflow and one- vs two-sided (Read 2 §3)</h4>
+<ol type="1">
+<li><p>1=B, 2=A, 3=C, 4=D.</p></li>
+<li><ol type="1">
+<li><strong>One tail</strong> (direction of <span class="math inline">\(H_a\)</span>). 2. <strong>Both tails</strong>.</li>
+</ol></li>
+</ol>
+</section>
+</div>
+<hr>
+</section>
+</section>
+<section id="section-e-binomial-r-and-ggplot-after-demo-lab" class="level2">
+<h2 class="anchored" data-anchor-id="section-e-binomial-r-and-ggplot-after-demo-lab">Section E — Binomial R and ggplot (after demo lab)</h2>
+<section id="e1.-dbinom" class="level3">
+<h3 class="anchored" data-anchor-id="e1.-dbinom">E1. <code>dbinom</code></h3>
+<p>One line: <span class="math inline">\(P(X=5)\)</span> when <span class="math inline">\(X \sim \text{Binomial}(10, 0.4)\)</span>. Store in <code>prob_five</code>.</p>
+</section>
+<section id="e2.-pbinom-lower-tail" class="level3">
+<h3 class="anchored" data-anchor-id="e2.-pbinom-lower-tail">E2. <code>pbinom</code> lower tail</h3>
+<p>One line: <span class="math inline">\(P(X \leq 3)\)</span> for the same distribution. Store in <code>prob_at_most_3</code>.</p>
+</section>
+<section id="e3.-pbinom-upper-tail" class="level3">
+<h3 class="anchored" data-anchor-id="e3.-pbinom-upper-tail">E3. <code>pbinom</code> upper tail</h3>
+<p>One line: <span class="math inline">\(P(X &gt; 2)\)</span> using <code>lower.tail = FALSE</code>. Store in <code>prob_more_than_2</code>.</p>
+</section>
+<section id="e4.-rbinom" class="level3">
+<h3 class="anchored" data-anchor-id="e4.-rbinom">E4. <code>rbinom</code></h3>
+<p>One line: simulate 1000 values from <span class="math inline">\(\text{Binomial}(8, 0.2)\)</span>. Store in <code>sims</code>.</p>
+</section>
+<section id="e5.-estimate-from-simulation" class="level3">
+<h3 class="anchored" data-anchor-id="e5.-estimate-from-simulation">E5. Estimate from simulation</h3>
+<p>Using <code>sims</code> from E4, one line to estimate <span class="math inline">\(P(X \leq 2)\)</span>. Store in <code>p_est</code>.</p>
+</section>
+<section id="e6.-aes-in-ggplot2" class="level3">
+<h3 class="anchored" data-anchor-id="e6.-aes-in-ggplot2">E6. <code>aes()</code> in ggplot2</h3>
+<p>What does <code>aes()</code> do? Choose the best answer:</p>
+<ol type="a">
+<li>Creates the axes.<br>
+</li>
+<li>Maps variables to visual properties (x, y, color, fill).<br>
+</li>
+<li>Chooses the geometry (<code>geom_col</code>, etc.).<br>
+</li>
+<li>Defines the data frame.</li>
+</ol>
+</section>
+<section id="e7.-null-bar-plot-with-geom_col" class="level3">
+<h3 class="anchored" data-anchor-id="e7.-null-bar-plot-with-geom_col">E7. Null bar plot with <code>geom_col</code></h3>
+<p>Fill in blanks using: <code>0:10</code> | <code>dbinom(0:10, size = 10, prob = 0.4)</code> | <code>x</code> | <code>prob</code></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> _______, <span class="at">prob =</span> _______)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> _______, <span class="at">y =</span> _______)) <span class="sc">+</span> <span class="fu">geom_col</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="{.content-visible-when-format=&quot;html&quot;}">
+<details>
+<summary>
+Click to reveal answers — Section E — Binomial R and ggplot (after demo lab)
+</summary>
+<ol type="1">
+<li><p><code>prob_five &lt;- dbinom(5, size = 10, prob = 0.4)</code></p></li>
+<li><p><code>prob_at_most_3 &lt;- pbinom(3, size = 10, prob = 0.4)</code></p></li>
+<li><p><code>prob_more_than_2 &lt;- pbinom(2, size = 10, prob = 0.4, lower.tail = FALSE)</code></p></li>
+<li><p><code>sims &lt;- rbinom(1000, size = 8, prob = 0.2)</code></p></li>
+<li><p><code>p_est &lt;- mean(sims &lt;= 2)</code></p></li>
+<li><p><strong>(b)</strong> — maps variables to visual properties.</p></li>
+<li><p><code>df &lt;- data.frame(x = 0:10, prob = dbinom(0:10, size = 10, prob = 0.4))</code> then <code>aes(x = x, y = prob)</code>.</p></li>
+</ol>
+</details>
+</div>
+<div class="{.content-visible-when-format=&quot;pdf&quot;}">
+<div style="page-break-after: always;"></div>
+<section id="answer-key-section-e-binomial-r-and-ggplot-after-demo-lab" class="level4">
+<h4 class="anchored" data-anchor-id="answer-key-section-e-binomial-r-and-ggplot-after-demo-lab">Answer key — Section E — Binomial R and ggplot (after demo lab)</h4>
+<ol type="1">
+<li><p><code>prob_five &lt;- dbinom(5, size = 10, prob = 0.4)</code></p></li>
+<li><p><code>prob_at_most_3 &lt;- pbinom(3, size = 10, prob = 0.4)</code></p></li>
+<li><p><code>prob_more_than_2 &lt;- pbinom(2, size = 10, prob = 0.4, lower.tail = FALSE)</code></p></li>
+<li><p><code>sims &lt;- rbinom(1000, size = 8, prob = 0.2)</code></p></li>
+<li><p><code>p_est &lt;- mean(sims &lt;= 2)</code></p></li>
+<li><p><strong>(b)</strong> — maps variables to visual properties.</p></li>
+<li><p><code>df &lt;- data.frame(x = 0:10, prob = dbinom(0:10, size = 10, prob = 0.4))</code> then <code>aes(x = x, y = prob)</code>.</p></li>
+</ol>
+</section>
+</div>
+<hr>
+</section>
+</section>
+<section id="section-f-r-basics-module-0-demo-exercise" class="level2">
+<h2 class="anchored" data-anchor-id="section-f-r-basics-module-0-demo-exercise">Section F — R basics (Module 0 demo / exercise)</h2>
+<section id="f1.-arithmetic" class="level3">
+<h3 class="anchored" data-anchor-id="f1.-arithmetic">F1. Arithmetic</h3>
+<p>One line of R that produces <strong>10</strong> by adding two numbers.</p>
+</section>
+<section id="f2.-multiplication" class="level3">
+<h3 class="anchored" data-anchor-id="f2.-multiplication">F2. Multiplication</h3>
+<p>One line of R that produces <strong>6</strong> by multiplying two numbers.</p>
+</section>
+<section id="f3.-assignment-and-sqrt" class="level3">
+<h3 class="anchored" data-anchor-id="f3.-assignment-and-sqrt">F3. Assignment and <code>sqrt</code></h3>
+<p>Assign <strong>16</strong> to <code>x</code>, then compute <span class="math inline">\(\sqrt{x}\)</span>.</p>
+</section>
+<section id="f4.-vector" class="level3">
+<h3 class="anchored" data-anchor-id="f4.-vector">F4. Vector</h3>
+<p>Create vector <code>numbers</code> with values 2, 4, 6, 8, 10.</p>
+</section>
+<section id="f5.-indexing" class="level3">
+<h3 class="anchored" data-anchor-id="f5.-indexing">F5. Indexing</h3>
+<p>Using <code>numbers</code>, return the <strong>third</strong> element.</p>
+</section>
+<section id="f6.-vector-arithmetic" class="level3">
+<h3 class="anchored" data-anchor-id="f6.-vector-arithmetic">F6. Vector arithmetic</h3>
+<p>Create <code>numbers_plus_one</code> by adding 1 to every element of <code>numbers</code>.</p>
+</section>
+<section id="f7.-mean" class="level3">
+<h3 class="anchored" data-anchor-id="f7.-mean">F7. Mean</h3>
+<p>Compute the mean of <code>numbers</code>.</p>
+</section>
+<section id="f8.-count-with-and-sum" class="level3">
+<h3 class="anchored" data-anchor-id="f8.-count-with-and-sum">F8. Count with <code>==</code> and <code>sum</code></h3>
+<p>Given <code>flips &lt;- c("H","T","H","H","T","H")</code> and <code>heads &lt;- c("H","H","H","H","H","H")</code>, count how many <code>"H"</code> appear using <code>==</code> and <code>sum()</code>.</p>
+<div class="{.content-visible-when-format=&quot;html&quot;}">
+<details>
+<summary>
+Click to reveal answers — Section F — R basics (Module 0 demo / exercise)
+</summary>
+<ol type="1">
+<li><p>Any valid addition, e.g.&nbsp;<code>3 + 7</code> or <code>5 + 5</code>.</p></li>
+<li><p>e.g.&nbsp;<code>2 * 3</code>.</p></li>
+<li><p><code>x &lt;- 16</code> then <code>sqrt(x)</code> (two lines or one).</p></li>
+<li><p><code>numbers &lt;- c(2, 4, 6, 8, 10)</code></p></li>
+<li><p><code>numbers[3]</code></p></li>
+<li><p><code>numbers_plus_one &lt;- numbers + 1</code></p></li>
+<li><p><code>mean(numbers)</code></p></li>
+<li><p><code>sum(flips == heads)</code> or <code>sum(flips == "H")</code> → 4.</p></li>
+</ol>
+</details>
+</div>
+<div class="{.content-visible-when-format=&quot;pdf&quot;}">
+<div style="page-break-after: always;"></div>
+<section id="answer-key-section-f-r-basics-module-0-demo-exercise" class="level4">
+<h4 class="anchored" data-anchor-id="answer-key-section-f-r-basics-module-0-demo-exercise">Answer key — Section F — R basics (Module 0 demo / exercise)</h4>
+<ol type="1">
+<li><p>Any valid addition, e.g.&nbsp;<code>3 + 7</code> or <code>5 + 5</code>.</p></li>
+<li><p>e.g.&nbsp;<code>2 * 3</code>.</p></li>
+<li><p><code>x &lt;- 16</code> then <code>sqrt(x)</code> (two lines or one).</p></li>
+<li><p><code>numbers &lt;- c(2, 4, 6, 8, 10)</code></p></li>
+<li><p><code>numbers[3]</code></p></li>
+<li><p><code>numbers_plus_one &lt;- numbers + 1</code></p></li>
+<li><p><code>mean(numbers)</code></p></li>
+<li><p><code>sum(flips == heads)</code> or <code>sum(flips == "H")</code> → 4.</p></li>
+</ol>
+</section>
+</div>
+<hr>
+</section>
+</section>
+<section id="section-g-vectors-matrices-loops-demo-section-b-exercise-part-i" class="level2">
+<h2 class="anchored" data-anchor-id="section-g-vectors-matrices-loops-demo-section-b-exercise-part-i">Section G — Vectors, matrices, loops (demo Section B / exercise Part I)</h2>
+<section id="g1.-types-and-class" class="level3">
+<h3 class="anchored" data-anchor-id="g1.-types-and-class">G1. Types and <code>class()</code></h3>
+<p>Create <code>x_num &lt;- 0</code>, <code>x_int &lt;- 0L</code>, and print the class of each.</p>
+</section>
+<section id="g2.-vector-and-length" class="level3">
+<h3 class="anchored" data-anchor-id="g2.-vector-and-length">G2. Vector and length</h3>
+<p>Create <code>v &lt;- c(2,4,6,8,10)</code>, print <code>length(v)</code>, create <code>v_plus_one &lt;- v + 1</code>.</p>
+</section>
+<section id="g3.-bracketing" class="level3">
+<h3 class="anchored" data-anchor-id="g3.-bracketing">G3. Bracketing</h3>
+<p>With <code>v &lt;- c(2,4,6,8,10)</code>, write code for: (1) 3rd element; (2) elements 2–4; (3) all except 3rd; (4) elements <span class="math inline">\(&gt;5\)</span>.</p>
+</section>
+<section id="g4.-matrix-and-dim" class="level3">
+<h3 class="anchored" data-anchor-id="g4.-matrix-and-dim">G4. Matrix and <code>dim()</code></h3>
+<p>Create 2×3 matrix <code>m</code> from <code>1:6</code> (by column), print <code>dim(m)</code>, extract row 2 col 1, first row, second column.</p>
+</section>
+<section id="g5.-for-loop-squares" class="level3">
+<h3 class="anchored" data-anchor-id="g5.-for-loop-squares">G5. <code>for</code> loop squares</h3>
+<p>Use a <code>for</code> loop so <code>squares</code> contains <span class="math inline">\(1^2,2^2,\ldots,5^2\)</span>.</p>
+</section>
+<section id="g6.-simulate-ptexteven-die" class="level3">
+<h3 class="anchored" data-anchor-id="g6.-simulate-ptexteven-die">G6. Simulate <span class="math inline">\(P(\text{even die})\)</span></h3>
+<p>Estimate <span class="math inline">\(P(\text{even die})\)</span> with <code>n &lt;- 10000</code>, <code>rolls &lt;- sample(1:6, size=n, replace=TRUE)</code>, and <code>mean(...)</code>. Name objects <code>n</code>, <code>rolls</code>, <code>p_even</code>.</p>
+<div class="{.content-visible-when-format=&quot;html&quot;}">
+<details>
+<summary>
+Click to reveal answers — Section G — Vectors, matrices, loops (demo Section B / exercise Part I)
+</summary>
+<ol type="1">
+<li><p><code>x_num &lt;- 0</code>; <code>x_int &lt;- 0L</code>; <code>class(x_num)</code>; <code>class(x_int)</code>.</p></li>
+<li><p>As stated; <code>length(v)</code> returns 5.</p></li>
+<li><p><code>v[3]</code>; <code>v[2:4]</code>; <code>v[-3]</code>; <code>v[v &gt; 5]</code>.</p></li>
+<li><p><code>m &lt;- matrix(1:6, nrow=2, ncol=3)</code>; <code>dim(m)</code>; <code>m[2,1]</code>; <code>m[1,]</code>; <code>m[,2]</code>.</p></li>
+<li><p><code>squares &lt;- numeric(5)</code>; <code>for (i in 1:5) squares[i] &lt;- i^2</code> (or <code>squares &lt;- i^2</code> inside loop).</p></li>
+<li><p><code>p_even &lt;- mean(rolls %% 2 == 0)</code> or <code>mean(rolls %in% c(2,4,6))</code>.</p></li>
+</ol>
+</details>
+</div>
+<div class="{.content-visible-when-format=&quot;pdf&quot;}">
+<div style="page-break-after: always;"></div>
+<section id="answer-key-section-g-vectors-matrices-loops-demo-section-b-exercise-part-i" class="level4">
+<h4 class="anchored" data-anchor-id="answer-key-section-g-vectors-matrices-loops-demo-section-b-exercise-part-i">Answer key — Section G — Vectors, matrices, loops (demo Section B / exercise Part I)</h4>
+<ol type="1">
+<li><p><code>x_num &lt;- 0</code>; <code>x_int &lt;- 0L</code>; <code>class(x_num)</code>; <code>class(x_int)</code>.</p></li>
+<li><p>As stated; <code>length(v)</code> returns 5.</p></li>
+<li><p><code>v[3]</code>; <code>v[2:4]</code>; <code>v[-3]</code>; <code>v[v &gt; 5]</code>.</p></li>
+<li><p><code>m &lt;- matrix(1:6, nrow=2, ncol=3)</code>; <code>dim(m)</code>; <code>m[2,1]</code>; <code>m[1,]</code>; <code>m[,2]</code>.</p></li>
+<li><p><code>squares &lt;- numeric(5)</code>; <code>for (i in 1:5) squares[i] &lt;- i^2</code> (or <code>squares &lt;- i^2</code> inside loop).</p></li>
+<li><p><code>p_even &lt;- mean(rolls %% 2 == 0)</code> or <code>mean(rolls %in% c(2,4,6))</code>.</p></li>
+</ol>
+</section>
+</div>
+<hr>
+</section>
+</section>
+<section id="section-h-simulation-r-conditional-demo-exercise-part-ii" class="level2">
+<h2 class="anchored" data-anchor-id="section-h-simulation-r-conditional-demo-exercise-part-ii">Section H — Simulation R (conditional demo / exercise Part II)</h2>
+<section id="h1.-rep-for-balls" class="level3">
+<h3 class="anchored" data-anchor-id="h1.-rep-for-balls">H1. <code>rep()</code> for balls</h3>
+<p>Create vector <code>balls</code>: 5 red and 2 white, labels <code>"R"</code> and <code>"W"</code>.</p>
+</section>
+<section id="h2.-simulate-without-replacement" class="level3">
+<h3 class="anchored" data-anchor-id="h2.-simulate-without-replacement">H2. Simulate without replacement</h3>
+<p>Bag: 3 red, 3 white. Simulate 10,000 draws of 2 without replacement; success = white first, red second; estimate with <code>mean(successes)</code>.</p>
+</section>
+<section id="h3.-which" class="level3">
+<h3 class="anchored" data-anchor-id="h3.-which">H3. <code>which()</code></h3>
+<p><code>successes</code> is length 10,000 (1=success, 0=failure). One line: which replicate numbers had success?</p>
+</section>
+<section id="h4.-modify-if-for-exactly-one-red" class="level3">
+<h3 class="anchored" data-anchor-id="h4.-modify-if-for-exactly-one-red">H4. Modify <code>if</code> for exactly one red</h3>
+<p>Change the condition so the loop estimates <span class="math inline">\(P(\text{exactly one red})\)</span> — (R,W) or (W,R) — using <code>|</code>.</p>
+</section>
+<section id="h5.-sample-with-prob" class="level3">
+<h3 class="anchored" data-anchor-id="h5.-sample-with-prob">H5. <code>sample()</code> with <code>prob</code></h3>
+<p>Simulate 10,000 people: 70% like eggnog, 30% do not. Use <code>prob</code> in <code>sample()</code>; store in <code>eggnog</code>.</p>
+</section>
+<section id="h6.-joint-probability-from-simulation" class="level3">
+<h3 class="anchored" data-anchor-id="h6.-joint-probability-from-simulation">H6. Joint probability from simulation</h3>
+<p>Vectors <code>disease</code> and <code>test_result</code> (0/1). One line to estimate <span class="math inline">\(P(\text{disease and positive})\)</span> using <code>sum()</code> and <code>&amp;</code>.</p>
+<div class="{.content-visible-when-format=&quot;html&quot;}">
+<details>
+<summary>
+Click to reveal answers — Section H — Simulation R (conditional demo / exercise Part II)
+</summary>
+<ol type="1">
+<li><p><code>balls &lt;- rep(c("R","W"), c(5,2))</code></p></li>
+<li><p>Loop or replicate with <code>sample(balls, 2, replace=FALSE)</code> and indicator; <code>mean(successes)</code> ≈ <span class="math inline">\(1/7\)</span>.</p></li>
+<li><p><code>which(successes == 1)</code></p></li>
+<li><p>Replace <code>if</code> with e.g.&nbsp;<code>if (sum(draw == "R") == 1)</code> or <code>(draw[1]=="R" &amp; draw[2]=="W") | (draw[1]=="W" &amp; draw[2]=="R")</code>.</p></li>
+<li><p><code>eggnog &lt;- sample(c("yes","no"), 10000, replace=TRUE, prob=c(0.7,0.3))</code></p></li>
+<li><p><code>sum(disease == 1 &amp; test_result == 1) / length(disease)</code> or <code>mean(disease == 1 &amp; test_result == 1)</code>.</p></li>
+</ol>
+</details>
+</div>
+<div class="{.content-visible-when-format=&quot;pdf&quot;}">
+<div style="page-break-after: always;"></div>
+<section id="answer-key-section-h-simulation-r-conditional-demo-exercise-part-ii" class="level4">
+<h4 class="anchored" data-anchor-id="answer-key-section-h-simulation-r-conditional-demo-exercise-part-ii">Answer key — Section H — Simulation R (conditional demo / exercise Part II)</h4>
+<ol type="1">
+<li><p><code>balls &lt;- rep(c("R","W"), c(5,2))</code></p></li>
+<li><p>Loop or replicate with <code>sample(balls, 2, replace=FALSE)</code> and indicator; <code>mean(successes)</code> ≈ <span class="math inline">\(1/7\)</span>.</p></li>
+<li><p><code>which(successes == 1)</code></p></li>
+<li><p>Replace <code>if</code> with e.g.&nbsp;<code>if (sum(draw == "R") == 1)</code> or <code>(draw[1]=="R" &amp; draw[2]=="W") | (draw[1]=="W" &amp; draw[2]=="R")</code>.</p></li>
+<li><p><code>eggnog &lt;- sample(c("yes","no"), 10000, replace=TRUE, prob=c(0.7,0.3))</code></p></li>
+<li><p><code>sum(disease == 1 &amp; test_result == 1) / length(disease)</code> or <code>mean(disease == 1 &amp; test_result == 1)</code>.</p></li>
+</ol>
+</section>
+</div>
+<hr>
+</section>
+</section>
+<section id="section-i-assumptions-and-interpretation-new" class="level2">
+<h2 class="anchored" data-anchor-id="section-i-assumptions-and-interpretation-new">Section I — Assumptions and interpretation (new)</h2>
+<section id="i1.-p-value-meaning" class="level3">
+<h3 class="anchored" data-anchor-id="i1.-p-value-meaning">I1. p-value meaning</h3>
+<p>Which statement is <strong>incorrect</strong>?</p>
+<ol type="a">
+<li>The p-value assumes <span class="math inline">\(H_0\)</span> is true when we compute it.<br>
+</li>
+<li>A small p-value means the observed data would be rare if <span class="math inline">\(H_0\)</span> were true.<br>
+</li>
+<li>The p-value is the probability that <span class="math inline">\(H_0\)</span> is true.<br>
+</li>
+<li>We shade tail(s) matching the direction of <span class="math inline">\(H_a\)</span>.</li>
+</ol>
+</section>
+<section id="i2.-which-brp-condition-fails" class="level3">
+<h3 class="anchored" data-anchor-id="i2.-which-brp-condition-fails">I2. Which BRP condition fails?</h3>
+<p>You flip the same coin 25 times but the coin is <strong>bent more after each flip</strong> (success probability changes). Which BRP condition fails?</p>
+</section>
+<section id="i3.-choosing-pbinom-for-h_a-p-0.2" class="level3">
+<h3 class="anchored" data-anchor-id="i3.-choosing-pbinom-for-h_a-p-0.2">I3. Choosing <code>pbinom</code> for <span class="math inline">\(H_a: p &gt; 0.2\)</span></h3>
+<p>Observed <span class="math inline">\(x=8\)</span>, <span class="math inline">\(n=25\)</span>, <span class="math inline">\(p=0.2\)</span> under <span class="math inline">\(H_0\)</span>, <span class="math inline">\(H_a: p&gt;0.2\)</span>. Which line gives the p-value?</p>
+<ol type="a">
+<li><code>pbinom(8, 25, 0.2)</code><br>
+</li>
+<li><code>pbinom(7, 25, 0.2, lower.tail=FALSE)</code><br>
+</li>
+<li><code>pbinom(8, 25, 0.2, lower.tail=FALSE)</code></li>
+</ol>
+</section>
+<section id="i4.-purpose-of-geom_vline" class="level3">
+<h3 class="anchored" data-anchor-id="i4.-purpose-of-geom_vline">I4. Purpose of <code>geom_vline</code></h3>
+<p>On a null binomial bar plot, what does <code>geom_vline(xintercept = x_obs)</code> show?</p>
+</section>
+<section id="i5.-dbinom-vs-pbinom" class="level3">
+<h3 class="anchored" data-anchor-id="i5.-dbinom-vs-pbinom">I5. <code>dbinom</code> vs <code>pbinom</code></h3>
+<p>When plotting the null distribution with <code>geom_col</code>, which function gives bar <strong>heights</strong> <span class="math inline">\(P(X=x)\)</span> for each <span class="math inline">\(x\)</span>?</p>
+</section>
+<section id="i6.-conclusion-language" class="level3">
+<h3 class="anchored" data-anchor-id="i6.-conclusion-language">I6. Conclusion language</h3>
+<p>p-value is 0.03 for <span class="math inline">\(H_a: p&gt;0.10\)</span>. Write one sentence conclusion <strong>in context</strong> (not “accept/reject” jargon alone).</p>
+<div class="{.content-visible-when-format=&quot;html&quot;}">
+<details>
+<summary>
+Click to reveal answers — Section I — Assumptions and interpretation (new)
+</summary>
+<ol type="1">
+<li><p><strong>(c)</strong> is incorrect — p-value is about <strong>data</strong> extremeness, not <span class="math inline">\(P(H_0\text{ true})\)</span>.</p></li>
+<li><p><strong>Fixed <span class="math inline">\(p\)</span></strong> — success probability is not the same on every trial.</p></li>
+<li><p><strong>(b)</strong> — <span class="math inline">\(P(X\geq 8)=P(X&gt;7)\)</span> = <code>pbinom(7, 25, 0.2, lower.tail=FALSE)</code>.</p></li>
+<li><p>A vertical line at your <strong>observed count</strong> <span class="math inline">\(x\)</span> so you can compare data to the null distribution.</p></li>
+<li><p><strong><code>dbinom</code></strong> — one probability per bar; <strong><code>pbinom</code></strong> gives cumulative probabilities.</p></li>
+<li><p>Example: If the true proportion were 10%, data this extreme would occur only about 3% of the time — evidence the proportion is <strong>greater than</strong> 10%.</p></li>
+</ol>
+</details>
+</div>
+<div class="{.content-visible-when-format=&quot;pdf&quot;}">
+<div style="page-break-after: always;"></div>
+<section id="answer-key-section-i-assumptions-and-interpretation-new" class="level4">
+<h4 class="anchored" data-anchor-id="answer-key-section-i-assumptions-and-interpretation-new">Answer key — Section I — Assumptions and interpretation (new)</h4>
+<ol type="1">
+<li><p><strong>(c)</strong> is incorrect — p-value is about <strong>data</strong> extremeness, not <span class="math inline">\(P(H_0\text{ true})\)</span>.</p></li>
+<li><p><strong>Fixed <span class="math inline">\(p\)</span></strong> — success probability is not the same on every trial.</p></li>
+<li><p><strong>(b)</strong> — <span class="math inline">\(P(X\geq 8)=P(X&gt;7)\)</span> = <code>pbinom(7, 25, 0.2, lower.tail=FALSE)</code>.</p></li>
+<li><p>A vertical line at your <strong>observed count</strong> <span class="math inline">\(x\)</span> so you can compare data to the null distribution.</p></li>
+<li><p><strong><code>dbinom</code></strong> — one probability per bar; <strong><code>pbinom</code></strong> gives cumulative probabilities.</p></li>
+<li><p>Example: If the true proportion were 10%, data this extreme would occur only about 3% of the time — evidence the proportion is <strong>greater than</strong> 10%.</p></li>
+</ol>
+</section>
+</div>
+<hr>
+
+
+<!-- -->
+
+</section>
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>Creative Commons Attribution-NonCommercial 4.0 International<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">(View License)</a></div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Module 1 — Synthesis Quiz"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Question bank · After exercise lab · open notes · two attempts"</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Module 1, Synthesis quiz</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>**Readings:** <span class="co">[</span><span class="ot">Read 0</span><span class="co">](../lectures/module-1-read-00)</span>, <span class="co">[</span><span class="ot">Read 1</span><span class="co">](../lectures/module-1-read-01)</span>, <span class="co">[</span><span class="ot">Read 2</span><span class="co">](../lectures/module-1-read-02)</span>  </span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>**Labs:** <span class="co">[</span><span class="ot">Demo</span><span class="co">](../labs/module-1-lab-demo)</span>, <span class="co">[</span><span class="ot">Exercise</span><span class="co">](../labs/module-1-lab-exercise)</span>  </span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>**Canvas:** Synthesis quiz (Module 1) · **two attempts**, highest score counts</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>Full integration: binomial test workflow, **all Module 1 R practice**, plus interpretation items. Work sections in order — earlier sections match Read 2; R sections match the demo and exercise labs.</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Instructions</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Open notes (reference sheets + methods map).</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Graph items (Section C):** Run the R chunks to build each null plot; on your copy, add **`geom_vline` at observed $x$** and **shade the p-value region** matching $H_a$.</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Connect every step to <span class="co">[</span><span class="ot">Project 1</span><span class="co">](../projects/project-1)</span>.</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section A — Hypotheses and BRP (Read 2 §1)</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="fu">### A1. ESP hypotheses</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>ESP test: 25 trials, 5 symbols, guess each trial. Let $p$ = probability of a correct guess on one trial.</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Write $H_0$ and $H_a$ in symbols.</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>In words: if $H_0$ is true? If we believe $H_a$?</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a><span class="fu">### A2. ESP BRP conditions</span></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>Same ESP setting (25 trials, open deck, one guess per trial). List the **four BRP conditions** and briefly say why each holds.</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="html"}</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section A — Hypotheses and BRP (Read 2 §1)<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>$H_0: p=0.2$ vs $H_a: p&gt;0.2$. $H_0$: guessing only (no ESP). $H_a$: better than chance.</span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Binary (correct/incorrect); fixed $n=25$; fixed $p=0.2$ under null; independent trials (open deck).</span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="pdf"}</span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section A — Hypotheses and BRP (Read 2 §1)</span></span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>$H_0: p=0.2$ vs $H_a: p&gt;0.2$. $H_0$: guessing only (no ESP). $H_a$: better than chance.</span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Binary (correct/incorrect); fixed $n=25$; fixed $p=0.2$ under null; independent trials (open deck).</span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section B — $n$, $p$, and tail direction (Read 2 §2)</span></span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a><span class="fu">### B1. $n$ and $p$ under $H_0$</span></span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>ESP test (Part A): under $H_0$, what are $n$ and $p$?</span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a><span class="fu">### B2. Observed data and p-value direction</span></span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a>Same test; $H_0: p=0.2$ vs $H_a: p&gt;0.2$. You observe **7** correct out of 25.</span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>What is $x$?</span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Write the p-value as $P(X \geq \ldots)$ or $P(X \leq \ldots)$.</span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Which tail(s) of the null distribution?</span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="html"}</span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section B — $n$, $p$, and tail direction (Read 2 §2)<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>$n=25$; $p=0.2$.</span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>$x=7$; $P(X\geq 7)$; **right tail**.</span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="pdf"}</span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section B — $n$, $p$, and tail direction (Read 2 §2)</span></span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>$n=25$; $p=0.2$.</span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>$x=7$; $P(X\geq 7)$; **right tail**.</span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section C — Null plots: mark data and shade p-value (Read 2 §3)</span></span>
+<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"ggplot2"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>, <span class="at">repos =</span> <span class="st">"https://cloud.r-project.org"</span>)</span>
+<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a>Each plot below shows the **null distribution** ($x$ vs $P(X=x)$ under $H_0$). Plots are **unshaded** — on your copy (print or sketch), add a **vertical line** at the observed $x$ and **shade the p-value region** in the direction of $H_a$.</span>
+<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a>Run the R chunks to reproduce each null distribution in Colab or RStudio (same pattern as <span class="co">[</span><span class="ot">Project 1</span><span class="co">](../projects/project-1)</span> and the <span class="co">[</span><span class="ot">demo lab</span><span class="co">](../labs/module-1-lab-demo)</span>).</span>
+<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a><span class="fu">### C1. Left-handed students</span></span>
+<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a>**Research question:** Is the proportion of left-handed students at our school higher than the national rate of 10%?</span>
+<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a>**Parameter:** $p$ = proportion of students at our school who are left-handed.</span>
+<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a>**Hypotheses:** $H_0: p = 0.10$ vs $H_a: p &gt; 0.10$. Under $H_0$, use $n = 25$ and the null value of $p$ shown in the R chunk.</span>
+<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a>**Data:** observed $x = 6$.</span>
+<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Null distribution: left-handed students, n = 25, p = 0.10 under H0"</span></span>
+<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 5</span></span>
+<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 3</span></span>
+<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.10</span></span>
+<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a>null_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">0</span><span class="sc">:</span>n, <span class="at">prob =</span> <span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span>n, <span class="at">size =</span> n, <span class="at">prob =</span> p))</span>
+<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(null_df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> prob)) <span class="sc">+</span></span>
+<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="fu">expression</span>(<span class="fu">P</span>(X <span class="sc">==</span> x))) <span class="sc">+</span></span>
+<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>On the plot (or a printout), add a **vertical line** at $x = 6$ and **shade** the p-value region (right tail).</span>
+<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>p-value = $P(X \geq 6 \mid H_0)$ is **small** or **large**?</span>
+<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Conclusion in context (one sentence).</span>
+<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a><span class="fu">### C2. Defective items</span></span>
+<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a>**Research question:** Is the proportion of defective items from the new supplier less than 15%?</span>
+<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a>**Parameter:** $p$ = proportion of items from the new supplier that are defective.</span>
+<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a>**Hypotheses:** $H_0: p = 0.15$ vs $H_a: p &lt; 0.15$. Under $H_0$, use $n = 25$ and the null value of $p$ shown in the R chunk.</span>
+<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a>**Data:** observed $x = 3$.</span>
+<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Null distribution: defective items, n = 25, p = 0.15 under H0"</span></span>
+<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 5</span></span>
+<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 3</span></span>
+<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.15</span></span>
+<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a>null_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">0</span><span class="sc">:</span>n, <span class="at">prob =</span> <span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span>n, <span class="at">size =</span> n, <span class="at">prob =</span> p))</span>
+<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(null_df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> prob)) <span class="sc">+</span></span>
+<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="fu">expression</span>(<span class="fu">P</span>(X <span class="sc">==</span> x))) <span class="sc">+</span></span>
+<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>On the plot (or a printout), add a **vertical line** at $x = 3$ and **shade** the p-value region (left tail).</span>
+<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>p-value = $P(X \leq 3 \mid H_0)$ is **small** or **large**?</span>
+<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Conclusion in context (one sentence).</span>
+<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a><span class="fu">### C3. Dice (sum 7 or 11)</span></span>
+<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a>**Research question:** When we roll two dice, is the probability that the sum is 7 or 11 equal to the fair-dice value ($8/36$)?</span>
+<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a>**Parameter:** $p$ = probability that one roll of two dice gives sum 7 or 11.</span>
+<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a>**Hypotheses:** $H_0: p = 8/36$ vs $H_a: p \neq 8/36$. Under $H_0$, use $n = 25$ and the null value of $p$ shown in the R chunk.</span>
+<span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a>**Data:** observed $x = 2$.</span>
+<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Null distribution: dice sum 7 or 11, n = 25, p = 8/36 under H0"</span></span>
+<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 5</span></span>
+<span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 3</span></span>
+<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="dv">8</span><span class="sc">/</span><span class="dv">36</span></span>
+<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a>null_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">0</span><span class="sc">:</span>n, <span class="at">prob =</span> <span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span>n, <span class="at">size =</span> n, <span class="at">prob =</span> p))</span>
+<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(null_df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> prob)) <span class="sc">+</span></span>
+<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="fu">expression</span>(<span class="fu">P</span>(X <span class="sc">==</span> x))) <span class="sc">+</span></span>
+<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>On the plot (or a printout), add a **vertical line** at $x = 2$ and **shade** the p-value region (both tails (two-sided)).</span>
+<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>p-value = $P(X \leq 2) + P(X \geq 9)$ under $H_0$ is **small** or **large**?</span>
+<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Conclusion in context (one sentence).</span>
+<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a><span class="fu">### C4. Gym use</span></span>
+<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a>**Research question:** Do more than 20% of students at our school use the gym at least once per week?</span>
+<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a>**Parameter:** $p$ = proportion of students who use the gym at least once per week.</span>
+<span id="cb7-225"><a href="#cb7-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-226"><a href="#cb7-226" aria-hidden="true" tabindex="-1"></a>**Hypotheses:** $H_0: p = 0.20$ vs $H_a: p &gt; 0.20$. Under $H_0$, use $n = 25$ and the null value of $p$ shown in the R chunk.</span>
+<span id="cb7-227"><a href="#cb7-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-228"><a href="#cb7-228" aria-hidden="true" tabindex="-1"></a>**Data:** observed $x = 5$.</span>
+<span id="cb7-229"><a href="#cb7-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-232"><a href="#cb7-232" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-233"><a href="#cb7-233" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb7-234"><a href="#cb7-234" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb7-235"><a href="#cb7-235" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb7-236"><a href="#cb7-236" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Null distribution: gym use, n = 25, p = 0.20 under H0"</span></span>
+<span id="cb7-237"><a href="#cb7-237" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 5</span></span>
+<span id="cb7-238"><a href="#cb7-238" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 3</span></span>
+<span id="cb7-239"><a href="#cb7-239" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb7-240"><a href="#cb7-240" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.20</span></span>
+<span id="cb7-241"><a href="#cb7-241" aria-hidden="true" tabindex="-1"></a>null_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">0</span><span class="sc">:</span>n, <span class="at">prob =</span> <span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span>n, <span class="at">size =</span> n, <span class="at">prob =</span> p))</span>
+<span id="cb7-242"><a href="#cb7-242" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(null_df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> prob)) <span class="sc">+</span></span>
+<span id="cb7-243"><a href="#cb7-243" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb7-244"><a href="#cb7-244" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="fu">expression</span>(<span class="fu">P</span>(X <span class="sc">==</span> x))) <span class="sc">+</span></span>
+<span id="cb7-245"><a href="#cb7-245" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb7-246"><a href="#cb7-246" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-247"><a href="#cb7-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-248"><a href="#cb7-248" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>On the plot (or a printout), add a **vertical line** at $x = 5$ and **shade** the p-value region (right tail).</span>
+<span id="cb7-249"><a href="#cb7-249" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>p-value = $P(X \geq 5 \mid H_0)$ is **small** or **large**?</span>
+<span id="cb7-250"><a href="#cb7-250" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Conclusion in context (one sentence).</span>
+<span id="cb7-251"><a href="#cb7-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-252"><a href="#cb7-252" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="html"}</span>
+<span id="cb7-253"><a href="#cb7-253" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb7-254"><a href="#cb7-254" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section C — Null plots: mark data and shade p-value (Read 2 §3)<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb7-255"><a href="#cb7-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-256"><a href="#cb7-256" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Shade bars $x\geq 6$; **small** (about 0.04); reject $H_0$ — evidence proportion at school **exceeds** 10%.</span>
+<span id="cb7-257"><a href="#cb7-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-258"><a href="#cb7-258" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Shade $x\leq 3$; **large** (about 0.5); **fail to reject** — data consistent with 15% defect rate.</span>
+<span id="cb7-259"><a href="#cb7-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-260"><a href="#cb7-260" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Shade $x\leq 2$ and $x\geq 9$; typically **large**; **fail to reject** fair-dice proportion.</span>
+<span id="cb7-261"><a href="#cb7-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-262"><a href="#cb7-262" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Shade $x\geq 5$; **large** (about 0.5); **fail to reject** — no strong evidence share exceeds 20%.</span>
+<span id="cb7-263"><a href="#cb7-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-264"><a href="#cb7-264" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb7-265"><a href="#cb7-265" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-266"><a href="#cb7-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-267"><a href="#cb7-267" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="pdf"}</span>
+<span id="cb7-268"><a href="#cb7-268" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb7-269"><a href="#cb7-269" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb7-270"><a href="#cb7-270" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-271"><a href="#cb7-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-272"><a href="#cb7-272" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section C — Null plots: mark data and shade p-value (Read 2 §3)</span></span>
+<span id="cb7-273"><a href="#cb7-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-274"><a href="#cb7-274" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Shade bars $x\geq 6$; **small** (about 0.04); reject $H_0$ — evidence proportion at school **exceeds** 10%.</span>
+<span id="cb7-275"><a href="#cb7-275" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-276"><a href="#cb7-276" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Shade $x\leq 3$; **large** (about 0.5); **fail to reject** — data consistent with 15% defect rate.</span>
+<span id="cb7-277"><a href="#cb7-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-278"><a href="#cb7-278" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Shade $x\leq 2$ and $x\geq 9$; typically **large**; **fail to reject** fair-dice proportion.</span>
+<span id="cb7-279"><a href="#cb7-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-280"><a href="#cb7-280" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Shade $x\geq 5$; **large** (about 0.5); **fail to reject** — no strong evidence share exceeds 20%.</span>
+<span id="cb7-281"><a href="#cb7-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-282"><a href="#cb7-282" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-283"><a href="#cb7-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-284"><a href="#cb7-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-285"><a href="#cb7-285" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb7-286"><a href="#cb7-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-287"><a href="#cb7-287" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section D — Test workflow and one- vs two-sided (Read 2 §3)</span></span>
+<span id="cb7-288"><a href="#cb7-288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-289"><a href="#cb7-289" aria-hidden="true" tabindex="-1"></a><span class="fu">### D1. Order the steps</span></span>
+<span id="cb7-290"><a href="#cb7-290" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-291"><a href="#cb7-291" aria-hidden="true" tabindex="-1"></a>Number these binomial-test steps **1–4** in order:</span>
+<span id="cb7-292"><a href="#cb7-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-293"><a href="#cb7-293" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**(A)** Verify the four BRP conditions.</span>
+<span id="cb7-294"><a href="#cb7-294" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**(B)** State research question, parameter $p$, $H_0$, $H_a$, and $n$, $p$ under $H_0$.</span>
+<span id="cb7-295"><a href="#cb7-295" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**(C)** Plot null distribution ($x$ vs $P(X=x)$ under $H_0$).</span>
+<span id="cb7-296"><a href="#cb7-296" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**(D)** Collect $x$, add observed value to plot, shade p-value region, compute p-value, conclude.</span>
+<span id="cb7-297"><a href="#cb7-297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-298"><a href="#cb7-298" aria-hidden="true" tabindex="-1"></a><span class="fu">### D2. One- vs two-sided shading</span></span>
+<span id="cb7-299"><a href="#cb7-299" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-300"><a href="#cb7-300" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>One-sided $H_a$ (e.g. $p&gt;0.2$): shade **one tail** or **both tails**?</span>
+<span id="cb7-301"><a href="#cb7-301" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Two-sided $H_a$ (e.g. $p\neq 8/36$): shade **one tail** or **both tails**?</span>
+<span id="cb7-302"><a href="#cb7-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-303"><a href="#cb7-303" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="html"}</span>
+<span id="cb7-304"><a href="#cb7-304" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb7-305"><a href="#cb7-305" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section D — Test workflow and one- vs two-sided (Read 2 §3)<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb7-306"><a href="#cb7-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-307"><a href="#cb7-307" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>1=B, 2=A, 3=C, 4=D.</span>
+<span id="cb7-308"><a href="#cb7-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-309"><a href="#cb7-309" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>1. **One tail** (direction of $H_a$). 2. **Both tails**.</span>
+<span id="cb7-310"><a href="#cb7-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-311"><a href="#cb7-311" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb7-312"><a href="#cb7-312" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-313"><a href="#cb7-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-314"><a href="#cb7-314" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="pdf"}</span>
+<span id="cb7-315"><a href="#cb7-315" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb7-316"><a href="#cb7-316" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb7-317"><a href="#cb7-317" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-318"><a href="#cb7-318" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-319"><a href="#cb7-319" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section D — Test workflow and one- vs two-sided (Read 2 §3)</span></span>
+<span id="cb7-320"><a href="#cb7-320" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-321"><a href="#cb7-321" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>1=B, 2=A, 3=C, 4=D.</span>
+<span id="cb7-322"><a href="#cb7-322" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-323"><a href="#cb7-323" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>1. **One tail** (direction of $H_a$). 2. **Both tails**.</span>
+<span id="cb7-324"><a href="#cb7-324" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-325"><a href="#cb7-325" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-326"><a href="#cb7-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-327"><a href="#cb7-327" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-328"><a href="#cb7-328" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb7-329"><a href="#cb7-329" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-330"><a href="#cb7-330" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section E — Binomial R and ggplot (after demo lab)</span></span>
+<span id="cb7-331"><a href="#cb7-331" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-332"><a href="#cb7-332" aria-hidden="true" tabindex="-1"></a><span class="fu">### E1. `dbinom`</span></span>
+<span id="cb7-333"><a href="#cb7-333" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-334"><a href="#cb7-334" aria-hidden="true" tabindex="-1"></a>One line: $P(X=5)$ when $X \sim \text{Binomial}(10, 0.4)$. Store in <span class="in">`prob_five`</span>.</span>
+<span id="cb7-335"><a href="#cb7-335" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-336"><a href="#cb7-336" aria-hidden="true" tabindex="-1"></a><span class="fu">### E2. `pbinom` lower tail</span></span>
+<span id="cb7-337"><a href="#cb7-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-338"><a href="#cb7-338" aria-hidden="true" tabindex="-1"></a>One line: $P(X \leq 3)$ for the same distribution. Store in <span class="in">`prob_at_most_3`</span>.</span>
+<span id="cb7-339"><a href="#cb7-339" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-340"><a href="#cb7-340" aria-hidden="true" tabindex="-1"></a><span class="fu">### E3. `pbinom` upper tail</span></span>
+<span id="cb7-341"><a href="#cb7-341" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-342"><a href="#cb7-342" aria-hidden="true" tabindex="-1"></a>One line: $P(X &gt; 2)$ using <span class="in">`lower.tail = FALSE`</span>. Store in <span class="in">`prob_more_than_2`</span>.</span>
+<span id="cb7-343"><a href="#cb7-343" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-344"><a href="#cb7-344" aria-hidden="true" tabindex="-1"></a><span class="fu">### E4. `rbinom`</span></span>
+<span id="cb7-345"><a href="#cb7-345" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-346"><a href="#cb7-346" aria-hidden="true" tabindex="-1"></a>One line: simulate 1000 values from $\text{Binomial}(8, 0.2)$. Store in <span class="in">`sims`</span>.</span>
+<span id="cb7-347"><a href="#cb7-347" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-348"><a href="#cb7-348" aria-hidden="true" tabindex="-1"></a><span class="fu">### E5. Estimate from simulation</span></span>
+<span id="cb7-349"><a href="#cb7-349" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-350"><a href="#cb7-350" aria-hidden="true" tabindex="-1"></a>Using <span class="in">`sims`</span> from E4, one line to estimate $P(X \leq 2)$. Store in <span class="in">`p_est`</span>.</span>
+<span id="cb7-351"><a href="#cb7-351" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-352"><a href="#cb7-352" aria-hidden="true" tabindex="-1"></a><span class="fu">### E6. `aes()` in ggplot2</span></span>
+<span id="cb7-353"><a href="#cb7-353" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-354"><a href="#cb7-354" aria-hidden="true" tabindex="-1"></a>What does <span class="in">`aes()`</span> do? Choose the best answer:</span>
+<span id="cb7-355"><a href="#cb7-355" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-356"><a href="#cb7-356" aria-hidden="true" tabindex="-1"></a>a) Creates the axes.  </span>
+<span id="cb7-357"><a href="#cb7-357" aria-hidden="true" tabindex="-1"></a>b) Maps variables to visual properties (x, y, color, fill).  </span>
+<span id="cb7-358"><a href="#cb7-358" aria-hidden="true" tabindex="-1"></a>c) Chooses the geometry (<span class="in">`geom_col`</span>, etc.).  </span>
+<span id="cb7-359"><a href="#cb7-359" aria-hidden="true" tabindex="-1"></a>d) Defines the data frame.</span>
+<span id="cb7-360"><a href="#cb7-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-361"><a href="#cb7-361" aria-hidden="true" tabindex="-1"></a><span class="fu">### E7. Null bar plot with `geom_col`</span></span>
+<span id="cb7-362"><a href="#cb7-362" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-363"><a href="#cb7-363" aria-hidden="true" tabindex="-1"></a>Fill in blanks using: <span class="in">`0:10`</span> | <span class="in">`dbinom(0:10, size = 10, prob = 0.4)`</span> | <span class="in">`x`</span> | <span class="in">`prob`</span></span>
+<span id="cb7-364"><a href="#cb7-364" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-365"><a href="#cb7-365" aria-hidden="true" tabindex="-1"></a><span class="in">```r</span></span>
+<span id="cb7-366"><a href="#cb7-366" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> _______, <span class="at">prob =</span> _______)</span>
+<span id="cb7-367"><a href="#cb7-367" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> _______, <span class="at">y =</span> _______)) <span class="sc">+</span> <span class="fu">geom_col</span>()</span>
+<span id="cb7-368"><a href="#cb7-368" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-369"><a href="#cb7-369" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-370"><a href="#cb7-370" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="html"}</span>
+<span id="cb7-371"><a href="#cb7-371" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb7-372"><a href="#cb7-372" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section E — Binomial R and ggplot (after demo lab)<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb7-373"><a href="#cb7-373" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-374"><a href="#cb7-374" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="in">`prob_five &lt;- dbinom(5, size = 10, prob = 0.4)`</span></span>
+<span id="cb7-375"><a href="#cb7-375" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-376"><a href="#cb7-376" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span><span class="in">`prob_at_most_3 &lt;- pbinom(3, size = 10, prob = 0.4)`</span></span>
+<span id="cb7-377"><a href="#cb7-377" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-378"><a href="#cb7-378" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span><span class="in">`prob_more_than_2 &lt;- pbinom(2, size = 10, prob = 0.4, lower.tail = FALSE)`</span></span>
+<span id="cb7-379"><a href="#cb7-379" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-380"><a href="#cb7-380" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span><span class="in">`sims &lt;- rbinom(1000, size = 8, prob = 0.2)`</span></span>
+<span id="cb7-381"><a href="#cb7-381" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-382"><a href="#cb7-382" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span><span class="in">`p_est &lt;- mean(sims &lt;= 2)`</span></span>
+<span id="cb7-383"><a href="#cb7-383" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-384"><a href="#cb7-384" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**(b)** — maps variables to visual properties.</span>
+<span id="cb7-385"><a href="#cb7-385" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-386"><a href="#cb7-386" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span><span class="in">`df &lt;- data.frame(x = 0:10, prob = dbinom(0:10, size = 10, prob = 0.4))`</span> then <span class="in">`aes(x = x, y = prob)`</span>.</span>
+<span id="cb7-387"><a href="#cb7-387" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-388"><a href="#cb7-388" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb7-389"><a href="#cb7-389" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-390"><a href="#cb7-390" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-391"><a href="#cb7-391" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="pdf"}</span>
+<span id="cb7-392"><a href="#cb7-392" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb7-393"><a href="#cb7-393" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb7-394"><a href="#cb7-394" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-395"><a href="#cb7-395" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-396"><a href="#cb7-396" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section E — Binomial R and ggplot (after demo lab)</span></span>
+<span id="cb7-397"><a href="#cb7-397" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-398"><a href="#cb7-398" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="in">`prob_five &lt;- dbinom(5, size = 10, prob = 0.4)`</span></span>
+<span id="cb7-399"><a href="#cb7-399" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-400"><a href="#cb7-400" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span><span class="in">`prob_at_most_3 &lt;- pbinom(3, size = 10, prob = 0.4)`</span></span>
+<span id="cb7-401"><a href="#cb7-401" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-402"><a href="#cb7-402" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span><span class="in">`prob_more_than_2 &lt;- pbinom(2, size = 10, prob = 0.4, lower.tail = FALSE)`</span></span>
+<span id="cb7-403"><a href="#cb7-403" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-404"><a href="#cb7-404" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span><span class="in">`sims &lt;- rbinom(1000, size = 8, prob = 0.2)`</span></span>
+<span id="cb7-405"><a href="#cb7-405" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-406"><a href="#cb7-406" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span><span class="in">`p_est &lt;- mean(sims &lt;= 2)`</span></span>
+<span id="cb7-407"><a href="#cb7-407" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-408"><a href="#cb7-408" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**(b)** — maps variables to visual properties.</span>
+<span id="cb7-409"><a href="#cb7-409" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-410"><a href="#cb7-410" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span><span class="in">`df &lt;- data.frame(x = 0:10, prob = dbinom(0:10, size = 10, prob = 0.4))`</span> then <span class="in">`aes(x = x, y = prob)`</span>.</span>
+<span id="cb7-411"><a href="#cb7-411" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-412"><a href="#cb7-412" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-413"><a href="#cb7-413" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-414"><a href="#cb7-414" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-415"><a href="#cb7-415" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb7-416"><a href="#cb7-416" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-417"><a href="#cb7-417" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section F — R basics (Module 0 demo / exercise)</span></span>
+<span id="cb7-418"><a href="#cb7-418" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-419"><a href="#cb7-419" aria-hidden="true" tabindex="-1"></a><span class="fu">### F1. Arithmetic</span></span>
+<span id="cb7-420"><a href="#cb7-420" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-421"><a href="#cb7-421" aria-hidden="true" tabindex="-1"></a>One line of R that produces **10** by adding two numbers.</span>
+<span id="cb7-422"><a href="#cb7-422" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-423"><a href="#cb7-423" aria-hidden="true" tabindex="-1"></a><span class="fu">### F2. Multiplication</span></span>
+<span id="cb7-424"><a href="#cb7-424" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-425"><a href="#cb7-425" aria-hidden="true" tabindex="-1"></a>One line of R that produces **6** by multiplying two numbers.</span>
+<span id="cb7-426"><a href="#cb7-426" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-427"><a href="#cb7-427" aria-hidden="true" tabindex="-1"></a><span class="fu">### F3. Assignment and `sqrt`</span></span>
+<span id="cb7-428"><a href="#cb7-428" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-429"><a href="#cb7-429" aria-hidden="true" tabindex="-1"></a>Assign **16** to <span class="in">`x`</span>, then compute $\sqrt{x}$.</span>
+<span id="cb7-430"><a href="#cb7-430" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-431"><a href="#cb7-431" aria-hidden="true" tabindex="-1"></a><span class="fu">### F4. Vector</span></span>
+<span id="cb7-432"><a href="#cb7-432" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-433"><a href="#cb7-433" aria-hidden="true" tabindex="-1"></a>Create vector <span class="in">`numbers`</span> with values 2, 4, 6, 8, 10.</span>
+<span id="cb7-434"><a href="#cb7-434" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-435"><a href="#cb7-435" aria-hidden="true" tabindex="-1"></a><span class="fu">### F5. Indexing</span></span>
+<span id="cb7-436"><a href="#cb7-436" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-437"><a href="#cb7-437" aria-hidden="true" tabindex="-1"></a>Using <span class="in">`numbers`</span>, return the **third** element.</span>
+<span id="cb7-438"><a href="#cb7-438" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-439"><a href="#cb7-439" aria-hidden="true" tabindex="-1"></a><span class="fu">### F6. Vector arithmetic</span></span>
+<span id="cb7-440"><a href="#cb7-440" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-441"><a href="#cb7-441" aria-hidden="true" tabindex="-1"></a>Create <span class="in">`numbers_plus_one`</span> by adding 1 to every element of <span class="in">`numbers`</span>.</span>
+<span id="cb7-442"><a href="#cb7-442" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-443"><a href="#cb7-443" aria-hidden="true" tabindex="-1"></a><span class="fu">### F7. Mean</span></span>
+<span id="cb7-444"><a href="#cb7-444" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-445"><a href="#cb7-445" aria-hidden="true" tabindex="-1"></a>Compute the mean of <span class="in">`numbers`</span>.</span>
+<span id="cb7-446"><a href="#cb7-446" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-447"><a href="#cb7-447" aria-hidden="true" tabindex="-1"></a><span class="fu">### F8. Count with `==` and `sum`</span></span>
+<span id="cb7-448"><a href="#cb7-448" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-449"><a href="#cb7-449" aria-hidden="true" tabindex="-1"></a>Given <span class="in">`flips &lt;- c("H","T","H","H","T","H")`</span> and <span class="in">`heads &lt;- c("H","H","H","H","H","H")`</span>, count how many <span class="in">`"H"`</span> appear using <span class="in">`==`</span> and <span class="in">`sum()`</span>.</span>
+<span id="cb7-450"><a href="#cb7-450" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-451"><a href="#cb7-451" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="html"}</span>
+<span id="cb7-452"><a href="#cb7-452" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb7-453"><a href="#cb7-453" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section F — R basics (Module 0 demo / exercise)<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb7-454"><a href="#cb7-454" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-455"><a href="#cb7-455" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Any valid addition, e.g. <span class="in">`3 + 7`</span> or <span class="in">`5 + 5`</span>.</span>
+<span id="cb7-456"><a href="#cb7-456" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-457"><a href="#cb7-457" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>e.g. <span class="in">`2 * 3`</span>.</span>
+<span id="cb7-458"><a href="#cb7-458" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-459"><a href="#cb7-459" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span><span class="in">`x &lt;- 16`</span> then <span class="in">`sqrt(x)`</span> (two lines or one).</span>
+<span id="cb7-460"><a href="#cb7-460" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-461"><a href="#cb7-461" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span><span class="in">`numbers &lt;- c(2, 4, 6, 8, 10)`</span></span>
+<span id="cb7-462"><a href="#cb7-462" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-463"><a href="#cb7-463" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span><span class="in">`numbers[3]`</span></span>
+<span id="cb7-464"><a href="#cb7-464" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-465"><a href="#cb7-465" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span><span class="in">`numbers_plus_one &lt;- numbers + 1`</span></span>
+<span id="cb7-466"><a href="#cb7-466" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-467"><a href="#cb7-467" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span><span class="in">`mean(numbers)`</span></span>
+<span id="cb7-468"><a href="#cb7-468" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-469"><a href="#cb7-469" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span><span class="in">`sum(flips == heads)`</span> or <span class="in">`sum(flips == "H")`</span> → 4.</span>
+<span id="cb7-470"><a href="#cb7-470" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-471"><a href="#cb7-471" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb7-472"><a href="#cb7-472" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-473"><a href="#cb7-473" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-474"><a href="#cb7-474" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="pdf"}</span>
+<span id="cb7-475"><a href="#cb7-475" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb7-476"><a href="#cb7-476" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb7-477"><a href="#cb7-477" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-478"><a href="#cb7-478" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-479"><a href="#cb7-479" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section F — R basics (Module 0 demo / exercise)</span></span>
+<span id="cb7-480"><a href="#cb7-480" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-481"><a href="#cb7-481" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Any valid addition, e.g. <span class="in">`3 + 7`</span> or <span class="in">`5 + 5`</span>.</span>
+<span id="cb7-482"><a href="#cb7-482" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-483"><a href="#cb7-483" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>e.g. <span class="in">`2 * 3`</span>.</span>
+<span id="cb7-484"><a href="#cb7-484" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-485"><a href="#cb7-485" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span><span class="in">`x &lt;- 16`</span> then <span class="in">`sqrt(x)`</span> (two lines or one).</span>
+<span id="cb7-486"><a href="#cb7-486" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-487"><a href="#cb7-487" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span><span class="in">`numbers &lt;- c(2, 4, 6, 8, 10)`</span></span>
+<span id="cb7-488"><a href="#cb7-488" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-489"><a href="#cb7-489" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span><span class="in">`numbers[3]`</span></span>
+<span id="cb7-490"><a href="#cb7-490" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-491"><a href="#cb7-491" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span><span class="in">`numbers_plus_one &lt;- numbers + 1`</span></span>
+<span id="cb7-492"><a href="#cb7-492" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-493"><a href="#cb7-493" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span><span class="in">`mean(numbers)`</span></span>
+<span id="cb7-494"><a href="#cb7-494" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-495"><a href="#cb7-495" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span><span class="in">`sum(flips == heads)`</span> or <span class="in">`sum(flips == "H")`</span> → 4.</span>
+<span id="cb7-496"><a href="#cb7-496" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-497"><a href="#cb7-497" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-498"><a href="#cb7-498" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-499"><a href="#cb7-499" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-500"><a href="#cb7-500" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb7-501"><a href="#cb7-501" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-502"><a href="#cb7-502" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section G — Vectors, matrices, loops (demo Section B / exercise Part I)</span></span>
+<span id="cb7-503"><a href="#cb7-503" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-504"><a href="#cb7-504" aria-hidden="true" tabindex="-1"></a><span class="fu">### G1. Types and `class()`</span></span>
+<span id="cb7-505"><a href="#cb7-505" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-506"><a href="#cb7-506" aria-hidden="true" tabindex="-1"></a>Create <span class="in">`x_num &lt;- 0`</span>, <span class="in">`x_int &lt;- 0L`</span>, and print the class of each.</span>
+<span id="cb7-507"><a href="#cb7-507" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-508"><a href="#cb7-508" aria-hidden="true" tabindex="-1"></a><span class="fu">### G2. Vector and length</span></span>
+<span id="cb7-509"><a href="#cb7-509" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-510"><a href="#cb7-510" aria-hidden="true" tabindex="-1"></a>Create <span class="in">`v &lt;- c(2,4,6,8,10)`</span>, print <span class="in">`length(v)`</span>, create <span class="in">`v_plus_one &lt;- v + 1`</span>.</span>
+<span id="cb7-511"><a href="#cb7-511" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-512"><a href="#cb7-512" aria-hidden="true" tabindex="-1"></a><span class="fu">### G3. Bracketing</span></span>
+<span id="cb7-513"><a href="#cb7-513" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-514"><a href="#cb7-514" aria-hidden="true" tabindex="-1"></a>With <span class="in">`v &lt;- c(2,4,6,8,10)`</span>, write code for: (1) 3rd element; (2) elements 2–4; (3) all except 3rd; (4) elements $&gt;5$.</span>
+<span id="cb7-515"><a href="#cb7-515" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-516"><a href="#cb7-516" aria-hidden="true" tabindex="-1"></a><span class="fu">### G4. Matrix and `dim()`</span></span>
+<span id="cb7-517"><a href="#cb7-517" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-518"><a href="#cb7-518" aria-hidden="true" tabindex="-1"></a>Create 2×3 matrix <span class="in">`m`</span> from <span class="in">`1:6`</span> (by column), print <span class="in">`dim(m)`</span>, extract row 2 col 1, first row, second column.</span>
+<span id="cb7-519"><a href="#cb7-519" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-520"><a href="#cb7-520" aria-hidden="true" tabindex="-1"></a><span class="fu">### G5. `for` loop squares</span></span>
+<span id="cb7-521"><a href="#cb7-521" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-522"><a href="#cb7-522" aria-hidden="true" tabindex="-1"></a>Use a <span class="in">`for`</span> loop so <span class="in">`squares`</span> contains $1^2,2^2,\ldots,5^2$.</span>
+<span id="cb7-523"><a href="#cb7-523" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-524"><a href="#cb7-524" aria-hidden="true" tabindex="-1"></a><span class="fu">### G6. Simulate $P(\text{even die})$</span></span>
+<span id="cb7-525"><a href="#cb7-525" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-526"><a href="#cb7-526" aria-hidden="true" tabindex="-1"></a>Estimate $P(\text{even die})$ with <span class="in">`n &lt;- 10000`</span>, <span class="in">`rolls &lt;- sample(1:6, size=n, replace=TRUE)`</span>, and <span class="in">`mean(...)`</span>. Name objects <span class="in">`n`</span>, <span class="in">`rolls`</span>, <span class="in">`p_even`</span>.</span>
+<span id="cb7-527"><a href="#cb7-527" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-528"><a href="#cb7-528" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="html"}</span>
+<span id="cb7-529"><a href="#cb7-529" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb7-530"><a href="#cb7-530" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section G — Vectors, matrices, loops (demo Section B / exercise Part I)<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb7-531"><a href="#cb7-531" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-532"><a href="#cb7-532" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="in">`x_num &lt;- 0`</span>; <span class="in">`x_int &lt;- 0L`</span>; <span class="in">`class(x_num)`</span>; <span class="in">`class(x_int)`</span>.</span>
+<span id="cb7-533"><a href="#cb7-533" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-534"><a href="#cb7-534" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>As stated; <span class="in">`length(v)`</span> returns 5.</span>
+<span id="cb7-535"><a href="#cb7-535" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-536"><a href="#cb7-536" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span><span class="in">`v[3]`</span>; <span class="in">`v[2:4]`</span>; <span class="in">`v[-3]`</span>; <span class="in">`v[v &gt; 5]`</span>.</span>
+<span id="cb7-537"><a href="#cb7-537" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-538"><a href="#cb7-538" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span><span class="in">`m &lt;- matrix(1:6, nrow=2, ncol=3)`</span>; <span class="in">`dim(m)`</span>; <span class="in">`m[2,1]`</span>; <span class="in">`m[1,]`</span>; <span class="in">`m[,2]`</span>.</span>
+<span id="cb7-539"><a href="#cb7-539" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-540"><a href="#cb7-540" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span><span class="in">`squares &lt;- numeric(5)`</span>; <span class="in">`for (i in 1:5) squares[i] &lt;- i^2`</span> (or <span class="in">`squares &lt;- i^2`</span> inside loop).</span>
+<span id="cb7-541"><a href="#cb7-541" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-542"><a href="#cb7-542" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span><span class="in">`p_even &lt;- mean(rolls %% 2 == 0)`</span> or <span class="in">`mean(rolls %in% c(2,4,6))`</span>.</span>
+<span id="cb7-543"><a href="#cb7-543" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-544"><a href="#cb7-544" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb7-545"><a href="#cb7-545" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-546"><a href="#cb7-546" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-547"><a href="#cb7-547" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="pdf"}</span>
+<span id="cb7-548"><a href="#cb7-548" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb7-549"><a href="#cb7-549" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb7-550"><a href="#cb7-550" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-551"><a href="#cb7-551" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-552"><a href="#cb7-552" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section G — Vectors, matrices, loops (demo Section B / exercise Part I)</span></span>
+<span id="cb7-553"><a href="#cb7-553" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-554"><a href="#cb7-554" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="in">`x_num &lt;- 0`</span>; <span class="in">`x_int &lt;- 0L`</span>; <span class="in">`class(x_num)`</span>; <span class="in">`class(x_int)`</span>.</span>
+<span id="cb7-555"><a href="#cb7-555" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-556"><a href="#cb7-556" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>As stated; <span class="in">`length(v)`</span> returns 5.</span>
+<span id="cb7-557"><a href="#cb7-557" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-558"><a href="#cb7-558" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span><span class="in">`v[3]`</span>; <span class="in">`v[2:4]`</span>; <span class="in">`v[-3]`</span>; <span class="in">`v[v &gt; 5]`</span>.</span>
+<span id="cb7-559"><a href="#cb7-559" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-560"><a href="#cb7-560" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span><span class="in">`m &lt;- matrix(1:6, nrow=2, ncol=3)`</span>; <span class="in">`dim(m)`</span>; <span class="in">`m[2,1]`</span>; <span class="in">`m[1,]`</span>; <span class="in">`m[,2]`</span>.</span>
+<span id="cb7-561"><a href="#cb7-561" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-562"><a href="#cb7-562" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span><span class="in">`squares &lt;- numeric(5)`</span>; <span class="in">`for (i in 1:5) squares[i] &lt;- i^2`</span> (or <span class="in">`squares &lt;- i^2`</span> inside loop).</span>
+<span id="cb7-563"><a href="#cb7-563" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-564"><a href="#cb7-564" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span><span class="in">`p_even &lt;- mean(rolls %% 2 == 0)`</span> or <span class="in">`mean(rolls %in% c(2,4,6))`</span>.</span>
+<span id="cb7-565"><a href="#cb7-565" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-566"><a href="#cb7-566" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-567"><a href="#cb7-567" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-568"><a href="#cb7-568" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-569"><a href="#cb7-569" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb7-570"><a href="#cb7-570" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-571"><a href="#cb7-571" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section H — Simulation R (conditional demo / exercise Part II)</span></span>
+<span id="cb7-572"><a href="#cb7-572" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-573"><a href="#cb7-573" aria-hidden="true" tabindex="-1"></a><span class="fu">### H1. `rep()` for balls</span></span>
+<span id="cb7-574"><a href="#cb7-574" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-575"><a href="#cb7-575" aria-hidden="true" tabindex="-1"></a>Create vector <span class="in">`balls`</span>: 5 red and 2 white, labels <span class="in">`"R"`</span> and <span class="in">`"W"`</span>.</span>
+<span id="cb7-576"><a href="#cb7-576" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-577"><a href="#cb7-577" aria-hidden="true" tabindex="-1"></a><span class="fu">### H2. Simulate without replacement</span></span>
+<span id="cb7-578"><a href="#cb7-578" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-579"><a href="#cb7-579" aria-hidden="true" tabindex="-1"></a>Bag: 3 red, 3 white. Simulate 10,000 draws of 2 without replacement; success = white first, red second; estimate with <span class="in">`mean(successes)`</span>.</span>
+<span id="cb7-580"><a href="#cb7-580" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-581"><a href="#cb7-581" aria-hidden="true" tabindex="-1"></a><span class="fu">### H3. `which()`</span></span>
+<span id="cb7-582"><a href="#cb7-582" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-583"><a href="#cb7-583" aria-hidden="true" tabindex="-1"></a><span class="in">`successes`</span> is length 10,000 (1=success, 0=failure). One line: which replicate numbers had success?</span>
+<span id="cb7-584"><a href="#cb7-584" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-585"><a href="#cb7-585" aria-hidden="true" tabindex="-1"></a><span class="fu">### H4. Modify `if` for exactly one red</span></span>
+<span id="cb7-586"><a href="#cb7-586" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-587"><a href="#cb7-587" aria-hidden="true" tabindex="-1"></a>Change the condition so the loop estimates $P(\text{exactly one red})$ — (R,W) or (W,R) — using <span class="in">`|`</span>.</span>
+<span id="cb7-588"><a href="#cb7-588" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-589"><a href="#cb7-589" aria-hidden="true" tabindex="-1"></a><span class="fu">### H5. `sample()` with `prob`</span></span>
+<span id="cb7-590"><a href="#cb7-590" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-591"><a href="#cb7-591" aria-hidden="true" tabindex="-1"></a>Simulate 10,000 people: 70% like eggnog, 30% do not. Use <span class="in">`prob`</span> in <span class="in">`sample()`</span>; store in <span class="in">`eggnog`</span>.</span>
+<span id="cb7-592"><a href="#cb7-592" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-593"><a href="#cb7-593" aria-hidden="true" tabindex="-1"></a><span class="fu">### H6. Joint probability from simulation</span></span>
+<span id="cb7-594"><a href="#cb7-594" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-595"><a href="#cb7-595" aria-hidden="true" tabindex="-1"></a>Vectors <span class="in">`disease`</span> and <span class="in">`test_result`</span> (0/1). One line to estimate $P(\text{disease and positive})$ using <span class="in">`sum()`</span> and <span class="in">`&amp;`</span>.</span>
+<span id="cb7-596"><a href="#cb7-596" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-597"><a href="#cb7-597" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="html"}</span>
+<span id="cb7-598"><a href="#cb7-598" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb7-599"><a href="#cb7-599" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section H — Simulation R (conditional demo / exercise Part II)<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb7-600"><a href="#cb7-600" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-601"><a href="#cb7-601" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="in">`balls &lt;- rep(c("R","W"), c(5,2))`</span></span>
+<span id="cb7-602"><a href="#cb7-602" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-603"><a href="#cb7-603" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Loop or replicate with <span class="in">`sample(balls, 2, replace=FALSE)`</span> and indicator; <span class="in">`mean(successes)`</span> ≈ $1/7$.</span>
+<span id="cb7-604"><a href="#cb7-604" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-605"><a href="#cb7-605" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span><span class="in">`which(successes == 1)`</span></span>
+<span id="cb7-606"><a href="#cb7-606" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-607"><a href="#cb7-607" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Replace <span class="in">`if`</span> with e.g. <span class="in">`if (sum(draw == "R") == 1)`</span> or <span class="in">`(draw[1]=="R" &amp; draw[2]=="W") | (draw[1]=="W" &amp; draw[2]=="R")`</span>.</span>
+<span id="cb7-608"><a href="#cb7-608" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-609"><a href="#cb7-609" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span><span class="in">`eggnog &lt;- sample(c("yes","no"), 10000, replace=TRUE, prob=c(0.7,0.3))`</span></span>
+<span id="cb7-610"><a href="#cb7-610" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-611"><a href="#cb7-611" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span><span class="in">`sum(disease == 1 &amp; test_result == 1) / length(disease)`</span> or <span class="in">`mean(disease == 1 &amp; test_result == 1)`</span>.</span>
+<span id="cb7-612"><a href="#cb7-612" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-613"><a href="#cb7-613" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb7-614"><a href="#cb7-614" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-615"><a href="#cb7-615" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-616"><a href="#cb7-616" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="pdf"}</span>
+<span id="cb7-617"><a href="#cb7-617" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb7-618"><a href="#cb7-618" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb7-619"><a href="#cb7-619" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-620"><a href="#cb7-620" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-621"><a href="#cb7-621" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section H — Simulation R (conditional demo / exercise Part II)</span></span>
+<span id="cb7-622"><a href="#cb7-622" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-623"><a href="#cb7-623" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="in">`balls &lt;- rep(c("R","W"), c(5,2))`</span></span>
+<span id="cb7-624"><a href="#cb7-624" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-625"><a href="#cb7-625" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Loop or replicate with <span class="in">`sample(balls, 2, replace=FALSE)`</span> and indicator; <span class="in">`mean(successes)`</span> ≈ $1/7$.</span>
+<span id="cb7-626"><a href="#cb7-626" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-627"><a href="#cb7-627" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span><span class="in">`which(successes == 1)`</span></span>
+<span id="cb7-628"><a href="#cb7-628" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-629"><a href="#cb7-629" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Replace <span class="in">`if`</span> with e.g. <span class="in">`if (sum(draw == "R") == 1)`</span> or <span class="in">`(draw[1]=="R" &amp; draw[2]=="W") | (draw[1]=="W" &amp; draw[2]=="R")`</span>.</span>
+<span id="cb7-630"><a href="#cb7-630" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-631"><a href="#cb7-631" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span><span class="in">`eggnog &lt;- sample(c("yes","no"), 10000, replace=TRUE, prob=c(0.7,0.3))`</span></span>
+<span id="cb7-632"><a href="#cb7-632" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-633"><a href="#cb7-633" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span><span class="in">`sum(disease == 1 &amp; test_result == 1) / length(disease)`</span> or <span class="in">`mean(disease == 1 &amp; test_result == 1)`</span>.</span>
+<span id="cb7-634"><a href="#cb7-634" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-635"><a href="#cb7-635" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-636"><a href="#cb7-636" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-637"><a href="#cb7-637" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-638"><a href="#cb7-638" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb7-639"><a href="#cb7-639" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-640"><a href="#cb7-640" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section I — Assumptions and interpretation (new)</span></span>
+<span id="cb7-641"><a href="#cb7-641" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-642"><a href="#cb7-642" aria-hidden="true" tabindex="-1"></a><span class="fu">### I1. p-value meaning</span></span>
+<span id="cb7-643"><a href="#cb7-643" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-644"><a href="#cb7-644" aria-hidden="true" tabindex="-1"></a>Which statement is **incorrect**?</span>
+<span id="cb7-645"><a href="#cb7-645" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-646"><a href="#cb7-646" aria-hidden="true" tabindex="-1"></a>a) The p-value assumes $H_0$ is true when we compute it.  </span>
+<span id="cb7-647"><a href="#cb7-647" aria-hidden="true" tabindex="-1"></a>b) A small p-value means the observed data would be rare if $H_0$ were true.  </span>
+<span id="cb7-648"><a href="#cb7-648" aria-hidden="true" tabindex="-1"></a>c) The p-value is the probability that $H_0$ is true.  </span>
+<span id="cb7-649"><a href="#cb7-649" aria-hidden="true" tabindex="-1"></a>d) We shade tail(s) matching the direction of $H_a$.</span>
+<span id="cb7-650"><a href="#cb7-650" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-651"><a href="#cb7-651" aria-hidden="true" tabindex="-1"></a><span class="fu">### I2. Which BRP condition fails?</span></span>
+<span id="cb7-652"><a href="#cb7-652" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-653"><a href="#cb7-653" aria-hidden="true" tabindex="-1"></a>You flip the same coin 25 times but the coin is **bent more after each flip** (success probability changes). Which BRP condition fails?</span>
+<span id="cb7-654"><a href="#cb7-654" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-655"><a href="#cb7-655" aria-hidden="true" tabindex="-1"></a><span class="fu">### I3. Choosing `pbinom` for $H_a: p &gt; 0.2$</span></span>
+<span id="cb7-656"><a href="#cb7-656" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-657"><a href="#cb7-657" aria-hidden="true" tabindex="-1"></a>Observed $x=8$, $n=25$, $p=0.2$ under $H_0$, $H_a: p&gt;0.2$. Which line gives the p-value?</span>
+<span id="cb7-658"><a href="#cb7-658" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-659"><a href="#cb7-659" aria-hidden="true" tabindex="-1"></a>a) <span class="in">`pbinom(8, 25, 0.2)`</span>  </span>
+<span id="cb7-660"><a href="#cb7-660" aria-hidden="true" tabindex="-1"></a>b) <span class="in">`pbinom(7, 25, 0.2, lower.tail=FALSE)`</span>  </span>
+<span id="cb7-661"><a href="#cb7-661" aria-hidden="true" tabindex="-1"></a>c) <span class="in">`pbinom(8, 25, 0.2, lower.tail=FALSE)`</span></span>
+<span id="cb7-662"><a href="#cb7-662" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-663"><a href="#cb7-663" aria-hidden="true" tabindex="-1"></a><span class="fu">### I4. Purpose of `geom_vline`</span></span>
+<span id="cb7-664"><a href="#cb7-664" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-665"><a href="#cb7-665" aria-hidden="true" tabindex="-1"></a>On a null binomial bar plot, what does <span class="in">`geom_vline(xintercept = x_obs)`</span> show?</span>
+<span id="cb7-666"><a href="#cb7-666" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-667"><a href="#cb7-667" aria-hidden="true" tabindex="-1"></a><span class="fu">### I5. `dbinom` vs `pbinom`</span></span>
+<span id="cb7-668"><a href="#cb7-668" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-669"><a href="#cb7-669" aria-hidden="true" tabindex="-1"></a>When plotting the null distribution with <span class="in">`geom_col`</span>, which function gives bar **heights** $P(X=x)$ for each $x$?</span>
+<span id="cb7-670"><a href="#cb7-670" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-671"><a href="#cb7-671" aria-hidden="true" tabindex="-1"></a><span class="fu">### I6. Conclusion language</span></span>
+<span id="cb7-672"><a href="#cb7-672" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-673"><a href="#cb7-673" aria-hidden="true" tabindex="-1"></a>p-value is 0.03 for $H_a: p&gt;0.10$. Write one sentence conclusion **in context** (not “accept/reject” jargon alone).</span>
+<span id="cb7-674"><a href="#cb7-674" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-675"><a href="#cb7-675" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="html"}</span>
+<span id="cb7-676"><a href="#cb7-676" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb7-677"><a href="#cb7-677" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section I — Assumptions and interpretation (new)<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb7-678"><a href="#cb7-678" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-679"><a href="#cb7-679" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**(c)** is incorrect — p-value is about **data** extremeness, not $P(H_0\text{ true})$.</span>
+<span id="cb7-680"><a href="#cb7-680" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-681"><a href="#cb7-681" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Fixed $p$** — success probability is not the same on every trial.</span>
+<span id="cb7-682"><a href="#cb7-682" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-683"><a href="#cb7-683" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**(b)** — $P(X\geq 8)=P(X&gt;7)$ = <span class="in">`pbinom(7, 25, 0.2, lower.tail=FALSE)`</span>.</span>
+<span id="cb7-684"><a href="#cb7-684" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-685"><a href="#cb7-685" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>A vertical line at your **observed count** $x$ so you can compare data to the null distribution.</span>
+<span id="cb7-686"><a href="#cb7-686" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-687"><a href="#cb7-687" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**`dbinom`** — one probability per bar; **`pbinom`** gives cumulative probabilities.</span>
+<span id="cb7-688"><a href="#cb7-688" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-689"><a href="#cb7-689" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Example: If the true proportion were 10%, data this extreme would occur only about 3% of the time — evidence the proportion is **greater than** 10%.</span>
+<span id="cb7-690"><a href="#cb7-690" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-691"><a href="#cb7-691" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb7-692"><a href="#cb7-692" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-693"><a href="#cb7-693" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-694"><a href="#cb7-694" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="pdf"}</span>
+<span id="cb7-695"><a href="#cb7-695" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb7-696"><a href="#cb7-696" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb7-697"><a href="#cb7-697" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-698"><a href="#cb7-698" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-699"><a href="#cb7-699" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section I — Assumptions and interpretation (new)</span></span>
+<span id="cb7-700"><a href="#cb7-700" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-701"><a href="#cb7-701" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**(c)** is incorrect — p-value is about **data** extremeness, not $P(H_0\text{ true})$.</span>
+<span id="cb7-702"><a href="#cb7-702" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-703"><a href="#cb7-703" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Fixed $p$** — success probability is not the same on every trial.</span>
+<span id="cb7-704"><a href="#cb7-704" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-705"><a href="#cb7-705" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**(b)** — $P(X\geq 8)=P(X&gt;7)$ = <span class="in">`pbinom(7, 25, 0.2, lower.tail=FALSE)`</span>.</span>
+<span id="cb7-706"><a href="#cb7-706" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-707"><a href="#cb7-707" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>A vertical line at your **observed count** $x$ so you can compare data to the null distribution.</span>
+<span id="cb7-708"><a href="#cb7-708" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-709"><a href="#cb7-709" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**`dbinom`** — one probability per bar; **`pbinom`** gives cumulative probabilities.</span>
+<span id="cb7-710"><a href="#cb7-710" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-711"><a href="#cb7-711" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Example: If the true proportion were 10%, data this extreme would occur only about 3% of the time — evidence the proportion is **greater than** 10%.</span>
+<span id="cb7-712"><a href="#cb7-712" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-713"><a href="#cb7-713" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-714"><a href="#cb7-714" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-715"><a href="#cb7-715" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-716"><a href="#cb7-716" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

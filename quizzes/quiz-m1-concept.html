@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Module 1 — Quiz B (Concept Check) – STAT 109 - Introductory Biostatistics</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-94b323657c735dfe3b1bf6ebb2c33a55.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/css/humboldt-theme.css">
+</head>
+
+<body class="floating quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#module-1-quiz-b-concept-check" id="toc-module-1-quiz-b-concept-check" class="nav-link active" data-scroll-target="#module-1-quiz-b-concept-check">Module 1, Quiz B: Concept check</a>
+  <ul class="collapse">
+  <li><a href="#section-a-equally-likely-calculations-read-1-2" id="toc-section-a-equally-likely-calculations-read-1-2" class="nav-link" data-scroll-target="#section-a-equally-likely-calculations-read-1-2">Section A — Equally likely calculations (Read 1 §2)</a>
+  <ul class="collapse">
+  <li><a href="#a1.-two-coin-tosses" id="toc-a1.-two-coin-tosses" class="nav-link" data-scroll-target="#a1.-two-coin-tosses">A1. Two coin tosses</a></li>
+  <li><a href="#a2.-dice-sum-11" id="toc-a2.-dice-sum-11" class="nav-link" data-scroll-target="#a2.-dice-sum-11">A2. Dice sum 11</a></li>
+  <li><a href="#a3.-three-coin-tosses" id="toc-a3.-three-coin-tosses" class="nav-link" data-scroll-target="#a3.-three-coin-tosses">A3. Three coin tosses</a></li>
+  <li><a href="#a4.-random-babies-optional-enrichment" id="toc-a4.-random-babies-optional-enrichment" class="nav-link" data-scroll-target="#a4.-random-babies-optional-enrichment">A4. Random babies (optional enrichment)</a></li>
+  </ul></li>
+  <li><a href="#section-b-conditional-probability-in-context-read-1-4" id="toc-section-b-conditional-probability-in-context-read-1-4" class="nav-link" data-scroll-target="#section-b-conditional-probability-in-context-read-1-4">Section B — Conditional probability in context (Read 1 §4)</a>
+  <ul class="collapse">
+  <li><a href="#b1.-candy-jar" id="toc-b1.-candy-jar" class="nav-link" data-scroll-target="#b1.-candy-jar">B1. Candy jar</a></li>
+  <li><a href="#b2.-two-marbles-blue-then-green" id="toc-b2.-two-marbles-blue-then-green" class="nav-link" data-scroll-target="#b2.-two-marbles-blue-then-green">B2. Two marbles (blue then green)</a></li>
+  <li><a href="#b3.-tiles-independence-check" id="toc-b3.-tiles-independence-check" class="nav-link" data-scroll-target="#b3.-tiles-independence-check">B3. Tiles: independence check</a></li>
+  <li><a href="#b4.-two-coin-tosses" id="toc-b4.-two-coin-tosses" class="nav-link" data-scroll-target="#b4.-two-coin-tosses">B4. Two coin tosses</a></li>
+  <li><a href="#b5.-conditional-marbles" id="toc-b5.-conditional-marbles" class="nav-link" data-scroll-target="#b5.-conditional-marbles">B5. Conditional marbles</a></li>
+  <li><a href="#b6.-two-die-rolls" id="toc-b6.-two-die-rolls" class="nav-link" data-scroll-target="#b6.-two-die-rolls">B6. Two die rolls</a></li>
+  </ul></li>
+  <li><a href="#section-c-two-way-tables-and-independence-read-1-4-enrichment" id="toc-section-c-two-way-tables-and-independence-read-1-4-enrichment" class="nav-link" data-scroll-target="#section-c-two-way-tables-and-independence-read-1-4-enrichment">Section C — Two-way tables and independence (Read 1 §4 enrichment)</a>
+  <ul class="collapse">
+  <li><a href="#c1.-covid-marginal-and-conditional" id="toc-c1.-covid-marginal-and-conditional" class="nav-link" data-scroll-target="#c1.-covid-marginal-and-conditional">C1. COVID marginal and conditional</a></li>
+  <li><a href="#c2.-covid-joint-probabilities" id="toc-c2.-covid-joint-probabilities" class="nav-link" data-scroll-target="#c2.-covid-joint-probabilities">C2. COVID joint probabilities</a></li>
+  <li><a href="#c3.-covid-independence" id="toc-c3.-covid-independence" class="nav-link" data-scroll-target="#c3.-covid-independence">C3. COVID independence</a></li>
+  <li><a href="#c4.-covid-overall-positive-rate" id="toc-c4.-covid-overall-positive-rate" class="nav-link" data-scroll-target="#c4.-covid-overall-positive-rate">C4. COVID overall positive rate</a></li>
+  <li><a href="#c5.-interpret-pt" id="toc-c5.-interpret-pt" class="nav-link" data-scroll-target="#c5.-interpret-pt">C5. Interpret <span class="math inline">\(P(T^+)\)</span></a></li>
+  </ul></li>
+  <li><a href="#section-d-counting-and-combinations-read-1-5" id="toc-section-d-counting-and-combinations-read-1-5" class="nav-link" data-scroll-target="#section-d-counting-and-combinations-read-1-5">Section D — Counting and combinations (Read 1 §5)</a>
+  <ul class="collapse">
+  <li><a href="#d1.-factorials" id="toc-d1.-factorials" class="nav-link" data-scroll-target="#d1.-factorials">D1. Factorials</a></li>
+  <li><a href="#d2.-permutations-and-combinations" id="toc-d2.-permutations-and-combinations" class="nav-link" data-scroll-target="#d2.-permutations-and-combinations">D2. Permutations and combinations</a></li>
+  <li><a href="#d3.-order-matters-vs-does-not" id="toc-d3.-order-matters-vs-does-not" class="nav-link" data-scroll-target="#d3.-order-matters-vs-does-not">D3. Order matters vs does not</a></li>
+  <li><a href="#d4.-team-from-players" id="toc-d4.-team-from-players" class="nav-link" data-scroll-target="#d4.-team-from-players">D4. Team from players</a></li>
+  </ul></li>
+  <li><a href="#section-e-binomial-random-process-read-1-67" id="toc-section-e-binomial-random-process-read-1-67" class="nav-link" data-scroll-target="#section-e-binomial-random-process-read-1-67">Section E — Binomial random process (Read 1 §6–7)</a>
+  <ul class="collapse">
+  <li><a href="#e1.-four-brp-conditions" id="toc-e1.-four-brp-conditions" class="nav-link" data-scroll-target="#e1.-four-brp-conditions">E1. Four BRP conditions</a></li>
+  <li><a href="#e2.-coin-flips" id="toc-e2.-coin-flips" class="nav-link" data-scroll-target="#e2.-coin-flips">E2. Coin flips</a></li>
+  <li><a href="#e3.-germination" id="toc-e3.-germination" class="nav-link" data-scroll-target="#e3.-germination">E3. Germination</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="quiz-m1-concept.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Module 1 — Quiz B (Concept Check)</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<p class="subtitle lead">Question bank · After Read 2 · open notes · unlimited attempts</p>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-right">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="module-1-quiz-b-concept-check" class="level1">
+<h1>Module 1, Quiz B: Concept check</h1>
+<p><strong>Reading:</strong> <a href="../lectures/module-1-read-02">Module 1 Read 2</a> (complete Read 1 + Quiz A first)<br>
+<strong>Canvas:</strong> Concept Check quiz (Module 1)</p>
+<p>Apply rules from Read 1–2: counting, conditional probability, combinations, and binomial process identification. <strong>R and ggplot items</strong> are on the <a href="../quizzes/quiz-m1-synthesis">Synthesis</a> bank after the <a href="../labs/module-1-lab-demo">demo lab</a>.</p>
+<p><strong>Excluded from Module 1:</strong> Bayes’ rule — optional enrichment only (not on the course path).</p>
+<hr>
+<section id="section-a-equally-likely-calculations-read-1-2" class="level2">
+<h2 class="anchored" data-anchor-id="section-a-equally-likely-calculations-read-1-2">Section A — Equally likely calculations (Read 1 §2)</h2>
+<section id="a1.-two-coin-tosses" class="level3">
+<h3 class="anchored" data-anchor-id="a1.-two-coin-tosses">A1. Two coin tosses</h3>
+<p>Fair coin tossed <strong>twice</strong>:</p>
+<ol type="1">
+<li>List <span class="math inline">\(S\)</span> so outcomes are equally likely.</li>
+<li>Let <span class="math inline">\(A\)</span> = “at least one tail.” List outcomes in <span class="math inline">\(A\)</span>.</li>
+<li>Find <span class="math inline">\(P(A)\)</span>.</li>
+</ol>
+</section>
+<section id="a2.-dice-sum-11" class="level3">
+<h3 class="anchored" data-anchor-id="a2.-dice-sum-11">A2. Dice sum 11</h3>
+<p>Fair die rolled <strong>twice</strong>:</p>
+<ol type="1">
+<li>How many outcomes in <span class="math inline">\(S\)</span>?</li>
+<li>List outcomes with sum 11.</li>
+<li>Find <span class="math inline">\(P(\text{sum is 11})\)</span>.</li>
+</ol>
+</section>
+<section id="a3.-three-coin-tosses" class="level3">
+<h3 class="anchored" data-anchor-id="a3.-three-coin-tosses">A3. Three coin tosses</h3>
+<p>Three fair tosses: find <span class="math inline">\(P(\text{at least one head})\)</span>.</p>
+</section>
+<section id="a4.-random-babies-optional-enrichment" class="level3">
+<h3 class="anchored" data-anchor-id="a4.-random-babies-optional-enrichment">A4. Random babies (optional enrichment)</h3>
+<p>Three babies returned randomly to three mothers (all pairings equally likely):</p>
+<ol type="1">
+<li>How many outcomes in <span class="math inline">\(S\)</span>?</li>
+<li><span class="math inline">\(P(\text{all three correct})\)</span>.</li>
+<li><span class="math inline">\(P(\text{none correct})\)</span>.</li>
+</ol>
+<div class="{.content-visible-when-format=&quot;html&quot;}">
+<details>
+<summary>
+Click to reveal answers — Section A — Equally likely calculations (Read 1 §2)
+</summary>
+<ol type="1">
+<li><p><span class="math inline">\(S=\{\text{HH,HT,TH,TT}\}\)</span>; 3 outcomes; <span class="math inline">\(P=3/4\)</span>.</p></li>
+<li><p><span class="math inline">\(|S|=36\)</span>; (5,6) and (6,5); <span class="math inline">\(P=2/36=1/18\)</span>.</p></li>
+<li><p><span class="math inline">\(1 - P(\text{no heads}) = 1 - 1/8 = 7/8\)</span>.</p></li>
+<li><p><span class="math inline">\(3!=6\)</span> pairings; <span class="math inline">\(P(\text{all})=1/6\)</span>; <span class="math inline">\(P(\text{none})=2/6=1/3\)</span>.</p></li>
+</ol>
+</details>
+</div>
+<div class="{.content-visible-when-format=&quot;pdf&quot;}">
+<section id="answer-key-section-a-equally-likely-calculations-read-1-2" class="level4">
+<h4 class="anchored" data-anchor-id="answer-key-section-a-equally-likely-calculations-read-1-2">Answer key — Section A — Equally likely calculations (Read 1 §2)</h4>
+<ol type="1">
+<li><p><span class="math inline">\(S=\{\text{HH,HT,TH,TT}\}\)</span>; 3 outcomes; <span class="math inline">\(P=3/4\)</span>.</p></li>
+<li><p><span class="math inline">\(|S|=36\)</span>; (5,6) and (6,5); <span class="math inline">\(P=2/36=1/18\)</span>.</p></li>
+<li><p><span class="math inline">\(1 - P(\text{no heads}) = 1 - 1/8 = 7/8\)</span>.</p></li>
+<li><p><span class="math inline">\(3!=6\)</span> pairings; <span class="math inline">\(P(\text{all})=1/6\)</span>; <span class="math inline">\(P(\text{none})=2/6=1/3\)</span>.</p></li>
+</ol>
+</section>
+</div>
+<hr>
+</section>
+</section>
+<section id="section-b-conditional-probability-in-context-read-1-4" class="level2">
+<h2 class="anchored" data-anchor-id="section-b-conditional-probability-in-context-read-1-4">Section B — Conditional probability in context (Read 1 §4)</h2>
+<section id="b1.-candy-jar" class="level3">
+<h3 class="anchored" data-anchor-id="b1.-candy-jar">B1. Candy jar</h3>
+<p>10 candies: 6 red, 4 blue. Two drawn <strong>without replacement</strong>. <span class="math inline">\(A\)</span> = first red, <span class="math inline">\(B\)</span> = second red.</p>
+<ol type="1">
+<li>Find <span class="math inline">\(P(A)\)</span>.</li>
+<li>Find <span class="math inline">\(P(B \mid A)\)</span>.</li>
+<li>Use the multiplication rule for <span class="math inline">\(P(A \text{ and } B)\)</span>.</li>
+</ol>
+</section>
+<section id="b2.-two-marbles-blue-then-green" class="level3">
+<h3 class="anchored" data-anchor-id="b2.-two-marbles-blue-then-green">B2. Two marbles (blue then green)</h3>
+<p>8 marbles: 4 blue, 4 green. Draw two <strong>without replacement</strong>. Find <span class="math inline">\(P(\text{first blue and second green})\)</span>.</p>
+</section>
+<section id="b3.-tiles-independence-check" class="level3">
+<h3 class="anchored" data-anchor-id="b3.-tiles-independence-check">B3. Tiles: independence check</h3>
+<p>6 tiles: 2 red, 2 blue, 2 green; 3 round and 3 square (one of each color-shape). One tile drawn. Is “red” independent of “round”? Show reasoning.</p>
+</section>
+<section id="b4.-two-coin-tosses" class="level3">
+<h3 class="anchored" data-anchor-id="b4.-two-coin-tosses">B4. Two coin tosses</h3>
+<p>Fair coin tossed twice: find <span class="math inline">\(P(\text{H on first and T on second})\)</span>.</p>
+</section>
+<section id="b5.-conditional-marbles" class="level3">
+<h3 class="anchored" data-anchor-id="b5.-conditional-marbles">B5. Conditional marbles</h3>
+<p>Same 8 marbles, two drawn without replacement. Given first is blue, find <span class="math inline">\(P(\text{second is green})\)</span>.</p>
+</section>
+<section id="b6.-two-die-rolls" class="level3">
+<h3 class="anchored" data-anchor-id="b6.-two-die-rolls">B6. Two die rolls</h3>
+<p>Fair die rolled twice. <span class="math inline">\(A\)</span> = first roll even, <span class="math inline">\(B\)</span> = second roll is 6.</p>
+<ol type="1">
+<li>Are <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> independent? Explain briefly.</li>
+<li>Compute <span class="math inline">\(P(A \text{ and } B)\)</span>.</li>
+</ol>
+<div class="{.content-visible-when-format=&quot;html&quot;}">
+<details>
+<summary>
+Click to reveal answers — Section B — Conditional probability in context (Read 1 §4)
+</summary>
+<ol type="1">
+<li><p><span class="math inline">\(P(A)=6/10\)</span>; <span class="math inline">\(P(B\mid A)=5/9\)</span>; <span class="math inline">\(P(A\text{ and }B)=(6/10)(5/9)=1/3\)</span>.</p></li>
+<li><p><span class="math inline">\((4/8)(4/7)=1/7\)</span>.</p></li>
+<li><p>Yes. <span class="math inline">\(P(\text{red})=2/6=1/3\)</span>, <span class="math inline">\(P(\text{red}\mid\text{round})=1/3\)</span> (one red among three round tiles).</p></li>
+<li><p><span class="math inline">\(1/4\)</span>.</p></li>
+<li><p><span class="math inline">\(4/7\)</span>.</p></li>
+<li><p>Yes (separate rolls); <span class="math inline">\(P(A\text{ and }B)=P(A)P(B)=(1/2)(1/6)=1/12\)</span>.</p></li>
+</ol>
+</details>
+</div>
+<div class="{.content-visible-when-format=&quot;pdf&quot;}">
+<section id="answer-key-section-b-conditional-probability-in-context-read-1-4" class="level4">
+<h4 class="anchored" data-anchor-id="answer-key-section-b-conditional-probability-in-context-read-1-4">Answer key — Section B — Conditional probability in context (Read 1 §4)</h4>
+<ol type="1">
+<li><p><span class="math inline">\(P(A)=6/10\)</span>; <span class="math inline">\(P(B\mid A)=5/9\)</span>; <span class="math inline">\(P(A\text{ and }B)=(6/10)(5/9)=1/3\)</span>.</p></li>
+<li><p><span class="math inline">\((4/8)(4/7)=1/7\)</span>.</p></li>
+<li><p>Yes. <span class="math inline">\(P(\text{red})=2/6=1/3\)</span>, <span class="math inline">\(P(\text{red}\mid\text{round})=1/3\)</span> (one red among three round tiles).</p></li>
+<li><p><span class="math inline">\(1/4\)</span>.</p></li>
+<li><p><span class="math inline">\(4/7\)</span>.</p></li>
+<li><p>Yes (separate rolls); <span class="math inline">\(P(A\text{ and }B)=P(A)P(B)=(1/2)(1/6)=1/12\)</span>.</p></li>
+</ol>
+</section>
+</div>
+<hr>
+</section>
+</section>
+<section id="section-c-two-way-tables-and-independence-read-1-4-enrichment" class="level2">
+<h2 class="anchored" data-anchor-id="section-c-two-way-tables-and-independence-read-1-4-enrichment">Section C — Two-way tables and independence (Read 1 §4 enrichment)</h2>
+<section id="c1.-covid-marginal-and-conditional" class="level3">
+<h3 class="anchored" data-anchor-id="c1.-covid-marginal-and-conditional">C1. COVID marginal and conditional</h3>
+<p>1000 people tested: 20 have COVID, 980 do not. Among COVID+: 17 test positive. Among COVID−: 78 test positive. Let <span class="math inline">\(C\)</span> = has COVID, <span class="math inline">\(T^+\)</span> = tests positive.</p>
+<ol type="1">
+<li>Find <span class="math inline">\(P(C)\)</span> and <span class="math inline">\(P(\text{not } C)\)</span>.</li>
+<li>Find <span class="math inline">\(P(T^+ \mid C)\)</span> (sensitivity).</li>
+<li>Find <span class="math inline">\(P(T^+ \mid \text{not } C)\)</span> (false positive rate).</li>
+</ol>
+</section>
+<section id="c2.-covid-joint-probabilities" class="level3">
+<h3 class="anchored" data-anchor-id="c2.-covid-joint-probabilities">C2. COVID joint probabilities</h3>
+<p>Using the same COVID setup:</p>
+<ol type="1">
+<li>Find <span class="math inline">\(P(C \text{ and } T^+)\)</span>.</li>
+<li>Find <span class="math inline">\(P(\text{not } C \text{ and } T^+)\)</span>.</li>
+</ol>
+</section>
+<section id="c3.-covid-independence" class="level3">
+<h3 class="anchored" data-anchor-id="c3.-covid-independence">C3. COVID independence</h3>
+<ol type="1">
+<li>If <span class="math inline">\(C\)</span> and <span class="math inline">\(T^+\)</span> were independent, what would <span class="math inline">\(P(C \text{ and } T^+)\)</span> equal?</li>
+<li>Are they actually independent? Explain using the definition.</li>
+</ol>
+</section>
+<section id="c4.-covid-overall-positive-rate" class="level3">
+<h3 class="anchored" data-anchor-id="c4.-covid-overall-positive-rate">C4. COVID overall positive rate</h3>
+<p>Find <span class="math inline">\(P(T^+)\)</span> — the overall probability of a positive test.</p>
+</section>
+<section id="c5.-interpret-pt" class="level3">
+<h3 class="anchored" data-anchor-id="c5.-interpret-pt">C5. Interpret <span class="math inline">\(P(T^+)\)</span></h3>
+<p>In one sentence, interpret <span class="math inline">\(P(T^+)\)</span> in the context of this COVID study.</p>
+<div class="{.content-visible-when-format=&quot;html&quot;}">
+<details>
+<summary>
+Click to reveal answers — Section C — Two-way tables and independence (Read 1 §4 enrichment)
+</summary>
+<ol type="1">
+<li><p><span class="math inline">\(P(C)=20/1000=0.02\)</span>; <span class="math inline">\(P(\text{not }C)=0.98\)</span>; <span class="math inline">\(P(T^+\mid C)=17/20=0.85\)</span>; <span class="math inline">\(P(T^+\mid\text{not }C)=78/980\approx0.0796\)</span>.</p></li>
+<li><p><span class="math inline">\(17/1000=0.017\)</span>; <span class="math inline">\(78/1000=0.078\)</span>.</p></li>
+<li><p><span class="math inline">\(P(C)P(T^+)=(0.02)(0.095)=0.0019\)</span>; actual joint is <span class="math inline">\(0.017\)</span> — <strong>not</strong> independent.</p></li>
+<li><p><span class="math inline">\((17+78)/1000 = 95/1000 = 0.095\)</span>.</p></li>
+<li><p>Among all 1000 people tested, 9.5% received a positive test result.</p></li>
+</ol>
+</details>
+</div>
+<div class="{.content-visible-when-format=&quot;pdf&quot;}">
+<section id="answer-key-section-c-two-way-tables-and-independence-read-1-4-enrichment" class="level4">
+<h4 class="anchored" data-anchor-id="answer-key-section-c-two-way-tables-and-independence-read-1-4-enrichment">Answer key — Section C — Two-way tables and independence (Read 1 §4 enrichment)</h4>
+<ol type="1">
+<li><p><span class="math inline">\(P(C)=20/1000=0.02\)</span>; <span class="math inline">\(P(\text{not }C)=0.98\)</span>; <span class="math inline">\(P(T^+\mid C)=17/20=0.85\)</span>; <span class="math inline">\(P(T^+\mid\text{not }C)=78/980\approx0.0796\)</span>.</p></li>
+<li><p><span class="math inline">\(17/1000=0.017\)</span>; <span class="math inline">\(78/1000=0.078\)</span>.</p></li>
+<li><p><span class="math inline">\(P(C)P(T^+)=(0.02)(0.095)=0.0019\)</span>; actual joint is <span class="math inline">\(0.017\)</span> — <strong>not</strong> independent.</p></li>
+<li><p><span class="math inline">\((17+78)/1000 = 95/1000 = 0.095\)</span>.</p></li>
+<li><p>Among all 1000 people tested, 9.5% received a positive test result.</p></li>
+</ol>
+</section>
+</div>
+<hr>
+</section>
+</section>
+<section id="section-d-counting-and-combinations-read-1-5" class="level2">
+<h2 class="anchored" data-anchor-id="section-d-counting-and-combinations-read-1-5">Section D — Counting and combinations (Read 1 §5)</h2>
+<section id="d1.-factorials" class="level3">
+<h3 class="anchored" data-anchor-id="d1.-factorials">D1. Factorials</h3>
+<ol type="1">
+<li>Compute <span class="math inline">\(4!\)</span>.</li>
+<li>What is <span class="math inline">\(0!\)</span> by convention?</li>
+</ol>
+</section>
+<section id="d2.-permutations-and-combinations" class="level3">
+<h3 class="anchored" data-anchor-id="d2.-permutations-and-combinations">D2. Permutations and combinations</h3>
+<p>Compute <span class="math inline">\(_5P_2\)</span> and <span class="math inline">\(_5C_2\)</span>.</p>
+</section>
+<section id="d3.-order-matters-vs-does-not" class="level3">
+<h3 class="anchored" data-anchor-id="d3.-order-matters-vs-does-not">D3. Order matters vs does not</h3>
+<ol type="1">
+<li>Choose 3 from 7 for a <strong>committee</strong> (order does not matter): write the expression and compute.</li>
+<li>Choose 3 from 7 for <strong>three distinct roles</strong>: write the expression and compute.</li>
+</ol>
+</section>
+<section id="d4.-team-from-players" class="level3">
+<h3 class="anchored" data-anchor-id="d4.-team-from-players">D4. Team from players</h3>
+<p>Choose 4 players from 10 for a team (order does not matter):</p>
+<ol type="1">
+<li>Write the expression using <span class="math inline">\(_nC_r\)</span> or <span class="math inline">\(\binom{n}{r}\)</span>.</li>
+<li>Compute the value.</li>
+</ol>
+<div class="{.content-visible-when-format=&quot;html&quot;}">
+<details>
+<summary>
+Click to reveal answers — Section D — Counting and combinations (Read 1 §5)
+</summary>
+<ol type="1">
+<li><p><span class="math inline">\(4!=24\)</span>; <span class="math inline">\(0!=1\)</span>.</p></li>
+<li><p><span class="math inline">\(_5P_2=20\)</span>; <span class="math inline">\(_5C_2=10\)</span>.</p></li>
+<li><p><span class="math inline">\(\binom{7}{3}=35\)</span>; <span class="math inline">\(_7P_3=210\)</span>.</p></li>
+<li><p><span class="math inline">\(\binom{10}{4}=210\)</span>.</p></li>
+</ol>
+</details>
+</div>
+<div class="{.content-visible-when-format=&quot;pdf&quot;}">
+<section id="answer-key-section-d-counting-and-combinations-read-1-5" class="level4">
+<h4 class="anchored" data-anchor-id="answer-key-section-d-counting-and-combinations-read-1-5">Answer key — Section D — Counting and combinations (Read 1 §5)</h4>
+<ol type="1">
+<li><p><span class="math inline">\(4!=24\)</span>; <span class="math inline">\(0!=1\)</span>.</p></li>
+<li><p><span class="math inline">\(_5P_2=20\)</span>; <span class="math inline">\(_5C_2=10\)</span>.</p></li>
+<li><p><span class="math inline">\(\binom{7}{3}=35\)</span>; <span class="math inline">\(_7P_3=210\)</span>.</p></li>
+<li><p><span class="math inline">\(\binom{10}{4}=210\)</span>.</p></li>
+</ol>
+</section>
+</div>
+<hr>
+</section>
+</section>
+<section id="section-e-binomial-random-process-read-1-67" class="level2">
+<h2 class="anchored" data-anchor-id="section-e-binomial-random-process-read-1-67">Section E — Binomial random process (Read 1 §6–7)</h2>
+<section id="e1.-four-brp-conditions" class="level3">
+<h3 class="anchored" data-anchor-id="e1.-four-brp-conditions">E1. Four BRP conditions</h3>
+<p>State the <strong>four conditions</strong> for a binomial random process.</p>
+</section>
+<section id="e2.-coin-flips" class="level3">
+<h3 class="anchored" data-anchor-id="e2.-coin-flips">E2. Coin flips</h3>
+<p>Fair coin flipped 12 times, <span class="math inline">\(X\)</span> = number of heads.</p>
+<ol type="1">
+<li>What is <span class="math inline">\(n\)</span>?</li>
+<li>What does <span class="math inline">\(x\)</span> mean in <span class="math inline">\(P(X=x)\)</span>?</li>
+<li>What is <span class="math inline">\(p\)</span> in this context?</li>
+</ol>
+</section>
+<section id="e3.-germination" class="level3">
+<h3 class="anchored" data-anchor-id="e3.-germination">E3. Germination</h3>
+<p>20% of seeds fail; plant 8 seeds, <span class="math inline">\(X\)</span> = number that fail.</p>
+<ol type="1">
+<li>Identify <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>.</li>
+<li>Write an expression for <span class="math inline">\(P(X=3)\)</span> (no simplification required).</li>
+</ol>
+<div class="{.content-visible-when-format=&quot;html&quot;}">
+<details>
+<summary>
+Click to reveal answers — Section E — Binomial random process (Read 1 §6–7)
+</summary>
+<ol type="1">
+<li><p>Binary outcomes; fixed <span class="math inline">\(n\)</span>; fixed <span class="math inline">\(p\)</span> each trial; independent trials.</p></li>
+<li><p><span class="math inline">\(n=12\)</span> trials; <span class="math inline">\(x\)</span> is a possible count of heads; <span class="math inline">\(p=0.5\)</span> = success prob. on one toss.</p></li>
+<li><p><span class="math inline">\(n=8\)</span>, <span class="math inline">\(p=0.20\)</span>; <span class="math inline">\(P(X=3)=\binom{8}{3}(0.2)^3(0.8)^5\)</span>.</p></li>
+</ol>
+</details>
+</div>
+<div class="{.content-visible-when-format=&quot;pdf&quot;}">
+<section id="answer-key-section-e-binomial-random-process-read-1-67" class="level4">
+<h4 class="anchored" data-anchor-id="answer-key-section-e-binomial-random-process-read-1-67">Answer key — Section E — Binomial random process (Read 1 §6–7)</h4>
+<ol type="1">
+<li><p>Binary outcomes; fixed <span class="math inline">\(n\)</span>; fixed <span class="math inline">\(p\)</span> each trial; independent trials.</p></li>
+<li><p><span class="math inline">\(n=12\)</span> trials; <span class="math inline">\(x\)</span> is a possible count of heads; <span class="math inline">\(p=0.5\)</span> = success prob. on one toss.</p></li>
+<li><p><span class="math inline">\(n=8\)</span>, <span class="math inline">\(p=0.20\)</span>; <span class="math inline">\(P(X=3)=\binom{8}{3}(0.2)^3(0.8)^5\)</span>.</p></li>
+</ol>
+</section>
+</div>
+<hr>
+
+
+<!-- -->
+
+</section>
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>Creative Commons Attribution-NonCommercial 4.0 International<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">(View License)</a></div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Module 1 — Quiz B (Concept Check)"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Question bank · After Read 2 · open notes · unlimited attempts"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Module 1, Quiz B: Concept check</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>**Reading:** <span class="co">[</span><span class="ot">Module 1 Read 2</span><span class="co">](../lectures/module-1-read-02)</span> (complete Read 1 + Quiz A first)  </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>**Canvas:** Concept Check quiz (Module 1)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Apply rules from Read 1–2: counting, conditional probability, combinations, and binomial process identification. **R and ggplot items** are on the <span class="co">[</span><span class="ot">Synthesis</span><span class="co">](../quizzes/quiz-m1-synthesis)</span> bank after the <span class="co">[</span><span class="ot">demo lab</span><span class="co">](../labs/module-1-lab-demo)</span>.</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>**Excluded from Module 1:** Bayes' rule — optional enrichment only (not on the course path).</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section A — Equally likely calculations (Read 1 §2)</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">### A1. Two coin tosses</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Fair coin tossed **twice**:</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>List $S$ so outcomes are equally likely.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Let $A$ = “at least one tail.” List outcomes in $A$.</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Find $P(A)$.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">### A2. Dice sum 11</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Fair die rolled **twice**:</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>How many outcomes in $S$?</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>List outcomes with sum 11.</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Find $P(\text{sum is 11})$.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">### A3. Three coin tosses</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Three fair tosses: find $P(\text{at least one head})$.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="fu">### A4. Random babies (optional enrichment)</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>Three babies returned randomly to three mothers (all pairings equally likely):</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>How many outcomes in $S$?</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>$P(\text{all three correct})$.</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>$P(\text{none correct})$.</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="html"}</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section A — Equally likely calculations (Read 1 §2)<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>$S=<span class="sc">\{</span>\text{HH,HT,TH,TT}<span class="sc">\}</span>$; 3 outcomes; $P=3/4$.</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>$|S|=36$; (5,6) and (6,5); $P=2/36=1/18$.</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>$1 - P(\text{no heads}) = 1 - 1/8 = 7/8$.</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>$3!=6$ pairings; $P(\text{all})=1/6$; $P(\text{none})=2/6=1/3$.</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="pdf"}</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section A — Equally likely calculations (Read 1 §2)</span></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>$S=<span class="sc">\{</span>\text{HH,HT,TH,TT}<span class="sc">\}</span>$; 3 outcomes; $P=3/4$.</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>$|S|=36$; (5,6) and (6,5); $P=2/36=1/18$.</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>$1 - P(\text{no heads}) = 1 - 1/8 = 7/8$.</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>$3!=6$ pairings; $P(\text{all})=1/6$; $P(\text{none})=2/6=1/3$.</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section B — Conditional probability in context (Read 1 §4)</span></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="fu">### B1. Candy jar</span></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>10 candies: 6 red, 4 blue. Two drawn **without replacement**. $A$ = first red, $B$ = second red.</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Find $P(A)$.</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Find $P(B \mid A)$.</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Use the multiplication rule for $P(A \text{ and } B)$.</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="fu">### B2. Two marbles (blue then green)</span></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>8 marbles: 4 blue, 4 green. Draw two **without replacement**. Find $P(\text{first blue and second green})$.</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="fu">### B3. Tiles: independence check</span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>6 tiles: 2 red, 2 blue, 2 green; 3 round and 3 square (one of each color-shape). One tile drawn. Is “red” independent of “round”? Show reasoning.</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="fu">### B4. Two coin tosses</span></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>Fair coin tossed twice: find $P(\text{H on first and T on second})$.</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="fu">### B5. Conditional marbles</span></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>Same 8 marbles, two drawn without replacement. Given first is blue, find $P(\text{second is green})$.</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="fu">### B6. Two die rolls</span></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>Fair die rolled twice. $A$ = first roll even, $B$ = second roll is 6.</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Are $A$ and $B$ independent? Explain briefly.</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Compute $P(A \text{ and } B)$.</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="html"}</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section B — Conditional probability in context (Read 1 §4)<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>$P(A)=6/10$; $P(B\mid A)=5/9$; $P(A\text{ and }B)=(6/10)(5/9)=1/3$.</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>$(4/8)(4/7)=1/7$.</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Yes. $P(\text{red})=2/6=1/3$, $P(\text{red}\mid\text{round})=1/3$ (one red among three round tiles).</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>$1/4$.</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>$4/7$.</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Yes (separate rolls); $P(A\text{ and }B)=P(A)P(B)=(1/2)(1/6)=1/12$.</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="pdf"}</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section B — Conditional probability in context (Read 1 §4)</span></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>$P(A)=6/10$; $P(B\mid A)=5/9$; $P(A\text{ and }B)=(6/10)(5/9)=1/3$.</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>$(4/8)(4/7)=1/7$.</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Yes. $P(\text{red})=2/6=1/3$, $P(\text{red}\mid\text{round})=1/3$ (one red among three round tiles).</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>$1/4$.</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>$4/7$.</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Yes (separate rolls); $P(A\text{ and }B)=P(A)P(B)=(1/2)(1/6)=1/12$.</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section C — Two-way tables and independence (Read 1 §4 enrichment)</span></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a><span class="fu">### C1. COVID marginal and conditional</span></span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>1000 people tested: 20 have COVID, 980 do not. Among COVID+: 17 test positive. Among COVID−: 78 test positive. Let $C$ = has COVID, $T^+$ = tests positive.</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Find $P(C)$ and $P(\text{not } C)$.</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Find $P(T^+ \mid C)$ (sensitivity).</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Find $P(T^+ \mid \text{not } C)$ (false positive rate).</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a><span class="fu">### C2. COVID joint probabilities</span></span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>Using the same COVID setup:</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Find $P(C \text{ and } T^+)$.</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Find $P(\text{not } C \text{ and } T^+)$.</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a><span class="fu">### C3. COVID independence</span></span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>If $C$ and $T^+$ were independent, what would $P(C \text{ and } T^+)$ equal?</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Are they actually independent? Explain using the definition.</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a><span class="fu">### C4. COVID overall positive rate</span></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>Find $P(T^+)$ — the overall probability of a positive test.</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a><span class="fu">### C5. Interpret $P(T^+)$</span></span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>In one sentence, interpret $P(T^+)$ in the context of this COVID study.</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="html"}</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section C — Two-way tables and independence (Read 1 §4 enrichment)<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>$P(C)=20/1000=0.02$; $P(\text{not }C)=0.98$; $P(T^+\mid C)=17/20=0.85$; $P(T^+\mid\text{not }C)=78/980\approx0.0796$.</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>$17/1000=0.017$; $78/1000=0.078$.</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>$P(C)P(T^+)=(0.02)(0.095)=0.0019$; actual joint is $0.017$ — **not** independent.</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>$(17+78)/1000 = 95/1000 = 0.095$.</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Among all 1000 people tested, 9.5% received a positive test result.</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="pdf"}</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section C — Two-way tables and independence (Read 1 §4 enrichment)</span></span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>$P(C)=20/1000=0.02$; $P(\text{not }C)=0.98$; $P(T^+\mid C)=17/20=0.85$; $P(T^+\mid\text{not }C)=78/980\approx0.0796$.</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>$17/1000=0.017$; $78/1000=0.078$.</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>$P(C)P(T^+)=(0.02)(0.095)=0.0019$; actual joint is $0.017$ — **not** independent.</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>$(17+78)/1000 = 95/1000 = 0.095$.</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Among all 1000 people tested, 9.5% received a positive test result.</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section D — Counting and combinations (Read 1 §5)</span></span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a><span class="fu">### D1. Factorials</span></span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Compute $4!$.</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>What is $0!$ by convention?</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a><span class="fu">### D2. Permutations and combinations</span></span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>Compute $_5P_2$ and $_5C_2$.</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a><span class="fu">### D3. Order matters vs does not</span></span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Choose 3 from 7 for a **committee** (order does not matter): write the expression and compute.</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Choose 3 from 7 for **three distinct roles**: write the expression and compute.</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a><span class="fu">### D4. Team from players</span></span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>Choose 4 players from 10 for a team (order does not matter):</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Write the expression using $_nC_r$ or $\binom{n}{r}$.</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Compute the value.</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="html"}</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section D — Counting and combinations (Read 1 §5)<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>$4!=24$; $0!=1$.</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>$_5P_2=20$; $_5C_2=10$.</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>$\binom{7}{3}=35$; $_7P_3=210$.</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>$\binom{10}{4}=210$.</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="pdf"}</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section D — Counting and combinations (Read 1 §5)</span></span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>$4!=24$; $0!=1$.</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>$_5P_2=20$; $_5C_2=10$.</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>$\binom{7}{3}=35$; $_7P_3=210$.</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>$\binom{10}{4}=210$.</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section E — Binomial random process (Read 1 §6–7)</span></span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a><span class="fu">### E1. Four BRP conditions</span></span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>State the **four conditions** for a binomial random process.</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a><span class="fu">### E2. Coin flips</span></span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>Fair coin flipped 12 times, $X$ = number of heads.</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>What is $n$?</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>What does $x$ mean in $P(X=x)$?</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>What is $p$ in this context?</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a><span class="fu">### E3. Germination</span></span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>20% of seeds fail; plant 8 seeds, $X$ = number that fail.</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Identify $n$ and $p$.</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Write an expression for $P(X=3)$ (no simplification required).</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="html"}</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section E — Binomial random process (Read 1 §6–7)<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Binary outcomes; fixed $n$; fixed $p$ each trial; independent trials.</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>$n=12$ trials; $x$ is a possible count of heads; $p=0.5$ = success prob. on one toss.</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>$n=8$, $p=0.20$; $P(X=3)=\binom{8}{3}(0.2)^3(0.8)^5$.</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>::: {.content-visible-when-format="pdf"}</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section E — Binomial random process (Read 1 §6–7)</span></span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Binary outcomes; fixed $n$; fixed $p$ each trial; independent trials.</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>$n=12$ trials; $x$ is a possible count of heads; $p=0.5$ = success prob. on one toss.</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>$n=8$, $p=0.20$; $P(X=3)=\binom{8}{3}(0.2)^3(0.8)^5$.</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

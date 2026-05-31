@@ -1,0 +1,135 @@
+/* Labs-only Forest Night Minimal overrides */
+/* Loaded via labs/_metadata.yml so only lab pages are affected */
+
+:root {
+  --lab-night-bg: #14231d;
+  --lab-night-surface: #1b2d25;
+  --lab-night-surface-2: #23372e;
+  --lab-night-border: #3f5b4f;
+  --lab-night-text: #e7eee9;
+  --lab-night-muted: #bdd0c2;
+  --lab-night-accent: #8fb89e;
+}
+
+/* Flatten content surface and reduce visual density */
+#quarto-content,
+#quarto-content > div,
+#quarto-document-content {
+  background: var(--lab-night-bg) !important;
+  color: var(--lab-night-text) !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+#quarto-content > div {
+  padding: 1.5rem 1.8rem !important;
+  margin: 0 !important;
+}
+
+/* Cleaner headings with subtle separators */
+#quarto-document-content h1,
+#quarto-document-content h2,
+#quarto-document-content h3,
+#quarto-document-content h4 {
+  color: var(--lab-night-text) !important;
+  border-bottom: 1px solid rgba(143, 184, 158, 0.35) !important;
+  padding-bottom: 0.25rem !important;
+  margin-top: 1.5rem !important;
+}
+
+/* Reduce heavy horizontal rules */
+#quarto-document-content hr {
+  border: 0 !important;
+  border-top: 1px solid rgba(143, 184, 158, 0.25) !important;
+  margin: 1rem 0 !important;
+}
+
+/* Keep prose calm and high contrast */
+#quarto-document-content p,
+#quarto-document-content li,
+#quarto-document-content td {
+  color: var(--lab-night-text) !important;
+}
+
+#quarto-document-content a {
+  color: var(--lab-night-accent) !important;
+}
+
+#quarto-document-content a:hover {
+  color: #b9d7c4 !important;
+}
+
+/* Minimal callouts */
+#quarto-document-content .callout {
+  background: var(--lab-night-surface) !important;
+  border: 1px solid var(--lab-night-border) !important;
+  border-left: 3px solid var(--lab-night-accent) !important;
+  box-shadow: none !important;
+}
+
+#quarto-document-content .callout .callout-header {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Code chunks */
+#quarto-document-content pre.sourceCode,
+#quarto-document-content div.sourceCode pre,
+#quarto-document-content .cell-code,
+#quarto-document-content .cell-code pre {
+  background: var(--lab-night-surface) !important;
+  color: var(--lab-night-text) !important;
+  border: 1px solid var(--lab-night-border) !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+}
+
+#quarto-document-content pre.sourceCode code,
+#quarto-document-content .cell-code pre code,
+#quarto-document-content pre.sourceCode span {
+  color: var(--lab-night-text) !important;
+}
+
+/* Chunk output readability */
+#quarto-document-content .cell-output,
+#quarto-document-content .cell-output pre,
+#quarto-document-content .cell-output code {
+  background: var(--lab-night-surface-2) !important;
+  color: var(--lab-night-text) !important;
+  border-radius: 6px !important;
+}
+
+/* Plot panel: clean frame, preserve white plot interior */
+#quarto-document-content .cell-output-display,
+#quarto-document-content .figure,
+#quarto-document-content .quarto-figure {
+  background: var(--lab-night-surface) !important;
+  border: 1px solid var(--lab-night-border) !important;
+  border-radius: 6px !important;
+  padding: 0.5rem !important;
+}
+
+#quarto-document-content .cell-output-display img,
+#quarto-document-content .figure img,
+#quarto-document-content .quarto-figure img {
+  background: #ffffff !important;
+  border-radius: 4px !important;
+}
+
+/* Sidebar / TOC understated */
+.sidebar {
+  background: #162821 !important;
+  border-right: 1px solid rgba(143, 184, 158, 0.2) !important;
+}
+
+.sidebar .nav-link,
+.sidebar a {
+  color: var(--lab-night-muted) !important;
+}
+
+.sidebar .nav-link.active,
+.sidebar a.active {
+  color: var(--lab-night-text) !important;
+  background: rgba(143, 184, 158, 0.12) !important;
+  border-left: 2px solid var(--lab-night-accent) !important;
+}
