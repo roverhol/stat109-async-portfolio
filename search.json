@@ -4,27 +4,41 @@
     "href": "index.html",
     "title": "STAT 109: Introductory Biostatistics",
     "section": "",
-    "text": "Welcome to STAT 109: Introductory Biostatistics!"
+    "text": "Welcome to STAT 109: Introductory Biostatistics!\nThis website contains Rosanna Overholser’s materials for an asynchronous version of STAT 109: Introductory Biostatistics at Cal Poly Humboldt. An asynchronous course means you work through the materials on your own schedule, with support from an expert and your peers along the way. My goal for you isn’t just to finish assignments. By the end, you should have a portfolio of reference sheets and projects you can use and share for years to come and some fellow lumberjacks you can to look forward to meeting in person when we’re all back on campus."
+  },
+  {
+    "objectID": "index.html#what-youll-find-here",
+    "href": "index.html#what-youll-find-here",
+    "title": "STAT 109: Introductory Biostatistics",
+    "section": "What you’ll find here",
+    "text": "What you’ll find here\nMost of what you read and work through lives on this website: lectures, labs and project instructions. Canvas is where you submit work, take quizzes, see grades, get feedback, and chat with classmates. The course path lays out a recommended order through the the material in five weeks; the syllabus has the official policies and grading information for the course."
+  },
+  {
+    "objectID": "index.html#what-youll-learn",
+    "href": "index.html#what-youll-learn",
+    "title": "STAT 109: Introductory Biostatistics",
+    "section": "What you’ll learn",
+    "text": "What you’ll learn\nIn this class you’ll learn statistical ideas that people use to make decisions and test claims with data. You’ll learn the concepts, but you’ll also learn by doing—carrying out analyses with technology.\nWhen you’re working with a real dataset, point-and-click tools only get you so far. Data usually needs wrangling and cleaning before you can run a test or fit a model. Programming lets you do that work efficiently and leaves a record of what you did. That record matters for reproducible research: someone else (including future you) can follow what happened to the data from start to finish. That’s a big part of why we use code instead of only clicking through menus.\nWe’ll use R, which is free and widely used by statisticians and researchers who work with messy data. Python is another popular option; its data-processing syntax is similar enough to R’s that you’ll be able to pick it up quickly if you need to later.\nWe run R in Google Colab notebooks, which are a common way to run Jupyter notebooks with no local installation needed."
+  },
+  {
+    "objectID": "index.html#what-youll-build",
+    "href": "index.html#what-youll-build",
+    "title": "STAT 109: Introductory Biostatistics",
+    "section": "What you’ll build",
+    "text": "What you’ll build\nBy the end of the course you’ll have created two reference guides: one for statistical concepts (definitions, notation, methods you want to keep organized) and one for the R programming language (functions, code patterns, notes from your notebooks).\nYou’ll also complete five projects: applied analyses with write-ups and code. You’ll update the reference sheets a little every module; each project module adds one new project to your portfolio. For three of the projects, you’ll chose a research question that you are interested and then apply methods from class to answer it. For the four, you’ll answer a classmate’s question and for the fifth, you’ll compete with your classmates to make the most accurate set of predictions.\nMy hope is that you’ll use include these five projects in your portfolio to demonstrate your understanding of the material and your ability to apply it to solve problems that people care about."
   },
   {
     "objectID": "index.html#quick-start",
     "href": "index.html#quick-start",
     "title": "STAT 109: Introductory Biostatistics",
     "section": "Quick Start",
-    "text": "Quick Start\n\nCourse Schedule - Recommended flow through course materials\nCourse Syllabus - Detailed course information and policies\nLectures - All course readings\nAssessments - Quiz Banks, Labs, and projects\nResources - Textbook, R downloads, and reference materials"
+    "text": "Quick Start\n\nStart with the course path for the recommended flow through the material.\nSee the syllabus for policies and grading.\nAll readings are in lectures.\nAssessments lists projects, labs, and quizzes.\nFind software links and how to get started in resources."
   },
   {
-    "objectID": "index.html#course-overview",
-    "href": "index.html#course-overview",
+    "objectID": "index.html#instructor",
+    "href": "index.html#instructor",
     "title": "STAT 109: Introductory Biostatistics",
-    "section": "Course Overview",
-    "text": "Course Overview\nSTAT 109: Introductory Biostatistics (4 units) introduces descriptive statistics, probability, random variables, distributions, confidence intervals, hypothesis testing, regression, and ANOVA with emphasis on applications in biological and natural resource sciences.\nLecture: 3 semester units Lab: 1 semester unit General Education: Lower Division GE Area 2 (Quantitative Reasoning)"
-  },
-  {
-    "objectID": "index.html#instructor-information",
-    "href": "index.html#instructor-information",
-    "title": "STAT 109: Introductory Biostatistics",
-    "section": "Instructor Information",
-    "text": "Instructor Information\nInstructor: Dr. Rosanna Overholser\nOffice: BSS 334\nEmail: rho3@humboldt.edu\nOffice Hours: See Canvas"
+    "section": "Instructor",
+    "text": "Instructor\nDr. Rosanna Overholser\nOffice: BSS 334 Email: rho3@humboldt.edu"
   }
 ]
