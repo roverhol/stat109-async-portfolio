@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Quiz 6 – STAT 109 - Introductory Biostatistics</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-94b323657c735dfe3b1bf6ebb2c33a55.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/css/humboldt-theme.css">
+</head>
+
+<body class="floating quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#quiz-6" id="toc-quiz-6" class="nav-link active" data-scroll-target="#quiz-6">Quiz 6</a>
+  <ul class="collapse">
+  <li><a href="#quiz-6-practice-problems" id="toc-quiz-6-practice-problems" class="nav-link" data-scroll-target="#quiz-6-practice-problems">Quiz 6 Practice Problems</a></li>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#part-a-lecture-12-hypotheses-and-brp-esp" id="toc-part-a-lecture-12-hypotheses-and-brp-esp" class="nav-link" data-scroll-target="#part-a-lecture-12-hypotheses-and-brp-esp">Part A: Lecture 12 — Hypotheses and BRP (ESP)</a>
+  <ul class="collapse">
+  <li><a href="#a1.-esp-hypotheses" id="toc-a1.-esp-hypotheses" class="nav-link" data-scroll-target="#a1.-esp-hypotheses">A1. ESP hypotheses</a></li>
+  <li><a href="#a2.-four-conditions-of-a-binomial-random-process" id="toc-a2.-four-conditions-of-a-binomial-random-process" class="nav-link" data-scroll-target="#a2.-four-conditions-of-a-binomial-random-process">A2. Four conditions of a Binomial Random Process</a></li>
+  </ul></li>
+  <li><a href="#part-b-lecture-13-esp-worksheet-style" id="toc-part-b-lecture-13-esp-worksheet-style" class="nav-link" data-scroll-target="#part-b-lecture-13-esp-worksheet-style">Part B: Lecture 13 — ESP worksheet style</a>
+  <ul class="collapse">
+  <li><a href="#b1.-n-and-p-under-the-null" id="toc-b1.-n-and-p-under-the-null" class="nav-link" data-scroll-target="#b1.-n-and-p-under-the-null">B1. <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span> under the null</a></li>
+  <li><a href="#b2.-observed-data-and-p-value-direction" id="toc-b2.-observed-data-and-p-value-direction" class="nav-link" data-scroll-target="#b2.-observed-data-and-p-value-direction">B2. Observed data and p-value direction</a></li>
+  </ul></li>
+  <li><a href="#part-c-graphs-add-the-data-and-shade-the-p-value" id="toc-part-c-graphs-add-the-data-and-shade-the-p-value" class="nav-link" data-scroll-target="#part-c-graphs-add-the-data-and-shade-the-p-value">Part C: Graphs — add the data and shade the p-value</a>
+  <ul class="collapse">
+  <li><a href="#c1.-left-handed-students" id="toc-c1.-left-handed-students" class="nav-link" data-scroll-target="#c1.-left-handed-students">C1. Left-handed students</a></li>
+  <li><a href="#c2.-defective-items" id="toc-c2.-defective-items" class="nav-link" data-scroll-target="#c2.-defective-items">C2. Defective items</a></li>
+  <li><a href="#c3.-dice-sum-7-or-11" id="toc-c3.-dice-sum-7-or-11" class="nav-link" data-scroll-target="#c3.-dice-sum-7-or-11">C3. Dice (sum 7 or 11)</a></li>
+  <li><a href="#c4.-gym-use" id="toc-c4.-gym-use" class="nav-link" data-scroll-target="#c4.-gym-use">C4. Gym use</a></li>
+  </ul></li>
+  <li><a href="#part-d-full-steps-and-one--vs-two-sided" id="toc-part-d-full-steps-and-one--vs-two-sided" class="nav-link" data-scroll-target="#part-d-full-steps-and-one--vs-two-sided">Part D: Full steps and one- vs two-sided</a>
+  <ul class="collapse">
+  <li><a href="#d1.-order-the-steps" id="toc-d1.-order-the-steps" class="nav-link" data-scroll-target="#d1.-order-the-steps">D1. Order the steps</a></li>
+  <li><a href="#d2.-one-sided-vs-two-sided" id="toc-d2.-one-sided-vs-two-sided" class="nav-link" data-scroll-target="#d2.-one-sided-vs-two-sided">D2. One-sided vs two-sided</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="quiz-6.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Quiz 6</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<p class="subtitle lead">STAT 109: Introductory Biostatistics</p>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-right">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="quiz-6" class="level1">
+<h1>Quiz 6</h1>
+<section id="quiz-6-practice-problems" class="level2">
+<h2 class="anchored" data-anchor-id="quiz-6-practice-problems">Quiz 6 Practice Problems</h2>
+<p>These practice problems cover:</p>
+<ul>
+<li><strong>Lecture 12:</strong> Introduction to the binomial test (ESP example), hypotheses <span class="math inline">\(H_0\)</span> vs <span class="math inline">\(H_a\)</span>, the 4 conditions of a Binomial Random Process (BRP), and the steps of the test.</li>
+<li><strong>Lecture 13:</strong> ESP worksheet — stating hypotheses, verifying BRP conditions, identifying <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>, and finding the p-value.</li>
+<li><strong>Lecture 14:</strong> Binomial test steps and examples (left-handed, defective items, dice, gym use): research question, parameter, hypotheses, null distribution plot, <strong>adding the observed data and shading the p-value</strong> on the graph, and drawing conclusions.</li>
+</ul>
+<hr>
+</section>
+<section id="instructions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<ul>
+<li>Work <strong>without notes</strong> first; then check your answers against the solutions in Canvas.</li>
+<li>For <strong>graph questions:</strong> The figures show the <strong>null distribution</strong> (bar plot of <span class="math inline">\(x\)</span> vs <span class="math inline">\(P(X=x)\)</span>) with <strong>no shading</strong>. On each figure, <strong>by hand</strong>: (1) draw a <strong>vertical line</strong> at the observed value of <span class="math inline">\(x\)</span> given in the problem, and (2) <strong>shade the bar(s)</strong> that correspond to the p-value (in the direction of <span class="math inline">\(H_a\)</span>).</li>
+<li>The in-person quiz in lab will be created from these practice problems.</li>
+</ul>
+<hr>
+</section>
+<section id="part-a-lecture-12-hypotheses-and-brp-esp" class="level2">
+<h2 class="anchored" data-anchor-id="part-a-lecture-12-hypotheses-and-brp-esp">Part A: Lecture 12 — Hypotheses and BRP (ESP)</h2>
+<section id="a1.-esp-hypotheses" class="level3">
+<h3 class="anchored" data-anchor-id="a1.-esp-hypotheses">A1. ESP hypotheses</h3>
+<p><strong>Research question (in words):</strong> We want to test whether a person has <em>Extra Sensory Perception (ESP)</em> — the ability to predict outcomes better than chance. To do this, we use an online test: on each of 25 trials, the computer randomly shows one of <strong>5 possible symbols</strong> (e.g.&nbsp;circle, cross, star), and the person guesses which symbol it is. If they do <em>not</em> have ESP, they are just guessing among 5 options on each trial. If they <em>do</em> have ESP, we expect them to get more than chance correct.</p>
+<p>Let <span class="math inline">\(p\)</span> = probability of a correct prediction on a single trial (when the person makes one guess).</p>
+<ol type="1">
+<li>Write the <strong>null hypothesis</strong> <span class="math inline">\(H_0\)</span> and <strong>alternative hypothesis</strong> <span class="math inline">\(H_a\)</span> in symbols.</li>
+<li>In words, what does it mean if <span class="math inline">\(H_0\)</span> is true? What are we claiming if we believe <span class="math inline">\(H_a\)</span>?</li>
+</ol>
+<hr>
+</section>
+<section id="a2.-four-conditions-of-a-binomial-random-process" class="level3">
+<h3 class="anchored" data-anchor-id="a2.-four-conditions-of-a-binomial-random-process">A2. Four conditions of a Binomial Random Process</h3>
+<p><strong>Setting:</strong> The same ESP test as in A1: 25 trials, 5 possible symbols per trial, the computer picks one symbol at random each time (“open deck”), and the person sees the card (or result) after each guess. We record the number of correct predictions out of 25.</p>
+<p>List the <strong>4 conditions</strong> of a Binomial Random Process and briefly state why each is satisfied in this setting.</p>
+<hr>
+</section>
+</section>
+<section id="part-b-lecture-13-esp-worksheet-style" class="level2">
+<h2 class="anchored" data-anchor-id="part-b-lecture-13-esp-worksheet-style">Part B: Lecture 13 — ESP worksheet style</h2>
+<section id="b1.-n-and-p-under-the-null" class="level3">
+<h3 class="anchored" data-anchor-id="b1.-n-and-p-under-the-null">B1. <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span> under the null</h3>
+<p><strong>Setting:</strong> The same ESP test as in Part A: 25 trials, 5 symbols, the person guesses on each trial. Under the null hypothesis, the person is just guessing (no ESP).</p>
+<ul>
+<li>What is <span class="math inline">\(n\)</span>?</li>
+<li>What is <span class="math inline">\(p\)</span> (the probability of a correct guess on one trial under <span class="math inline">\(H_0\)</span>)?</li>
+</ul>
+<hr>
+</section>
+<section id="b2.-observed-data-and-p-value-direction" class="level3">
+<h3 class="anchored" data-anchor-id="b2.-observed-data-and-p-value-direction">B2. Observed data and p-value direction</h3>
+<p><strong>Setting:</strong> Same ESP test: 25 trials, 5 symbols. Under the null, <span class="math inline">\(p = 0.2\)</span> (just guessing). We test <span class="math inline">\(H_0: p = 0.2\)</span> vs <span class="math inline">\(H_a: p &gt; 0.2\)</span>. Suppose you took the test and got <strong>7</strong> correct out of 25.</p>
+<ol type="1">
+<li>What is the observed value of <span class="math inline">\(x\)</span>?</li>
+<li>The p-value is the probability, assuming <span class="math inline">\(H_0\)</span> is true, of observing data <strong>as or more extreme than</strong> the observed <span class="math inline">\(x\)</span> in the direction of <span class="math inline">\(H_a\)</span>. Write the p-value as a probability involving <span class="math inline">\(X\)</span> (e.g.&nbsp;<span class="math inline">\(P(X \geq \ldots)\)</span> or <span class="math inline">\(P(X \leq \ldots)\)</span>).</li>
+<li>Would you need the <strong>right tail</strong>, the <strong>left tail</strong>, or <strong>both tails</strong> of the null distribution to compute this p-value?</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="part-c-graphs-add-the-data-and-shade-the-p-value" class="level2">
+<h2 class="anchored" data-anchor-id="part-c-graphs-add-the-data-and-shade-the-p-value">Part C: Graphs — add the data and shade the p-value</h2>
+<p>Each plot below shows the <strong>null distribution</strong> for a scenario (bar plot of <span class="math inline">\(x\)</span> vs <span class="math inline">\(P(X=x)\)</span>). The plots are <strong>unshaded</strong>. For each problem:</p>
+<ol type="1">
+<li><strong>On the figure:</strong> Draw a <strong>vertical line</strong> at the <strong>observed value of</strong> <span class="math inline">\(x\)</span> (given in the problem).</li>
+<li><strong>On the figure:</strong> <strong>Shade the bar(s)</strong> that represent the <strong>p-value</strong> (i.e.&nbsp;the region in the direction of <span class="math inline">\(H_a\)</span>: right tail for <span class="math inline">\(H_a: p &gt; \ldots\)</span>, left tail for <span class="math inline">\(H_a: p &lt; \ldots\)</span>, or both tails for <span class="math inline">\(H_a: p \neq \ldots\)</span>).</li>
+<li><strong>In the blank:</strong> State whether the p-value is <strong>small</strong> or <strong>large</strong> and give the <strong>conclusion</strong> (reject <span class="math inline">\(H_0\)</span> or fail to reject <span class="math inline">\(H_0\)</span>) in context.</li>
+</ol>
+<p>Run the R chunks below to reproduce each null distribution (same pattern as the <a href="../labs/module-1-lab-demo">demo lab</a>).</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"ggplot2"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>, <span class="at">repos =</span> <span class="st">"https://cloud.r-project.org"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<hr>
+<section id="c1.-left-handed-students" class="level3">
+<h3 class="anchored" data-anchor-id="c1.-left-handed-students">C1. Left-handed students</h3>
+<p><strong>Research question:</strong> Is the proportion of left-handed students at our school higher than the national rate of 10%?</p>
+<p><strong>Parameter:</strong> <span class="math inline">\(p\)</span> = proportion of students at our school who are left-handed.</p>
+<p><strong>Hypotheses:</strong> <span class="math inline">\(H_0: p = 0.10\)</span> vs <span class="math inline">\(H_a: p &gt; 0.10\)</span>. Under <span class="math inline">\(H_0\)</span>, we use <span class="math inline">\(n = 25\)</span> and <span class="math inline">\(p = 0.10\)</span> for the null distribution.</p>
+<p><strong>Data:</strong> In a random sample of 25 students, <span class="math inline">\(x = 6\)</span> were left-handed.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.10</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>null_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">0</span><span class="sc">:</span>n, <span class="at">prob =</span> <span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span>n, <span class="at">size =</span> n, <span class="at">prob =</span> p))</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(null_df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> prob)) <span class="sc">+</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="fu">expression</span>(<span class="fu">P</span>(X <span class="sc">==</span> x))) <span class="sc">+</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="quiz-6_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="480"></p>
+<figcaption>Null distribution: left-handed students, n = 25, p = 0.10 under H0</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Your tasks:</strong></p>
+<ol type="1">
+<li>On the figure, add a <strong>vertical line at the observed</strong> <span class="math inline">\(x = 6\)</span> and <strong>shade the bars</strong> that represent the p-value (right tail, in the direction of <span class="math inline">\(H_a\)</span>).</li>
+<li>p-value = <span class="math inline">\(P(X \geq 6 \mid H_0)\)</span> = __________ (“small” or “large”).</li>
+<li>Conclusion: __________ <span class="math inline">\(H_0\)</span>. In context: __________.</li>
+</ol>
+<hr>
+</section>
+<section id="c2.-defective-items" class="level3">
+<h3 class="anchored" data-anchor-id="c2.-defective-items">C2. Defective items</h3>
+<p><strong>Research question:</strong> Is the proportion of defective items from the new supplier less than 15%?</p>
+<p><strong>Parameter:</strong> <span class="math inline">\(p\)</span> = proportion of items from the new supplier that are defective.</p>
+<p><strong>Hypotheses:</strong> <span class="math inline">\(H_0: p = 0.15\)</span> vs <span class="math inline">\(H_a: p &lt; 0.15\)</span>. Under <span class="math inline">\(H_0\)</span>, we use <span class="math inline">\(n = 25\)</span> and <span class="math inline">\(p = 0.15\)</span> for the null distribution.</p>
+<p><strong>Data:</strong> In a random sample of 25 items from the new supplier, <span class="math inline">\(x = 3\)</span> were defective.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.15</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>null_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">0</span><span class="sc">:</span>n, <span class="at">prob =</span> <span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span>n, <span class="at">size =</span> n, <span class="at">prob =</span> p))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(null_df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> prob)) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="fu">expression</span>(<span class="fu">P</span>(X <span class="sc">==</span> x))) <span class="sc">+</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="quiz-6_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="480"></p>
+<figcaption>Null distribution: defective items, n = 25, p = 0.15 under H0</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Your tasks:</strong></p>
+<ol type="1">
+<li>On the figure, add a <strong>vertical line at the observed</strong> <span class="math inline">\(x = 3\)</span> and <strong>shade the bars</strong> that represent the p-value (left tail, in the direction of <span class="math inline">\(H_a\)</span>).</li>
+<li>p-value = <span class="math inline">\(P(X \leq 3 \mid H_0)\)</span> = __________ (“small” or “large”).</li>
+<li>Conclusion: __________ <span class="math inline">\(H_0\)</span>. In context: __________.</li>
+</ol>
+<hr>
+</section>
+<section id="c3.-dice-sum-7-or-11" class="level3">
+<h3 class="anchored" data-anchor-id="c3.-dice-sum-7-or-11">C3. Dice (sum 7 or 11)</h3>
+<p><strong>Research question:</strong> When we roll two dice, is the probability that the sum is 7 or 11 equal to the fair-dice value? (With fair dice, that probability is <span class="math inline">\(8/36\)</span>: 6 ways to get sum 7 plus 2 ways to get sum 11, out of 36 equally likely outcomes.)</p>
+<p><strong>Parameter:</strong> <span class="math inline">\(p\)</span> = probability that a single roll of two dice gives a sum of 7 or 11.</p>
+<p><strong>Hypotheses:</strong> <span class="math inline">\(H_0: p = 8/36\)</span> vs <span class="math inline">\(H_a: p \neq 8/36\)</span>. Under <span class="math inline">\(H_0\)</span>, we use <span class="math inline">\(n = 25\)</span> rolls and <span class="math inline">\(p = 8/36\)</span> for the null distribution.</p>
+<p><strong>Data:</strong> We rolled the two dice 25 times. The sum was 7 or 11 on <span class="math inline">\(x = 2\)</span> of those rolls.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="dv">8</span><span class="sc">/</span><span class="dv">36</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>null_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">0</span><span class="sc">:</span>n, <span class="at">prob =</span> <span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span>n, <span class="at">size =</span> n, <span class="at">prob =</span> p))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(null_df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> prob)) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="fu">expression</span>(<span class="fu">P</span>(X <span class="sc">==</span> x))) <span class="sc">+</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="quiz-6_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="480"></p>
+<figcaption>Null distribution: dice sum 7 or 11, n = 25, p = 8/36 under H0</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Your tasks:</strong></p>
+<ol type="1">
+<li>On the figure, add a <strong>vertical line at the observed</strong> <span class="math inline">\(x = 2\)</span> and <strong>shade the bars</strong> that represent the p-value. For a <strong>two-sided</strong> <span class="math inline">\(H_a\)</span>, shade <strong>both</strong> tails (the bars for <span class="math inline">\(x \leq 2\)</span> and for <span class="math inline">\(x \geq 9\)</span>, or the symmetric “more extreme” region).</li>
+<li>p-value = <span class="math inline">\(P(X \leq 2) + P(X \geq 9)\)</span> under <span class="math inline">\(H_0\)</span> = __________ (“small” or “large”).</li>
+<li>Conclusion: __________ <span class="math inline">\(H_0\)</span>. In context: __________.</li>
+</ol>
+<hr>
+</section>
+<section id="c4.-gym-use" class="level3">
+<h3 class="anchored" data-anchor-id="c4.-gym-use">C4. Gym use</h3>
+<p><strong>Research question:</strong> Do more than 20% of students at our school use the gym at least once per week?</p>
+<p><strong>Parameter:</strong> <span class="math inline">\(p\)</span> = proportion of students at our school who use the gym at least once per week.</p>
+<p><strong>Hypotheses:</strong> <span class="math inline">\(H_0: p = 0.20\)</span> vs <span class="math inline">\(H_a: p &gt; 0.20\)</span>. Under <span class="math inline">\(H_0\)</span>, we use <span class="math inline">\(n = 25\)</span> and <span class="math inline">\(p = 0.20\)</span> for the null distribution.</p>
+<p><strong>Data:</strong> In a random sample of 25 students, <span class="math inline">\(x = 5\)</span> use the gym at least once per week.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.20</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>null_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">0</span><span class="sc">:</span>n, <span class="at">prob =</span> <span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span>n, <span class="at">size =</span> n, <span class="at">prob =</span> p))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(null_df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> prob)) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="fu">expression</span>(<span class="fu">P</span>(X <span class="sc">==</span> x))) <span class="sc">+</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="quiz-6_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="480"></p>
+<figcaption>Null distribution: gym use, n = 25, p = 0.20 under H0</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Your tasks:</strong></p>
+<ol type="1">
+<li>On the figure, add a <strong>vertical line at the observed</strong> <span class="math inline">\(x = 5\)</span> and <strong>shade the bars</strong> that represent the p-value (right tail, in the direction of <span class="math inline">\(H_a\)</span>).</li>
+<li>p-value = <span class="math inline">\(P(X \geq 5 \mid H_0)\)</span> = __________ (“small” or “large”).</li>
+<li>Conclusion: __________ <span class="math inline">\(H_0\)</span>. In context: __________.</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="part-d-full-steps-and-one--vs-two-sided" class="level2">
+<h2 class="anchored" data-anchor-id="part-d-full-steps-and-one--vs-two-sided">Part D: Full steps and one- vs two-sided</h2>
+<section id="d1.-order-the-steps" class="level3">
+<h3 class="anchored" data-anchor-id="d1.-order-the-steps">D1. Order the steps</h3>
+<p>Below are <strong>4 key steps</strong> of the binomial test, given in <strong>random order</strong>. Number them <strong>1, 2, 3, 4</strong> in the order we perform them when conducting the test.</p>
+<ul>
+<li><strong>(A)</strong> Verify that the 4 conditions of a Binomial Random Process (BRP) are satisfied.</li>
+<li><strong>(B)</strong> State the research question, define the parameter <span class="math inline">\(p\)</span>, state <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_a\)</span>, and identify <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span> under <span class="math inline">\(H_0\)</span>.</li>
+<li><strong>(C)</strong> Create a plot of the null distribution (<span class="math inline">\(x\)</span> vs <span class="math inline">\(P(X=x)\)</span> for the <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span> under <span class="math inline">\(H_0\)</span>).</li>
+<li><strong>(D)</strong> Collect the data (observe the value of <span class="math inline">\(x\)</span>) and compare it with the null distribution: on the plot, add the observed <span class="math inline">\(x\)</span> and shade the bar(s) that represent the p-value; compute the p-value and state the conclusion in context.</li>
+</ul>
+<p><strong>Your ordering:</strong> 1 = ___ , 2 = ___ , 3 = ___ , 4 = ___</p>
+<hr>
+</section>
+<section id="d2.-one-sided-vs-two-sided" class="level3">
+<h3 class="anchored" data-anchor-id="d2.-one-sided-vs-two-sided">D2. One-sided vs two-sided</h3>
+<p>Consider a binomial test with null distribution plotted as a bar chart.</p>
+<ol type="1">
+<li>If the alternative hypothesis is <strong>one-sided</strong> (e.g.&nbsp;<span class="math inline">\(H_a: p &gt; 0.2\)</span> or <span class="math inline">\(H_a: p &lt; 0.15\)</span>), do we shade <strong>one tail</strong> or <strong>both tails</strong> of the null distribution to find the p-value?</li>
+<li>If the alternative hypothesis is <strong>two-sided</strong> (e.g.&nbsp;<span class="math inline">\(H_a: p \neq 8/36\)</span>), do we shade <strong>one tail</strong> or <strong>both tails</strong>?</li>
+</ol>
+<hr>
+<p><em>End of Quiz 6 practice problems.</em></p>
+
+
+<!-- -->
+
+</section>
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>Creative Commons Attribution-NonCommercial 4.0 International<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">(View License)</a></div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Quiz 6"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "STAT 109: Introductory Biostatistics"</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Quiz 6</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quiz 6 Practice Problems</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>These practice problems cover:</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Lecture 12:** Introduction to the binomial test (ESP example), hypotheses $H_0$ vs $H_a$, the 4 conditions of a Binomial Random Process (BRP), and the steps of the test.</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Lecture 13:** ESP worksheet — stating hypotheses, verifying BRP conditions, identifying $n$ and $p$, and finding the p-value.</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Lecture 14:** Binomial test steps and examples (left-handed, defective items, dice, gym use): research question, parameter, hypotheses, null distribution plot, **adding the observed data and shading the p-value** on the graph, and drawing conclusions.</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Instructions</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Work **without notes** first; then check your answers against the solutions in Canvas.</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>For **graph questions:** The figures show the **null distribution** (bar plot of $x$ vs $P(X=x)$) with **no shading**. On each figure, **by hand**: (1) draw a **vertical line** at the observed value of $x$ given in the problem, and (2) **shade the bar(s)** that correspond to the p-value (in the direction of $H_a$).</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The in-person quiz in lab will be created from these practice problems.</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="fu">## Part A: Lecture 12 — Hypotheses and BRP (ESP)</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="fu">### A1. ESP hypotheses</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>**Research question (in words):** We want to test whether a person has *Extra Sensory Perception (ESP)* — the ability to predict outcomes better than chance. To do this, we use an online test: on each of 25 trials, the computer randomly shows one of **5 possible symbols** (e.g. circle, cross, star), and the person guesses which symbol it is. If they do *not* have ESP, they are just guessing among 5 options on each trial. If they *do* have ESP, we expect them to get more than chance correct.</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>Let $p$ = probability of a correct prediction on a single trial (when the person makes one guess).</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Write the **null hypothesis** $H_0$ and **alternative hypothesis** $H_a$ in symbols.</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>In words, what does it mean if $H_0$ is true? What are we claiming if we believe $H_a$?</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="fu">### A2. Four conditions of a Binomial Random Process</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>**Setting:** The same ESP test as in A1: 25 trials, 5 possible symbols per trial, the computer picks one symbol at random each time (“open deck”), and the person sees the card (or result) after each guess. We record the number of correct predictions out of 25.</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>List the **4 conditions** of a Binomial Random Process and briefly state why each is satisfied in this setting.</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a><span class="fu">## Part B: Lecture 13 — ESP worksheet style</span></span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a><span class="fu">### B1. $n$ and $p$ under the null</span></span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>**Setting:** The same ESP test as in Part A: 25 trials, 5 symbols, the person guesses on each trial. Under the null hypothesis, the person is just guessing (no ESP).</span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>What is $n$?</span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>What is $p$ (the probability of a correct guess on one trial under $H_0$)?</span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a><span class="fu">### B2. Observed data and p-value direction</span></span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>**Setting:** Same ESP test: 25 trials, 5 symbols. Under the null, $p = 0.2$ (just guessing). We test $H_0: p = 0.2$ vs $H_a: p &gt; 0.2$. Suppose you took the test and got **7** correct out of 25.</span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>What is the observed value of $x$?</span>
+<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>The p-value is the probability, assuming $H_0$ is true, of observing data **as or more extreme than** the observed $x$ in the direction of $H_a$. Write the p-value as a probability involving $X$ (e.g. $P(X \geq \ldots)$ or $P(X \leq \ldots)$).</span>
+<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Would you need the **right tail**, the **left tail**, or **both tails** of the null distribution to compute this p-value?</span>
+<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a><span class="fu">## Part C: Graphs — add the data and shade the p-value</span></span>
+<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a>Each plot below shows the **null distribution** for a scenario (bar plot of $x$ vs $P(X=x)$). The plots are **unshaded**. For each problem:</span>
+<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**On the figure:** Draw a **vertical line** at the **observed value of** $x$ (given in the problem).</span>
+<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**On the figure:** **Shade the bar(s)** that represent the **p-value** (i.e. the region in the direction of $H_a$: right tail for $H_a: p &gt; \ldots$, left tail for $H_a: p &lt; \ldots$, or both tails for $H_a: p \neq \ldots$).</span>
+<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**In the blank:** State whether the p-value is **small** or **large** and give the **conclusion** (reject $H_0$ or fail to reject $H_0$) in context.</span>
+<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a>Run the R chunks below to reproduce each null distribution (same pattern as the <span class="co">[</span><span class="ot">demo lab</span><span class="co">](../labs/module-1-lab-demo)</span>).</span>
+<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"ggplot2"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>, <span class="at">repos =</span> <span class="st">"https://cloud.r-project.org"</span>)</span>
+<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a><span class="fu">### C1. Left-handed students</span></span>
+<span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a>**Research question:** Is the proportion of left-handed students at our school higher than the national rate of 10%?</span>
+<span id="cb6-95"><a href="#cb6-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-96"><a href="#cb6-96" aria-hidden="true" tabindex="-1"></a>**Parameter:** $p$ = proportion of students at our school who are left-handed.</span>
+<span id="cb6-97"><a href="#cb6-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-98"><a href="#cb6-98" aria-hidden="true" tabindex="-1"></a>**Hypotheses:** $H_0: p = 0.10$ vs $H_a: p &gt; 0.10$. Under $H_0$, we use $n = 25$ and $p = 0.10$ for the null distribution.</span>
+<span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-100"><a href="#cb6-100" aria-hidden="true" tabindex="-1"></a>**Data:** In a random sample of 25 students, $x = 6$ were left-handed.</span>
+<span id="cb6-101"><a href="#cb6-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-104"><a href="#cb6-104" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-105"><a href="#cb6-105" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb6-106"><a href="#cb6-106" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb6-107"><a href="#cb6-107" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb6-108"><a href="#cb6-108" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Null distribution: left-handed students, n = 25, p = 0.10 under H0"</span></span>
+<span id="cb6-109"><a href="#cb6-109" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 5</span></span>
+<span id="cb6-110"><a href="#cb6-110" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 3</span></span>
+<span id="cb6-111"><a href="#cb6-111" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb6-112"><a href="#cb6-112" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.10</span></span>
+<span id="cb6-113"><a href="#cb6-113" aria-hidden="true" tabindex="-1"></a>null_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">0</span><span class="sc">:</span>n, <span class="at">prob =</span> <span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span>n, <span class="at">size =</span> n, <span class="at">prob =</span> p))</span>
+<span id="cb6-114"><a href="#cb6-114" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(null_df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> prob)) <span class="sc">+</span></span>
+<span id="cb6-115"><a href="#cb6-115" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb6-116"><a href="#cb6-116" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="fu">expression</span>(<span class="fu">P</span>(X <span class="sc">==</span> x))) <span class="sc">+</span></span>
+<span id="cb6-117"><a href="#cb6-117" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb6-118"><a href="#cb6-118" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-119"><a href="#cb6-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-120"><a href="#cb6-120" aria-hidden="true" tabindex="-1"></a>**Your tasks:**</span>
+<span id="cb6-121"><a href="#cb6-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-122"><a href="#cb6-122" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>On the figure, add a **vertical line at the observed** $x = 6$ and **shade the bars** that represent the p-value (right tail, in the direction of $H_a$).</span>
+<span id="cb6-123"><a href="#cb6-123" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>p-value = $P(X \geq 6 \mid H_0)$ = <span class="sc">\_\_\_\_\_\_\_\_\_\_</span> ("small" or "large").</span>
+<span id="cb6-124"><a href="#cb6-124" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Conclusion: <span class="sc">\_\_\_\_\_\_\_\_\_\_</span> $H_0$. In context: <span class="sc">\_\_\_\_\_\_\_\_\_\_</span>.</span>
+<span id="cb6-125"><a href="#cb6-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-126"><a href="#cb6-126" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb6-127"><a href="#cb6-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-128"><a href="#cb6-128" aria-hidden="true" tabindex="-1"></a><span class="fu">### C2. Defective items</span></span>
+<span id="cb6-129"><a href="#cb6-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-130"><a href="#cb6-130" aria-hidden="true" tabindex="-1"></a>**Research question:** Is the proportion of defective items from the new supplier less than 15%?</span>
+<span id="cb6-131"><a href="#cb6-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-132"><a href="#cb6-132" aria-hidden="true" tabindex="-1"></a>**Parameter:** $p$ = proportion of items from the new supplier that are defective.</span>
+<span id="cb6-133"><a href="#cb6-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-134"><a href="#cb6-134" aria-hidden="true" tabindex="-1"></a>**Hypotheses:** $H_0: p = 0.15$ vs $H_a: p &lt; 0.15$. Under $H_0$, we use $n = 25$ and $p = 0.15$ for the null distribution.</span>
+<span id="cb6-135"><a href="#cb6-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-136"><a href="#cb6-136" aria-hidden="true" tabindex="-1"></a>**Data:** In a random sample of 25 items from the new supplier, $x = 3$ were defective.</span>
+<span id="cb6-137"><a href="#cb6-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-140"><a href="#cb6-140" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-141"><a href="#cb6-141" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb6-142"><a href="#cb6-142" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb6-143"><a href="#cb6-143" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb6-144"><a href="#cb6-144" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Null distribution: defective items, n = 25, p = 0.15 under H0"</span></span>
+<span id="cb6-145"><a href="#cb6-145" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 5</span></span>
+<span id="cb6-146"><a href="#cb6-146" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 3</span></span>
+<span id="cb6-147"><a href="#cb6-147" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb6-148"><a href="#cb6-148" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.15</span></span>
+<span id="cb6-149"><a href="#cb6-149" aria-hidden="true" tabindex="-1"></a>null_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">0</span><span class="sc">:</span>n, <span class="at">prob =</span> <span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span>n, <span class="at">size =</span> n, <span class="at">prob =</span> p))</span>
+<span id="cb6-150"><a href="#cb6-150" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(null_df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> prob)) <span class="sc">+</span></span>
+<span id="cb6-151"><a href="#cb6-151" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb6-152"><a href="#cb6-152" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="fu">expression</span>(<span class="fu">P</span>(X <span class="sc">==</span> x))) <span class="sc">+</span></span>
+<span id="cb6-153"><a href="#cb6-153" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb6-154"><a href="#cb6-154" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-155"><a href="#cb6-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-156"><a href="#cb6-156" aria-hidden="true" tabindex="-1"></a>**Your tasks:**</span>
+<span id="cb6-157"><a href="#cb6-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-158"><a href="#cb6-158" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>On the figure, add a **vertical line at the observed** $x = 3$ and **shade the bars** that represent the p-value (left tail, in the direction of $H_a$).</span>
+<span id="cb6-159"><a href="#cb6-159" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>p-value = $P(X \leq 3 \mid H_0)$ = <span class="sc">\_\_\_\_\_\_\_\_\_\_</span> ("small" or "large").</span>
+<span id="cb6-160"><a href="#cb6-160" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Conclusion: <span class="sc">\_\_\_\_\_\_\_\_\_\_</span> $H_0$. In context: <span class="sc">\_\_\_\_\_\_\_\_\_\_</span>.</span>
+<span id="cb6-161"><a href="#cb6-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-162"><a href="#cb6-162" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb6-163"><a href="#cb6-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-164"><a href="#cb6-164" aria-hidden="true" tabindex="-1"></a><span class="fu">### C3. Dice (sum 7 or 11)</span></span>
+<span id="cb6-165"><a href="#cb6-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-166"><a href="#cb6-166" aria-hidden="true" tabindex="-1"></a>**Research question:** When we roll two dice, is the probability that the sum is 7 or 11 equal to the fair-dice value? (With fair dice, that probability is $8/36$: 6 ways to get sum 7 plus 2 ways to get sum 11, out of 36 equally likely outcomes.)</span>
+<span id="cb6-167"><a href="#cb6-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-168"><a href="#cb6-168" aria-hidden="true" tabindex="-1"></a>**Parameter:** $p$ = probability that a single roll of two dice gives a sum of 7 or 11.</span>
+<span id="cb6-169"><a href="#cb6-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-170"><a href="#cb6-170" aria-hidden="true" tabindex="-1"></a>**Hypotheses:** $H_0: p = 8/36$ vs $H_a: p \neq 8/36$. Under $H_0$, we use $n = 25$ rolls and $p = 8/36$ for the null distribution.</span>
+<span id="cb6-171"><a href="#cb6-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-172"><a href="#cb6-172" aria-hidden="true" tabindex="-1"></a>**Data:** We rolled the two dice 25 times. The sum was 7 or 11 on $x = 2$ of those rolls.</span>
+<span id="cb6-173"><a href="#cb6-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-176"><a href="#cb6-176" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-177"><a href="#cb6-177" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb6-178"><a href="#cb6-178" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb6-179"><a href="#cb6-179" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb6-180"><a href="#cb6-180" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Null distribution: dice sum 7 or 11, n = 25, p = 8/36 under H0"</span></span>
+<span id="cb6-181"><a href="#cb6-181" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 5</span></span>
+<span id="cb6-182"><a href="#cb6-182" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 3</span></span>
+<span id="cb6-183"><a href="#cb6-183" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb6-184"><a href="#cb6-184" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="dv">8</span><span class="sc">/</span><span class="dv">36</span></span>
+<span id="cb6-185"><a href="#cb6-185" aria-hidden="true" tabindex="-1"></a>null_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">0</span><span class="sc">:</span>n, <span class="at">prob =</span> <span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span>n, <span class="at">size =</span> n, <span class="at">prob =</span> p))</span>
+<span id="cb6-186"><a href="#cb6-186" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(null_df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> prob)) <span class="sc">+</span></span>
+<span id="cb6-187"><a href="#cb6-187" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb6-188"><a href="#cb6-188" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="fu">expression</span>(<span class="fu">P</span>(X <span class="sc">==</span> x))) <span class="sc">+</span></span>
+<span id="cb6-189"><a href="#cb6-189" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb6-190"><a href="#cb6-190" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-191"><a href="#cb6-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-192"><a href="#cb6-192" aria-hidden="true" tabindex="-1"></a>**Your tasks:**</span>
+<span id="cb6-193"><a href="#cb6-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-194"><a href="#cb6-194" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>On the figure, add a **vertical line at the observed** $x = 2$ and **shade the bars** that represent the p-value. For a **two-sided** $H_a$, shade **both** tails (the bars for $x \leq 2$ and for $x \geq 9$, or the symmetric “more extreme” region).</span>
+<span id="cb6-195"><a href="#cb6-195" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>p-value = $P(X \leq 2) + P(X \geq 9)$ under $H_0$ = <span class="sc">\_\_\_\_\_\_\_\_\_\_</span> ("small" or "large").</span>
+<span id="cb6-196"><a href="#cb6-196" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Conclusion: <span class="sc">\_\_\_\_\_\_\_\_\_\_</span> $H_0$. In context: <span class="sc">\_\_\_\_\_\_\_\_\_\_</span>.</span>
+<span id="cb6-197"><a href="#cb6-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-198"><a href="#cb6-198" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb6-199"><a href="#cb6-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-200"><a href="#cb6-200" aria-hidden="true" tabindex="-1"></a><span class="fu">### C4. Gym use</span></span>
+<span id="cb6-201"><a href="#cb6-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-202"><a href="#cb6-202" aria-hidden="true" tabindex="-1"></a>**Research question:** Do more than 20% of students at our school use the gym at least once per week?</span>
+<span id="cb6-203"><a href="#cb6-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-204"><a href="#cb6-204" aria-hidden="true" tabindex="-1"></a>**Parameter:** $p$ = proportion of students at our school who use the gym at least once per week.</span>
+<span id="cb6-205"><a href="#cb6-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-206"><a href="#cb6-206" aria-hidden="true" tabindex="-1"></a>**Hypotheses:** $H_0: p = 0.20$ vs $H_a: p &gt; 0.20$. Under $H_0$, we use $n = 25$ and $p = 0.20$ for the null distribution.</span>
+<span id="cb6-207"><a href="#cb6-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-208"><a href="#cb6-208" aria-hidden="true" tabindex="-1"></a>**Data:** In a random sample of 25 students, $x = 5$ use the gym at least once per week.</span>
+<span id="cb6-209"><a href="#cb6-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-212"><a href="#cb6-212" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-213"><a href="#cb6-213" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb6-214"><a href="#cb6-214" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb6-215"><a href="#cb6-215" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb6-216"><a href="#cb6-216" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Null distribution: gym use, n = 25, p = 0.20 under H0"</span></span>
+<span id="cb6-217"><a href="#cb6-217" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 5</span></span>
+<span id="cb6-218"><a href="#cb6-218" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 3</span></span>
+<span id="cb6-219"><a href="#cb6-219" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">25</span></span>
+<span id="cb6-220"><a href="#cb6-220" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.20</span></span>
+<span id="cb6-221"><a href="#cb6-221" aria-hidden="true" tabindex="-1"></a>null_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">0</span><span class="sc">:</span>n, <span class="at">prob =</span> <span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span>n, <span class="at">size =</span> n, <span class="at">prob =</span> p))</span>
+<span id="cb6-222"><a href="#cb6-222" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(null_df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> prob)) <span class="sc">+</span></span>
+<span id="cb6-223"><a href="#cb6-223" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb6-224"><a href="#cb6-224" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x"</span>, <span class="at">y =</span> <span class="fu">expression</span>(<span class="fu">P</span>(X <span class="sc">==</span> x))) <span class="sc">+</span></span>
+<span id="cb6-225"><a href="#cb6-225" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb6-226"><a href="#cb6-226" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-227"><a href="#cb6-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-228"><a href="#cb6-228" aria-hidden="true" tabindex="-1"></a>**Your tasks:**</span>
+<span id="cb6-229"><a href="#cb6-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-230"><a href="#cb6-230" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>On the figure, add a **vertical line at the observed** $x = 5$ and **shade the bars** that represent the p-value (right tail, in the direction of $H_a$).</span>
+<span id="cb6-231"><a href="#cb6-231" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>p-value = $P(X \geq 5 \mid H_0)$ = <span class="sc">\_\_\_\_\_\_\_\_\_\_</span> ("small" or "large").</span>
+<span id="cb6-232"><a href="#cb6-232" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Conclusion: <span class="sc">\_\_\_\_\_\_\_\_\_\_</span> $H_0$. In context: <span class="sc">\_\_\_\_\_\_\_\_\_\_</span>.</span>
+<span id="cb6-233"><a href="#cb6-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-234"><a href="#cb6-234" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb6-235"><a href="#cb6-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-236"><a href="#cb6-236" aria-hidden="true" tabindex="-1"></a><span class="fu">## Part D: Full steps and one- vs two-sided</span></span>
+<span id="cb6-237"><a href="#cb6-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-238"><a href="#cb6-238" aria-hidden="true" tabindex="-1"></a><span class="fu">### D1. Order the steps</span></span>
+<span id="cb6-239"><a href="#cb6-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-240"><a href="#cb6-240" aria-hidden="true" tabindex="-1"></a>Below are **4 key steps** of the binomial test, given in **random order**. Number them **1, 2, 3, 4** in the order we perform them when conducting the test.</span>
+<span id="cb6-241"><a href="#cb6-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-242"><a href="#cb6-242" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**(A)** Verify that the 4 conditions of a Binomial Random Process (BRP) are satisfied.</span>
+<span id="cb6-243"><a href="#cb6-243" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**(B)** State the research question, define the parameter $p$, state $H_0$ and $H_a$, and identify $n$ and $p$ under $H_0$.</span>
+<span id="cb6-244"><a href="#cb6-244" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**(C)** Create a plot of the null distribution ($x$ vs $P(X=x)$ for the $n$ and $p$ under $H_0$).</span>
+<span id="cb6-245"><a href="#cb6-245" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**(D)** Collect the data (observe the value of $x$) and compare it with the null distribution: on the plot, add the observed $x$ and shade the bar(s) that represent the p-value; compute the p-value and state the conclusion in context.</span>
+<span id="cb6-246"><a href="#cb6-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-247"><a href="#cb6-247" aria-hidden="true" tabindex="-1"></a>**Your ordering:** 1 = <span class="sc">\_\_\_</span> , 2 = <span class="sc">\_\_\_</span> , 3 = <span class="sc">\_\_\_</span> , 4 = <span class="sc">\_\_\_</span></span>
+<span id="cb6-248"><a href="#cb6-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-249"><a href="#cb6-249" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb6-250"><a href="#cb6-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-251"><a href="#cb6-251" aria-hidden="true" tabindex="-1"></a><span class="fu">### D2. One-sided vs two-sided</span></span>
+<span id="cb6-252"><a href="#cb6-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-253"><a href="#cb6-253" aria-hidden="true" tabindex="-1"></a>Consider a binomial test with null distribution plotted as a bar chart.</span>
+<span id="cb6-254"><a href="#cb6-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-255"><a href="#cb6-255" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>If the alternative hypothesis is **one-sided** (e.g. $H_a: p &gt; 0.2$ or $H_a: p &lt; 0.15$), do we shade **one tail** or **both tails** of the null distribution to find the p-value?</span>
+<span id="cb6-256"><a href="#cb6-256" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>If the alternative hypothesis is **two-sided** (e.g. $H_a: p \neq 8/36$), do we shade **one tail** or **both tails**?</span>
+<span id="cb6-257"><a href="#cb6-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-258"><a href="#cb6-258" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb6-259"><a href="#cb6-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-260"><a href="#cb6-260" aria-hidden="true" tabindex="-1"></a>*End of Quiz 6 practice problems.*</span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
