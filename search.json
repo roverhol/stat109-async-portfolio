@@ -4,6 +4,27 @@
     "href": "index.html",
     "title": "STAT 109: Introductory Biostatistics",
     "section": "",
+    "text": "Start with the course path for the recommended flow through the material.\nSee the syllabus for policies and grading.\nAll readings are in lectures.\nAssessments lists projects, labs, and quizzes.\nFind software links and summaries in resources.\nCanvas is where you submit work, take quizzes, see grades, get feedback, and chat with classmates."
+  },
+  {
+    "objectID": "index.html#quick-start",
+    "href": "index.html#quick-start",
+    "title": "STAT 109: Introductory Biostatistics",
+    "section": "",
+    "text": "Start with the course path for the recommended flow through the material.\nSee the syllabus for policies and grading.\nAll readings are in lectures.\nAssessments lists projects, labs, and quizzes.\nFind software links and summaries in resources.\nCanvas is where you submit work, take quizzes, see grades, get feedback, and chat with classmates."
+  },
+  {
+    "objectID": "index.html#instructor",
+    "href": "index.html#instructor",
+    "title": "STAT 109: Introductory Biostatistics",
+    "section": "Instructor",
+    "text": "Instructor\nDr. Rosanna Overholser\nEmail: rho3@humboldt.edu"
+  },
+  {
+    "objectID": "index.html#welcome-to-stat-109-introductory-biostatistics",
+    "href": "index.html#welcome-to-stat-109-introductory-biostatistics",
+    "title": "STAT 109: Introductory Biostatistics",
+    "section": "Welcome to STAT 109: Introductory Biostatistics!",
     "text": "Welcome to STAT 109: Introductory Biostatistics!\nThis website contains Rosanna Overholser’s materials for an asynchronous version of STAT 109: Introductory Biostatistics at Cal Poly Humboldt. An asynchronous course means you work through the materials on your own schedule, with support from an expert and your peers along the way. My goal for you isn’t just to finish assignments. By the end, you should have a portfolio of reference sheets and projects you can use and share for years to come and some fellow lumberjacks you can to look forward to meeting in person when we’re all back on campus."
   },
   {
@@ -26,19 +47,5 @@
     "title": "STAT 109: Introductory Biostatistics",
     "section": "What you’ll build",
     "text": "What you’ll build\nBy the end of the course you’ll have created two reference guides: one for statistical concepts (definitions, notation, methods you want to keep organized) and one for the R programming language (functions, code patterns, notes from your notebooks).\nYou’ll also complete five projects: applied analyses with write-ups and code. You’ll update the reference sheets a little every module; each project module adds one new project to your portfolio. For three of the projects, you’ll chose a research question that you are interested and then apply methods from class to answer it. For the four, you’ll answer a classmate’s question and for the fifth, you’ll compete with your classmates to make the most accurate set of predictions.\nMy hope is that you’ll use include these five projects in your portfolio to demonstrate your understanding of the material and your ability to apply it to solve problems that people care about."
-  },
-  {
-    "objectID": "index.html#quick-start",
-    "href": "index.html#quick-start",
-    "title": "STAT 109: Introductory Biostatistics",
-    "section": "Quick Start",
-    "text": "Quick Start\n\nStart with the course path for the recommended flow through the material.\nSee the syllabus for policies and grading.\nAll readings are in lectures.\nAssessments lists projects, labs, and quizzes.\nFind software links and summaries in resources.\nCanvas is where you submit work, take quizzes, see grades, get feedback, and chat with classmates."
-  },
-  {
-    "objectID": "index.html#instructor",
-    "href": "index.html#instructor",
-    "title": "STAT 109: Introductory Biostatistics",
-    "section": "Instructor",
-    "text": "Instructor\nDr. Rosanna Overholser\nOffice: BSS 334 Email: rho3@humboldt.edu"
   }
 ]
