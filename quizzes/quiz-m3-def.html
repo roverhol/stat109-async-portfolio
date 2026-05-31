@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Module 3 — Quiz A (Def &amp; Notation) – STAT 109 - Introductory Biostatistics</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-94b323657c735dfe3b1bf6ebb2c33a55.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/css/humboldt-theme.css">
+</head>
+
+<body class="floating quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#module-3-quiz-a-definitions-notation" id="toc-module-3-quiz-a-definitions-notation" class="nav-link active" data-scroll-target="#module-3-quiz-a-definitions-notation">Module 3, Quiz A: Definitions &amp; notation</a>
+  <ul class="collapse">
+  <li><a href="#section-a-tidyverse-pipeline-verbs-read-1-pipeline" id="toc-section-a-tidyverse-pipeline-verbs-read-1-pipeline" class="nav-link" data-scroll-target="#section-a-tidyverse-pipeline-verbs-read-1-pipeline">Section A — Tidyverse pipeline verbs (Read 1 · pipeline)</a>
+  <ul class="collapse">
+  <li><a href="#a1.-pipe-operator" id="toc-a1.-pipe-operator" class="nav-link" data-scroll-target="#a1.-pipe-operator">A1. Pipe operator</a></li>
+  <li><a href="#a2.-filter" id="toc-a2.-filter" class="nav-link" data-scroll-target="#a2.-filter">A2. filter()</a></li>
+  <li><a href="#a3.-select" id="toc-a3.-select" class="nav-link" data-scroll-target="#a3.-select">A3. select()</a></li>
+  <li><a href="#a4.-mutate" id="toc-a4.-mutate" class="nav-link" data-scroll-target="#a4.-mutate">A4. mutate()</a></li>
+  <li><a href="#a5.-count" id="toc-a5.-count" class="nav-link" data-scroll-target="#a5.-count">A5. count()</a></li>
+  <li><a href="#a6.-group_by-summarize" id="toc-a6.-group_by-summarize" class="nav-link" data-scroll-target="#a6.-group_by-summarize">A6. group_by() + summarize()</a></li>
+  <li><a href="#a7.-summarize" id="toc-a7.-summarize" class="nav-link" data-scroll-target="#a7.-summarize">A7. summarize()</a></li>
+  <li><a href="#a8.-glimpse" id="toc-a8.-glimpse" class="nav-link" data-scroll-target="#a8.-glimpse">A8. glimpse()</a></li>
+  </ul></li>
+  <li><a href="#section-b-variable-types-and-one-variable-summaries" id="toc-section-b-variable-types-and-one-variable-summaries" class="nav-link" data-scroll-target="#section-b-variable-types-and-one-variable-summaries">Section B — Variable types and one-variable summaries</a>
+  <ul class="collapse">
+  <li><a href="#b1.-numerical-vs-categorical" id="toc-b1.-numerical-vs-categorical" class="nav-link" data-scroll-target="#b1.-numerical-vs-categorical">B1. Numerical vs categorical</a></li>
+  <li><a href="#b2.-best-summary-for-one-numerical-variable" id="toc-b2.-best-summary-for-one-numerical-variable" class="nav-link" data-scroll-target="#b2.-best-summary-for-one-numerical-variable">B2. Best summary for one numerical variable</a></li>
+  <li><a href="#b3.-best-summary-for-one-categorical-variable" id="toc-b3.-best-summary-for-one-categorical-variable" class="nav-link" data-scroll-target="#b3.-best-summary-for-one-categorical-variable">B3. Best summary for one categorical variable</a></li>
+  <li><a href="#b4.-when-to-prefer-median-over-mean" id="toc-b4.-when-to-prefer-median-over-mean" class="nav-link" data-scroll-target="#b4.-when-to-prefer-median-over-mean">B4. When to prefer median over mean</a></li>
+  </ul></li>
+  <li><a href="#section-c-spread-range-iqr-and-standard-deviation" id="toc-section-c-spread-range-iqr-and-standard-deviation" class="nav-link" data-scroll-target="#section-c-spread-range-iqr-and-standard-deviation">Section C — Spread: range, IQR, and standard deviation</a>
+  <ul class="collapse">
+  <li><a href="#c1.-range" id="toc-c1.-range" class="nav-link" data-scroll-target="#c1.-range">C1. Range</a></li>
+  <li><a href="#c2.-quartiles-and-iqr" id="toc-c2.-quartiles-and-iqr" class="nav-link" data-scroll-target="#c2.-quartiles-and-iqr">C2. Quartiles and IQR</a></li>
+  <li><a href="#c3.-five-number-summary" id="toc-c3.-five-number-summary" class="nav-link" data-scroll-target="#c3.-five-number-summary">C3. Five-number summary</a></li>
+  <li><a href="#c4.-what-a-boxplot-shows" id="toc-c4.-what-a-boxplot-shows" class="nav-link" data-scroll-target="#c4.-what-a-boxplot-shows">C4. What a boxplot shows</a></li>
+  <li><a href="#c5.-sd-interpretation" id="toc-c5.-sd-interpretation" class="nav-link" data-scroll-target="#c5.-sd-interpretation">C5. SD interpretation</a></li>
+  <li><a href="#c6.-iqr-vs-sd" id="toc-c6.-iqr-vs-sd" class="nav-link" data-scroll-target="#c6.-iqr-vs-sd">C6. IQR vs SD</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="quiz-m3-def.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Module 3 — Quiz A (Def &amp; Notation)</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<p class="subtitle lead">Question bank · After Read 1 · open notes · unlimited attempts</p>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-right">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="module-3-quiz-a-definitions-notation" class="level1">
+<h1>Module 3, Quiz A: Definitions &amp; notation</h1>
+<p><strong>Reading:</strong> <a href="../lectures/module-3-read-01">Module 3 Read 1</a><br>
+<strong>Project:</strong> <a href="../projects/project-3">Project 3</a> · <strong>Canvas:</strong> Def &amp; Notation quiz (Module 3)</p>
+<p>Work these <strong>practice</strong> items after <a href="../lectures/module-3-read-01">Read 1</a>. Sections cover: tidyverse pipeline verbs, variable type classification, and spread/IQR vocabulary from Read 1.</p>
+<p><strong>Graph application and two-way table reading</strong> → <a href="../quizzes/quiz-m3-concept">Quiz B</a> after <a href="../lectures/module-3-read-02">Read 2</a>.</p>
+<hr>
+<section id="section-a-tidyverse-pipeline-verbs-read-1-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="section-a-tidyverse-pipeline-verbs-read-1-pipeline">Section A — Tidyverse pipeline verbs (Read 1 · pipeline)</h2>
+<section id="a1.-pipe-operator" class="level3">
+<h3 class="anchored" data-anchor-id="a1.-pipe-operator">A1. Pipe operator</h3>
+<p>What is the main purpose of <code>%&gt;%</code> (pipe) in the tidyverse?</p>
+</section>
+<section id="a2.-filter" class="level3">
+<h3 class="anchored" data-anchor-id="a2.-filter">A2. filter()</h3>
+<p>Which tidyverse function <strong>keeps rows</strong> that satisfy a logical condition (e.g.&nbsp;<code>weight &gt; 50</code>)?</p>
+</section>
+<section id="a3.-select" class="level3">
+<h3 class="anchored" data-anchor-id="a3.-select">A3. select()</h3>
+<p>Which function <strong>chooses columns</strong> by name?</p>
+</section>
+<section id="a4.-mutate" class="level3">
+<h3 class="anchored" data-anchor-id="a4.-mutate">A4. mutate()</h3>
+<p>Which function <strong>adds a new column</strong> while keeping the original number of rows?</p>
+</section>
+<section id="a5.-count" class="level3">
+<h3 class="anchored" data-anchor-id="a5.-count">A5. count()</h3>
+<p>Which function counts <strong>how many rows</strong> fall in each level of a categorical variable?</p>
+</section>
+<section id="a6.-group_by-summarize" class="level3">
+<h3 class="anchored" data-anchor-id="a6.-group_by-summarize">A6. group_by() + summarize()</h3>
+<p>What is the role of <code>group_by(species)</code> before <code>summarize(mean_mass = mean(body_mass_g))</code>?</p>
+</section>
+<section id="a7.-summarize" class="level3">
+<h3 class="anchored" data-anchor-id="a7.-summarize">A7. summarize()</h3>
+<p>After <code>group_by(island)</code>, you call <code>summarize(n = n(), avg = mean(bill_length_mm))</code>. What do you get?</p>
+</section>
+<section id="a8.-glimpse" class="level3">
+<h3 class="anchored" data-anchor-id="a8.-glimpse">A8. glimpse()</h3>
+<p>Name two things <code>glimpse(df)</code> shows.</p>
+<details>
+<summary>
+Click to reveal answers — Section A — Tidyverse pipeline verbs (Read 1 · pipeline)
+</summary>
+<ol type="1">
+<li><p>The pipe passes the result of the left side as the <strong>first argument</strong> to the function on the right — it chains steps so you can read the pipeline top to bottom.</p></li>
+<li><p><code>filter()</code> — it returns only rows where the condition is <code>TRUE</code>.</p></li>
+<li><p><code>select()</code> — e.g.&nbsp;<code>select(species, body_mass_g)</code> returns a data frame with only those columns.</p></li>
+<li><p><code>mutate()</code> — e.g.&nbsp;<code>mutate(mass_kg = body_mass_g / 1000)</code> creates a new column.</p></li>
+<li><p><code>count(variable)</code> — returns a data frame with one row per level and a column <code>n</code> with the count.</p></li>
+<li><p><code>group_by()</code> splits the data by <code>species</code> so <code>summarize()</code> returns one summary row <strong>per species</strong> instead of one row for the whole dataset.</p></li>
+<li><p>One row per island with two columns: <code>n</code> (count of penguins on that island) and <code>avg</code> (mean bill length for that island).</p></li>
+<li><p>Variable <strong>names</strong>, <strong>types</strong> (e.g.&nbsp;<code>&lt;dbl&gt;</code>, <code>&lt;chr&gt;</code>), total rows and columns, and a short preview of values.</p></li>
+</ol>
+</details>
+<hr>
+</section>
+</section>
+<section id="section-b-variable-types-and-one-variable-summaries" class="level2">
+<h2 class="anchored" data-anchor-id="section-b-variable-types-and-one-variable-summaries">Section B — Variable types and one-variable summaries</h2>
+<section id="b1.-numerical-vs-categorical" class="level3">
+<h3 class="anchored" data-anchor-id="b1.-numerical-vs-categorical">B1. Numerical vs categorical</h3>
+<p>Classify each as <strong>numerical</strong> or <strong>categorical</strong> (and <strong>binary</strong> if categorical):</p>
+<ol type="a">
+<li>Penguin flipper length (mm)<br>
+</li>
+<li>Island: Biscoe / Dream / Torgersen<br>
+</li>
+<li>Sex: male/female<br>
+</li>
+<li>Clutch completion: yes/no<br>
+</li>
+<li>Bill depth (mm)</li>
+</ol>
+</section>
+<section id="b2.-best-summary-for-one-numerical-variable" class="level3">
+<h3 class="anchored" data-anchor-id="b2.-best-summary-for-one-numerical-variable">B2. Best summary for one numerical variable</h3>
+<p>For <strong>one</strong> numerical variable, name one graph and two numeric summaries.</p>
+</section>
+<section id="b3.-best-summary-for-one-categorical-variable" class="level3">
+<h3 class="anchored" data-anchor-id="b3.-best-summary-for-one-categorical-variable">B3. Best summary for one categorical variable</h3>
+<p>For <strong>one</strong> categorical variable, name one graph and one numeric summary.</p>
+</section>
+<section id="b4.-when-to-prefer-median-over-mean" class="level3">
+<h3 class="anchored" data-anchor-id="b4.-when-to-prefer-median-over-mean">B4. When to prefer median over mean</h3>
+<p>Why might you report the <strong>median</strong> instead of the <strong>mean</strong> for a numerical variable?</p>
+<details>
+<summary>
+Click to reveal answers — Section B — Variable types and one-variable summaries
+</summary>
+<ol type="1">
+<li><ol type="a">
+<li>Numerical. b) Categorical, not binary. c) Categorical, binary. d) Categorical, binary. e) Numerical.</li>
+</ol></li>
+<li><p>Graph: <strong>histogram</strong> (or dot plot/boxplot). Numeric: <strong>mean + SD</strong> (symmetric) or <strong>median + IQR</strong> (skewed/outliers).</p></li>
+<li><p>Graph: <strong>bar chart</strong>. Numeric: <strong>counts</strong> or <strong>proportions</strong> per category.</p></li>
+<li><p>The median is <strong>resistant to outliers</strong> — extreme values pull the mean but not the median, so median better represents a ‘typical’ value when data are skewed or have outliers.</p></li>
+</ol>
+</details>
+<hr>
+</section>
+</section>
+<section id="section-c-spread-range-iqr-and-standard-deviation" class="level2">
+<h2 class="anchored" data-anchor-id="section-c-spread-range-iqr-and-standard-deviation">Section C — Spread: range, IQR, and standard deviation</h2>
+<section id="c1.-range" class="level3">
+<h3 class="anchored" data-anchor-id="c1.-range">C1. Range</h3>
+<p>Data: <span class="math inline">\(4, 6, 8, 10, 10, 12, 14, 16\)</span>. Compute the <strong>range</strong>.</p>
+</section>
+<section id="c2.-quartiles-and-iqr" class="level3">
+<h3 class="anchored" data-anchor-id="c2.-quartiles-and-iqr">C2. Quartiles and IQR</h3>
+<p>Dataset N: <span class="math inline">\(7, 8, 9, 10, 10, 11, 12, 13\)</span>. Find <span class="math inline">\(Q_1\)</span>, <span class="math inline">\(Q_3\)</span>, and <strong>IQR</strong>.</p>
+</section>
+<section id="c3.-five-number-summary" class="level3">
+<h3 class="anchored" data-anchor-id="c3.-five-number-summary">C3. Five-number summary</h3>
+<p>List the five numbers in the <strong>five-number summary</strong> in order.</p>
+</section>
+<section id="c4.-what-a-boxplot-shows" class="level3">
+<h3 class="anchored" data-anchor-id="c4.-what-a-boxplot-shows">C4. What a boxplot shows</h3>
+<p>Describe how a <strong>boxplot</strong> represents the five-number summary.</p>
+</section>
+<section id="c5.-sd-interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="c5.-sd-interpretation">C5. SD interpretation</h3>
+<p>In words, what does the <strong>sample standard deviation</strong> <span class="math inline">\(s\)</span> measure?</p>
+</section>
+<section id="c6.-iqr-vs-sd" class="level3">
+<h3 class="anchored" data-anchor-id="c6.-iqr-vs-sd">C6. IQR vs SD</h3>
+<p>When would you prefer <strong>IQR</strong> over <strong>SD</strong> to describe spread? Why?</p>
+<details>
+<summary>
+Click to reveal answers — Section C — Spread: range, IQR, and standard deviation
+</summary>
+<ol type="1">
+<li><p>Range <span class="math inline">\(= \max - \min = 16 - 4 = 12\)</span>.</p></li>
+<li><p>Lower half: <span class="math inline">\(7, 8, 9, 10\)</span> → <span class="math inline">\(Q_1 = (8+9)/2 = 8.5\)</span>. Upper half: <span class="math inline">\(10, 11, 12, 13\)</span> → <span class="math inline">\(Q_3 = (11+12)/2 = 11.5\)</span>. IQR <span class="math inline">\(= 3\)</span>.</p></li>
+<li><p>Minimum, <span class="math inline">\(Q_1\)</span> (first quartile), Median (<span class="math inline">\(Q_2\)</span>), <span class="math inline">\(Q_3\)</span> (third quartile), Maximum.</p></li>
+<li><p>The <strong>box</strong> spans <span class="math inline">\(Q_1\)</span> to <span class="math inline">\(Q_3\)</span>; the <strong>line inside</strong> is the median; <strong>whiskers</strong> extend to the min and max (or fences if outliers are shown as dots).</p></li>
+<li><p><span class="math inline">\(s\)</span> measures the typical distance of individual observations from their mean — a larger <span class="math inline">\(s\)</span> means values are more spread out from <span class="math inline">\(\bar{x}\)</span>.</p></li>
+<li><p>When the data are <strong>skewed</strong> or have <strong>outliers</strong> — IQR is based only on the middle 50% and is resistant to extremes, while SD uses all values and is sensitive to outliers.</p></li>
+</ol>
+</details>
+<hr>
+
+
+<!-- -->
+
+</section>
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>Creative Commons Attribution-NonCommercial 4.0 International<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">(View License)</a></div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Module 3 — Quiz A (Def &amp; Notation)"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Question bank · After Read 1 · open notes · unlimited attempts"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Module 3, Quiz A: Definitions &amp; notation</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>**Reading:** <span class="co">[</span><span class="ot">Module 3 Read 1</span><span class="co">](../lectures/module-3-read-01)</span>  </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>**Project:** [Project 3](../projects/project-3) · **Canvas:** Def &amp; Notation quiz (Module 3)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Work these **practice** items after <span class="co">[</span><span class="ot">Read 1</span><span class="co">](../lectures/module-3-read-01)</span>. Sections cover: tidyverse pipeline verbs, variable type classification, and spread/IQR vocabulary from Read 1.</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>**Graph application and two-way table reading** → <span class="co">[</span><span class="ot">Quiz B</span><span class="co">](../quizzes/quiz-m3-concept)</span> after <span class="co">[</span><span class="ot">Read 2</span><span class="co">](../lectures/module-3-read-02)</span>.</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section A — Tidyverse pipeline verbs (Read 1 · pipeline)</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">### A1. Pipe operator</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>What is the main purpose of <span class="in">`%&gt;%`</span> (pipe) in the tidyverse?</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">### A2. filter()</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>Which tidyverse function **keeps rows** that satisfy a logical condition (e.g. <span class="in">`weight &gt; 50`</span>)?</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">### A3. select()</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Which function **chooses columns** by name?</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">### A4. mutate()</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>Which function **adds a new column** while keeping the original number of rows?</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">### A5. count()</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Which function counts **how many rows** fall in each level of a categorical variable?</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="fu">### A6. group_by() + summarize()</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>What is the role of <span class="in">`group_by(species)`</span> before <span class="in">`summarize(mean_mass = mean(body_mass_g))`</span>?</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="fu">### A7. summarize()</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>After <span class="in">`group_by(island)`</span>, you call <span class="in">`summarize(n = n(), avg = mean(bill_length_mm))`</span>. What do you get?</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="fu">### A8. glimpse()</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>Name two things <span class="in">`glimpse(df)`</span> shows.</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="html"}</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section A — Tidyverse pipeline verbs (Read 1 · pipeline)<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>The pipe passes the result of the left side as the **first argument** to the function on the right — it chains steps so you can read the pipeline top to bottom.</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span><span class="in">`filter()`</span> — it returns only rows where the condition is <span class="in">`TRUE`</span>.</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span><span class="in">`select()`</span> — e.g. <span class="in">`select(species, body_mass_g)`</span> returns a data frame with only those columns.</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span><span class="in">`mutate()`</span> — e.g. <span class="in">`mutate(mass_kg = body_mass_g / 1000)`</span> creates a new column.</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span><span class="in">`count(variable)`</span> — returns a data frame with one row per level and a column <span class="in">`n`</span> with the count.</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span><span class="in">`group_by()`</span> splits the data by <span class="in">`species`</span> so <span class="in">`summarize()`</span> returns one summary row **per species** instead of one row for the whole dataset.</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>One row per island with two columns: <span class="in">`n`</span> (count of penguins on that island) and <span class="in">`avg`</span> (mean bill length for that island).</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>Variable **names**, **types** (e.g. <span class="in">`&lt;dbl&gt;`</span>, <span class="in">`&lt;chr&gt;`</span>), total rows and columns, and a short preview of values.</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="pdf"}</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section A — Tidyverse pipeline verbs (Read 1 · pipeline)</span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>The pipe passes the result of the left side as the **first argument** to the function on the right — it chains steps so you can read the pipeline top to bottom.</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span><span class="in">`filter()`</span> — it returns only rows where the condition is <span class="in">`TRUE`</span>.</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span><span class="in">`select()`</span> — e.g. <span class="in">`select(species, body_mass_g)`</span> returns a data frame with only those columns.</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span><span class="in">`mutate()`</span> — e.g. <span class="in">`mutate(mass_kg = body_mass_g / 1000)`</span> creates a new column.</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span><span class="in">`count(variable)`</span> — returns a data frame with one row per level and a column <span class="in">`n`</span> with the count.</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span><span class="in">`group_by()`</span> splits the data by <span class="in">`species`</span> so <span class="in">`summarize()`</span> returns one summary row **per species** instead of one row for the whole dataset.</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>One row per island with two columns: <span class="in">`n`</span> (count of penguins on that island) and <span class="in">`avg`</span> (mean bill length for that island).</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>Variable **names**, **types** (e.g. <span class="in">`&lt;dbl&gt;`</span>, <span class="in">`&lt;chr&gt;`</span>), total rows and columns, and a short preview of values.</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section B — Variable types and one-variable summaries</span></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="fu">### B1. Numerical vs categorical</span></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>Classify each as **numerical** or **categorical** (and **binary** if categorical):</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>a) Penguin flipper length (mm)  </span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>b) Island: Biscoe / Dream / Torgersen  </span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>c) Sex: male/female  </span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>d) Clutch completion: yes/no  </span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>e) Bill depth (mm)</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a><span class="fu">### B2. Best summary for one numerical variable</span></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>For **one** numerical variable, name one graph and two numeric summaries.</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a><span class="fu">### B3. Best summary for one categorical variable</span></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>For **one** categorical variable, name one graph and one numeric summary.</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="fu">### B4. When to prefer median over mean</span></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>Why might you report the **median** instead of the **mean** for a numerical variable?</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="html"}</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section B — Variable types and one-variable summaries<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>a) Numerical. b) Categorical, not binary. c) Categorical, binary. d) Categorical, binary. e) Numerical.</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Graph: **histogram** (or dot plot/boxplot). Numeric: **mean + SD** (symmetric) or **median + IQR** (skewed/outliers).</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Graph: **bar chart**. Numeric: **counts** or **proportions** per category.</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>The median is **resistant to outliers** — extreme values pull the mean but not the median, so median better represents a 'typical' value when data are skewed or have outliers.</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="pdf"}</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section B — Variable types and one-variable summaries</span></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>a) Numerical. b) Categorical, not binary. c) Categorical, binary. d) Categorical, binary. e) Numerical.</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Graph: **histogram** (or dot plot/boxplot). Numeric: **mean + SD** (symmetric) or **median + IQR** (skewed/outliers).</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Graph: **bar chart**. Numeric: **counts** or **proportions** per category.</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>The median is **resistant to outliers** — extreme values pull the mean but not the median, so median better represents a 'typical' value when data are skewed or have outliers.</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section C — Spread: range, IQR, and standard deviation</span></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a><span class="fu">### C1. Range</span></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>Data: $4, 6, 8, 10, 10, 12, 14, 16$. Compute the **range**.</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a><span class="fu">### C2. Quartiles and IQR</span></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>Dataset N: $7, 8, 9, 10, 10, 11, 12, 13$. Find $Q_1$, $Q_3$, and **IQR**.</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a><span class="fu">### C3. Five-number summary</span></span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>List the five numbers in the **five-number summary** in order.</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a><span class="fu">### C4. What a boxplot shows</span></span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>Describe how a **boxplot** represents the five-number summary.</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a><span class="fu">### C5. SD interpretation</span></span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>In words, what does the **sample standard deviation** $s$ measure?</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a><span class="fu">### C6. IQR vs SD</span></span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>When would you prefer **IQR** over **SD** to describe spread? Why?</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="html"}</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section C — Spread: range, IQR, and standard deviation<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Range $= \max - \min = 16 - 4 = 12$.</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Lower half: $7, 8, 9, 10$ → $Q_1 = (8+9)/2 = 8.5$. Upper half: $10, 11, 12, 13$ → $Q_3 = (11+12)/2 = 11.5$. IQR $= 3$.</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Minimum, $Q_1$ (first quartile), Median ($Q_2$), $Q_3$ (third quartile), Maximum.</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>The **box** spans $Q_1$ to $Q_3$; the **line inside** is the median; **whiskers** extend to the min and max (or fences if outliers are shown as dots).</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>$s$ measures the typical distance of individual observations from their mean — a larger $s$ means values are more spread out from $\bar{x}$.</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>When the data are **skewed** or have **outliers** — IQR is based only on the middle 50% and is resistant to extremes, while SD uses all values and is sensitive to outliers.</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="pdf"}</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section C — Spread: range, IQR, and standard deviation</span></span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Range $= \max - \min = 16 - 4 = 12$.</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Lower half: $7, 8, 9, 10$ → $Q_1 = (8+9)/2 = 8.5$. Upper half: $10, 11, 12, 13$ → $Q_3 = (11+12)/2 = 11.5$. IQR $= 3$.</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Minimum, $Q_1$ (first quartile), Median ($Q_2$), $Q_3$ (third quartile), Maximum.</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>The **box** spans $Q_1$ to $Q_3$; the **line inside** is the median; **whiskers** extend to the min and max (or fences if outliers are shown as dots).</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>$s$ measures the typical distance of individual observations from their mean — a larger $s$ means values are more spread out from $\bar{x}$.</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>When the data are **skewed** or have **outliers** — IQR is based only on the middle 50% and is resistant to extremes, while SD uses all values and is sensitive to outliers.</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

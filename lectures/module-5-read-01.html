@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Module 5 — Read 1 – STAT 109 - Introductory Biostatistics</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-94b323657c735dfe3b1bf6ebb2c33a55.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/css/humboldt-theme.css">
+</head>
+
+<body class="floating quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#module-5-read-1-correlation-and-the-least-squares-line" id="toc-module-5-read-1-correlation-and-the-least-squares-line" class="nav-link active" data-scroll-target="#module-5-read-1-correlation-and-the-least-squares-line">Module 5, Read 1: Correlation and the least-squares line</a>
+  <ul class="collapse">
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning outcomes</a>
+  <ul class="collapse">
+  <li><a href="#section-1-correlation-and-the-least-squares-line" id="toc-section-1-correlation-and-the-least-squares-line" class="nav-link" data-scroll-target="#section-1-correlation-and-the-least-squares-line">Section 1: Correlation and the least-squares line</a></li>
+  </ul></li>
+  <li><a href="#section-1-correlation-and-the-least-squares-line-1" id="toc-section-1-correlation-and-the-least-squares-line-1" class="nav-link" data-scroll-target="#section-1-correlation-and-the-least-squares-line-1">Section 1: Correlation and the least-squares line</a></li>
+  </ul></li>
+  <li><a href="#correlation-and-the-least-squares-line" id="toc-correlation-and-the-least-squares-line" class="nav-link" data-scroll-target="#correlation-and-the-least-squares-line">Correlation and the least-squares line</a>
+  <ul class="collapse">
+  <li><a href="#from-scatterplot-to-simple-linear-regression-models" id="toc-from-scatterplot-to-simple-linear-regression-models" class="nav-link" data-scroll-target="#from-scatterplot-to-simple-linear-regression-models">From scatterplot to simple linear regression models</a>
+  <ul class="collapse">
+  <li><a href="#in-this-section" id="toc-in-this-section" class="nav-link" data-scroll-target="#in-this-section">In this section</a></li>
+  </ul></li>
+  <li><a href="#pearson-correlation-and-least-squares-line" id="toc-pearson-correlation-and-least-squares-line" class="nav-link" data-scroll-target="#pearson-correlation-and-least-squares-line">Pearson correlation and least-squares line</a>
+  <ul class="collapse">
+  <li><a href="#sample-correlation-formula-and-interpretation" id="toc-sample-correlation-formula-and-interpretation" class="nav-link" data-scroll-target="#sample-correlation-formula-and-interpretation">Sample correlation formula and interpretation</a></li>
+  <li><a href="#condition-reminder-for-using-correlation" id="toc-condition-reminder-for-using-correlation" class="nav-link" data-scroll-target="#condition-reminder-for-using-correlation">Condition reminder for using correlation</a></li>
+  </ul></li>
+  <li><a href="#example-1---study-hours-and-exam-score" id="toc-example-1---study-hours-and-exam-score" class="nav-link" data-scroll-target="#example-1---study-hours-and-exam-score">Example 1 - Study hours and exam score</a>
+  <ul class="collapse">
+  <li><a href="#scatterplot-form-direction-strength" id="toc-scatterplot-form-direction-strength" class="nav-link" data-scroll-target="#scatterplot-form-direction-strength">1) Scatterplot: form, direction, strength</a></li>
+  <li><a href="#pearson-correlation" id="toc-pearson-correlation" class="nav-link" data-scroll-target="#pearson-correlation">2) Pearson correlation</a></li>
+  <li><a href="#training-and-test-split-8020" id="toc-training-and-test-split-8020" class="nav-link" data-scroll-target="#training-and-test-split-8020">3) Training and test split (80/20)</a></li>
+  <li><a href="#fit-least-squares-regression-on-training-data" id="toc-fit-least-squares-regression-on-training-data" class="nav-link" data-scroll-target="#fit-least-squares-regression-on-training-data">4) Fit least-squares regression on training data</a></li>
+  </ul></li>
+  <li><a href="#residuals-and-model-performance-training-vs-test" id="toc-residuals-and-model-performance-training-vs-test" class="nav-link" data-scroll-target="#residuals-and-model-performance-training-vs-test">Residuals and model performance: training vs test</a>
+  <ul class="collapse">
+  <li><a href="#residual-descriptives-for-both-sets" id="toc-residual-descriptives-for-both-sets" class="nav-link" data-scroll-target="#residual-descriptives-for-both-sets">Residual descriptives for both sets</a></li>
+  <li><a href="#mse-and-r-squared-on-training-and-test" id="toc-mse-and-r-squared-on-training-and-test" class="nav-link" data-scroll-target="#mse-and-r-squared-on-training-and-test">MSE and R-squared on training and test</a></li>
+  </ul></li>
+  <li><a href="#example-2---fertilizer-dose-and-plant-height" id="toc-example-2---fertilizer-dose-and-plant-height" class="nav-link" data-scroll-target="#example-2---fertilizer-dose-and-plant-height">Example 2 - Fertilizer dose and plant height</a></li>
+  <li><a href="#example-3---exercise-minutes-and-resting-heart-rate" id="toc-example-3---exercise-minutes-and-resting-heart-rate" class="nav-link" data-scroll-target="#example-3---exercise-minutes-and-resting-heart-rate">Example 3 - Exercise minutes and resting heart rate</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="module-5-read-01.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Module 5 — Read 1</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<p class="subtitle lead">Correlation, least-squares regression, residuals, and model performance</p>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-right">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="module-5-read-1-correlation-and-the-least-squares-line" class="level1">
+<h1>Module 5, Read 1: Correlation and the least-squares line</h1>
+<p><strong>Project:</strong> <a href="../projects/project-5">Project 5 — Looking Ahead</a> · <strong>Preview:</strong> <a href="module-5-read-00">Read 0</a> · <strong>Prerequisite:</strong> <a href="../lectures/module-3-read-01">Module 3 scatterplots</a> · <strong>Next:</strong> <a href="../quizzes/quiz-m5-def">Quiz A (Def &amp; Notation)</a>, then <a href="module-5-read-02">Read 2</a>.</p>
+<p>This reading is your <strong>self-paced textbook</strong> for Module 5, Part 1. You will learn to <strong>quantify</strong> a linear relationship with Pearson <span class="math inline">\(r\)</span> and to <strong>model</strong> it with a least-squares regression line — the foundation of Project 5.</p>
+<section id="learning-outcomes" class="level2">
+<h2 class="anchored" data-anchor-id="learning-outcomes">Learning outcomes</h2>
+<p>Work through the section below; use <strong>Check yourself</strong> boxes before <a href="../quizzes/quiz-m5-def">Quiz A</a>.</p>
+<p>After this reading you should be able to:</p>
+<section id="section-1-correlation-and-the-least-squares-line" class="level3">
+<h3 class="anchored" data-anchor-id="section-1-correlation-and-the-least-squares-line">Section 1: Correlation and the least-squares line</h3>
+<p><em>Scatterplots, Pearson r, least-squares regression, residuals, and model performance</em></p>
+<ul>
+<li>Read a scatterplot using <strong>form</strong> (linear or curved), <strong>direction</strong> (positive or negative), and <strong>strength</strong> (strong, moderate, or weak).</li>
+<li>Compute and interpret <strong>Pearson correlation</strong> <span class="math inline">\(r\)</span> as a measure of strength and direction of a linear association.</li>
+<li>Fit a <strong>simple linear regression</strong> line <span class="math inline">\(\hat{y} = b_0 + b_1 x\)</span> with <code>lm()</code> and identify slope <span class="math inline">\(b_1\)</span> and intercept <span class="math inline">\(b_0\)</span>.</li>
+<li>Interpret the <strong>slope</strong> in context: predicted change in <span class="math inline">\(y\)</span> for a one-unit increase in <span class="math inline">\(x\)</span>.</li>
+<li>Use the fitted equation to make a <strong>point prediction</strong> for a new <span class="math inline">\(x\)</span> value.</li>
+<li>Define a <strong>residual</strong> as observed minus predicted (<span class="math inline">\(y - \hat{y}\)</span>) and explain what the least-squares criterion minimizes.</li>
+<li>Interpret <strong>MSE</strong> and <span class="math inline">\(R^2\)</span> on a test set as summaries of predictive performance on new data.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="section-1-correlation-and-the-least-squares-line-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1-correlation-and-the-least-squares-line-1">Section 1: Correlation and the least-squares line</h2>
+</section>
+</section>
+<section id="correlation-and-the-least-squares-line" class="level1">
+<h1>Correlation and the least-squares line</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Bridge from Module 3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In <a href="../module-3-read-01">Module 3 Read 1</a> you learned to <strong>describe</strong> scatterplots by form, direction, and strength. Here we add a <strong>numerical summary</strong> (Pearson <span class="math inline">\(r\)</span>) and a <strong>predictive model</strong> (the least-squares line <span class="math inline">\(\hat{y}=b_0+b_1x\)</span>).</p>
+</div>
+</div>
+<section id="from-scatterplot-to-simple-linear-regression-models" class="level2">
+<h2 class="anchored" data-anchor-id="from-scatterplot-to-simple-linear-regression-models">From scatterplot to simple linear regression models</h2>
+<p>For two numerical variables, recall how we read a scatterplot:</p>
+<ul>
+<li>form (linear or curved or neither),</li>
+<li>direction (positive or negative or none),</li>
+<li>strength (tight or loose around a trend).</li>
+</ul>
+<p>When the form looks roughly linear, we can summarize linear relationship with:</p>
+<ul>
+<li>Pearson correlation <code>r</code>, and</li>
+<li>a least-squares regression line.</li>
+</ul>
+<section id="in-this-section" class="level3">
+<h3 class="anchored" data-anchor-id="in-this-section">In this section</h3>
+<p>Quantify and model a linear relationship between two numerical variables.</p>
+<hr>
+</section>
+</section>
+<section id="pearson-correlation-and-least-squares-line" class="level2">
+<h2 class="anchored" data-anchor-id="pearson-correlation-and-least-squares-line">Pearson correlation and least-squares line</h2>
+<p>For a response <code>y</code> and explanatory variable <code>x</code>:</p>
+<ul>
+<li>Pearson Correlation (<code>cor</code>) is unitless and ranges from <code>-1</code> to <code>1</code> and is a one number summary of the direction and strength of a linear relationship between two numerical variables (assumes that the form is linear)</li>
+<li>The fitted line is:</li>
+</ul>
+<p><span class="math display">\[\hat{y} = b_0 + b_1 x\]</span></p>
+<p>where <code>b1</code> is slope and <code>b0</code> is intercept.</p>
+<p>In R, fit with <code>lm(y ~ x, data = ...)</code>.</p>
+<p>Optional activity: <a href="https://www.rossmanchance.com/applets/2021/regshuffle/regshuffle.htm">visualize best-fit line choices</a> — try different lines and see MSE/MAE change.</p>
+<section id="sample-correlation-formula-and-interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="sample-correlation-formula-and-interpretation">Sample correlation formula and interpretation</h3>
+<p>For sample data <code>(x_i, y_i), i = 1, ..., n</code>, the sample correlation is</p>
+<p><span class="math display">\[
+r = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}
+{\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2}\sqrt{\sum_{i=1}^n (y_i - \bar{y})^2}}
+\]</span></p>
+<p>How to read this:</p>
+<ul>
+<li><strong>Numerator:</strong> adds products <code>(x_i - xbar)(y_i - ybar)</code>.
+<ul>
+<li>If <code>x</code> and <code>y</code> are often both above their means (or both below), products tend to be positive, so <code>r</code> tends to be positive (positive direction).</li>
+<li>If one is often above mean while the other is below mean, products tend to be negative, so <code>r</code> tends to be negative (negative direction).</li>
+</ul></li>
+<li><strong>Denominator:</strong> rescales by overall spread in <code>x</code> and <code>y</code>, which keeps <code>r</code> between <code>-1</code> and <code>1</code>.</li>
+<li><code>r</code> near <code>0</code> means no clear <strong>linear</strong> direction.</li>
+</ul>
+<p>Quick interpretation reminder:</p>
+<ul>
+<li>If <code>|r|</code> is closer to <code>1</code> (for example <code>-0.9</code> or <code>0.9</code>), the linear relationship is stronger.</li>
+<li>If <code>r</code> is close to <code>0</code>, the linear relationship is weak to none.</li>
+<li>The sign gives direction:
+<ul>
+<li><span class="math inline">\(r &gt; 0\)</span>: positive direction (as <code>x</code> increases, <code>y</code> tends to increase).</li>
+<li><span class="math inline">\(r &lt; 0\)</span>: negative direction (as <code>x</code> increases, <code>y</code> tends to decrease).</li>
+</ul></li>
+</ul>
+<p>Practice activity: Rossman Chance “Guess the Correlation”<br>
+<a href="https://www.rossmanchance.com/applets/guesscorrelation/GuessCorrelation.html" class="uri">https://www.rossmanchance.com/applets/guesscorrelation/GuessCorrelation.html</a></p>
+</section>
+<section id="condition-reminder-for-using-correlation" class="level3">
+<h3 class="anchored" data-anchor-id="condition-reminder-for-using-correlation">Condition reminder for using correlation</h3>
+<p>Pearson correlation is a linear-association summary. Use it when the scatterplot form is roughly linear (not strongly curved and not dominated by outliers).</p>
+<hr>
+</section>
+</section>
+<section id="example-1---study-hours-and-exam-score" class="level2">
+<h2 class="anchored" data-anchor-id="example-1---study-hours-and-exam-score">Example 1 - Study hours and exam score</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"tidyverse"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>, <span class="at">repos =</span> <span class="st">"https://cloud.r-project.org"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">3401</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">120</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>exam_dat <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">study_hours =</span> <span class="fu">runif</span>(n, <span class="dv">1</span>, <span class="dv">15</span>),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">exam_score =</span> <span class="dv">45</span> <span class="sc">+</span> <span class="fl">3.4</span> <span class="sc">*</span> study_hours <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="dv">8</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<section id="scatterplot-form-direction-strength" class="level3">
+<h3 class="anchored" data-anchor-id="scatterplot-form-direction-strength">1) Scatterplot: form, direction, strength</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(exam_dat, <span class="fu">aes</span>(<span class="at">x =</span> study_hours, <span class="at">y =</span> exam_score)) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">color =</span> <span class="st">"steelblue4"</span>) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Exam score vs study hours"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Study hours"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Exam score"</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="module-5-read-01_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Interpretation: the relationship is roughly linear, positive, and moderate-to-strong.</p>
+</section>
+<section id="pearson-correlation" class="level3">
+<h3 class="anchored" data-anchor-id="pearson-correlation">2) Pearson correlation</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(exam_dat<span class="sc">$</span>study_hours, exam_dat<span class="sc">$</span>exam_score)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.8441325</code></pre>
+</div>
+</div>
+</section>
+<section id="training-and-test-split-8020" class="level3">
+<h3 class="anchored" data-anchor-id="training-and-test-split-8020">3) Training and test split (80/20)</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">3402</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>idx_train <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">seq_len</span>(<span class="fu">nrow</span>(exam_dat)), <span class="at">size =</span> <span class="fl">0.8</span> <span class="sc">*</span> <span class="fu">nrow</span>(exam_dat))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>exam_train <span class="ot">&lt;-</span> exam_dat[idx_train, ]</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>exam_test  <span class="ot">&lt;-</span> exam_dat[<span class="sc">-</span>idx_train, ]</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(exam_train)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 96</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(exam_test)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 24</code></pre>
+</div>
+</div>
+</section>
+<section id="fit-least-squares-regression-on-training-data" class="level3">
+<h3 class="anchored" data-anchor-id="fit-least-squares-regression-on-training-data">4) Fit least-squares regression on training data</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fit_exam <span class="ot">&lt;-</span> <span class="fu">lm</span>(exam_score <span class="sc">~</span> study_hours, <span class="at">data =</span> exam_train)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit_exam)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = exam_score ~ study_hours, data = exam_train)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-19.1928  -4.7092  -0.2337   5.4140  16.5633 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  47.6895     1.7424   27.37   &lt;2e-16 ***
+study_hours   3.0594     0.1906   16.05   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 7.519 on 94 degrees of freedom
+Multiple R-squared:  0.7326,    Adjusted R-squared:  0.7298 
+F-statistic: 257.5 on 1 and 94 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(fit_exam)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept) study_hours 
+  47.689527    3.059362 </code></pre>
+</div>
+</div>
+<p>Interpretation:</p>
+<ul>
+<li>slope <code>b1</code>: predicted increase in exam score is 3.06 points for each additional hour of study.</li>
+<li>intercept <code>b0</code>: predicted score is 47.7 when study hours = 0</li>
+</ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>new_hours <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">study_hours =</span> <span class="dv">10</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(fit_exam, <span class="at">newdata =</span> new_hours)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>       1 
+78.28315 </code></pre>
+</div>
+</div>
+<p>If a student studies 10 hours then our linear model predicts they will get an exam score of 78.3. By hand, <span class="math inline">\(\hat{score} = 47.7+3.06(10)\)</span>.</p>
+<hr>
+</section>
+</section>
+<section id="residuals-and-model-performance-training-vs-test" class="level2">
+<h2 class="anchored" data-anchor-id="residuals-and-model-performance-training-vs-test">Residuals and model performance: training vs test</h2>
+<p>Residual is <code>observed y - predicted y</code>.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>exam_train <span class="ot">&lt;-</span> exam_train <span class="sc">|&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">pred =</span> <span class="fu">predict</span>(fit_exam, <span class="at">newdata =</span> exam_train),</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">resid =</span> exam_score <span class="sc">-</span> pred</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>exam_test <span class="ot">&lt;-</span> exam_test <span class="sc">|&gt;</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">pred =</span> <span class="fu">predict</span>(fit_exam, <span class="at">newdata =</span> exam_test),</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">resid =</span> exam_score <span class="sc">-</span> pred</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<section id="residual-descriptives-for-both-sets" class="level3">
+<h3 class="anchored" data-anchor-id="residual-descriptives-for-both-sets">Residual descriptives for both sets</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>resid_desc <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  exam_train <span class="sc">|&gt;</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">set =</span> <span class="st">"train"</span>,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">mean_resid =</span> <span class="fu">mean</span>(resid),</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">sd_resid =</span> <span class="fu">sd</span>(resid),</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">min_resid =</span> <span class="fu">min</span>(resid),</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">q1_resid =</span> <span class="fu">quantile</span>(resid, <span class="fl">0.25</span>),</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">median_resid =</span> <span class="fu">median</span>(resid),</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">q3_resid =</span> <span class="fu">quantile</span>(resid, <span class="fl">0.75</span>),</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">max_resid =</span> <span class="fu">max</span>(resid)</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  exam_test <span class="sc">|&gt;</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">set =</span> <span class="st">"test"</span>,</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">mean_resid =</span> <span class="fu">mean</span>(resid),</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">sd_resid =</span> <span class="fu">sd</span>(resid),</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">min_resid =</span> <span class="fu">min</span>(resid),</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">q1_resid =</span> <span class="fu">quantile</span>(resid, <span class="fl">0.25</span>),</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">median_resid =</span> <span class="fu">median</span>(resid),</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">q3_resid =</span> <span class="fu">quantile</span>(resid, <span class="fl">0.75</span>),</span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">max_resid =</span> <span class="fu">max</span>(resid)</span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>resid_desc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 9
+  set       n mean_resid sd_resid min_resid q1_resid median_resid q3_resid
+  &lt;chr&gt; &lt;int&gt;      &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;        &lt;dbl&gt;    &lt;dbl&gt;
+1 train    96   1.78e-15     7.48     -19.2    -4.71       -0.234     5.41
+2 test     24  -1.82e+ 0     9.61     -22.9    -6.87       -1.57      2.80
+# ℹ 1 more variable: max_resid &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="mse-and-r-squared-on-training-and-test" class="level3">
+<h3 class="anchored" data-anchor-id="mse-and-r-squared-on-training-and-test">MSE and R-squared on training and test</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>mse <span class="ot">&lt;-</span> <span class="cf">function</span>(y, yhat) <span class="fu">mean</span>((y <span class="sc">-</span> yhat)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>mse_train <span class="ot">&lt;-</span> <span class="fu">mse</span>(exam_train<span class="sc">$</span>exam_score, exam_train<span class="sc">$</span>pred)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>mse_test  <span class="ot">&lt;-</span> <span class="fu">mse</span>(exam_test<span class="sc">$</span>exam_score, exam_test<span class="sc">$</span>pred)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>ss_tot_train <span class="ot">&lt;-</span> <span class="fu">sum</span>((exam_train<span class="sc">$</span>exam_score <span class="sc">-</span> <span class="fu">mean</span>(exam_train<span class="sc">$</span>exam_score))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>ss_tot_test  <span class="ot">&lt;-</span> <span class="fu">sum</span>((exam_test<span class="sc">$</span>exam_score <span class="sc">-</span> <span class="fu">mean</span>(exam_test<span class="sc">$</span>exam_score))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>ss_res_train <span class="ot">&lt;-</span> <span class="fu">sum</span>((exam_train<span class="sc">$</span>exam_score <span class="sc">-</span> exam_train<span class="sc">$</span>pred)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>ss_res_test  <span class="ot">&lt;-</span> <span class="fu">sum</span>((exam_test<span class="sc">$</span>exam_score <span class="sc">-</span> exam_test<span class="sc">$</span>pred)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>r2_train <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> ss_res_train <span class="sc">/</span> ss_tot_train</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>r2_test  <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> ss_res_test <span class="sc">/</span> ss_tot_test</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">set =</span> <span class="fu">c</span>(<span class="st">"train"</span>, <span class="st">"test"</span>),</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">MSE =</span> <span class="fu">c</span>(mse_train, mse_test),</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">R2 =</span> <span class="fu">c</span>(r2_train, r2_test)</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  set     MSE    R2
+  &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
+1 train  55.4 0.733
+2 test   91.8 0.623</code></pre>
+</div>
+</div>
+<p>Interpretation notes:</p>
+<ul>
+<li>Training MSE is optimistically biased (it is measured on the same data used to fit the model).</li>
+<li>Test MSE is a less biased estimate of prediction error on new data.</li>
+<li><code>R^2</code> is a rescaled error summary: roughly, the proportion of variability in <code>y</code> explained by linear prediction from <code>x</code>.</li>
+<li>Test <code>R^2</code> should be reported for expected out-of-sample performance.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="example-2---fertilizer-dose-and-plant-height" class="level2">
+<h2 class="anchored" data-anchor-id="example-2---fertilizer-dose-and-plant-height">Example 2 - Fertilizer dose and plant height</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">3403</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>plant_dat <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">dose =</span> <span class="fu">runif</span>(<span class="dv">90</span>, <span class="dv">0</span>, <span class="dv">12</span>),</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">height_cm =</span> <span class="dv">18</span> <span class="sc">+</span> <span class="fl">2.1</span> <span class="sc">*</span> dose <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">90</span>, <span class="dv">0</span>, <span class="dv">5</span>)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(plant_dat<span class="sc">$</span>dose, plant_dat<span class="sc">$</span>height_cm)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.8321912</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">seq_len</span>(<span class="fu">nrow</span>(plant_dat)), <span class="at">size =</span> <span class="fl">0.8</span> <span class="sc">*</span> <span class="fu">nrow</span>(plant_dat))</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>plant_train <span class="ot">&lt;-</span> plant_dat[idx, ]</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>plant_test  <span class="ot">&lt;-</span> plant_dat[<span class="sc">-</span>idx, ]</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>fit_plant <span class="ot">&lt;-</span> <span class="fu">lm</span>(height_cm <span class="sc">~</span> dose, <span class="at">data =</span> plant_train)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(fit_plant)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>(Intercept)        dose 
+  17.737388    2.359837 </code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>plant_test <span class="ot">&lt;-</span> plant_test <span class="sc">|&gt;</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pred =</span> <span class="fu">predict</span>(fit_plant, <span class="at">newdata =</span> plant_test))</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_MSE =</span> <span class="fu">mse</span>(plant_test<span class="sc">$</span>height_cm, plant_test<span class="sc">$</span>pred),</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_R2 =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">sum</span>((plant_test<span class="sc">$</span>height_cm <span class="sc">-</span> plant_test<span class="sc">$</span>pred)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>((plant_test<span class="sc">$</span>height_cm <span class="sc">-</span> <span class="fu">mean</span>(plant_test<span class="sc">$</span>height_cm))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  test_MSE test_R2
+     &lt;dbl&gt;   &lt;dbl&gt;
+1     25.7   0.651</code></pre>
+</div>
+</div>
+<hr>
+</section>
+<section id="example-3---exercise-minutes-and-resting-heart-rate" class="level2">
+<h2 class="anchored" data-anchor-id="example-3---exercise-minutes-and-resting-heart-rate">Example 3 - Exercise minutes and resting heart rate</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">3404</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>heart_dat <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">exercise_min =</span> <span class="fu">runif</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">60</span>),</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">resting_hr =</span> <span class="dv">78</span> <span class="sc">-</span> <span class="fl">0.28</span> <span class="sc">*</span> exercise_min <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="fl">4.2</span>)</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(heart_dat<span class="sc">$</span>exercise_min, heart_dat<span class="sc">$</span>resting_hr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.780774</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">seq_len</span>(<span class="fu">nrow</span>(heart_dat)), <span class="at">size =</span> <span class="fl">0.8</span> <span class="sc">*</span> <span class="fu">nrow</span>(heart_dat))</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>heart_train <span class="ot">&lt;-</span> heart_dat[idx, ]</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>heart_test  <span class="ot">&lt;-</span> heart_dat[<span class="sc">-</span>idx, ]</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>fit_heart <span class="ot">&lt;-</span> <span class="fu">lm</span>(resting_hr <span class="sc">~</span> exercise_min, <span class="at">data =</span> heart_train)</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(fit_heart)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> (Intercept) exercise_min 
+   76.526712    -0.247786 </code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>heart_test <span class="ot">&lt;-</span> heart_test <span class="sc">|&gt;</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pred =</span> <span class="fu">predict</span>(fit_heart, <span class="at">newdata =</span> heart_test))</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_MSE =</span> <span class="fu">mse</span>(heart_test<span class="sc">$</span>resting_hr, heart_test<span class="sc">$</span>pred),</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_R2 =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">sum</span>((heart_test<span class="sc">$</span>resting_hr <span class="sc">-</span> heart_test<span class="sc">$</span>pred)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>((heart_test<span class="sc">$</span>resting_hr <span class="sc">-</span> <span class="fu">mean</span>(heart_test<span class="sc">$</span>resting_hr))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  test_MSE test_R2
+     &lt;dbl&gt;   &lt;dbl&gt;
+1     18.0   0.672</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check yourself — Correlation and the least-squares line
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>A scatterplot shows study hours on the x-axis and exam score on the y-axis. Points slope upward and cluster near a line. Describe form, direction, and strength.</p></li>
+<li><p>Pearson <span class="math inline">\(r = -0.82\)</span> between exercise minutes and resting heart rate. Interpret this value.</p></li>
+<li><p>R output: <code>(Intercept) 47.7</code>, <code>study_hours 3.06</code>. Write the prediction equation and interpret the slope.</p></li>
+<li><p>Using the equation above, predict exam score for a student who studies 10 hours. Show the arithmetic.</p></li>
+<li><p>Define <strong>residual</strong>. For a student with exam score 85 who studied 10 hours, compute the residual.</p></li>
+<li><p>Why should you prefer <strong>test</strong> MSE and <span class="math inline">\(R^2\)</span> over training metrics when reporting model performance?</p></li>
+</ol>
+</div>
+</div>
+<details>
+<summary>
+Click to reveal answers
+</summary>
+<ol type="1">
+<li><p><strong>Form:</strong> roughly linear. <strong>Direction:</strong> positive (more hours → higher score). <strong>Strength:</strong> moderate to strong.</p></li>
+<li><p>Strong <strong>negative</strong> linear association: as daily exercise minutes increase, resting heart rate tends to decrease.</p></li>
+<li><p><span class="math inline">\(\hat{y} = 47.7 + 3.06\, x\)</span>. <strong>Slope:</strong> each additional hour of study is associated with a predicted 3.06-point increase in exam score.</p></li>
+<li><p><span class="math inline">\(\hat{y} = 47.7 + 3.06(10) = 47.7 + 30.6 = 78.3\)</span> points.</p></li>
+<li><p>Residual <span class="math inline">\(= y - \hat{y} = 85 - 78.3 = 6.7\)</span> — the student scored 6.7 points <strong>above</strong> the model prediction.</p></li>
+<li><p>Training metrics are optimistically biased — the model was fit on the same data. Test metrics estimate performance on <strong>new data</strong> the model has not seen.</p></li>
+</ol>
+</details>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Optional enrichment (not required for Project 5)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><a href="lecture-37">Logistic regression</a> — modeling a binary response with <code>glm()</code> and odds ratios</li>
+</ul>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>Creative Commons Attribution-NonCommercial 4.0 International<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">(View License)</a></div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Module 5 — Read 1"</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Correlation, least-squares regression, residuals, and model performance"</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html: default</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf: default</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="fu"># Module 5, Read 1: Correlation and the least-squares line</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>**Project:** [Project 5 — Looking Ahead](../projects/project-5) · **Preview:** [Read 0](module-5-read-00) · **Prerequisite:** [Module 3 scatterplots](../lectures/module-3-read-01) · **Next:** <span class="co">[</span><span class="ot">Quiz A (Def &amp; Notation)</span><span class="co">](../quizzes/quiz-m5-def)</span>, then <span class="co">[</span><span class="ot">Read 2</span><span class="co">](module-5-read-02)</span>.</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>This reading is your **self-paced textbook** for Module 5, Part 1. You will learn to **quantify** a linear relationship with Pearson $r$ and to **model** it with a least-squares regression line — the foundation of Project 5.</span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning outcomes</span></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>Work through the section below; use **Check yourself** boxes before <span class="co">[</span><span class="ot">Quiz A</span><span class="co">](../quizzes/quiz-m5-def)</span>.</span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>After this reading you should be able to:</span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a><span class="fu">### Section 1: Correlation and the least-squares line</span></span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>*Scatterplots, Pearson r, least-squares regression, residuals, and model performance*</span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Read a scatterplot using **form** (linear or curved), **direction** (positive or negative), and **strength** (strong, moderate, or weak).</span>
+<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Compute and interpret **Pearson correlation** $r$ as a measure of strength and direction of a linear association.</span>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Fit a **simple linear regression** line $\hat{y} = b_0 + b_1 x$ with <span class="in">`lm()`</span> and identify slope $b_1$ and intercept $b_0$.</span>
+<span id="cb32-27"><a href="#cb32-27" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Interpret the **slope** in context: predicted change in $y$ for a one-unit increase in $x$.</span>
+<span id="cb32-28"><a href="#cb32-28" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use the fitted equation to make a **point prediction** for a new $x$ value.</span>
+<span id="cb32-29"><a href="#cb32-29" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define a **residual** as observed minus predicted ($y - \hat{y}$) and explain what the least-squares criterion minimizes.</span>
+<span id="cb32-30"><a href="#cb32-30" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Interpret **MSE** and $R^2$ on a test set as summaries of predictive performance on new data.</span>
+<span id="cb32-31"><a href="#cb32-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-32"><a href="#cb32-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-33"><a href="#cb32-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-34"><a href="#cb32-34" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb32-35"><a href="#cb32-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-36"><a href="#cb32-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section 1: Correlation and the least-squares line</span></span>
+<span id="cb32-37"><a href="#cb32-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-38"><a href="#cb32-38" aria-hidden="true" tabindex="-1"></a><span class="fu"># Correlation and the least-squares line</span></span>
+<span id="cb32-39"><a href="#cb32-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-40"><a href="#cb32-40" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb32-41"><a href="#cb32-41" aria-hidden="true" tabindex="-1"></a><span class="fu">## Bridge from Module 3</span></span>
+<span id="cb32-42"><a href="#cb32-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-43"><a href="#cb32-43" aria-hidden="true" tabindex="-1"></a>In <span class="co">[</span><span class="ot">Module 3 Read 1</span><span class="co">](../module-3-read-01)</span> you learned to **describe** scatterplots by form, direction, and strength. Here we add a **numerical summary** (Pearson $r$) and a **predictive model** (the least-squares line $\hat{y}=b_0+b_1x$).</span>
+<span id="cb32-44"><a href="#cb32-44" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb32-45"><a href="#cb32-45" aria-hidden="true" tabindex="-1"></a><span class="fu">## From scatterplot to simple linear regression models</span></span>
+<span id="cb32-46"><a href="#cb32-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-47"><a href="#cb32-47" aria-hidden="true" tabindex="-1"></a>For two numerical variables, recall how we read a scatterplot:</span>
+<span id="cb32-48"><a href="#cb32-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-49"><a href="#cb32-49" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>form (linear or curved or neither),</span>
+<span id="cb32-50"><a href="#cb32-50" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>direction (positive or negative or none),</span>
+<span id="cb32-51"><a href="#cb32-51" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>strength (tight or loose around a trend).</span>
+<span id="cb32-52"><a href="#cb32-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-53"><a href="#cb32-53" aria-hidden="true" tabindex="-1"></a>When the form looks roughly linear, we can summarize linear relationship with:</span>
+<span id="cb32-54"><a href="#cb32-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-55"><a href="#cb32-55" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Pearson correlation <span class="in">`r`</span>, and</span>
+<span id="cb32-56"><a href="#cb32-56" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>a least-squares regression line.</span>
+<span id="cb32-57"><a href="#cb32-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-58"><a href="#cb32-58" aria-hidden="true" tabindex="-1"></a><span class="fu">### In this section</span></span>
+<span id="cb32-59"><a href="#cb32-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-60"><a href="#cb32-60" aria-hidden="true" tabindex="-1"></a>Quantify and model a linear relationship between two numerical variables.</span>
+<span id="cb32-61"><a href="#cb32-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-62"><a href="#cb32-62" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb32-63"><a href="#cb32-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-64"><a href="#cb32-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## Pearson correlation and least-squares line</span></span>
+<span id="cb32-65"><a href="#cb32-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-66"><a href="#cb32-66" aria-hidden="true" tabindex="-1"></a>For a response <span class="in">`y`</span> and explanatory variable <span class="in">`x`</span>:</span>
+<span id="cb32-67"><a href="#cb32-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-68"><a href="#cb32-68" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Pearson Correlation (<span class="in">`cor`</span>) is unitless and ranges from <span class="in">`-1`</span> to <span class="in">`1`</span> and is a one number summary of the direction and strength of a linear relationship between two numerical variables (assumes that the form is linear)</span>
+<span id="cb32-69"><a href="#cb32-69" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The fitted line is:</span>
+<span id="cb32-70"><a href="#cb32-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-71"><a href="#cb32-71" aria-hidden="true" tabindex="-1"></a>$$\hat{y} = b_0 + b_1 x$$</span>
+<span id="cb32-72"><a href="#cb32-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-73"><a href="#cb32-73" aria-hidden="true" tabindex="-1"></a>where <span class="in">`b1`</span> is slope and <span class="in">`b0`</span> is intercept.</span>
+<span id="cb32-74"><a href="#cb32-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-75"><a href="#cb32-75" aria-hidden="true" tabindex="-1"></a>In R, fit with <span class="in">`lm(y ~ x, data = ...)`</span>.</span>
+<span id="cb32-76"><a href="#cb32-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-77"><a href="#cb32-77" aria-hidden="true" tabindex="-1"></a>Optional activity: <span class="co">[</span><span class="ot">visualize best-fit line choices</span><span class="co">](https://www.rossmanchance.com/applets/2021/regshuffle/regshuffle.htm)</span> — try different lines and see MSE/MAE change.</span>
+<span id="cb32-78"><a href="#cb32-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-79"><a href="#cb32-79" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sample correlation formula and interpretation</span></span>
+<span id="cb32-80"><a href="#cb32-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-81"><a href="#cb32-81" aria-hidden="true" tabindex="-1"></a>For sample data <span class="in">`(x_i, y_i), i = 1, ..., n`</span>, the sample correlation is</span>
+<span id="cb32-82"><a href="#cb32-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-83"><a href="#cb32-83" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb32-84"><a href="#cb32-84" aria-hidden="true" tabindex="-1"></a>r = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}</span>
+<span id="cb32-85"><a href="#cb32-85" aria-hidden="true" tabindex="-1"></a>{\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2}\sqrt{\sum_{i=1}^n (y_i - \bar{y})^2}}</span>
+<span id="cb32-86"><a href="#cb32-86" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb32-87"><a href="#cb32-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-88"><a href="#cb32-88" aria-hidden="true" tabindex="-1"></a>How to read this:</span>
+<span id="cb32-89"><a href="#cb32-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-90"><a href="#cb32-90" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Numerator:** adds products <span class="in">`(x_i - xbar)(y_i - ybar)`</span>.</span>
+<span id="cb32-91"><a href="#cb32-91" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>If <span class="in">`x`</span> and <span class="in">`y`</span> are often both above their means (or both below), products tend to be positive, so <span class="in">`r`</span> tends to be positive (positive direction).</span>
+<span id="cb32-92"><a href="#cb32-92" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>If one is often above mean while the other is below mean, products tend to be negative, so <span class="in">`r`</span> tends to be negative (negative direction).</span>
+<span id="cb32-93"><a href="#cb32-93" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Denominator:** rescales by overall spread in <span class="in">`x`</span> and <span class="in">`y`</span>, which keeps <span class="in">`r`</span> between <span class="in">`-1`</span> and <span class="in">`1`</span>.</span>
+<span id="cb32-94"><a href="#cb32-94" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`r`</span> near <span class="in">`0`</span> means no clear **linear** direction.</span>
+<span id="cb32-95"><a href="#cb32-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-96"><a href="#cb32-96" aria-hidden="true" tabindex="-1"></a>Quick interpretation reminder:</span>
+<span id="cb32-97"><a href="#cb32-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-98"><a href="#cb32-98" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>If <span class="in">`|r|`</span> is closer to <span class="in">`1`</span> (for example <span class="in">`-0.9`</span> or <span class="in">`0.9`</span>), the linear relationship is stronger.</span>
+<span id="cb32-99"><a href="#cb32-99" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>If <span class="in">`r`</span> is close to <span class="in">`0`</span>, the linear relationship is weak to none.</span>
+<span id="cb32-100"><a href="#cb32-100" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The sign gives direction:</span>
+<span id="cb32-101"><a href="#cb32-101" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$r &gt; 0$: positive direction (as <span class="in">`x`</span> increases, <span class="in">`y`</span> tends to increase).</span>
+<span id="cb32-102"><a href="#cb32-102" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>$r &lt; 0$: negative direction (as <span class="in">`x`</span> increases, <span class="in">`y`</span> tends to decrease).</span>
+<span id="cb32-103"><a href="#cb32-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-104"><a href="#cb32-104" aria-hidden="true" tabindex="-1"></a>Practice activity: Rossman Chance "Guess the Correlation"\</span>
+<span id="cb32-105"><a href="#cb32-105" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;https://www.rossmanchance.com/applets/guesscorrelation/GuessCorrelation.html&gt;</span></span>
+<span id="cb32-106"><a href="#cb32-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-107"><a href="#cb32-107" aria-hidden="true" tabindex="-1"></a><span class="fu">### Condition reminder for using correlation</span></span>
+<span id="cb32-108"><a href="#cb32-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-109"><a href="#cb32-109" aria-hidden="true" tabindex="-1"></a>Pearson correlation is a linear-association summary. Use it when the scatterplot form is roughly linear (not strongly curved and not dominated by outliers).</span>
+<span id="cb32-110"><a href="#cb32-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-111"><a href="#cb32-111" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb32-112"><a href="#cb32-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-113"><a href="#cb32-113" aria-hidden="true" tabindex="-1"></a><span class="fu">## Example 1 - Study hours and exam score</span></span>
+<span id="cb32-114"><a href="#cb32-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-117"><a href="#cb32-117" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb32-118"><a href="#cb32-118" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"tidyverse"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb32-119"><a href="#cb32-119" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>, <span class="at">repos =</span> <span class="st">"https://cloud.r-project.org"</span>)</span>
+<span id="cb32-120"><a href="#cb32-120" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb32-121"><a href="#cb32-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-122"><a href="#cb32-122" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb32-123"><a href="#cb32-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-124"><a href="#cb32-124" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">3401</span>)</span>
+<span id="cb32-125"><a href="#cb32-125" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">120</span></span>
+<span id="cb32-126"><a href="#cb32-126" aria-hidden="true" tabindex="-1"></a>exam_dat <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb32-127"><a href="#cb32-127" aria-hidden="true" tabindex="-1"></a>  <span class="at">study_hours =</span> <span class="fu">runif</span>(n, <span class="dv">1</span>, <span class="dv">15</span>),</span>
+<span id="cb32-128"><a href="#cb32-128" aria-hidden="true" tabindex="-1"></a>  <span class="at">exam_score =</span> <span class="dv">45</span> <span class="sc">+</span> <span class="fl">3.4</span> <span class="sc">*</span> study_hours <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="dv">8</span>)</span>
+<span id="cb32-129"><a href="#cb32-129" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb32-130"><a href="#cb32-130" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb32-131"><a href="#cb32-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-132"><a href="#cb32-132" aria-hidden="true" tabindex="-1"></a><span class="fu">### 1) Scatterplot: form, direction, strength</span></span>
+<span id="cb32-133"><a href="#cb32-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-136"><a href="#cb32-136" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb32-137"><a href="#cb32-137" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(exam_dat, <span class="fu">aes</span>(<span class="at">x =</span> study_hours, <span class="at">y =</span> exam_score)) <span class="sc">+</span></span>
+<span id="cb32-138"><a href="#cb32-138" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">color =</span> <span class="st">"steelblue4"</span>) <span class="sc">+</span></span>
+<span id="cb32-139"><a href="#cb32-139" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb32-140"><a href="#cb32-140" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Exam score vs study hours"</span>,</span>
+<span id="cb32-141"><a href="#cb32-141" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Study hours"</span>,</span>
+<span id="cb32-142"><a href="#cb32-142" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Exam score"</span></span>
+<span id="cb32-143"><a href="#cb32-143" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb32-144"><a href="#cb32-144" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb32-145"><a href="#cb32-145" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb32-146"><a href="#cb32-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-147"><a href="#cb32-147" aria-hidden="true" tabindex="-1"></a>Interpretation: the relationship is roughly linear, positive, and moderate-to-strong.</span>
+<span id="cb32-148"><a href="#cb32-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-149"><a href="#cb32-149" aria-hidden="true" tabindex="-1"></a><span class="fu">### 2) Pearson correlation</span></span>
+<span id="cb32-150"><a href="#cb32-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-153"><a href="#cb32-153" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb32-154"><a href="#cb32-154" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(exam_dat<span class="sc">$</span>study_hours, exam_dat<span class="sc">$</span>exam_score)</span>
+<span id="cb32-155"><a href="#cb32-155" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb32-156"><a href="#cb32-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-157"><a href="#cb32-157" aria-hidden="true" tabindex="-1"></a><span class="fu">### 3) Training and test split (80/20)</span></span>
+<span id="cb32-158"><a href="#cb32-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-161"><a href="#cb32-161" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb32-162"><a href="#cb32-162" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">3402</span>)</span>
+<span id="cb32-163"><a href="#cb32-163" aria-hidden="true" tabindex="-1"></a>idx_train <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">seq_len</span>(<span class="fu">nrow</span>(exam_dat)), <span class="at">size =</span> <span class="fl">0.8</span> <span class="sc">*</span> <span class="fu">nrow</span>(exam_dat))</span>
+<span id="cb32-164"><a href="#cb32-164" aria-hidden="true" tabindex="-1"></a>exam_train <span class="ot">&lt;-</span> exam_dat[idx_train, ]</span>
+<span id="cb32-165"><a href="#cb32-165" aria-hidden="true" tabindex="-1"></a>exam_test  <span class="ot">&lt;-</span> exam_dat[<span class="sc">-</span>idx_train, ]</span>
+<span id="cb32-166"><a href="#cb32-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-167"><a href="#cb32-167" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(exam_train)</span>
+<span id="cb32-168"><a href="#cb32-168" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(exam_test)</span>
+<span id="cb32-169"><a href="#cb32-169" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb32-170"><a href="#cb32-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-171"><a href="#cb32-171" aria-hidden="true" tabindex="-1"></a><span class="fu">### 4) Fit least-squares regression on training data</span></span>
+<span id="cb32-172"><a href="#cb32-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-175"><a href="#cb32-175" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb32-176"><a href="#cb32-176" aria-hidden="true" tabindex="-1"></a>fit_exam <span class="ot">&lt;-</span> <span class="fu">lm</span>(exam_score <span class="sc">~</span> study_hours, <span class="at">data =</span> exam_train)</span>
+<span id="cb32-177"><a href="#cb32-177" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit_exam)</span>
+<span id="cb32-178"><a href="#cb32-178" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(fit_exam)</span>
+<span id="cb32-179"><a href="#cb32-179" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb32-180"><a href="#cb32-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-181"><a href="#cb32-181" aria-hidden="true" tabindex="-1"></a>Interpretation:</span>
+<span id="cb32-182"><a href="#cb32-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-183"><a href="#cb32-183" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>slope <span class="in">`b1`</span>: predicted increase in exam score is 3.06 points for each additional hour of study.</span>
+<span id="cb32-184"><a href="#cb32-184" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>intercept <span class="in">`b0`</span>: predicted score is 47.7 when study hours = 0</span>
+<span id="cb32-185"><a href="#cb32-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-188"><a href="#cb32-188" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb32-189"><a href="#cb32-189" aria-hidden="true" tabindex="-1"></a>new_hours <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">study_hours =</span> <span class="dv">10</span>)</span>
+<span id="cb32-190"><a href="#cb32-190" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(fit_exam, <span class="at">newdata =</span> new_hours)</span>
+<span id="cb32-191"><a href="#cb32-191" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb32-192"><a href="#cb32-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-193"><a href="#cb32-193" aria-hidden="true" tabindex="-1"></a>If a student studies 10 hours then our linear model predicts they will get an exam score of 78.3. By hand, $\hat{score} = 47.7+3.06(10)$.</span>
+<span id="cb32-194"><a href="#cb32-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-195"><a href="#cb32-195" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb32-196"><a href="#cb32-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-197"><a href="#cb32-197" aria-hidden="true" tabindex="-1"></a><span class="fu">## Residuals and model performance: training vs test</span></span>
+<span id="cb32-198"><a href="#cb32-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-199"><a href="#cb32-199" aria-hidden="true" tabindex="-1"></a>Residual is <span class="in">`observed y - predicted y`</span>.</span>
+<span id="cb32-200"><a href="#cb32-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-203"><a href="#cb32-203" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb32-204"><a href="#cb32-204" aria-hidden="true" tabindex="-1"></a>exam_train <span class="ot">&lt;-</span> exam_train <span class="sc">|&gt;</span></span>
+<span id="cb32-205"><a href="#cb32-205" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb32-206"><a href="#cb32-206" aria-hidden="true" tabindex="-1"></a>    <span class="at">pred =</span> <span class="fu">predict</span>(fit_exam, <span class="at">newdata =</span> exam_train),</span>
+<span id="cb32-207"><a href="#cb32-207" aria-hidden="true" tabindex="-1"></a>    <span class="at">resid =</span> exam_score <span class="sc">-</span> pred</span>
+<span id="cb32-208"><a href="#cb32-208" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb32-209"><a href="#cb32-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-210"><a href="#cb32-210" aria-hidden="true" tabindex="-1"></a>exam_test <span class="ot">&lt;-</span> exam_test <span class="sc">|&gt;</span></span>
+<span id="cb32-211"><a href="#cb32-211" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb32-212"><a href="#cb32-212" aria-hidden="true" tabindex="-1"></a>    <span class="at">pred =</span> <span class="fu">predict</span>(fit_exam, <span class="at">newdata =</span> exam_test),</span>
+<span id="cb32-213"><a href="#cb32-213" aria-hidden="true" tabindex="-1"></a>    <span class="at">resid =</span> exam_score <span class="sc">-</span> pred</span>
+<span id="cb32-214"><a href="#cb32-214" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb32-215"><a href="#cb32-215" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb32-216"><a href="#cb32-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-217"><a href="#cb32-217" aria-hidden="true" tabindex="-1"></a><span class="fu">### Residual descriptives for both sets</span></span>
+<span id="cb32-218"><a href="#cb32-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-221"><a href="#cb32-221" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb32-222"><a href="#cb32-222" aria-hidden="true" tabindex="-1"></a>resid_desc <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb32-223"><a href="#cb32-223" aria-hidden="true" tabindex="-1"></a>  exam_train <span class="sc">|&gt;</span></span>
+<span id="cb32-224"><a href="#cb32-224" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb32-225"><a href="#cb32-225" aria-hidden="true" tabindex="-1"></a>      <span class="at">set =</span> <span class="st">"train"</span>,</span>
+<span id="cb32-226"><a href="#cb32-226" aria-hidden="true" tabindex="-1"></a>      <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb32-227"><a href="#cb32-227" aria-hidden="true" tabindex="-1"></a>      <span class="at">mean_resid =</span> <span class="fu">mean</span>(resid),</span>
+<span id="cb32-228"><a href="#cb32-228" aria-hidden="true" tabindex="-1"></a>      <span class="at">sd_resid =</span> <span class="fu">sd</span>(resid),</span>
+<span id="cb32-229"><a href="#cb32-229" aria-hidden="true" tabindex="-1"></a>      <span class="at">min_resid =</span> <span class="fu">min</span>(resid),</span>
+<span id="cb32-230"><a href="#cb32-230" aria-hidden="true" tabindex="-1"></a>      <span class="at">q1_resid =</span> <span class="fu">quantile</span>(resid, <span class="fl">0.25</span>),</span>
+<span id="cb32-231"><a href="#cb32-231" aria-hidden="true" tabindex="-1"></a>      <span class="at">median_resid =</span> <span class="fu">median</span>(resid),</span>
+<span id="cb32-232"><a href="#cb32-232" aria-hidden="true" tabindex="-1"></a>      <span class="at">q3_resid =</span> <span class="fu">quantile</span>(resid, <span class="fl">0.75</span>),</span>
+<span id="cb32-233"><a href="#cb32-233" aria-hidden="true" tabindex="-1"></a>      <span class="at">max_resid =</span> <span class="fu">max</span>(resid)</span>
+<span id="cb32-234"><a href="#cb32-234" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb32-235"><a href="#cb32-235" aria-hidden="true" tabindex="-1"></a>  exam_test <span class="sc">|&gt;</span></span>
+<span id="cb32-236"><a href="#cb32-236" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb32-237"><a href="#cb32-237" aria-hidden="true" tabindex="-1"></a>      <span class="at">set =</span> <span class="st">"test"</span>,</span>
+<span id="cb32-238"><a href="#cb32-238" aria-hidden="true" tabindex="-1"></a>      <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb32-239"><a href="#cb32-239" aria-hidden="true" tabindex="-1"></a>      <span class="at">mean_resid =</span> <span class="fu">mean</span>(resid),</span>
+<span id="cb32-240"><a href="#cb32-240" aria-hidden="true" tabindex="-1"></a>      <span class="at">sd_resid =</span> <span class="fu">sd</span>(resid),</span>
+<span id="cb32-241"><a href="#cb32-241" aria-hidden="true" tabindex="-1"></a>      <span class="at">min_resid =</span> <span class="fu">min</span>(resid),</span>
+<span id="cb32-242"><a href="#cb32-242" aria-hidden="true" tabindex="-1"></a>      <span class="at">q1_resid =</span> <span class="fu">quantile</span>(resid, <span class="fl">0.25</span>),</span>
+<span id="cb32-243"><a href="#cb32-243" aria-hidden="true" tabindex="-1"></a>      <span class="at">median_resid =</span> <span class="fu">median</span>(resid),</span>
+<span id="cb32-244"><a href="#cb32-244" aria-hidden="true" tabindex="-1"></a>      <span class="at">q3_resid =</span> <span class="fu">quantile</span>(resid, <span class="fl">0.75</span>),</span>
+<span id="cb32-245"><a href="#cb32-245" aria-hidden="true" tabindex="-1"></a>      <span class="at">max_resid =</span> <span class="fu">max</span>(resid)</span>
+<span id="cb32-246"><a href="#cb32-246" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb32-247"><a href="#cb32-247" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb32-248"><a href="#cb32-248" aria-hidden="true" tabindex="-1"></a>resid_desc</span>
+<span id="cb32-249"><a href="#cb32-249" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb32-250"><a href="#cb32-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-251"><a href="#cb32-251" aria-hidden="true" tabindex="-1"></a><span class="fu">### MSE and R-squared on training and test</span></span>
+<span id="cb32-252"><a href="#cb32-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-255"><a href="#cb32-255" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb32-256"><a href="#cb32-256" aria-hidden="true" tabindex="-1"></a>mse <span class="ot">&lt;-</span> <span class="cf">function</span>(y, yhat) <span class="fu">mean</span>((y <span class="sc">-</span> yhat)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb32-257"><a href="#cb32-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-258"><a href="#cb32-258" aria-hidden="true" tabindex="-1"></a>mse_train <span class="ot">&lt;-</span> <span class="fu">mse</span>(exam_train<span class="sc">$</span>exam_score, exam_train<span class="sc">$</span>pred)</span>
+<span id="cb32-259"><a href="#cb32-259" aria-hidden="true" tabindex="-1"></a>mse_test  <span class="ot">&lt;-</span> <span class="fu">mse</span>(exam_test<span class="sc">$</span>exam_score, exam_test<span class="sc">$</span>pred)</span>
+<span id="cb32-260"><a href="#cb32-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-261"><a href="#cb32-261" aria-hidden="true" tabindex="-1"></a>ss_tot_train <span class="ot">&lt;-</span> <span class="fu">sum</span>((exam_train<span class="sc">$</span>exam_score <span class="sc">-</span> <span class="fu">mean</span>(exam_train<span class="sc">$</span>exam_score))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb32-262"><a href="#cb32-262" aria-hidden="true" tabindex="-1"></a>ss_tot_test  <span class="ot">&lt;-</span> <span class="fu">sum</span>((exam_test<span class="sc">$</span>exam_score <span class="sc">-</span> <span class="fu">mean</span>(exam_test<span class="sc">$</span>exam_score))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb32-263"><a href="#cb32-263" aria-hidden="true" tabindex="-1"></a>ss_res_train <span class="ot">&lt;-</span> <span class="fu">sum</span>((exam_train<span class="sc">$</span>exam_score <span class="sc">-</span> exam_train<span class="sc">$</span>pred)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb32-264"><a href="#cb32-264" aria-hidden="true" tabindex="-1"></a>ss_res_test  <span class="ot">&lt;-</span> <span class="fu">sum</span>((exam_test<span class="sc">$</span>exam_score <span class="sc">-</span> exam_test<span class="sc">$</span>pred)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb32-265"><a href="#cb32-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-266"><a href="#cb32-266" aria-hidden="true" tabindex="-1"></a>r2_train <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> ss_res_train <span class="sc">/</span> ss_tot_train</span>
+<span id="cb32-267"><a href="#cb32-267" aria-hidden="true" tabindex="-1"></a>r2_test  <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> ss_res_test <span class="sc">/</span> ss_tot_test</span>
+<span id="cb32-268"><a href="#cb32-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-269"><a href="#cb32-269" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
+<span id="cb32-270"><a href="#cb32-270" aria-hidden="true" tabindex="-1"></a>  <span class="at">set =</span> <span class="fu">c</span>(<span class="st">"train"</span>, <span class="st">"test"</span>),</span>
+<span id="cb32-271"><a href="#cb32-271" aria-hidden="true" tabindex="-1"></a>  <span class="at">MSE =</span> <span class="fu">c</span>(mse_train, mse_test),</span>
+<span id="cb32-272"><a href="#cb32-272" aria-hidden="true" tabindex="-1"></a>  <span class="at">R2 =</span> <span class="fu">c</span>(r2_train, r2_test)</span>
+<span id="cb32-273"><a href="#cb32-273" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb32-274"><a href="#cb32-274" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb32-275"><a href="#cb32-275" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-276"><a href="#cb32-276" aria-hidden="true" tabindex="-1"></a>Interpretation notes:</span>
+<span id="cb32-277"><a href="#cb32-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-278"><a href="#cb32-278" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Training MSE is optimistically biased (it is measured on the same data used to fit the model).</span>
+<span id="cb32-279"><a href="#cb32-279" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Test MSE is a less biased estimate of prediction error on new data.</span>
+<span id="cb32-280"><a href="#cb32-280" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`R^2`</span> is a rescaled error summary: roughly, the proportion of variability in <span class="in">`y`</span> explained by linear prediction from <span class="in">`x`</span>.</span>
+<span id="cb32-281"><a href="#cb32-281" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Test <span class="in">`R^2`</span> should be reported for expected out-of-sample performance.</span>
+<span id="cb32-282"><a href="#cb32-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-283"><a href="#cb32-283" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb32-284"><a href="#cb32-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-285"><a href="#cb32-285" aria-hidden="true" tabindex="-1"></a><span class="fu">## Example 2 - Fertilizer dose and plant height</span></span>
+<span id="cb32-286"><a href="#cb32-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-289"><a href="#cb32-289" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb32-290"><a href="#cb32-290" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">3403</span>)</span>
+<span id="cb32-291"><a href="#cb32-291" aria-hidden="true" tabindex="-1"></a>plant_dat <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb32-292"><a href="#cb32-292" aria-hidden="true" tabindex="-1"></a>  <span class="at">dose =</span> <span class="fu">runif</span>(<span class="dv">90</span>, <span class="dv">0</span>, <span class="dv">12</span>),</span>
+<span id="cb32-293"><a href="#cb32-293" aria-hidden="true" tabindex="-1"></a>  <span class="at">height_cm =</span> <span class="dv">18</span> <span class="sc">+</span> <span class="fl">2.1</span> <span class="sc">*</span> dose <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">90</span>, <span class="dv">0</span>, <span class="dv">5</span>)</span>
+<span id="cb32-294"><a href="#cb32-294" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb32-295"><a href="#cb32-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-296"><a href="#cb32-296" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(plant_dat<span class="sc">$</span>dose, plant_dat<span class="sc">$</span>height_cm)</span>
+<span id="cb32-297"><a href="#cb32-297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-298"><a href="#cb32-298" aria-hidden="true" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">seq_len</span>(<span class="fu">nrow</span>(plant_dat)), <span class="at">size =</span> <span class="fl">0.8</span> <span class="sc">*</span> <span class="fu">nrow</span>(plant_dat))</span>
+<span id="cb32-299"><a href="#cb32-299" aria-hidden="true" tabindex="-1"></a>plant_train <span class="ot">&lt;-</span> plant_dat[idx, ]</span>
+<span id="cb32-300"><a href="#cb32-300" aria-hidden="true" tabindex="-1"></a>plant_test  <span class="ot">&lt;-</span> plant_dat[<span class="sc">-</span>idx, ]</span>
+<span id="cb32-301"><a href="#cb32-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-302"><a href="#cb32-302" aria-hidden="true" tabindex="-1"></a>fit_plant <span class="ot">&lt;-</span> <span class="fu">lm</span>(height_cm <span class="sc">~</span> dose, <span class="at">data =</span> plant_train)</span>
+<span id="cb32-303"><a href="#cb32-303" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(fit_plant)</span>
+<span id="cb32-304"><a href="#cb32-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-305"><a href="#cb32-305" aria-hidden="true" tabindex="-1"></a>plant_test <span class="ot">&lt;-</span> plant_test <span class="sc">|&gt;</span></span>
+<span id="cb32-306"><a href="#cb32-306" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pred =</span> <span class="fu">predict</span>(fit_plant, <span class="at">newdata =</span> plant_test))</span>
+<span id="cb32-307"><a href="#cb32-307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-308"><a href="#cb32-308" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
+<span id="cb32-309"><a href="#cb32-309" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_MSE =</span> <span class="fu">mse</span>(plant_test<span class="sc">$</span>height_cm, plant_test<span class="sc">$</span>pred),</span>
+<span id="cb32-310"><a href="#cb32-310" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_R2 =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">sum</span>((plant_test<span class="sc">$</span>height_cm <span class="sc">-</span> plant_test<span class="sc">$</span>pred)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span></span>
+<span id="cb32-311"><a href="#cb32-311" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>((plant_test<span class="sc">$</span>height_cm <span class="sc">-</span> <span class="fu">mean</span>(plant_test<span class="sc">$</span>height_cm))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb32-312"><a href="#cb32-312" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb32-313"><a href="#cb32-313" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb32-314"><a href="#cb32-314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-315"><a href="#cb32-315" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb32-316"><a href="#cb32-316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-317"><a href="#cb32-317" aria-hidden="true" tabindex="-1"></a><span class="fu">## Example 3 - Exercise minutes and resting heart rate</span></span>
+<span id="cb32-318"><a href="#cb32-318" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-321"><a href="#cb32-321" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb32-322"><a href="#cb32-322" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">3404</span>)</span>
+<span id="cb32-323"><a href="#cb32-323" aria-hidden="true" tabindex="-1"></a>heart_dat <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb32-324"><a href="#cb32-324" aria-hidden="true" tabindex="-1"></a>  <span class="at">exercise_min =</span> <span class="fu">runif</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="dv">60</span>),</span>
+<span id="cb32-325"><a href="#cb32-325" aria-hidden="true" tabindex="-1"></a>  <span class="at">resting_hr =</span> <span class="dv">78</span> <span class="sc">-</span> <span class="fl">0.28</span> <span class="sc">*</span> exercise_min <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="fl">4.2</span>)</span>
+<span id="cb32-326"><a href="#cb32-326" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb32-327"><a href="#cb32-327" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-328"><a href="#cb32-328" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(heart_dat<span class="sc">$</span>exercise_min, heart_dat<span class="sc">$</span>resting_hr)</span>
+<span id="cb32-329"><a href="#cb32-329" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-330"><a href="#cb32-330" aria-hidden="true" tabindex="-1"></a>idx <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">seq_len</span>(<span class="fu">nrow</span>(heart_dat)), <span class="at">size =</span> <span class="fl">0.8</span> <span class="sc">*</span> <span class="fu">nrow</span>(heart_dat))</span>
+<span id="cb32-331"><a href="#cb32-331" aria-hidden="true" tabindex="-1"></a>heart_train <span class="ot">&lt;-</span> heart_dat[idx, ]</span>
+<span id="cb32-332"><a href="#cb32-332" aria-hidden="true" tabindex="-1"></a>heart_test  <span class="ot">&lt;-</span> heart_dat[<span class="sc">-</span>idx, ]</span>
+<span id="cb32-333"><a href="#cb32-333" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-334"><a href="#cb32-334" aria-hidden="true" tabindex="-1"></a>fit_heart <span class="ot">&lt;-</span> <span class="fu">lm</span>(resting_hr <span class="sc">~</span> exercise_min, <span class="at">data =</span> heart_train)</span>
+<span id="cb32-335"><a href="#cb32-335" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(fit_heart)</span>
+<span id="cb32-336"><a href="#cb32-336" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-337"><a href="#cb32-337" aria-hidden="true" tabindex="-1"></a>heart_test <span class="ot">&lt;-</span> heart_test <span class="sc">|&gt;</span></span>
+<span id="cb32-338"><a href="#cb32-338" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pred =</span> <span class="fu">predict</span>(fit_heart, <span class="at">newdata =</span> heart_test))</span>
+<span id="cb32-339"><a href="#cb32-339" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-340"><a href="#cb32-340" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
+<span id="cb32-341"><a href="#cb32-341" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_MSE =</span> <span class="fu">mse</span>(heart_test<span class="sc">$</span>resting_hr, heart_test<span class="sc">$</span>pred),</span>
+<span id="cb32-342"><a href="#cb32-342" aria-hidden="true" tabindex="-1"></a>  <span class="at">test_R2 =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">sum</span>((heart_test<span class="sc">$</span>resting_hr <span class="sc">-</span> heart_test<span class="sc">$</span>pred)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span></span>
+<span id="cb32-343"><a href="#cb32-343" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>((heart_test<span class="sc">$</span>resting_hr <span class="sc">-</span> <span class="fu">mean</span>(heart_test<span class="sc">$</span>resting_hr))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb32-344"><a href="#cb32-344" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb32-345"><a href="#cb32-345" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb32-346"><a href="#cb32-346" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip icon=false}</span>
+<span id="cb32-347"><a href="#cb32-347" aria-hidden="true" tabindex="-1"></a><span class="fu">## Check yourself — Correlation and the least-squares line</span></span>
+<span id="cb32-348"><a href="#cb32-348" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-349"><a href="#cb32-349" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>A scatterplot shows study hours on the x-axis and exam score on the y-axis. Points slope upward and cluster near a line. Describe form, direction, and strength.</span>
+<span id="cb32-350"><a href="#cb32-350" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-351"><a href="#cb32-351" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Pearson $r = -0.82$ between exercise minutes and resting heart rate. Interpret this value.</span>
+<span id="cb32-352"><a href="#cb32-352" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-353"><a href="#cb32-353" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>R output: <span class="in">`(Intercept) 47.7`</span>, <span class="in">`study_hours 3.06`</span>. Write the prediction equation and interpret the slope.</span>
+<span id="cb32-354"><a href="#cb32-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-355"><a href="#cb32-355" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Using the equation above, predict exam score for a student who studies 10 hours. Show the arithmetic.</span>
+<span id="cb32-356"><a href="#cb32-356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-357"><a href="#cb32-357" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Define **residual**. For a student with exam score 85 who studied 10 hours, compute the residual.</span>
+<span id="cb32-358"><a href="#cb32-358" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-359"><a href="#cb32-359" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Why should you prefer **test** MSE and $R^2$ over training metrics when reporting model performance?</span>
+<span id="cb32-360"><a href="#cb32-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-361"><a href="#cb32-361" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb32-362"><a href="#cb32-362" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-363"><a href="#cb32-363" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="html"}</span>
+<span id="cb32-364"><a href="#cb32-364" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb32-365"><a href="#cb32-365" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb32-366"><a href="#cb32-366" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-367"><a href="#cb32-367" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Form:** roughly linear. **Direction:** positive (more hours → higher score). **Strength:** moderate to strong.</span>
+<span id="cb32-368"><a href="#cb32-368" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-369"><a href="#cb32-369" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Strong **negative** linear association: as daily exercise minutes increase, resting heart rate tends to decrease.</span>
+<span id="cb32-370"><a href="#cb32-370" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-371"><a href="#cb32-371" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>$\hat{y} = 47.7 + 3.06\, x$. **Slope:** each additional hour of study is associated with a predicted 3.06-point increase in exam score.</span>
+<span id="cb32-372"><a href="#cb32-372" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-373"><a href="#cb32-373" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>$\hat{y} = 47.7 + 3.06(10) = 47.7 + 30.6 = 78.3$ points.</span>
+<span id="cb32-374"><a href="#cb32-374" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-375"><a href="#cb32-375" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Residual $= y - \hat{y} = 85 - 78.3 = 6.7$ — the student scored 6.7 points **above** the model prediction.</span>
+<span id="cb32-376"><a href="#cb32-376" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-377"><a href="#cb32-377" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Training metrics are optimistically biased — the model was fit on the same data. Test metrics estimate performance on **new data** the model has not seen.</span>
+<span id="cb32-378"><a href="#cb32-378" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-379"><a href="#cb32-379" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb32-380"><a href="#cb32-380" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb32-381"><a href="#cb32-381" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-382"><a href="#cb32-382" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="pdf"}</span>
+<span id="cb32-383"><a href="#cb32-383" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb32-384"><a href="#cb32-384" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb32-385"><a href="#cb32-385" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb32-386"><a href="#cb32-386" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-387"><a href="#cb32-387" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answers — Correlation and the least-squares line</span></span>
+<span id="cb32-388"><a href="#cb32-388" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-389"><a href="#cb32-389" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Form:** roughly linear. **Direction:** positive (more hours → higher score). **Strength:** moderate to strong.</span>
+<span id="cb32-390"><a href="#cb32-390" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-391"><a href="#cb32-391" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Strong **negative** linear association: as daily exercise minutes increase, resting heart rate tends to decrease.</span>
+<span id="cb32-392"><a href="#cb32-392" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-393"><a href="#cb32-393" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>$\hat{y} = 47.7 + 3.06\, x$. **Slope:** each additional hour of study is associated with a predicted 3.06-point increase in exam score.</span>
+<span id="cb32-394"><a href="#cb32-394" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-395"><a href="#cb32-395" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>$\hat{y} = 47.7 + 3.06(10) = 47.7 + 30.6 = 78.3$ points.</span>
+<span id="cb32-396"><a href="#cb32-396" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-397"><a href="#cb32-397" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Residual $= y - \hat{y} = 85 - 78.3 = 6.7$ — the student scored 6.7 points **above** the model prediction.</span>
+<span id="cb32-398"><a href="#cb32-398" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-399"><a href="#cb32-399" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Training metrics are optimistically biased — the model was fit on the same data. Test metrics estimate performance on **new data** the model has not seen.</span>
+<span id="cb32-400"><a href="#cb32-400" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-401"><a href="#cb32-401" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb32-402"><a href="#cb32-402" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-403"><a href="#cb32-403" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb32-404"><a href="#cb32-404" aria-hidden="true" tabindex="-1"></a><span class="fu">## Optional enrichment (not required for Project 5)</span></span>
+<span id="cb32-405"><a href="#cb32-405" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-406"><a href="#cb32-406" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Logistic regression</span><span class="co">](lecture-37)</span> — modeling a binary response with <span class="in">`glm()`</span> and odds ratios</span>
+<span id="cb32-407"><a href="#cb32-407" aria-hidden="true" tabindex="-1"></a>:::</span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

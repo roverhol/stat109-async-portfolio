@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Module 5 — Synthesis Quiz – STAT 109 - Introductory Biostatistics</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-94b323657c735dfe3b1bf6ebb2c33a55.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/css/humboldt-theme.css">
+</head>
+
+<body class="floating quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#module-5-synthesis-quiz" id="toc-module-5-synthesis-quiz" class="nav-link active" data-scroll-target="#module-5-synthesis-quiz">Module 5, Synthesis quiz</a>
+  <ul class="collapse">
+  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#section-a-reading-a-scatterplot" id="toc-section-a-reading-a-scatterplot" class="nav-link" data-scroll-target="#section-a-reading-a-scatterplot">Section A — Reading a scatterplot</a>
+  <ul class="collapse">
+  <li><a href="#a1.-describe-an-association" id="toc-a1.-describe-an-association" class="nav-link" data-scroll-target="#a1.-describe-an-association">A1. Describe an association</a></li>
+  <li><a href="#a2.-curved-vs-linear" id="toc-a2.-curved-vs-linear" class="nav-link" data-scroll-target="#a2.-curved-vs-linear">A2. Curved vs linear</a></li>
+  </ul></li>
+  <li><a href="#section-b-interpreting-correlation-and-regression-output" id="toc-section-b-interpreting-correlation-and-regression-output" class="nav-link" data-scroll-target="#section-b-interpreting-correlation-and-regression-output">Section B — Interpreting correlation and regression output</a>
+  <ul class="collapse">
+  <li><a href="#b1.-interpret-r" id="toc-b1.-interpret-r" class="nav-link" data-scroll-target="#b1.-interpret-r">B1. Interpret r</a></li>
+  <li><a href="#b2.-interpret-regression-output" id="toc-b2.-interpret-regression-output" class="nav-link" data-scroll-target="#b2.-interpret-regression-output">B2. Interpret regression output</a></li>
+  <li><a href="#b3.-point-prediction" id="toc-b3.-point-prediction" class="nav-link" data-scroll-target="#b3.-point-prediction">B3. Point prediction</a></li>
+  <li><a href="#b4.-residual-computation" id="toc-b4.-residual-computation" class="nav-link" data-scroll-target="#b4.-residual-computation">B4. Residual computation</a></li>
+  </ul></li>
+  <li><a href="#section-c-ci-for-slope" id="toc-section-c-ci-for-slope" class="nav-link" data-scroll-target="#section-c-ci-for-slope">Section C — CI for slope</a>
+  <ul class="collapse">
+  <li><a href="#c1.-ci-for-slope-fertilizer" id="toc-c1.-ci-for-slope-fertilizer" class="nav-link" data-scroll-target="#c1.-ci-for-slope-fertilizer">C1. CI for slope — fertilizer</a></li>
+  <li><a href="#c2.-practical-significance" id="toc-c2.-practical-significance" class="nav-link" data-scroll-target="#c2.-practical-significance">C2. Practical significance</a></li>
+  </ul></li>
+  <li><a href="#section-d-mean-response-ci-vs-prediction-interval" id="toc-section-d-mean-response-ci-vs-prediction-interval" class="nav-link" data-scroll-target="#section-d-mean-response-ci-vs-prediction-interval">Section D — Mean-response CI vs prediction interval</a>
+  <ul class="collapse">
+  <li><a href="#d1.-identify-correct-interval" id="toc-d1.-identify-correct-interval" class="nav-link" data-scroll-target="#d1.-identify-correct-interval">D1. Identify correct interval</a></li>
+  <li><a href="#d2.-identify-correct-interval-individual" id="toc-d2.-identify-correct-interval-individual" class="nav-link" data-scroll-target="#d2.-identify-correct-interval-individual">D2. Identify correct interval — individual</a></li>
+  <li><a href="#d3.-width-comparison" id="toc-d3.-width-comparison" class="nav-link" data-scroll-target="#d3.-width-comparison">D3. Width comparison</a></li>
+  </ul></li>
+  <li><a href="#section-e-lab-situations-project-5-workflow" id="toc-section-e-lab-situations-project-5-workflow" class="nav-link" data-scroll-target="#section-e-lab-situations-project-5-workflow">Section E — Lab situations: Project 5 workflow</a>
+  <ul class="collapse">
+  <li><a href="#e1.-r-workflow-fit-and-predict" id="toc-e1.-r-workflow-fit-and-predict" class="nav-link" data-scroll-target="#e1.-r-workflow-fit-and-predict">E1. R workflow: fit and predict</a></li>
+  <li><a href="#e2.-interpreting-lm-output" id="toc-e2.-interpreting-lm-output" class="nav-link" data-scroll-target="#e2.-interpreting-lm-output">E2. Interpreting lm() output</a></li>
+  <li><a href="#e3.-team-data-workflow" id="toc-e3.-team-data-workflow" class="nav-link" data-scroll-target="#e3.-team-data-workflow">E3. Team data workflow</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="quiz-m5-synthesis.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Module 5 — Synthesis Quiz</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<p class="subtitle lead">Question bank · After exercise lab · open notes · two attempts</p>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-right">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="module-5-synthesis-quiz" class="level1">
+<h1>Module 5, Synthesis quiz</h1>
+<p><strong>Readings:</strong> <a href="../lectures/module-5-read-00">Read 0</a>, <a href="../lectures/module-5-read-01">Read 1</a>, <a href="../lectures/module-5-read-02">Read 2</a><br>
+<strong>Labs:</strong> <a href="../labs/module-5-lab-demo">Demo</a>, <a href="../labs/module-5-lab-exercise">Exercise</a><br>
+<strong>Canvas:</strong> Synthesis quiz (Module 5) · <strong>two attempts</strong>, highest score counts</p>
+<p>Full integration for <a href="../projects/project-5">Project 5</a>: read scatterplots, interpret <span class="math inline">\(r\)</span>, interpret regression output, predict with <code>predict()</code>, distinguish CI vs PI, and reflect on the <strong>five-project portfolio</strong>.</p>
+<hr>
+<section id="instructions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<ul>
+<li>Open notes (<a href="../methods">methods map</a>, <a href="../r-reference">R reference</a>).</li>
+<li>Use the interpretation templates from Read 1–2.</li>
+<li>For R items, match the workflow in the <a href="../labs/module-5-lab-demo">demo lab</a>.</li>
+</ul>
+<hr>
+</section>
+<section id="section-a-reading-a-scatterplot" class="level2">
+<h2 class="anchored" data-anchor-id="section-a-reading-a-scatterplot">Section A — Reading a scatterplot</h2>
+<section id="a1.-describe-an-association" class="level3">
+<h3 class="anchored" data-anchor-id="a1.-describe-an-association">A1. Describe an association</h3>
+<p>A scatterplot shows fertilizer dose (x) and plant height in cm (y): the points slope upward and cluster tightly near a line. Describe the association using form, direction, and strength.</p>
+</section>
+<section id="a2.-curved-vs-linear" class="level3">
+<h3 class="anchored" data-anchor-id="a2.-curved-vs-linear">A2. Curved vs linear</h3>
+<p>A scatterplot of age and reading speed shows a clear arc (reading peaks in mid-life and declines at both ends). Is Pearson correlation an appropriate summary? Explain.</p>
+<details>
+<summary>
+Click to reveal answers — Section A — Reading a scatterplot
+</summary>
+<ol type="1">
+<li><p><strong>Form:</strong> roughly linear. <strong>Direction:</strong> positive (more fertilizer → taller plant). <strong>Strength:</strong> strong (points cluster tightly).</p></li>
+<li><p><strong>No</strong> — Pearson <span class="math inline">\(r\)</span> measures linear association only. A curved (non-linear) form makes <span class="math inline">\(r\)</span> a misleading summary of the relationship.</p></li>
+</ol>
+</details>
+<hr>
+</section>
+</section>
+<section id="section-b-interpreting-correlation-and-regression-output" class="level2">
+<h2 class="anchored" data-anchor-id="section-b-interpreting-correlation-and-regression-output">Section B — Interpreting correlation and regression output</h2>
+<section id="b1.-interpret-r" class="level3">
+<h3 class="anchored" data-anchor-id="b1.-interpret-r">B1. Interpret r</h3>
+<p>R gives <code>cor(exercise_min, resting_hr)</code> = −0.78. Interpret this value in context.</p>
+</section>
+<section id="b2.-interpret-regression-output" class="level3">
+<h3 class="anchored" data-anchor-id="b2.-interpret-regression-output">B2. Interpret regression output</h3>
+<p>R output: <code>(Intercept) 79.1</code>, <code>exercise_min −0.30</code>. Write the fitted equation and interpret the slope.</p>
+</section>
+<section id="b3.-point-prediction" class="level3">
+<h3 class="anchored" data-anchor-id="b3.-point-prediction">B3. Point prediction</h3>
+<p>Using the equation above, predict resting HR for someone who exercises 30 min/day.</p>
+</section>
+<section id="b4.-residual-computation" class="level3">
+<h3 class="anchored" data-anchor-id="b4.-residual-computation">B4. Residual computation</h3>
+<p>A person exercises 30 min/day and has a resting HR of 74 bpm. Using the model above, compute their residual.</p>
+<details>
+<summary>
+Click to reveal answers — Section B — Interpreting correlation and regression output
+</summary>
+<ol type="1">
+<li><p><strong>Strong negative</strong> linear association: as daily exercise minutes increase, resting heart rate tends to decrease. The relationship is strong (<span class="math inline">\(|r|\)</span> close to 1).</p></li>
+<li><p><span class="math inline">\(\hat{\text{resting HR}} = 79.1 - 0.30\,(\text{exercise min})\)</span>. <strong>Slope:</strong> each additional minute of daily exercise is associated with a predicted <strong>0.30 bpm decrease</strong> in resting heart rate.</p></li>
+<li><p><span class="math inline">\(\hat{y} = 79.1 - 0.30(30) = 79.1 - 9.0 = 70.1\)</span> bpm.</p></li>
+<li><p>Residual <span class="math inline">\(= 74 - 70.1 = 3.9\)</span> bpm — they have a resting HR <strong>3.9 bpm higher</strong> than the model predicts.</p></li>
+</ol>
+</details>
+<hr>
+</section>
+</section>
+<section id="section-c-ci-for-slope" class="level2">
+<h2 class="anchored" data-anchor-id="section-c-ci-for-slope">Section C — CI for slope</h2>
+<section id="c1.-ci-for-slope-fertilizer" class="level3">
+<h3 class="anchored" data-anchor-id="c1.-ci-for-slope-fertilizer">C1. CI for slope — fertilizer</h3>
+<p>For the plant model, <code>confint(fit_plant, 'dose')</code> → <code>[1.7, 2.6]</code>. Interpret in context.</p>
+</section>
+<section id="c2.-practical-significance" class="level3">
+<h3 class="anchored" data-anchor-id="c2.-practical-significance">C2. Practical significance</h3>
+<p>The 95% CI for slope is <span class="math inline">\([0.001, 0.003]\)</span>, not containing 0. Is this association <strong>statistically significant</strong>? Is it <strong>practically significant</strong>?</p>
+<details>
+<summary>
+Click to reveal answers — Section C — CI for slope
+</summary>
+<ol type="1">
+<li><p>We are 95% confident that each additional unit of fertilizer dose changes the mean plant height by between <strong>1.7 and 2.6 cm</strong>.</p></li>
+<li><p><strong>Statistically significant</strong> (CI excludes 0). <strong>Practical significance</strong> depends on context — a change of 0.001–0.003 units per 1-unit increase may be too small to matter in practice.</p></li>
+</ol>
+</details>
+<hr>
+</section>
+</section>
+<section id="section-d-mean-response-ci-vs-prediction-interval" class="level2">
+<h2 class="anchored" data-anchor-id="section-d-mean-response-ci-vs-prediction-interval">Section D — Mean-response CI vs prediction interval</h2>
+<section id="d1.-identify-correct-interval" class="level3">
+<h3 class="anchored" data-anchor-id="d1.-identify-correct-interval">D1. Identify correct interval</h3>
+<p>A biologist wants to estimate the <strong>average</strong> plant height for all plants given exactly 7 units of fertilizer. Should they use <code>interval = 'confidence'</code> or <code>interval = 'prediction'</code>?</p>
+</section>
+<section id="d2.-identify-correct-interval-individual" class="level3">
+<h3 class="anchored" data-anchor-id="d2.-identify-correct-interval-individual">D2. Identify correct interval — individual</h3>
+<p>A researcher wants an interval for <strong>one specific new plant</strong> given 7 units of fertilizer. Which interval?</p>
+</section>
+<section id="d3.-width-comparison" class="level3">
+<h3 class="anchored" data-anchor-id="d3.-width-comparison">D3. Width comparison</h3>
+<p>At <span class="math inline">\(x_0 = 7\)</span>: CI for mean = <span class="math inline">\([22.8, 25.6]\)</span>; PI for individual = <span class="math inline">\([13.1, 35.3]\)</span>. What accounts for the large difference in width?</p>
+<details>
+<summary>
+Click to reveal answers — Section D — Mean-response CI vs prediction interval
+</summary>
+<ol type="1">
+<li><p><code>interval = 'confidence'</code> — this estimates where the <strong>mean response</strong> (average outcome) falls, not an individual plant.</p></li>
+<li><p><code>interval = 'prediction'</code> — this covers where <strong>one individual</strong> future observation is likely to fall.</p></li>
+<li><p>The PI adds <strong>individual-to-individual variability</strong> on top of uncertainty in the mean. Even if we knew the mean exactly, individual plants would vary widely around it.</p></li>
+</ol>
+</details>
+<hr>
+</section>
+</section>
+<section id="section-e-lab-situations-project-5-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="section-e-lab-situations-project-5-workflow">Section E — Lab situations: Project 5 workflow</h2>
+<section id="e1.-r-workflow-fit-and-predict" class="level3">
+<h3 class="anchored" data-anchor-id="e1.-r-workflow-fit-and-predict">E1. R workflow: fit and predict</h3>
+<p>Write the R commands (in order) to: (1) fit a regression of <code>weight_g</code> on <code>length_cm</code> using <code>stones_dat</code>, (2) extract the slope CI, (3) predict with a 95% PI at <code>length_cm = 15</code>.</p>
+</section>
+<section id="e2.-interpreting-lm-output" class="level3">
+<h3 class="anchored" data-anchor-id="e2.-interpreting-lm-output">E2. Interpreting lm() output</h3>
+<p>After <code>summary(fit)</code>, you see <code>Estimate</code> for <code>length_cm</code> is 12.4 with <code>Std. Error</code> 1.8 and <code>Pr(&gt;|t|)</code> = 0.0003. What do these tell you?</p>
+</section>
+<section id="e3.-team-data-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="e3.-team-data-workflow">E3. Team data workflow</h3>
+<p>Your team collected stone weights (g) and widths (cm) in a shared Google Sheet. List the steps to get this data into R and fit a regression.</p>
+<details>
+<summary>
+Click to reveal answers — Section E — Lab situations: Project 5 workflow
+</summary>
+<ol type="1">
+<li>```r fit &lt;- lm(weight_g ~ length_cm, data = stones_dat) confint(fit, ‘length_cm’) predict(fit, newdata = data.frame(length_cm = 15), interval = ‘prediction’)</li>
+</ol>
+<pre><code>
+2. Slope estimate: 12.4 g per cm. The test $H_0:\beta_1=0$ rejects at $p=0.0003$ — strong evidence of a linear association. The SE of 1.8 reflects uncertainty in the slope estimate.
+
+3. 1. Export sheet as CSV. 2. `dat &lt;- read_csv('stones.csv')` (or use the URL). 3. Check `head(dat)`. 4. `fit &lt;- lm(weight_g ~ width_cm, data = dat)`. 5. `summary(fit)` to read slope and intercept.
+
+&lt;/details&gt;
+:::
+
+::: {.content-visible when-format="pdf"}
+```{=latex}
+\pagebreak</code></pre>
+<section id="answer-key-section-e-lab-situations-project-5-workflow" class="level4">
+<h4 class="anchored" data-anchor-id="answer-key-section-e-lab-situations-project-5-workflow">Answer key — Section E — Lab situations: Project 5 workflow</h4>
+<ol type="1">
+<li>```r fit &lt;- lm(weight_g ~ length_cm, data = stones_dat) confint(fit, ‘length_cm’) predict(fit, newdata = data.frame(length_cm = 15), interval = ‘prediction’)</li>
+</ol>
+<pre><code>
+2. Slope estimate: 12.4 g per cm. The test $H_0:\beta_1=0$ rejects at $p=0.0003$ — strong evidence of a linear association. The SE of 1.8 reflects uncertainty in the slope estimate.
+
+3. 1. Export sheet as CSV. 2. `dat &lt;- read_csv('stones.csv')` (or use the URL). 3. Check `head(dat)`. 4. `fit &lt;- lm(weight_g ~ width_cm, data = dat)`. 5. `summary(fit)` to read slope and intercept.
+
+:::
+
+
+------------------------------------------------------------------------
+
+## Section F — Portfolio and module integration
+
+### F1. Method choice
+
+Your response variable is `weight_g` (numerical) and your predictor is `length_cm` (numerical). Which method from the methods map applies?
+
+### F2. Portfolio reflection
+
+Name the five projects in this course and the core statistical method used in each.
+
+::: {.content-visible when-format="html"}
+&lt;details&gt;
+&lt;summary&gt;Click to reveal answers — Section F — Portfolio and module integration&lt;/summary&gt;
+
+1. **Simple linear regression** — two numerical variables; use `lm(y ~ x)` for the model, `confint()` for slope CI, `predict(... interval=)` for response intervals.
+
+2. P1: **Binomial test** (one proportion, $p$-value). P2: **Confidence interval** (proportion or mean, SRS). P3: **Descriptive statistics** (graphical and numerical summaries). P4: **Two-group comparison** (Welch $t$, $\chi^2$, or `prop.test`). P5: **Simple linear regression** (correlation, prediction, CIs/PIs).
+
+&lt;/details&gt;
+:::
+
+::: {.content-visible when-format="pdf"}
+```{=latex}
+\pagebreak</code></pre>
+</section>
+<section id="answer-key-section-f-portfolio-and-module-integration" class="level4">
+<h4 class="anchored" data-anchor-id="answer-key-section-f-portfolio-and-module-integration">Answer key — Section F — Portfolio and module integration</h4>
+<ol type="1">
+<li><p><strong>Simple linear regression</strong> — two numerical variables; use <code>lm(y ~ x)</code> for the model, <code>confint()</code> for slope CI, <code>predict(... interval=)</code> for response intervals.</p></li>
+<li><p>P1: <strong>Binomial test</strong> (one proportion, <span class="math inline">\(p\)</span>-value). P2: <strong>Confidence interval</strong> (proportion or mean, SRS). P3: <strong>Descriptive statistics</strong> (graphical and numerical summaries). P4: <strong>Two-group comparison</strong> (Welch <span class="math inline">\(t\)</span>, <span class="math inline">\(\chi^2\)</span>, or <code>prop.test</code>). P5: <strong>Simple linear regression</strong> (correlation, prediction, CIs/PIs).</p></li>
+</ol>
+<p>:::</p>
+<hr>
+
+
+<!-- -->
+
+</section>
+</details></section>
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>Creative Commons Attribution-NonCommercial 4.0 International<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">(View License)</a></div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Module 5 — Synthesis Quiz"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Question bank · After exercise lab · open notes · two attempts"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Module 5, Synthesis quiz</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>**Readings:** <span class="co">[</span><span class="ot">Read 0</span><span class="co">](../lectures/module-5-read-00)</span>, <span class="co">[</span><span class="ot">Read 1</span><span class="co">](../lectures/module-5-read-01)</span>, <span class="co">[</span><span class="ot">Read 2</span><span class="co">](../lectures/module-5-read-02)</span>  </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>**Labs:** <span class="co">[</span><span class="ot">Demo</span><span class="co">](../labs/module-5-lab-demo)</span>, <span class="co">[</span><span class="ot">Exercise</span><span class="co">](../labs/module-5-lab-exercise)</span>  </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>**Canvas:** Synthesis quiz (Module 5) · **two attempts**, highest score counts</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>Full integration for <span class="co">[</span><span class="ot">Project 5</span><span class="co">](../projects/project-5)</span>: read scatterplots, interpret $r$, interpret regression output, predict with <span class="in">`predict()`</span>, distinguish CI vs PI, and reflect on the **five-project portfolio**.</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Instructions</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Open notes (<span class="co">[</span><span class="ot">methods map</span><span class="co">](../methods)</span>, <span class="co">[</span><span class="ot">R reference</span><span class="co">](../r-reference)</span>).</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use the interpretation templates from Read 1–2.</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>For R items, match the workflow in the <span class="co">[</span><span class="ot">demo lab</span><span class="co">](../labs/module-5-lab-demo)</span>.</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section A — Reading a scatterplot</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="fu">### A1. Describe an association</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>A scatterplot shows fertilizer dose (x) and plant height in cm (y): the points slope upward and cluster tightly near a line. Describe the association using form, direction, and strength.</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="fu">### A2. Curved vs linear</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>A scatterplot of age and reading speed shows a clear arc (reading peaks in mid-life and declines at both ends). Is Pearson correlation an appropriate summary? Explain.</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="html"}</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section A — Reading a scatterplot<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Form:** roughly linear. **Direction:** positive (more fertilizer → taller plant). **Strength:** strong (points cluster tightly).</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**No** — Pearson $r$ measures linear association only. A curved (non-linear) form makes $r$ a misleading summary of the relationship.</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="pdf"}</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section A — Reading a scatterplot</span></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Form:** roughly linear. **Direction:** positive (more fertilizer → taller plant). **Strength:** strong (points cluster tightly).</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**No** — Pearson $r$ measures linear association only. A curved (non-linear) form makes $r$ a misleading summary of the relationship.</span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section B — Interpreting correlation and regression output</span></span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a><span class="fu">### B1. Interpret r</span></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>R gives <span class="in">`cor(exercise_min, resting_hr)`</span> = −0.78. Interpret this value in context.</span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a><span class="fu">### B2. Interpret regression output</span></span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>R output: <span class="in">`(Intercept) 79.1`</span>, <span class="in">`exercise_min −0.30`</span>. Write the fitted equation and interpret the slope.</span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a><span class="fu">### B3. Point prediction</span></span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>Using the equation above, predict resting HR for someone who exercises 30 min/day.</span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a><span class="fu">### B4. Residual computation</span></span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>A person exercises 30 min/day and has a resting HR of 74 bpm. Using the model above, compute their residual.</span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="html"}</span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section B — Interpreting correlation and regression output<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Strong negative** linear association: as daily exercise minutes increase, resting heart rate tends to decrease. The relationship is strong ($|r|$ close to 1).</span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>$\hat{\text{resting HR}} = 79.1 - 0.30\,(\text{exercise min})$. **Slope:** each additional minute of daily exercise is associated with a predicted **0.30 bpm decrease** in resting heart rate.</span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>$\hat{y} = 79.1 - 0.30(30) = 79.1 - 9.0 = 70.1$ bpm.</span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Residual $= 74 - 70.1 = 3.9$ bpm — they have a resting HR **3.9 bpm higher** than the model predicts.</span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="pdf"}</span>
+<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section B — Interpreting correlation and regression output</span></span>
+<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Strong negative** linear association: as daily exercise minutes increase, resting heart rate tends to decrease. The relationship is strong ($|r|$ close to 1).</span>
+<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>$\hat{\text{resting HR}} = 79.1 - 0.30\,(\text{exercise min})$. **Slope:** each additional minute of daily exercise is associated with a predicted **0.30 bpm decrease** in resting heart rate.</span>
+<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>$\hat{y} = 79.1 - 0.30(30) = 79.1 - 9.0 = 70.1$ bpm.</span>
+<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Residual $= 74 - 70.1 = 3.9$ bpm — they have a resting HR **3.9 bpm higher** than the model predicts.</span>
+<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section C — CI for slope</span></span>
+<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a><span class="fu">### C1. CI for slope — fertilizer</span></span>
+<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a>For the plant model, <span class="in">`confint(fit_plant, 'dose')`</span> → <span class="in">`[1.7, 2.6]`</span>. Interpret in context.</span>
+<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a><span class="fu">### C2. Practical significance</span></span>
+<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a>The 95% CI for slope is $<span class="co">[</span><span class="ot">0.001, 0.003</span><span class="co">]</span>$, not containing 0. Is this association **statistically significant**? Is it **practically significant**?</span>
+<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="html"}</span>
+<span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section C — CI for slope<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>We are 95% confident that each additional unit of fertilizer dose changes the mean plant height by between **1.7 and 2.6 cm**.</span>
+<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Statistically significant** (CI excludes 0). **Practical significance** depends on context — a change of 0.001–0.003 units per 1-unit increase may be too small to matter in practice.</span>
+<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="pdf"}</span>
+<span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-139"><a href="#cb3-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-140"><a href="#cb3-140" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section C — CI for slope</span></span>
+<span id="cb3-141"><a href="#cb3-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-142"><a href="#cb3-142" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>We are 95% confident that each additional unit of fertilizer dose changes the mean plant height by between **1.7 and 2.6 cm**.</span>
+<span id="cb3-143"><a href="#cb3-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-144"><a href="#cb3-144" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Statistically significant** (CI excludes 0). **Practical significance** depends on context — a change of 0.001–0.003 units per 1-unit increase may be too small to matter in practice.</span>
+<span id="cb3-145"><a href="#cb3-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-146"><a href="#cb3-146" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-147"><a href="#cb3-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-148"><a href="#cb3-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-149"><a href="#cb3-149" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb3-150"><a href="#cb3-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-151"><a href="#cb3-151" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section D — Mean-response CI vs prediction interval</span></span>
+<span id="cb3-152"><a href="#cb3-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-153"><a href="#cb3-153" aria-hidden="true" tabindex="-1"></a><span class="fu">### D1. Identify correct interval</span></span>
+<span id="cb3-154"><a href="#cb3-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-155"><a href="#cb3-155" aria-hidden="true" tabindex="-1"></a>A biologist wants to estimate the **average** plant height for all plants given exactly 7 units of fertilizer. Should they use <span class="in">`interval = 'confidence'`</span> or <span class="in">`interval = 'prediction'`</span>?</span>
+<span id="cb3-156"><a href="#cb3-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-157"><a href="#cb3-157" aria-hidden="true" tabindex="-1"></a><span class="fu">### D2. Identify correct interval — individual</span></span>
+<span id="cb3-158"><a href="#cb3-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-159"><a href="#cb3-159" aria-hidden="true" tabindex="-1"></a>A researcher wants an interval for **one specific new plant** given 7 units of fertilizer. Which interval?</span>
+<span id="cb3-160"><a href="#cb3-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-161"><a href="#cb3-161" aria-hidden="true" tabindex="-1"></a><span class="fu">### D3. Width comparison</span></span>
+<span id="cb3-162"><a href="#cb3-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-163"><a href="#cb3-163" aria-hidden="true" tabindex="-1"></a>At $x_0 = 7$: CI for mean = $<span class="co">[</span><span class="ot">22.8, 25.6</span><span class="co">]</span>$; PI for individual = $<span class="co">[</span><span class="ot">13.1, 35.3</span><span class="co">]</span>$. What accounts for the large difference in width?</span>
+<span id="cb3-164"><a href="#cb3-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-165"><a href="#cb3-165" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="html"}</span>
+<span id="cb3-166"><a href="#cb3-166" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb3-167"><a href="#cb3-167" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section D — Mean-response CI vs prediction interval<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb3-168"><a href="#cb3-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-169"><a href="#cb3-169" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="in">`interval = 'confidence'`</span> — this estimates where the **mean response** (average outcome) falls, not an individual plant.</span>
+<span id="cb3-170"><a href="#cb3-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-171"><a href="#cb3-171" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span><span class="in">`interval = 'prediction'`</span> — this covers where **one individual** future observation is likely to fall.</span>
+<span id="cb3-172"><a href="#cb3-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-173"><a href="#cb3-173" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>The PI adds **individual-to-individual variability** on top of uncertainty in the mean. Even if we knew the mean exactly, individual plants would vary widely around it.</span>
+<span id="cb3-174"><a href="#cb3-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-175"><a href="#cb3-175" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb3-176"><a href="#cb3-176" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-177"><a href="#cb3-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-178"><a href="#cb3-178" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="pdf"}</span>
+<span id="cb3-179"><a href="#cb3-179" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb3-180"><a href="#cb3-180" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb3-181"><a href="#cb3-181" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-182"><a href="#cb3-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-183"><a href="#cb3-183" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section D — Mean-response CI vs prediction interval</span></span>
+<span id="cb3-184"><a href="#cb3-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-185"><a href="#cb3-185" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="in">`interval = 'confidence'`</span> — this estimates where the **mean response** (average outcome) falls, not an individual plant.</span>
+<span id="cb3-186"><a href="#cb3-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-187"><a href="#cb3-187" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span><span class="in">`interval = 'prediction'`</span> — this covers where **one individual** future observation is likely to fall.</span>
+<span id="cb3-188"><a href="#cb3-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-189"><a href="#cb3-189" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>The PI adds **individual-to-individual variability** on top of uncertainty in the mean. Even if we knew the mean exactly, individual plants would vary widely around it.</span>
+<span id="cb3-190"><a href="#cb3-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-191"><a href="#cb3-191" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-192"><a href="#cb3-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-193"><a href="#cb3-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-194"><a href="#cb3-194" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb3-195"><a href="#cb3-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-196"><a href="#cb3-196" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section E — Lab situations: Project 5 workflow</span></span>
+<span id="cb3-197"><a href="#cb3-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-198"><a href="#cb3-198" aria-hidden="true" tabindex="-1"></a><span class="fu">### E1. R workflow: fit and predict</span></span>
+<span id="cb3-199"><a href="#cb3-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-200"><a href="#cb3-200" aria-hidden="true" tabindex="-1"></a>Write the R commands (in order) to: (1) fit a regression of <span class="in">`weight_g`</span> on <span class="in">`length_cm`</span> using <span class="in">`stones_dat`</span>, (2) extract the slope CI, (3) predict with a 95% PI at <span class="in">`length_cm = 15`</span>.</span>
+<span id="cb3-201"><a href="#cb3-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-202"><a href="#cb3-202" aria-hidden="true" tabindex="-1"></a><span class="fu">### E2. Interpreting lm() output</span></span>
+<span id="cb3-203"><a href="#cb3-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-204"><a href="#cb3-204" aria-hidden="true" tabindex="-1"></a>After <span class="in">`summary(fit)`</span>, you see <span class="in">`Estimate`</span> for <span class="in">`length_cm`</span> is 12.4 with <span class="in">`Std. Error`</span> 1.8 and <span class="in">`Pr(&gt;|t|)`</span> = 0.0003. What do these tell you?</span>
+<span id="cb3-205"><a href="#cb3-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-206"><a href="#cb3-206" aria-hidden="true" tabindex="-1"></a><span class="fu">### E3. Team data workflow</span></span>
+<span id="cb3-207"><a href="#cb3-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-208"><a href="#cb3-208" aria-hidden="true" tabindex="-1"></a>Your team collected stone weights (g) and widths (cm) in a shared Google Sheet. List the steps to get this data into R and fit a regression.</span>
+<span id="cb3-209"><a href="#cb3-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-210"><a href="#cb3-210" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="html"}</span>
+<span id="cb3-211"><a href="#cb3-211" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb3-212"><a href="#cb3-212" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section E — Lab situations: Project 5 workflow<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb3-213"><a href="#cb3-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-214"><a href="#cb3-214" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>```r</span>
+<span id="cb3-215"><a href="#cb3-215" aria-hidden="true" tabindex="-1"></a>fit &lt;- lm(weight_g ~ length_cm, data = stones_dat)</span>
+<span id="cb3-216"><a href="#cb3-216" aria-hidden="true" tabindex="-1"></a>confint(fit, 'length_cm')</span>
+<span id="cb3-217"><a href="#cb3-217" aria-hidden="true" tabindex="-1"></a>predict(fit, newdata = data.frame(length_cm = 15),</span>
+<span id="cb3-218"><a href="#cb3-218" aria-hidden="true" tabindex="-1"></a>        interval = 'prediction')</span>
+<span id="cb3-219"><a href="#cb3-219" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-220"><a href="#cb3-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-221"><a href="#cb3-221" aria-hidden="true" tabindex="-1"></a><span class="in">2. Slope estimate: 12.4 g per cm. The test $H_0:\beta_1=0$ rejects at $p=0.0003$ — strong evidence of a linear association. The SE of 1.8 reflects uncertainty in the slope estimate.</span></span>
+<span id="cb3-222"><a href="#cb3-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-223"><a href="#cb3-223" aria-hidden="true" tabindex="-1"></a><span class="in">3. 1. Export sheet as CSV. 2. `dat &lt;- read_csv('stones.csv')` (or use the URL). 3. Check `head(dat)`. 4. `fit &lt;- lm(weight_g ~ width_cm, data = dat)`. 5. `summary(fit)` to read slope and intercept.</span></span>
+<span id="cb3-224"><a href="#cb3-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-225"><a href="#cb3-225" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/details&gt;</span></span>
+<span id="cb3-226"><a href="#cb3-226" aria-hidden="true" tabindex="-1"></a><span class="in">:::</span></span>
+<span id="cb3-227"><a href="#cb3-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-228"><a href="#cb3-228" aria-hidden="true" tabindex="-1"></a><span class="in">::: {.content-visible when-format="pdf"}</span></span>
+<span id="cb3-229"><a href="#cb3-229" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb3-230"><a href="#cb3-230" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb3-231"><a href="#cb3-231" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-232"><a href="#cb3-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-233"><a href="#cb3-233" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section E — Lab situations: Project 5 workflow</span></span>
+<span id="cb3-234"><a href="#cb3-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-235"><a href="#cb3-235" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>```r</span>
+<span id="cb3-236"><a href="#cb3-236" aria-hidden="true" tabindex="-1"></a>fit &lt;- lm(weight_g ~ length_cm, data = stones_dat)</span>
+<span id="cb3-237"><a href="#cb3-237" aria-hidden="true" tabindex="-1"></a>confint(fit, 'length_cm')</span>
+<span id="cb3-238"><a href="#cb3-238" aria-hidden="true" tabindex="-1"></a>predict(fit, newdata = data.frame(length_cm = 15),</span>
+<span id="cb3-239"><a href="#cb3-239" aria-hidden="true" tabindex="-1"></a>        interval = 'prediction')</span>
+<span id="cb3-240"><a href="#cb3-240" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-241"><a href="#cb3-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-242"><a href="#cb3-242" aria-hidden="true" tabindex="-1"></a><span class="in">2. Slope estimate: 12.4 g per cm. The test $H_0:\beta_1=0$ rejects at $p=0.0003$ — strong evidence of a linear association. The SE of 1.8 reflects uncertainty in the slope estimate.</span></span>
+<span id="cb3-243"><a href="#cb3-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-244"><a href="#cb3-244" aria-hidden="true" tabindex="-1"></a><span class="in">3. 1. Export sheet as CSV. 2. `dat &lt;- read_csv('stones.csv')` (or use the URL). 3. Check `head(dat)`. 4. `fit &lt;- lm(weight_g ~ width_cm, data = dat)`. 5. `summary(fit)` to read slope and intercept.</span></span>
+<span id="cb3-245"><a href="#cb3-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-246"><a href="#cb3-246" aria-hidden="true" tabindex="-1"></a><span class="in">:::</span></span>
+<span id="cb3-247"><a href="#cb3-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-248"><a href="#cb3-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-249"><a href="#cb3-249" aria-hidden="true" tabindex="-1"></a><span class="in">------------------------------------------------------------------------</span></span>
+<span id="cb3-250"><a href="#cb3-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-251"><a href="#cb3-251" aria-hidden="true" tabindex="-1"></a><span class="in">## Section F — Portfolio and module integration</span></span>
+<span id="cb3-252"><a href="#cb3-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-253"><a href="#cb3-253" aria-hidden="true" tabindex="-1"></a><span class="in">### F1. Method choice</span></span>
+<span id="cb3-254"><a href="#cb3-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-255"><a href="#cb3-255" aria-hidden="true" tabindex="-1"></a><span class="in">Your response variable is `weight_g` (numerical) and your predictor is `length_cm` (numerical). Which method from the methods map applies?</span></span>
+<span id="cb3-256"><a href="#cb3-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-257"><a href="#cb3-257" aria-hidden="true" tabindex="-1"></a><span class="in">### F2. Portfolio reflection</span></span>
+<span id="cb3-258"><a href="#cb3-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-259"><a href="#cb3-259" aria-hidden="true" tabindex="-1"></a><span class="in">Name the five projects in this course and the core statistical method used in each.</span></span>
+<span id="cb3-260"><a href="#cb3-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-261"><a href="#cb3-261" aria-hidden="true" tabindex="-1"></a><span class="in">::: {.content-visible when-format="html"}</span></span>
+<span id="cb3-262"><a href="#cb3-262" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;details&gt;</span></span>
+<span id="cb3-263"><a href="#cb3-263" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;summary&gt;Click to reveal answers — Section F — Portfolio and module integration&lt;/summary&gt;</span></span>
+<span id="cb3-264"><a href="#cb3-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-265"><a href="#cb3-265" aria-hidden="true" tabindex="-1"></a><span class="in">1. **Simple linear regression** — two numerical variables; use `lm(y ~ x)` for the model, `confint()` for slope CI, `predict(... interval=)` for response intervals.</span></span>
+<span id="cb3-266"><a href="#cb3-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-267"><a href="#cb3-267" aria-hidden="true" tabindex="-1"></a><span class="in">2. P1: **Binomial test** (one proportion, $p$-value). P2: **Confidence interval** (proportion or mean, SRS). P3: **Descriptive statistics** (graphical and numerical summaries). P4: **Two-group comparison** (Welch $t$, $\chi^2$, or `prop.test`). P5: **Simple linear regression** (correlation, prediction, CIs/PIs).</span></span>
+<span id="cb3-268"><a href="#cb3-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-269"><a href="#cb3-269" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/details&gt;</span></span>
+<span id="cb3-270"><a href="#cb3-270" aria-hidden="true" tabindex="-1"></a><span class="in">:::</span></span>
+<span id="cb3-271"><a href="#cb3-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-272"><a href="#cb3-272" aria-hidden="true" tabindex="-1"></a><span class="in">::: {.content-visible when-format="pdf"}</span></span>
+<span id="cb3-273"><a href="#cb3-273" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb3-274"><a href="#cb3-274" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb3-275"><a href="#cb3-275" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-276"><a href="#cb3-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-277"><a href="#cb3-277" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section F — Portfolio and module integration</span></span>
+<span id="cb3-278"><a href="#cb3-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-279"><a href="#cb3-279" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Simple linear regression** — two numerical variables; use <span class="in">`lm(y ~ x)`</span> for the model, <span class="in">`confint()`</span> for slope CI, <span class="in">`predict(... interval=)`</span> for response intervals.</span>
+<span id="cb3-280"><a href="#cb3-280" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-281"><a href="#cb3-281" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>P1: **Binomial test** (one proportion, $p$-value). P2: **Confidence interval** (proportion or mean, SRS). P3: **Descriptive statistics** (graphical and numerical summaries). P4: **Two-group comparison** (Welch $t$, $\chi^2$, or `prop.test`). P5: **Simple linear regression** (correlation, prediction, CIs/PIs).</span>
+<span id="cb3-282"><a href="#cb3-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-283"><a href="#cb3-283" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-284"><a href="#cb3-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-285"><a href="#cb3-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-286"><a href="#cb3-286" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
