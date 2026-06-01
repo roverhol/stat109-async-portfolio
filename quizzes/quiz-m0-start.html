@@ -158,46 +158,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="module-0-quiz-0-start-here-check" class="level1">
 <h1>Module 0, Quiz 0: Start Here Check</h1>
 <p><strong>Canvas:</strong> Module 0 starter quiz<br>
-<strong>Use with:</strong> <a href="../syllabus">Syllabus</a>, <a href="../schedule">Course path</a>, <a href="../labs/module-0-lab-demo">Module 0 demo lab</a>, <a href="../labs/module-0-lab-exercise">Module 0 exercise lab</a></p>
-<p>This quick bank checks startup readiness before Module 1:</p>
+<strong>Use with:</strong> <a href="../lectures/module-0-read-00">Module 0 Read 0</a>, <a href="../syllabus">Syllabus</a>, <a href="../labs/module-0-lab-demo">Module 0 demo lab</a>, <a href="../labs/module-0-lab-exercise">Module 0 exercise lab</a></p>
+<p>This quick bank checks startup readiness before Module 1 (aligned with Read 0):</p>
 <ol type="1">
 <li>Definition of statistics<br>
 </li>
-<li>Five-step statistical process<br>
+<li>Five-step statistical process (ask → plan → collect → analyze → conclude)<br>
 </li>
-<li>Course workload expectations<br>
+<li>Three worlds (observe, imagine, computers)<br>
 </li>
-<li>Basic R syntax from Module 0 lab</li>
+<li>Colab notebook: text, code, and output<br>
+</li>
+<li>Basic R syntax from the Module 0 lab</li>
 </ol>
 <hr>
 <section id="practice-prompts" class="level2">
 <h2 class="anchored" data-anchor-id="practice-prompts">Practice prompts</h2>
 <ol type="1">
-<li>What is a good working definition of <strong>statistics</strong> for this course?</li>
+<li>What is a good working definition of <strong>statistics</strong> for this course (Read 0)?</li>
 <li>How many steps are in the statistical process?</li>
-<li>What is the first step of the statistical process?</li>
-<li>Put these in order: collect data, summarize/visualize, infer/model.</li>
-<li>About how many hours per week does the syllabus expect in this 5-week term?</li>
-<li>Write an R addition expression that evaluates to 10.</li>
-<li>Write an R assignment line that stores 10 in <code>x</code> using course style.</li>
-<li>Which operator checks equality in R: <code>==</code>, <code>=</code>, or <code>&lt;-</code>?</li>
-<li>Create vector <code>v</code> containing 1, 2, 3, 4.</li>
+<li>What is the first step? What makes a question “well-defined”?</li>
+<li>After the question, put these in order: make a plan, collect data, analyze data, draw conclusions.</li>
+<li>What is the purpose of Step 2 (make a plan)?</li>
+<li>Give an example from the <strong>world we observe</strong> vs the <strong>world we imagine</strong>.</li>
+<li>What roles do <strong>text</strong>, <strong>code</strong>, and <strong>output</strong> cells play in a Colab notebook?</li>
+<li>In Read 0, <code>mean(c(7, 2, 3))</code> appears in which kind of cell?</li>
+<li>Which line assigns 10 to <code>x</code> using course style (<code>&lt;-</code>)?</li>
+<li>Which code creates <code>v &lt;- c(1, 2, 3, 4)</code>?</li>
 <li>What does <code>length(v)</code> return for <code>v &lt;- c(1,2,3,4)</code>?</li>
-<li>In Module 0 simulation, are draws made with or without replacement inside a trial?</li>
+<li>In the Module 0 baby-matching simulation, are draws with or without replacement within a trial?</li>
 </ol>
 <hr>
 </section>
 <section id="answer-key" class="level2">
 <h2 class="anchored" data-anchor-id="answer-key">Answer key</h2>
 <ol type="1">
-<li>Statistics is the science of learning from data to answer questions and support decisions.</li>
+<li>Statistics is the science of <strong>using data to answer questions and make decisions</strong>.</li>
 <li>Five steps.</li>
-<li>Ask a clear research question and define the population/parameter.</li>
-<li>Collect/organize data -&gt; summarize/visualize -&gt; infer/model.</li>
-<li>About 20–25 hours per week.</li>
-<li>Example: <code>3 + 7</code>.</li>
+<li><strong>Ask a well-defined question</strong> — specific, measurable, and answerable with data.</li>
+<li>Make a plan → collect data → analyze data → draw conclusions.</li>
+<li>Decide what to collect, how to analyze, and how to conclude <strong>before</strong> data are collected.</li>
+<li>Observe: sleep you logged this week. Imagine: mean muffin size in 2026 vs 2006 (model/population idea).</li>
+<li>Text → people; code → instructions for the computer; output → what the computer produces.</li>
+<li>A <strong>code</strong> cell (R instructions).</li>
 <li><code>x &lt;- 10</code>.</li>
-<li><code>==</code>.</li>
 <li><code>v &lt;- c(1, 2, 3, 4)</code>.</li>
 <li><ol start="4" type="1">
 <li></li>
@@ -676,46 +680,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Module 0, Quiz 0: Start Here Check</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>**Canvas:** Module 0 starter quiz  </span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>**Use with:** <span class="co">[</span><span class="ot">Syllabus</span><span class="co">](../syllabus)</span>, <span class="co">[</span><span class="ot">Course path</span><span class="co">](../schedule)</span>, <span class="co">[</span><span class="ot">Module 0 demo lab</span><span class="co">](../labs/module-0-lab-demo)</span>, <span class="co">[</span><span class="ot">Module 0 exercise lab</span><span class="co">](../labs/module-0-lab-exercise)</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>**Use with:** <span class="co">[</span><span class="ot">Module 0 Read 0</span><span class="co">](../lectures/module-0-read-00)</span>, <span class="co">[</span><span class="ot">Syllabus</span><span class="co">](../syllabus)</span>, <span class="co">[</span><span class="ot">Module 0 demo lab</span><span class="co">](../labs/module-0-lab-demo)</span>, <span class="co">[</span><span class="ot">Module 0 exercise lab</span><span class="co">](../labs/module-0-lab-exercise)</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>This quick bank checks startup readiness before Module 1:</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>This quick bank checks startup readiness before Module 1 (aligned with Read 0):</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Definition of statistics  </span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Five-step statistical process  </span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Course workload expectations  </span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Basic R syntax from Module 0 lab</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## Practice prompts</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>What is a good working definition of **statistics** for this course?</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>How many steps are in the statistical process?</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>What is the first step of the statistical process?</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Put these in order: collect data, summarize/visualize, infer/model.</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>About how many hours per week does the syllabus expect in this 5-week term?</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Write an R addition expression that evaluates to 10.</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>Write an R assignment line that stores 10 in <span class="in">`x`</span> using course style.</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>Which operator checks equality in R: <span class="in">`==`</span>, <span class="in">`=`</span>, or <span class="in">`&lt;-`</span>?</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="ss">9. </span>Create vector <span class="in">`v`</span> containing 1, 2, 3, 4.</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">10. </span>What does <span class="in">`length(v)`</span> return for <span class="in">`v &lt;- c(1,2,3,4)`</span>?</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">11. </span>In Module 0 simulation, are draws made with or without replacement inside a trial?</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Five-step statistical process (ask → plan → collect → analyze → conclude)  </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Three worlds (observe, imagine, computers)  </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Colab notebook: text, code, and output  </span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Basic R syntax from the Module 0 lab  </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Practice prompts</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>What is a good working definition of **statistics** for this course (Read 0)?</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>How many steps are in the statistical process?</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>What is the first step? What makes a question “well-defined”?</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>After the question, put these in order: make a plan, collect data, analyze data, draw conclusions.</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>What is the purpose of Step 2 (make a plan)?</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Give an example from the **world we observe** vs the **world we imagine**.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>What roles do **text**, **code**, and **output** cells play in a Colab notebook?</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>In Read 0, <span class="in">`mean(c(7, 2, 3))`</span> appears in which kind of cell?</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">9. </span>Which line assigns 10 to <span class="in">`x`</span> using course style (<span class="in">`&lt;-`</span>)?</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">10. </span>Which code creates <span class="in">`v &lt;- c(1, 2, 3, 4)`</span>?</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="ss">11. </span>What does <span class="in">`length(v)`</span> return for <span class="in">`v &lt;- c(1,2,3,4)`</span>?</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="ss">12. </span>In the Module 0 baby-matching simulation, are draws with or without replacement within a trial?</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Answer key</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Statistics is the science of learning from data to answer questions and support decisions.</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Five steps.</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Ask a clear research question and define the population/parameter.</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Collect/organize data -&gt; summarize/visualize -&gt; infer/model.</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>About 20–25 hours per week.</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Example: <span class="in">`3 + 7`</span>.</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span><span class="in">`x &lt;- 10`</span>.</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span><span class="in">`==`</span>.</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="ss">9. </span><span class="in">`v &lt;- c(1, 2, 3, 4)`</span>.</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">10. </span>4.</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="ss">11. </span>Without replacement.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">## Answer key</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Statistics is the science of **using data to answer questions and make decisions**.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Five steps.</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Ask a well-defined question** — specific, measurable, and answerable with data.</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Make a plan → collect data → analyze data → draw conclusions.</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Decide what to collect, how to analyze, and how to conclude **before** data are collected.</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Observe: sleep you logged this week. Imagine: mean muffin size in 2026 vs 2006 (model/population idea).</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>Text → people; code → instructions for the computer; output → what the computer produces.</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>A **code** cell (R instructions).</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="ss">9. </span><span class="in">`x &lt;- 10`</span>.</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="ss">10. </span><span class="in">`v &lt;- c(1, 2, 3, 4)`</span>.</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="ss">11. </span>4.</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="ss">12. </span>Without replacement.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
