@@ -105,35 +105,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="assets/css/humboldt-theme.css">
 </head>
@@ -149,29 +120,14 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#at-a-glance" id="toc-at-a-glance" class="nav-link active" data-scroll-target="#at-a-glance">At a glance</a></li>
+  <li><a href="#how-the-course-is-graded" id="toc-how-the-course-is-graded" class="nav-link active" data-scroll-target="#how-the-course-is-graded">How the course is graded</a></li>
+  <li><a href="#at-a-glance" id="toc-at-a-glance" class="nav-link" data-scroll-target="#at-a-glance">At a glance</a></li>
   <li><a href="#module-0-start-here" id="toc-module-0-start-here" class="nav-link" data-scroll-target="#module-0-start-here">Module 0 — Start here</a></li>
-  <li><a href="#module-1-testing-a-claim-jun-17" id="toc-module-1-testing-a-claim-jun-17" class="nav-link" data-scroll-target="#module-1-testing-a-claim-jun-17">Module 1 — Testing a Claim (Jun 1–7)</a>
-  <ul class="collapse">
-  <li><a href="#project-1-testing-a-claim" id="toc-project-1-testing-a-claim" class="nav-link" data-scroll-target="#project-1-testing-a-claim">Project 1 — Testing a Claim</a></li>
-  </ul></li>
-  <li><a href="#module-2-estimating-the-truth-jun-814" id="toc-module-2-estimating-the-truth-jun-814" class="nav-link" data-scroll-target="#module-2-estimating-the-truth-jun-814">Module 2 — Estimating the Truth (Jun 8–14)</a>
-  <ul class="collapse">
-  <li><a href="#project-2-estimating-the-truth" id="toc-project-2-estimating-the-truth" class="nav-link" data-scroll-target="#project-2-estimating-the-truth">Project 2 — Estimating the Truth</a></li>
-  </ul></li>
-  <li><a href="#module-3-discovering-patterns-jun-1521" id="toc-module-3-discovering-patterns-jun-1521" class="nav-link" data-scroll-target="#module-3-discovering-patterns-jun-1521">Module 3 — Discovering Patterns (Jun 15–21)</a>
-  <ul class="collapse">
-  <li><a href="#project-3-discovering-patterns" id="toc-project-3-discovering-patterns" class="nav-link" data-scroll-target="#project-3-discovering-patterns">Project 3 — Discovering Patterns</a></li>
-  </ul></li>
-  <li><a href="#module-4-designing-fair-comparisons-jun-2228" id="toc-module-4-designing-fair-comparisons-jun-2228" class="nav-link" data-scroll-target="#module-4-designing-fair-comparisons-jun-2228">Module 4 — Designing Fair Comparisons (Jun 22–28)</a>
-  <ul class="collapse">
-  <li><a href="#project-4-designing-fair-comparisons" id="toc-project-4-designing-fair-comparisons" class="nav-link" data-scroll-target="#project-4-designing-fair-comparisons">Project 4 — Designing Fair Comparisons</a></li>
-  </ul></li>
-  <li><a href="#module-5-looking-ahead-jun-29jul-2" id="toc-module-5-looking-ahead-jun-29jul-2" class="nav-link" data-scroll-target="#module-5-looking-ahead-jun-29jul-2">Module 5 — Looking Ahead (Jun 29–Jul 2)</a>
-  <ul class="collapse">
-  <li><a href="#project-5-looking-ahead" id="toc-project-5-looking-ahead" class="nav-link" data-scroll-target="#project-5-looking-ahead">Project 5 — Looking Ahead</a></li>
-  </ul></li>
-  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
+  <li><a href="#module-1-testing-a-claim" id="toc-module-1-testing-a-claim" class="nav-link" data-scroll-target="#module-1-testing-a-claim">Module 1 — Testing a Claim</a></li>
+  <li><a href="#module-2-estimating-the-truth" id="toc-module-2-estimating-the-truth" class="nav-link" data-scroll-target="#module-2-estimating-the-truth">Module 2 — Estimating the Truth</a></li>
+  <li><a href="#module-3-discovering-patterns" id="toc-module-3-discovering-patterns" class="nav-link" data-scroll-target="#module-3-discovering-patterns">Module 3 — Discovering Patterns</a></li>
+  <li><a href="#module-4-designing-fair-comparisons" id="toc-module-4-designing-fair-comparisons" class="nav-link" data-scroll-target="#module-4-designing-fair-comparisons">Module 4 — Designing Fair Comparisons</a></li>
+  <li><a href="#module-5-looking-ahead" id="toc-module-5-looking-ahead" class="nav-link" data-scroll-target="#module-5-looking-ahead">Module 5 — Looking Ahead</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="schedule.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
 </nav>
@@ -203,10 +159,53 @@ window.Quarto = {
 
 
 <p>This page shows the recommended path through the course during the five-week summer session from June 1 to July 2, 2026. You may work at your own pace within each module window, but the modules should be done in the order shown. Check <a href="https://canvas.humboldt.edu/courses/88865">Canvas</a> to turn in work, take quizzes, see grades, and join discussions.</p>
-<p>Each project module follows the same pattern: <strong>Read 0</strong> (project preview) → read → update your reference sheets → low-stakes quizzes (as many times as you want) → lab (Wednesday) → synthesis quiz (Thursday) → project milestone (Friday) → project (Sunday). Module 5 is shorter and ends on Thursday, July 2.</p>
-<p>Reference sheets (<a href="methods">methods map</a>, <a href="r-reference">R reference</a>) grow a little in every module 1–5. All readings also live on the <a href="lectures">lectures</a> index if you want the full list.</p>
-<p>Outcomes below are tagged <strong>essential</strong> (needed for the module project or core module goals) or <strong>optional</strong> (helpful enrichment or stretch).</p>
-<p>The <strong>Supplemental (optional)</strong> column links extra <strong>textbook chapters</strong> (Vu &amp; Harrington, free online) and <strong>videos/tutorials</strong> that match our Colab + <code>{tidyverse}</code> workflow — see <a href="resources#supplemental-by-module">Resources</a>. None of these are required for the module project unless a row says otherwise.</p>
+<p>Reference sheets (<a href="methods">methods map</a>, <a href="r-reference">R reference</a>) summarize all course content. All readings also live on the <a href="lectures">lectures</a> index if you want the full list.</p>
+<p>The Supplemental (optional) column links extra textbook chapters (Vu &amp; Harrington, free online) and videos/tutorials that match our Colab + <code>{tidyverse}</code> workflow — see <a href="resources#supplemental-by-module">Resources</a>. None of these are required for the module project unless a row says otherwise.</p>
+<section id="how-the-course-is-graded" class="level2">
+<h2 class="anchored" data-anchor-id="how-the-course-is-graded">How the course is graded</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 25%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Weight</th>
+<th>What counts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Class participation</td>
+<td><strong>5%</strong></td>
+<td>Class Chatter (one per module, 0–5) + Q+A Discussion on Canvas</td>
+</tr>
+<tr class="even">
+<td>Quizzes</td>
+<td><strong>25%</strong></td>
+<td>All Canvas quizzes (Quiz 0/0B, Quiz A, Quiz B, synthesis per module) · best of 4 attempts per quiz · open notes</td>
+</tr>
+<tr class="odd">
+<td>R coding exercise labs</td>
+<td><strong>20%</strong></td>
+<td>Submit exercise lab each module · graded on completion</td>
+</tr>
+<tr class="even">
+<td>Projects 1–5</td>
+<td><strong>50%</strong></td>
+<td>One-page summary + runnable R notebook each module</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td><strong>100%</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
 <section id="at-a-glance" class="level2">
 <h2 class="anchored" data-anchor-id="at-a-glance">At a glance</h2>
 <table class="caption-top table">
@@ -214,54 +213,53 @@ window.Quarto = {
 <tr class="header">
 <th>Module</th>
 <th>Dates</th>
-<th>Project due</th>
+<th>Project due (recommended)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><a href="#module-0--start-here">0 — Welcome</a></td>
-<td>Open before Jun 1</td>
+<td>Jun 1-2</td>
 <td>—</td>
 </tr>
 <tr class="even">
 <td><a href="#module-1--testing-a-claim-jun-17">1 — Testing a Claim</a></td>
-<td>Jun 1–7</td>
-<td>Sun Jun 7</td>
+<td>Jun 2–8</td>
+<td>Mon Jun 8</td>
 </tr>
 <tr class="odd">
 <td><a href="#module-2--estimating-the-truth-jun-814">2 — Estimating the Truth</a></td>
-<td>Jun 8–14</td>
-<td>Sun Jun 14</td>
+<td>Jun 9–15</td>
+<td>Mon Jun 15</td>
 </tr>
 <tr class="even">
 <td><a href="#module-3--discovering-patterns-jun-1521">3 — Discovering Patterns</a></td>
-<td>Jun 15–21</td>
-<td>Sun Jun 21</td>
+<td>Jun 16–22</td>
+<td>Mon Jun 22</td>
 </tr>
 <tr class="odd">
 <td><a href="#module-4--designing-fair-comparisons-jun-2228">4 — Designing Fair Comparisons</a></td>
-<td>Jun 22–28</td>
-<td>Sun Jun 28</td>
+<td>Jun 23–29</td>
+<td>Mon Jun 29</td>
 </tr>
 <tr class="even">
 <td><a href="#module-5--looking-ahead-jun-29jul-2">5 — Looking Ahead</a></td>
-<td>Jun 29–Jul 2</td>
+<td>Jun 30–Jul 2</td>
 <td>Thu Jul 2</td>
 </tr>
 </tbody>
 </table>
+<p>Canvas due dates are recommendations for pacing; all work to bee graded must be submitted by 11:59 pm PST July 2, 2026.</p>
 <hr>
 </section>
 <section id="module-0-start-here" class="level2">
 <h2 class="anchored" data-anchor-id="module-0-start-here">Module 0 — Start here</h2>
-<p>Complete this before Module 1</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Step</th>
 <th>Materials</th>
 <th>Supplemental (optional)</th>
-<th>Learning outcomes</th>
 </tr>
 </thead>
 <tbody>
@@ -269,65 +267,45 @@ window.Quarto = {
 <td>Read 0</td>
 <td><a href="lectures/module-0-read-00">Module 0 Read 0</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Welcome — five-step statistical process, three worlds, five portfolio projects, Colab/R notebook structure, and Module 0 checklist (labs, quizzes, research questions). ~15 min before the syllabus and labs.</td>
 </tr>
 <tr class="even">
 <td>Read</td>
-<td><a href="syllabus">Syllabus</a>, <a href="schedule">course path</a>, <a href="resources">resources</a></td>
+<td><a href="syllabus">Syllabus</a> · <a href="schedule">Course path</a> · <a href="resources">Resources</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Know where readings, labs, and projects live vs what happens in Canvas. <strong>Essential:</strong> Understand grading, due-date pattern, and academic honesty / AI expectations (syllabus). <strong>Optional:</strong> Full policy details you will not need until later in the term.</td>
 </tr>
 <tr class="odd">
-<td>Quiz 0 (Start Here)</td>
-<td>Canvas Module 0 — <a href="quizzes/quiz-m0-start">Quiz 0</a></td>
+<td>Quiz</td>
+<td><a href="quizzes/quiz-m0-start">Quiz 0 (Start Here)</a> · <a href="quizzes/quiz-m0-question-ideas">Quiz 0B (Question Ideas)</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Confirm Read 0 concepts: statistics definition, five-step process (ask → plan → collect → analyze → conclude), three worlds, Colab text/code/output, and basic R from the Module 0 lab. Open notes; unlimited attempts.</td>
 </tr>
 <tr class="even">
-<td>Quiz 0B (Question Ideas)</td>
-<td>Canvas Module 0 — <a href="quizzes/quiz-m0-question-ideas">Quiz 0B</a></td>
+<td>Lab</td>
+<td><a href="labs/module-0-lab-demo">Demo lab</a> · <a href="labs/module-0-lab-exercise">Exercise lab</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Submit 3 research questions for Step 1 practice; the third should compare two groups (Project 1 preview).</td>
-</tr>
-<tr class="odd">
-<td>Reference sheets</td>
-<td><a href="methods">Methods map</a>, <a href="r-reference">R reference</a></td>
-<td>—</td>
-<td><strong>Essential:</strong> Set up two places to create your two references over the next 5 weeks. You will update these each module and can use them on assignments. <strong>Optional:</strong> Skim the <a href="methods">methods map</a> layout and <a href="r-reference">R reference</a> before Module 1 labs.</td>
-</tr>
-<tr class="even">
-<td>Lab (Wed)</td>
-<td><a href="labs/module-0-lab-demo">Demo lab</a>, <a href="labs/module-0-lab-exercise">Exercise lab</a></td>
-<td>—</td>
-<td><strong>Essential:</strong> Run R in Google Colab (save a copy, run cells). <strong>Essential:</strong> Work with vectors, logical TRUE/FALSE, and simple simulation. <strong>Optional:</strong> Estimating probabilities by simulation (helps later probability intuition, not required for Project 1).</td>
 </tr>
 <tr class="odd">
 <td>Canvas</td>
-<td>Module 0 discussion</td>
+<td>Module 0 discussion (introduce yourself)</td>
 <td>—</td>
-<td><strong>Essential:</strong> Introduce yourself and confirm you can reach assignments and discussions.</td>
 </tr>
 <tr class="even">
 <td>Supplemental pack</td>
 <td>—</td>
 <td><a href="https://colab.research.google.com/notebooks/basic_features_overview.ipynb">Colab tutorial</a> · <a href="https://posit.co/resources/videos/getting-started-with-r/">Posit: Getting Started with R</a> · <a href="https://www.openintro.org/book/biostat/">Textbook (free PDF)</a> · <a href="https://posit.co/resources/cheatsheets/">Posit cheatsheets</a></td>
-<td><strong>Optional:</strong> Colab orientation and R basics before Module 1; textbook preface for context.</td>
 </tr>
 </tbody>
 </table>
 <hr>
 </section>
-<section id="module-1-testing-a-claim-jun-17" class="level2">
-<h2 class="anchored" data-anchor-id="module-1-testing-a-claim-jun-17">Module 1 — Testing a Claim (Jun 1–7)</h2>
+<section id="module-1-testing-a-claim" class="level2">
+<h2 class="anchored" data-anchor-id="module-1-testing-a-claim">Module 1 — Testing a Claim</h2>
 <p>Is this observation surprising?</p>
-<p>Lab Wed Jun 3 · Synthesis Thu Jun 4 · Milestone Fri Jun 5 · <a href="projects/project-1">Project 1 — Testing a Claim</a> Sun Jun 7 · Discussion: something surprising about Lumberjacks (Canvas)</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Step</th>
 <th>Materials</th>
 <th>Supplemental (optional)</th>
-<th>Learning outcomes</th>
 </tr>
 </thead>
 <tbody>
@@ -335,128 +313,75 @@ window.Quarto = {
 <td>Read 0</td>
 <td><a href="lectures/module-1-read-00">Module 1 Read 0</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Project preview — big question, sample <a href="projects/Project1_ESP_Binomial_Test.pdf">ESP report (PDF)</a>, what to notice in each section, link to <a href="projects/project-1">Project 1</a>. ~5 min before Read 1.</td>
 </tr>
 <tr class="even">
 <td>Read</td>
 <td><a href="lectures/module-1-read-01">Module 1 Read 1</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Probability language through binomial pmf — sample spaces, rules, counting, and the binomial process.</td>
 </tr>
 <tr class="odd">
-<td>Quizzes (Def &amp; Notation)</td>
-<td>Canvas Module 1 — <a href="quizzes/quiz-m1-def">Quiz A</a></td>
+<td>Quiz A</td>
+<td><a href="quizzes/quiz-m1-def">Def &amp; Notation</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Notation, sample space, addition rule, conditional probability, independence. Open notes; unlimited attempts.</td>
 </tr>
 <tr class="even">
 <td>Read more</td>
 <td><a href="lectures/module-1-read-02">Module 1 Read 2</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Binomial test workflow and R — hypotheses, null plots, p-values.</td>
 </tr>
 <tr class="odd">
-<td>Quizzes (Concept Check)</td>
-<td>Canvas Module 1 — <a href="quizzes/quiz-m1-concept">Quiz B</a></td>
+<td>Quiz B</td>
+<td><a href="quizzes/quiz-m1-concept">Concept Check</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Counting, conditional applications, combinations, BRP identification. Open notes; unlimited attempts.</td>
 </tr>
 <tr class="even">
-<td>Reference sheets</td>
-<td><a href="methods">Methods</a>, <a href="r-reference">R reference</a></td>
+<td>Demo lab</td>
+<td><a href="labs/module-1-lab-demo">Module 1 demo</a> · <a href="labs/module-1-lab-demo-conditional">Conditional demo</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Probability vocabulary (sample space through independence) on statistics sheet. <strong>Essential:</strong> One-proportion / binomial test row on methods map. <strong>Essential:</strong> R patterns for <code>dbinom</code>, <code>pbinom</code>, <code>geom_col</code>, <code>geom_vline</code>.</td>
 </tr>
 <tr class="odd">
-<td>Lab (Wed)</td>
-<td><a href="labs/module-1-lab-demo">Demo lab</a>, <a href="labs/module-1-lab-demo-conditional">Conditional demo</a>, <a href="labs/module-1-lab-exercise">Exercise lab</a>, <a href="projects/project-1-milestone">Project 1 milestone</a></td>
+<td>Exercise lab</td>
+<td><a href="labs/module-1-lab-exercise">Module 1 exercise lab</a></td>
 <td>—</td>
-<td><strong>Essential (demos):</strong> simulation review, data structures, conditional simulation, binomial R tools, null plot. <strong>Essential (exercise):</strong> combined practice notebook (Parts I–III). <strong>Essential (milestone):</strong> Project 1 precheck. Update <a href="r-reference">R reference</a>.</td>
 </tr>
 <tr class="even">
-<td>Synthesis quiz (Thu)</td>
-<td>Canvas Module 1 — <a href="quizzes/quiz-m1-synthesis">Synthesis</a></td>
+<td>R reference</td>
+<td><a href="r-reference">R quick reference</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Full binomial test workflow, Module 1 R practice, interpretation items. After labs. Two attempts; open notes.</td>
 </tr>
 <tr class="odd">
-<td>Milestone (Fri)</td>
-<td><a href="projects/project-1-milestone">Project 1 milestone</a></td>
+<td>Milestone</td>
+<td><a href="projects/project-1-milestone">Project 1 milestone</a> · <a href="projects/project-1-milestone.ipynb">notebook</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> <a href="projects/project-1#project-workflow">Phase A</a> — question, <span class="math inline">\(p\)</span>, <span class="math inline">\(H_0\)</span>/<span class="math inline">\(H_a\)</span>, null graph <strong>before</strong> data collection.</td>
 </tr>
 <tr class="even">
-<td>Project (Sun)</td>
-<td><a href="projects/project-1">Project 1 — Testing a Claim</a></td>
+<td>Synthesis</td>
+<td><a href="quizzes/quiz-m1-synthesis">Module 1 synthesis</a></td>
 <td>—</td>
-<td>See project outcomes table below.</td>
 </tr>
 <tr class="odd">
+<td>Project</td>
+<td><a href="projects/project-1">Project 1</a></td>
+<td>—</td>
+</tr>
+<tr class="even">
 <td>Supplemental pack</td>
 <td>—</td>
 <td><a href="https://www.openintro.org/book/biostat/chapter2.html">Textbook Ch 2 — Probability</a> · <a href="https://www.openintro.org/book/biostat/chapter3.html">Ch 3.2 — Binomial</a> · <a href="https://www.khanacademy.org/math/ap-statistics/random-variables-ap/binomial-random-variables/v/binomial-distribution">Khan: binomial distribution</a> · <a href="https://www.khanacademy.org/v/visualizing-a-binomial-distribution">Khan: visualizing binomial</a></td>
-<td><strong>Optional:</strong> Alternate probability explanations; course labs use <code>{ggplot2}</code> for null plots, not the textbook’s base-R labs.</td>
-</tr>
-</tbody>
-</table>
-<section id="project-1-testing-a-claim" class="level3">
-<h3 class="anchored" data-anchor-id="project-1-testing-a-claim">Project 1 — Testing a Claim</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 63%">
-<col style="width: 36%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Outcome</th>
-<th>Tag</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Choose a real binomial process (<span class="math inline">\(n=25\)</span>) that is not a class example; defend all four BRP conditions in your own context</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="even">
-<td>State <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_a\)</span> for population proportion <span class="math inline">\(p\)</span> with a numeric null value</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="odd">
-<td>Report <span class="math inline">\(x\)</span>, <span class="math inline">\(n\)</span>, <span class="math inline">\(\hat{p}\)</span>; descriptive bar/pie chart in R</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="even">
-<td>Plot null binomial distribution with <code>dbinom</code> + <code>geom_col</code>; mark observed <span class="math inline">\(x\)</span></td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="odd">
-<td>Compute p-value with <code>pbinom</code> matching alternative direction; interpret in one sentence</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="even">
-<td>One-page report with Introduction / Data Collection / Data Analysis / Conclusion</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="odd">
-<td>Use the Read 2 ESP worksheet as a model without copying ESP as your study</td>
-<td><strong>Essential</strong></td>
 </tr>
 </tbody>
 </table>
 <hr>
 </section>
-</section>
-<section id="module-2-estimating-the-truth-jun-814" class="level2">
-<h2 class="anchored" data-anchor-id="module-2-estimating-the-truth-jun-814">Module 2 — Estimating the Truth (Jun 8–14)</h2>
+<section id="module-2-estimating-the-truth" class="level2">
+<h2 class="anchored" data-anchor-id="module-2-estimating-the-truth">Module 2 — Estimating the Truth</h2>
 <p>Building high-quality estimates from samples.</p>
-<p>Lab Wed Jun 10 · Synthesis Thu Jun 11 · Milestone Fri Jun 12 · <a href="projects/project-2">Project 2 — Estimating the Truth</a> Sun Jun 14 · Discussion: a plant you appreciate (Canvas)</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Step</th>
 <th>Materials</th>
 <th>Supplemental (optional)</th>
-<th>Learning outcomes</th>
 </tr>
 </thead>
 <tbody>
@@ -464,132 +389,70 @@ window.Quarto = {
 <td>Read 0</td>
 <td><a href="lectures/module-2-read-00">Module 2 Read 0</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Project preview — finite population, SRS, 95% CI focus; tour <a href="projects/project-2-sample.pdf">sample report (PDF)</a>. ~5 min before Read 1.</td>
 </tr>
 <tr class="even">
 <td>Read</td>
 <td><a href="lectures/module-2-read-01">Module 2 Read 1</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Binomial <span class="math inline">\(\mu=np\)</span>, <span class="math inline">\(\sigma=\sqrt{np(1-p)}\)</span>; normal approximation &amp; Empirical Rule; sampling distribution &amp; 95% CI (proportion and mean); sampling frame, bias, precision, SRS and design types.</td>
 </tr>
 <tr class="odd">
-<td>Quizzes (Def &amp; Notation)</td>
-<td>Canvas Module 2 — <a href="quizzes/quiz-m2-def">Quiz A</a></td>
+<td>Quiz A</td>
+<td><a href="quizzes/quiz-m2-def">Def &amp; Notation</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Vocabulary for estimation and sampling (frame, SRS, bias, CI language). Open notes; unlimited attempts.</td>
 </tr>
 <tr class="even">
 <td>Read more</td>
 <td><a href="lectures/module-2-read-02">Module 2 Read 2</a></td>
 <td><a href="https://www.openintro.org/book/biostat/chapter4.html">Textbook Ch 4.2 — Confidence intervals</a></td>
-<td><strong>Essential:</strong> z-scores &amp; standard normal; methods-map habit; mean/median, histogram, dot plot in tidyverse. <strong>Optional:</strong> <code>prop.test()</code> / one-proportion z-test; one-sample <code>t.test()</code> (Project 2 uses CI only).</td>
 </tr>
 <tr class="odd">
-<td>Quizzes (Concept Check)</td>
-<td>Canvas Module 2 — <a href="quizzes/quiz-m2-concept">Quiz B</a></td>
+<td>Quiz B</td>
+<td><a href="quizzes/quiz-m2-concept">Concept Check</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> z-scores, toolbox organization, one-variable summaries. Open notes; unlimited attempts.</td>
 </tr>
 <tr class="even">
-<td>Reference sheets</td>
-<td><a href="methods">Methods</a>, <a href="r-reference">R reference</a></td>
+<td>Demo lab</td>
+<td><a href="labs/module-2-lab-demo">Module 2 demo</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> One-mean and one-proportion CI rows; FPC note for finite populations. <strong>Essential:</strong> z-score row before toolbox section.</td>
 </tr>
 <tr class="odd">
-<td>Lab (Wed)</td>
-<td><a href="labs/module-2-lab-demo">Module 2 demo</a>, <a href="labs/module-2-lab-exercise">Exercise lab</a></td>
+<td>Exercise lab</td>
+<td><a href="labs/module-2-lab-exercise">Module 2 exercise lab</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Choose among CI situations (mean vs proportion; finite <span class="math inline">\(N\)</span>; FPC). <strong>Essential:</strong> Check conditions and compute 95% CI in R.</td>
 </tr>
 <tr class="even">
-<td>Synthesis quiz (Thu)</td>
-<td>Canvas Module 2 — <a href="quizzes/quiz-m2-synthesis">Synthesis</a></td>
+<td>Milestone</td>
+<td><a href="projects/project-2">Project 2 milestone</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> CI computation and interpretation; SRS vs convenience; FPC decision; exercise-lab R patterns; tidyverse summaries. After labs.</td>
 </tr>
 <tr class="odd">
-<td>Milestone (Fri)</td>
-<td>Canvas Module 2</td>
+<td>Synthesis</td>
+<td><a href="quizzes/quiz-m2-synthesis">Module 2 synthesis</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Named finite population (<span class="math inline">\(N\)</span>), variable type, planned SRS method, and which CI type you will use.</td>
 </tr>
 <tr class="even">
-<td>Project (Sun)</td>
-<td><a href="projects/project-2">Project 2 — Estimating the Truth</a></td>
+<td>Project</td>
+<td><a href="projects/project-2">Project 2</a></td>
 <td>—</td>
-<td>See project outcomes table below.</td>
 </tr>
 <tr class="odd">
 <td>Supplemental pack</td>
 <td>—</td>
 <td><a href="https://www.openintro.org/book/biostat/chapter3.html">Textbook Ch 3.3 — Normal</a> · <a href="https://www.openintro.org/book/biostat/chapter4.html">Ch 4.1–4.2 — Variability &amp; CIs</a> · <a href="https://www.khanacademy.org/v/confidence-intervals-and-margin-of-error">Khan: confidence intervals</a> · <a href="https://www.khanacademy.org/math/ap-statistics/xfb5d8e68:inference-categorical-proportions/introduction-confidence-intervals/v/confidence-interval-simulation">Khan: CI simulation</a></td>
-<td><strong>Optional:</strong> CI intuition and normal-model background; Project 2 rubric is CI-focused.</td>
-</tr>
-</tbody>
-</table>
-<section id="project-2-estimating-the-truth" class="level3">
-<h3 class="anchored" data-anchor-id="project-2-estimating-the-truth">Project 2 — Estimating the Truth</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Outcome</th>
-<th>Tag</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Define a listable finite population (<span class="math inline">\(N\)</span>) and one variable (binary → proportion, or numerical → mean)</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="even">
-<td>Draw an SRS of size <span class="math inline">\(n\)</span> from <span class="math inline">\(\{1,\ldots,N\}\)</span> without replacement; collect data</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="odd">
-<td>Compute point estimate (<span class="math inline">\(\hat{p}\)</span> or <span class="math inline">\(\bar{x}\)</span>)</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="even">
-<td>Choose correct 95% CI (mean <span class="math inline">\(t\)</span>-interval or proportion interval; apply FPC when <span class="math inline">\(N\)</span> is finite)</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="odd">
-<td>State and check interval conditions in context</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="even">
-<td>Interpret CI with the “I am 95% confident that…” sentence</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="odd">
-<td>Submit one-page summary + runnable R notebook (<a href="projects/project-2-estimation-mean-fpc.ipynb">mean</a> or <a href="projects/project-2-proportion-fpc.ipynb">proportion</a> template)</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="even">
-<td>Sample size calculation / professional power analysis</td>
-<td><strong>Optional</strong></td>
-</tr>
-<tr class="odd">
-<td>Hypothesis test about the parameter (not required by rubric)</td>
-<td><strong>Optional</strong></td>
 </tr>
 </tbody>
 </table>
 <hr>
 </section>
-</section>
-<section id="module-3-discovering-patterns-jun-1521" class="level2">
-<h2 class="anchored" data-anchor-id="module-3-discovering-patterns-jun-1521">Module 3 — Discovering Patterns (Jun 15–21)</h2>
+<section id="module-3-discovering-patterns" class="level2">
+<h2 class="anchored" data-anchor-id="module-3-discovering-patterns">Module 3 — Discovering Patterns</h2>
 <p>Describing a dataset with graphs and summaries.</p>
-<p>Lab Wed Jun 17 · Synthesis Thu Jun 18 · Milestone Fri Jun 19 · <a href="projects/project-3">Project 3 — Discovering Patterns</a> Sun Jun 21 · Discussion: a place from home (Canvas)</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Step</th>
 <th>Materials</th>
 <th>Supplemental (optional)</th>
-<th>Learning outcomes</th>
 </tr>
 </thead>
 <tbody>
@@ -597,136 +460,70 @@ window.Quarto = {
 <td>Read 0</td>
 <td><a href="lectures/module-3-read-00">Module 3 Read 0</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Project preview — EDA goals, variable-type table, sample Project 3 tour. ~5 min before Read 1.</td>
 </tr>
 <tr class="even">
 <td>Read</td>
 <td><a href="lectures/module-3-read-01">Module 3 Read 1</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Compare numerical outcome across two groups with spread (range, IQR, SD), boxplots, and <code>group_by()</code> + <code>summarize()</code>. <strong>Optional:</strong> Welch two-sample <span class="math inline">\(t\)</span>-test (Project 3 is descriptive only).</td>
 </tr>
 <tr class="odd">
-<td>Quizzes (Def &amp; Notation)</td>
-<td>Canvas Module 3 — <a href="quizzes/quiz-m3-def">Quiz A</a></td>
+<td>Quiz A</td>
+<td><a href="quizzes/quiz-m3-def">Def &amp; Notation</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Tidyverse pipeline verbs (<code>filter</code>, <code>select</code>, <code>mutate</code>, <code>count</code>, <code>group_by</code>, <code>summarize</code>). <strong>Essential:</strong> Variable types (numerical vs categorical). <strong>Essential:</strong> Spread vocabulary (range, quartiles, IQR, SD, five-number summary). Open notes; unlimited attempts.</td>
 </tr>
 <tr class="even">
 <td>Read more</td>
 <td><a href="lectures/module-3-read-02">Module 3 Read 2</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Scatterplots for two numerical variables; form, direction, strength. <strong>Essential:</strong> Two-way tables (joint/row/column proportions) and stacked bar charts.</td>
 </tr>
 <tr class="odd">
-<td>Quizzes (Concept Check)</td>
-<td>Canvas Module 3 — <a href="quizzes/quiz-m3-concept">Quiz B</a></td>
+<td>Quiz B</td>
+<td><a href="quizzes/quiz-m3-concept">Concept Check</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Choose the right graph/summary by variable type. <strong>Essential:</strong> Association description. <strong>Essential:</strong> Two-way table reading. Open notes; unlimited attempts.</td>
 </tr>
 <tr class="even">
-<td>Reference sheets</td>
-<td><a href="methods">Methods</a>, <a href="r-reference">R reference</a></td>
+<td>Demo lab</td>
+<td><a href="labs/module-3-lab-demo">Module 3 demo</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Describe rows for one categorical, one numerical, two categorical, two numerical, and numerical-by-group. <strong>Essential:</strong> <code>ggplot</code> patterns for histogram, boxplot, bar, scatter, stacked bars. <strong>Optional:</strong> Inferential rows for two-group tests (not required for Project 3).</td>
 </tr>
 <tr class="odd">
-<td>Lab (Wed)</td>
-<td><a href="labs/module-3-lab-demo">Module 3 demo</a>, <a href="labs/module-3-lab-exercise">Exercise lab</a></td>
+<td>Exercise lab</td>
+<td><a href="labs/module-3-lab-exercise">Module 3 exercise lab</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Five EDA situations: univariate numerical/categorical; boxplots by group; scatterplot; two-way table + stacked bars. <strong>Essential:</strong> <code>group_by</code> + <code>summarize</code>; <code>count</code> + <code>pivot_wider</code>.</td>
 </tr>
 <tr class="even">
-<td>Synthesis quiz (Thu)</td>
-<td>Canvas Module 3 — <a href="quizzes/quiz-m3-synthesis">Synthesis</a></td>
-<td>—</td>
-<td><strong>Essential:</strong> Five-number summary; compare groups from boxplots; scatterplot description; two-way proportions; ggplot2 calls. After labs. Two attempts; open notes.</td>
-</tr>
-<tr class="odd">
-<td>Milestone (Fri)</td>
+<td>Milestone</td>
 <td>Canvas Module 3</td>
 <td>—</td>
-<td><strong>Essential:</strong> Chosen dataset link, four variables with types, and plan for two figures + four numeric facts.</td>
+</tr>
+<tr class="odd">
+<td>Synthesis</td>
+<td><a href="quizzes/quiz-m3-synthesis">Module 3 synthesis</a></td>
+<td>—</td>
 </tr>
 <tr class="even">
-<td>Project (Sun)</td>
-<td><a href="projects/project-3">Project 3 — Discovering Patterns</a></td>
+<td>Project</td>
+<td><a href="projects/project-3">Project 3</a></td>
 <td>—</td>
-<td>See project outcomes table below.</td>
 </tr>
 <tr class="odd">
 <td>Supplemental pack</td>
 <td>—</td>
 <td><a href="https://www.openintro.org/book/biostat/chapter1.html">Textbook Ch 1 — Intro to data (§1.4–1.7)</a> · <a href="https://r4ds.hadley.nz/data-visualize.html">R4DS: Data visualization</a> · <a href="https://posit.co/resources/videos/data-visualization-with-ggplot2/">Posit: ggplot2 video</a></td>
-<td><strong>Optional:</strong> EDA and <code>{ggplot2}</code> depth; use course Colab labs for <code>{tidyverse}</code> practice (not the textbook’s base-R lab sets).</td>
-</tr>
-</tbody>
-</table>
-<section id="project-3-discovering-patterns" class="level3">
-<h3 class="anchored" data-anchor-id="project-3-discovering-patterns">Project 3 — Discovering Patterns</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 63%">
-<col style="width: 36%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Outcome</th>
-<th>Tag</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Choose a dataset (TidyTuesday or other) with ≥4 variables and ≥10 rows; document source</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="even">
-<td>Classify four variables as numerical or categorical</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="odd">
-<td>Univariate summaries and plots for each of the four variables</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="even">
-<td>Bivariate exploration for variable pairs (tables/plots appropriate to types)</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="odd">
-<td>One-page PDF: context, two best graphics, ≥4 labeled numeric summaries, four findings</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="even">
-<td>Notebook runs top-to-bottom with all code used (4 univariate + 6 bivariate plots in notebook; only 2 plots on one-pager)</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="odd">
-<td>Part A short answers in Canvas</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="even">
-<td>Inferential tests or population generalization beyond the dataset</td>
-<td><strong>Optional</strong> (explicitly out of scope — descriptive statistics only)</td>
-</tr>
-<tr class="odd">
-<td>Your own research question beyond exploratory findings</td>
-<td><strong>Optional</strong></td>
 </tr>
 </tbody>
 </table>
 <hr>
 </section>
-</section>
-<section id="module-4-designing-fair-comparisons-jun-2228" class="level2">
-<h2 class="anchored" data-anchor-id="module-4-designing-fair-comparisons-jun-2228">Module 4 — Designing Fair Comparisons (Jun 22–28)</h2>
+<section id="module-4-designing-fair-comparisons" class="level2">
+<h2 class="anchored" data-anchor-id="module-4-designing-fair-comparisons">Module 4 — Designing Fair Comparisons</h2>
 <p>Comparing two groups responsibly.</p>
-<p>Lab Wed Jun 24 · Synthesis Thu Jun 25 · Milestone Fri Jun 26 · <a href="projects/project-4">Project 4 — Designing Fair Comparisons</a> Sun Jun 28 · Discussion: a place in Humboldt (Canvas)</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Step</th>
 <th>Materials</th>
 <th>Supplemental (optional)</th>
-<th>Learning outcomes</th>
 </tr>
 </thead>
 <tbody>
@@ -734,138 +531,70 @@ window.Quarto = {
 <td>Read 0</td>
 <td><a href="lectures/module-4-read-00">Module 4 Read 0</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Project 4 preview; what makes a two-group comparison fair; vocabulary overview.</td>
 </tr>
 <tr class="even">
-<td>Read 1</td>
+<td>Read</td>
 <td><a href="lectures/module-4-read-01">Module 4 Read 1</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> EV vs RV; observational studies vs experiments; confounding; DAG with one confounder; “by chance” vs causal language. <strong>Essential:</strong> RCT definition; what random assignment buys. <strong>Optional:</strong> Adjustment sets / backdoor criterion beyond one confounder.</td>
 </tr>
 <tr class="odd">
-<td>Reference sheets</td>
-<td><a href="methods">Methods</a>, <a href="r-reference">R reference</a></td>
+<td>Quiz A</td>
+<td><a href="quizzes/quiz-m4-def">Def &amp; Notation</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Two-group inferential rows (Welch <span class="math inline">\(t\)</span>, two-proportion / <span class="math inline">\(\chi^2\)</span> as appropriate). <strong>Essential:</strong> Study-design vocabulary. <strong>Essential:</strong> R pipeline: <code>group_by</code>, plots by group, <code>t.test</code> / <code>prop.test</code> / <code>chisq.test</code>.</td>
 </tr>
 <tr class="even">
-<td>Quiz A (Def &amp; Notation)</td>
-<td>Canvas Module 4 — <a href="quizzes/quiz-m4-def">Quiz A</a></td>
-<td>—</td>
-<td><strong>Essential:</strong> RCT vs observational; confounder; DAG; causal vs association language.</td>
-</tr>
-<tr class="odd">
-<td>Read 2</td>
+<td>Read more</td>
 <td><a href="lectures/module-4-read-02">Module 4 Read 2</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Pick two-group test from methods table; Welch t-test; two-proportion z-test; conditions; connect random assignment to reduced confounding.</td>
-</tr>
-<tr class="even">
-<td>Quiz B (Concept Check)</td>
-<td>Canvas Module 4 — <a href="quizzes/quiz-m4-concept">Quiz B</a></td>
-<td>—</td>
-<td><strong>Essential:</strong> Design classification; methods-map matching; read two-group R output.</td>
 </tr>
 <tr class="odd">
-<td>Demo lab</td>
-<td><a href="labs/module-4-lab-demo">Module 4 demo lab</a></td>
+<td>Quiz B</td>
+<td><a href="quizzes/quiz-m4-concept">Concept Check</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> <code>set.seed()</code>; numerical outcome → Welch t-test; binary outcome → two-proportion z-test; validate under null; RCT vs observational confounding demo.</td>
 </tr>
 <tr class="even">
-<td>Exercise lab (submit)</td>
+<td>Demo lab</td>
+<td><a href="labs/module-4-lab-demo">Module 4 demo</a></td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td>Exercise lab</td>
 <td><a href="labs/module-4-lab-exercise">Module 4 exercise lab</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Four problems — same structure as demo. Connect simulation plan to Project 4 design.</td>
-</tr>
-<tr class="odd">
-<td>Synthesis quiz</td>
-<td>Canvas Module 4 — <a href="quizzes/quiz-m4-synthesis">Synthesis</a></td>
-<td>—</td>
-<td><strong>Essential:</strong> Design + methods table integration; interpret two-group CIs; causal vs association language; simulation R workflow; error types in context.</td>
 </tr>
 <tr class="even">
 <td>Milestone</td>
-<td>Canvas Module 4</td>
+<td><a href="projects/project-4">Project 4 milestone</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Assigned research question; draft answers to Part 1 design questions; plan for simulated data structure.</td>
 </tr>
 <tr class="odd">
-<td>Project (Sun)</td>
-<td><a href="projects/project-4">Project 4 — Designing Fair Comparisons</a></td>
+<td>Synthesis</td>
+<td><a href="quizzes/quiz-m4-synthesis">Module 4 synthesis</a></td>
 <td>—</td>
-<td>See project outcomes table below.</td>
 </tr>
 <tr class="even">
+<td>Project</td>
+<td><a href="projects/project-4">Project 4</a></td>
+<td>—</td>
+</tr>
+<tr class="odd">
 <td>Supplemental pack</td>
 <td>—</td>
 <td><a href="https://www.openintro.org/book/biostat/chapter5.html">Textbook Ch 5.3 — Two-sample tests</a> · <a href="https://www.openintro.org/book/biostat/chapter8.html">Ch 8.1–8.2 — Proportions</a> · <a href="https://r4ds.hadley.nz/data-transform.html">R4DS: Data transformation</a></td>
-<td><strong>Optional:</strong> Two-group inference concepts; course labs use <code>group_by()</code>, <code>{ggplot2}</code>, and Colab.</td>
-</tr>
-</tbody>
-</table>
-<section id="project-4-designing-fair-comparisons" class="level3">
-<h3 class="anchored" data-anchor-id="project-4-designing-fair-comparisons">Project 4 — Designing Fair Comparisons</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 63%">
-<col style="width: 36%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Outcome</th>
-<th>Tag</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Answer ten study-design questions (EV/RV, operational definitions, hypotheses, RCT vs observational, confounder + DAG, test name from methods table)</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="even">
-<td>Simulate reproducible dataset (<code>set.seed</code>) with binary EV, response, and confounder when needed</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="odd">
-<td>Descriptive summaries and plots by group (numerical → boxplot/summaries; binary → stacked bars / proportions)</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="even">
-<td>Run appropriate two-group test / CI; report p-value and interval; discuss “by chance” explanation</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="odd">
-<td>One-page summary written for the classmate who asked the question</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="even">
-<td>Runnable notebook with simulation + analysis sections</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="odd">
-<td>Real-world data collection for the assigned question</td>
-<td><strong>Optional</strong> (project uses simulation)</td>
-</tr>
-<tr class="even">
-<td>Adjust for confounding in the inferential model</td>
-<td><strong>Optional</strong> (confounder included in design/DAG and plots; test does not remove confounding)</td>
 </tr>
 </tbody>
 </table>
 <hr>
 </section>
-</section>
-<section id="module-5-looking-ahead-jun-29jul-2" class="level2">
-<h2 class="anchored" data-anchor-id="module-5-looking-ahead-jun-29jul-2">Module 5 — Looking Ahead (Jun 29–Jul 2)</h2>
+<section id="module-5-looking-ahead" class="level2">
+<h2 class="anchored" data-anchor-id="module-5-looking-ahead">Module 5 — Looking Ahead</h2>
 <p>Using data to make predictions.</p>
-<p>This module is four days. Lab Wed Jul 1 · <a href="projects/project-5">Project 5 — Looking Ahead</a>, synthesis quiz, milestone, and portfolio package due Thu Jul 2 · Discussion: predicting a future observation (Canvas)</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Step</th>
 <th>Materials</th>
 <th>Supplemental (optional)</th>
-<th>Learning outcomes</th>
 </tr>
 </thead>
 <tbody>
@@ -873,138 +602,59 @@ window.Quarto = {
 <td>Read 0</td>
 <td><a href="lectures/module-5-read-00">Module 5 Read 0</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Project preview — nesting dolls or stones; four-day schedule; what to expect in Read 1–2 and the lab. ~5 min before Read 1.</td>
 </tr>
 <tr class="even">
 <td>Read</td>
 <td><a href="lectures/module-5-read-01">Module 5 Read 1</a></td>
 <td><a href="https://www.rossmanchance.com/applets/2021/regshuffle/regshuffle.htm">Regression line applet</a></td>
-<td><strong>Essential:</strong> Scatterplot description (form, direction, strength); Pearson <span class="math inline">\(r\)</span>; fit <code>lm(y ~ x)</code>; interpret slope and intercept; point prediction; residuals; MSE and <span class="math inline">\(R^2\)</span> on test set.</td>
 </tr>
 <tr class="odd">
-<td>Quizzes (Def &amp; Notation)</td>
-<td>Canvas Module 5 — <a href="quizzes/quiz-m5-def">Quiz A</a></td>
+<td>Quiz A</td>
+<td><a href="quizzes/quiz-m5-def">Def &amp; Notation</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Scatterplot vocabulary, regression notation, slope/intercept interpretation, residual definition, R². Open notes; unlimited attempts.</td>
 </tr>
 <tr class="even">
 <td>Read more</td>
 <td><a href="lectures/module-5-read-02">Module 5 Read 2</a></td>
 <td><a href="https://online.stat.psu.edu/stat462/node/127/">Penn State: prediction intervals</a></td>
-<td><strong>Essential:</strong> Residual normality condition; 95% CI for slope with <code>confint()</code>; CI for mean response vs prediction interval with <code>predict(..., interval=)</code>; why PI is wider. <strong>Optional:</strong> Textbook Ch 6.5 on interval estimates with regression.</td>
 </tr>
 <tr class="odd">
-<td>Quizzes (Concept Check)</td>
-<td>Canvas Module 5 — <a href="quizzes/quiz-m5-concept">Quiz B</a></td>
+<td>Quiz B</td>
+<td><a href="quizzes/quiz-m5-concept">Concept Check</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Residual conditions, CI for slope, mean-response CI vs prediction interval. Open notes; unlimited attempts.</td>
 </tr>
 <tr class="even">
-<td>Reference sheets</td>
-<td><a href="methods">Methods</a>, <a href="r-reference">R reference</a></td>
+<td>Demo lab</td>
+<td><a href="labs/module-5-lab-demo">Module 5 demo</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Two-numerical describe + regression / prediction rows. <strong>Essential:</strong> <code>lm</code>, <code>predict</code>, scatterplot with fitted line on R sheet.</td>
 </tr>
 <tr class="odd">
-<td>Lab (Wed)</td>
-<td><a href="labs/module-5-lab-demo">Demo lab</a>, <a href="labs/module-5-lab-exercise">Exercise lab</a></td>
+<td>Exercise lab</td>
+<td><a href="labs/module-5-lab-exercise">Module 5 exercise lab</a></td>
 <td>—</td>
-<td><strong>Essential (demo):</strong> Scatterplot + <code>cor</code>; fit <code>lm</code>; point prediction; <code>confint</code> for slope; <code>predict</code> with CI and PI. <strong>Essential (exercise):</strong> Apply same five-step workflow to your team’s Project 5 data.</td>
 </tr>
 <tr class="even">
-<td>Synthesis quiz (Thu)</td>
-<td>Canvas Module 5 — <a href="quizzes/quiz-m5-synthesis">Synthesis</a></td>
+<td>Synthesis</td>
+<td><a href="quizzes/quiz-m5-synthesis">Module 5 synthesis</a></td>
 <td>—</td>
-<td><strong>Essential:</strong> Read scatterplots; interpret <span class="math inline">\(r\)</span>, slope, intercept; prediction vs confidence interval; read <code>predict</code> output; portfolio method review. After labs. Two attempts; open notes.</td>
 </tr>
 <tr class="odd">
-<td>Milestone (Thu)</td>
+<td>Milestone</td>
 <td>Canvas Module 5</td>
 <td>—</td>
-<td><strong>Essential:</strong> Team, option (nesting dolls or stones), variables defined, data collection underway.</td>
 </tr>
 <tr class="even">
-<td>Project (Thu)</td>
-<td><a href="projects/project-5">Project 5 — Looking Ahead</a></td>
+<td>Project</td>
+<td><a href="projects/project-5">Project 5</a> · <strong>Portfolio package due Thu Jul 2</strong></td>
 <td>—</td>
-<td>See project outcomes table below.</td>
 </tr>
 <tr class="odd">
 <td>Supplemental pack</td>
 <td>—</td>
 <td><a href="https://www.openintro.org/book/biostat/chapter6.html">Textbook Ch 6 — Simple linear regression</a> · <a href="https://www.khanacademy.org/v/regression-line-example">Khan: regression line example</a> · <a href="https://online.stat.psu.edu/stat462/node/127/">Penn State: prediction intervals</a></td>
-<td><strong>Optional:</strong> Regression concepts and PI vs CI; Project 5 requires SLR only.</td>
 </tr>
 </tbody>
 </table>
-<section id="project-5-looking-ahead" class="level3">
-<h3 class="anchored" data-anchor-id="project-5-looking-ahead">Project 5 — Looking Ahead</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 63%">
-<col style="width: 36%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Outcome</th>
-<th>Tag</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Form a team (1–4); choose Option A (nesting dolls) or B (stone container)</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="even">
-<td>Define measurement rules and collect team dataset (CSV / shared sheet)</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="odd">
-<td>Fit at least one simple linear model <code>lm(response ~ predictor)</code></td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="even">
-<td>Report prediction equation, plugged prediction for target case, 95% prediction interval</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="odd">
-<td>One-page PDF: intro, methods, results, conclusion, team contributions</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="even">
-<td>Runnable team <code>.ipynb</code> from data load through model and prediction</td>
-<td><strong>Essential</strong></td>
-</tr>
-<tr class="odd">
-<td>Compare multiple models / predictors and choose best</td>
-<td><strong>Optional</strong> (encouraged but one SLR minimum)</td>
-</tr>
-<tr class="even">
-<td>Multiple predictors / logistic regression for binary outcomes</td>
-<td><strong>Optional</strong> (beyond Project 5 scope)</td>
-</tr>
-<tr class="odd">
-<td>Portfolio package: both reference sheets + all five projects polished for submission</td>
-<td><strong>Essential</strong></td>
-</tr>
-</tbody>
-</table>
-<hr>
-</section>
-</section>
-<section id="notes" class="level2">
-<h2 class="anchored" data-anchor-id="notes">Notes</h2>
-<ul>
-<li><strong>Supplemental (optional)</strong> links point to the <a href="https://www.openintro.org/book/biostat/">Vu &amp; Harrington textbook</a> and Colab/<code>{tidyverse}</code>-friendly videos — not required for the module project. The textbook’s companion R labs use base R; prefer this course’s Colab notebooks and <a href="resources#supplemental-by-module">Resources</a>.</li>
-<li>Modules unlock in order in Canvas (0 → 1 → … → 5).</li>
-<li>Quizzes are open notes: use your reference sheets and the methods map.</li>
-<li>Definitions &amp; Notation and Concept Check: unlimited attempts. Synthesis: two attempts (highest score counts).</li>
-<li>The milestone is an ungraded checkpoint — it helps you and me catch problems before the project is due.</li>
-<li>Modules 1–4: lab Wednesday, synthesis Thursday, milestone Friday, project Sunday.</li>
-<li>Module 5: lab Wednesday July 1; synthesis, milestone, project, and portfolio package due Thursday July 2.</li>
-<li>Quiz source files (<code>quizzes/quiz-*.qmd</code>) are practice banks; Canvas quizzes may use a subset. Items marked <strong>optional</strong> above may still appear — they are not required for the module project.</li>
-<li>If dates shift when the term opens, Canvas is the official calendar; this page will be updated to match.</li>
-</ul>
 
 
 <!-- -->
@@ -1475,233 +1125,148 @@ window.Quarto = {
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>This page shows the recommended path through the course during the five-week summer session from June 1 to July 2, 2026. You may work at your own pace within each module window, but the modules should be done in the order shown. Check <span class="co">[</span><span class="ot">Canvas</span><span class="co">](https://canvas.humboldt.edu/courses/88865)</span> to turn in work, take quizzes, see grades, and join discussions.</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>Each project module follows the same pattern: **Read 0** (project preview) → read → update your reference sheets → low-stakes quizzes (as many times as you want) → lab (Wednesday) → synthesis quiz (Thursday) → project milestone (Friday) → project (Sunday). Module 5 is shorter and ends on Thursday, July 2.</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>Reference sheets (<span class="co">[</span><span class="ot">methods map</span><span class="co">](methods)</span>, <span class="co">[</span><span class="ot">R reference</span><span class="co">](r-reference)</span>) summarize all course content. All readings also live on the <span class="co">[</span><span class="ot">lectures</span><span class="co">](lectures)</span> index if you want the full list.</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Reference sheets (<span class="co">[</span><span class="ot">methods map</span><span class="co">](methods)</span>, <span class="co">[</span><span class="ot">R reference</span><span class="co">](r-reference)</span>) grow a little in every module 1–5. All readings also live on the <span class="co">[</span><span class="ot">lectures</span><span class="co">](lectures)</span> index if you want the full list.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>The Supplemental (optional) column links extra textbook chapters (Vu &amp; Harrington, free online) and videos/tutorials that match our Colab + <span class="in">`{tidyverse}`</span> workflow — see <span class="co">[</span><span class="ot">Resources</span><span class="co">](resources#supplemental-by-module)</span>. None of these are required for the module project unless a row says otherwise.</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>Outcomes below are tagged **essential** (needed for the module project or core module goals) or **optional** (helpful enrichment or stretch).</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## How the course is graded</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>The **Supplemental (optional)** column links extra **textbook chapters** (Vu &amp; Harrington, free online) and **videos/tutorials** that match our Colab + <span class="in">`{tidyverse}`</span> workflow — see <span class="co">[</span><span class="ot">Resources</span><span class="co">](resources#supplemental-by-module)</span>. None of these are required for the module project unless a row says otherwise.</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## At a glance</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Module <span class="pp">|</span> Dates <span class="pp">|</span> Project due <span class="pp">|</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------------------|------------------|---------------------------------|</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">0 — Welcome</span><span class="co">](#module-0--start-here)</span> <span class="pp">|</span> Open before Jun 1 <span class="pp">|</span> — <span class="pp">|</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">1 — Testing a Claim</span><span class="co">](#module-1--testing-a-claim-jun-17)</span> <span class="pp">|</span> Jun 1–7 <span class="pp">|</span> Sun Jun 7 <span class="pp">|</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">2 — Estimating the Truth</span><span class="co">](#module-2--estimating-the-truth-jun-814)</span> <span class="pp">|</span> Jun 8–14 <span class="pp">|</span> Sun Jun 14 <span class="pp">|</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">3 — Discovering Patterns</span><span class="co">](#module-3--discovering-patterns-jun-1521)</span> <span class="pp">|</span> Jun 15–21 <span class="pp">|</span> Sun Jun 21 <span class="pp">|</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">4 — Designing Fair Comparisons</span><span class="co">](#module-4--designing-fair-comparisons-jun-2228)</span> <span class="pp">|</span> Jun 22–28 <span class="pp">|</span> Sun Jun 28 <span class="pp">|</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">5 — Looking Ahead</span><span class="co">](#module-5--looking-ahead-jun-29jul-2)</span> <span class="pp">|</span> Jun 29–Jul 2 <span class="pp">|</span> Thu Jul 2 <span class="pp">|</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 0 — Start here</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>Complete this before Module 1</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Materials <span class="pp">|</span> Supplemental (optional) <span class="pp">|</span> Learning outcomes <span class="pp">|</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----------------|--------------------|-------------------------|-----------------------------------|</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 0 Read 0</span><span class="co">](lectures/module-0-read-00)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Welcome — five-step statistical process, three worlds, five portfolio projects, Colab/R notebook structure, and Module 0 checklist (labs, quizzes, research questions). ~15 min before the syllabus and labs. <span class="pp">|</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read <span class="pp">|</span> <span class="co">[</span><span class="ot">Syllabus</span><span class="co">](syllabus)</span>, <span class="co">[</span><span class="ot">course path</span><span class="co">](schedule)</span>, <span class="co">[</span><span class="ot">resources</span><span class="co">](resources)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Know where readings, labs, and projects live vs what happens in Canvas. **Essential:** Understand grading, due-date pattern, and academic honesty / AI expectations (syllabus). **Optional:** Full policy details you will not need until later in the term. <span class="pp">|</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz 0 (Start Here) <span class="pp">|</span> Canvas Module 0 — <span class="co">[</span><span class="ot">Quiz 0</span><span class="co">](quizzes/quiz-m0-start)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Confirm Read 0 concepts: statistics definition, five-step process (ask → plan → collect → analyze → conclude), three worlds, Colab text/code/output, and basic R from the Module 0 lab. Open notes; unlimited attempts. <span class="pp">|</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz 0B (Question Ideas) <span class="pp">|</span> Canvas Module 0 — <span class="co">[</span><span class="ot">Quiz 0B</span><span class="co">](quizzes/quiz-m0-question-ideas)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Submit 3 research questions for Step 1 practice; the third should compare two groups (Project 1 preview). <span class="pp">|</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Reference sheets <span class="pp">|</span> <span class="co">[</span><span class="ot">Methods map</span><span class="co">](methods)</span>, <span class="co">[</span><span class="ot">R reference</span><span class="co">](r-reference)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Set up two places to create your two references over the next 5 weeks. You will update these each module and can use them on assignments. **Optional:** Skim the <span class="co">[</span><span class="ot">methods map</span><span class="co">](methods)</span> layout and <span class="co">[</span><span class="ot">R reference</span><span class="co">](r-reference)</span> before Module 1 labs. <span class="pp">|</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Lab (Wed) <span class="pp">|</span> <span class="co">[</span><span class="ot">Demo lab</span><span class="co">](labs/module-0-lab-demo)</span>, <span class="co">[</span><span class="ot">Exercise lab</span><span class="co">](labs/module-0-lab-exercise)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Run R in Google Colab (save a copy, run cells). **Essential:** Work with vectors, logical TRUE/FALSE, and simple simulation. **Optional:** Estimating probabilities by simulation (helps later probability intuition, not required for Project 1). <span class="pp">|</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Canvas <span class="pp">|</span> Module 0 discussion <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Introduce yourself and confirm you can reach assignments and discussions. <span class="pp">|</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Supplemental pack <span class="pp">|</span> — <span class="pp">|</span> <span class="co">[</span><span class="ot">Colab tutorial</span><span class="co">](https://colab.research.google.com/notebooks/basic_features_overview.ipynb)</span> · <span class="co">[</span><span class="ot">Posit: Getting Started with R</span><span class="co">](https://posit.co/resources/videos/getting-started-with-r/)</span> · <span class="co">[</span><span class="ot">Textbook (free PDF)</span><span class="co">](https://www.openintro.org/book/biostat/)</span> · <span class="co">[</span><span class="ot">Posit cheatsheets</span><span class="co">](https://posit.co/resources/cheatsheets/)</span> <span class="pp">|</span> **Optional:** Colab orientation and R basics before Module 1; textbook preface for context. <span class="pp">|</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 1 — Testing a Claim (Jun 1–7)</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>Is this observation surprising?</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Component <span class="pp">|</span> Weight <span class="pp">|</span> What counts <span class="pp">|</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="pp">|-------------------------|------------------|-----------------------------|</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Class participation <span class="pp">|</span> **5%** <span class="pp">|</span> Class Chatter (one per module, 0–5) + Q+A Discussion on Canvas <span class="pp">|</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quizzes <span class="pp">|</span> **25%** <span class="pp">|</span> All Canvas quizzes (Quiz 0/0B, Quiz A, Quiz B, synthesis per module) · best of 4 attempts per quiz · open notes <span class="pp">|</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> R coding exercise labs <span class="pp">|</span> **20%** <span class="pp">|</span> Submit exercise lab each module · graded on completion <span class="pp">|</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Projects 1–5 <span class="pp">|</span> **50%** <span class="pp">|</span> One-page summary + runnable R notebook each module <span class="pp">|</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Total** | **100%** <span class="pp">|</span>  <span class="pp">|</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## At a glance</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Module <span class="pp">|</span> Dates <span class="pp">|</span> Project due (recommended) <span class="pp">|</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----------------------|--------------------|------------------------------|</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">0 — Welcome</span><span class="co">](#module-0--start-here)</span> <span class="pp">|</span> Jun 1-2 <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">1 — Testing a Claim</span><span class="co">](#module-1--testing-a-claim-jun-17)</span> <span class="pp">|</span> Jun 2–8 <span class="pp">|</span> Mon Jun 8 <span class="pp">|</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">2 — Estimating the Truth</span><span class="co">](#module-2--estimating-the-truth-jun-814)</span> <span class="pp">|</span> Jun 9–15 <span class="pp">|</span> Mon Jun 15 <span class="pp">|</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">3 — Discovering Patterns</span><span class="co">](#module-3--discovering-patterns-jun-1521)</span> <span class="pp">|</span> Jun 16–22 <span class="pp">|</span> Mon Jun 22 <span class="pp">|</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">4 — Designing Fair Comparisons</span><span class="co">](#module-4--designing-fair-comparisons-jun-2228)</span> <span class="pp">|</span> Jun 23–29 <span class="pp">|</span> Mon Jun 29 <span class="pp">|</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="co">[</span><span class="ot">5 — Looking Ahead</span><span class="co">](#module-5--looking-ahead-jun-29jul-2)</span> <span class="pp">|</span> Jun 30–Jul 2 <span class="pp">|</span> Thu Jul 2 <span class="pp">|</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>Canvas due dates are recommendations for pacing; all work to bee graded must be submitted by 11:59 pm PST July 2, 2026.</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 0 — Start here</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Materials <span class="pp">|</span> Supplemental (optional) <span class="pp">|</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----------------|-----------------|-----------------|</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 0 Read 0</span><span class="co">](lectures/module-0-read-00)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read <span class="pp">|</span> <span class="co">[</span><span class="ot">Syllabus</span><span class="co">](syllabus)</span> · <span class="co">[</span><span class="ot">Course path</span><span class="co">](schedule)</span> · <span class="co">[</span><span class="ot">Resources</span><span class="co">](resources)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz <span class="pp">|</span> <span class="co">[</span><span class="ot">Quiz 0 (Start Here)</span><span class="co">](quizzes/quiz-m0-start)</span> · <span class="co">[</span><span class="ot">Quiz 0B (Question Ideas)</span><span class="co">](quizzes/quiz-m0-question-ideas)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Demo lab</span><span class="co">](labs/module-0-lab-demo)</span> · <span class="co">[</span><span class="ot">Exercise lab</span><span class="co">](labs/module-0-lab-exercise)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Canvas <span class="pp">|</span> Module 0 discussion (introduce yourself) <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Supplemental pack <span class="pp">|</span> — <span class="pp">|</span> <span class="co">[</span><span class="ot">Colab tutorial</span><span class="co">](https://colab.research.google.com/notebooks/basic_features_overview.ipynb)</span> · <span class="co">[</span><span class="ot">Posit: Getting Started with R</span><span class="co">](https://posit.co/resources/videos/getting-started-with-r/)</span> · <span class="co">[</span><span class="ot">Textbook (free PDF)</span><span class="co">](https://www.openintro.org/book/biostat/)</span> · <span class="co">[</span><span class="ot">Posit cheatsheets</span><span class="co">](https://posit.co/resources/cheatsheets/)</span> <span class="pp">|</span></span>
 <span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Lab Wed Jun 3 · Synthesis Thu Jun 4 · Milestone Fri Jun 5 · <span class="co">[</span><span class="ot">Project 1 — Testing a Claim</span><span class="co">](projects/project-1)</span> Sun Jun 7 · Discussion: something surprising about Lumberjacks (Canvas)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Materials <span class="pp">|</span> Supplemental (optional) <span class="pp">|</span> Learning outcomes <span class="pp">|</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----------------|--------------------|-------------------------|-----------------------------------|</span></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 1 Read 0</span><span class="co">](lectures/module-1-read-00)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Project preview — big question, sample <span class="co">[</span><span class="ot">ESP report (PDF)</span><span class="co">](projects/Project1_ESP_Binomial_Test.pdf)</span>, what to notice in each section, link to <span class="co">[</span><span class="ot">Project 1</span><span class="co">](projects/project-1)</span>. ~5 min before Read 1. <span class="pp">|</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 1 Read 1</span><span class="co">](lectures/module-1-read-01)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Probability language through binomial pmf — sample spaces, rules, counting, and the binomial process. <span class="pp">|</span></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quizzes (Def &amp; Notation) <span class="pp">|</span> Canvas Module 1 — <span class="co">[</span><span class="ot">Quiz A</span><span class="co">](quizzes/quiz-m1-def)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Notation, sample space, addition rule, conditional probability, independence. Open notes; unlimited attempts. <span class="pp">|</span></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read more <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 1 Read 2</span><span class="co">](lectures/module-1-read-02)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Binomial test workflow and R — hypotheses, null plots, p-values. <span class="pp">|</span></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quizzes (Concept Check) <span class="pp">|</span> Canvas Module 1 — <span class="co">[</span><span class="ot">Quiz B</span><span class="co">](quizzes/quiz-m1-concept)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Counting, conditional applications, combinations, BRP identification. Open notes; unlimited attempts. <span class="pp">|</span></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Reference sheets <span class="pp">|</span> <span class="co">[</span><span class="ot">Methods</span><span class="co">](methods)</span>, <span class="co">[</span><span class="ot">R reference</span><span class="co">](r-reference)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Probability vocabulary (sample space through independence) on statistics sheet. **Essential:** One-proportion / binomial test row on methods map. **Essential:** R patterns for <span class="in">`dbinom`</span>, <span class="in">`pbinom`</span>, <span class="in">`geom_col`</span>, <span class="in">`geom_vline`</span>. <span class="pp">|</span></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Lab (Wed) <span class="pp">|</span> <span class="co">[</span><span class="ot">Demo lab</span><span class="co">](labs/module-1-lab-demo)</span>, <span class="co">[</span><span class="ot">Conditional demo</span><span class="co">](labs/module-1-lab-demo-conditional)</span>, <span class="co">[</span><span class="ot">Exercise lab</span><span class="co">](labs/module-1-lab-exercise)</span>, <span class="co">[</span><span class="ot">Project 1 milestone</span><span class="co">](projects/project-1-milestone)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential (demos):** simulation review, data structures, conditional simulation, binomial R tools, null plot. **Essential (exercise):** combined practice notebook (Parts I–III). **Essential (milestone):** Project 1 precheck. Update <span class="co">[</span><span class="ot">R reference</span><span class="co">](r-reference)</span>. <span class="pp">|</span></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Synthesis quiz (Thu) <span class="pp">|</span> Canvas Module 1 — <span class="co">[</span><span class="ot">Synthesis</span><span class="co">](quizzes/quiz-m1-synthesis)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Full binomial test workflow, Module 1 R practice, interpretation items. After labs. Two attempts; open notes. <span class="pp">|</span></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Milestone (Fri) <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 1 milestone</span><span class="co">](projects/project-1-milestone)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** [Phase A](projects/project-1#project-workflow) — question, $p$, $H_0$/$H_a$, null graph **before** data collection. <span class="pp">|</span></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project (Sun) <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 1 — Testing a Claim</span><span class="co">](projects/project-1)</span> <span class="pp">|</span> — <span class="pp">|</span> See project outcomes table below. <span class="pp">|</span></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Supplemental pack <span class="pp">|</span> — <span class="pp">|</span> <span class="co">[</span><span class="ot">Textbook Ch 2 — Probability</span><span class="co">](https://www.openintro.org/book/biostat/chapter2.html)</span> · <span class="co">[</span><span class="ot">Ch 3.2 — Binomial</span><span class="co">](https://www.openintro.org/book/biostat/chapter3.html)</span> · <span class="co">[</span><span class="ot">Khan: binomial distribution</span><span class="co">](https://www.khanacademy.org/math/ap-statistics/random-variables-ap/binomial-random-variables/v/binomial-distribution)</span> · <span class="co">[</span><span class="ot">Khan: visualizing binomial</span><span class="co">](https://www.khanacademy.org/v/visualizing-a-binomial-distribution)</span> <span class="pp">|</span> **Optional:** Alternate probability explanations; course labs use <span class="in">`{ggplot2}`</span> for null plots, not the textbook’s base-R labs. <span class="pp">|</span></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="fu">### Project 1 — Testing a Claim</span></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Outcome <span class="pp">|</span> Tag <span class="pp">|</span></span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="pp">|----------------------------------------------|--------------------------|</span></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Choose a real binomial process ($n=25$) that is not a class example; defend all four BRP conditions in your own context <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> State $H_0$ and $H_a$ for population proportion $p$ with a numeric null value <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Report $x$, $n$, $\hat{p}$; descriptive bar/pie chart in R <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Plot null binomial distribution with <span class="in">`dbinom`</span> + <span class="in">`geom_col`</span>; mark observed $x$ <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Compute p-value with <span class="in">`pbinom`</span> matching alternative direction; interpret in one sentence <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> One-page report with Introduction / Data Collection / Data Analysis / Conclusion <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Use the Read 2 ESP worksheet as a model without copying ESP as your study <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 2 — Estimating the Truth (Jun 8–14)</span></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>Building high-quality estimates from samples.</span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>Lab Wed Jun 10 · Synthesis Thu Jun 11 · Milestone Fri Jun 12 · <span class="co">[</span><span class="ot">Project 2 — Estimating the Truth</span><span class="co">](projects/project-2)</span> Sun Jun 14 · Discussion: a plant you appreciate (Canvas)</span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Materials <span class="pp">|</span> Supplemental (optional) <span class="pp">|</span> Learning outcomes <span class="pp">|</span></span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----------------|--------------------|-------------------------|-----------------------------------|</span></span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 2 Read 0</span><span class="co">](lectures/module-2-read-00)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Project preview — finite population, SRS, 95% CI focus; tour <span class="co">[</span><span class="ot">sample report (PDF)</span><span class="co">](projects/project-2-sample.pdf)</span>. ~5 min before Read 1. <span class="pp">|</span></span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 2 Read 1</span><span class="co">](lectures/module-2-read-01)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Binomial $\mu=np$, $\sigma=\sqrt{np(1-p)}$; normal approximation &amp; Empirical Rule; sampling distribution &amp; 95% CI (proportion and mean); sampling frame, bias, precision, SRS and design types. <span class="pp">|</span></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quizzes (Def &amp; Notation) <span class="pp">|</span> Canvas Module 2 — <span class="co">[</span><span class="ot">Quiz A</span><span class="co">](quizzes/quiz-m2-def)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Vocabulary for estimation and sampling (frame, SRS, bias, CI language). Open notes; unlimited attempts. <span class="pp">|</span></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read more <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 2 Read 2</span><span class="co">](lectures/module-2-read-02)</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Textbook Ch 4.2 — Confidence intervals</span><span class="co">](https://www.openintro.org/book/biostat/chapter4.html)</span> <span class="pp">|</span> **Essential:** z-scores &amp; standard normal; methods-map habit; mean/median, histogram, dot plot in tidyverse. **Optional:** <span class="in">`prop.test()`</span> / one-proportion z-test; one-sample <span class="in">`t.test()`</span> (Project 2 uses CI only). <span class="pp">|</span></span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quizzes (Concept Check) <span class="pp">|</span> Canvas Module 2 — <span class="co">[</span><span class="ot">Quiz B</span><span class="co">](quizzes/quiz-m2-concept)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** z-scores, toolbox organization, one-variable summaries. Open notes; unlimited attempts. <span class="pp">|</span></span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Reference sheets <span class="pp">|</span> <span class="co">[</span><span class="ot">Methods</span><span class="co">](methods)</span>, <span class="co">[</span><span class="ot">R reference</span><span class="co">](r-reference)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** One-mean and one-proportion CI rows; FPC note for finite populations. **Essential:** z-score row before toolbox section. <span class="pp">|</span></span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Lab (Wed) <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 2 demo</span><span class="co">](labs/module-2-lab-demo)</span>, <span class="co">[</span><span class="ot">Exercise lab</span><span class="co">](labs/module-2-lab-exercise)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Choose among CI situations (mean vs proportion; finite $N$; FPC). **Essential:** Check conditions and compute 95% CI in R. <span class="pp">|</span></span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Synthesis quiz (Thu) <span class="pp">|</span> Canvas Module 2 — <span class="co">[</span><span class="ot">Synthesis</span><span class="co">](quizzes/quiz-m2-synthesis)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** CI computation and interpretation; SRS vs convenience; FPC decision; exercise-lab R patterns; tidyverse summaries. After labs. <span class="pp">|</span></span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Milestone (Fri) <span class="pp">|</span> Canvas Module 2 <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Named finite population ($N$), variable type, planned SRS method, and which CI type you will use. <span class="pp">|</span></span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project (Sun) <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 2 — Estimating the Truth</span><span class="co">](projects/project-2)</span> <span class="pp">|</span> — <span class="pp">|</span> See project outcomes table below. <span class="pp">|</span></span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Supplemental pack <span class="pp">|</span> — <span class="pp">|</span> <span class="co">[</span><span class="ot">Textbook Ch 3.3 — Normal</span><span class="co">](https://www.openintro.org/book/biostat/chapter3.html)</span> · <span class="co">[</span><span class="ot">Ch 4.1–4.2 — Variability &amp; CIs</span><span class="co">](https://www.openintro.org/book/biostat/chapter4.html)</span> · <span class="co">[</span><span class="ot">Khan: confidence intervals</span><span class="co">](https://www.khanacademy.org/v/confidence-intervals-and-margin-of-error)</span> · <span class="co">[</span><span class="ot">Khan: CI simulation</span><span class="co">](https://www.khanacademy.org/math/ap-statistics/xfb5d8e68:inference-categorical-proportions/introduction-confidence-intervals/v/confidence-interval-simulation)</span> <span class="pp">|</span> **Optional:** CI intuition and normal-model background; Project 2 rubric is CI-focused. <span class="pp">|</span></span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="fu">### Project 2 — Estimating the Truth</span></span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Outcome <span class="pp">|</span> Tag <span class="pp">|</span></span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a><span class="pp">|----------------------------------------------|--------------------------|</span></span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Define a listable finite population ($N$) and one variable (binary → proportion, or numerical → mean) <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Draw an SRS of size $n$ from $<span class="sc">\{</span>1,\ldots,N<span class="sc">\}</span>$ without replacement; collect data <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Compute point estimate ($\hat{p}$ or $\bar{x}$) <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Choose correct 95% CI (mean $t$-interval or proportion interval; apply FPC when $N$ is finite) <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> State and check interval conditions in context <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Interpret CI with the “I am 95% confident that…” sentence <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Submit one-page summary + runnable R notebook (<span class="co">[</span><span class="ot">mean</span><span class="co">](projects/project-2-estimation-mean-fpc.ipynb)</span> or <span class="co">[</span><span class="ot">proportion</span><span class="co">](projects/project-2-proportion-fpc.ipynb)</span> template) <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Sample size calculation / professional power analysis <span class="pp">|</span> **Optional** <span class="pp">|</span></span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Hypothesis test about the parameter (not required by rubric) <span class="pp">|</span> **Optional** <span class="pp">|</span></span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 3 — Discovering Patterns (Jun 15–21)</span></span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>Describing a dataset with graphs and summaries.</span>
-<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>Lab Wed Jun 17 · Synthesis Thu Jun 18 · Milestone Fri Jun 19 · <span class="co">[</span><span class="ot">Project 3 — Discovering Patterns</span><span class="co">](projects/project-3)</span> Sun Jun 21 · Discussion: a place from home (Canvas)</span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Materials <span class="pp">|</span> Supplemental (optional) <span class="pp">|</span> Learning outcomes <span class="pp">|</span></span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----------------|--------------------|-------------------------|-----------------------------------|</span></span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 3 Read 0</span><span class="co">](lectures/module-3-read-00)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Project preview — EDA goals, variable-type table, sample Project 3 tour. ~5 min before Read 1. <span class="pp">|</span></span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 3 Read 1</span><span class="co">](lectures/module-3-read-01)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Compare numerical outcome across two groups with spread (range, IQR, SD), boxplots, and `group_by()` + `summarize()`. **Optional:** Welch two-sample $t$-test (Project 3 is descriptive only). <span class="pp">|</span></span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quizzes (Def &amp; Notation) <span class="pp">|</span> Canvas Module 3 — <span class="co">[</span><span class="ot">Quiz A</span><span class="co">](quizzes/quiz-m3-def)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Tidyverse pipeline verbs (`filter`, `select`, `mutate`, `count`, `group_by`, `summarize`). **Essential:** Variable types (numerical vs categorical). **Essential:** Spread vocabulary (range, quartiles, IQR, SD, five-number summary). Open notes; unlimited attempts. <span class="pp">|</span></span>
-<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read more <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 3 Read 2</span><span class="co">](lectures/module-3-read-02)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Scatterplots for two numerical variables; form, direction, strength. **Essential:** Two-way tables (joint/row/column proportions) and stacked bar charts. <span class="pp">|</span></span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quizzes (Concept Check) <span class="pp">|</span> Canvas Module 3 — <span class="co">[</span><span class="ot">Quiz B</span><span class="co">](quizzes/quiz-m3-concept)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Choose the right graph/summary by variable type. **Essential:** Association description. **Essential:** Two-way table reading. Open notes; unlimited attempts. <span class="pp">|</span></span>
-<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Reference sheets <span class="pp">|</span> <span class="co">[</span><span class="ot">Methods</span><span class="co">](methods)</span>, <span class="co">[</span><span class="ot">R reference</span><span class="co">](r-reference)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Describe rows for one categorical, one numerical, two categorical, two numerical, and numerical-by-group. **Essential:** `ggplot` patterns for histogram, boxplot, bar, scatter, stacked bars. **Optional:** Inferential rows for two-group tests (not required for Project 3). <span class="pp">|</span></span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Lab (Wed) <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 3 demo</span><span class="co">](labs/module-3-lab-demo)</span>, <span class="co">[</span><span class="ot">Exercise lab</span><span class="co">](labs/module-3-lab-exercise)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Five EDA situations: univariate numerical/categorical; boxplots by group; scatterplot; two-way table + stacked bars. **Essential:** <span class="in">`group_by`</span> + <span class="in">`summarize`</span>; <span class="in">`count`</span> + <span class="in">`pivot_wider`</span>. <span class="pp">|</span></span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Synthesis quiz (Thu) <span class="pp">|</span> Canvas Module 3 — <span class="co">[</span><span class="ot">Synthesis</span><span class="co">](quizzes/quiz-m3-synthesis)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Five-number summary; compare groups from boxplots; scatterplot description; two-way proportions; ggplot2 calls. After labs. Two attempts; open notes. <span class="pp">|</span></span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Milestone (Fri) <span class="pp">|</span> Canvas Module 3 <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Chosen dataset link, four variables with types, and plan for two figures + four numeric facts. <span class="pp">|</span></span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project (Sun) <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 3 — Discovering Patterns</span><span class="co">](projects/project-3)</span> <span class="pp">|</span> — <span class="pp">|</span> See project outcomes table below. <span class="pp">|</span></span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Supplemental pack <span class="pp">|</span> — <span class="pp">|</span> <span class="co">[</span><span class="ot">Textbook Ch 1 — Intro to data (§1.4–1.7)</span><span class="co">](https://www.openintro.org/book/biostat/chapter1.html)</span> · <span class="co">[</span><span class="ot">R4DS: Data visualization</span><span class="co">](https://r4ds.hadley.nz/data-visualize.html)</span> · <span class="co">[</span><span class="ot">Posit: ggplot2 video</span><span class="co">](https://posit.co/resources/videos/data-visualization-with-ggplot2/)</span> <span class="pp">|</span> **Optional:** EDA and <span class="in">`{ggplot2}`</span> depth; use course Colab labs for <span class="in">`{tidyverse}`</span> practice (not the textbook’s base-R lab sets). <span class="pp">|</span></span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a><span class="fu">### Project 3 — Discovering Patterns</span></span>
-<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Outcome <span class="pp">|</span> Tag <span class="pp">|</span></span>
-<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a><span class="pp">|----------------------------------------------|--------------------------|</span></span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Choose a dataset (TidyTuesday or other) with ≥4 variables and ≥10 rows; document source <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Classify four variables as numerical or categorical <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Univariate summaries and plots for each of the four variables <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Bivariate exploration for variable pairs (tables/plots appropriate to types) <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> One-page PDF: context, two best graphics, ≥4 labeled numeric summaries, four findings <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Notebook runs top-to-bottom with all code used (4 univariate + 6 bivariate plots in notebook; only 2 plots on one-pager) <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Part A short answers in Canvas <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Inferential tests or population generalization beyond the dataset <span class="pp">|</span> **Optional** (explicitly out of scope — descriptive statistics only) <span class="pp">|</span></span>
-<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Your own research question beyond exploratory findings <span class="pp">|</span> **Optional** <span class="pp">|</span></span>
-<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 4 — Designing Fair Comparisons (Jun 22–28)</span></span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>Comparing two groups responsibly.</span>
-<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>Lab Wed Jun 24 · Synthesis Thu Jun 25 · Milestone Fri Jun 26 · <span class="co">[</span><span class="ot">Project 4 — Designing Fair Comparisons</span><span class="co">](projects/project-4)</span> Sun Jun 28 · Discussion: a place in Humboldt (Canvas)</span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Materials <span class="pp">|</span> Supplemental (optional) <span class="pp">|</span> Learning outcomes <span class="pp">|</span></span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----------------|--------------------|-------------------------|-----------------------------------|</span></span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 4 Read 0</span><span class="co">](lectures/module-4-read-00)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Project 4 preview; what makes a two-group comparison fair; vocabulary overview. <span class="pp">|</span></span>
-<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 1 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 4 Read 1</span><span class="co">](lectures/module-4-read-01)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** EV vs RV; observational studies vs experiments; confounding; DAG with one confounder; “by chance” vs causal language. **Essential:** RCT definition; what random assignment buys. **Optional:** Adjustment sets / backdoor criterion beyond one confounder. <span class="pp">|</span></span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Reference sheets <span class="pp">|</span> <span class="co">[</span><span class="ot">Methods</span><span class="co">](methods)</span>, <span class="co">[</span><span class="ot">R reference</span><span class="co">](r-reference)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Two-group inferential rows (Welch $t$, two-proportion / $\chi^2$ as appropriate). **Essential:** Study-design vocabulary. **Essential:** R pipeline: <span class="in">`group_by`</span>, plots by group, <span class="in">`t.test`</span> / <span class="in">`prop.test`</span> / <span class="in">`chisq.test`</span>. <span class="pp">|</span></span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz A (Def &amp; Notation) <span class="pp">|</span> Canvas Module 4 — <span class="co">[</span><span class="ot">Quiz A</span><span class="co">](quizzes/quiz-m4-def)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** RCT vs observational; confounder; DAG; causal vs association language. <span class="pp">|</span></span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 2 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 4 Read 2</span><span class="co">](lectures/module-4-read-02)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Pick two-group test from methods table; Welch t-test; two-proportion z-test; conditions; connect random assignment to reduced confounding. <span class="pp">|</span></span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz B (Concept Check) <span class="pp">|</span> Canvas Module 4 — <span class="co">[</span><span class="ot">Quiz B</span><span class="co">](quizzes/quiz-m4-concept)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Design classification; methods-map matching; read two-group R output. <span class="pp">|</span></span>
-<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Demo lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 4 demo lab</span><span class="co">](labs/module-4-lab-demo)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** <span class="in">`set.seed()`</span>; numerical outcome → Welch t-test; binary outcome → two-proportion z-test; validate under null; RCT vs observational confounding demo. <span class="pp">|</span></span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Exercise lab (submit) <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 4 exercise lab</span><span class="co">](labs/module-4-lab-exercise)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Four problems — same structure as demo. Connect simulation plan to Project 4 design. <span class="pp">|</span></span>
-<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Synthesis quiz <span class="pp">|</span> Canvas Module 4 — <span class="co">[</span><span class="ot">Synthesis</span><span class="co">](quizzes/quiz-m4-synthesis)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Design + methods table integration; interpret two-group CIs; causal vs association language; simulation R workflow; error types in context. <span class="pp">|</span></span>
-<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Milestone <span class="pp">|</span> Canvas Module 4 <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Assigned research question; draft answers to Part 1 design questions; plan for simulated data structure. <span class="pp">|</span></span>
-<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project (Sun) <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 4 — Designing Fair Comparisons</span><span class="co">](projects/project-4)</span> <span class="pp">|</span> — <span class="pp">|</span> See project outcomes table below. <span class="pp">|</span></span>
-<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Supplemental pack <span class="pp">|</span> — <span class="pp">|</span> <span class="co">[</span><span class="ot">Textbook Ch 5.3 — Two-sample tests</span><span class="co">](https://www.openintro.org/book/biostat/chapter5.html)</span> · <span class="co">[</span><span class="ot">Ch 8.1–8.2 — Proportions</span><span class="co">](https://www.openintro.org/book/biostat/chapter8.html)</span> · <span class="co">[</span><span class="ot">R4DS: Data transformation</span><span class="co">](https://r4ds.hadley.nz/data-transform.html)</span> <span class="pp">|</span> **Optional:** Two-group inference concepts; course labs use <span class="in">`group_by()`</span>, <span class="in">`{ggplot2}`</span>, and Colab. <span class="pp">|</span></span>
-<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a><span class="fu">### Project 4 — Designing Fair Comparisons</span></span>
-<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Outcome <span class="pp">|</span> Tag <span class="pp">|</span></span>
-<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a><span class="pp">|----------------------------------------------|--------------------------|</span></span>
-<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Answer ten study-design questions (EV/RV, operational definitions, hypotheses, RCT vs observational, confounder + DAG, test name from methods table) <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Simulate reproducible dataset (<span class="in">`set.seed`</span>) with binary EV, response, and confounder when needed <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Descriptive summaries and plots by group (numerical → boxplot/summaries; binary → stacked bars / proportions) <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Run appropriate two-group test / CI; report p-value and interval; discuss “by chance” explanation <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> One-page summary written for the classmate who asked the question <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Runnable notebook with simulation + analysis sections <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Real-world data collection for the assigned question <span class="pp">|</span> **Optional** (project uses simulation) <span class="pp">|</span></span>
-<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Adjust for confounding in the inferential model <span class="pp">|</span> **Optional** (confounder included in design/DAG and plots; test does not remove confounding) <span class="pp">|</span></span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 5 — Looking Ahead (Jun 29–Jul 2)</span></span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>Using data to make predictions.</span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>This module is four days. Lab Wed Jul 1 · <span class="co">[</span><span class="ot">Project 5 — Looking Ahead</span><span class="co">](projects/project-5)</span>, synthesis quiz, milestone, and portfolio package due Thu Jul 2 · Discussion: predicting a future observation (Canvas)</span>
-<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Materials <span class="pp">|</span> Supplemental (optional) <span class="pp">|</span> Learning outcomes <span class="pp">|</span></span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----------------|--------------------|-------------------------|-----------------------------------|</span></span>
-<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 5 Read 0</span><span class="co">](lectures/module-5-read-00)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Project preview — nesting dolls or stones; four-day schedule; what to expect in Read 1–2 and the lab. ~5 min before Read 1. <span class="pp">|</span></span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 5 Read 1</span><span class="co">](lectures/module-5-read-01)</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Regression line applet</span><span class="co">](https://www.rossmanchance.com/applets/2021/regshuffle/regshuffle.htm)</span> <span class="pp">|</span> **Essential:** Scatterplot description (form, direction, strength); Pearson $r$; fit <span class="in">`lm(y ~ x)`</span>; interpret slope and intercept; point prediction; residuals; MSE and $R^2$ on test set. <span class="pp">|</span></span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quizzes (Def &amp; Notation) <span class="pp">|</span> Canvas Module 5 — <span class="co">[</span><span class="ot">Quiz A</span><span class="co">](quizzes/quiz-m5-def)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Scatterplot vocabulary, regression notation, slope/intercept interpretation, residual definition, R². Open notes; unlimited attempts. <span class="pp">|</span></span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read more <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 5 Read 2</span><span class="co">](lectures/module-5-read-02)</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Penn State: prediction intervals</span><span class="co">](https://online.stat.psu.edu/stat462/node/127/)</span> <span class="pp">|</span> **Essential:** Residual normality condition; 95% CI for slope with `confint()`; CI for mean response vs prediction interval with `predict(..., interval=)`; why PI is wider. **Optional:** Textbook Ch 6.5 on interval estimates with regression. <span class="pp">|</span></span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quizzes (Concept Check) <span class="pp">|</span> Canvas Module 5 — <span class="co">[</span><span class="ot">Quiz B</span><span class="co">](quizzes/quiz-m5-concept)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Residual conditions, CI for slope, mean-response CI vs prediction interval. Open notes; unlimited attempts. <span class="pp">|</span></span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Reference sheets <span class="pp">|</span> <span class="co">[</span><span class="ot">Methods</span><span class="co">](methods)</span>, <span class="co">[</span><span class="ot">R reference</span><span class="co">](r-reference)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Two-numerical describe + regression / prediction rows. **Essential:** <span class="in">`lm`</span>, <span class="in">`predict`</span>, scatterplot with fitted line on R sheet. <span class="pp">|</span></span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Lab (Wed) <span class="pp">|</span> <span class="co">[</span><span class="ot">Demo lab</span><span class="co">](labs/module-5-lab-demo)</span>, <span class="co">[</span><span class="ot">Exercise lab</span><span class="co">](labs/module-5-lab-exercise)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential (demo):** Scatterplot + `cor`; fit `lm`; point prediction; `confint` for slope; `predict` with CI and PI. **Essential (exercise):** Apply same five-step workflow to your team’s Project 5 data. <span class="pp">|</span></span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Synthesis quiz (Thu) <span class="pp">|</span> Canvas Module 5 — <span class="co">[</span><span class="ot">Synthesis</span><span class="co">](quizzes/quiz-m5-synthesis)</span> <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Read scatterplots; interpret $r$, slope, intercept; prediction vs confidence interval; read <span class="in">`predict`</span> output; portfolio method review. After labs. Two attempts; open notes. <span class="pp">|</span></span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Milestone (Thu) <span class="pp">|</span> Canvas Module 5 <span class="pp">|</span> — <span class="pp">|</span> **Essential:** Team, option (nesting dolls or stones), variables defined, data collection underway. <span class="pp">|</span></span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project (Thu) <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 5 — Looking Ahead</span><span class="co">](projects/project-5)</span> <span class="pp">|</span> — <span class="pp">|</span> See project outcomes table below. <span class="pp">|</span></span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Supplemental pack <span class="pp">|</span> — <span class="pp">|</span> <span class="co">[</span><span class="ot">Textbook Ch 6 — Simple linear regression</span><span class="co">](https://www.openintro.org/book/biostat/chapter6.html)</span> · <span class="co">[</span><span class="ot">Khan: regression line example</span><span class="co">](https://www.khanacademy.org/v/regression-line-example)</span> · <span class="co">[</span><span class="ot">Penn State: prediction intervals</span><span class="co">](https://online.stat.psu.edu/stat462/node/127/)</span> <span class="pp">|</span> **Optional:** Regression concepts and PI vs CI; Project 5 requires SLR only. <span class="pp">|</span></span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a><span class="fu">### Project 5 — Looking Ahead</span></span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Outcome <span class="pp">|</span> Tag <span class="pp">|</span></span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a><span class="pp">|----------------------------------------------|--------------------------|</span></span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Form a team (1–4); choose Option A (nesting dolls) or B (stone container) <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Define measurement rules and collect team dataset (CSV / shared sheet) <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Fit at least one simple linear model <span class="in">`lm(response ~ predictor)`</span> <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Report prediction equation, plugged prediction for target case, 95% prediction interval <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> One-page PDF: intro, methods, results, conclusion, team contributions <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Runnable team <span class="in">`.ipynb`</span> from data load through model and prediction <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Compare multiple models / predictors and choose best <span class="pp">|</span> **Optional** (encouraged but one SLR minimum) <span class="pp">|</span></span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Multiple predictors / logistic regression for binary outcomes <span class="pp">|</span> **Optional** (beyond Project 5 scope) <span class="pp">|</span></span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Portfolio package: both reference sheets + all five projects polished for submission <span class="pp">|</span> **Essential** <span class="pp">|</span></span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a><span class="fu">## Notes</span></span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Supplemental (optional)** links point to the <span class="co">[</span><span class="ot">Vu &amp; Harrington textbook</span><span class="co">](https://www.openintro.org/book/biostat/)</span> and Colab/<span class="in">`{tidyverse}`</span>-friendly videos — not required for the module project. The textbook’s companion R labs use base R; prefer this course’s Colab notebooks and <span class="co">[</span><span class="ot">Resources</span><span class="co">](resources#supplemental-by-module)</span>.</span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Modules unlock in order in Canvas (0 → 1 → … → 5).</span>
-<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Quizzes are open notes: use your reference sheets and the methods map.</span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Definitions &amp; Notation and Concept Check: unlimited attempts. Synthesis: two attempts (highest score counts).</span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The milestone is an ungraded checkpoint — it helps you and me catch problems before the project is due.</span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Modules 1–4: lab Wednesday, synthesis Thursday, milestone Friday, project Sunday.</span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Module 5: lab Wednesday July 1; synthesis, milestone, project, and portfolio package due Thursday July 2.</span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Quiz source files (<span class="in">`quizzes/quiz-*.qmd`</span>) are practice banks; Canvas quizzes may use a subset. Items marked **optional** above may still appear — they are not required for the module project.</span>
-<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>If dates shift when the term opens, Canvas is the official calendar; this page will be updated to match.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 1 — Testing a Claim </span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>Is this observation surprising?</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Materials <span class="pp">|</span> Supplemental (optional) <span class="pp">|</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----------------|-----------------|-----------------|</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 1 Read 0</span><span class="co">](lectures/module-1-read-00)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 1 Read 1</span><span class="co">](lectures/module-1-read-01)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz A <span class="pp">|</span> <span class="co">[</span><span class="ot">Def &amp; Notation</span><span class="co">](quizzes/quiz-m1-def)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read more <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 1 Read 2</span><span class="co">](lectures/module-1-read-02)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz B <span class="pp">|</span> <span class="co">[</span><span class="ot">Concept Check</span><span class="co">](quizzes/quiz-m1-concept)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Demo lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 1 demo</span><span class="co">](labs/module-1-lab-demo)</span> · <span class="co">[</span><span class="ot">Conditional demo</span><span class="co">](labs/module-1-lab-demo-conditional)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Exercise lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 1 exercise lab</span><span class="co">](labs/module-1-lab-exercise)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> R reference <span class="pp">|</span> <span class="co">[</span><span class="ot">R quick reference</span><span class="co">](r-reference)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Milestone <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 1 milestone</span><span class="co">](projects/project-1-milestone)</span> · <span class="co">[</span><span class="ot">notebook</span><span class="co">](projects/project-1-milestone.ipynb)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Synthesis <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 1 synthesis</span><span class="co">](quizzes/quiz-m1-synthesis)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 1</span><span class="co">](projects/project-1)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Supplemental pack <span class="pp">|</span> — <span class="pp">|</span> <span class="co">[</span><span class="ot">Textbook Ch 2 — Probability</span><span class="co">](https://www.openintro.org/book/biostat/chapter2.html)</span> · <span class="co">[</span><span class="ot">Ch 3.2 — Binomial</span><span class="co">](https://www.openintro.org/book/biostat/chapter3.html)</span> · <span class="co">[</span><span class="ot">Khan: binomial distribution</span><span class="co">](https://www.khanacademy.org/math/ap-statistics/random-variables-ap/binomial-random-variables/v/binomial-distribution)</span> · <span class="co">[</span><span class="ot">Khan: visualizing binomial</span><span class="co">](https://www.khanacademy.org/v/visualizing-a-binomial-distribution)</span> <span class="pp">|</span></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 2 — Estimating the Truth </span></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>Building high-quality estimates from samples.</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Materials <span class="pp">|</span> Supplemental (optional) <span class="pp">|</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----------------|-----------------|-----------------|</span></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 2 Read 0</span><span class="co">](lectures/module-2-read-00)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 2 Read 1</span><span class="co">](lectures/module-2-read-01)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz A <span class="pp">|</span> <span class="co">[</span><span class="ot">Def &amp; Notation</span><span class="co">](quizzes/quiz-m2-def)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read more <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 2 Read 2</span><span class="co">](lectures/module-2-read-02)</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Textbook Ch 4.2 — Confidence intervals</span><span class="co">](https://www.openintro.org/book/biostat/chapter4.html)</span> <span class="pp">|</span></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz B <span class="pp">|</span> <span class="co">[</span><span class="ot">Concept Check</span><span class="co">](quizzes/quiz-m2-concept)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Demo lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 2 demo</span><span class="co">](labs/module-2-lab-demo)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Exercise lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 2 exercise lab</span><span class="co">](labs/module-2-lab-exercise)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Milestone <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 2 milestone</span><span class="co">](projects/project-2)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Synthesis <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 2 synthesis</span><span class="co">](quizzes/quiz-m2-synthesis)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 2</span><span class="co">](projects/project-2)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Supplemental pack <span class="pp">|</span> — <span class="pp">|</span> <span class="co">[</span><span class="ot">Textbook Ch 3.3 — Normal</span><span class="co">](https://www.openintro.org/book/biostat/chapter3.html)</span> · <span class="co">[</span><span class="ot">Ch 4.1–4.2 — Variability &amp; CIs</span><span class="co">](https://www.openintro.org/book/biostat/chapter4.html)</span> · <span class="co">[</span><span class="ot">Khan: confidence intervals</span><span class="co">](https://www.khanacademy.org/v/confidence-intervals-and-margin-of-error)</span> · <span class="co">[</span><span class="ot">Khan: CI simulation</span><span class="co">](https://www.khanacademy.org/math/ap-statistics/xfb5d8e68:inference-categorical-proportions/introduction-confidence-intervals/v/confidence-interval-simulation)</span> <span class="pp">|</span></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 3 — Discovering Patterns </span></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>Describing a dataset with graphs and summaries.</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Materials <span class="pp">|</span> Supplemental (optional) <span class="pp">|</span></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----------------|-----------------|-----------------|</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 3 Read 0</span><span class="co">](lectures/module-3-read-00)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 3 Read 1</span><span class="co">](lectures/module-3-read-01)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz A <span class="pp">|</span> <span class="co">[</span><span class="ot">Def &amp; Notation</span><span class="co">](quizzes/quiz-m3-def)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read more <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 3 Read 2</span><span class="co">](lectures/module-3-read-02)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz B <span class="pp">|</span> <span class="co">[</span><span class="ot">Concept Check</span><span class="co">](quizzes/quiz-m3-concept)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Demo lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 3 demo</span><span class="co">](labs/module-3-lab-demo)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Exercise lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 3 exercise lab</span><span class="co">](labs/module-3-lab-exercise)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Milestone <span class="pp">|</span> Canvas Module 3 <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Synthesis <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 3 synthesis</span><span class="co">](quizzes/quiz-m3-synthesis)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 3</span><span class="co">](projects/project-3)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Supplemental pack <span class="pp">|</span> — <span class="pp">|</span> <span class="co">[</span><span class="ot">Textbook Ch 1 — Intro to data (§1.4–1.7)</span><span class="co">](https://www.openintro.org/book/biostat/chapter1.html)</span> · <span class="co">[</span><span class="ot">R4DS: Data visualization</span><span class="co">](https://r4ds.hadley.nz/data-visualize.html)</span> · <span class="co">[</span><span class="ot">Posit: ggplot2 video</span><span class="co">](https://posit.co/resources/videos/data-visualization-with-ggplot2/)</span> <span class="pp">|</span></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 4 — Designing Fair Comparisons </span></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>Comparing two groups responsibly.</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Materials <span class="pp">|</span> Supplemental (optional) <span class="pp">|</span></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----------------|-----------------|-----------------|</span></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 4 Read 0</span><span class="co">](lectures/module-4-read-00)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 4 Read 1</span><span class="co">](lectures/module-4-read-01)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz A <span class="pp">|</span> <span class="co">[</span><span class="ot">Def &amp; Notation</span><span class="co">](quizzes/quiz-m4-def)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read more <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 4 Read 2</span><span class="co">](lectures/module-4-read-02)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz B <span class="pp">|</span> <span class="co">[</span><span class="ot">Concept Check</span><span class="co">](quizzes/quiz-m4-concept)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Demo lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 4 demo</span><span class="co">](labs/module-4-lab-demo)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Exercise lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 4 exercise lab</span><span class="co">](labs/module-4-lab-exercise)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Milestone <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 4 milestone</span><span class="co">](projects/project-4)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Synthesis <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 4 synthesis</span><span class="co">](quizzes/quiz-m4-synthesis)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 4</span><span class="co">](projects/project-4)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Supplemental pack <span class="pp">|</span> — <span class="pp">|</span> <span class="co">[</span><span class="ot">Textbook Ch 5.3 — Two-sample tests</span><span class="co">](https://www.openintro.org/book/biostat/chapter5.html)</span> · <span class="co">[</span><span class="ot">Ch 8.1–8.2 — Proportions</span><span class="co">](https://www.openintro.org/book/biostat/chapter8.html)</span> · <span class="co">[</span><span class="ot">R4DS: Data transformation</span><span class="co">](https://r4ds.hadley.nz/data-transform.html)</span> <span class="pp">|</span></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 5 — Looking Ahead </span></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>Using data to make predictions.</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Materials <span class="pp">|</span> Supplemental (optional) <span class="pp">|</span></span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----------------|-----------------|-----------------|</span></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 5 Read 0</span><span class="co">](lectures/module-5-read-00)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 5 Read 1</span><span class="co">](lectures/module-5-read-01)</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Regression line applet</span><span class="co">](https://www.rossmanchance.com/applets/2021/regshuffle/regshuffle.htm)</span> <span class="pp">|</span></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz A <span class="pp">|</span> <span class="co">[</span><span class="ot">Def &amp; Notation</span><span class="co">](quizzes/quiz-m5-def)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read more <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 5 Read 2</span><span class="co">](lectures/module-5-read-02)</span> <span class="pp">|</span> <span class="co">[</span><span class="ot">Penn State: prediction intervals</span><span class="co">](https://online.stat.psu.edu/stat462/node/127/)</span> <span class="pp">|</span></span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz B <span class="pp">|</span> <span class="co">[</span><span class="ot">Concept Check</span><span class="co">](quizzes/quiz-m5-concept)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Demo lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 5 demo</span><span class="co">](labs/module-5-lab-demo)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Exercise lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 5 exercise lab</span><span class="co">](labs/module-5-lab-exercise)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Synthesis <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 5 synthesis</span><span class="co">](quizzes/quiz-m5-synthesis)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Milestone <span class="pp">|</span> Canvas Module 5 <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 5</span><span class="co">](projects/project-5)</span> · **Portfolio package due Thu Jul 2** <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Supplemental pack <span class="pp">|</span> — <span class="pp">|</span> <span class="co">[</span><span class="ot">Textbook Ch 6 — Simple linear regression</span><span class="co">](https://www.openintro.org/book/biostat/chapter6.html)</span> · <span class="co">[</span><span class="ot">Khan: regression line example</span><span class="co">](https://www.khanacademy.org/v/regression-line-example)</span> · <span class="co">[</span><span class="ot">Penn State: prediction intervals</span><span class="co">](https://online.stat.psu.edu/stat462/node/127/)</span> <span class="pp">|</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
