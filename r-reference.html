@@ -161,7 +161,7 @@ window.Quarto = {
   <li><a href="#descriptive-chart-for-your-data" id="toc-descriptive-chart-for-your-data" class="nav-link" data-scroll-target="#descriptive-chart-for-your-data">Descriptive chart for your data</a></li>
   </ul></li>
   <li><a href="#r-index-m1" id="toc-r-index-m1" class="nav-link" data-scroll-target="#r-index-m1">Module 1 — Quick function index</a></li>
-  <li><a href="#r-pipeline" id="toc-r-pipeline" class="nav-link" data-scroll-target="#r-pipeline">Modules 3–5 — Analysis pipeline</a></li>
+  <li><a href="#r-pipeline" id="toc-r-pipeline" class="nav-link" data-scroll-target="#r-pipeline">Analysis pipeline</a></li>
   <li><a href="#r-setup" id="toc-r-setup" class="nav-link" data-scroll-target="#r-setup">Setup</a></li>
   <li><a href="#r-import" id="toc-r-import" class="nav-link" data-scroll-target="#r-import">Import and inspect</a></li>
   <li><a href="#r-factors" id="toc-r-factors" class="nav-link" data-scroll-target="#r-factors">Categorical variables (factors)</a></li>
@@ -169,7 +169,6 @@ window.Quarto = {
   <li><a href="#r-plots" id="toc-r-plots" class="nav-link" data-scroll-target="#r-plots">Plots (ggplot2)</a></li>
   <li><a href="#r-tests" id="toc-r-tests" class="nav-link" data-scroll-target="#r-tests">Two-sample tests and confidence intervals</a></li>
   <li><a href="#r-sim" id="toc-r-sim" class="nav-link" data-scroll-target="#r-sim">Simulating small datasets</a></li>
-  <li><a href="#r-checklist" id="toc-r-checklist" class="nav-link" data-scroll-target="#r-checklist">Pre-submit checklist (Modules 3–5 projects)</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="r-reference.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
@@ -203,8 +202,6 @@ window.Quarto = {
 
 <section id="r-quick-reference" class="level1">
 <h1>R Quick Reference</h1>
-<p>Use on quizzes and projects. <strong>Module 0–1</strong> covers Project 1 and Module 1 labs; <strong>Modules 3–5</strong> covers tidyverse inference later in the course.</p>
-<p>Sources: <a href="labs/module-0-lab-demo">Module 0 labs</a> · <a href="labs/module-1-lab-demo">Module 1 demos</a> · <a href="labs/module-1-lab-demo-conditional">Conditional demo</a> · <a href="labs/module-1-lab-exercise">Exercise lab</a> · <a href="projects/project-1">Project 1</a></p>
 <hr>
 <section id="r-module0" class="level2">
 <h2 class="anchored" data-anchor-id="r-module0">Module 0 — R basics</h2>
@@ -222,34 +219,34 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td>Assign / print</td>
-<td><code>x &lt;- 10</code> or <code>x = 10</code>, then <code>x</code> (course prefers <code>&lt;-</code>)</td>
+<td><code>x &lt;- 10</code> or <code>x = 10</code>, then <code>x</code> by itself. Note that <code>x</code> is a user chosen name.</td>
 </tr>
 <tr class="even">
 <td>Vector</td>
-<td><code>v &lt;- c(1, 2, 3, 4)</code></td>
+<td><code>v &lt;- c(1, 2, 3, 4)</code> a collection of objects: <code>c</code> is the R function, <code>v</code> is a user chosen name.</td>
 </tr>
 <tr class="odd">
 <td>Index</td>
-<td><code>v[2]</code> (R counts from 1)</td>
+<td><code>v[2]</code> (the element of <code>v</code> in the second position: R counts from 1)</td>
 </tr>
 <tr class="even">
 <td>Compare</td>
-<td><code>babies == mothers</code> → TRUE/FALSE vector</td>
+<td><code>babies == mothers</code> returns TRUE/FALSE vector for each comparision of objects in the two sets of collections</td>
 </tr>
 <tr class="odd">
 <td>Count matches</td>
-<td><code>sum(babies == mothers)</code></td>
+<td><code>sum(babies == mothers)</code> uses the trick that TRUE = 1 and FALSE = 0</td>
 </tr>
 <tr class="even">
 <td>One random shuffle</td>
 <td><code>sample(c(1, 2, 3, 4))</code></td>
 </tr>
 <tr class="odd">
-<td>Reproducible RNG</td>
+<td>Reproducible Randomness</td>
 <td><code>set.seed(109)</code></td>
 </tr>
 <tr class="even">
-<td>Pre-allocate</td>
+<td>Pre-allocate storage</td>
 <td><code>num_correct &lt;- numeric(10000)</code></td>
 </tr>
 <tr class="odd">
@@ -257,11 +254,11 @@ window.Quarto = {
 <td><code>for (i in 1:10000) { ... num_correct[i] &lt;- ... }</code></td>
 </tr>
 <tr class="even">
-<td>Estimate probability</td>
+<td>Estimate probability from the results of a for loop simulation</td>
 <td><code>mean(num_correct == 4)</code></td>
 </tr>
 <tr class="odd">
-<td>Table of outcomes</td>
+<td>Counts of how many times each object appears</td>
 <td><code>table(num_correct)</code></td>
 </tr>
 </tbody>
@@ -598,10 +595,9 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<hr>
 </section>
 <section id="r-pipeline" class="level2">
-<h2 class="anchored" data-anchor-id="r-pipeline">Modules 3–5 — Analysis pipeline</h2>
+<h2 class="anchored" data-anchor-id="r-pipeline">Analysis pipeline</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
@@ -624,32 +620,32 @@ window.Quarto = {
 <tr class="even">
 <td>2</td>
 <td><code>read_csv(...); glimpse(dat)</code></td>
-<td>Column <strong>names</strong> and <strong>types</strong> match <strong>Part 1</strong></td>
+<td>Column names and types match Part 1</td>
 </tr>
 <tr class="odd">
 <td>3</td>
 <td><code>mutate(... factor(..., levels = ...))</code></td>
-<td><strong>Levels</strong> match your two groups / outcome categories</td>
+<td>Levels match your two groups / outcome categories</td>
 </tr>
 <tr class="even">
 <td>4</td>
 <td><code>group_by</code> + <code>summarise</code> and/or <code>count</code></td>
-<td><strong>Means/SDs</strong> if numerical; <strong>counts</strong> if categorical</td>
+<td>Means/SDs if numerical; counts if categorical</td>
 </tr>
 <tr class="odd">
 <td>5</td>
 <td><strong><code>ggplot</code></strong></td>
-<td><strong>Boxplot/histogram</strong> for numerical by group; <strong>bar chart</strong> for categorical</td>
+<td>Boxplot/histogram for numerical by group; bar chart for categorical</td>
 </tr>
 <tr class="even">
 <td>6</td>
 <td><strong>Test + CI</strong></td>
-<td><strong><code>t.test(..., var.equal = FALSE)</code></strong> or <strong><code>prop.test</code> / <code>chisq.test</code></strong></td>
+<td><code>t.test(..., var.equal = FALSE)</code> or <code>prop.test</code> / <code>chisq.test</code></td>
 </tr>
 <tr class="odd">
 <td>7</td>
-<td>Short <strong>interpretation</strong></td>
-<td><em>p</em>-value addresses <strong>chance</strong> only</td>
+<td>Short interpretation</td>
+<td><em>p</em>-value addresses chance only</td>
 </tr>
 </tbody>
 </table>
@@ -671,6 +667,10 @@ window.Quarto = {
 <section id="r-import" class="level2">
 <h2 class="anchored" data-anchor-id="r-import">Import and inspect</h2>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 77%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Task</th>
@@ -699,7 +699,7 @@ window.Quarto = {
 <table class="caption-top table">
 <colgroup>
 <col style="width: 30%">
-<col style="width: 70%">
+<col style="width: 69%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -758,8 +758,8 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="r-plots">Plots (ggplot2)</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 34%">
-<col style="width: 65%">
+<col style="width: 35%">
+<col style="width: 64%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -808,17 +808,17 @@ window.Quarto = {
 <tr class="odd">
 <td><strong>Numerical</strong>, 2 groups</td>
 <td><code>t.test(y ~ group, data = dat, var.equal = FALSE)</code></td>
-<td>Welch <em>t</em>-test; includes <strong>95% CI</strong></td>
+<td>Welch <em>t</em>-test; includes 95% CI</td>
 </tr>
 <tr class="even">
 <td><strong>Binary</strong>, 2 groups</td>
 <td><code>prop.test(x = c(x1, x2), n = c(n1, n2), correct = FALSE)</code></td>
-<td>Compares two <strong>proportions</strong></td>
+<td>Compares two proportions</td>
 </tr>
 <tr class="odd">
 <td>Two categorical variables</td>
 <td><code>chisq.test(tab)</code></td>
-<td>Check <strong><code>chisq.test(tab)$expected</code></strong> for <strong>≥ 5</strong> rule</td>
+<td>Check <code>chisq.test(tab)$expected</code> for ≥ 5 rule</td>
 </tr>
 </tbody>
 </table>
@@ -828,8 +828,8 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="r-sim">Simulating small datasets</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 29%">
-<col style="width: 70%">
+<col style="width: 30%">
+<col style="width: 69%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -853,17 +853,6 @@ window.Quarto = {
 </tbody>
 </table>
 <hr>
-</section>
-<section id="r-checklist" class="level2">
-<h2 class="anchored" data-anchor-id="r-checklist">Pre-submit checklist (Modules 3–5 projects)</h2>
-<ol type="1">
-<li><strong><code>read_csv</code></strong> path and <strong><code>glimpse</code></strong> — Do column names match your <strong>Part 1</strong> definitions?</li>
-<li><strong><code>factor</code></strong> — Are <strong>group</strong> and <strong>outcome</strong> coded with the <strong>correct levels</strong>?</li>
-<li><strong><code>group_by</code> + <code>summarize</code></strong> — Means/SDs for <strong>numerical</strong>; counts/proportions for <strong>categorical</strong>?</li>
-<li><strong><code>ggplot</code></strong> — Correct <strong>geom</strong> (boxplot vs bar vs histogram)?</li>
-<li><strong>Test</strong> — <code>t.test</code> for means vs <code>prop.test</code> / <code>chisq.test</code> for proportions?</li>
-<li><strong>Conditions</strong> — Random sample or assignment? Sample size large enough?</li>
-</ol>
 
 
 <!-- -->
@@ -1335,280 +1324,265 @@ window.Quarto = {
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># R Quick Reference</span></span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>Use on quizzes and projects. **Module 0–1** covers Project 1 and Module 1 labs; **Modules 3–5** covers tidyverse inference later in the course.</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>Sources: <span class="co">[</span><span class="ot">Module 0 labs</span><span class="co">](labs/module-0-lab-demo)</span> · <span class="co">[</span><span class="ot">Module 1 demos</span><span class="co">](labs/module-1-lab-demo)</span> · <span class="co">[</span><span class="ot">Conditional demo</span><span class="co">](labs/module-1-lab-demo-conditional)</span> · <span class="co">[</span><span class="ot">Exercise lab</span><span class="co">](labs/module-1-lab-exercise)</span> · <span class="co">[</span><span class="ot">Project 1</span><span class="co">](projects/project-1)</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 0 — R basics {#r-module0}</span></span>
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 0 — R basics {#r-module0}</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Task <span class="pp">|</span> Code pattern <span class="pp">|</span></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|----------------|</span></span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Assign / print <span class="pp">|</span> <span class="in">`x &lt;- 10`</span> or <span class="in">`x = 10`</span>, then <span class="in">`x`</span> (course prefers <span class="in">`&lt;-`</span>) <span class="pp">|</span></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Vector <span class="pp">|</span> <span class="in">`v &lt;- c(1, 2, 3, 4)`</span> <span class="pp">|</span></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Index <span class="pp">|</span> <span class="in">`v[2]`</span> (R counts from 1) <span class="pp">|</span></span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Compare <span class="pp">|</span> <span class="in">`babies == mothers`</span> → TRUE/FALSE vector <span class="pp">|</span></span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Count matches <span class="pp">|</span> <span class="in">`sum(babies == mothers)`</span> <span class="pp">|</span></span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> One random shuffle <span class="pp">|</span> <span class="in">`sample(c(1, 2, 3, 4))`</span> <span class="pp">|</span></span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Reproducible RNG <span class="pp">|</span> <span class="in">`set.seed(109)`</span> <span class="pp">|</span></span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Pre-allocate <span class="pp">|</span> <span class="in">`num_correct &lt;- numeric(10000)`</span> <span class="pp">|</span></span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Loop simulation <span class="pp">|</span> <span class="in">`for (i in 1:10000) { ... num_correct[i] &lt;- ... }`</span> <span class="pp">|</span></span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Estimate probability <span class="pp">|</span> <span class="in">`mean(num_correct == 4)`</span> <span class="pp">|</span></span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Table of outcomes <span class="pp">|</span> <span class="in">`table(num_correct)`</span> <span class="pp">|</span></span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Module 0 — baby-matching simulation (pattern)</span></span>
-<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">109</span>)</span>
-<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>mothers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
-<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>num_correct <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10000</span>)</span>
-<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>) {</span>
-<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>  babies <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>))</span>
-<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>  num_correct[i] <span class="ot">&lt;-</span> <span class="fu">sum</span>(babies <span class="sc">==</span> mothers)</span>
-<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(num_correct <span class="sc">==</span> <span class="dv">4</span>)   <span class="co"># P(all 4 correct)</span></span>
-<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(num_correct <span class="sc">==</span> <span class="dv">0</span>)   <span class="co"># P(none correct)</span></span>
-<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Task <span class="pp">|</span> Code pattern <span class="pp">|</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="pp">|--------------------|----------------------------------------------------|</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Assign / print <span class="pp">|</span> <span class="in">`x &lt;- 10`</span> or <span class="in">`x = 10`</span>, then <span class="in">`x`</span> by itself.  Note that <span class="in">`x`</span> is a user chosen name. <span class="pp">|</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Vector <span class="pp">|</span> <span class="in">`v &lt;- c(1, 2, 3, 4)`</span> a collection of objects: <span class="in">`c`</span> is the R function, <span class="in">`v`</span> is a user chosen name. <span class="pp">|</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Index <span class="pp">|</span> <span class="in">`v[2]`</span> (the element of <span class="in">`v`</span> in the second position: R counts from 1) <span class="pp">|</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Compare <span class="pp">|</span> <span class="in">`babies == mothers`</span> returns TRUE/FALSE vector for each comparision of objects in the two sets of collections <span class="pp">|</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Count matches <span class="pp">|</span> <span class="in">`sum(babies == mothers)`</span>  uses the trick that TRUE = 1 and FALSE = 0 <span class="pp">|</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> One random shuffle <span class="pp">|</span> <span class="in">`sample(c(1, 2, 3, 4))`</span> <span class="pp">|</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Reproducible Randomness <span class="pp">|</span> <span class="in">`set.seed(109)`</span> <span class="pp">|</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Pre-allocate storage <span class="pp">|</span> <span class="in">`num_correct &lt;- numeric(10000)`</span> <span class="pp">|</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Loop simulation <span class="pp">|</span> <span class="in">`for (i in 1:10000) { ... num_correct[i] &lt;- ... }`</span> <span class="pp">|</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Estimate probability from the results of a for loop simulation <span class="pp">|</span> <span class="in">`mean(num_correct == 4)`</span> <span class="pp">|</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Counts of how many times each object appears <span class="pp">|</span> <span class="in">`table(num_correct)`</span> <span class="pp">|</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Module 0 — baby-matching simulation (pattern)</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">109</span>)</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>mothers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>num_correct <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="dv">10000</span>)</span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>) {</span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>  babies <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>))</span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>  num_correct[i] <span class="ot">&lt;-</span> <span class="fu">sum</span>(babies <span class="sc">==</span> mothers)</span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(num_correct <span class="sc">==</span> <span class="dv">4</span>)   <span class="co"># P(all 4 correct)</span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(num_correct <span class="sc">==</span> <span class="dv">0</span>)   <span class="co"># P(none correct)</span></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 1 — Data structures &amp; simulation {#r-lab2}</span></span>
 <span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 1 — Data structures &amp; simulation {#r-lab2}</span></span>
-<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Task <span class="pp">|</span> Code pattern <span class="pp">|</span></span>
-<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|----------------|</span></span>
-<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Type check <span class="pp">|</span> <span class="in">`class(x)`</span> <span class="pp">|</span></span>
-<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Integer <span class="pp">|</span> <span class="in">`y &lt;- 3L`</span> <span class="pp">|</span></span>
-<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Length <span class="pp">|</span> <span class="in">`length(v)`</span> <span class="pp">|</span></span>
-<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Subset range <span class="pp">|</span> <span class="in">`v[2:4]`</span>; drop 3rd: <span class="in">`v[-3]`</span> <span class="pp">|</span></span>
-<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Logical filter <span class="pp">|</span> <span class="in">`v[v &gt; 5]`</span> <span class="pp">|</span></span>
-<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Matrix <span class="pp">|</span> <span class="in">`m &lt;- matrix(1:6, nrow = 2, ncol = 3)`</span> <span class="pp">|</span></span>
-<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Matrix size <span class="pp">|</span> <span class="in">`dim(m)`</span> <span class="pp">|</span></span>
-<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Matrix index <span class="pp">|</span> <span class="in">`m[2, 1]`</span>; row 1: <span class="in">`m[1, ]`</span>; col 2: <span class="in">`m[, 2]`</span> <span class="pp">|</span></span>
-<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Membership <span class="pp">|</span> <span class="in">`rolls %in% c(2, 4, 6)`</span> <span class="pp">|</span></span>
-<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Even die simulation <span class="pp">|</span> <span class="in">`mean(sample(1:6, 10000, replace = TRUE) %% 2 == 0)`</span> <span class="pp">|</span></span>
-<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>)</span>
-<span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a>v[<span class="dv">3</span>]</span>
-<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a>v[v <span class="sc">&gt;</span> <span class="dv">5</span>]</span>
-<span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
-<span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a>m[<span class="dv">2</span>, <span class="dv">1</span>]</span>
-<span id="cb8-72"><a href="#cb8-72" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Task                <span class="pp">|</span> Code pattern                                         <span class="pp">|</span></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a><span class="pp">|--------------------|----------------------------------------------------|</span></span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Type check          <span class="pp">|</span> <span class="in">`class(x)`</span>                                           <span class="pp">|</span></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Integer             <span class="pp">|</span> <span class="in">`y &lt;- 3L`</span>                                            <span class="pp">|</span></span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Length              <span class="pp">|</span> <span class="in">`length(v)`</span>                                          <span class="pp">|</span></span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Subset range        <span class="pp">|</span> <span class="in">`v[2:4]`</span>; drop 3rd: <span class="in">`v[-3]`</span>                          <span class="pp">|</span></span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Logical filter      <span class="pp">|</span> <span class="in">`v[v &gt; 5]`</span>                                           <span class="pp">|</span></span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Matrix              <span class="pp">|</span> <span class="in">`m &lt;- matrix(1:6, nrow = 2, ncol = 3)`</span>               <span class="pp">|</span></span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Matrix size         <span class="pp">|</span> <span class="in">`dim(m)`</span>                                             <span class="pp">|</span></span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Matrix index        <span class="pp">|</span> <span class="in">`m[2, 1]`</span>; row 1: <span class="in">`m[1, ]`</span>; col 2: <span class="in">`m[, 2]`</span>          <span class="pp">|</span></span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Membership          <span class="pp">|</span> <span class="in">`rolls %in% c(2, 4, 6)`</span>                              <span class="pp">|</span></span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Even die simulation <span class="pp">|</span> <span class="in">`mean(sample(1:6, 10000, replace = TRUE) %% 2 == 0)`</span> <span class="pp">|</span></span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb8-63"><a href="#cb8-63" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>)</span>
+<span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a>v[<span class="dv">3</span>]</span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a>v[v <span class="sc">&gt;</span> <span class="dv">5</span>]</span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a>m[<span class="dv">2</span>, <span class="dv">1</span>]</span>
+<span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-72"><a href="#cb8-72" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 1 — Conditional simulation {#r-lab3}</span></span>
 <span id="cb8-73"><a href="#cb8-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 1 — Conditional simulation {#r-lab3}</span></span>
-<span id="cb8-77"><a href="#cb8-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-78"><a href="#cb8-78" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Task <span class="pp">|</span> Code pattern <span class="pp">|</span></span>
-<span id="cb8-79"><a href="#cb8-79" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|----------------|</span></span>
-<span id="cb8-80"><a href="#cb8-80" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Build labeled pool <span class="pp">|</span> <span class="in">`balls &lt;- rep(c("R", "W"), c(3, 3))`</span> <span class="pp">|</span></span>
-<span id="cb8-81"><a href="#cb8-81" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Draw without replacement <span class="pp">|</span> <span class="in">`sample(balls, size = 2, replace = FALSE)`</span> <span class="pp">|</span></span>
-<span id="cb8-82"><a href="#cb8-82" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Pre-allocate <span class="pp">|</span> <span class="in">`successes &lt;- vector("numeric", 10000)`</span> <span class="pp">|</span></span>
-<span id="cb8-83"><a href="#cb8-83" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Record with <span class="in">`if`</span> <span class="pp">|</span> <span class="in">`if (condition) { successes[k] &lt;- 1 }`</span> <span class="pp">|</span></span>
-<span id="cb8-84"><a href="#cb8-84" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> AND / OR in <span class="in">`if`</span> <span class="pp">|</span> <span class="in">`if (a &amp; b)`</span>; <span class="in">`if (a \| b)`</span> <span class="pp">|</span></span>
-<span id="cb8-85"><a href="#cb8-85" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Which replicates <span class="pp">|</span> <span class="in">`which(successes == 1)`</span> <span class="pp">|</span></span>
-<span id="cb8-86"><a href="#cb8-86" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Weighted sample <span class="pp">|</span> <span class="in">`sample(c("yes", "no"), n, replace = TRUE, prob = c(0.7, 0.3))`</span> <span class="pp">|</span></span>
-<span id="cb8-87"><a href="#cb8-87" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Joint probability <span class="pp">|</span> <span class="in">`mean(disease == 1 &amp; test == 1)`</span> <span class="pp">|</span></span>
-<span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Conditional from sim <span class="pp">|</span> <span class="in">`mean(disease == 1 &amp; test == 1) / mean(test == 1)`</span> <span class="pp">|</span></span>
-<span id="cb8-89"><a href="#cb8-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-92"><a href="#cb8-92" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-93"><a href="#cb8-93" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb8-94"><a href="#cb8-94" aria-hidden="true" tabindex="-1"></a>balls <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"R"</span>, <span class="st">"W"</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">3</span>))</span>
-<span id="cb8-95"><a href="#cb8-95" aria-hidden="true" tabindex="-1"></a>replicates <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
-<span id="cb8-96"><a href="#cb8-96" aria-hidden="true" tabindex="-1"></a>successes <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">"numeric"</span>, replicates)</span>
-<span id="cb8-97"><a href="#cb8-97" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">109</span>)</span>
-<span id="cb8-98"><a href="#cb8-98" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (k <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>replicates) {</span>
-<span id="cb8-99"><a href="#cb8-99" aria-hidden="true" tabindex="-1"></a>  draw <span class="ot">&lt;-</span> <span class="fu">sample</span>(balls, <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb8-100"><a href="#cb8-100" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (draw[<span class="dv">1</span>] <span class="sc">==</span> <span class="st">"W"</span> <span class="sc">&amp;</span> draw[<span class="dv">2</span>] <span class="sc">==</span> <span class="st">"R"</span>) successes[k] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb8-101"><a href="#cb8-101" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb8-102"><a href="#cb8-102" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(successes)</span>
+<span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Task <span class="pp">|</span> Code pattern <span class="pp">|</span></span>
+<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a><span class="pp">|--------------------|----------------------------------------------------|</span></span>
+<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Build labeled pool <span class="pp">|</span> <span class="in">`balls &lt;- rep(c("R", "W"), c(3, 3))`</span> <span class="pp">|</span></span>
+<span id="cb8-77"><a href="#cb8-77" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Draw without replacement <span class="pp">|</span> <span class="in">`sample(balls, size = 2, replace = FALSE)`</span> <span class="pp">|</span></span>
+<span id="cb8-78"><a href="#cb8-78" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Pre-allocate <span class="pp">|</span> <span class="in">`successes &lt;- vector("numeric", 10000)`</span> <span class="pp">|</span></span>
+<span id="cb8-79"><a href="#cb8-79" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Record with <span class="in">`if`</span> <span class="pp">|</span> <span class="in">`if (condition) { successes[k] &lt;- 1 }`</span> <span class="pp">|</span></span>
+<span id="cb8-80"><a href="#cb8-80" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> AND / OR in <span class="in">`if`</span> <span class="pp">|</span> <span class="in">`if (a &amp; b)`</span>; <span class="in">`if (a \| b)`</span> <span class="pp">|</span></span>
+<span id="cb8-81"><a href="#cb8-81" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Which replicates <span class="pp">|</span> <span class="in">`which(successes == 1)`</span> <span class="pp">|</span></span>
+<span id="cb8-82"><a href="#cb8-82" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Weighted sample <span class="pp">|</span> <span class="in">`sample(c("yes", "no"), n, replace = TRUE, prob = c(0.7, 0.3))`</span> <span class="pp">|</span></span>
+<span id="cb8-83"><a href="#cb8-83" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Joint probability <span class="pp">|</span> <span class="in">`mean(disease == 1 &amp; test == 1)`</span> <span class="pp">|</span></span>
+<span id="cb8-84"><a href="#cb8-84" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Conditional from sim <span class="pp">|</span> <span class="in">`mean(disease == 1 &amp; test == 1) / mean(test == 1)`</span> <span class="pp">|</span></span>
+<span id="cb8-85"><a href="#cb8-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-89"><a href="#cb8-89" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb8-90"><a href="#cb8-90" aria-hidden="true" tabindex="-1"></a>balls <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"R"</span>, <span class="st">"W"</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">3</span>))</span>
+<span id="cb8-91"><a href="#cb8-91" aria-hidden="true" tabindex="-1"></a>replicates <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb8-92"><a href="#cb8-92" aria-hidden="true" tabindex="-1"></a>successes <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">"numeric"</span>, replicates)</span>
+<span id="cb8-93"><a href="#cb8-93" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">109</span>)</span>
+<span id="cb8-94"><a href="#cb8-94" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (k <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>replicates) {</span>
+<span id="cb8-95"><a href="#cb8-95" aria-hidden="true" tabindex="-1"></a>  draw <span class="ot">&lt;-</span> <span class="fu">sample</span>(balls, <span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb8-96"><a href="#cb8-96" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (draw[<span class="dv">1</span>] <span class="sc">==</span> <span class="st">"W"</span> <span class="sc">&amp;</span> draw[<span class="dv">2</span>] <span class="sc">==</span> <span class="st">"R"</span>) successes[k] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb8-97"><a href="#cb8-97" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-98"><a href="#cb8-98" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(successes)</span>
+<span id="cb8-99"><a href="#cb8-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-100"><a href="#cb8-100" aria-hidden="true" tabindex="-1"></a><span class="co"># Joint event</span></span>
+<span id="cb8-101"><a href="#cb8-101" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(child <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> gummy <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb8-102"><a href="#cb8-102" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb8-103"><a href="#cb8-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-104"><a href="#cb8-104" aria-hidden="true" tabindex="-1"></a><span class="co"># Joint event</span></span>
-<span id="cb8-105"><a href="#cb8-105" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(child <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> gummy <span class="sc">==</span> <span class="dv">1</span>)</span>
-<span id="cb8-106"><a href="#cb8-106" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-104"><a href="#cb8-104" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb8-105"><a href="#cb8-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-106"><a href="#cb8-106" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 1 — Binomial &amp; Project 1 {#r-project1}</span></span>
 <span id="cb8-107"><a href="#cb8-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-108"><a href="#cb8-108" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb8-109"><a href="#cb8-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-110"><a href="#cb8-110" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 1 — Binomial &amp; Project 1 {#r-project1}</span></span>
-<span id="cb8-111"><a href="#cb8-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-112"><a href="#cb8-112" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Task <span class="pp">|</span> Code pattern <span class="pp">|</span></span>
-<span id="cb8-113"><a href="#cb8-113" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|----------------|</span></span>
-<span id="cb8-114"><a href="#cb8-114" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Combinations <span class="pp">|</span> <span class="in">`choose(n, k)`</span> <span class="pp">|</span></span>
-<span id="cb8-115"><a href="#cb8-115" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> P(X = x) <span class="pp">|</span> <span class="in">`dbinom(x, size = n, prob = p)`</span> <span class="pp">|</span></span>
-<span id="cb8-116"><a href="#cb8-116" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> P(X ≤ q) <span class="pp">|</span> <span class="in">`pbinom(q, size = n, prob = p)`</span> <span class="pp">|</span></span>
-<span id="cb8-117"><a href="#cb8-117" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> P(X ≥ x) upper tail <span class="pp">|</span> <span class="in">`pbinom(x - 1, size = n, prob = p, lower.tail = FALSE)`</span> or <span class="in">`1 - pbinom(x - 1, ...)`</span> <span class="pp">|</span></span>
-<span id="cb8-118"><a href="#cb8-118" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Simulate binomial count <span class="pp">|</span> <span class="in">`rbinom(10000, size = n, prob = p)`</span> <span class="pp">|</span></span>
-<span id="cb8-119"><a href="#cb8-119" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Load plotting <span class="pp">|</span> <span class="in">`library(tidyverse)`</span> <span class="pp">|</span></span>
-<span id="cb8-120"><a href="#cb8-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-121"><a href="#cb8-121" aria-hidden="true" tabindex="-1"></a><span class="fu">### Null binomial graph (milestone &amp; final report)</span></span>
-<span id="cb8-122"><a href="#cb8-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-125"><a href="#cb8-125" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-126"><a href="#cb8-126" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb8-127"><a href="#cb8-127" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb8-108"><a href="#cb8-108" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Task <span class="pp">|</span> Code pattern <span class="pp">|</span></span>
+<span id="cb8-109"><a href="#cb8-109" aria-hidden="true" tabindex="-1"></a><span class="pp">|--------------------|----------------------------------------------------|</span></span>
+<span id="cb8-110"><a href="#cb8-110" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Combinations <span class="pp">|</span> <span class="in">`choose(n, k)`</span> <span class="pp">|</span></span>
+<span id="cb8-111"><a href="#cb8-111" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> P(X = x) <span class="pp">|</span> <span class="in">`dbinom(x, size = n, prob = p)`</span> <span class="pp">|</span></span>
+<span id="cb8-112"><a href="#cb8-112" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> P(X ≤ q) <span class="pp">|</span> <span class="in">`pbinom(q, size = n, prob = p)`</span> <span class="pp">|</span></span>
+<span id="cb8-113"><a href="#cb8-113" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> P(X ≥ x) upper tail <span class="pp">|</span> <span class="in">`pbinom(x - 1, size = n, prob = p, lower.tail = FALSE)`</span> or <span class="in">`1 - pbinom(x - 1, ...)`</span> <span class="pp">|</span></span>
+<span id="cb8-114"><a href="#cb8-114" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Simulate binomial count <span class="pp">|</span> <span class="in">`rbinom(10000, size = n, prob = p)`</span> <span class="pp">|</span></span>
+<span id="cb8-115"><a href="#cb8-115" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Load plotting <span class="pp">|</span> <span class="in">`library(tidyverse)`</span> <span class="pp">|</span></span>
+<span id="cb8-116"><a href="#cb8-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-117"><a href="#cb8-117" aria-hidden="true" tabindex="-1"></a><span class="fu">### Null binomial graph (milestone &amp; final report)</span></span>
+<span id="cb8-118"><a href="#cb8-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-121"><a href="#cb8-121" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-122"><a href="#cb8-122" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb8-123"><a href="#cb8-123" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb8-124"><a href="#cb8-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-125"><a href="#cb8-125" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">25</span>          <span class="co"># your study</span></span>
+<span id="cb8-126"><a href="#cb8-126" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.5</span>         <span class="co"># from H0</span></span>
+<span id="cb8-127"><a href="#cb8-127" aria-hidden="true" tabindex="-1"></a>x_obs <span class="ot">&lt;-</span> <span class="dv">18</span>      <span class="co"># observed successes after data collection</span></span>
 <span id="cb8-128"><a href="#cb8-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-129"><a href="#cb8-129" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">25</span>          <span class="co"># your study</span></span>
-<span id="cb8-130"><a href="#cb8-130" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.5</span>         <span class="co"># from H0</span></span>
-<span id="cb8-131"><a href="#cb8-131" aria-hidden="true" tabindex="-1"></a>x_obs <span class="ot">&lt;-</span> <span class="dv">18</span>      <span class="co"># observed successes after data collection</span></span>
-<span id="cb8-132"><a href="#cb8-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-133"><a href="#cb8-133" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb8-134"><a href="#cb8-134" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="dv">0</span><span class="sc">:</span>n,</span>
-<span id="cb8-135"><a href="#cb8-135" aria-hidden="true" tabindex="-1"></a>  <span class="at">prob =</span> <span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span>n, <span class="at">size =</span> n, <span class="at">prob =</span> p)</span>
-<span id="cb8-136"><a href="#cb8-136" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb8-137"><a href="#cb8-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-138"><a href="#cb8-138" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> prob)) <span class="sc">+</span></span>
-<span id="cb8-139"><a href="#cb8-139" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb8-140"><a href="#cb8-140" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> x_obs, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb8-141"><a href="#cb8-141" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x (successes)"</span>, <span class="at">y =</span> <span class="st">"P(X = x) under H0"</span>)</span>
-<span id="cb8-142"><a href="#cb8-142" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-143"><a href="#cb8-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-144"><a href="#cb8-144" aria-hidden="true" tabindex="-1"></a><span class="fu">### p-value patterns (match $H_a$ direction)</span></span>
-<span id="cb8-145"><a href="#cb8-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-148"><a href="#cb8-148" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-149"><a href="#cb8-149" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb8-150"><a href="#cb8-150" aria-hidden="true" tabindex="-1"></a><span class="co"># Right-tailed Ha: p &gt; p0  — at least x_obs successes</span></span>
-<span id="cb8-151"><a href="#cb8-151" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbinom</span>(x_obs <span class="sc">-</span> <span class="dv">1</span>, <span class="at">size =</span> n, <span class="at">prob =</span> p)</span>
-<span id="cb8-152"><a href="#cb8-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-153"><a href="#cb8-153" aria-hidden="true" tabindex="-1"></a><span class="co"># Left-tailed Ha: p &lt; p0</span></span>
-<span id="cb8-154"><a href="#cb8-154" aria-hidden="true" tabindex="-1"></a><span class="fu">pbinom</span>(x_obs, <span class="at">size =</span> n, <span class="at">prob =</span> p)</span>
+<span id="cb8-129"><a href="#cb8-129" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb8-130"><a href="#cb8-130" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="dv">0</span><span class="sc">:</span>n,</span>
+<span id="cb8-131"><a href="#cb8-131" aria-hidden="true" tabindex="-1"></a>  <span class="at">prob =</span> <span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span>n, <span class="at">size =</span> n, <span class="at">prob =</span> p)</span>
+<span id="cb8-132"><a href="#cb8-132" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-133"><a href="#cb8-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-134"><a href="#cb8-134" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> prob)) <span class="sc">+</span></span>
+<span id="cb8-135"><a href="#cb8-135" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb8-136"><a href="#cb8-136" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> x_obs, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb8-137"><a href="#cb8-137" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"x (successes)"</span>, <span class="at">y =</span> <span class="st">"P(X = x) under H0"</span>)</span>
+<span id="cb8-138"><a href="#cb8-138" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-139"><a href="#cb8-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-140"><a href="#cb8-140" aria-hidden="true" tabindex="-1"></a><span class="fu">### p-value patterns (match $H_a$ direction)</span></span>
+<span id="cb8-141"><a href="#cb8-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-144"><a href="#cb8-144" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-145"><a href="#cb8-145" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb8-146"><a href="#cb8-146" aria-hidden="true" tabindex="-1"></a><span class="co"># Right-tailed Ha: p &gt; p0  — at least x_obs successes</span></span>
+<span id="cb8-147"><a href="#cb8-147" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pbinom</span>(x_obs <span class="sc">-</span> <span class="dv">1</span>, <span class="at">size =</span> n, <span class="at">prob =</span> p)</span>
+<span id="cb8-148"><a href="#cb8-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-149"><a href="#cb8-149" aria-hidden="true" tabindex="-1"></a><span class="co"># Left-tailed Ha: p &lt; p0</span></span>
+<span id="cb8-150"><a href="#cb8-150" aria-hidden="true" tabindex="-1"></a><span class="fu">pbinom</span>(x_obs, <span class="at">size =</span> n, <span class="at">prob =</span> p)</span>
+<span id="cb8-151"><a href="#cb8-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-152"><a href="#cb8-152" aria-hidden="true" tabindex="-1"></a><span class="co"># Two-tailed (symmetric null) — tail at least as extreme as x_obs</span></span>
+<span id="cb8-153"><a href="#cb8-153" aria-hidden="true" tabindex="-1"></a><span class="co"># (use smaller of upper/lower doubled, or shade both tails on plot)</span></span>
+<span id="cb8-154"><a href="#cb8-154" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb8-155"><a href="#cb8-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-156"><a href="#cb8-156" aria-hidden="true" tabindex="-1"></a><span class="co"># Two-tailed (symmetric null) — tail at least as extreme as x_obs</span></span>
-<span id="cb8-157"><a href="#cb8-157" aria-hidden="true" tabindex="-1"></a><span class="co"># (use smaller of upper/lower doubled, or shade both tails on plot)</span></span>
-<span id="cb8-158"><a href="#cb8-158" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-159"><a href="#cb8-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-160"><a href="#cb8-160" aria-hidden="true" tabindex="-1"></a><span class="fu">### Descriptive chart for your data</span></span>
-<span id="cb8-161"><a href="#cb8-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-164"><a href="#cb8-164" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-165"><a href="#cb8-165" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb8-166"><a href="#cb8-166" aria-hidden="true" tabindex="-1"></a><span class="co"># Bar chart of successes vs failures (example)</span></span>
-<span id="cb8-167"><a href="#cb8-167" aria-hidden="true" tabindex="-1"></a>counts <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">Success =</span> x_obs, <span class="at">Failure =</span> n <span class="sc">-</span> x_obs)</span>
-<span id="cb8-168"><a href="#cb8-168" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(counts, <span class="at">main =</span> <span class="st">"My sample"</span>, <span class="at">ylab =</span> <span class="st">"Count"</span>)</span>
-<span id="cb8-169"><a href="#cb8-169" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-156"><a href="#cb8-156" aria-hidden="true" tabindex="-1"></a><span class="fu">### Descriptive chart for your data</span></span>
+<span id="cb8-157"><a href="#cb8-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-160"><a href="#cb8-160" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-161"><a href="#cb8-161" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb8-162"><a href="#cb8-162" aria-hidden="true" tabindex="-1"></a><span class="co"># Bar chart of successes vs failures (example)</span></span>
+<span id="cb8-163"><a href="#cb8-163" aria-hidden="true" tabindex="-1"></a>counts <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">Success =</span> x_obs, <span class="at">Failure =</span> n <span class="sc">-</span> x_obs)</span>
+<span id="cb8-164"><a href="#cb8-164" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(counts, <span class="at">main =</span> <span class="st">"My sample"</span>, <span class="at">ylab =</span> <span class="st">"Count"</span>)</span>
+<span id="cb8-165"><a href="#cb8-165" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-166"><a href="#cb8-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-167"><a href="#cb8-167" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb8-168"><a href="#cb8-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-169"><a href="#cb8-169" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 1 — Quick function index {#r-index-m1}</span></span>
 <span id="cb8-170"><a href="#cb8-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-171"><a href="#cb8-171" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb8-172"><a href="#cb8-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-173"><a href="#cb8-173" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 1 — Quick function index {#r-index-m1}</span></span>
-<span id="cb8-174"><a href="#cb8-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-175"><a href="#cb8-175" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Function <span class="pp">|</span> Role <span class="pp">|</span></span>
-<span id="cb8-176"><a href="#cb8-176" aria-hidden="true" tabindex="-1"></a><span class="pp">|----------|------|</span></span>
-<span id="cb8-177"><a href="#cb8-177" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`&lt;-`</span> or <span class="in">`=`</span> <span class="pp">|</span> assign a value to a name (use <span class="in">`&lt;-`</span> in course code; <span class="in">`==`</span> compares) <span class="pp">|</span></span>
-<span id="cb8-178"><a href="#cb8-178" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`c()`</span> <span class="pp">|</span> combine into a vector <span class="pp">|</span></span>
-<span id="cb8-179"><a href="#cb8-179" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`class()`</span> <span class="pp">|</span> data type <span class="pp">|</span></span>
-<span id="cb8-180"><a href="#cb8-180" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`length()`</span>, <span class="in">`dim()`</span> <span class="pp">|</span> size of vector / matrix <span class="pp">|</span></span>
-<span id="cb8-181"><a href="#cb8-181" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`matrix()`</span> <span class="pp">|</span> 2D numeric table <span class="pp">|</span></span>
-<span id="cb8-182"><a href="#cb8-182" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`sum()`</span>, <span class="in">`mean()`</span> <span class="pp">|</span> count TRUE; proportion TRUE <span class="pp">|</span></span>
-<span id="cb8-183"><a href="#cb8-183" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`sample()`</span> <span class="pp">|</span> random draw; use <span class="in">`replace =`</span>, <span class="in">`prob =`</span> <span class="pp">|</span></span>
-<span id="cb8-184"><a href="#cb8-184" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`rep()`</span> <span class="pp">|</span> repeat values to build a pool <span class="pp">|</span></span>
-<span id="cb8-185"><a href="#cb8-185" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`set.seed()`</span> <span class="pp">|</span> reproducible randomness <span class="pp">|</span></span>
-<span id="cb8-186"><a href="#cb8-186" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`for`</span> <span class="pp">|</span> repeat simulation <span class="pp">|</span></span>
-<span id="cb8-187"><a href="#cb8-187" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`if`</span> <span class="pp">|</span> branch on condition <span class="pp">|</span></span>
-<span id="cb8-188"><a href="#cb8-188" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`which()`</span> <span class="pp">|</span> indices where TRUE <span class="pp">|</span></span>
-<span id="cb8-189"><a href="#cb8-189" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`%in%`</span> <span class="pp">|</span> element in set? <span class="pp">|</span></span>
-<span id="cb8-190"><a href="#cb8-190" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`&amp;`</span>, <span class="in">`\|`</span> <span class="pp">|</span> and / or (element-wise) <span class="pp">|</span></span>
-<span id="cb8-191"><a href="#cb8-191" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`choose()`</span> <span class="pp">|</span> combinations <span class="pp">|</span></span>
-<span id="cb8-192"><a href="#cb8-192" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`dbinom()`</span>, <span class="in">`pbinom()`</span>, <span class="in">`rbinom()`</span> <span class="pp">|</span> binomial pmf, cdf, simulate <span class="pp">|</span></span>
-<span id="cb8-193"><a href="#cb8-193" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`ggplot`</span>, <span class="in">`aes`</span>, <span class="in">`geom_col`</span>, <span class="in">`geom_vline`</span> <span class="pp">|</span> null distribution plot <span class="pp">|</span></span>
-<span id="cb8-194"><a href="#cb8-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-195"><a href="#cb8-195" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb8-196"><a href="#cb8-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-197"><a href="#cb8-197" aria-hidden="true" tabindex="-1"></a><span class="fu">## Modules 3–5 — Analysis pipeline {#r-pipeline}</span></span>
-<span id="cb8-198"><a href="#cb8-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-199"><a href="#cb8-199" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Code idea <span class="pp">|</span> Quick check <span class="pp">|</span></span>
-<span id="cb8-200"><a href="#cb8-200" aria-hidden="true" tabindex="-1"></a><span class="pp">|------------------|-------------------------|-----------------------------|</span></span>
-<span id="cb8-201"><a href="#cb8-201" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 1 <span class="pp">|</span> <span class="in">`library(tidyverse)`</span> <span class="pp">|</span> Packages load without errors <span class="pp">|</span></span>
-<span id="cb8-202"><a href="#cb8-202" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 2 <span class="pp">|</span> <span class="in">`read_csv(...); glimpse(dat)`</span> <span class="pp">|</span> Column **names** and **types** match **Part 1** <span class="pp">|</span></span>
-<span id="cb8-203"><a href="#cb8-203" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 3 <span class="pp">|</span> <span class="in">`mutate(... factor(..., levels = ...))`</span> <span class="pp">|</span> **Levels** match your two groups / outcome categories <span class="pp">|</span></span>
-<span id="cb8-204"><a href="#cb8-204" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 4 <span class="pp">|</span> <span class="in">`group_by`</span> + <span class="in">`summarise`</span> and/or <span class="in">`count`</span> <span class="pp">|</span> **Means/SDs** if numerical; **counts** if categorical <span class="pp">|</span></span>
-<span id="cb8-205"><a href="#cb8-205" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 5 <span class="pp">|</span> **`ggplot`** | **Boxplot/histogram** for numerical by group; **bar chart** for categorical <span class="pp">|</span></span>
-<span id="cb8-206"><a href="#cb8-206" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 6 <span class="pp">|</span> **Test + CI** | **`t.test(..., var.equal = FALSE)`** or **`prop.test` / `chisq.test`** <span class="pp">|</span></span>
-<span id="cb8-207"><a href="#cb8-207" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 7 <span class="pp">|</span> Short **interpretation** | *p*-value addresses **chance** only <span class="pp">|</span></span>
-<span id="cb8-208"><a href="#cb8-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-209"><a href="#cb8-209" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb8-210"><a href="#cb8-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-211"><a href="#cb8-211" aria-hidden="true" tabindex="-1"></a><span class="fu">## Setup {#r-setup}</span></span>
-<span id="cb8-212"><a href="#cb8-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-215"><a href="#cb8-215" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-216"><a href="#cb8-216" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb8-217"><a href="#cb8-217" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"tidyverse"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
-<span id="cb8-218"><a href="#cb8-218" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>, <span class="at">repos =</span> <span class="st">"https://cloud.r-project.org"</span>)</span>
-<span id="cb8-219"><a href="#cb8-219" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb8-220"><a href="#cb8-220" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb8-221"><a href="#cb8-221" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-222"><a href="#cb8-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-223"><a href="#cb8-223" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb8-224"><a href="#cb8-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-225"><a href="#cb8-225" aria-hidden="true" tabindex="-1"></a><span class="fu">## Import and inspect {#r-import}</span></span>
+<span id="cb8-171"><a href="#cb8-171" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Function <span class="pp">|</span> Role <span class="pp">|</span></span>
+<span id="cb8-172"><a href="#cb8-172" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------------------------------------------|---------------------------|</span></span>
+<span id="cb8-173"><a href="#cb8-173" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`&lt;-`</span> or <span class="in">`=`</span> <span class="pp">|</span> assign a value to a name (use <span class="in">`&lt;-`</span> in course code; <span class="in">`==`</span> compares) <span class="pp">|</span></span>
+<span id="cb8-174"><a href="#cb8-174" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`c()`</span> <span class="pp">|</span> combine into a vector <span class="pp">|</span></span>
+<span id="cb8-175"><a href="#cb8-175" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`class()`</span> <span class="pp">|</span> data type <span class="pp">|</span></span>
+<span id="cb8-176"><a href="#cb8-176" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`length()`</span>, <span class="in">`dim()`</span> <span class="pp">|</span> size of vector / matrix <span class="pp">|</span></span>
+<span id="cb8-177"><a href="#cb8-177" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`matrix()`</span> <span class="pp">|</span> 2D numeric table <span class="pp">|</span></span>
+<span id="cb8-178"><a href="#cb8-178" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`sum()`</span>, <span class="in">`mean()`</span> <span class="pp">|</span> count TRUE; proportion TRUE <span class="pp">|</span></span>
+<span id="cb8-179"><a href="#cb8-179" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`sample()`</span> <span class="pp">|</span> random draw; use <span class="in">`replace =`</span>, <span class="in">`prob =`</span> <span class="pp">|</span></span>
+<span id="cb8-180"><a href="#cb8-180" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`rep()`</span> <span class="pp">|</span> repeat values to build a pool <span class="pp">|</span></span>
+<span id="cb8-181"><a href="#cb8-181" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`set.seed()`</span> <span class="pp">|</span> reproducible randomness <span class="pp">|</span></span>
+<span id="cb8-182"><a href="#cb8-182" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`for`</span> <span class="pp">|</span> repeat simulation <span class="pp">|</span></span>
+<span id="cb8-183"><a href="#cb8-183" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`if`</span> <span class="pp">|</span> branch on condition <span class="pp">|</span></span>
+<span id="cb8-184"><a href="#cb8-184" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`which()`</span> <span class="pp">|</span> indices where TRUE <span class="pp">|</span></span>
+<span id="cb8-185"><a href="#cb8-185" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`%in%`</span> <span class="pp">|</span> element in set? <span class="pp">|</span></span>
+<span id="cb8-186"><a href="#cb8-186" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`&amp;`</span>, <span class="in">`\|`</span> <span class="pp">|</span> and / or (element-wise) <span class="pp">|</span></span>
+<span id="cb8-187"><a href="#cb8-187" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`choose()`</span> <span class="pp">|</span> combinations <span class="pp">|</span></span>
+<span id="cb8-188"><a href="#cb8-188" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`dbinom()`</span>, <span class="in">`pbinom()`</span>, <span class="in">`rbinom()`</span> <span class="pp">|</span> binomial pmf, cdf, simulate <span class="pp">|</span></span>
+<span id="cb8-189"><a href="#cb8-189" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`ggplot`</span>, <span class="in">`aes`</span>, <span class="in">`geom_col`</span>, <span class="in">`geom_vline`</span> <span class="pp">|</span> null distribution plot <span class="pp">|</span></span>
+<span id="cb8-190"><a href="#cb8-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-191"><a href="#cb8-191" aria-hidden="true" tabindex="-1"></a><span class="fu">## Analysis pipeline {#r-pipeline}</span></span>
+<span id="cb8-192"><a href="#cb8-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-193"><a href="#cb8-193" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Code idea <span class="pp">|</span> Quick check <span class="pp">|</span></span>
+<span id="cb8-194"><a href="#cb8-194" aria-hidden="true" tabindex="-1"></a><span class="pp">|------------------|-------------------------|-----------------------------|</span></span>
+<span id="cb8-195"><a href="#cb8-195" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 1 <span class="pp">|</span> <span class="in">`library(tidyverse)`</span> <span class="pp">|</span> Packages load without errors <span class="pp">|</span></span>
+<span id="cb8-196"><a href="#cb8-196" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 2 <span class="pp">|</span> <span class="in">`read_csv(...); glimpse(dat)`</span> <span class="pp">|</span> Column names and types match Part 1 <span class="pp">|</span></span>
+<span id="cb8-197"><a href="#cb8-197" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 3 <span class="pp">|</span> <span class="in">`mutate(... factor(..., levels = ...))`</span> <span class="pp">|</span> Levels match your two groups / outcome categories <span class="pp">|</span></span>
+<span id="cb8-198"><a href="#cb8-198" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 4 <span class="pp">|</span> <span class="in">`group_by`</span> + <span class="in">`summarise`</span> and/or <span class="in">`count`</span> <span class="pp">|</span> Means/SDs if numerical; counts if categorical <span class="pp">|</span></span>
+<span id="cb8-199"><a href="#cb8-199" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 5 <span class="pp">|</span> **`ggplot`** <span class="pp">|</span> Boxplot/histogram for numerical by group; bar chart for categorical <span class="pp">|</span></span>
+<span id="cb8-200"><a href="#cb8-200" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 6 <span class="pp">|</span> **Test + CI** <span class="pp">|</span> <span class="in">`t.test(..., var.equal = FALSE)`</span> or <span class="in">`prop.test`</span> / <span class="in">`chisq.test`</span> <span class="pp">|</span></span>
+<span id="cb8-201"><a href="#cb8-201" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 7 <span class="pp">|</span> Short interpretation <span class="pp">|</span> *p*-value addresses chance only <span class="pp">|</span></span>
+<span id="cb8-202"><a href="#cb8-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-203"><a href="#cb8-203" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb8-204"><a href="#cb8-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-205"><a href="#cb8-205" aria-hidden="true" tabindex="-1"></a><span class="fu">## Setup {#r-setup}</span></span>
+<span id="cb8-206"><a href="#cb8-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-209"><a href="#cb8-209" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-210"><a href="#cb8-210" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb8-211"><a href="#cb8-211" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"tidyverse"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb8-212"><a href="#cb8-212" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>, <span class="at">repos =</span> <span class="st">"https://cloud.r-project.org"</span>)</span>
+<span id="cb8-213"><a href="#cb8-213" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-214"><a href="#cb8-214" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb8-215"><a href="#cb8-215" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-216"><a href="#cb8-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-217"><a href="#cb8-217" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb8-218"><a href="#cb8-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-219"><a href="#cb8-219" aria-hidden="true" tabindex="-1"></a><span class="fu">## Import and inspect {#r-import}</span></span>
+<span id="cb8-220"><a href="#cb8-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-221"><a href="#cb8-221" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Task           <span class="pp">|</span> Code pattern                                          <span class="pp">|</span></span>
+<span id="cb8-222"><a href="#cb8-222" aria-hidden="true" tabindex="-1"></a><span class="pp">|----------------|-------------------------------------------------------|</span></span>
+<span id="cb8-223"><a href="#cb8-223" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Load CSV       <span class="pp">|</span> <span class="in">`dat &lt;- read_csv("file.csv", show_col_types = FALSE)`</span> <span class="pp">|</span></span>
+<span id="cb8-224"><a href="#cb8-224" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Peek structure <span class="pp">|</span> <span class="in">`glimpse(dat)`</span>                                        <span class="pp">|</span></span>
+<span id="cb8-225"><a href="#cb8-225" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> First rows     <span class="pp">|</span> <span class="in">`head(dat, 10)`</span>                                       <span class="pp">|</span></span>
 <span id="cb8-226"><a href="#cb8-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-227"><a href="#cb8-227" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Task <span class="pp">|</span> Code pattern <span class="pp">|</span></span>
-<span id="cb8-228"><a href="#cb8-228" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|--------------|</span></span>
-<span id="cb8-229"><a href="#cb8-229" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Load CSV <span class="pp">|</span> <span class="in">`dat &lt;- read_csv("file.csv", show_col_types = FALSE)`</span> <span class="pp">|</span></span>
-<span id="cb8-230"><a href="#cb8-230" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Peek structure <span class="pp">|</span> <span class="in">`glimpse(dat)`</span> <span class="pp">|</span></span>
-<span id="cb8-231"><a href="#cb8-231" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> First rows <span class="pp">|</span> <span class="in">`head(dat, 10)`</span> <span class="pp">|</span></span>
-<span id="cb8-232"><a href="#cb8-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-233"><a href="#cb8-233" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb8-234"><a href="#cb8-234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-235"><a href="#cb8-235" aria-hidden="true" tabindex="-1"></a><span class="fu">## Categorical variables (factors) {#r-factors}</span></span>
-<span id="cb8-236"><a href="#cb8-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-237"><a href="#cb8-237" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Task <span class="pp">|</span> Code pattern <span class="pp">|</span></span>
-<span id="cb8-238"><a href="#cb8-238" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|--------------|</span></span>
-<span id="cb8-239"><a href="#cb8-239" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Set levels / order <span class="pp">|</span> <span class="in">`dat &lt;- dat |&gt; mutate(group = factor(group, levels = c("A", "B")))`</span> <span class="pp">|</span></span>
-<span id="cb8-240"><a href="#cb8-240" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Check levels <span class="pp">|</span> <span class="in">`levels(dat$group)`</span> <span class="pp">|</span></span>
-<span id="cb8-241"><a href="#cb8-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-242"><a href="#cb8-242" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb8-243"><a href="#cb8-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-244"><a href="#cb8-244" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summaries {#r-summaries}</span></span>
-<span id="cb8-245"><a href="#cb8-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-246"><a href="#cb8-246" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Setting <span class="pp">|</span> Code pattern <span class="pp">|</span></span>
-<span id="cb8-247"><a href="#cb8-247" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------------------------|---------------------------------------------|</span></span>
-<span id="cb8-248"><a href="#cb8-248" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> One numerical variable <span class="pp">|</span> <span class="in">`dat |&gt; summarize(mean_y = mean(y), sd_y = sd(y), n_y = n())`</span> <span class="pp">|</span></span>
-<span id="cb8-249"><a href="#cb8-249" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Numerical **by two groups** <span class="pp">|</span> <span class="in">`dat |&gt; group_by(group) |&gt; summarize(n = n(), mean_y = mean(y), sd_y = sd(y))`</span> <span class="pp">|</span></span>
-<span id="cb8-250"><a href="#cb8-250" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Counts for one categorical <span class="pp">|</span> <span class="in">`dat |&gt; count(category) |&gt; mutate(prop = n / sum(n))`</span> <span class="pp">|</span></span>
-<span id="cb8-251"><a href="#cb8-251" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **2 × 2** counts <span class="pp">|</span> <span class="in">`dat |&gt; count(group, outcome)`</span> then <span class="in">`pivot_wider`</span> <span class="pp">|</span></span>
-<span id="cb8-252"><a href="#cb8-252" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-253"><a href="#cb8-253" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb8-254"><a href="#cb8-254" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-255"><a href="#cb8-255" aria-hidden="true" tabindex="-1"></a><span class="fu">## Plots (ggplot2) {#r-plots}</span></span>
-<span id="cb8-256"><a href="#cb8-256" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-257"><a href="#cb8-257" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Setting <span class="pp">|</span> Pattern <span class="pp">|</span></span>
-<span id="cb8-258"><a href="#cb8-258" aria-hidden="true" tabindex="-1"></a><span class="pp">|-------------------------|-----------------------------------------------|</span></span>
-<span id="cb8-259"><a href="#cb8-259" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Numerical** response, **two groups** <span class="pp">|</span> <span class="in">`ggplot(dat, aes(x = group, y = y)) + geom_boxplot()`</span> <span class="pp">|</span></span>
-<span id="cb8-260"><a href="#cb8-260" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Two categorical** <span class="pp">|</span> <span class="in">`dat |&gt; count(group, outcome) |&gt; ggplot(aes(x = group, y = n, fill = outcome)) + geom_col()`</span> <span class="pp">|</span></span>
-<span id="cb8-261"><a href="#cb8-261" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Two numerical** <span class="pp">|</span> <span class="in">`ggplot(dat, aes(x = x1, y = x2)) + geom_point()`</span> <span class="pp">|</span></span>
-<span id="cb8-262"><a href="#cb8-262" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Subclassification** <span class="pp">|</span> Add <span class="in">`facet_wrap(~ confounder)`</span> <span class="pp">|</span></span>
+<span id="cb8-227"><a href="#cb8-227" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb8-228"><a href="#cb8-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-229"><a href="#cb8-229" aria-hidden="true" tabindex="-1"></a><span class="fu">## Categorical variables (factors) {#r-factors}</span></span>
+<span id="cb8-230"><a href="#cb8-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-231"><a href="#cb8-231" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Task <span class="pp">|</span> Code pattern <span class="pp">|</span></span>
+<span id="cb8-232"><a href="#cb8-232" aria-hidden="true" tabindex="-1"></a><span class="pp">|----------------------|--------------------------------------------------|</span></span>
+<span id="cb8-233"><a href="#cb8-233" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Set levels / order <span class="pp">|</span> <span class="in">`dat &lt;- dat |&gt; mutate(group = factor(group, levels = c("A", "B")))`</span> <span class="pp">|</span></span>
+<span id="cb8-234"><a href="#cb8-234" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Check levels <span class="pp">|</span> <span class="in">`levels(dat$group)`</span> <span class="pp">|</span></span>
+<span id="cb8-235"><a href="#cb8-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-236"><a href="#cb8-236" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb8-237"><a href="#cb8-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-238"><a href="#cb8-238" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summaries {#r-summaries}</span></span>
+<span id="cb8-239"><a href="#cb8-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-240"><a href="#cb8-240" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Setting <span class="pp">|</span> Code pattern <span class="pp">|</span></span>
+<span id="cb8-241"><a href="#cb8-241" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------------------------|---------------------------------------------|</span></span>
+<span id="cb8-242"><a href="#cb8-242" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> One numerical variable <span class="pp">|</span> <span class="in">`dat |&gt; summarize(mean_y = mean(y), sd_y = sd(y), n_y = n())`</span> <span class="pp">|</span></span>
+<span id="cb8-243"><a href="#cb8-243" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Numerical **by two groups** <span class="pp">|</span> <span class="in">`dat |&gt; group_by(group) |&gt; summarize(n = n(), mean_y = mean(y), sd_y = sd(y))`</span> <span class="pp">|</span></span>
+<span id="cb8-244"><a href="#cb8-244" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Counts for one categorical <span class="pp">|</span> <span class="in">`dat |&gt; count(category) |&gt; mutate(prop = n / sum(n))`</span> <span class="pp">|</span></span>
+<span id="cb8-245"><a href="#cb8-245" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **2 × 2** counts <span class="pp">|</span> <span class="in">`dat |&gt; count(group, outcome)`</span> then <span class="in">`pivot_wider`</span> <span class="pp">|</span></span>
+<span id="cb8-246"><a href="#cb8-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-247"><a href="#cb8-247" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb8-248"><a href="#cb8-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-249"><a href="#cb8-249" aria-hidden="true" tabindex="-1"></a><span class="fu">## Plots (ggplot2) {#r-plots}</span></span>
+<span id="cb8-250"><a href="#cb8-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-251"><a href="#cb8-251" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Setting <span class="pp">|</span> Pattern <span class="pp">|</span></span>
+<span id="cb8-252"><a href="#cb8-252" aria-hidden="true" tabindex="-1"></a><span class="pp">|-------------------------|----------------------------------------------|</span></span>
+<span id="cb8-253"><a href="#cb8-253" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Numerical** response, **two groups** <span class="pp">|</span> <span class="in">`ggplot(dat, aes(x = group, y = y)) + geom_boxplot()`</span> <span class="pp">|</span></span>
+<span id="cb8-254"><a href="#cb8-254" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Two categorical** <span class="pp">|</span> <span class="in">`dat |&gt; count(group, outcome) |&gt; ggplot(aes(x = group, y = n, fill = outcome)) + geom_col()`</span> <span class="pp">|</span></span>
+<span id="cb8-255"><a href="#cb8-255" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Two numerical** <span class="pp">|</span> <span class="in">`ggplot(dat, aes(x = x1, y = x2)) + geom_point()`</span> <span class="pp">|</span></span>
+<span id="cb8-256"><a href="#cb8-256" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Subclassification** <span class="pp">|</span> Add <span class="in">`facet_wrap(~ confounder)`</span> <span class="pp">|</span></span>
+<span id="cb8-257"><a href="#cb8-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-258"><a href="#cb8-258" aria-hidden="true" tabindex="-1"></a>Always add **`labs(title = ..., x = ..., y = ...)`** with **units** where relevant.</span>
+<span id="cb8-259"><a href="#cb8-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-260"><a href="#cb8-260" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb8-261"><a href="#cb8-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-262"><a href="#cb8-262" aria-hidden="true" tabindex="-1"></a><span class="fu">## Two-sample tests and confidence intervals {#r-tests}</span></span>
 <span id="cb8-263"><a href="#cb8-263" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-264"><a href="#cb8-264" aria-hidden="true" tabindex="-1"></a>Always add **`labs(title = ..., x = ..., y = ...)`** with **units** where relevant.</span>
-<span id="cb8-265"><a href="#cb8-265" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-266"><a href="#cb8-266" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb8-267"><a href="#cb8-267" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-268"><a href="#cb8-268" aria-hidden="true" tabindex="-1"></a><span class="fu">## Two-sample tests and confidence intervals {#r-tests}</span></span>
+<span id="cb8-264"><a href="#cb8-264" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Response type <span class="pp">|</span> R command <span class="pp">|</span> Notes <span class="pp">|</span></span>
+<span id="cb8-265"><a href="#cb8-265" aria-hidden="true" tabindex="-1"></a><span class="pp">|-------------------------------|-----------------------|------------------|</span></span>
+<span id="cb8-266"><a href="#cb8-266" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Numerical**, 2 groups <span class="pp">|</span> <span class="in">`t.test(y ~ group, data = dat, var.equal = FALSE)`</span> <span class="pp">|</span> Welch *t*-test; includes 95% CI <span class="pp">|</span></span>
+<span id="cb8-267"><a href="#cb8-267" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Binary**, 2 groups <span class="pp">|</span> <span class="in">`prop.test(x = c(x1, x2), n = c(n1, n2), correct = FALSE)`</span> <span class="pp">|</span> Compares two proportions <span class="pp">|</span></span>
+<span id="cb8-268"><a href="#cb8-268" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Two categorical variables <span class="pp">|</span> <span class="in">`chisq.test(tab)`</span> <span class="pp">|</span> Check <span class="in">`chisq.test(tab)$expected`</span> for ≥ 5 rule <span class="pp">|</span></span>
 <span id="cb8-269"><a href="#cb8-269" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-270"><a href="#cb8-270" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Response type <span class="pp">|</span> R command <span class="pp">|</span> Notes <span class="pp">|</span></span>
-<span id="cb8-271"><a href="#cb8-271" aria-hidden="true" tabindex="-1"></a><span class="pp">|-------------------------------|-----------------------|------------------|</span></span>
-<span id="cb8-272"><a href="#cb8-272" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Numerical**, 2 groups | `t.test(y ~ group, data = dat, var.equal = FALSE)` | Welch *t*-test; includes **95% CI** <span class="pp">|</span></span>
-<span id="cb8-273"><a href="#cb8-273" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Binary**, 2 groups | `prop.test(x = c(x1, x2), n = c(n1, n2), correct = FALSE)` | Compares two **proportions** <span class="pp">|</span></span>
-<span id="cb8-274"><a href="#cb8-274" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Two categorical variables <span class="pp">|</span> <span class="in">`chisq.test(tab)`</span> <span class="pp">|</span> Check **`chisq.test(tab)$expected`** for **≥ 5** rule <span class="pp">|</span></span>
-<span id="cb8-275"><a href="#cb8-275" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-276"><a href="#cb8-276" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb8-277"><a href="#cb8-277" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-278"><a href="#cb8-278" aria-hidden="true" tabindex="-1"></a><span class="fu">## Simulating small datasets {#r-sim}</span></span>
+<span id="cb8-270"><a href="#cb8-270" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb8-271"><a href="#cb8-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-272"><a href="#cb8-272" aria-hidden="true" tabindex="-1"></a><span class="fu">## Simulating small datasets {#r-sim}</span></span>
+<span id="cb8-273"><a href="#cb8-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-274"><a href="#cb8-274" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Task <span class="pp">|</span> Example pattern <span class="pp">|</span></span>
+<span id="cb8-275"><a href="#cb8-275" aria-hidden="true" tabindex="-1"></a><span class="pp">|----------------------|--------------------------------------------------|</span></span>
+<span id="cb8-276"><a href="#cb8-276" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Build tibble <span class="pp">|</span> <span class="in">`tibble(group = rep(c("A", "B"), each = 30), y = c(rnorm(30, 10, 2), rnorm(30, 12, 2)))`</span> <span class="pp">|</span></span>
+<span id="cb8-277"><a href="#cb8-277" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Binary outcome <span class="pp">|</span> <span class="in">`rbinom(n, 1, prob = ...)`</span> inside <span class="in">`mutate`</span> or <span class="in">`c(...)`</span> <span class="pp">|</span></span>
+<span id="cb8-278"><a href="#cb8-278" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Save <span class="pp">|</span> <span class="in">`write_csv(dat, "project4_data.csv")`</span> <span class="pp">|</span></span>
 <span id="cb8-279"><a href="#cb8-279" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-280"><a href="#cb8-280" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Task <span class="pp">|</span> Example pattern <span class="pp">|</span></span>
-<span id="cb8-281"><a href="#cb8-281" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------------------|---------------------------------------------------|</span></span>
-<span id="cb8-282"><a href="#cb8-282" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Build tibble <span class="pp">|</span> <span class="in">`tibble(group = rep(c("A", "B"), each = 30), y = c(rnorm(30, 10, 2), rnorm(30, 12, 2)))`</span> <span class="pp">|</span></span>
-<span id="cb8-283"><a href="#cb8-283" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Binary outcome <span class="pp">|</span> <span class="in">`rbinom(n, 1, prob = ...)`</span> inside <span class="in">`mutate`</span> or <span class="in">`c(...)`</span> <span class="pp">|</span></span>
-<span id="cb8-284"><a href="#cb8-284" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Save <span class="pp">|</span> <span class="in">`write_csv(dat, "project4_data.csv")`</span> <span class="pp">|</span></span>
-<span id="cb8-285"><a href="#cb8-285" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-286"><a href="#cb8-286" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb8-287"><a href="#cb8-287" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-288"><a href="#cb8-288" aria-hidden="true" tabindex="-1"></a><span class="fu">## Pre-submit checklist (Modules 3–5 projects) {#r-checklist}</span></span>
-<span id="cb8-289"><a href="#cb8-289" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-290"><a href="#cb8-290" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**`read_csv`** path and **`glimpse`** — Do column names match your **Part 1** definitions?</span>
-<span id="cb8-291"><a href="#cb8-291" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**`factor`** — Are **group** and **outcome** coded with the **correct levels**?</span>
-<span id="cb8-292"><a href="#cb8-292" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**`group_by` + `summarize`** — Means/SDs for **numerical**; counts/proportions for **categorical**?</span>
-<span id="cb8-293"><a href="#cb8-293" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**`ggplot`** — Correct **geom** (boxplot vs bar vs histogram)?</span>
-<span id="cb8-294"><a href="#cb8-294" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Test** — <span class="in">`t.test`</span> for means vs <span class="in">`prop.test`</span> / <span class="in">`chisq.test`</span> for proportions?</span>
-<span id="cb8-295"><a href="#cb8-295" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**Conditions** — Random sample or assignment? Sample size large enough?</span>
+<span id="cb8-280"><a href="#cb8-280" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
