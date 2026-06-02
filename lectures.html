@@ -149,7 +149,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#readings" id="toc-readings" class="nav-link active" data-scroll-target="#readings">Readings</a>
+  <li><a href="#lectures" id="toc-lectures" class="nav-link active" data-scroll-target="#lectures">Lectures</a>
   <ul class="collapse">
   <li><a href="#module-0--start-here" id="toc-module-0--start-here" class="nav-link" data-scroll-target="#module-0--start-here">Module 0 — Start here</a></li>
   <li><a href="#module-1--testing-a-claim" id="toc-module-1--testing-a-claim" class="nav-link" data-scroll-target="#module-1--testing-a-claim">Module 1 — Testing a Claim</a>
@@ -182,6 +182,7 @@ window.Quarto = {
   <li><a href="#read-1-correlation-and-the-least-squares-line" id="toc-read-1-correlation-and-the-least-squares-line" class="nav-link" data-scroll-target="#read-1-correlation-and-the-least-squares-line">Read 1 — Correlation and the least-squares line</a></li>
   <li><a href="#read-2-inference-in-simple-linear-regression" id="toc-read-2-inference-in-simple-linear-regression" class="nav-link" data-scroll-target="#read-2-inference-in-simple-linear-regression">Read 2 — Inference in simple linear regression</a></li>
   </ul></li>
+  <li><a href="#not-on-the-async-course-path" id="toc-not-on-the-async-course-path" class="nav-link" data-scroll-target="#not-on-the-async-course-path">Not on the async course path</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lectures.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
@@ -213,12 +214,15 @@ window.Quarto = {
 </header>
 
 
-<section id="readings" class="level1">
-<h1>Readings</h1>
-<p>Below each module is a list of learning objectives, e.g.&nbsp;what you should be able to do when you finish that module.</p>
+<section id="lectures" class="level1">
+<h1>Lectures</h1>
+<p>Below each module: <strong>materials</strong> and <strong>outcomes</strong> — what you should be able to do when you finish that module.</p>
+<p><strong>Summer async (2026):</strong> Materials are grouped by <strong>module</strong> (0–5 on the <a href="schedule">course path</a>). Each step is tagged <strong>essential</strong> or <strong>optional</strong> on that path.</p>
+<p><strong>Module 0–1 practice quizzes:</strong> <a href="quizzes/quiz-m0-start">Quiz 0 (Start Here)</a> · <a href="quizzes/quiz-m0-question-ideas">Quiz 0B (Question Ideas)</a> · <a href="quizzes/quiz-m1-def">Quiz A (Def &amp; Notation)</a> · <a href="quizzes/quiz-m1-concept">Quiz B (Concept Check)</a> · <a href="quizzes/quiz-m1-synthesis">Synthesis</a>. Later modules use their own quiz banks on Canvas.</p>
 <hr>
 <section id="module-0--start-here" class="level2">
 <h2 class="anchored" data-anchor-id="module-0--start-here">Module 0 — Start here</h2>
+<p>Complete before Module 1. See the <a href="schedule">course path</a> for the syllabus, reference sheets, and labs.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -304,7 +308,7 @@ window.Quarto = {
 </tr>
 <tr class="even">
 <td>R reference</td>
-<td><a href="r-reference">R quick reference</a> (Module 0–1)</td>
+<td><a href="r-reference">R quick reference</a> (Module 0–1 + Project 1)</td>
 </tr>
 <tr class="odd">
 <td>Milestone</td>
@@ -385,7 +389,7 @@ window.Quarto = {
 </tr>
 <tr class="even">
 <td>Milestone</td>
-<td><a href="projects/project-2">Project 2 milestone</a></td>
+<td><a href="projects/project-2">Project 2 milestone</a> <em>(Canvas checkpoint)</em></td>
 </tr>
 <tr class="odd">
 <td>Synthesis</td>
@@ -420,6 +424,7 @@ window.Quarto = {
 <li><strong>Carry out</strong> simple random sampling using a numbered list and random draws.</li>
 <li><strong>Classify</strong> sampling designs and discuss bias, generalizability, and how to improve the design.</li>
 </ul>
+<p><em>Optional enrichment (not required for Project 2):</em> <a href="lectures/lecture-17">Type I/II errors</a> · <a href="lectures/lecture-21">Rubber-band CI analogy</a></p>
 </section>
 <section id="read-2-z-scores-toolbox-and-one-numerical-variable" class="level3">
 <h3 class="anchored" data-anchor-id="read-2-z-scores-toolbox-and-one-numerical-variable">Read 2 — z-scores, toolbox, and one numerical variable</h3>
@@ -436,6 +441,7 @@ window.Quarto = {
 <li>State the <strong>one-sample <em>t</em>-statistic</strong> and use <strong><code>t.test()</code></strong> for a <strong>one-sample <em>t</em>-test</strong> and <strong>confidence interval</strong> for the <strong>population mean</strong>.</li>
 </ul>
 <p><em>Optional for Project 2:</em> one-sample <code>t.test()</code> for hypothesis testing (CI is the project focus).</p>
+<p>Legacy lecture pages remain linked from the <a href="#not-on-the-async-course-path">15-week index</a> for reference.</p>
 <hr>
 </section>
 </section>
@@ -482,7 +488,7 @@ window.Quarto = {
 </tr>
 <tr class="even">
 <td>Milestone</td>
-<td></td>
+<td>Canvas Module 3 <em>(dataset + four variables plan)</em></td>
 </tr>
 <tr class="odd">
 <td>Synthesis</td>
@@ -516,6 +522,7 @@ window.Quarto = {
 <li>Draw <strong>stacked bar charts</strong> for counts and <strong>100% stacked</strong> bars (<code>position = "fill"</code>) to show <strong>proportions within</strong> bars.</li>
 <li>Implement tables and plots with <strong><code>count()</code></strong>, <strong><code>group_by()</code></strong>, <strong><code>mutate()</code></strong>, and <strong><code>pivot_wider()</code></strong>.</li>
 </ul>
+<p>Legacy lecture pages remain linked from the <a href="#not-on-the-async-course-path">15-week index</a> for reference.</p>
 <hr>
 </section>
 </section>
@@ -562,7 +569,7 @@ window.Quarto = {
 </tr>
 <tr class="even">
 <td>Milestone</td>
-<td><a href="projects/project-4">Project 4 milestone</a></td>
+<td><a href="projects/project-4">Project 4 milestone</a> <em>(Canvas checkpoint)</em></td>
 </tr>
 <tr class="odd">
 <td>Synthesis</td>
@@ -595,6 +602,7 @@ window.Quarto = {
 <li>Interpret <strong>Welch two-sample <em>t</em>-test</strong> output (hypotheses, <em>p</em>-value, confidence interval) in context.</li>
 <li>Connect <strong>random assignment</strong> in an RCT to reduced risk of confounding for treatment–outcome comparisons.</li>
 </ul>
+<p>Legacy lecture pages remain linked from the <a href="#not-on-the-async-course-path">15-week index</a> for reference.</p>
 <hr>
 </section>
 </section>
@@ -645,7 +653,7 @@ window.Quarto = {
 </tr>
 <tr class="odd">
 <td>Milestone</td>
-<td></td>
+<td>Canvas Module 5 <em>(team, option, data plan)</em></td>
 </tr>
 <tr class="even">
 <td>Project</td>
@@ -666,6 +674,7 @@ window.Quarto = {
 <li>Define a <strong>residual</strong> as observed minus predicted (<span class="math inline">\(y - \hat{y}\)</span>) and explain what the least-squares criterion minimizes.</li>
 <li>Interpret <strong>MSE</strong> and <span class="math inline">\(R^2\)</span> on a test set as summaries of predictive performance on new data.</li>
 </ul>
+<p><em>Optional enrichment (not required for Project 5):</em> <a href="lectures/lecture-37">Logistic regression</a> — binary response with <code>glm()</code></p>
 </section>
 <section id="read-2-inference-in-simple-linear-regression" class="level3">
 <h3 class="anchored" data-anchor-id="read-2-inference-in-simple-linear-regression">Read 2 — Inference in simple linear regression</h3>
@@ -678,11 +687,91 @@ window.Quarto = {
 <li>Explain why <strong>prediction intervals</strong> are wider than confidence intervals for the mean response.</li>
 <li>Use <code>confint()</code> and <code>predict(..., interval = "prediction")</code> in R to extract these intervals.</li>
 </ul>
+<p>Legacy lecture pages remain linked from the <a href="#not-on-the-async-course-path">15-week index</a> for reference.</p>
+<hr>
+</section>
+</section>
+<section id="not-on-the-async-course-path" class="level2">
+<h2 class="anchored" data-anchor-id="not-on-the-async-course-path">Not on the async course path</h2>
+<p>These pages remain from the 15-week course for reference. They are not assigned on the <a href="schedule">course path</a>.</p>
+<p><a href="lectures/lecture-28">Lecture 28</a></p>
+<p><em>Inference for two-group comparisons — causal questions and study design</em></p>
+<ul>
+<li>Compare <strong>randomized controlled trials</strong> and <strong>observational</strong> designs when the goal is a causal claim about a treatment or exposure.</li>
+<li>Explain how participants end up in comparison groups in an RCT versus an observational study.</li>
+<li>State what a <em>p</em>-value does and does <strong>not</strong> address for a difference between two groups.</li>
+</ul>
+<p><a href="lectures/lecture-29">Lecture 29</a></p>
+<p><em>Confounding</em></p>
+<ul>
+<li>Define a <strong>confounder</strong> in words and recognize plausible confounders in a stated observational comparison.</li>
+<li>Explain how a confounder can create or distort an association between an explanatory variable and a response.</li>
+<li>Describe <strong>subclassification / stratification</strong> when a confounder is measured.</li>
+</ul>
+<p><a href="lectures/lecture-30">Lecture 30</a></p>
+<p><em>Study design, p-values, and two-group inference</em></p>
+<ul>
+<li>Use the <strong>Methods table</strong> to pick <strong><code>t.test()</code></strong> for two independent numerical groups or <strong><code>prop.test()</code></strong> / <strong><code>chisq.test()</code></strong> for binary comparisons, and name key conditions.</li>
+<li>Interpret <strong>Welch two-sample <em>t</em>-test</strong> output (hypotheses, <em>p</em>-value, confidence interval) in context.</li>
+<li>Connect <strong>random assignment</strong> in an RCT to reduced risk of confounding for treatment–outcome comparisons.</li>
+</ul>
+<p><a href="lectures/lecture-31">Lecture 31</a></p>
+<p><em>Matched pairs — differences, plots, paired t-test, and McNemar</em></p>
+<ul>
+<li>Identify a <strong>matched pairs</strong> design and compute <strong>within-pair differences</strong> (or use a paired test) when the same units contribute two measurements.</li>
+<li>Summarize paired numerical data with plots (e.g.&nbsp;boxplot of differences) and run a <strong>paired <em>t</em>-test</strong> (or one-sample test on differences).</li>
+<li>For <strong>two binary outcomes on the same units</strong>, build the right table and run <strong>McNemar’s test</strong> when appropriate.</li>
+</ul>
+<p><a href="lectures/lecture-32">Lecture 32</a></p>
+<p><em>One-way ANOVA — comparing means across more than two groups</em></p>
+<ul>
+<li>Recognize when the outcome is <strong>numerical</strong> and the explanatory factor has <strong>more than two levels</strong>, so a one-way <strong>ANOVA</strong> is the natural extension of a two-sample <em>t</em>-test.</li>
+<li>State the <strong>omnibus</strong> null hypothesis for equal population means across groups.</li>
+</ul>
+<p><a href="lectures/lecture-33">Lecture 33</a></p>
+<p><em>Chi-square tests — independence and goodness of fit</em></p>
+<ul>
+<li>Build <strong>contingency tables</strong> of counts for two categorical variables and use <strong><code>chisq.test()</code></strong> as appropriate.</li>
+<li>Check <strong>expected counts</strong> (and know when <strong><code>simulate.p.value = TRUE</code></strong> is needed).</li>
+<li>Relate chi-square tests to the <strong>“by chance”</strong> explanation for a table.</li>
+</ul>
+<p><a href="lectures/lecture-34">Lecture 34</a></p>
+<p><em>Work session — Project 4 (simulation, notebook, and writeup)</em></p>
+<ul>
+<li>Apply study-design ideas (RCT vs observational, confounding, DAG) to <strong>your</strong> assigned two-group question.</li>
+<li>Produce a <strong>reproducible</strong> simulated dataset (<code>set.seed</code>) and a notebook with <strong>descriptives</strong>, <strong>plots</strong>, and the <strong>correct test/CI</strong> from the Methods table.</li>
+</ul>
+<p><a href="lectures/lecture-35">Lecture 35</a></p>
+<p><em>Correlation and simple linear regression</em></p>
+<ul>
+<li>Interpret a <strong>correlation coefficient</strong> (strength and direction) for two numerical variables.</li>
+<li>Fit and interpret a <strong>simple linear regression</strong> line as a model for how the mean of <span class="math inline">\(Y\)</span> changes with <span class="math inline">\(x\)</span>.</li>
+<li>Use <strong>scatterplots</strong> and diagnostic thinking about <strong>linear</strong> vs <strong>curved</strong> form.</li>
+</ul>
+<p><a href="lectures/lecture-36">Lecture 36</a></p>
+<p><em>Linear regression inference — confidence and prediction intervals</em></p>
+<ul>
+<li>Interpret confidence intervals for the slope and for the mean response at a chosen value of <span class="math inline">\(x\)</span>.</li>
+<li>Interpret prediction intervals for an individual future response and explain why they are wider than mean-response intervals.</li>
+<li>Connect residual assumptions to validity of interval-based inference.</li>
+</ul>
+<p><a href="lectures/lecture-37">Lecture 37</a></p>
+<p><em>Logistic regression — modeling a binary outcome</em></p>
+<ul>
+<li>Recognize when the response is <strong>binary</strong> and a <strong>logistic</strong> (log-odds) model is appropriate instead of ordinary least squares regression.</li>
+<li>Interpret <strong>fitted probabilities</strong> or <strong>odds ratios</strong> from simple logistic output in context (at the level taught in this course).</li>
+</ul>
+<p><a href="lectures/lecture-38">Lecture 38</a></p>
+<p><em>Ethics and statistical reasoning review</em></p>
+<ul>
+<li>Use a truth-first lens to connect design, assumptions, missingness, and communication.</li>
+<li>Evaluate ethical pitfalls in generalization, causal language, reporting, and model validity.</li>
+<li>Practice responsible statistical wording and evidence-based conclusions.</li>
+</ul>
 
 
 <!-- -->
 
-</section>
 </section>
 </section>
 
@@ -1148,252 +1237,361 @@ window.Quarto = {
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "STAT 109: Introductory Biostatistics"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Readings</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Lectures</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>Below each module is a list of learning objectives, e.g. what you should be able to do when you finish that module.</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>Below each module: **materials** and **outcomes** — what you should be able to do when you finish that module.</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>**Summer async (2026):** Materials are grouped by **module** (0–5 on the [course path](schedule)). Each step is tagged **essential** or **optional** on that path.</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 0 — Start here {#module-0--start-here}</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>**Module 0–1 practice quizzes:** <span class="co">[</span><span class="ot">Quiz 0 (Start Here)</span><span class="co">](quizzes/quiz-m0-start)</span> · <span class="co">[</span><span class="ot">Quiz 0B (Question Ideas)</span><span class="co">](quizzes/quiz-m0-question-ideas)</span> · <span class="co">[</span><span class="ot">Quiz A (Def &amp; Notation)</span><span class="co">](quizzes/quiz-m1-def)</span> · <span class="co">[</span><span class="ot">Quiz B (Concept Check)</span><span class="co">](quizzes/quiz-m1-concept)</span> · <span class="co">[</span><span class="ot">Synthesis</span><span class="co">](quizzes/quiz-m1-synthesis)</span>. Later modules use their own quiz banks on Canvas.</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Material <span class="pp">|</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------------------------|---------------------------------------------|</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 0 Read 0</span><span class="co">](lectures/module-0-read-00)</span> — welcome, statistical process, three worlds, five projects, Colab &amp; R <span class="pp">|</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read <span class="pp">|</span> <span class="co">[</span><span class="ot">Syllabus</span><span class="co">](syllabus)</span> · <span class="co">[</span><span class="ot">Course path</span><span class="co">](schedule)</span> · <span class="co">[</span><span class="ot">Resources</span><span class="co">](resources)</span> <span class="pp">|</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz <span class="pp">|</span> <span class="co">[</span><span class="ot">Quiz 0 (Start Here)</span><span class="co">](quizzes/quiz-m0-start)</span> · <span class="co">[</span><span class="ot">Quiz 0B (Question Ideas)</span><span class="co">](quizzes/quiz-m0-question-ideas)</span> <span class="pp">|</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Reference sheets <span class="pp">|</span> <span class="co">[</span><span class="ot">Methods map</span><span class="co">](methods)</span> · <span class="co">[</span><span class="ot">R reference</span><span class="co">](r-reference)</span> <span class="pp">|</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Demo lab</span><span class="co">](labs/module-0-lab-demo)</span> · <span class="co">[</span><span class="ot">Exercise lab</span><span class="co">](labs/module-0-lab-exercise)</span> <span class="pp">|</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Canvas <span class="pp">|</span> Module 0 discussion (introduce yourself) <span class="pp">|</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>**After Module 0 you should be able to:**</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Navigate where readings, labs, and projects live vs what happens in Canvas.</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Open R in Google Colab, save a copy, and run notebook cells.</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use variables, vectors, logical TRUE/FALSE, and a simple simulation loop.</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 0 — Start here {#module-0--start-here}</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Complete before Module 1. See the <span class="co">[</span><span class="ot">course path</span><span class="co">](schedule)</span> for the syllabus, reference sheets, and labs.</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Material <span class="pp">|</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|----------|</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 0 Read 0</span><span class="co">](lectures/module-0-read-00)</span> — welcome, statistical process, three worlds, five projects, Colab &amp; R <span class="pp">|</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read <span class="pp">|</span> <span class="co">[</span><span class="ot">Syllabus</span><span class="co">](syllabus)</span> · <span class="co">[</span><span class="ot">Course path</span><span class="co">](schedule)</span> · <span class="co">[</span><span class="ot">Resources</span><span class="co">](resources)</span> <span class="pp">|</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz <span class="pp">|</span> <span class="co">[</span><span class="ot">Quiz 0 (Start Here)</span><span class="co">](quizzes/quiz-m0-start)</span> · <span class="co">[</span><span class="ot">Quiz 0B (Question Ideas)</span><span class="co">](quizzes/quiz-m0-question-ideas)</span> <span class="pp">|</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Reference sheets <span class="pp">|</span> <span class="co">[</span><span class="ot">Methods map</span><span class="co">](methods)</span> · <span class="co">[</span><span class="ot">R reference</span><span class="co">](r-reference)</span> <span class="pp">|</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Demo lab</span><span class="co">](labs/module-0-lab-demo)</span> · <span class="co">[</span><span class="ot">Exercise lab</span><span class="co">](labs/module-0-lab-exercise)</span> <span class="pp">|</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Canvas <span class="pp">|</span> Module 0 discussion (introduce yourself) <span class="pp">|</span></span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>**After Module 0 you should be able to:**</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 1 — Testing a Claim {#module-1--testing-a-claim}</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>*Is this observation surprising?*</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Navigate where readings, labs, and projects live vs what happens in Canvas.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Open R in Google Colab, save a copy, and run notebook cells.</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use variables, vectors, logical TRUE/FALSE, and a simple simulation loop.</span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">### Course path</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Material <span class="pp">|</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------------------------|---------------------------------------------|</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 1 Read 0</span><span class="co">](lectures/module-1-read-00)</span> — project preview &amp; sample tour <span class="pp">|</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 1 Read 1</span><span class="co">](lectures/module-1-read-01)</span> <span class="pp">|</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz A <span class="pp">|</span> <span class="co">[</span><span class="ot">Def &amp; Notation</span><span class="co">](quizzes/quiz-m1-def)</span> <span class="pp">|</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read more <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 1 Read 2</span><span class="co">](lectures/module-1-read-02)</span> <span class="pp">|</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz B <span class="pp">|</span> <span class="co">[</span><span class="ot">Concept Check</span><span class="co">](quizzes/quiz-m1-concept)</span> <span class="pp">|</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Demo lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 1 demo</span><span class="co">](labs/module-1-lab-demo)</span> · <span class="co">[</span><span class="ot">Conditional demo</span><span class="co">](labs/module-1-lab-demo-conditional)</span> <span class="pp">|</span></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Exercise lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 1 exercise lab</span><span class="co">](labs/module-1-lab-exercise)</span> <span class="pp">|</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> R reference <span class="pp">|</span> <span class="co">[</span><span class="ot">R quick reference</span><span class="co">](r-reference)</span> (Module 0–1) <span class="pp">|</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Milestone <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 1 milestone</span><span class="co">](projects/project-1-milestone)</span> · <span class="co">[</span><span class="ot">notebook</span><span class="co">](projects/project-1-milestone.ipynb)</span> <span class="pp">|</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Synthesis <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 1 synthesis</span><span class="co">](quizzes/quiz-m1-synthesis)</span> <span class="pp">|</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 1</span><span class="co">](projects/project-1)</span> <span class="pp">|</span></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read 1 — Probability through the binomial pmf</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>*Essential · after [Read 0](lectures/module-1-read-00)*</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Compute counts, proportions, and percentages; use $x$, $n$, $\hat{p}$, and $P(\text{event})$.</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define sample space, outcome, and event; use the equally likely rule.</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Apply addition, complement, conditional, and multiplication rules; check independence.</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use permutations and combinations; define binomial process and pmf.</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read 2 — Binomial test in practice</span></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>*Essential · after Read 1 and Quiz A*</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Translate a research question into $H_0$ and $H_a$; verify BRP conditions.</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Plot the null binomial distribution; mark observed $x$; compute and interpret a p-value.</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Carry out the full Project 1 workflow for one- and two-sided alternatives.</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 1 — Testing a Claim {#module-1--testing-a-claim}</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>*Is this observation surprising?*</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="fu">### Course path</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Material <span class="pp">|</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|----------|</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 1 Read 0</span><span class="co">](lectures/module-1-read-00)</span> — project preview &amp; sample tour <span class="pp">|</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 1 Read 1</span><span class="co">](lectures/module-1-read-01)</span> <span class="pp">|</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz A <span class="pp">|</span> <span class="co">[</span><span class="ot">Def &amp; Notation</span><span class="co">](quizzes/quiz-m1-def)</span> <span class="pp">|</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read more <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 1 Read 2</span><span class="co">](lectures/module-1-read-02)</span> <span class="pp">|</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz B <span class="pp">|</span> <span class="co">[</span><span class="ot">Concept Check</span><span class="co">](quizzes/quiz-m1-concept)</span> <span class="pp">|</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Demo lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 1 demo</span><span class="co">](labs/module-1-lab-demo)</span> · <span class="co">[</span><span class="ot">Conditional demo</span><span class="co">](labs/module-1-lab-demo-conditional)</span> <span class="pp">|</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Exercise lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 1 exercise lab</span><span class="co">](labs/module-1-lab-exercise)</span> <span class="pp">|</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> R reference <span class="pp">|</span> <span class="co">[</span><span class="ot">R quick reference</span><span class="co">](r-reference)</span> (Module 0–1 + Project 1) <span class="pp">|</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Milestone <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 1 milestone</span><span class="co">](projects/project-1-milestone)</span> · <span class="co">[</span><span class="ot">notebook</span><span class="co">](projects/project-1-milestone.ipynb)</span> <span class="pp">|</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Synthesis <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 1 synthesis</span><span class="co">](quizzes/quiz-m1-synthesis)</span> <span class="pp">|</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 1</span><span class="co">](projects/project-1)</span> <span class="pp">|</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read 1 — Probability through the binomial pmf</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>*Essential · after [Read 0](lectures/module-1-read-00)*</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Compute counts, proportions, and percentages; use $x$, $n$, $\hat{p}$, and $P(\text{event})$.</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define sample space, outcome, and event; use the equally likely rule.</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Apply addition, complement, conditional, and multiplication rules; check independence.</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use permutations and combinations; define binomial process and pmf.</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read 2 — Binomial test in practice</span></span>
 <span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>*Essential · after Read 1 and Quiz A*</span>
 <span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 2 — Estimating the Truth {#module-2--estimating-the-truth}</span></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>*Building high-quality estimates from samples.*</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Translate a research question into $H_0$ and $H_a$; verify BRP conditions.</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Plot the null binomial distribution; mark observed $x$; compute and interpret a p-value.</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Carry out the full Project 1 workflow for one- and two-sided alternatives.</span>
 <span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="fu">### Course path</span></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Material <span class="pp">|</span></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------------------------|---------------------------------------------|</span></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 2 Read 0</span><span class="co">](lectures/module-2-read-00)</span> — project preview &amp; sample tour <span class="pp">|</span></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 2 Read 1</span><span class="co">](lectures/module-2-read-01)</span> <span class="pp">|</span></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz A <span class="pp">|</span> <span class="co">[</span><span class="ot">Def &amp; Notation</span><span class="co">](quizzes/quiz-m2-def)</span> <span class="pp">|</span></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read more <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 2 Read 2</span><span class="co">](lectures/module-2-read-02)</span> <span class="pp">|</span></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz B <span class="pp">|</span> <span class="co">[</span><span class="ot">Concept Check</span><span class="co">](quizzes/quiz-m2-concept)</span> <span class="pp">|</span></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Demo lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 2 demo</span><span class="co">](labs/module-2-lab-demo)</span> <span class="pp">|</span></span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Exercise lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 2 exercise lab</span><span class="co">](labs/module-2-lab-exercise)</span> <span class="pp">|</span></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Milestone <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 2 milestone</span><span class="co">](projects/project-2)</span> <span class="pp">|</span></span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Synthesis <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 2 synthesis</span><span class="co">](quizzes/quiz-m2-synthesis)</span> <span class="pp">|</span></span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 2</span><span class="co">](projects/project-2)</span> <span class="pp">|</span></span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read 1 — Binomial center/spread through sampling and CIs</span></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>*Essential · after [Read 0](lectures/module-2-read-00)*</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use $\mu = np$ and $\sigma = \sqrt{np(1-p)}$ for $X \sim \text{Binomial}(n,p)$.</span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Interpret the mean as the **center** and the SD as **typical deviation** of $X$.</span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Identify $n$ and $p$ in applied settings and compute $\mu$ and $\sigma$.</span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use the **CLT** to approximate a binomial distribution by a normal curve with the same $\mu$ and $\sigma$.</span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Check conditions such as $np \geq 10$ and $n(1-p) \geq 10$ when appropriate.</span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>State the **Empirical Rule** for normal distributions.</span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Sketch a **rejection region** under a normal curve for a one-proportion test and relate the shaded area to the p-value (approximate).</span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define the **sampling distribution** of a statistic.</span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Describe **confidence level**, **parameter**, and the endpoints of a confidence interval in context.</span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Compute and interpret a confidence interval for a **population proportion** and for a **population mean** (methods from lecture).</span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Discuss **bias** and its impact given how a sample was collected.</span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Identify ways to reduce bias and increase **precision**.</span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Identify a **sampling frame** and carry out **simple random sampling**.</span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Classify methods as **convenience**, **SRS**, **cluster**, **systematic**, **stratified**, or **multi-stage**.</span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Identify a **sampling frame** for a stated population.</span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Carry out** simple random sampling using a numbered list and random draws.</span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Classify** sampling designs and discuss bias, generalizability, and how to improve the design.</span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read 2 — z-scores, toolbox, and one numerical variable</span></span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>*Essential · after Read 1 and Quiz A*</span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Compute a **z-score** from an observation and the **mean** and **standard deviation** of a reference distribution.</span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Interpret** a z-score in context and use z-scores for **standardized comparisons** between groups or to a reference.</span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Find **probabilities** (areas) for the **standard normal** distribution and describe them as proportions of values below (or above) a cutoff.</span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Compute a **standardized test statistic** using the **normal approximation to the binomial** and connect it to a **one-proportion** test (often called a **z-test**); in R, use **`prop.test()`** and read off a **confidence interval** as well.</span>
-<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Organize analyses by **type of variable(s)** and by **purpose** (e.g. description vs. inference).</span>
-<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Relate **descriptive** tools to **inferential** choices for **one categorical** variable (e.g. proportion, confidence interval vs. hypothesis test).</span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Compute **mean** and **median** by hand and with the **tidyverse** (pipe to **`summarize()`**).</span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Graph one numerical variable with **ggplot2** using a **histogram** and a **dot plot**.</span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>State the **one-sample *t*-statistic** and use **`t.test()`** for a **one-sample *t*-test** and **confidence interval** for the **population mean**.</span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>*Optional for Project 2:* one-sample <span class="in">`t.test()`</span> for hypothesis testing (CI is the project focus).</span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 3 — Discovering Patterns {#module-3--discovering-patterns}</span></span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>*Describing a dataset with graphs and summaries.*</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 2 — Estimating the Truth {#module-2--estimating-the-truth}</span></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>*Building high-quality estimates from samples.*</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="fu">### Course path</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Material <span class="pp">|</span></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|----------|</span></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 2 Read 0</span><span class="co">](lectures/module-2-read-00)</span> — project preview &amp; sample tour <span class="pp">|</span></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 2 Read 1</span><span class="co">](lectures/module-2-read-01)</span> <span class="pp">|</span></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz A <span class="pp">|</span> <span class="co">[</span><span class="ot">Def &amp; Notation</span><span class="co">](quizzes/quiz-m2-def)</span> <span class="pp">|</span></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read more <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 2 Read 2</span><span class="co">](lectures/module-2-read-02)</span> <span class="pp">|</span></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz B <span class="pp">|</span> <span class="co">[</span><span class="ot">Concept Check</span><span class="co">](quizzes/quiz-m2-concept)</span> <span class="pp">|</span></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Demo lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 2 demo</span><span class="co">](labs/module-2-lab-demo)</span> <span class="pp">|</span></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Exercise lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 2 exercise lab</span><span class="co">](labs/module-2-lab-exercise)</span> <span class="pp">|</span></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Milestone <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 2 milestone</span><span class="co">](projects/project-2)</span> *(Canvas checkpoint)* <span class="pp">|</span></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Synthesis <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 2 synthesis</span><span class="co">](quizzes/quiz-m2-synthesis)</span> <span class="pp">|</span></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 2</span><span class="co">](projects/project-2)</span> <span class="pp">|</span></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read 1 — Binomial center/spread through sampling and CIs</span></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>*Essential · after [Read 0](lectures/module-2-read-00)*</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use $\mu = np$ and $\sigma = \sqrt{np(1-p)}$ for $X \sim \text{Binomial}(n,p)$.</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Interpret the mean as the **center** and the SD as **typical deviation** of $X$.</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Identify $n$ and $p$ in applied settings and compute $\mu$ and $\sigma$.</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use the **CLT** to approximate a binomial distribution by a normal curve with the same $\mu$ and $\sigma$.</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Check conditions such as $np \geq 10$ and $n(1-p) \geq 10$ when appropriate.</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>State the **Empirical Rule** for normal distributions.</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Sketch a **rejection region** under a normal curve for a one-proportion test and relate the shaded area to the p-value (approximate).</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define the **sampling distribution** of a statistic.</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Describe **confidence level**, **parameter**, and the endpoints of a confidence interval in context.</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Compute and interpret a confidence interval for a **population proportion** and for a **population mean** (methods from lecture).</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Discuss **bias** and its impact given how a sample was collected.</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Identify ways to reduce bias and increase **precision**.</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Identify a **sampling frame** and carry out **simple random sampling**.</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Classify methods as **convenience**, **SRS**, **cluster**, **systematic**, **stratified**, or **multi-stage**.</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Identify a **sampling frame** for a stated population.</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Carry out** simple random sampling using a numbered list and random draws.</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Classify** sampling designs and discuss bias, generalizability, and how to improve the design.</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>*Optional enrichment (not required for Project 2):* <span class="co">[</span><span class="ot">Type I/II errors</span><span class="co">](lectures/lecture-17)</span> · <span class="co">[</span><span class="ot">Rubber-band CI analogy</span><span class="co">](lectures/lecture-21)</span></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read 2 — z-scores, toolbox, and one numerical variable</span></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>*Essential · after Read 1 and Quiz A*</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Compute a **z-score** from an observation and the **mean** and **standard deviation** of a reference distribution.</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Interpret** a z-score in context and use z-scores for **standardized comparisons** between groups or to a reference.</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Find **probabilities** (areas) for the **standard normal** distribution and describe them as proportions of values below (or above) a cutoff.</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Compute a **standardized test statistic** using the **normal approximation to the binomial** and connect it to a **one-proportion** test (often called a **z-test**); in R, use **`prop.test()`** and read off a **confidence interval** as well.</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Organize analyses by **type of variable(s)** and by **purpose** (e.g. description vs. inference).</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Relate **descriptive** tools to **inferential** choices for **one categorical** variable (e.g. proportion, confidence interval vs. hypothesis test).</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Compute **mean** and **median** by hand and with the **tidyverse** (pipe to **`summarize()`**).</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Graph one numerical variable with **ggplot2** using a **histogram** and a **dot plot**.</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>State the **one-sample *t*-statistic** and use **`t.test()`** for a **one-sample *t*-test** and **confidence interval** for the **population mean**.</span>
 <span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="fu">### Course path</span></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>*Optional for Project 2:* one-sample <span class="in">`t.test()`</span> for hypothesis testing (CI is the project focus).</span>
 <span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Material <span class="pp">|</span></span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------------------------|---------------------------------------------|</span></span>
-<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 3 Read 0</span><span class="co">](lectures/module-3-read-00)</span> — project preview &amp; EDA tour <span class="pp">|</span></span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 3 Read 1</span><span class="co">](lectures/module-3-read-01)</span> <span class="pp">|</span></span>
-<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz A <span class="pp">|</span> <span class="co">[</span><span class="ot">Def &amp; Notation</span><span class="co">](quizzes/quiz-m3-def)</span> <span class="pp">|</span></span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read more <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 3 Read 2</span><span class="co">](lectures/module-3-read-02)</span> <span class="pp">|</span></span>
-<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz B <span class="pp">|</span> <span class="co">[</span><span class="ot">Concept Check</span><span class="co">](quizzes/quiz-m3-concept)</span> <span class="pp">|</span></span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Demo lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 3 demo</span><span class="co">](labs/module-3-lab-demo)</span> <span class="pp">|</span></span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Exercise lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 3 exercise lab</span><span class="co">](labs/module-3-lab-exercise)</span> <span class="pp">|</span></span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Milestone <span class="pp">|</span>  <span class="pp">|</span></span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Synthesis <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 3 synthesis</span><span class="co">](quizzes/quiz-m3-synthesis)</span> <span class="pp">|</span></span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 3</span><span class="co">](projects/project-3)</span> <span class="pp">|</span></span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read 1 — Two groups, spread, and boxplots</span></span>
-<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>*Essential · after [Read 0](lectures/module-3-read-00)*</span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Compute **range**, **quartiles**, **IQR**, and **standard deviation** by hand and **compare** two small datasets.</span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Build and interpret **boxplots** as a picture of the **five-number summary**.</span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Describe the **Welch two-sample *t*-test** (independent groups, **unequal variances**), its ***t*****-statistic**, **degrees of freedom**, **hypotheses**, and **conditions**; run **`t.test(y ~ group)`** in R.</span>
-<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use **`group_by()`** with **`summarize()`** for descriptives and **ggplot2** (**`fill`** or **`color`**) to compare groups with **histograms**, **dot plots**, or **boxplots**.</span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>*Two-sample t-test is optional — Project 3 is descriptive only.*</span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read 2 — Scatterplots and two-way tables</span></span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>*Essential · after Read 1 and Quiz A*</span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Make a **scatterplot** in **ggplot2** for two **numerical** variables (`aes(x, y)` and **`geom_point()`**).</span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Describe an association using **form** (e.g. linear vs curved), **direction** (positive, negative, or none), and **strength** (strong, moderate, weak, or none).</span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Build a **two-way table** of **counts** and compute **joint**, **row**, and **column** **proportions** (know which denominator you use).</span>
-<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Draw **stacked bar charts** for counts and **100% stacked** bars (`position = "fill"`) to show **proportions within** bars.</span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Implement tables and plots with **`count()`**, **`group_by()`**, **`mutate()`**, and **`pivot_wider()`**.</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>Legacy lecture pages remain linked from the <span class="co">[</span><span class="ot">15-week index</span><span class="co">](#not-on-the-async-course-path)</span> for reference.</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 3 — Discovering Patterns {#module-3--discovering-patterns}</span></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>*Describing a dataset with graphs and summaries.*</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a><span class="fu">### Course path</span></span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Material <span class="pp">|</span></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|----------|</span></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 3 Read 0</span><span class="co">](lectures/module-3-read-00)</span> — project preview &amp; EDA tour <span class="pp">|</span></span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 3 Read 1</span><span class="co">](lectures/module-3-read-01)</span> <span class="pp">|</span></span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz A <span class="pp">|</span> <span class="co">[</span><span class="ot">Def &amp; Notation</span><span class="co">](quizzes/quiz-m3-def)</span> <span class="pp">|</span></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read more <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 3 Read 2</span><span class="co">](lectures/module-3-read-02)</span> <span class="pp">|</span></span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz B <span class="pp">|</span> <span class="co">[</span><span class="ot">Concept Check</span><span class="co">](quizzes/quiz-m3-concept)</span> <span class="pp">|</span></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Demo lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 3 demo</span><span class="co">](labs/module-3-lab-demo)</span> <span class="pp">|</span></span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Exercise lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 3 exercise lab</span><span class="co">](labs/module-3-lab-exercise)</span> <span class="pp">|</span></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Milestone <span class="pp">|</span> Canvas Module 3 *(dataset + four variables plan)* <span class="pp">|</span></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Synthesis <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 3 synthesis</span><span class="co">](quizzes/quiz-m3-synthesis)</span> <span class="pp">|</span></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 3</span><span class="co">](projects/project-3)</span> <span class="pp">|</span></span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read 1 — Two groups, spread, and boxplots</span></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>*Essential · after [Read 0](lectures/module-3-read-00)*</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Compute **range**, **quartiles**, **IQR**, and **standard deviation** by hand and **compare** two small datasets.</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Build and interpret **boxplots** as a picture of the **five-number summary**.</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Describe the **Welch two-sample *t*-test** (independent groups, **unequal variances**), its ***t*-statistic**, **degrees of freedom**, **hypotheses**, and **conditions**; run **`t.test(y ~ group)`** in R.</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use **`group_by()`** with **`summarize()`** for descriptives and **ggplot2** (**`fill`** or **`color`**) to compare groups with **histograms**, **dot plots**, or **boxplots**.</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>*Two-sample t-test is optional — Project 3 is descriptive only.*</span>
 <span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read 2 — Scatterplots and two-way tables</span></span>
 <span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 4 — Designing Fair Comparisons {#module-4--designing-fair-comparisons}</span></span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>*Essential · after Read 1 and Quiz A*</span>
 <span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>*Comparing two groups responsibly.*</span>
-<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a><span class="fu">### Course path</span></span>
-<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Material <span class="pp">|</span></span>
-<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------------------------|---------------------------------------------|</span></span>
-<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 4 Read 0</span><span class="co">](lectures/module-4-read-00)</span> — project preview &amp; fair-comparison vocabulary <span class="pp">|</span></span>
-<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 4 Read 1</span><span class="co">](lectures/module-4-read-01)</span> <span class="pp">|</span></span>
-<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz A <span class="pp">|</span> <span class="co">[</span><span class="ot">Def &amp; Notation</span><span class="co">](quizzes/quiz-m4-def)</span> <span class="pp">|</span></span>
-<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read more <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 4 Read 2</span><span class="co">](lectures/module-4-read-02)</span> <span class="pp">|</span></span>
-<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz B <span class="pp">|</span> <span class="co">[</span><span class="ot">Concept Check</span><span class="co">](quizzes/quiz-m4-concept)</span> <span class="pp">|</span></span>
-<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Demo lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 4 demo</span><span class="co">](labs/module-4-lab-demo)</span> <span class="pp">|</span></span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Exercise lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 4 exercise lab</span><span class="co">](labs/module-4-lab-exercise)</span> <span class="pp">|</span></span>
-<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Milestone <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 4 milestone</span><span class="co">](projects/project-4)</span> <span class="pp">|</span></span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Synthesis <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 4 synthesis</span><span class="co">](quizzes/quiz-m4-synthesis)</span> <span class="pp">|</span></span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 4</span><span class="co">](projects/project-4)</span> <span class="pp">|</span></span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read 1 — Causal questions, confounding, and the RCT</span></span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>*Essential · after [Read 0](lectures/module-4-read-00)*</span>
-<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Compare **randomized controlled trials** and **observational** designs when the goal is a causal claim about a treatment or exposure.</span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Explain how participants end up in comparison groups in an **RCT** versus an **observational study**.</span>
-<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>State what a *p*-value does and does **not** address for a difference between two groups.</span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define a **confounder** in words and recognize plausible confounders in a stated observational comparison.</span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Explain how a confounder can **create or distort** an association between an explanatory variable and a response.</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Describe **subclassification / stratification** when a confounder is measured.</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read 2 — Two-group inference from the methods table</span></span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>*Essential · after Read 1 and Quiz A*</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use the <span class="co">[</span><span class="ot">**Methods table**</span><span class="co">](methods)</span> to pick **`t.test()`** for two independent numerical groups or **`prop.test()`** / **`chisq.test()`** for binary comparisons, and name key conditions (e.g. independence, expected counts).</span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Interpret **Welch two-sample *t*-test** output (hypotheses, *p*-value, confidence interval) in context.</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Connect **random assignment** in an RCT to reduced risk of confounding for treatment–outcome comparisons.</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 5 — Looking Ahead {#module-5--looking-ahead}</span></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Make a **scatterplot** in **ggplot2** for two **numerical** variables (`aes(x, y)` and **`geom_point()`**).</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Describe an association using **form** (e.g. linear vs curved), **direction** (positive, negative, or none), and **strength** (strong, moderate, weak, or none).</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Build a **two-way table** of **counts** and compute **joint**, **row**, and **column** **proportions** (know which denominator you use).</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Draw **stacked bar charts** for counts and **100% stacked** bars (`position = "fill"`) to show **proportions within** bars.</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Implement tables and plots with **`count()`**, **`group_by()`**, **`mutate()`**, and **`pivot_wider()`**.</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>Legacy lecture pages remain linked from the <span class="co">[</span><span class="ot">15-week index</span><span class="co">](#not-on-the-async-course-path)</span> for reference.</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 4 — Designing Fair Comparisons {#module-4--designing-fair-comparisons}</span></span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>*Comparing two groups responsibly.*</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a><span class="fu">### Course path</span></span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Material <span class="pp">|</span></span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|----------|</span></span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 4 Read 0</span><span class="co">](lectures/module-4-read-00)</span> — project preview &amp; fair-comparison vocabulary <span class="pp">|</span></span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 4 Read 1</span><span class="co">](lectures/module-4-read-01)</span> <span class="pp">|</span></span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz A <span class="pp">|</span> <span class="co">[</span><span class="ot">Def &amp; Notation</span><span class="co">](quizzes/quiz-m4-def)</span> <span class="pp">|</span></span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read more <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 4 Read 2</span><span class="co">](lectures/module-4-read-02)</span> <span class="pp">|</span></span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz B <span class="pp">|</span> <span class="co">[</span><span class="ot">Concept Check</span><span class="co">](quizzes/quiz-m4-concept)</span> <span class="pp">|</span></span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Demo lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 4 demo</span><span class="co">](labs/module-4-lab-demo)</span> <span class="pp">|</span></span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Exercise lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 4 exercise lab</span><span class="co">](labs/module-4-lab-exercise)</span> <span class="pp">|</span></span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Milestone <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 4 milestone</span><span class="co">](projects/project-4)</span> *(Canvas checkpoint)* <span class="pp">|</span></span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Synthesis <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 4 synthesis</span><span class="co">](quizzes/quiz-m4-synthesis)</span> <span class="pp">|</span></span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 4</span><span class="co">](projects/project-4)</span> <span class="pp">|</span></span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read 1 — Causal questions, confounding, and the RCT</span></span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>*Essential · after [Read 0](lectures/module-4-read-00)*</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Compare **randomized controlled trials** and **observational** designs when the goal is a causal claim about a treatment or exposure.</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Explain how participants end up in comparison groups in an **RCT** versus an **observational study**.</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>State what a *p*-value does and does **not** address for a difference between two groups.</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define a **confounder** in words and recognize plausible confounders in a stated observational comparison.</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Explain how a confounder can **create or distort** an association between an explanatory variable and a response.</span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Describe **subclassification / stratification** when a confounder is measured.</span>
 <span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>*Using data to make predictions.*</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read 2 — Two-group inference from the methods table</span></span>
 <span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a><span class="fu">### Course path</span></span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>*Essential · after Read 1 and Quiz A*</span>
 <span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Material <span class="pp">|</span></span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------------------------|---------------------------------------------|</span></span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 5 Read 0</span><span class="co">](lectures/module-5-read-00)</span> — project preview &amp; four-day schedule <span class="pp">|</span></span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 5 Read 1</span><span class="co">](lectures/module-5-read-01)</span> <span class="pp">|</span></span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz A <span class="pp">|</span> <span class="co">[</span><span class="ot">Def &amp; Notation</span><span class="co">](quizzes/quiz-m5-def)</span> <span class="pp">|</span></span>
-<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read more <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 5 Read 2</span><span class="co">](lectures/module-5-read-02)</span> <span class="pp">|</span></span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz B <span class="pp">|</span> <span class="co">[</span><span class="ot">Concept Check</span><span class="co">](quizzes/quiz-m5-concept)</span> <span class="pp">|</span></span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Demo lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 5 demo</span><span class="co">](labs/module-5-lab-demo)</span> <span class="pp">|</span></span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Exercise lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 5 exercise lab</span><span class="co">](labs/module-5-lab-exercise)</span> <span class="pp">|</span></span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Synthesis <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 5 synthesis</span><span class="co">](quizzes/quiz-m5-synthesis)</span> <span class="pp">|</span></span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Milestone <span class="pp">|</span>  <span class="pp">|</span></span>
-<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 5</span><span class="co">](projects/project-5)</span> · **Portfolio package due Thu Jul 2** <span class="pp">|</span></span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read 1 — Correlation and the least-squares line</span></span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>*Essential · after [Read 0](lectures/module-5-read-00)*</span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Read a scatterplot using **form** (linear or curved), **direction** (positive or negative), and **strength** (strong, moderate, or weak).</span>
-<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Compute and interpret **Pearson correlation** $r$ as a measure of strength and direction of a linear association.</span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Fit a **simple linear regression** line $\hat{y} = b_0 + b_1 x$ with <span class="in">`lm()`</span> and identify slope $b_1$ and intercept $b_0$.</span>
-<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Interpret the **slope** in context: predicted change in $y$ for a one-unit increase in $x$.</span>
-<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use the fitted equation to make a **point prediction** for a new $x$ value.</span>
-<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define a **residual** as observed minus predicted ($y - \hat{y}$) and explain what the least-squares criterion minimizes.</span>
-<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Interpret **MSE** and $R^2$ on a test set as summaries of predictive performance on new data.</span>
-<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read 2 — Inference in simple linear regression</span></span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use the <span class="co">[</span><span class="ot">**Methods table**</span><span class="co">](methods)</span> to pick **`t.test()`** for two independent numerical groups or **`prop.test()`** / **`chisq.test()`** for binary comparisons, and name key conditions (e.g. independence, expected counts).</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Interpret **Welch two-sample *t*-test** output (hypotheses, *p*-value, confidence interval) in context.</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Connect **random assignment** in an RCT to reduced risk of confounding for treatment–outcome comparisons.</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>Legacy lecture pages remain linked from the <span class="co">[</span><span class="ot">15-week index</span><span class="co">](#not-on-the-async-course-path)</span> for reference.</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 5 — Looking Ahead {#module-5--looking-ahead}</span></span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>*Using data to make predictions.*</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a><span class="fu">### Course path</span></span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Material <span class="pp">|</span></span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|----------|</span></span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 5 Read 0</span><span class="co">](lectures/module-5-read-00)</span> — project preview &amp; four-day schedule <span class="pp">|</span></span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 5 Read 1</span><span class="co">](lectures/module-5-read-01)</span> <span class="pp">|</span></span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz A <span class="pp">|</span> <span class="co">[</span><span class="ot">Def &amp; Notation</span><span class="co">](quizzes/quiz-m5-def)</span> <span class="pp">|</span></span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read more <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 5 Read 2</span><span class="co">](lectures/module-5-read-02)</span> <span class="pp">|</span></span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz B <span class="pp">|</span> <span class="co">[</span><span class="ot">Concept Check</span><span class="co">](quizzes/quiz-m5-concept)</span> <span class="pp">|</span></span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Demo lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 5 demo</span><span class="co">](labs/module-5-lab-demo)</span> <span class="pp">|</span></span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Exercise lab <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 5 exercise lab</span><span class="co">](labs/module-5-lab-exercise)</span> <span class="pp">|</span></span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Synthesis <span class="pp">|</span> <span class="co">[</span><span class="ot">Module 5 synthesis</span><span class="co">](quizzes/quiz-m5-synthesis)</span> <span class="pp">|</span></span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Milestone <span class="pp">|</span> Canvas Module 5 *(team, option, data plan)* <span class="pp">|</span></span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project <span class="pp">|</span> <span class="co">[</span><span class="ot">Project 5</span><span class="co">](projects/project-5)</span> · **Portfolio package due Thu Jul 2** <span class="pp">|</span></span>
 <span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>*Essential · after Read 1 and Quiz A*</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read 1 — Correlation and the least-squares line</span></span>
 <span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>State the residual-normality assumption that supports interval inference in linear regression.</span>
-<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Interpret a **95% confidence interval for the slope** $\beta_1$ in context.</span>
-<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Interpret a **confidence interval for the mean response** at a specific $x_0$ value.</span>
-<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Interpret a **prediction interval** for an individual future response at $x_0$.</span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Explain why **prediction intervals** are wider than confidence intervals for the mean response.</span>
-<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use <span class="in">`confint()`</span> and <span class="in">`predict(..., interval = "prediction")`</span> in R to extract these intervals.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>*Essential · after [Read 0](lectures/module-5-read-00)*</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Read a scatterplot using **form** (linear or curved), **direction** (positive or negative), and **strength** (strong, moderate, or weak).</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Compute and interpret **Pearson correlation** $r$ as a measure of strength and direction of a linear association.</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Fit a **simple linear regression** line $\hat{y} = b_0 + b_1 x$ with <span class="in">`lm()`</span> and identify slope $b_1$ and intercept $b_0$.</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Interpret the **slope** in context: predicted change in $y$ for a one-unit increase in $x$.</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use the fitted equation to make a **point prediction** for a new $x$ value.</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define a **residual** as observed minus predicted ($y - \hat{y}$) and explain what the least-squares criterion minimizes.</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Interpret **MSE** and $R^2$ on a test set as summaries of predictive performance on new data.</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>*Optional enrichment (not required for Project 5):* <span class="co">[</span><span class="ot">Logistic regression</span><span class="co">](lectures/lecture-37)</span> — binary response with <span class="in">`glm()`</span></span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a><span class="fu">### Read 2 — Inference in simple linear regression</span></span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>*Essential · after Read 1 and Quiz A*</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>State the residual-normality assumption that supports interval inference in linear regression.</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Interpret a **95% confidence interval for the slope** $\beta_1$ in context.</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Interpret a **confidence interval for the mean response** at a specific $x_0$ value.</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Interpret a **prediction interval** for an individual future response at $x_0$.</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Explain why **prediction intervals** are wider than confidence intervals for the mean response.</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use <span class="in">`confint()`</span> and <span class="in">`predict(..., interval = "prediction")`</span> in R to extract these intervals.</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>Legacy lecture pages remain linked from the <span class="co">[</span><span class="ot">15-week index</span><span class="co">](#not-on-the-async-course-path)</span> for reference.</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a><span class="fu">## Not on the async course path {#not-on-the-async-course-path}</span></span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>These pages remain from the 15-week course for reference. They are not assigned on the <span class="co">[</span><span class="ot">course path</span><span class="co">](schedule)</span>.</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Lecture 28</span><span class="co">](lectures/lecture-28)</span></span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>*Inference for two-group comparisons — causal questions and study design*</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Compare **randomized controlled trials** and **observational** designs when the goal is a causal claim about a treatment or exposure.</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Explain how participants end up in comparison groups in an RCT versus an observational study.</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>State what a *p*-value does and does **not** address for a difference between two groups.</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Lecture 29</span><span class="co">](lectures/lecture-29)</span></span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>*Confounding*</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define a **confounder** in words and recognize plausible confounders in a stated observational comparison.</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Explain how a confounder can create or distort an association between an explanatory variable and a response.</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Describe **subclassification / stratification** when a confounder is measured.</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Lecture 30</span><span class="co">](lectures/lecture-30)</span></span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>*Study design, p-values, and two-group inference*</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use the **Methods table** to pick **`t.test()`** for two independent numerical groups or **`prop.test()`** / **`chisq.test()`** for binary comparisons, and name key conditions.</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Interpret **Welch two-sample *t*-test** output (hypotheses, *p*-value, confidence interval) in context.</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Connect **random assignment** in an RCT to reduced risk of confounding for treatment–outcome comparisons.</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Lecture 31</span><span class="co">](lectures/lecture-31)</span></span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>*Matched pairs — differences, plots, paired t-test, and McNemar*</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Identify a **matched pairs** design and compute **within-pair differences** (or use a paired test) when the same units contribute two measurements.</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Summarize paired numerical data with plots (e.g. boxplot of differences) and run a **paired *t*-test** (or one-sample test on differences).</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>For **two binary outcomes on the same units**, build the right table and run **McNemar’s test** when appropriate.</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Lecture 32</span><span class="co">](lectures/lecture-32)</span></span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>*One-way ANOVA — comparing means across more than two groups*</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Recognize when the outcome is **numerical** and the explanatory factor has **more than two levels**, so a one-way **ANOVA** is the natural extension of a two-sample *t*-test.</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>State the **omnibus** null hypothesis for equal population means across groups.</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Lecture 33</span><span class="co">](lectures/lecture-33)</span></span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>*Chi-square tests — independence and goodness of fit*</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Build **contingency tables** of counts for two categorical variables and use **`chisq.test()`** as appropriate.</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Check **expected counts** (and know when **`simulate.p.value = TRUE`** is needed).</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Relate chi-square tests to the **“by chance”** explanation for a table.</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Lecture 34</span><span class="co">](lectures/lecture-34)</span></span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>*Work session — Project 4 (simulation, notebook, and writeup)*</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Apply study-design ideas (RCT vs observational, confounding, DAG) to **your** assigned two-group question.</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Produce a **reproducible** simulated dataset (`set.seed`) and a notebook with **descriptives**, **plots**, and the **correct test/CI** from the Methods table.</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Lecture 35</span><span class="co">](lectures/lecture-35)</span></span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>*Correlation and simple linear regression*</span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Interpret a **correlation coefficient** (strength and direction) for two numerical variables.</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Fit and interpret a **simple linear regression** line as a model for how the mean of $Y$ changes with $x$.</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use **scatterplots** and diagnostic thinking about **linear** vs **curved** form.</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Lecture 36</span><span class="co">](lectures/lecture-36)</span></span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>*Linear regression inference — confidence and prediction intervals*</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Interpret confidence intervals for the slope and for the mean response at a chosen value of $x$.</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Interpret prediction intervals for an individual future response and explain why they are wider than mean-response intervals.</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Connect residual assumptions to validity of interval-based inference.</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Lecture 37</span><span class="co">](lectures/lecture-37)</span></span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>*Logistic regression — modeling a binary outcome*</span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Recognize when the response is **binary** and a **logistic** (log-odds) model is appropriate instead of ordinary least squares regression.</span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Interpret **fitted probabilities** or **odds ratios** from simple logistic output in context (at the level taught in this course).</span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Lecture 38</span><span class="co">](lectures/lecture-38)</span></span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>*Ethics and statistical reasoning review*</span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use a truth-first lens to connect design, assumptions, missingness, and communication.</span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Evaluate ethical pitfalls in generalization, causal language, reporting, and model validity.</span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Practice responsible statistical wording and evidence-based conclusions.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
