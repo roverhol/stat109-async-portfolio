@@ -152,7 +152,7 @@ window.Quarto = {
   <li><a href="#module-1-preview" id="toc-module-1-preview" class="nav-link active" data-scroll-target="#module-1-preview">Module 1 Preview</a>
   <ul class="collapse">
   <li><a href="#good-science-state-your-claim-before-you-observe" id="toc-good-science-state-your-claim-before-you-observe" class="nav-link" data-scroll-target="#good-science-state-your-claim-before-you-observe">Good science: state your claim before you observe</a></li>
-  <li><a href="#three-worlds-in-the-right-order" id="toc-three-worlds-in-the-right-order" class="nav-link" data-scroll-target="#three-worlds-in-the-right-order">Three worlds — in the right order</a>
+  <li><a href="#three-worlds" id="toc-three-worlds" class="nav-link" data-scroll-target="#three-worlds">Three worlds — in the right order</a>
   <ul class="collapse">
   <li><a href="#the-world-we-imagine-theory-first" id="toc-the-world-we-imagine-theory-first" class="nav-link" data-scroll-target="#the-world-we-imagine-theory-first">1. The world we imagine (theory first)</a></li>
   <li><a href="#the-world-we-observe-observations-second" id="toc-the-world-we-observe-observations-second" class="nav-link" data-scroll-target="#the-world-we-observe-observations-second">2. The world we <strong>observe</strong> (observations second)</a></li>
@@ -249,8 +249,8 @@ Note
 </table>
 <p><strong>Best practice:</strong> Step 2 comes <strong>before</strong> Step 3. Good scientists do not pick <span class="math inline">\(H_0\)</span> after seeing the data <span class="math inline">\(x\)</span>. Instead they state the claim they want to test, build the imagined model, <em>then</em> gather data. This best practice is reinforced by doing <a href="../projects/project-1#project-workflow">Phase A before Phase B</a> on the project page and in the <a href="../projects/project-1-milestone.ipynb">milestone notebook</a>.</p>
 </section>
-<section id="three-worlds-in-the-right-order" class="level2">
-<h2 class="anchored" data-anchor-id="three-worlds-in-the-right-order">Three worlds — in the right order</h2>
+<section id="three-worlds" class="level2">
+<h2 class="anchored" data-anchor-id="three-worlds">Three worlds — in the right order</h2>
 <p>Statistics moves among three worlds (<a href="../lectures/module-0-read-00#three-worlds">Module 0</a>). For Project 1, the order matters:</p>
 <section id="the-world-we-imagine-theory-first" class="level3">
 <h3 class="anchored" data-anchor-id="the-world-we-imagine-theory-first">1. The world we imagine (theory first)</h3>
@@ -332,8 +332,8 @@ P(X = x) = \binom{n}{x}\, p^x (1-p)^{n-x}, \quad x = 0, 1, \ldots, n
 <p>Your data collection must satisfy a <strong>binomial random process</strong> (BRP). You will defend all four in your report; check them in context.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 31%">
-<col style="width: 68%">
+<col style="width: 32%">
+<col style="width: 67%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -366,9 +366,9 @@ P(X = x) = \binom{n}{x}\, p^x (1-p)^{n-x}, \quad x = 0, 1, \ldots, n
 <h3 class="anchored" data-anchor-id="what-you-will-do-in-practice">What you will do in practice</h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 23%">
-<col style="width: 35%">
-<col style="width: 41%">
+<col style="width: 25%">
+<col style="width: 34%">
+<col style="width: 40%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -404,7 +404,7 @@ P(X = x) = \binom{n}{x}\, p^x (1-p)^{n-x}, \quad x = 0, 1, \ldots, n
 <colgroup>
 <col style="width: 27%">
 <col style="width: 47%">
-<col style="width: 24%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -935,7 +935,7 @@ P(X = x) = \binom{n}{x}\, p^x (1-p)^{n-x}, \quad x = 0, 1, \ldots, n
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>In <span class="co">[</span><span class="ot">Module 0, Read 0</span><span class="co">](../lectures/module-0-read-00)</span> you met the <span class="co">[</span><span class="ot">**five-step statistical process**</span><span class="co">](../lectures/module-0-read-00#the-statistical-process)</span>. Project 1 is your first full pass through it.</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> In Project 1 <span class="pp">|</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|--------------------|----------------------------------------------------|</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------------------|---------------------------------------------------|</span></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **1 — Ask** | A clear research question about a **proportion** $p$ (probability of success on one trial) <span class="pp">|</span></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **2 — Plan** | Define $p$, write $H_0$ and $H_a$, decide how you will analyze and conclude — **before** you collect all $n = 25$ trials (<span class="co">[</span><span class="ot">milestone</span><span class="co">](../projects/project-1-milestone)</span>) <span class="pp">|</span></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **3 — Collect** <span class="pp">|</span> Observe the process; record $x$ successes out of $n$ <span class="pp">|</span></span>
@@ -944,7 +944,7 @@ P(X = x) = \binom{n}{x}\, p^x (1-p)^{n-x}, \quad x = 0, 1, \ldots, n
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>**Best practice:** Step 2 comes **before** Step 3. Good scientists do not pick $H_0$ after seeing the data $x$. Instead they state the claim they want to test, build the imagined model, *then* gather data. This best practice is reinforced by doing <span class="co">[</span><span class="ot">Phase A before Phase B</span><span class="co">](../projects/project-1#project-workflow)</span> on the project page and in the <span class="co">[</span><span class="ot">milestone notebook</span><span class="co">](../projects/project-1-milestone.ipynb)</span>.</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## Three worlds — in the right order</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## Three worlds — in the right order {#three-worlds}</span></span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>Statistics moves among three worlds (<span class="co">[</span><span class="ot">Module 0</span><span class="co">](../lectures/module-0-read-00#three-worlds)</span>). For Project 1, the order matters:</span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
@@ -976,7 +976,7 @@ P(X = x) = \binom{n}{x}\, p^x (1-p)^{n-x}, \quad x = 0, 1, \ldots, n
 <span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>You will take a deep dive into the mathematics of the theoretical world in <span class="co">[</span><span class="ot">Read 1</span><span class="co">](module-1-read-01)</span> and how to use it to test your observation in <span class="co">[</span><span class="ot">Read 2</span><span class="co">](module-1-read-02)</span>.</span>
 <span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="fu">## Observation meets theory: the p-value</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="fu">## Observation meets theory: the p-value {#observation-meets-theory-the-p-value}</span></span>
 <span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>Once you have planned the model and collected $x$, you ask:</span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
@@ -993,7 +993,7 @@ P(X = x) = \binom{n}{x}\, p^x (1-p)^{n-x}, \quad x = 0, 1, \ldots, n
 <span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>The **p-value is not** the probability that $H_0$ is true. It is the probability of data **at least this extreme**, *assuming* $H_0$ is true.</span>
 <span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="fu">## A deep dive </span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="fu">## A deep dive</span></span>
 <span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>Most inferential methods in later modules rely on approximations or software you will be asked to use based on trust. Project 1 is different: the binomial test is one of the few cases where, with high-school algebra and patience, you can understand the whole story, from assumptions through the probability formula to the p-value.</span>
 <span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
@@ -1023,7 +1023,7 @@ P(X = x) = \binom{n}{x}\, p^x (1-p)^{n-x}, \quad x = 0, 1, \ldots, n
 <span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>Your data collection must satisfy a **binomial random process** (BRP). You will defend all four in your report; check them in context.</span>
 <span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Condition <span class="pp">|</span> Meaning (in your study) <span class="pp">|</span></span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----------------------|-------------------------------------------------|</span></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----------------------|------------------------------------------------|</span></span>
 <span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **(a) Binary** <span class="pp">|</span> Each trial has exactly two outcomes (success / failure) <span class="pp">|</span></span>
 <span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **(b) Independent** <span class="pp">|</span> One trial does not change the chance of success on another <span class="pp">|</span></span>
 <span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **(c) Fixed** $p$ <span class="pp">|</span> The probability of success is the same on every trial (under $H_0$ for the model) <span class="pp">|</span></span>
@@ -1034,7 +1034,7 @@ P(X = x) = \binom{n}{x}\, p^x (1-p)^{n-x}, \quad x = 0, 1, \ldots, n
 <span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a><span class="fu">### What you will do in practice</span></span>
 <span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Phase <span class="pp">|</span> You understand… <span class="pp">|</span> You compute with… <span class="pp">|</span></span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----------------|--------------------------|------------------------------|</span></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="pp">|------------------|-------------------------|-----------------------------|</span></span>
 <span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Plan (milestone)** <span class="pp">|</span> Question, $p$, $H_0$/$H_a$, BRP, null plot <span class="pp">|</span> <span class="in">`dbinom`</span> + <span class="in">`geom_col`</span> (no $x$ yet) <span class="pp">|</span></span>
 <span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Collect** <span class="pp">|</span> One real $x$ from your process <span class="pp">|</span> Your own data <span class="pp">|</span></span>
 <span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Analyze &amp; report** <span class="pp">|</span> Descriptive $\hat{p}$; tail probability under $H_0$ <span class="pp">|</span> <span class="in">`geom_vline`</span>, <span class="in">`pbinom`</span>, one-page write-up <span class="pp">|</span></span>
@@ -1044,7 +1044,7 @@ P(X = x) = \binom{n}{x}\, p^x (1-p)^{n-x}, \quad x = 0, 1, \ldots, n
 <span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>Open the <span class="co">[</span><span class="ot">**sample one-page write-up — ESP binomial test (PDF)**</span><span class="co">](../projects/Project1_ESP_Binomial_Test.pdf)</span>. It is a finished Project 1 report.</span>
 <span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Section <span class="pp">|</span> What to notice <span class="pp">|</span> World <span class="pp">|</span></span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a><span class="pp">|--------------------|-----------------------------------|------------------|</span></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a><span class="pp">|--------------------|----------------------------------|------------------|</span></span>
 <span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Introduction** <span class="pp">|</span> Question, motivation, $p$ in context, $H_0$ and $H_a$ stated before data <span class="pp">|</span> Imagine <span class="pp">|</span></span>
 <span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Data collection** | How, when, where; **four BRP conditions in context** <span class="pp">|</span> Observe <span class="pp">|</span></span>
 <span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Descriptive statistics** <span class="pp">|</span> $x$, $n$, $\hat{p}$, chart of observed counts <span class="pp">|</span> Observe <span class="pp">|</span></span>
