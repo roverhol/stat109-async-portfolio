@@ -186,15 +186,15 @@ window.Quarto = {
 
 <section id="methods-table" class="level1">
 <h1>Methods Table</h1>
-<p>This page is our statistics <strong>“toolbox.”</strong> It is organized by:</p>
+<p>This page is our statistics “toolbox.” It is organized by:</p>
 <ul>
-<li>what we want to do (<strong>descriptive</strong>: plot/number summary, or <strong>inferential</strong>: test/CI/prediction), and</li>
-<li>what we have (the <strong>number and type of variables</strong>).</li>
+<li>what we want to do (descriptive: plot/number summary, or inferential: test/CI/prediction), and</li>
+<li>what we have (the number and type of variables).</li>
 </ul>
 <p>For the table below:</p>
 <ul>
-<li><strong>columns = what we have</strong> (number/type of variables),</li>
-<li><strong>rows = what we want to do</strong> (describe, infer a parameter, infer an individual value).</li>
+<li>columns = what we have (number/type of variables),</li>
+<li>rows = what we want to do (describe, infer a parameter, infer an individual value).</li>
 </ul>
 <hr>
 <section id="methods-toolbox" class="level2">
@@ -841,15 +841,15 @@ window.Quarto = {
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Methods Table</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>This page is our statistics **“toolbox.”** It is organized by:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>This page is our statistics “toolbox.” It is organized by:</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>what we want to do (**descriptive**: plot/number summary, or **inferential**: test/CI/prediction), and</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>what we have (the **number and type of variables**).</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>what we want to do (descriptive: plot/number summary, or inferential: test/CI/prediction), and</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>what we have (the number and type of variables).</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>For the table below:</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**columns = what we have** (number/type of variables),</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**rows = what we want to do** (describe, infer a parameter, infer an individual value).</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>columns = what we have (number/type of variables),</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>rows = what we want to do (describe, infer a parameter, infer an individual value).</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
@@ -859,7 +859,7 @@ window.Quarto = {
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------|---------|---------|---------|---------|---------|---------|---------|</span></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Describe: number summary** <span class="pp">|</span> Counts, proportions, percentages (<span class="in">`count`</span>, <span class="in">`mutate`</span>) <span class="pp">|</span> Mean/median; SD/range/IQR (<span class="in">`summarize`</span>) <span class="pp">|</span> Two-way counts + row/column/grand proportions <span class="pp">|</span> Group-wise means/SDs by category (<span class="in">`group_by`</span>) <span class="pp">|</span> Group-wise means/SDs by category (<span class="in">`group_by`</span>) <span class="pp">|</span> Correlation <span class="in">`cor(x,y)`</span> + slope/intercept summaries <span class="pp">|</span> Class counts and proportions by predictor groups <span class="pp">|</span></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Describe: plot** <span class="pp">|</span> Bar plot (<span class="in">`geom_bar`</span> or <span class="in">`geom_col`</span>) <span class="pp">|</span> Histogram / boxplot / dotplot <span class="pp">|</span> Stacked or 100% stacked bar (<span class="in">`geom_col(position = "fill")`</span>) <span class="pp">|</span> Boxplot/histogram/dotplot per group <span class="pp">|</span> Boxplot per group (ANOVA context) <span class="pp">|</span> Scatterplot (<span class="in">`geom_point`</span>) <span class="pp">|</span> Bar plots by class or probability plot vs predictor <span class="pp">|</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Infer parameter: notation** <span class="pp">|</span> $p$ <span class="pp">|</span> $\mu$ <span class="pp">|</span> Association ($\chi^2$ independence); 2×2: $p_1 - p_2$ <span class="pp">|</span> $\mu_1 - \mu_2$ (numerical RV) or $p_1 - p_2$ (binary RV) <span class="pp">|</span> $\mu_1,\ldots,\mu_k$ (ANOVA across EV groups) <span class="pp">|</span> $\beta_0, \beta_1$ <span class="pp">|</span> Logistic $\beta$; prob.\ RV given EV <span class="pp">|</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Infer parameter: notation** <span class="pp">|</span> $p$ <span class="pp">|</span> $\mu$ <span class="pp">|</span> Association ($\chi^2$ independence); 2×2: $p_1 - p_2$ <span class="pp">|</span> $\mu_1 - \mu_2$ (numerical RV) or $p_1 - p_2$ (binary RV) <span class="pp">|</span> $\mu_1,\ldots,\mu_k$ (ANOVA across EV groups) <span class="pp">|</span> $\beta_0, \beta_1$ <span class="pp">|</span> Logistic $\beta$; prob.&nbsp;RV given EV <span class="pp">|</span></span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Infer parameter: test name + sample null** <span class="pp">|</span> One-proportion test, $H_0: p = p_0$ <span class="pp">|</span> One-sample (or paired) $t$-test, $H_0: \mu = \mu_0$ <span class="pp">|</span> Chi-square independence, $H_0$: EV and RV independent <span class="pp">|</span> Two-sample $t$-test $H_0: \mu_1 - \mu_2 = 0$, or two-proportion $H_0: p_1 - p_2 = 0$ <span class="pp">|</span> One-way ANOVA $H_0: \mu_1 = \mu_2 = \cdots = \mu_k$ <span class="pp">|</span> Slope test $H_0: \beta_1 = 0$ <span class="pp">|</span> Logistic slope $H_0: \beta_1 = 0$ (or relevant coefficient $= 0$) <span class="pp">|</span></span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Infer parameter: test R code** <span class="pp">|</span> <span class="in">`binom.test()`</span> (exact) or <span class="in">`prop.test()`</span> <span class="pp">|</span> <span class="in">`t.test(x)`</span> or paired <span class="in">`t.test(x,y,paired=TRUE)`</span> <span class="pp">|</span> <span class="in">`chisq.test(tab)`</span> <span class="pp">|</span> <span class="in">`t.test(y ~ group, var.equal = FALSE)`</span> or <span class="in">`prop.test(...)`</span> <span class="pp">|</span> <span class="in">`fit &lt;- lm(y ~ group); anova(fit)`</span> <span class="pp">|</span> <span class="in">`fit &lt;- lm(y ~ x); summary(fit)`</span> <span class="pp">|</span> <span class="in">`fit &lt;- glm(y ~ x_or_group, family = binomial); summary(fit)`</span> <span class="pp">|</span></span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Infer parameter: test conditions** <span class="pp">|</span> Binomial / SRS; for $z$ approx need $np \ge 10$ and $n(1-p) \ge 10$ <span class="pp">|</span> Random sample (or paired) + large $n$ or roughly normal population/differences <span class="pp">|</span> Independent obs.; expected counts typically $\ge 5$ <span class="pp">|</span> Two samples or random assignment; conditions for chosen method <span class="pp">|</span> Independent obs.; roughly normal within groups; similar spread <span class="pp">|</span> Linear form; independent obs.; residual assumptions for $t$-based inference <span class="pp">|</span> Binary RV; independent obs.; appropriate model form <span class="pp">|</span></span>
