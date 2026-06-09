@@ -149,12 +149,21 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#module-2-read-0-why-estimation-matters" id="toc-module-2-read-0-why-estimation-matters" class="nav-link active" data-scroll-target="#module-2-read-0-why-estimation-matters">Module 2, Read 0: Why estimation matters</a>
+  <li><a href="#module-2-preview" id="toc-module-2-preview" class="nav-link active" data-scroll-target="#module-2-preview">Module 2 Preview</a>
   <ul class="collapse">
-  <li><a href="#the-story-in-one-pass" id="toc-the-story-in-one-pass" class="nav-link" data-scroll-target="#the-story-in-one-pass">The story in one pass</a></li>
+  <li><a href="#good-science-plan-your-estimate-before-you-collect" id="toc-good-science-plan-your-estimate-before-you-collect" class="nav-link" data-scroll-target="#good-science-plan-your-estimate-before-you-collect">Good science: plan your estimate before you collect</a>
+  <ul class="collapse">
+  <li><a href="#the-world-we-imagine-theory-first" id="toc-the-world-we-imagine-theory-first" class="nav-link" data-scroll-target="#the-world-we-imagine-theory-first">1. The world we imagine (theory first)</a></li>
+  <li><a href="#the-world-we-observe-observations-second" id="toc-the-world-we-observe-observations-second" class="nav-link" data-scroll-target="#the-world-we-observe-observations-second">2. The world we <strong>observe</strong> (observations second)</a></li>
+  <li><a href="#the-world-of-computers-connect-the-two" id="toc-the-world-of-computers-connect-the-two" class="nav-link" data-scroll-target="#the-world-of-computers-connect-the-two">3. The world of <strong>computers</strong> (connect the two)</a></li>
+  </ul></li>
+  <li><a href="#sample-meets-population-the-confidence-interval" id="toc-sample-meets-population-the-confidence-interval" class="nav-link" data-scroll-target="#sample-meets-population-the-confidence-interval">Connecting Observations with Theory</a></li>
+  <li><a href="#connection-with-the-rest-of-the-course" id="toc-connection-with-the-rest-of-the-course" class="nav-link" data-scroll-target="#connection-with-the-rest-of-the-course">Connection with the Rest of the Course</a>
+  <ul class="collapse">
+  <li><a href="#interval-formulas-preview" id="toc-interval-formulas-preview" class="nav-link" data-scroll-target="#interval-formulas-preview">Interval formulas (preview)</a></li>
+  </ul></li>
   <li><a href="#tour-the-sample-project" id="toc-tour-the-sample-project" class="nav-link" data-scroll-target="#tour-the-sample-project">Tour the sample project</a></li>
-  <li><a href="#what-you-will-do-different-from-the-sample" id="toc-what-you-will-do-different-from-the-sample" class="nav-link" data-scroll-target="#what-you-will-do-different-from-the-sample">What you will do (different from the sample)</a></li>
-  <li><a href="#what-to-do-next" id="toc-what-to-do-next" class="nav-link" data-scroll-target="#what-to-do-next">What to do next</a></li>
+  <li><a href="#your-project" id="toc-your-project" class="nav-link" data-scroll-target="#your-project">Your project</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="module-2-read-00.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
@@ -186,86 +195,181 @@ window.Quarto = {
 </header>
 
 
-<section id="module-2-read-0-why-estimation-matters" class="level1">
-<h1>Module 2, Read 0: Why estimation matters</h1>
+<section id="module-2-preview" class="level1">
+<h1>Module 2 Preview</h1>
 <p><strong>Big question:</strong> What is the truth about a <strong>whole population</strong>, and how close can we get from one <strong>sample</strong>?</p>
-<p><strong>Project:</strong> <a href="../projects/project-2">Project 2 — Estimating the Truth</a> · <strong>Sample report:</strong> <a href="../projects/project-2-sample.pdf">CA high schools example (PDF)</a> · <strong>Next:</strong> <a href="module-2-read-01">Read 1</a></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Short read — start here
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Five-minute orientation before <a href="module-2-read-01">Read 1</a>. Module 1 asked <em>“Is this observation surprising?”</em> Module 2 asks <em>“What is a plausible range for the population truth?”</em></p>
+<p>This page is a <strong>short orientation</strong>, not the textbook. Read before <a href="module-2-read-01">Read 1</a> so you see how Project 2 fits the course story (five steps, three worlds, and <strong>plan before you collect</strong>).</p>
 </div>
 </div>
-<section id="the-story-in-one-pass" class="level2">
-<h2 class="anchored" data-anchor-id="the-story-in-one-pass">The story in one pass</h2>
-<p>In Module 1 you tested a <strong>claim</strong> with a p-value. In Module 2 you <strong>estimate</strong> an unknown <strong>parameter</strong> (population proportion <span class="math inline">\(p\)</span> or mean <span class="math inline">\(\mu\)</span>) using a <strong>statistic</strong> from your sample (<span class="math inline">\(\hat{p}\)</span> or <span class="math inline">\(\bar{x}\)</span>).</p>
-<p>A <strong>95% confidence interval</strong> is a range of plausible values for the parameter. The interval width reflects <strong>precision</strong> — larger <span class="math inline">\(n\)</span> usually means a narrower interval. <strong>How</strong> you sample matters too: a <strong>simple random sample</strong> from a good <strong>sampling frame</strong> supports generalizing to the population; convenience samples often do not.</p>
-<p>Project 2 requires you to define a <strong>finite, listable population</strong> (<span class="math inline">\(N\)</span>), draw an <strong>SRS</strong> of size <span class="math inline">\(n\)</span>, compute the right <strong>95% CI</strong> (mean or proportion; <strong>FPC</strong> when sampling without replacement from finite <span class="math inline">\(N\)</span>), and interpret it with the sentence pattern from Read 1.</p>
+<section id="good-science-plan-your-estimate-before-you-collect" class="level2">
+<h2 class="anchored" data-anchor-id="good-science-plan-your-estimate-before-you-collect">Good science: plan your estimate before you collect</h2>
+<p>In <a href="../lectures/module-0-read-00#the-statistical-process">Module 0, Read 0</a> you met the <a href="../lectures/module-0-read-00#the-statistical-process"><strong>five-step statistical process</strong></a>. Module 1 used it to <strong>test a claim</strong> with a p-value. Project 2 uses it to <strong>estimate a parameter</strong> from limited information (a <em>sample</em>).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 68%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>In Project 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1 — Ask</strong></td>
+<td>Aresearch question that asks “What is the value of a <strong>population parameter?“</strong>. Your <strong>parameter</strong> should be a <strong>proportion</strong> <span class="math inline">\(p\)</span> or <strong>mean</strong> <span class="math inline">\(\mu\)</span> for a <strong>population</strong> that can be listed and sampled.</td>
+</tr>
+<tr class="even">
+<td><strong>2 — Plan</strong></td>
+<td>State the population (<span class="math inline">\(N\)</span>), the variable, the sampling method (you’ll be required to use the simple random sampling method), sample size <span class="math inline">\(n\)</span>, and which <strong>95% Confidence Interval</strong> you will use (mean vs proportion; FPC or not) before you collect data.</td>
+</tr>
+<tr class="odd">
+<td><strong>3 — Collect</strong></td>
+<td>Randomly select <span class="math inline">\(n\)</span> units from a list of the population; visit or inspect each of these units and record the value of your variable once for each unit.</td>
+</tr>
+<tr class="even">
+<td><strong>4 — Analyze</strong></td>
+<td>Compute a single best estimate (<span class="math inline">\(\hat{p}\)</span> or <span class="math inline">\(\bar{x}\)</span>), graph the data, check interval conditions and then compute the <strong>95% Confidence Interval</strong> in R according to your plan.</td>
+</tr>
+<tr class="odd">
+<td><strong>5 — Conclude</strong></td>
+<td>Interpret the interval in context <em>“I am 95% confident that…”</em> for your population parameter of interest from the research question.</td>
+</tr>
+</tbody>
+</table>
+<p>Statistics moves among three worlds (<a href="../lectures/module-0-read-00#three-worlds">Module 0</a>). In this project, your research question is about the value of a summary of a large population but due to constraints of time and money, you won’t be able to observe each member of this population. So instead you’ll observe only a few units and then compute a range of best guesses for the value in the population.</p>
+<section id="the-world-we-imagine-theory-first" class="level3">
+<h3 class="anchored" data-anchor-id="the-world-we-imagine-theory-first">1. The world we imagine (theory first)</h3>
+<p>Here are some key ideas and terms in our imaginary world:</p>
+<ul>
+<li>Name a <strong>population</strong> and the <strong>parameter</strong> <span class="math inline">\(p\)</span> or <span class="math inline">\(\mu\)</span> you want to learn about.</li>
+<li>Plan <strong>simple random sampling</strong> without replacement: every subset of size <span class="math inline">\(n\)</span> from the frame should be equally likely.</li>
+<li>Choose a <strong>confidence level</strong> (95%) and the <strong>interval method</strong> that was built by using mathematics to go from a sample to a population.</li>
+</ul>
+</section>
+<section id="the-world-we-observe-observations-second" class="level3">
+<h3 class="anchored" data-anchor-id="the-world-we-observe-observations-second">2. The world we <strong>observe</strong> (observations second)</h3>
+<p>The world we observe will be representative of the we imagine if we use a good <strong>sampling method</strong>:</p>
+<ul>
+<li>Visit <span class="math inline">\(n\)</span> units in a randomly selected subset of the population and record the value of the variable for each one.</li>
+<li>Compute <span class="math inline">\(\hat{p} = x/n\)</span> if the variable is binary or <span class="math inline">\(\bar{x}\)</span> if the variable is numerical.</li>
+<li><strong>Descriptive</strong> graphs (histogram, dot plot, or bar chart) show what you measured: they do not by themselves estimate the population parameter with high confidence.</li>
+</ul>
+</section>
+<section id="the-world-of-computers-connect-the-two" class="level3">
+<h3 class="anchored" data-anchor-id="the-world-of-computers-connect-the-two">3. The world of <strong>computers</strong> (connect the two)</h3>
+<p>R moves between what you imagine and what you observe:</p>
+<ul>
+<li><strong><code>prop.test()</code></strong> or <strong><code>binom.test()</code></strong> — 95% CI for a <strong>proportion</strong> (check 4 BRP conditions and large-count conditions first).</li>
+<li><strong><code>t.test()</code></strong> — 95% CI for a <strong>mean</strong> (check random sample and normality or <span class="math inline">\(n &gt; 30\)</span>).</li>
+<li>Multiply the standard error by <span class="math inline">\(\sqrt{(N-n)/(N-1)}\)</span> when the <strong>FPC</strong> applies.</li>
+<li><strong><code>ggplot2</code></strong> — display the sample you observed.</li>
+</ul>
+<p>You will build the theory in <a href="module-2-read-01">Read 1</a> (sampling, conditions, formulas) and the R habits in <a href="module-2-read-02">Read 2</a> and the labs.</p>
+</section>
+</section>
+<section id="sample-meets-population-the-confidence-interval" class="level2">
+<h2 class="anchored" data-anchor-id="sample-meets-population-the-confidence-interval">Connecting Observations with Theory</h2>
+<p>Once you have observed data, we ask:</p>
+<blockquote class="blockquote">
+<p>What range of values for the <strong>parameter</strong> is plausible, given this sample and the way I sampled?</p>
+</blockquote>
+<p>That range is a <strong>95% confidence interval</strong>.</p>
+<ul>
+<li>A narrow interval means your estimate is precise and more useful.</li>
+<li>A wide interval means more uncertainty about the value of the parameter and is less useful.</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Key Interpretation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <strong>95% confidence interval</strong> means: if we repeated sampling the same way many times, about <strong>95%</strong> of those intervals would contain the true parameter.</p>
+</div>
+</div>
+</section>
+<section id="connection-with-the-rest-of-the-course" class="level2">
+<h2 class="anchored" data-anchor-id="connection-with-the-rest-of-the-course">Connection with the Rest of the Course</h2>
+<p>Module 1 used the <strong>exact binomial</strong> distribution to conduct a test of a pair of hypotheses. Module 2 adds <strong>approximate</strong> distribution methods for estimation and a new type of data, <strong>numerical</strong>.</p>
+<p>At the end of this module you’ll be able to compute a confidence interval in one line of R code AND you’ll have a deep understanding of the foundations that will allow you to chose <strong>which R function to use</strong>, <strong>which conditions to check</strong>, and <strong>how to interpret</strong> the output.</p>
+<section id="interval-formulas-preview" class="level3">
+<h3 class="anchored" data-anchor-id="interval-formulas-preview">Interval formulas (preview)</h3>
+<p><strong>Proportion (Wald, at least 10 successes and 10 failures):</strong></p>
+<p><span class="math display">\[
+\hat{p} \pm 2 \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+\]</span></p>
+<p>(use <code>prop.test</code>, apply <strong>FPC</strong> when sampling without replacement from finite <span class="math inline">\(N\)</span>.)</p>
+<p><strong>Mean (large</strong> <span class="math inline">\(n\)</span> or normal population, when conditions hold):</p>
+<p><span class="math display">\[
+\bar{x} \pm 2 \frac{s}{\sqrt{n}}
+\]</span></p>
+<p>(use <strong><code>t.test</code></strong>, apply <strong>FPC</strong> when sampling without replacement from a finite <span class="math inline">\(N\)</span>.)</p>
+</section>
 </section>
 <section id="tour-the-sample-project" class="level2">
 <h2 class="anchored" data-anchor-id="tour-the-sample-project">Tour the sample project</h2>
-<p>Open the <strong><a href="../projects/project-2-sample.pdf">sample one-page write-up — CA high schools (PDF)</a></strong> and the <a href="../projects/project-2-example-ca-high-schools.html">HTML example</a>. <strong>Do not copy that population</strong> — build your own study.</p>
+<p>Here is Rosanna’s <a href="../projects/project-2-sample.pdf"><strong>sample one-page write-up — CA high schools (PDF)</strong></a></p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 15%">
-<col style="width: 26%">
-<col style="width: 58%">
+<col style="width: 27%">
+<col style="width: 47%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Section</th>
 <th>What to notice</th>
-<th>Why it matters for <em>your</em> project</th>
+<th>World</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><strong>Introduction</strong></td>
-<td>Research question, population, variable type</td>
-<td>You must name a <strong>listable</strong> finite population and one variable</td>
+<td>Research question with a finite population and a parameter (<span class="math inline">\(p\)</span> or <span class="math inline">\(\mu\)</span>)</td>
+<td>Imagine</td>
 </tr>
 <tr class="even">
 <td><strong>Methods</strong></td>
-<td>How the SRS was drawn; <span class="math inline">\(n\)</span> and <span class="math inline">\(N\)</span></td>
-<td>Project 2 requires <strong>documented SRS</strong> from <span class="math inline">\(\{1,\ldots,N\}\)</span></td>
+<td>Simple Random Sample (SRS) from <span class="math inline">\(\{1,\ldots,N\}\)</span> of size <span class="math inline">\(n\)</span> from the population of size <span class="math inline">\(N\)</span>. Variable collected.</td>
+<td>Observe</td>
 </tr>
 <tr class="odd">
 <td><strong>Results</strong></td>
-<td>Point estimate + <strong>95% CI</strong> + conditions checked</td>
-<td>Match formula to <strong>mean vs proportion</strong> and <strong>FPC</strong> when needed</td>
+<td>Single best guess for the real answer and an interval I am highly confident contains the real answer</td>
+<td>Compute</td>
 </tr>
 <tr class="even">
 <td><strong>Conclusion</strong></td>
-<td>“I am 95% confident that…” in context</td>
-<td>Same interpretation template you will use on the rubric</td>
+<td><em>“I am 95% confident that…”</em></td>
+<td>Imagine (Updated)</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="what-you-will-do-different-from-the-sample" class="level2">
-<h2 class="anchored" data-anchor-id="what-you-will-do-different-from-the-sample">What you will do (different from the sample)</h2>
+<section id="your-project" class="level2">
+<h2 class="anchored" data-anchor-id="your-project">Your project</h2>
+<p>By the end of Module 2 you will:</p>
 <ol type="1">
-<li>Choose your <strong>own</strong> finite population and variable (binary → proportion, or numerical → mean).</li>
-<li>Draw an <strong>SRS</strong> without replacement and collect real data.</li>
-<li>Compute a <strong>95% CI</strong> with the correct formula and <strong>check conditions</strong>.</li>
-<li>Submit a <strong>one-page summary</strong> + runnable R notebook (<a href="../projects/project-2-estimation-mean-fpc.ipynb">mean template</a> or <a href="../projects/project-2-proportion-fpc.ipynb">proportion template</a>).</li>
+<li>Choose your own listable population and one variable to summarize with a proportion or mean.</li>
+<li>Draw a simple random sample without replacement, check conditions, and compute the correct 95% CI (including FPC when appropriate).</li>
+<li>Submit a one-page summary and runnable R notebook with your code.</li>
 </ol>
-</section>
-<section id="what-to-do-next" class="level2">
-<h2 class="anchored" data-anchor-id="what-to-do-next">What to do next</h2>
-<ol type="1">
-<li>Skim the <a href="../projects/project-2-sample.pdf">sample PDF</a> (5–10 minutes).</li>
-<li>Open <a href="../projects/project-2">Project 2</a> and note due dates on the <a href="../schedule">course path</a>.</li>
-<li>Start <strong><a href="module-2-read-01">Read 1</a></strong> — binomial center/spread through CIs and sampling.</li>
-</ol>
-<p>When you finish Read 1, take <a href="../quizzes/quiz-m2-def">Quiz A (Def &amp; Notation)</a>, then continue with <a href="module-2-read-02">Read 2</a>.</p>
 
 
 <!-- -->
@@ -738,51 +842,114 @@ window.Quarto = {
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf: default</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu"># Module 2, Read 0: Why estimation matters</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu"># Module 2 Preview</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>**Big question:** What is the truth about a **whole population**, and how close can we get from one **sample**?</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>**Project:** [Project 2 — Estimating the Truth](../projects/project-2) · **Sample report:** [CA high schools example (PDF)](../projects/project-2-sample.pdf) · **Next:** <span class="co">[</span><span class="ot">Read 1</span><span class="co">](module-2-read-01)</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Short read — start here</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Five-minute orientation before <span class="co">[</span><span class="ot">Read 1</span><span class="co">](module-2-read-01)</span>. Module 1 asked *“Is this observation surprising?”* Module 2 asks *“What is a plausible range for the population truth?”*</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>This page is a **short orientation**, not the textbook. Read before [Read 1](module-2-read-01) so you see how Project 2 fits the course story (five steps, three worlds, and **plan before you collect**).</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## Good science: plan your estimate before you collect</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>In <span class="co">[</span><span class="ot">Module 0, Read 0</span><span class="co">](../lectures/module-0-read-00#the-statistical-process)</span> you met the <span class="co">[</span><span class="ot">**five-step statistical process**</span><span class="co">](../lectures/module-0-read-00#the-statistical-process)</span>. Module 1 used it to **test a claim** with a p-value. Project 2 uses it to **estimate a parameter** from limited information (a *sample*).</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## The story in one pass</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>In Module 1 you tested a **claim** with a p-value. In Module 2 you **estimate** an unknown **parameter** (population proportion $p$ or mean $\mu$) using a **statistic** from your sample ($\hat{p}$ or $\bar{x}$).</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>A **95% confidence interval** is a range of plausible values for the parameter. The interval width reflects **precision** — larger $n$ usually means a narrower interval. **How** you sample matters too: a **simple random sample** from a good **sampling frame** supports generalizing to the population; convenience samples often do not.</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>Project 2 requires you to define a **finite, listable population** ($N$), draw an **SRS** of size $n$, compute the right **95% CI** (mean or proportion; **FPC** when sampling without replacement from finite $N$), and interpret it with the sentence pattern from Read 1.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> In Project 2 <span class="pp">|</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----------------------|-------------------------------------------------|</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **1 — Ask** | Aresearch question that asks "What is the value of a **population parameter?"**. Your **parameter** should be a **proportion** $p$ or **mean** $\mu$ for a **population** that can be listed and sampled. <span class="pp">|</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **2 — Plan** | State the population ($N$), the variable, the sampling method (you'll be required to use the simple random sampling method), sample size $n$, and which **95% Confidence Interval** you will use (mean vs proportion; FPC or not) before you collect data. <span class="pp">|</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **3 — Collect** <span class="pp">|</span> Randomly select $n$ units from a list of the population; visit or inspect each of these units and record the value of your variable once for each unit. <span class="pp">|</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **4 — Analyze** | Compute a single best estimate ($\hat{p}$ or $\bar{x}$), graph the data, check interval conditions and then compute the **95% Confidence Interval** in R according to your plan. <span class="pp">|</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **5 — Conclude** <span class="pp">|</span> Interpret the interval in context *“I am 95% confident that...”* for your population parameter of interest from the research question. <span class="pp">|</span></span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tour the sample project</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Statistics moves among three worlds (<span class="co">[</span><span class="ot">Module 0</span><span class="co">](../lectures/module-0-read-00#three-worlds)</span>). In this project, your research question is about the value of a summary of a large population but due to constraints of time and money, you won't be able to observe each member of this population. So instead you'll observe only a few units and then compute a range of best guesses for the value in the population.</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>Open the **[sample one-page write-up — CA high schools (PDF)](../projects/project-2-sample.pdf)** and the [HTML example](../projects/project-2-example-ca-high-schools.qmd). **Do not copy that population** — build your own study.</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">### 1. The world we imagine (theory first)</span></span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Section <span class="pp">|</span> What to notice <span class="pp">|</span> Why it matters for *your* project <span class="pp">|</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------|----------------|-----------------------------------|</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Introduction** | Research question, population, variable type | You must name a **listable** finite population and one variable <span class="pp">|</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Methods** | How the SRS was drawn; $n$ and $N$ | Project 2 requires **documented SRS** from $<span class="sc">\{</span>1,\ldots,N<span class="sc">\}</span>$ <span class="pp">|</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Results** | Point estimate + **95% CI** + conditions checked | Match formula to **mean vs proportion** and **FPC** when needed <span class="pp">|</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Conclusion** <span class="pp">|</span> “I am 95% confident that…” in context <span class="pp">|</span> Same interpretation template you will use on the rubric <span class="pp">|</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## What you will do (different from the sample)</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Choose your **own** finite population and variable (binary → proportion, or numerical → mean).</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Draw an **SRS** without replacement and collect real data.</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Compute a **95% CI** with the correct formula and **check conditions**.</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Submit a **one-page summary** + runnable R notebook (<span class="co">[</span><span class="ot">mean template</span><span class="co">](../projects/project-2-estimation-mean-fpc.ipynb)</span> or <span class="co">[</span><span class="ot">proportion template</span><span class="co">](../projects/project-2-proportion-fpc.ipynb)</span>).</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>Here are some key ideas and terms in our imaginary world:</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Name a **population** and the **parameter** $p$ or $\mu$ you want to learn about.</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Plan **simple random sampling** without replacement: every subset of size $n$ from the frame should be equally likely.</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Choose a **confidence level** (95%) and the **interval method** that was built by using mathematics to go from a sample to a population.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="fu">### 2. The world we **observe** (observations second)</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>The world we observe will be representative of the we imagine if we use a good **sampling method**:</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Visit $n$ units in a randomly selected subset of the population and record the value of the variable for each one.</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Compute $\hat{p} = x/n$ if the variable is binary or $\bar{x}$ if the variable is numerical.</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Descriptive** graphs (histogram, dot plot, or bar chart) show what you measured: they do not by themselves estimate the population parameter with high confidence.</span>
 <span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="fu">## What to do next</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="fu">### 3. The world of **computers** (connect the two)</span></span>
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Skim the <span class="co">[</span><span class="ot">sample PDF</span><span class="co">](../projects/project-2-sample.pdf)</span> (5–10 minutes).</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Open <span class="co">[</span><span class="ot">Project 2</span><span class="co">](../projects/project-2)</span> and note due dates on the <span class="co">[</span><span class="ot">course path</span><span class="co">](../schedule)</span>.</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Start **[Read 1](module-2-read-01)** — binomial center/spread through CIs and sampling.</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>When you finish Read 1, take <span class="co">[</span><span class="ot">Quiz A (Def &amp; Notation)</span><span class="co">](../quizzes/quiz-m2-def)</span>, then continue with <span class="co">[</span><span class="ot">Read 2</span><span class="co">](module-2-read-02)</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>R moves between what you imagine and what you observe:</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`prop.test()`** or **`binom.test()`** — 95% CI for a **proportion** (check 4 BRP conditions and large-count conditions first).</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`t.test()`** — 95% CI for a **mean** (check random sample and normality or $n &gt; 30$).</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Multiply the standard error by $\sqrt{(N-n)/(N-1)}$ when the **FPC** applies.</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`ggplot2`** — display the sample you observed.</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>You will build the theory in <span class="co">[</span><span class="ot">Read 1</span><span class="co">](module-2-read-01)</span> (sampling, conditions, formulas) and the R habits in <span class="co">[</span><span class="ot">Read 2</span><span class="co">](module-2-read-02)</span> and the labs.</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="fu">## Connecting Observations with Theory {#sample-meets-population-the-confidence-interval}</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>Once you have observed data, we ask:</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; What range of values for the **parameter** is plausible, given this sample and the way I sampled?</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>That range is a **95% confidence interval**.</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>A narrow interval means your estimate is precise and more useful.</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>A wide interval means more uncertainty about the value of the parameter and is less useful.</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>::: callout-important</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="fu">## Key Interpretation</span></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>A **95% confidence interval** means: if we repeated sampling the same way many times, about **95%** of those intervals would contain the true parameter.</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## Connection with the Rest of the Course</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>Module 1 used the **exact binomial** distribution to conduct a test of a pair of hypotheses. Module 2 adds **approximate** distribution methods for estimation and a new type of data, **numerical**.</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>At the end of this module you'll be able to compute a confidence interval in one line of R code AND you'll have a deep understanding of the foundations that will allow you to chose **which R function to use**, **which conditions to check**, and **how to interpret** the output.</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="fu">### Interval formulas (preview)</span></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>**Proportion (Wald, at least 10 successes and 10 failures):**</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>\hat{p} \pm 2 \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>(use <span class="in">`prop.test`</span>, apply **FPC** when sampling without replacement from finite $N$.)</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>**Mean (large** $n$ or normal population, when conditions hold):</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>\bar{x} \pm 2 \frac{s}{\sqrt{n}}</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>(use **`t.test`**, apply **FPC** when sampling without replacement from a finite $N$.)</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tour the sample project</span></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>Here is Rosanna's <span class="co">[</span><span class="ot">**sample one-page write-up — CA high schools (PDF)**</span><span class="co">](../projects/project-2-sample.pdf)</span></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Section <span class="pp">|</span> What to notice <span class="pp">|</span> World <span class="pp">|</span></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="pp">|--------------------|----------------------------------|------------------|</span></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Introduction** <span class="pp">|</span> Research question with a finite population and a parameter ($p$ or $\mu$) <span class="pp">|</span> Imagine <span class="pp">|</span></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Methods** <span class="pp">|</span> Simple Random Sample (SRS) from $<span class="sc">\{</span>1,\ldots,N<span class="sc">\}</span>$ of size $n$ from the population of size $N$.  Variable collected. <span class="pp">|</span> Observe <span class="pp">|</span></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Results** <span class="pp">|</span> Single best guess for the real answer and an interval I am highly confident contains the real answer <span class="pp">|</span>  Compute <span class="pp">|</span></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Conclusion** <span class="pp">|</span> *“I am 95% confident that…”* <span class="pp">|</span> Imagine (Updated) <span class="pp">|</span></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="fu">## Your project</span></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>By the end of Module 2 you will:</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Choose your own listable population and one variable to summarize with a proportion or mean.</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Draw a simple random sample without replacement, check conditions, and compute the correct 95% CI (including FPC when appropriate).</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Submit a one-page summary and runnable R notebook with your code.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
