@@ -54,47 +54,5 @@
     "title": "STAT 109: Introductory Biostatistics",
     "section": "Why is the course like this?",
     "text": "Why is the course like this?\nIn 2022, Cal Poly Humboldt became California’s third polytechnic university. Being a polytechnic means emphasizing learning by doing: developing knowledge and skills through hands-on projects connected to the places where we live, work, and play.\nThis course follows that philosophy. Rather than focusing primarily on watching lectures and taking exams in artificial circumstances, you will learn statistics by conducting investigations, analyzing data, building statistical models, and evaluating evidence. By the end of the course, you will have practiced the same kinds of activities that professionals in business, education, healthcare, government, and community organizations use to answer questions and make decisions.\nAt the same time, we continue Humboldt’s tradition of place-based learning by connecting with one another and the communities and environments that shape our lives through informal discussions and the course projects.\nCal Poly Humboldt’s motto, Light and Truth, reminds us that education is a search for understanding. Statistics is one of the tools we use in that search. By collecting evidence, asking thoughtful questions, and carefully evaluating uncertainty, we can develop a clearer understanding of the world around us.\nThis course also reflects values that are central to Cal Poly Humboldt: caring for the environment and for our community. Whether we are studying forests, wildlife, public health, or everyday decisions, statistics helps us learn from evidence and contribute thoughtfully to the well-being of people and the planet.\nFinally, this course is built around a particular vision of teaching and learning. Rather than viewing the professor as a “sage on the stage” whose job is to deliver answers, I see learning as a shared journey of inquiry. Together we will ask questions, gather evidence, build models, test ideas, and learn from mistakes. Along the way, you will have access to many resources, including your classmates, course materials, modern computational tools, AI assistants, and me. The goal is not simply to find answers, but to develop the habits of mind needed to ask good questions, think critically about evidence, work effectively with others, and solve challenging problems. My role is not only to teach statistics, but also to guide and support you as you build those skills."
-  },
-  {
-    "objectID": "projects/project-3-milestone.html",
-    "href": "projects/project-3-milestone.html",
-    "title": "Project 3 — Milestone",
-    "section": "",
-    "text": "Phase A in: Project 3 — Discovering Patterns\n\n\nOpen in Colab\nComplete Phase A in the notebook before you build all ten plots and the one-page summary (Phase B). Submitting the milestone to Canvas is optional.\n\n\n\nThis check lets you confirm your dataset loads before you invest time in graphs and the full report. Do not make univariate or bivariate plots, compute Pearson r, or write the one-page summary yet, those are Phase B.\n\n\nIn Module 0, Read 0, the five-step statistical process puts planning before collecting and after asking a question. This project is primary to work on your technical skill of making plots and calculating numerical summaries in R. So we’ll ignore asking well-defined questions, a data collection plan and instead focus on a descriptive analysis, which is often the first stage of Step 4: Analyzing the Data.\n\n\n\n\n\n\n\n\n\n\n\nStep\nTask\n\n\n\n\nA1\nChoose a TidyTuesday week (or approved source). Paste the GitHub folder link and one-sentence description.\n\n\nA2\nLoad the CSV in Colab (R runtime): library(tidyverse) + read_csv(\"https://raw.githubusercontent.com/...\").\n\n\nA3\nRun glimpse() and head() to confirm the file loaded (rows, columns, types).\n\n\nA4\nFrom all columns in the dataset, choose four variables for Project 3. For each: name, description (from readme), type (categorical or numerical).\n\n\n\nLoading instructions: How to choose and load a TidyTuesday dataset on the main Project 3 page.\n\n\n\nYou may submit the milestone notebook showing:\n\nTidyTuesday week link (or other source URL) and short dataset description (A1)\nWorking read_csv() code with the URL from the readme (A2)\nOutput of glimpse() (and optionally head()) — proof the data loaded (A3)\nTable of four chosen variables: name, description, categorical vs numerical (A4)\n\n\n\n\nComplete Phase B on the Project 3 page:\n\nFour univariate plots + summaries (one per focus variable)\nSix bivariate plots (one per pair among your four variables)\nOne-page PDF with two chosen figures, four numeric facts, and four findings\nFull notebook — uploaded to Canvas with the one-page PDF\n\nSample Phase B (not your dataset): Palmer penguins example · sample PDF"
-  },
-  {
-    "objectID": "projects/project-3-milestone.html#milestone-notebook",
-    "href": "projects/project-3-milestone.html#milestone-notebook",
-    "title": "Project 3 — Milestone",
-    "section": "",
-    "text": "Open in Colab\nComplete Phase A in the notebook before you build all ten plots and the one-page summary (Phase B). Submitting the milestone to Canvas is optional."
-  },
-  {
-    "objectID": "projects/project-3-milestone.html#what-this-checkpoint-is-for",
-    "href": "projects/project-3-milestone.html#what-this-checkpoint-is-for",
-    "title": "Project 3 — Milestone",
-    "section": "",
-    "text": "This check lets you confirm your dataset loads before you invest time in graphs and the full report. Do not make univariate or bivariate plots, compute Pearson r, or write the one-page summary yet, those are Phase B.\n\n\nIn Module 0, Read 0, the five-step statistical process puts planning before collecting and after asking a question. This project is primary to work on your technical skill of making plots and calculating numerical summaries in R. So we’ll ignore asking well-defined questions, a data collection plan and instead focus on a descriptive analysis, which is often the first stage of Step 4: Analyzing the Data."
-  },
-  {
-    "objectID": "projects/project-3-milestone.html#phase-a-complete-in-the-notebook",
-    "href": "projects/project-3-milestone.html#phase-a-complete-in-the-notebook",
-    "title": "Project 3 — Milestone",
-    "section": "",
-    "text": "Step\nTask\n\n\n\n\nA1\nChoose a TidyTuesday week (or approved source). Paste the GitHub folder link and one-sentence description.\n\n\nA2\nLoad the CSV in Colab (R runtime): library(tidyverse) + read_csv(\"https://raw.githubusercontent.com/...\").\n\n\nA3\nRun glimpse() and head() to confirm the file loaded (rows, columns, types).\n\n\nA4\nFrom all columns in the dataset, choose four variables for Project 3. For each: name, description (from readme), type (categorical or numerical).\n\n\n\nLoading instructions: How to choose and load a TidyTuesday dataset on the main Project 3 page."
-  },
-  {
-    "objectID": "projects/project-3-milestone.html#what-to-turn-in-to-canvas-optional",
-    "href": "projects/project-3-milestone.html#what-to-turn-in-to-canvas-optional",
-    "title": "Project 3 — Milestone",
-    "section": "",
-    "text": "You may submit the milestone notebook showing:\n\nTidyTuesday week link (or other source URL) and short dataset description (A1)\nWorking read_csv() code with the URL from the readme (A2)\nOutput of glimpse() (and optionally head()) — proof the data loaded (A3)\nTable of four chosen variables: name, description, categorical vs numerical (A4)"
-  },
-  {
-    "objectID": "projects/project-3-milestone.html#after-the-milestone",
-    "href": "projects/project-3-milestone.html#after-the-milestone",
-    "title": "Project 3 — Milestone",
-    "section": "",
-    "text": "Complete Phase B on the Project 3 page:\n\nFour univariate plots + summaries (one per focus variable)\nSix bivariate plots (one per pair among your four variables)\nOne-page PDF with two chosen figures, four numeric facts, and four findings\nFull notebook — uploaded to Canvas with the one-page PDF\n\nSample Phase B (not your dataset): Palmer penguins example · sample PDF"
   }
 ]
