@@ -54,47 +54,5 @@
     "title": "STAT 109: Introductory Biostatistics",
     "section": "Why is the course like this?",
     "text": "Why is the course like this?\nIn 2022, Cal Poly Humboldt became California’s third polytechnic university. Being a polytechnic means emphasizing learning by doing: developing knowledge and skills through hands-on projects connected to the places where we live, work, and play.\nThis course follows that philosophy. Rather than focusing primarily on watching lectures and taking exams in artificial circumstances, you will learn statistics by conducting investigations, analyzing data, building statistical models, and evaluating evidence. By the end of the course, you will have practiced the same kinds of activities that professionals in business, education, healthcare, government, and community organizations use to answer questions and make decisions.\nAt the same time, we continue Humboldt’s tradition of place-based learning by connecting with one another and the communities and environments that shape our lives through informal discussions and the course projects.\nCal Poly Humboldt’s motto, Light and Truth, reminds us that education is a search for understanding. Statistics is one of the tools we use in that search. By collecting evidence, asking thoughtful questions, and carefully evaluating uncertainty, we can develop a clearer understanding of the world around us.\nThis course also reflects values that are central to Cal Poly Humboldt: caring for the environment and for our community. Whether we are studying forests, wildlife, public health, or everyday decisions, statistics helps us learn from evidence and contribute thoughtfully to the well-being of people and the planet.\nFinally, this course is built around a particular vision of teaching and learning. Rather than viewing the professor as a “sage on the stage” whose job is to deliver answers, I see learning as a shared journey of inquiry. Together we will ask questions, gather evidence, build models, test ideas, and learn from mistakes. Along the way, you will have access to many resources, including your classmates, course materials, modern computational tools, AI assistants, and me. The goal is not simply to find answers, but to develop the habits of mind needed to ask good questions, think critically about evidence, work effectively with others, and solve challenging problems. My role is not only to teach statistics, but also to guide and support you as you build those skills."
-  },
-  {
-    "objectID": "projects/project-3-example-penguins.html",
-    "href": "projects/project-3-example-penguins.html",
-    "title": "Project 3 — Example: Palmer penguins",
-    "section": "",
-    "text": "Here I’ve done a sample Project 3 using the Palmer penguins TidyTuesday week (2020-07-28 on GitHub). Your project must use a different dataset.\nOpen sample in Colab · Sample one-page PDF\nThe sample notebook follows the Project 3 loading workflow: open the TidyTuesday readme, copy the read_csv URL, load with library(tidyverse), then glimpse(). It includes all four univariate plots and all six bivariate plots. The one-page PDF shows the two figures I would submit plus findings in a student voice.\n\n\n\nHow do flipper length, body mass, species, and island co-vary among Antarctic penguins in this sample? I loaded the CSV from TidyTuesday week 2020-07-28 with read_csv() (URL copied from that week’s readme). Four focus variables: species (categorical), island (categorical), flipper length mm (numerical), body mass g (numerical). The full file has 344 rows; two are missing flipper length and body mass, so after a missingness check I analyze the 342 penguins with complete data on all four variables.\n\n\n\n\n\n\n\n\n\n\n\n\n\nVariable\nType\nGraph in notebook\nNumeric fact\n\n\n\n\nSpecies\nCategorical\nBar chart\nGentoo: 124/342 ≈ 36% of penguins\n\n\nIsland\nCategorical\nBar chart\nBiscoe: 168/342 ≈ 49%\n\n\nFlipper length\nNumerical\nHistogram\nMean ≈ 200.9 mm, SD ≈ 14.1 mm (median 197 mm, IQR 23 mm)\n\n\nBody mass\nNumerical\nHistogram\nMean ≈ 4202 g, SD ≈ 802 g (median 4050 g, IQR 1200 g; right-skew)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPair\nTypes\nGraph + summary in notebook\n\n\n\n\nSpecies × island\nCat × cat\n100% stacked bar + two-way table (counts, row & column proportions)\n\n\nSpecies × flipper length\nCat × num\nSide-by-side boxplots + mean/SD/median/IQR per species (Gentoo ≈ 217 mm, Adelie ≈ 190 mm, Chinstrap ≈ 196 mm)\n\n\nSpecies × body mass\nCat × num\nSide-by-side boxplots + mean/SD per species (Gentoo ≈ 5076 g, Adelie ≈ 3701 g, Chinstrap ≈ 3733 g)\n\n\nIsland × flipper length\nCat × num\nSide-by-side boxplots + mean/SD per island\n\n\nIsland × body mass\nCat × num\nSide-by-side boxplots + mean/SD per island\n\n\nFlipper length × body mass\nNum × num\nScatterplot; Pearson r ≈ 0.87\n\n\n\nNotable patterns: Gentoo have the longest flippers and heaviest bodies; Gentoo appear almost only on Biscoe; flipper length and body mass rise together linearly.\n\n\n\n\nFigure 1: Side-by-side boxplots of flipper length by species (strong separation by species).\nFigure 2: Scatterplot of flipper length vs body mass (clear positive linear trend).\nFour numeric facts on the one-pager: e.g. Gentoo proportion; median flipper length; mean body mass; Pearson r for flipper vs body mass.\nThe other eight plots remain in the notebook only.\n\n\n\n\nIn this sample, species separates flipper length and body mass clearly, flipper length and body mass move together linearly, and Gentoo are concentrated on Biscoe. These are descriptions of the dataset, not claims about all penguins worldwide.\nRunnable code for all ten plots: Open in Colab."
-  },
-  {
-    "objectID": "projects/project-3-example-penguins.html#introduction",
-    "href": "projects/project-3-example-penguins.html#introduction",
-    "title": "Project 3 — Example: Palmer penguins",
-    "section": "",
-    "text": "How do flipper length, body mass, species, and island co-vary among Antarctic penguins in this sample? I loaded the CSV from TidyTuesday week 2020-07-28 with read_csv() (URL copied from that week’s readme). Four focus variables: species (categorical), island (categorical), flipper length mm (numerical), body mass g (numerical). The full file has 344 rows; two are missing flipper length and body mass, so after a missingness check I analyze the 342 penguins with complete data on all four variables."
-  },
-  {
-    "objectID": "projects/project-3-example-penguins.html#univariate-summaries-four-variables-all-four-plots-in-notebook",
-    "href": "projects/project-3-example-penguins.html#univariate-summaries-four-variables-all-four-plots-in-notebook",
-    "title": "Project 3 — Example: Palmer penguins",
-    "section": "",
-    "text": "Variable\nType\nGraph in notebook\nNumeric fact\n\n\n\n\nSpecies\nCategorical\nBar chart\nGentoo: 124/342 ≈ 36% of penguins\n\n\nIsland\nCategorical\nBar chart\nBiscoe: 168/342 ≈ 49%\n\n\nFlipper length\nNumerical\nHistogram\nMean ≈ 200.9 mm, SD ≈ 14.1 mm (median 197 mm, IQR 23 mm)\n\n\nBody mass\nNumerical\nHistogram\nMean ≈ 4202 g, SD ≈ 802 g (median 4050 g, IQR 1200 g; right-skew)"
-  },
-  {
-    "objectID": "projects/project-3-example-penguins.html#bivariate-pairs-six-pairs-all-six-plots-in-notebook",
-    "href": "projects/project-3-example-penguins.html#bivariate-pairs-six-pairs-all-six-plots-in-notebook",
-    "title": "Project 3 — Example: Palmer penguins",
-    "section": "",
-    "text": "Pair\nTypes\nGraph + summary in notebook\n\n\n\n\nSpecies × island\nCat × cat\n100% stacked bar + two-way table (counts, row & column proportions)\n\n\nSpecies × flipper length\nCat × num\nSide-by-side boxplots + mean/SD/median/IQR per species (Gentoo ≈ 217 mm, Adelie ≈ 190 mm, Chinstrap ≈ 196 mm)\n\n\nSpecies × body mass\nCat × num\nSide-by-side boxplots + mean/SD per species (Gentoo ≈ 5076 g, Adelie ≈ 3701 g, Chinstrap ≈ 3733 g)\n\n\nIsland × flipper length\nCat × num\nSide-by-side boxplots + mean/SD per island\n\n\nIsland × body mass\nCat × num\nSide-by-side boxplots + mean/SD per island\n\n\nFlipper length × body mass\nNum × num\nScatterplot; Pearson r ≈ 0.87\n\n\n\nNotable patterns: Gentoo have the longest flippers and heaviest bodies; Gentoo appear almost only on Biscoe; flipper length and body mass rise together linearly."
-  },
-  {
-    "objectID": "projects/project-3-example-penguins.html#two-graphics-chosen-for-the-one-page-summary",
-    "href": "projects/project-3-example-penguins.html#two-graphics-chosen-for-the-one-page-summary",
-    "title": "Project 3 — Example: Palmer penguins",
-    "section": "",
-    "text": "Figure 1: Side-by-side boxplots of flipper length by species (strong separation by species).\nFigure 2: Scatterplot of flipper length vs body mass (clear positive linear trend).\nFour numeric facts on the one-pager: e.g. Gentoo proportion; median flipper length; mean body mass; Pearson r for flipper vs body mass.\nThe other eight plots remain in the notebook only."
-  },
-  {
-    "objectID": "projects/project-3-example-penguins.html#conclusion-descriptive",
-    "href": "projects/project-3-example-penguins.html#conclusion-descriptive",
-    "title": "Project 3 — Example: Palmer penguins",
-    "section": "",
-    "text": "In this sample, species separates flipper length and body mass clearly, flipper length and body mass move together linearly, and Gentoo are concentrated on Biscoe. These are descriptions of the dataset, not claims about all penguins worldwide.\nRunnable code for all ten plots: Open in Colab."
   }
 ]
