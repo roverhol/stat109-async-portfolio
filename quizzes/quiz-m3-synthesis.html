@@ -76,7 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-94b323657c735dfe3b1bf6ebb2c33a55.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-bba5ebae505b5c03f3f0d8040a416a6b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -189,16 +189,28 @@ window.Quarto = {
   <li><a href="#e2.-recode-a-variable" id="toc-e2.-recode-a-variable" class="nav-link" data-scroll-target="#e2.-recode-a-variable">E2. Recode a variable</a></li>
   <li><a href="#e3.-handling-missing-values-before-plot" id="toc-e3.-handling-missing-values-before-plot" class="nav-link" data-scroll-target="#e3.-handling-missing-values-before-plot">E3. Handling missing values before plot</a></li>
   </ul></li>
-  <li><a href="#section-f-graph-interpretation-images" id="toc-section-f-graph-interpretation-images" class="nav-link" data-scroll-target="#section-f-graph-interpretation-images">Section F — Graph interpretation (images)</a>
+  <li><a href="#section-f-graph-integration-verbal-no-image" id="toc-section-f-graph-integration-verbal-no-image" class="nav-link" data-scroll-target="#section-f-graph-integration-verbal-no-image">Section F — Graph integration (verbal · no image)</a>
   <ul class="collapse">
-  <li><a href="#img4.-histogram-interpretation" id="toc-img4.-histogram-interpretation" class="nav-link" data-scroll-target="#img4.-histogram-interpretation">IMG4. Histogram interpretation</a></li>
-  <li><a href="#img5.-paired-histograms" id="toc-img5.-paired-histograms" class="nav-link" data-scroll-target="#img5.-paired-histograms">IMG5. Paired histograms</a></li>
-  <li><a href="#img6.-single-boxplot-feature" id="toc-img6.-single-boxplot-feature" class="nav-link" data-scroll-target="#img6.-single-boxplot-feature">IMG6. Single boxplot feature</a></li>
-  <li><a href="#img7.-side-by-side-boxplots" id="toc-img7.-side-by-side-boxplots" class="nav-link" data-scroll-target="#img7.-side-by-side-boxplots">IMG7. Side-by-side boxplots</a></li>
-  <li><a href="#img8.-scatterplot-form-direction-strength" id="toc-img8.-scatterplot-form-direction-strength" class="nav-link" data-scroll-target="#img8.-scatterplot-form-direction-strength">IMG8. Scatterplot form-direction-strength</a></li>
-  <li><a href="#img9.-bar-plot-variable-type" id="toc-img9.-bar-plot-variable-type" class="nav-link" data-scroll-target="#img9.-bar-plot-variable-type">IMG9. Bar plot variable type</a></li>
-  <li><a href="#img10.-stacked-bar-counts" id="toc-img10.-stacked-bar-counts" class="nav-link" data-scroll-target="#img10.-stacked-bar-counts">IMG10. Stacked bar counts</a></li>
-  <li><a href="#img11.-100-stacked-bar" id="toc-img11.-100-stacked-bar" class="nav-link" data-scroll-target="#img11.-100-stacked-bar">IMG11. 100% stacked bar</a></li>
+  <li><a href="#f1.-match-graph-to-types" id="toc-f1.-match-graph-to-types" class="nav-link" data-scroll-target="#f1.-match-graph-to-types">F1. Match graph to types</a></li>
+  <li><a href="#f2.-wrong-graph" id="toc-f2.-wrong-graph" class="nav-link" data-scroll-target="#f2.-wrong-graph">F2. Wrong graph</a></li>
+  <li><a href="#f3.-when-to-add-cor" id="toc-f3.-when-to-add-cor" class="nav-link" data-scroll-target="#f3.-when-to-add-cor">F3. When to add cor()</a></li>
+  </ul></li>
+  <li><a href="#section-g-pearson-r-and-association-integration" id="toc-section-g-pearson-r-and-association-integration" class="nav-link" data-scroll-target="#section-g-pearson-r-and-association-integration">Section G — Pearson <span class="math inline">\(r\)</span> and association (integration)</a>
+  <ul class="collapse">
+  <li><a href="#g1.-r-sign" id="toc-g1.-r-sign" class="nav-link" data-scroll-target="#g1.-r-sign">G1. r sign</a></li>
+  <li><a href="#g2.-r-vs-form" id="toc-g2.-r-vs-form" class="nav-link" data-scroll-target="#g2.-r-vs-form">G2. r vs form</a></li>
+  <li><a href="#g3.-cor-in-r" id="toc-g3.-cor-in-r" class="nav-link" data-scroll-target="#g3.-cor-in-r">G3. cor() in R</a></li>
+  </ul></li>
+  <li><a href="#section-h-tidyverse-pipeline-verbs-read-1-pipeline" id="toc-section-h-tidyverse-pipeline-verbs-read-1-pipeline" class="nav-link" data-scroll-target="#section-h-tidyverse-pipeline-verbs-read-1-pipeline">Section H — Tidyverse pipeline verbs (Read 1 · pipeline)</a>
+  <ul class="collapse">
+  <li><a href="#h1.-pipe-operator" id="toc-h1.-pipe-operator" class="nav-link" data-scroll-target="#h1.-pipe-operator">H1. Pipe operator</a></li>
+  <li><a href="#h2.-filter" id="toc-h2.-filter" class="nav-link" data-scroll-target="#h2.-filter">H2. filter()</a></li>
+  <li><a href="#h3.-select" id="toc-h3.-select" class="nav-link" data-scroll-target="#h3.-select">H3. select()</a></li>
+  <li><a href="#h4.-mutate" id="toc-h4.-mutate" class="nav-link" data-scroll-target="#h4.-mutate">H4. mutate()</a></li>
+  <li><a href="#h5.-count" id="toc-h5.-count" class="nav-link" data-scroll-target="#h5.-count">H5. count()</a></li>
+  <li><a href="#h6.-group_by-summarize" id="toc-h6.-group_by-summarize" class="nav-link" data-scroll-target="#h6.-group_by-summarize">H6. group_by() + summarize()</a></li>
+  <li><a href="#h7.-summarize" id="toc-h7.-summarize" class="nav-link" data-scroll-target="#h7.-summarize">H7. summarize()</a></li>
+  <li><a href="#h8.-glimpse" id="toc-h8.-glimpse" class="nav-link" data-scroll-target="#h8.-glimpse">H8. glimpse()</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -233,18 +245,18 @@ window.Quarto = {
 
 <section id="module-3-synthesis-quiz" class="level1">
 <h1>Module 3, Synthesis quiz</h1>
-<p><strong>Readings:</strong> <a href="../lectures/module-3-read-00">Read 0</a>, <a href="../lectures/module-3-read-01">Read 1</a>, <a href="../lectures/module-3-read-02">Read 2</a><br>
-<strong>Labs:</strong> <a href="../labs/module-3-lab-demo">Demo</a>, <a href="../labs/module-3-lab-exercise">Exercise</a><br>
-<strong>Canvas:</strong> Synthesis quiz (Module 3) · <strong>two attempts</strong>, highest score counts</p>
-<p>Full integration for <a href="../projects/project-3">Project 3</a>: five-number summary, boxplot comparisons, scatterplot description, two-way tables and proportions, ggplot2 calls, and <strong>five demo-lab EDA situations</strong>.</p>
-<p><strong>Image items:</strong> Section F includes histograms, boxplots, scatterplots, and bar/stacked-bar figures (also collected in the <a href="../quizzes/quiz-graph-pack">Graph Interpretation Pack</a>).</p>
+<p>Readings: <a href="../lectures/module-3-read-00">Read 0</a>, <a href="../lectures/module-3-read-01">Read 1</a>, <a href="../lectures/module-3-read-02">Read 2</a><br>
+Labs: <a href="../labs/module-3-lab-demo-tools">Demo 1</a>, <a href="../labs/module-3-lab-demo-worked">Demo 2</a>, <a href="../labs/module-3-lab-exercise">Exercise</a><br>
+Canvas: Synthesis quiz (Module 3) · two attempts, highest score counts</p>
+<p>Full integration for <a href="../projects/project-3">Project 3</a>: five-number summary, boxplot comparisons, scatterplot description, Pearson <span class="math inline">\(r\)</span>, two-way tables and proportions, tidyverse pipeline verbs, ggplot2 calls, and five demo-lab EDA situations.</p>
+<p>Graph items: distributed across <a href="../quizzes/quiz-m3-def">Quiz A</a>, <a href="../quizzes/quiz-m3-concept">Quiz B</a>, and this synthesis bank (verbal integration). See also the <a href="../quizzes/quiz-graph-pack">Graph Interpretation Pack</a>.</p>
 <hr>
 <section id="instructions" class="level2">
 <h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
 <ul>
 <li>Open notes (<a href="../methods">methods map</a>, <a href="../r-reference">R reference</a>).</li>
 <li>Use the graph-selection table from Read 0 as a guide.</li>
-<li>For R items, match the workflow in the <a href="../labs/module-3-lab-demo">demo lab</a> and your <a href="../projects/project-3">Project 3 notebook</a>.</li>
+<li>For R items, match the workflow in <a href="../labs/module-3-lab-demo-worked">Demo 2</a> and your <a href="../projects/project-3">Project 3 notebook</a>.</li>
 </ul>
 <hr>
 </section>
@@ -252,11 +264,11 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="section-a-five-number-summary-and-boxplots-read-1">Section A — Five-number summary and boxplots (Read 1)</h2>
 <section id="a1.-compute-five-number-summary" class="level3">
 <h3 class="anchored" data-anchor-id="a1.-compute-five-number-summary">A1. Compute five-number summary</h3>
-<p>Data (sorted): <span class="math inline">\(2, 5, 7, 8, 10, 12, 15, 18, 22, 30\)</span>. Compute the <strong>five-number summary</strong> (min, <span class="math inline">\(Q_1\)</span>, median, <span class="math inline">\(Q_3\)</span>, max).</p>
+<p>Data (sorted): <span class="math inline">\(2, 5, 7, 8, 10, 12, 15, 18, 22, 30\)</span>. Compute the five-number summary (min, <span class="math inline">\(Q_1\)</span>, median, <span class="math inline">\(Q_3\)</span>, max).</p>
 </section>
 <section id="a2.-iqr-and-outlier-fence" class="level3">
 <h3 class="anchored" data-anchor-id="a2.-iqr-and-outlier-fence">A2. IQR and outlier fence</h3>
-<p>Using the five-number summary above, compute IQR and the upper outlier <strong>fence</strong> (<span class="math inline">\(Q_3 + 1.5 \times \text{IQR}\)</span>).</p>
+<p>A dataset has five-number summary min <span class="math inline">\(= 2\)</span>, <span class="math inline">\(Q_1 = 7.5\)</span>, median <span class="math inline">\(= 11\)</span>, <span class="math inline">\(Q_3 = 16.5\)</span>, max <span class="math inline">\(= 30\)</span>. Compute the IQR and the upper outlier fence (<span class="math inline">\(Q_3 + 1.5 \times \text{IQR}\)</span>).</p>
 </section>
 <section id="a3.-compare-groups-from-boxplots" class="level3">
 <h3 class="anchored" data-anchor-id="a3.-compare-groups-from-boxplots">A3. Compare groups from boxplots</h3>
@@ -268,7 +280,7 @@ window.Quarto = {
 </section>
 <section id="a5.-group_by-summarize-in-r" class="level3">
 <h3 class="anchored" data-anchor-id="a5.-group_by-summarize-in-r">A5. group_by + summarize in R</h3>
-<p>Write the pipeline that computes <strong>median</strong> and <strong>IQR</strong> of <code>body_mass_g</code> for each <code>species</code>.</p>
+<p>Write the pipeline that computes median and IQR of <code>body_mass_g</code> for each <code>species</code>.</p>
 <details>
 <summary>
 Click to reveal answers — Section A — Five-number summary and boxplots (Read 1)
@@ -276,7 +288,7 @@ Click to reveal answers — Section A — Five-number summary and boxplots (Read
 <ol type="1">
 <li><p>Min=2, <span class="math inline">\(Q_1=(7+8)/2=7.5\)</span>, Median=<span class="math inline">\((10+12)/2=11\)</span>, <span class="math inline">\(Q_3=(15+18)/2=16.5\)</span>, Max=30.</p></li>
 <li><p>IQR <span class="math inline">\(= 16.5 - 7.5 = 9\)</span>. Upper fence <span class="math inline">\(= 16.5 + 1.5(9) = 30\)</span>. The value 30 is on the fence — borderline outlier.</p></li>
-<li><p>Group B has <strong>higher typical values</strong> (median 40 vs 25). Group A has <strong>more spread</strong> (IQR=14 vs IQR=10).</p></li>
+<li><p>Group B has higher typical values (median 40 vs 25). Group A has more spread (IQR=14 vs IQR=10).</p></li>
 <li><p><code>ggplot(penguins, aes(x = species, y = body_mass_g)) + geom_boxplot()</code> — optionally add <code>fill = species</code> for color.</p></li>
 <li><p><code>penguins %&gt;% group_by(species) %&gt;% summarize(med = median(body_mass_g, na.rm = TRUE), iqr = IQR(body_mass_g, na.rm = TRUE))</code></p></li>
 </ol>
@@ -310,9 +322,9 @@ Click to reveal answers — Section A — Five-number summary and boxplots (Read
 Click to reveal answers — Section B — Scatterplot description (Read 2 §2)
 </summary>
 <ol type="1">
-<li><p><strong>Form:</strong> linear. <strong>Direction:</strong> positive. <strong>Strength:</strong> moderate to strong.</p></li>
-<li><p><strong>Form:</strong> linear (loosely). <strong>Direction:</strong> negative. <strong>Strength:</strong> weak.</p></li>
-<li><p><strong>Form:</strong> no clear pattern. <strong>Direction:</strong> none. <strong>Strength:</strong> none (weak/no association).</p></li>
+<li><p>Form: linear. Direction: positive. Strength: moderate to strong.</p></li>
+<li><p>Form: linear (loosely). Direction: negative. Strength: weak.</p></li>
+<li><p>Form: no clear pattern. Direction: none. Strength: none (weak/no association).</p></li>
 <li><p><code>ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm)) + geom_point()</code></p></li>
 <li><p>Add <code>color = species</code> to <code>aes()</code>: <code>aes(x = bill_length_mm, y = flipper_length_mm, color = species)</code>.</p></li>
 </ol>
@@ -332,11 +344,11 @@ Click to reveal answers — Section B — Scatterplot description (Read 2 §2)
 </section>
 <section id="c3.-compute-column-proportions" class="level3">
 <h3 class="anchored" data-anchor-id="c3.-compute-column-proportions">C3. Compute column proportions</h3>
-<p>Two-way count table (species × island): Biscoe column total=168 penguins, and Gentoo on Biscoe=124. What is the <strong>column proportion</strong> of Gentoo among Biscoe penguins?</p>
+<p>Two-way count table (species × island): Biscoe column total=168 penguins, and Gentoo on Biscoe=124. What is the column proportion of Gentoo among Biscoe penguins?</p>
 </section>
 <section id="c4.-stacked-bar-chart-in-r" class="level3">
 <h3 class="anchored" data-anchor-id="c4.-stacked-bar-chart-in-r">C4. Stacked bar chart in R</h3>
-<p>Write the ggplot2 call for a <strong>100% stacked bar</strong> of <code>island</code> (x) with <code>species</code> fill.</p>
+<p>Write the ggplot2 call for a 100% stacked bar of <code>island</code> (x) with <code>species</code> fill.</p>
 </section>
 <section id="c5.-pivot_wider-usage" class="level3">
 <h3 class="anchored" data-anchor-id="c5.-pivot_wider-usage">C5. pivot_wider usage</h3>
@@ -370,7 +382,7 @@ Click to reveal answers — Section C — Two-way tables and proportions (Read 2
 </section>
 <section id="d2.-when-group_by-before-summarize" class="level3">
 <h3 class="anchored" data-anchor-id="d2.-when-group_by-before-summarize">D2. When group_by before summarize</h3>
-<p>You have <code>penguins</code> and want the <strong>mean</strong> flipper length for each <strong>sex</strong>. Write the pipeline.</p>
+<p>You have <code>penguins</code> and want the mean flipper length for each sex. Write the pipeline.</p>
 </section>
 <section id="d3.-filter-before-plot" class="level3">
 <h3 class="anchored" data-anchor-id="d3.-filter-before-plot">D3. filter before plot</h3>
@@ -385,7 +397,7 @@ Click to reveal answers — Section D — Choosing the right graph/summary (inte
 </summary>
 <ol type="1">
 <li><ol type="a">
-<li><strong>Side-by-side boxplots.</strong> b) <strong>Scatterplot.</strong> c) <strong>Stacked bar chart.</strong> d) <strong>Histogram</strong> or dot plot.</li>
+<li>Side-by-side boxplots. b) Scatterplot. c) Stacked bar chart. d) Histogram or dot plot.</li>
 </ol></li>
 <li><p><code>penguins %&gt;% group_by(sex) %&gt;% summarize(mean_flip = mean(flipper_length_mm, na.rm = TRUE))</code></p></li>
 <li><p><code>filter(species == 'Adelie')</code> — use <code>penguins %&gt;% filter(species == 'Adelie') %&gt;% ggplot(...)</code>.</p></li>
@@ -413,7 +425,7 @@ Click to reveal answers — Section D — Choosing the right graph/summary (inte
 Click to reveal answers — Section E — Project 3 workflow (demo lab R patterns)
 </summary>
 <ol type="1">
-<li><p><code>read_csv('https://...')</code> from the <strong>readr</strong> package (loaded with <code>library(tidyverse)</code>).</p></li>
+<li><p><code>read_csv('https://...')</code> from the readr package (loaded with <code>library(tidyverse)</code>).</p></li>
 <li><p><code>mutate(sex = ifelse(sex == 1, 'male', 'female'))</code> — or <code>case_when()</code> for more than two levels.</p></li>
 <li><p><code>filter(!is.na(bill_length_mm), !is.na(flipper_length_mm))</code> — or <code>drop_na(bill_length_mm, flipper_length_mm)</code>.</p></li>
 </ol>
@@ -421,60 +433,106 @@ Click to reveal answers — Section E — Project 3 workflow (demo lab R pattern
 <hr>
 </section>
 </section>
-<section id="section-f-graph-interpretation-images" class="level2">
-<h2 class="anchored" data-anchor-id="section-f-graph-interpretation-images">Section F — Graph interpretation (images)</h2>
-<section id="img4.-histogram-interpretation" class="level3">
-<h3 class="anchored" data-anchor-id="img4.-histogram-interpretation">IMG4. Histogram interpretation</h3>
-<p><img src="../assets/images/graph-pack/hist-single.png" class="img-fluid"></p>
-<p>What does this graph primarily display?</p>
+<section id="section-f-graph-integration-verbal-no-image" class="level2">
+<h2 class="anchored" data-anchor-id="section-f-graph-integration-verbal-no-image">Section F — Graph integration (verbal · no image)</h2>
+<section id="f1.-match-graph-to-types" class="level3">
+<h3 class="anchored" data-anchor-id="f1.-match-graph-to-types">F1. Match graph to types</h3>
+<p>Match: (a) mass by species (b) bill vs flipper (c) species on island (d) flipper lengths alone.</p>
 </section>
-<section id="img5.-paired-histograms" class="level3">
-<h3 class="anchored" data-anchor-id="img5.-paired-histograms">IMG5. Paired histograms</h3>
-<p><img src="../assets/images/graph-pack/hist-pair.png" class="img-fluid"></p>
-<p>Which group appears to have the higher typical value?</p>
+<section id="f2.-wrong-graph" class="level3">
+<h3 class="anchored" data-anchor-id="f2.-wrong-graph">F2. Wrong graph</h3>
+<p>Why is a scatterplot wrong for species vs island (both categorical)?</p>
 </section>
-<section id="img6.-single-boxplot-feature" class="level3">
-<h3 class="anchored" data-anchor-id="img6.-single-boxplot-feature">IMG6. Single boxplot feature</h3>
-<p><img src="../assets/images/graph-pack/box-single.png" class="img-fluid"></p>
-<p>In a boxplot, the horizontal line inside the box marks the:</p>
-</section>
-<section id="img7.-side-by-side-boxplots" class="level3">
-<h3 class="anchored" data-anchor-id="img7.-side-by-side-boxplots">IMG7. Side-by-side boxplots</h3>
-<p><img src="../assets/images/graph-pack/box-pair.png" class="img-fluid"></p>
-<p>Which group has larger spread (IQR)?</p>
-</section>
-<section id="img8.-scatterplot-form-direction-strength" class="level3">
-<h3 class="anchored" data-anchor-id="img8.-scatterplot-form-direction-strength">IMG8. Scatterplot form-direction-strength</h3>
-<p><img src="../assets/images/graph-pack/scatter-form-strength-direction.png" class="img-fluid"></p>
-<p>Best description of this scatterplot?</p>
-</section>
-<section id="img9.-bar-plot-variable-type" class="level3">
-<h3 class="anchored" data-anchor-id="img9.-bar-plot-variable-type">IMG9. Bar plot variable type</h3>
-<p><img src="../assets/images/graph-pack/bar-plot.png" class="img-fluid"></p>
-<p>The x-axis categories in a bar plot represent what variable type?</p>
-</section>
-<section id="img10.-stacked-bar-counts" class="level3">
-<h3 class="anchored" data-anchor-id="img10.-stacked-bar-counts">IMG10. Stacked bar counts</h3>
-<p><img src="../assets/images/graph-pack/stacked-bar-counts.png" class="img-fluid"></p>
-<p>This is a stacked bar chart with raw counts. What is easiest to compare?</p>
-</section>
-<section id="img11.-100-stacked-bar" class="level3">
-<h3 class="anchored" data-anchor-id="img11.-100-stacked-bar">IMG11. 100% stacked bar</h3>
-<p><img src="../assets/images/graph-pack/stacked-bar-100.png" class="img-fluid"></p>
-<p>This is a 100% stacked bar chart. What is easiest to compare?</p>
+<section id="f3.-when-to-add-cor" class="level3">
+<h3 class="anchored" data-anchor-id="f3.-when-to-add-cor">F3. When to add cor()</h3>
+<p>You add <code>cor()</code> to quantify the strength of a relationship after making which graph type?</p>
 <details>
 <summary>
-Click to reveal answers — Section F — Graph interpretation (images)
+Click to reveal answers — Section F — Graph integration (verbal · no image)
 </summary>
 <ol type="1">
-<li><p>The distribution of <strong>one numerical variable</strong>.</p></li>
-<li><p><strong>Group A</strong> (its distribution is shifted higher).</p></li>
-<li><p>The <strong>median</strong>.</p></li>
-<li><p><strong>Group B</strong> (wider box / longer whiskers).</p></li>
-<li><p>Roughly <strong>linear</strong>, <strong>positive</strong> direction, <strong>moderate-to-strong</strong> association.</p></li>
-<li><p><strong>Categorical</strong>.</p></li>
-<li><p><strong>Total counts</strong> by group.</p></li>
-<li><p><strong>Within-group proportions</strong> across groups.</p></li>
+<li><ol type="a">
+<li>Side-by-side boxplots. b) Scatterplot. c) Stacked bar. d) Histogram or dot plot.</li>
+</ol></li>
+<li><p>Scatterplots need two numerical axes — use stacked bar or two-way table.</p></li>
+<li><p>After a scatterplot of two numerical variables (when the form is roughly linear).</p></li>
+</ol>
+</details>
+<hr>
+</section>
+</section>
+<section id="section-g-pearson-r-and-association-integration" class="level2">
+<h2 class="anchored" data-anchor-id="section-g-pearson-r-and-association-integration">Section G — Pearson <span class="math inline">\(r\)</span> and association (integration)</h2>
+<section id="g1.-r-sign" class="level3">
+<h3 class="anchored" data-anchor-id="g1.-r-sign">G1. r sign</h3>
+<p><span class="math inline">\(r = -0.73\)</span>. Direction?</p>
+</section>
+<section id="g2.-r-vs-form" class="level3">
+<h3 class="anchored" data-anchor-id="g2.-r-vs-form">G2. r vs form</h3>
+<p>Strong upward curve; <span class="math inline">\(r = 0.2\)</span>. What happened?</p>
+</section>
+<section id="g3.-cor-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="g3.-cor-in-r">G3. cor() in R</h3>
+<p>R function for Pearson correlation between <code>x</code> and <code>y</code>?</p>
+<details>
+<summary>
+Click to reveal answers — Section G — Pearson <span class="math inline">\(r\)</span> and association (integration)
+</summary>
+<ol type="1">
+<li><p>Negative — higher <span class="math inline">\(x\)</span> tends with lower <span class="math inline">\(y\)</span>.</p></li>
+<li><p>Form is curved, not linear — <span class="math inline">\(r\)</span> understates the relationship; describe curvature.</p></li>
+<li><p><code>cor(x, y)</code> (after dropping NA if needed).</p></li>
+</ol>
+</details>
+<hr>
+</section>
+</section>
+<section id="section-h-tidyverse-pipeline-verbs-read-1-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="section-h-tidyverse-pipeline-verbs-read-1-pipeline">Section H — Tidyverse pipeline verbs (Read 1 · pipeline)</h2>
+<section id="h1.-pipe-operator" class="level3">
+<h3 class="anchored" data-anchor-id="h1.-pipe-operator">H1. Pipe operator</h3>
+<p>What is the main purpose of <code>%&gt;%</code> (pipe) in the tidyverse?</p>
+</section>
+<section id="h2.-filter" class="level3">
+<h3 class="anchored" data-anchor-id="h2.-filter">H2. filter()</h3>
+<p>Which tidyverse function keeps rows that satisfy a logical condition (e.g.&nbsp;<code>weight &gt; 50</code>)?</p>
+</section>
+<section id="h3.-select" class="level3">
+<h3 class="anchored" data-anchor-id="h3.-select">H3. select()</h3>
+<p>Which function chooses columns by name?</p>
+</section>
+<section id="h4.-mutate" class="level3">
+<h3 class="anchored" data-anchor-id="h4.-mutate">H4. mutate()</h3>
+<p>Which function adds a new column while keeping the original number of rows?</p>
+</section>
+<section id="h5.-count" class="level3">
+<h3 class="anchored" data-anchor-id="h5.-count">H5. count()</h3>
+<p>Which function counts how many rows fall in each level of a categorical variable?</p>
+</section>
+<section id="h6.-group_by-summarize" class="level3">
+<h3 class="anchored" data-anchor-id="h6.-group_by-summarize">H6. group_by() + summarize()</h3>
+<p>What is the role of <code>group_by(species)</code> before <code>summarize(mean_mass = mean(body_mass_g))</code>?</p>
+</section>
+<section id="h7.-summarize" class="level3">
+<h3 class="anchored" data-anchor-id="h7.-summarize">H7. summarize()</h3>
+<p>After <code>group_by(island)</code>, you call <code>summarize(n = n(), avg = mean(bill_length_mm))</code>. What do you get?</p>
+</section>
+<section id="h8.-glimpse" class="level3">
+<h3 class="anchored" data-anchor-id="h8.-glimpse">H8. glimpse()</h3>
+<p>Name two things <code>glimpse(df)</code> shows.</p>
+<details>
+<summary>
+Click to reveal answers — Section H — Tidyverse pipeline verbs (Read 1 · pipeline)
+</summary>
+<ol type="1">
+<li><p>The pipe passes the result of the left side as the first argument to the function on the right — it chains steps so you can read the pipeline top to bottom.</p></li>
+<li><p><code>filter()</code> — it returns only rows where the condition is <code>TRUE</code>.</p></li>
+<li><p><code>select()</code> — e.g.&nbsp;<code>select(species, body_mass_g)</code> returns a data frame with only those columns.</p></li>
+<li><p><code>mutate()</code> — e.g.&nbsp;<code>mutate(mass_kg = body_mass_g / 1000)</code> creates a new column.</p></li>
+<li><p><code>count(variable)</code> — returns a data frame with one row per level and a column <code>n</code> with the count.</p></li>
+<li><p><code>group_by()</code> splits the data by <code>species</code> so <code>summarize()</code> returns one summary row per species instead of one row for the whole dataset.</p></li>
+<li><p>One row per island with two columns: <code>n</code> (count of penguins on that island) and <code>avg</code> (mean bill length for that island).</p></li>
+<li><p>Variable names, types (e.g.&nbsp;<code>&lt;dbl&gt;</code>, <code>&lt;chr&gt;</code>), total rows and columns, and a short preview of values.</p></li>
 </ol>
 </details>
 <hr>
@@ -950,13 +1008,13 @@ Click to reveal answers — Section F — Graph interpretation (images)
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Module 3, Synthesis quiz</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>**Readings:** <span class="co">[</span><span class="ot">Read 0</span><span class="co">](../lectures/module-3-read-00)</span>, <span class="co">[</span><span class="ot">Read 1</span><span class="co">](../lectures/module-3-read-01)</span>, <span class="co">[</span><span class="ot">Read 2</span><span class="co">](../lectures/module-3-read-02)</span>  </span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>**Labs:** <span class="co">[</span><span class="ot">Demo</span><span class="co">](../labs/module-3-lab-demo)</span>, <span class="co">[</span><span class="ot">Exercise</span><span class="co">](../labs/module-3-lab-exercise)</span>  </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>**Canvas:** Synthesis quiz (Module 3) · **two attempts**, highest score counts</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>Readings: <span class="co">[</span><span class="ot">Read 0</span><span class="co">](../lectures/module-3-read-00)</span>, <span class="co">[</span><span class="ot">Read 1</span><span class="co">](../lectures/module-3-read-01)</span>, <span class="co">[</span><span class="ot">Read 2</span><span class="co">](../lectures/module-3-read-02)</span>  </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Labs: <span class="co">[</span><span class="ot">Demo 1</span><span class="co">](../labs/module-3-lab-demo-tools)</span>, <span class="co">[</span><span class="ot">Demo 2</span><span class="co">](../labs/module-3-lab-demo-worked)</span>, <span class="co">[</span><span class="ot">Exercise</span><span class="co">](../labs/module-3-lab-exercise)</span>  </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Canvas: Synthesis quiz (Module 3) · two attempts, highest score counts</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>Full integration for <span class="co">[</span><span class="ot">Project 3</span><span class="co">](../projects/project-3)</span>: five-number summary, boxplot comparisons, scatterplot description, two-way tables and proportions, ggplot2 calls, and **five demo-lab EDA situations**.</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>Full integration for <span class="co">[</span><span class="ot">Project 3</span><span class="co">](../projects/project-3)</span>: five-number summary, boxplot comparisons, scatterplot description, Pearson $r$, two-way tables and proportions, tidyverse pipeline verbs, ggplot2 calls, and five demo-lab EDA situations.</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>**Image items:** Section F includes histograms, boxplots, scatterplots, and bar/stacked-bar figures (also collected in the <span class="co">[</span><span class="ot">Graph Interpretation Pack</span><span class="co">](../quizzes/quiz-graph-pack)</span>).</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>Graph items: distributed across <span class="co">[</span><span class="ot">Quiz A</span><span class="co">](../quizzes/quiz-m3-def)</span>, <span class="co">[</span><span class="ot">Quiz B</span><span class="co">](../quizzes/quiz-m3-concept)</span>, and this synthesis bank (verbal integration). See also the <span class="co">[</span><span class="ot">Graph Interpretation Pack</span><span class="co">](../quizzes/quiz-graph-pack)</span>.</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
@@ -964,7 +1022,7 @@ Click to reveal answers — Section F — Graph interpretation (images)
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Open notes (<span class="co">[</span><span class="ot">methods map</span><span class="co">](../methods)</span>, <span class="co">[</span><span class="ot">R reference</span><span class="co">](../r-reference)</span>).</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use the graph-selection table from Read 0 as a guide.</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>For R items, match the workflow in the <span class="co">[</span><span class="ot">demo lab</span><span class="co">](../labs/module-3-lab-demo)</span> and your <span class="co">[</span><span class="ot">Project 3 notebook</span><span class="co">](../projects/project-3)</span>.</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>For R items, match the workflow in <span class="co">[</span><span class="ot">Demo 2</span><span class="co">](../labs/module-3-lab-demo-worked)</span> and your <span class="co">[</span><span class="ot">Project 3 notebook</span><span class="co">](../projects/project-3)</span>.</span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
@@ -972,11 +1030,11 @@ Click to reveal answers — Section F — Graph interpretation (images)
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="fu">### A1. Compute five-number summary</span></span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Data (sorted): $2, 5, 7, 8, 10, 12, 15, 18, 22, 30$. Compute the **five-number summary** (min, $Q_1$, median, $Q_3$, max).</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Data (sorted): $2, 5, 7, 8, 10, 12, 15, 18, 22, 30$. Compute the five-number summary (min, $Q_1$, median, $Q_3$, max).</span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">### A2. IQR and outlier fence</span></span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>Using the five-number summary above, compute IQR and the upper outlier **fence** ($Q_3 + 1.5 \times \text{IQR}$).</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>A dataset has five-number summary min $= 2$, $Q_1 = 7.5$, median $= 11$, $Q_3 = 16.5$, max $= 30$. Compute the IQR and the upper outlier fence ($Q_3 + 1.5 \times \text{IQR}$).</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">### A3. Compare groups from boxplots</span></span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
@@ -988,7 +1046,7 @@ Click to reveal answers — Section F — Graph interpretation (images)
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="fu">### A5. group_by + summarize in R</span></span>
 <span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>Write the pipeline that computes **median** and **IQR** of <span class="in">`body_mass_g`</span> for each <span class="in">`species`</span>.</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>Write the pipeline that computes median and IQR of <span class="in">`body_mass_g`</span> for each <span class="in">`species`</span>.</span>
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="html"}</span>
 <span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
@@ -998,7 +1056,7 @@ Click to reveal answers — Section F — Graph interpretation (images)
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>IQR $= 16.5 - 7.5 = 9$. Upper fence $= 16.5 + 1.5(9) = 30$. The value 30 is on the fence — borderline outlier.</span>
 <span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Group B has **higher typical values** (median 40 vs 25). Group A has **more spread** (IQR=14 vs IQR=10).</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Group B has higher typical values (median 40 vs 25). Group A has more spread (IQR=14 vs IQR=10).</span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span><span class="in">`ggplot(penguins, aes(x = species, y = body_mass_g)) + geom_boxplot()`</span> — optionally add <span class="in">`fill = species`</span> for color.</span>
 <span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
@@ -1018,7 +1076,7 @@ Click to reveal answers — Section F — Graph interpretation (images)
 <span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>IQR $= 16.5 - 7.5 = 9$. Upper fence $= 16.5 + 1.5(9) = 30$. The value 30 is on the fence — borderline outlier.</span>
 <span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Group B has **higher typical values** (median 40 vs 25). Group A has **more spread** (IQR=14 vs IQR=10).</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Group B has higher typical values (median 40 vs 25). Group A has more spread (IQR=14 vs IQR=10).</span>
 <span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span><span class="in">`ggplot(penguins, aes(x = species, y = body_mass_g)) + geom_boxplot()`</span> — optionally add <span class="in">`fill = species`</span> for color.</span>
 <span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
@@ -1055,11 +1113,11 @@ Click to reveal answers — Section F — Graph interpretation (images)
 <span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
 <span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section B — Scatterplot description (Read 2 §2)<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
 <span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Form:** linear. **Direction:** positive. **Strength:** moderate to strong.</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Form: linear. Direction: positive. Strength: moderate to strong.</span>
 <span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Form:** linear (loosely). **Direction:** negative. **Strength:** weak.</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Form: linear (loosely). Direction: negative. Strength: weak.</span>
 <span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Form:** no clear pattern. **Direction:** none. **Strength:** none (weak/no association).</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Form: no clear pattern. Direction: none. Strength: none (weak/no association).</span>
 <span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span><span class="in">`ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm)) + geom_point()`</span></span>
 <span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a></span>
@@ -1075,11 +1133,11 @@ Click to reveal answers — Section F — Graph interpretation (images)
 <span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section B — Scatterplot description (Read 2 §2)</span></span>
 <span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Form:** linear. **Direction:** positive. **Strength:** moderate to strong.</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Form: linear. Direction: positive. Strength: moderate to strong.</span>
 <span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Form:** linear (loosely). **Direction:** negative. **Strength:** weak.</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Form: linear (loosely). Direction: negative. Strength: weak.</span>
 <span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Form:** no clear pattern. **Direction:** none. **Strength:** none (weak/no association).</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Form: no clear pattern. Direction: none. Strength: none (weak/no association).</span>
 <span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span><span class="in">`ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm)) + geom_point()`</span></span>
 <span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a></span>
@@ -1102,11 +1160,11 @@ Click to reveal answers — Section F — Graph interpretation (images)
 <span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a><span class="fu">### C3. Compute column proportions</span></span>
 <span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>Two-way count table (species × island): Biscoe column total=168 penguins, and Gentoo on Biscoe=124. What is the **column proportion** of Gentoo among Biscoe penguins?</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>Two-way count table (species × island): Biscoe column total=168 penguins, and Gentoo on Biscoe=124. What is the column proportion of Gentoo among Biscoe penguins?</span>
 <span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a><span class="fu">### C4. Stacked bar chart in R</span></span>
 <span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>Write the ggplot2 call for a **100% stacked bar** of <span class="in">`island`</span> (x) with <span class="in">`species`</span> fill.</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>Write the ggplot2 call for a 100% stacked bar of <span class="in">`island`</span> (x) with <span class="in">`species`</span> fill.</span>
 <span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a><span class="fu">### C5. pivot_wider usage</span></span>
 <span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a></span>
@@ -1164,7 +1222,7 @@ Click to reveal answers — Section F — Graph interpretation (images)
 <span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a><span class="fu">### D2. When group_by before summarize</span></span>
 <span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>You have <span class="in">`penguins`</span> and want the **mean** flipper length for each **sex**. Write the pipeline.</span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>You have <span class="in">`penguins`</span> and want the mean flipper length for each sex. Write the pipeline.</span>
 <span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a><span class="fu">### D3. filter before plot</span></span>
 <span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a></span>
@@ -1178,7 +1236,7 @@ Click to reveal answers — Section F — Graph interpretation (images)
 <span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
 <span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section D — Choosing the right graph/summary (integration)<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
 <span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>a) **Side-by-side boxplots.** b) **Scatterplot.** c) **Stacked bar chart.** d) **Histogram** or dot plot.</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>a) Side-by-side boxplots. b) Scatterplot. c) Stacked bar chart. d) Histogram or dot plot.</span>
 <span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span><span class="in">`penguins %&gt;% group_by(sex) %&gt;% summarize(mean_flip = mean(flipper_length_mm, na.rm = TRUE))`</span></span>
 <span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a></span>
@@ -1196,7 +1254,7 @@ Click to reveal answers — Section F — Graph interpretation (images)
 <span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section D — Choosing the right graph/summary (integration)</span></span>
 <span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>a) **Side-by-side boxplots.** b) **Scatterplot.** c) **Stacked bar chart.** d) **Histogram** or dot plot.</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>a) Side-by-side boxplots. b) Scatterplot. c) Stacked bar chart. d) Histogram or dot plot.</span>
 <span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span><span class="in">`penguins %&gt;% group_by(sex) %&gt;% summarize(mean_flip = mean(flipper_length_mm, na.rm = TRUE))`</span></span>
 <span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a></span>
@@ -1227,7 +1285,7 @@ Click to reveal answers — Section F — Graph interpretation (images)
 <span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
 <span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section E — Project 3 workflow (demo lab R patterns)<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
 <span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="in">`read_csv('https://...')`</span> from the **readr** package (loaded with <span class="in">`library(tidyverse)`</span>).</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="in">`read_csv('https://...')`</span> from the readr package (loaded with <span class="in">`library(tidyverse)`</span>).</span>
 <span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span><span class="in">`mutate(sex = ifelse(sex == 1, 'male', 'female'))`</span> — or <span class="in">`case_when()`</span> for more than two levels.</span>
 <span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a></span>
@@ -1243,7 +1301,7 @@ Click to reveal answers — Section F — Graph interpretation (images)
 <span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section E — Project 3 workflow (demo lab R patterns)</span></span>
 <span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="in">`read_csv('https://...')`</span> from the **readr** package (loaded with <span class="in">`library(tidyverse)`</span>).</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span><span class="in">`read_csv('https://...')`</span> from the readr package (loaded with <span class="in">`library(tidyverse)`</span>).</span>
 <span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span><span class="in">`mutate(sex = ifelse(sex == 1, 'male', 'female'))`</span> — or <span class="in">`case_when()`</span> for more than two levels.</span>
 <span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a></span>
@@ -1254,106 +1312,180 @@ Click to reveal answers — Section F — Graph interpretation (images)
 <span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section F — Graph interpretation (images)</span></span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section F — Graph integration (verbal · no image)</span></span>
 <span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a><span class="fu">### IMG4. Histogram interpretation</span></span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a><span class="fu">### F1. Match graph to types</span></span>
 <span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a><span class="al">![](/assets/images/graph-pack/hist-single.png)</span></span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>Match: (a) mass by species (b) bill vs flipper (c) species on island (d) flipper lengths alone.</span>
 <span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>What does this graph primarily display?</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a><span class="fu">### F2. Wrong graph</span></span>
 <span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a><span class="fu">### IMG5. Paired histograms</span></span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>Why is a scatterplot wrong for species vs island (both categorical)?</span>
 <span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a><span class="al">![](/assets/images/graph-pack/hist-pair.png)</span></span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a><span class="fu">### F3. When to add cor()</span></span>
 <span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>Which group appears to have the higher typical value?</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>You add <span class="in">`cor()`</span> to quantify the strength of a relationship after making which graph type?</span>
 <span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a><span class="fu">### IMG6. Single boxplot feature</span></span>
-<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a><span class="al">![](/assets/images/graph-pack/box-single.png)</span></span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="html"}</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section F — Graph integration (verbal · no image)<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
 <span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>In a boxplot, the horizontal line inside the box marks the:</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>a) Side-by-side boxplots. b) Scatterplot. c) Stacked bar. d) Histogram or dot plot.</span>
 <span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a><span class="fu">### IMG7. Side-by-side boxplots</span></span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Scatterplots need two numerical axes — use stacked bar or two-way table.</span>
 <span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a><span class="al">![](/assets/images/graph-pack/box-pair.png)</span></span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>After a scatterplot of two numerical variables (when the form is roughly linear).</span>
 <span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>Which group has larger spread (IQR)?</span>
-<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a><span class="fu">### IMG8. Scatterplot form-direction-strength</span></span>
-<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a><span class="al">![](/assets/images/graph-pack/scatter-form-strength-direction.png)</span></span>
-<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>Best description of this scatterplot?</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="pdf"}</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a><span class="fu">### IMG9. Bar plot variable type</span></span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section F — Graph integration (verbal · no image)</span></span>
 <span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a><span class="al">![](/assets/images/graph-pack/bar-plot.png)</span></span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>a) Side-by-side boxplots. b) Scatterplot. c) Stacked bar. d) Histogram or dot plot.</span>
 <span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>The x-axis categories in a bar plot represent what variable type?</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Scatterplots need two numerical axes — use stacked bar or two-way table.</span>
 <span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a><span class="fu">### IMG10. Stacked bar counts</span></span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>After a scatterplot of two numerical variables (when the form is roughly linear).</span>
 <span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a><span class="al">![](/assets/images/graph-pack/stacked-bar-counts.png)</span></span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>This is a stacked bar chart with raw counts. What is easiest to compare?</span>
-<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a><span class="fu">### IMG11. 100% stacked bar</span></span>
-<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a><span class="al">![](/assets/images/graph-pack/stacked-bar-100.png)</span></span>
-<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>This is a 100% stacked bar chart. What is easiest to compare?</span>
-<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="html"}</span>
-<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
-<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section F — Graph interpretation (images)<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
-<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>The distribution of **one numerical variable**.</span>
-<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Group A** (its distribution is shifted higher).</span>
-<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>The **median**.</span>
-<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Group B** (wider box / longer whiskers).</span>
-<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Roughly **linear**, **positive** direction, **moderate-to-strong** association.</span>
-<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**Categorical**.</span>
-<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>**Total counts** by group.</span>
-<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>**Within-group proportions** across groups.</span>
-<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
-<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="pdf"}</span>
-<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
-<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
-<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section F — Graph interpretation (images)</span></span>
-<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>The distribution of **one numerical variable**.</span>
-<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Group A** (its distribution is shifted higher).</span>
-<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>The **median**.</span>
-<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Group B** (wider box / longer whiskers).</span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section G — Pearson $r$ and association (integration)</span></span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a><span class="fu">### G1. r sign</span></span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>$r = -0.73$. Direction?</span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a><span class="fu">### G2. r vs form</span></span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>Strong upward curve; $r = 0.2$. What happened?</span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a><span class="fu">### G3. cor() in R</span></span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>R function for Pearson correlation between <span class="in">`x`</span> and <span class="in">`y`</span>?</span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="html"}</span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section G — Pearson $r$ and association (integration)<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Negative — higher $x$ tends with lower $y$.</span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Form is curved, not linear — $r$ understates the relationship; describe curvature.</span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span><span class="in">`cor(x, y)`</span> (after dropping NA if needed).</span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="pdf"}</span>
+<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section G — Pearson $r$ and association (integration)</span></span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Negative — higher $x$ tends with lower $y$.</span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Form is curved, not linear — $r$ understates the relationship; describe curvature.</span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span><span class="in">`cor(x, y)`</span> (after dropping NA if needed).</span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Roughly **linear**, **positive** direction, **moderate-to-strong** association.</span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>**Categorical**.</span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section H — Tidyverse pipeline verbs (Read 1 · pipeline)</span></span>
 <span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>**Total counts** by group.</span>
+<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a><span class="fu">### H1. Pipe operator</span></span>
 <span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>**Within-group proportions** across groups.</span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>What is the main purpose of <span class="in">`%&gt;%`</span> (pipe) in the tidyverse?</span>
 <span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a><span class="fu">### H2. filter()</span></span>
 <span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>Which tidyverse function keeps rows that satisfy a logical condition (e.g. <span class="in">`weight &gt; 50`</span>)?</span>
+<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a><span class="fu">### H3. select()</span></span>
+<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>Which function chooses columns by name?</span>
+<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a><span class="fu">### H4. mutate()</span></span>
+<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>Which function adds a new column while keeping the original number of rows?</span>
+<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a><span class="fu">### H5. count()</span></span>
+<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a>Which function counts how many rows fall in each level of a categorical variable?</span>
+<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a><span class="fu">### H6. group_by() + summarize()</span></span>
+<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a>What is the role of <span class="in">`group_by(species)`</span> before <span class="in">`summarize(mean_mass = mean(body_mass_g))`</span>?</span>
+<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a><span class="fu">### H7. summarize()</span></span>
+<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a>After <span class="in">`group_by(island)`</span>, you call <span class="in">`summarize(n = n(), avg = mean(bill_length_mm))`</span>. What do you get?</span>
+<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a><span class="fu">### H8. glimpse()</span></span>
+<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a>Name two things <span class="in">`glimpse(df)`</span> shows.</span>
+<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="html"}</span>
+<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers — Section H — Tidyverse pipeline verbs (Read 1 · pipeline)<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>The pipe passes the result of the left side as the first argument to the function on the right — it chains steps so you can read the pipeline top to bottom.</span>
+<span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span><span class="in">`filter()`</span> — it returns only rows where the condition is <span class="in">`TRUE`</span>.</span>
+<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span><span class="in">`select()`</span> — e.g. <span class="in">`select(species, body_mass_g)`</span> returns a data frame with only those columns.</span>
+<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span><span class="in">`mutate()`</span> — e.g. <span class="in">`mutate(mass_kg = body_mass_g / 1000)`</span> creates a new column.</span>
+<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span><span class="in">`count(variable)`</span> — returns a data frame with one row per level and a column <span class="in">`n`</span> with the count.</span>
+<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span><span class="in">`group_by()`</span> splits the data by <span class="in">`species`</span> so <span class="in">`summarize()`</span> returns one summary row per species instead of one row for the whole dataset.</span>
+<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>One row per island with two columns: <span class="in">`n`</span> (count of penguins on that island) and <span class="in">`avg`</span> (mean bill length for that island).</span>
+<span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>Variable names, types (e.g. <span class="in">`&lt;dbl&gt;`</span>, <span class="in">`&lt;chr&gt;`</span>), total rows and columns, and a short preview of values.</span>
+<span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="pdf"}</span>
+<span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answer key — Section H — Tidyverse pipeline verbs (Read 1 · pipeline)</span></span>
+<span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-466"><a href="#cb1-466" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>The pipe passes the result of the left side as the first argument to the function on the right — it chains steps so you can read the pipeline top to bottom.</span>
+<span id="cb1-467"><a href="#cb1-467" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-468"><a href="#cb1-468" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span><span class="in">`filter()`</span> — it returns only rows where the condition is <span class="in">`TRUE`</span>.</span>
+<span id="cb1-469"><a href="#cb1-469" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-470"><a href="#cb1-470" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span><span class="in">`select()`</span> — e.g. <span class="in">`select(species, body_mass_g)`</span> returns a data frame with only those columns.</span>
+<span id="cb1-471"><a href="#cb1-471" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-472"><a href="#cb1-472" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span><span class="in">`mutate()`</span> — e.g. <span class="in">`mutate(mass_kg = body_mass_g / 1000)`</span> creates a new column.</span>
+<span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-474"><a href="#cb1-474" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span><span class="in">`count(variable)`</span> — returns a data frame with one row per level and a column <span class="in">`n`</span> with the count.</span>
+<span id="cb1-475"><a href="#cb1-475" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-476"><a href="#cb1-476" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span><span class="in">`group_by()`</span> splits the data by <span class="in">`species`</span> so <span class="in">`summarize()`</span> returns one summary row per species instead of one row for the whole dataset.</span>
+<span id="cb1-477"><a href="#cb1-477" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-478"><a href="#cb1-478" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>One row per island with two columns: <span class="in">`n`</span> (count of penguins on that island) and <span class="in">`avg`</span> (mean bill length for that island).</span>
+<span id="cb1-479"><a href="#cb1-479" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-480"><a href="#cb1-480" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>Variable names, types (e.g. <span class="in">`&lt;dbl&gt;`</span>, <span class="in">`&lt;chr&gt;`</span>), total rows and columns, and a short preview of values.</span>
+<span id="cb1-481"><a href="#cb1-481" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-482"><a href="#cb1-482" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-483"><a href="#cb1-483" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-484"><a href="#cb1-484" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-485"><a href="#cb1-485" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
