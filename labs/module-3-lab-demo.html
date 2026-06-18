@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Module 3 — Demo Lab (exploratory data analysis) – STAT 109 - Introductory Biostatistics</title>
+<title>Module 3 — Demo Labs – STAT 109 - Introductory Biostatistics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -76,7 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-94b323657c735dfe3b1bf6ebb2c33a55.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-bba5ebae505b5c03f3f0d8040a416a6b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -121,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#module-3-demo-lab-five-eda-situations" id="toc-module-3-demo-lab-five-eda-situations" class="nav-link active" data-scroll-target="#module-3-demo-lab-five-eda-situations">Module 3, Demo lab: five EDA situations</a></li>
+  <li><a href="#module-3-demo-labs-two-notebooks" id="toc-module-3-demo-labs-two-notebooks" class="nav-link active" data-scroll-target="#module-3-demo-labs-two-notebooks">Module 3, Demo labs (two notebooks)</a></li>
   </ul>
 </nav>
 </nav>
@@ -134,7 +134,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Module 3 — Demo Lab (exploratory data analysis)</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Module 3 — Demo Labs</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 <p class="subtitle lead">Follow along · not graded</p>
 </div>
 
@@ -152,9 +152,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="module-3-demo-lab-five-eda-situations" class="level1">
-<h1>Module 3, Demo lab: five EDA situations</h1>
-<p><strong>When:</strong> After <a href="../quizzes/quiz-m3-concept">Quiz B</a>, before <a href="module-3-lab-exercise">exercise lab</a>.</p>
+<section id="module-3-demo-labs-two-notebooks" class="level1">
+<h1>Module 3, Demo labs (two notebooks)</h1>
+<p>When: After <a href="../quizzes/quiz-m3-concept">Quiz B</a>, before <a href="module-3-lab-exercise">exercise lab</a>.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -165,11 +165,30 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong><a href="module-3-lab-demo.ipynb">module-3-lab-demo.ipynb</a></strong> · <a href="https://colab.research.google.com/github/roverhol/stat109-async-portfolio/blob/main/labs/module-3-lab-demo.ipynb">Colab</a></p>
-<p>Walkthrough of all five EDA situations used in <a href="../projects/project-3">Project 3</a>: univariate numerical/categorical; numerical by group (boxplots); two numerical (scatterplot); two categorical (two-way table + stacked bars).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Demo</th>
+<th>Open in Colab</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1 — R tools</td>
+<td><a href="https://colab.research.google.com/github/roverhol/stat109-async-portfolio/blob/main/labs/module-3-lab-demo-tools.ipynb">Open in Colab</a></td>
+</tr>
+<tr class="even">
+<td>2 — Five worked EDA examples</td>
+<td><a href="https://colab.research.google.com/github/roverhol/stat109-async-portfolio/blob/main/labs/module-3-lab-demo-worked.ipynb">Open in Colab</a></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<p><a href="module-3-lab-exercise">Exercise lab</a> → <a href="../quizzes/quiz-m3-synthesis">Synthesis</a> · <a href="../r-reference">R reference</a> · <a href="../projects/project-3">Project 3</a></p>
+<p>Demo 1: <code>count</code>, <code>group_by</code>/<code>summarize</code>, core geoms, <code>cor()</code>, <code>read_csv</code>.</p>
+<p>Demo 2: Full walkthrough of all five EDA situations on <code>penguins</code> — same structure as <a href="../quizzes/quiz-m3-synthesis">Synthesis</a>.</p>
+<p>The <a href="../projects/project-3-example-penguins.html">Project 3 sample</a> has a final example to review before doing your own project.</p>
+<p><a href="module-3-lab-exercise">Exercise lab</a> → <a href="../quizzes/quiz-m3-synthesis">Synthesis</a> · <a href="../r-reference#r-module3">R reference</a></p>
 
 
 <!-- -->
@@ -634,23 +653,28 @@ Important
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Module 3 — Demo Lab (exploratory data analysis)"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Module 3 — Demo Labs"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Follow along · not graded"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">resources:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - module-3-lab-demo.ipynb</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Module 3, Demo labs (two notebooks)</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu"># Module 3, Demo lab: five EDA situations</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>When: After <span class="co">[</span><span class="ot">Quiz B</span><span class="co">](../quizzes/quiz-m3-concept)</span>, before <span class="co">[</span><span class="ot">exercise lab</span><span class="co">](module-3-lab-exercise)</span>.</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>**When:** After <span class="co">[</span><span class="ot">Quiz B</span><span class="co">](../quizzes/quiz-m3-concept)</span>, before <span class="co">[</span><span class="ot">exercise lab</span><span class="co">](module-3-lab-exercise)</span>.</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>**[module-3-lab-demo.ipynb](module-3-lab-demo.ipynb)** · <span class="co">[</span><span class="ot">Colab</span><span class="co">](https://colab.research.google.com/github/roverhol/stat109-async-portfolio/blob/main/labs/module-3-lab-demo.ipynb)</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Walkthrough of all five EDA situations used in <span class="co">[</span><span class="ot">Project 3</span><span class="co">](../projects/project-3)</span>: univariate numerical/categorical; numerical by group (boxplots); two numerical (scatterplot); two categorical (two-way table + stacked bars).</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Exercise lab</span><span class="co">](module-3-lab-exercise)</span> → <span class="co">[</span><span class="ot">Synthesis</span><span class="co">](../quizzes/quiz-m3-synthesis)</span> · <span class="co">[</span><span class="ot">R reference</span><span class="co">](../r-reference)</span> · <span class="co">[</span><span class="ot">Project 3</span><span class="co">](../projects/project-3)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>::: callout-important</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Demo <span class="pp">|</span> Open in Colab <span class="pp">|</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------------------|---------------------------------------------------|</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 1 — R tools <span class="pp">|</span> <span class="co">[</span><span class="ot">Open in Colab</span><span class="co">](https://colab.research.google.com/github/roverhol/stat109-async-portfolio/blob/main/labs/module-3-lab-demo-tools.ipynb)</span> <span class="pp">|</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 2 — Five worked EDA examples <span class="pp">|</span> <span class="co">[</span><span class="ot">Open in Colab</span><span class="co">](https://colab.research.google.com/github/roverhol/stat109-async-portfolio/blob/main/labs/module-3-lab-demo-worked.ipynb)</span> <span class="pp">|</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Demo 1: <span class="in">`count`</span>, <span class="in">`group_by`</span>/<span class="in">`summarize`</span>, core geoms, <span class="in">`cor()`</span>, <span class="in">`read_csv`</span>.</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Demo 2: Full walkthrough of all five EDA situations on <span class="in">`penguins`</span> — same structure as <span class="co">[</span><span class="ot">Synthesis</span><span class="co">](../quizzes/quiz-m3-synthesis)</span>.</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">Project 3 sample</span><span class="co">](../projects/project-3-example-penguins.qmd)</span> has a final example to review before doing your own project.</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Exercise lab</span><span class="co">](module-3-lab-exercise)</span> → <span class="co">[</span><span class="ot">Synthesis</span><span class="co">](../quizzes/quiz-m3-synthesis)</span> · <span class="co">[</span><span class="ot">R reference</span><span class="co">](../r-reference#r-module3)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
