@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Module 4 — Exercise Lab – STAT 109 - Introductory Biostatistics</title>
+<title>Module 4 — Demo Lab 2 (tests &amp; confidence intervals) – STAT 109 - Introductory Biostatistics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -121,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#module-4-exercise-lab" id="toc-module-4-exercise-lab" class="nav-link active" data-scroll-target="#module-4-exercise-lab">Module 4, Exercise lab</a></li>
+  <li><a href="#module-4-demo-lab-2-tests-confidence-intervals" id="toc-module-4-demo-lab-2-tests-confidence-intervals" class="nav-link active" data-scroll-target="#module-4-demo-lab-2-tests-confidence-intervals">Module 4, Demo lab 2: Tests &amp; confidence intervals</a></li>
   </ul>
 </nav>
 </nav>
@@ -134,8 +134,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Module 4 — Exercise Lab</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
-<p class="subtitle lead">Practice · submit in Canvas</p>
+<div class="quarto-title-block"><div><h1 class="title">Module 4 — Demo Lab 2 (tests &amp; confidence intervals)</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<p class="subtitle lead">Follow along · not graded</p>
 </div>
 
 
@@ -152,24 +152,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="module-4-exercise-lab" class="level1">
-<h1>Module 4, Exercise lab</h1>
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="module-4-demo-lab-2-tests-confidence-intervals" class="level1">
+<h1>Module 4, Demo lab 2: Tests &amp; confidence intervals</h1>
+<p>When: After <a href="module-4-lab-demo">Demo lab 1</a>, before the <a href="module-4-lab-exercise">exercise lab</a>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><a href="https://colab.research.google.com/github/roverhol/stat109-async-portfolio/blob/main/labs/module-4-lab-exercise.ipynb">Open in Colab</a></p>
-<p>Four problems following the demo workflow (simulate → describe → test): an RCT with a numerical outcome, a two-group binary outcome, an observational comparison with a confounder, and your Project 4 plan. Submit the completed notebook in Canvas.</p>
-<p>The simulation problems have more than one right answer: you pick the parameters of the world, and you are graded on whether your variables are related the way the story describes and are the correct type (numerical or binary).</p>
+<p><a href="https://colab.research.google.com/github/roverhol/stat109-async-portfolio/blob/main/labs/module-4-lab-demo-tests.ipynb">Open in Colab</a></p>
+<p>Run the inference that matches each comparison: Welch <code>t.test()</code>, <code>prop.test()</code>/<code>chisq.test()</code>, paired <code>t.test()</code>, <code>mcnemar.test()</code>, and for more than two groups one-way ANOVA (<code>lm</code> + <code>anova</code>) and the chi-square test, plus a simulation that validates a test against known truth.</p>
 </div>
 </div>
-<p><a href="module-4-lab-demo">Demo lab 1</a> · <a href="module-4-lab-demo-tests">Demo lab 2</a> · <a href="../projects/project-4">Project 4</a> · <a href="../quizzes/quiz-m4-synthesis">Synthesis</a></p>
+<p><a href="module-4-lab-demo">Demo lab 1</a> · <a href="module-4-lab-exercise">Exercise lab</a> → <a href="../quizzes/quiz-m4-synthesis">Synthesis</a> · <a href="../r-reference">R reference</a> · <a href="../methods">Methods map</a></p>
 
 
 <!-- -->
@@ -634,23 +634,23 @@ Note
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Module 4 — Exercise Lab"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Practice · submit in Canvas"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Module 4 — Demo Lab 2 (tests &amp; confidence intervals)"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Follow along · not graded"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">resources:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - module-4-lab-exercise.ipynb</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - module-4-lab-demo-tests.ipynb</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu"># Module 4, Exercise lab</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu"># Module 4, Demo lab 2: Tests &amp; confidence intervals</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Open in Colab</span><span class="co">](https://colab.research.google.com/github/roverhol/stat109-async-portfolio/blob/main/labs/module-4-lab-exercise.ipynb)</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Four problems following the demo workflow (simulate → describe → test): an RCT with a numerical outcome, a two-group binary outcome, an observational comparison with a confounder, and your Project 4 plan. Submit the completed notebook in Canvas.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>When: After <span class="co">[</span><span class="ot">Demo lab 1</span><span class="co">](module-4-lab-demo)</span>, before the <span class="co">[</span><span class="ot">exercise lab</span><span class="co">](module-4-lab-exercise)</span>.</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Open in Colab</span><span class="co">](https://colab.research.google.com/github/roverhol/stat109-async-portfolio/blob/main/labs/module-4-lab-demo-tests.ipynb)</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>The simulation problems have more than one right answer: you pick the parameters of the world, and you are graded on whether your variables are related the way the story describes and are the correct type (numerical or binary).</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Run the inference that matches each comparison: Welch <span class="in">`t.test()`</span>, <span class="in">`prop.test()`</span>/<span class="in">`chisq.test()`</span>, paired <span class="in">`t.test()`</span>, <span class="in">`mcnemar.test()`</span>, and for more than two groups one-way ANOVA (<span class="in">`lm`</span> + <span class="in">`anova`</span>) and the chi-square test, plus a simulation that validates a test against known truth.</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Demo lab 1</span><span class="co">](module-4-lab-demo)</span> · <span class="co">[</span><span class="ot">Demo lab 2</span><span class="co">](module-4-lab-demo-tests)</span> · <span class="co">[</span><span class="ot">Project 4</span><span class="co">](../projects/project-4)</span> · <span class="co">[</span><span class="ot">Synthesis</span><span class="co">](../quizzes/quiz-m4-synthesis)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Demo lab 1</span><span class="co">](module-4-lab-demo)</span> · <span class="co">[</span><span class="ot">Exercise lab</span><span class="co">](module-4-lab-exercise)</span> → <span class="co">[</span><span class="ot">Synthesis</span><span class="co">](../quizzes/quiz-m4-synthesis)</span> · <span class="co">[</span><span class="ot">R reference</span><span class="co">](../r-reference)</span> · <span class="co">[</span><span class="ot">Methods map</span><span class="co">](../methods)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

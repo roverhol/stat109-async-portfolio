@@ -76,7 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-94b323657c735dfe3b1bf6ebb2c33a55.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-bba5ebae505b5c03f3f0d8040a416a6b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -160,7 +160,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="module-4-read-0-why-fair-comparisons-are-hard" class="level1">
 <h1>Module 4, Read 0: Why fair comparisons are hard</h1>
-<p><strong>Project:</strong> <a href="../projects/project-4">Project 4 — Designing Fair Comparisons</a> · <strong>Next:</strong> <a href="module-4-read-01">Read 1</a></p>
+<p>Project: <a href="../projects/project-4">Project 4, Designing Fair Comparisons</a> · Next: <a href="module-4-read-01">Read 1</a></p>
 <hr>
 <section id="the-central-question-of-module-4" class="level2">
 <h2 class="anchored" data-anchor-id="the-central-question-of-module-4">The central question of Module 4</h2>
@@ -170,19 +170,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Does the tutoring program raise test scores?</li>
 <li>Are workers in remote roles more productive than in-office workers?</li>
 </ul>
-<p>These questions look straightforward. They are not. <strong>How you compare two groups determines whether your answer means anything.</strong></p>
+<p>These questions look straightforward. They are not. How you compare two groups determines whether your answer means anything.</p>
 <hr>
 </section>
 <section id="what-you-will-do-in-project-4" class="level2">
 <h2 class="anchored" data-anchor-id="what-you-will-do-in-project-4">What you will do in Project 4</h2>
 <p>Project 4 assigns you a research question about a two-group comparison. You will:</p>
 <ol type="1">
-<li><strong>Classify the design</strong> — Is it an RCT or an observational study? Who decides group membership?</li>
-<li><strong>Identify confounders</strong> — Draw a simple DAG showing what else might explain the difference.</li>
-<li><strong>Simulate a dataset</strong> — Use <code>set.seed()</code> to create a reproducible, fictional dataset that mirrors the design.</li>
-<li><strong>Run the right test</strong> — Pick from the methods table by variable types (numerical → Welch <em>t</em>; binary → two-proportion <em>z</em>).</li>
-<li><strong>Write for a classmate</strong> — Summarize your findings in one page for someone who asked the question but is not a statistician.</li>
+<li>Classify the design, Is it an RCT or an observational study? Who decides group membership?</li>
+<li>Identify confounders, Draw a simple DAG showing what else might explain the difference.</li>
+<li>Simulate a dataset, Use <code>set.seed()</code> to create a reproducible, fictional dataset that mirrors the design.</li>
+<li>Run the right test, Pick from the methods table by variable types (numerical → Welch <em>t</em>; binary → two-proportion <em>z</em>).</li>
+<li>Write for a classmate, Summarize your findings in one page for someone who asked the question but is not a statistician.</li>
 </ol>
+<p>Your project stays limited to a single two-group comparison (one binary explanatory contrast). For a complete worked example, see the <a href="../projects/project-4-sample-notebook-yoga">Project 4 sample R notebook</a> (simulate → describe → test → check the confounder).</p>
 <hr>
 </section>
 <section id="three-things-that-can-go-wrong-when-comparing-groups" class="level2">
@@ -197,7 +198,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A third variable affects both who ends up in each group and the outcome. Observational comparisons are vulnerable to confounding — even with large samples and small p-values.</p>
+<p>A third variable affects both who ends up in each group and the outcome. Observational comparisons are vulnerable to confounding, even with large samples and small p-values.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -243,48 +244,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Read 0</strong> <em>(this page)</em></td>
-<td>Project preview — what makes comparisons fair</td>
+<td>Read 0 <em>(this page)</em></td>
+<td>Project preview, what makes comparisons fair</td>
 </tr>
 <tr class="even">
-<td><strong>Read 1</strong></td>
-<td>EV/RV · RCT vs observational · confounding · DAG (Lectures 28–29)</td>
+<td>Read 1</td>
+<td>Three sections: study design &amp; confounding · two-group tests/CIs · more than two groups</td>
 </tr>
 <tr class="odd">
-<td><strong>Quiz A (Def &amp; Notation)</strong></td>
-<td>Study-design vocabulary</td>
+<td>Quiz A (Def &amp; Notation)</td>
+<td>Study-design vocabulary + two-group methods &amp; output reading</td>
 </tr>
 <tr class="even">
-<td><strong>Read 2</strong></td>
-<td>Two-group tests from the methods table (Lecture 30)</td>
+<td>Demo lab 1</td>
+<td>Simulate data by study design; compare groups with Module 3 plots/stats</td>
 </tr>
 <tr class="odd">
-<td><strong>Quiz B (Concept Check)</strong></td>
-<td>Design classification + methods matching</td>
+<td>Demo lab 2</td>
+<td>Inference code: t-test, prop.test/chisq.test, paired tests, ANOVA, glm</td>
 </tr>
 <tr class="even">
-<td><strong>Demo lab</strong></td>
-<td>Simulate + test: numerical and binary outcomes</td>
-</tr>
-<tr class="odd">
-<td><strong>Exercise lab</strong></td>
+<td>Exercise lab</td>
 <td>Practice problems → connect to Project 4 plan</td>
 </tr>
-<tr class="even">
-<td><strong>Synthesis quiz</strong></td>
+<tr class="odd">
+<td>Synthesis quiz</td>
 <td>Full integration: design + test + interpret</td>
 </tr>
-<tr class="odd">
-<td><strong>Milestone</strong></td>
-<td>Draft design plan for your assigned question</td>
-</tr>
 <tr class="even">
-<td><strong>Project 4</strong></td>
+<td>Milestone</td>
+<td>Optional worksheet: draft design plan for your assigned question</td>
+</tr>
+<tr class="odd">
+<td>Project 4</td>
 <td>Final report + reproducible notebook</td>
 </tr>
 </tbody>
 </table>
-<p>No lecture or lab numbers appear on the course path — just the content above.</p>
+<p>No lecture or lab numbers appear on the course path, just the content above.</p>
 <hr>
 </section>
 <section id="quick-vocabulary-preview" class="level2">
@@ -302,31 +299,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Explanatory variable (EV)</strong></td>
-<td>The group label — treatment, exposure, or condition</td>
+<td>Explanatory variable (EV)</td>
+<td>The group label, treatment, exposure, or condition</td>
 </tr>
 <tr class="even">
-<td><strong>Response variable (RV)</strong></td>
+<td>Response variable (RV)</td>
 <td>The outcome you measure</td>
 </tr>
 <tr class="odd">
-<td><strong>RCT</strong></td>
-<td>Researcher flips a coin to assign groups — gold standard for causation</td>
+<td>RCT</td>
+<td>Researcher flips a coin to assign groups, gold standard for causation</td>
 </tr>
 <tr class="even">
-<td><strong>Observational study</strong></td>
-<td>Groups form on their own — researcher just watches</td>
+<td>Observational study</td>
+<td>Groups form on their own, researcher just watches</td>
 </tr>
 <tr class="odd">
-<td><strong>Confounder</strong></td>
+<td>Confounder</td>
 <td>A third variable that muddles the EV → RV comparison</td>
 </tr>
 <tr class="even">
-<td><strong>DAG</strong></td>
+<td>DAG</td>
 <td>A picture of causal paths between variables</td>
 </tr>
 <tr class="odd">
-<td><strong>Welch <em>t</em>-test</strong></td>
+<td>Welch <em>t</em>-test</td>
 <td>The R default for comparing two group means</td>
 </tr>
 </tbody>
@@ -342,11 +339,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Think of a comparison you have seen in the news recently — a diet study, a drug trial, a social intervention. Ask yourself:</p>
+<p>Think of a comparison you have seen in the news recently, a diet study, a drug trial, a social intervention. Ask yourself:</p>
 <ol type="1">
 <li>How did people end up in each group?</li>
 <li>What else might differ between the groups?</li>
-<li>Was the outcome numerical or binary?</li>
+<li>Was the response variable numerical or binary?</li>
 </ol>
 <p>You will have the vocabulary to answer these questions after Read 1.</p>
 </div>
@@ -825,7 +822,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu"># Module 4, Read 0: Why fair comparisons are hard</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>**Project:** [Project 4 — Designing Fair Comparisons](../projects/project-4) · **Next:** <span class="co">[</span><span class="ot">Read 1</span><span class="co">](module-4-read-01)</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Project: <span class="co">[</span><span class="ot">Project 4, Designing Fair Comparisons</span><span class="co">](../projects/project-4)</span> · Next: <span class="co">[</span><span class="ot">Read 1</span><span class="co">](module-4-read-01)</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
@@ -837,7 +834,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Does the tutoring program raise test scores?</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Are workers in remote roles more productive than in-office workers?</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>These questions look straightforward. They are not. **How you compare two groups determines whether your answer means anything.**</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>These questions look straightforward. They are not. How you compare two groups determines whether your answer means anything.</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
@@ -845,77 +842,78 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Project 4 assigns you a research question about a two-group comparison. You will:</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Classify the design** — Is it an RCT or an observational study? Who decides group membership?</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Identify confounders** — Draw a simple DAG showing what else might explain the difference.</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Simulate a dataset** — Use <span class="in">`set.seed()`</span> to create a reproducible, fictional dataset that mirrors the design.</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Run the right test** — Pick from the methods table by variable types (numerical → Welch *t*; binary → two-proportion *z*).</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Write for a classmate** — Summarize your findings in one page for someone who asked the question but is not a statistician.</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Classify the design, Is it an RCT or an observational study? Who decides group membership?</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Identify confounders, Draw a simple DAG showing what else might explain the difference.</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Simulate a dataset, Use <span class="in">`set.seed()`</span> to create a reproducible, fictional dataset that mirrors the design.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Run the right test, Pick from the methods table by variable types (numerical → Welch *t*; binary → two-proportion *z*).</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Write for a classmate, Summarize your findings in one page for someone who asked the question but is not a statistician.</span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Your project stays limited to a single two-group comparison (one binary explanatory contrast). For a complete worked example, see the <span class="co">[</span><span class="ot">Project 4 sample R notebook</span><span class="co">](../projects/project-4-sample-notebook-yoga)</span> (simulate → describe → test → check the confounder).</span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## Three things that can go wrong when comparing groups</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">### 1. Confounding</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>A third variable affects both who ends up in each group and the outcome. Observational comparisons are vulnerable to confounding — even with large samples and small p-values.</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="fu">### 2. Using the wrong test</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>Comparing two group *means*? Use the Welch two-sample *t*-test. Comparing two group *proportions*? Use a two-proportion *z*-test or chi-square. The <span class="co">[</span><span class="ot">methods map</span><span class="co">](../methods)</span> will guide you.</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu">### 3. Overclaiming causation</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>A p-value of 0.001 does not mean the treatment *caused* the difference in an observational study. Causal language requires a randomized experiment (or very careful design).</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="fu">## Three things that can go wrong when comparing groups</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="fu">### 1. Confounding</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>A third variable affects both who ends up in each group and the outcome. Observational comparisons are vulnerable to confounding, even with large samples and small p-values.</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="fu">### 2. Using the wrong test</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Comparing two group *means*? Use the Welch two-sample *t*-test. Comparing two group *proportions*? Use a two-proportion *z*-test or chi-square. The <span class="co">[</span><span class="ot">methods map</span><span class="co">](../methods)</span> will guide you.</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="fu">### 3. Overclaiming causation</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>A p-value of 0.001 does not mean the treatment *caused* the difference in an observational study. Causal language requires a randomized experiment (or very careful design).</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 4 learning path</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Material <span class="pp">|</span></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|---------|</span></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Read 0** *(this page)* <span class="pp">|</span> Project preview — what makes comparisons fair <span class="pp">|</span></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Read 1** <span class="pp">|</span> EV/RV · RCT vs observational · confounding · DAG (Lectures 28–29) <span class="pp">|</span></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Quiz A (Def &amp; Notation)** <span class="pp">|</span> Study-design vocabulary <span class="pp">|</span></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Read 2** <span class="pp">|</span> Two-group tests from the methods table (Lecture 30) <span class="pp">|</span></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Quiz B (Concept Check)** <span class="pp">|</span> Design classification + methods matching <span class="pp">|</span></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Demo lab** <span class="pp">|</span> Simulate + test: numerical and binary outcomes <span class="pp">|</span></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Exercise lab** <span class="pp">|</span> Practice problems → connect to Project 4 plan <span class="pp">|</span></span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Synthesis quiz** <span class="pp">|</span> Full integration: design + test + interpret <span class="pp">|</span></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Milestone** <span class="pp">|</span> Draft design plan for your assigned question <span class="pp">|</span></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Project 4** <span class="pp">|</span> Final report + reproducible notebook <span class="pp">|</span></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>No lecture or lab numbers appear on the course path — just the content above.</span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quick vocabulary preview</span></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Term <span class="pp">|</span> Plain language <span class="pp">|</span></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|---------------|</span></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Explanatory variable (EV)** <span class="pp">|</span> The group label — treatment, exposure, or condition <span class="pp">|</span></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Response variable (RV)** <span class="pp">|</span> The outcome you measure <span class="pp">|</span></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **RCT** <span class="pp">|</span> Researcher flips a coin to assign groups — gold standard for causation <span class="pp">|</span></span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Observational study** <span class="pp">|</span> Groups form on their own — researcher just watches <span class="pp">|</span></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Confounder** <span class="pp">|</span> A third variable that muddles the EV → RV comparison <span class="pp">|</span></span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **DAG** <span class="pp">|</span> A picture of causal paths between variables <span class="pp">|</span></span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Welch *t*-test** <span class="pp">|</span> The R default for comparing two group means <span class="pp">|</span></span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="fu">## Before you begin Read 1</span></span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>Think of a comparison you have seen in the news recently — a diet study, a drug trial, a social intervention. Ask yourself:</span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>How did people end up in each group?</span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>What else might differ between the groups?</span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Was the outcome numerical or binary?</span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>You will have the vocabulary to answer these questions after Read 1.</span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 4 learning path</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Material <span class="pp">|</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|---------|</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 *(this page)* <span class="pp">|</span> Project preview, what makes comparisons fair <span class="pp">|</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 1 <span class="pp">|</span> Three sections: study design &amp; confounding · two-group tests/CIs · more than two groups <span class="pp">|</span></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz A (Def &amp; Notation) <span class="pp">|</span> Study-design vocabulary + two-group methods &amp; output reading <span class="pp">|</span></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Demo lab 1 <span class="pp">|</span> Simulate data by study design; compare groups with Module 3 plots/stats <span class="pp">|</span></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Demo lab 2 <span class="pp">|</span> Inference code: t-test, prop.test/chisq.test, paired tests, ANOVA, glm <span class="pp">|</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Exercise lab <span class="pp">|</span> Practice problems → connect to Project 4 plan <span class="pp">|</span></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Synthesis quiz <span class="pp">|</span> Full integration: design + test + interpret <span class="pp">|</span></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Milestone <span class="pp">|</span> Optional worksheet: draft design plan for your assigned question <span class="pp">|</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project 4 <span class="pp">|</span> Final report + reproducible notebook <span class="pp">|</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>No lecture or lab numbers appear on the course path, just the content above.</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quick vocabulary preview</span></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Term <span class="pp">|</span> Plain language <span class="pp">|</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|---------------|</span></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Explanatory variable (EV) <span class="pp">|</span> The group label, treatment, exposure, or condition <span class="pp">|</span></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Response variable (RV) <span class="pp">|</span> The outcome you measure <span class="pp">|</span></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> RCT <span class="pp">|</span> Researcher flips a coin to assign groups, gold standard for causation <span class="pp">|</span></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Observational study <span class="pp">|</span> Groups form on their own, researcher just watches <span class="pp">|</span></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Confounder <span class="pp">|</span> A third variable that muddles the EV → RV comparison <span class="pp">|</span></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> DAG <span class="pp">|</span> A picture of causal paths between variables <span class="pp">|</span></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Welch *t*-test <span class="pp">|</span> The R default for comparing two group means <span class="pp">|</span></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a><span class="fu">## Before you begin Read 1</span></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>Think of a comparison you have seen in the news recently, a diet study, a drug trial, a social intervention. Ask yourself:</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>How did people end up in each group?</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>What else might differ between the groups?</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Was the response variable numerical or binary?</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>You will have the vocabulary to answer these questions after Read 1.</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
