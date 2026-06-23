@@ -157,7 +157,7 @@ window.Quarto = {
   <li><a href="#phase-a-ten-study-design-questions" id="toc-phase-a-ten-study-design-questions" class="nav-link" data-scroll-target="#phase-a-ten-study-design-questions">Phase A: Ten study-design questions</a></li>
   <li><a href="#phase-b-one-notebook-with-simulation-and-analysis" id="toc-phase-b-one-notebook-with-simulation-and-analysis" class="nav-link" data-scroll-target="#phase-b-one-notebook-with-simulation-and-analysis">Phase B: One notebook with simulation and analysis</a>
   <ul class="collapse">
-  <li><a href="#sample-ai-prompt-to-generate-simulated-data" id="toc-sample-ai-prompt-to-generate-simulated-data" class="nav-link" data-scroll-target="#sample-ai-prompt-to-generate-simulated-data">Sample AI prompt to generate simulated data</a></li>
+  <li><a href="#how-the-data-were-simulated" id="toc-how-the-data-were-simulated" class="nav-link" data-scroll-target="#how-the-data-were-simulated">How the data were simulated</a></li>
   </ul></li>
   <li><a href="#phase-b-sample-one-page-summary." id="toc-phase-b-sample-one-page-summary." class="nav-link" data-scroll-target="#phase-b-sample-one-page-summary.">Phase B: Sample one-page summary.</a>
   <ul class="collapse">
@@ -249,11 +249,9 @@ window.Quarto = {
 <section id="phase-b-one-notebook-with-simulation-and-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="phase-b-one-notebook-with-simulation-and-analysis">Phase B: One notebook with simulation and analysis</h2>
 <p>The chunks below belong in a notebook with <code>set.seed()</code>, simulation, then analysis.</p>
-<section id="sample-ai-prompt-to-generate-simulated-data" class="level3">
-<h3 class="anchored" data-anchor-id="sample-ai-prompt-to-generate-simulated-data">Sample AI prompt to generate simulated data</h3>
-<ul>
-<li><em>Data prompt used:</em> “I’m designing a study to determine the effect of doing yoga during the second trimester on the rates of maternal diabetes. I’m planning to do an observational study and am worried about socio-economic status (SES) confounding the relationship between my response variable (maternal diabetes or not) and the explanatory variable (yoga or not). Please write R code to simulate a dataset from 100 people with these three variables. Make the underlying reality be that yoga actually doesn’t change the rate but instead a link between diabetes and yoga exists because of SES. Please make SES a categorical variable with options high or low. Give me the R code so that I can copy and paste into a colab notebook to test my analysis with. I want the dataset to have people in rows and the three variables in the columns.”</li>
-</ul>
+<section id="how-the-data-were-simulated" class="level3">
+<h3 class="anchored" data-anchor-id="how-the-data-were-simulated">How the data were simulated</h3>
+<p>To simulate the data, start from the binary outcome, confounding template (Case 6) in <a href="../labs/module-4-lab-demo">Demo lab 1</a> and adapt it to this question. In that template a confounder drives both the explanatory variable and the binary response, and the explanatory variable has no true effect. Rename the generic placeholders to this study: <code>your_confounder</code> becomes SES (high/low), <code>your_explanatory_variable</code> becomes yoga (yes/no), and <code>your_binary_outcome</code> becomes maternal diabetes (yes/no). The chunk below is that template filled in: SES drives both yoga participation and diabetes risk, while yoga itself has no causal effect, so any crude yoga, diabetes association is produced by SES confounding plus chance.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -287,7 +285,7 @@ window.Quarto = {
 <span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">maternal_diabetes =</span> maternal_diabetes</span>
 <span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the raw AI-style output (people in rows, three variables in columns)</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the data (people in rows, three variables in columns)</span></span>
 <span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(study_data)</span>
 <span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(study_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -954,9 +952,9 @@ sample estimates:
 <span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a>The chunks below belong in a notebook with <span class="in">`set.seed()`</span>, simulation, then analysis.</span>
 <span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a><span class="fu">### Sample AI prompt to generate simulated data</span></span>
+<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a><span class="fu">### How the data were simulated</span></span>
 <span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>*Data prompt used:* “I'm designing a study to determine the effect of doing yoga during the second trimester on the rates of maternal diabetes. I'm planning to do an observational study and am worried about socio-economic status (SES) confounding the relationship between my response variable (maternal diabetes or not) and the explanatory variable (yoga or not). Please write R code to simulate a dataset from 100 people with these three variables. Make the underlying reality be that yoga actually doesn't change the rate but instead a link between diabetes and yoga exists because of SES. Please make SES a categorical variable with options high or low. Give me the R code so that I can copy and paste into a colab notebook to test my analysis with. I want the dataset to have people in rows and the three variables in the columns.”</span>
+<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a>To simulate the data, start from the binary outcome, confounding template (Case 6) in <span class="co">[</span><span class="ot">Demo lab 1</span><span class="co">](../labs/module-4-lab-demo)</span> and adapt it to this question. In that template a confounder drives both the explanatory variable and the binary response, and the explanatory variable has no true effect. Rename the generic placeholders to this study: <span class="in">`your_confounder`</span> becomes SES (high/low), <span class="in">`your_explanatory_variable`</span> becomes yoga (yes/no), and <span class="in">`your_binary_outcome`</span> becomes maternal diabetes (yes/no). The chunk below is that template filled in: SES drives both yoga participation and diabetes risk, while yoga itself has no causal effect, so any crude yoga, diabetes association is produced by SES confounding plus chance.</span>
 <span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup-packages</span></span>
@@ -989,7 +987,7 @@ sample estimates:
 <span id="cb12-95"><a href="#cb12-95" aria-hidden="true" tabindex="-1"></a>  <span class="at">maternal_diabetes =</span> maternal_diabetes</span>
 <span id="cb12-96"><a href="#cb12-96" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb12-97"><a href="#cb12-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-98"><a href="#cb12-98" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the raw AI-style output (people in rows, three variables in columns)</span></span>
+<span id="cb12-98"><a href="#cb12-98" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the data (people in rows, three variables in columns)</span></span>
 <span id="cb12-99"><a href="#cb12-99" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(study_data)</span>
 <span id="cb12-100"><a href="#cb12-100" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-101"><a href="#cb12-101" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(study_data)</span>
