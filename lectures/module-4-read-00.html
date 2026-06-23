@@ -104,7 +104,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../assets/css/humboldt-theme.css">
 </head>
@@ -124,9 +156,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#the-central-question-of-module-4" id="toc-the-central-question-of-module-4" class="nav-link" data-scroll-target="#the-central-question-of-module-4">The central question of Module 4</a></li>
   <li><a href="#what-you-will-do-in-project-4" id="toc-what-you-will-do-in-project-4" class="nav-link" data-scroll-target="#what-you-will-do-in-project-4">What you will do in Project 4</a></li>
-  <li><a href="#three-things-that-can-go-wrong-when-comparing-groups" id="toc-three-things-that-can-go-wrong-when-comparing-groups" class="nav-link" data-scroll-target="#three-things-that-can-go-wrong-when-comparing-groups">Three things that can go wrong when comparing groups</a></li>
   <li><a href="#module-4-learning-path" id="toc-module-4-learning-path" class="nav-link" data-scroll-target="#module-4-learning-path">Module 4 learning path</a></li>
+  <li><a href="#connecting-to-tools-you-already-have" id="toc-connecting-to-tools-you-already-have" class="nav-link" data-scroll-target="#connecting-to-tools-you-already-have">Connecting to tools you already have</a>
+  <ul class="collapse">
+  <li><a href="#the-p-value-module-1-and-project-1" id="toc-the-p-value-module-1-and-project-1" class="nav-link" data-scroll-target="#the-p-value-module-1-and-project-1">The p-value (Module 1 and Project 1)</a></li>
+  <li><a href="#null-alternative-and-the-sampling-distribution" id="toc-null-alternative-and-the-sampling-distribution" class="nav-link" data-scroll-target="#null-alternative-and-the-sampling-distribution">Null, alternative, and the sampling distribution</a></li>
+  <li><a href="#decisions-and-the-two-ways-to-be-wrong" id="toc-decisions-and-the-two-ways-to-be-wrong" class="nav-link" data-scroll-target="#decisions-and-the-two-ways-to-be-wrong">Decisions and the two ways to be wrong</a></li>
+  <li><a href="#choosing-the-method-module-3" id="toc-choosing-the-method-module-3" class="nav-link" data-scroll-target="#choosing-the-method-module-3">Choosing the method (Module 3)</a></li>
+  <li><a href="#testing-a-plan-by-simulation-modules-0-and-1" id="toc-testing-a-plan-by-simulation-modules-0-and-1" class="nav-link" data-scroll-target="#testing-a-plan-by-simulation-modules-0-and-1">Testing a plan by simulation (Modules 0 and 1)</a></li>
+  </ul></li>
   <li><a href="#quick-vocabulary-preview" id="toc-quick-vocabulary-preview" class="nav-link" data-scroll-target="#quick-vocabulary-preview">Quick vocabulary preview</a></li>
+  <li><a href="#a-quick-confounding-example-library-visits-and-gpa" id="toc-a-quick-confounding-example-library-visits-and-gpa" class="nav-link" data-scroll-target="#a-quick-confounding-example-library-visits-and-gpa">A quick confounding example: library visits and GPA</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="module-4-read-00.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
@@ -140,7 +180,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Module 4 — Read 0</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Module 4 — Read 0</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 <p class="subtitle lead">Project preview — Project 4 — Designing Fair Comparisons</p>
 </div>
 
@@ -164,69 +204,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <hr>
 <section id="the-central-question-of-module-4" class="level2">
 <h2 class="anchored" data-anchor-id="the-central-question-of-module-4">The central question of Module 4</h2>
-<p>Almost every interesting claim in science and public policy involves comparing two groups:</p>
+<p>Many interesting question in science and public policy involves comparing two groups:</p>
 <ul>
 <li>Does this drug work better than a placebo?</li>
-<li>Does the tutoring program raise test scores?</li>
+<li>Does a tutoring program raise test scores?</li>
 <li>Are workers in remote roles more productive than in-office workers?</li>
 </ul>
-<p>These questions look straightforward. They are not. How you compare two groups determines whether your answer means anything.</p>
+<p>These questions look straightforward but finding high quality evidence to answer them is not easy and sometimes not possible.</p>
 <hr>
 </section>
 <section id="what-you-will-do-in-project-4" class="level2">
 <h2 class="anchored" data-anchor-id="what-you-will-do-in-project-4">What you will do in Project 4</h2>
-<p>Project 4 assigns you a research question about a two-group comparison. You will:</p>
+<p>Project 4 assigns you a research question from another STAT 109 student (remember that activity back in Module 0?) about a two-group comparison. You will:</p>
 <ol type="1">
 <li>Classify the design, Is it an RCT or an observational study? Who decides group membership?</li>
-<li>Identify confounders, Draw a simple DAG showing what else might explain the difference.</li>
+<li>Identify confounders, Draw a simple DAG showing how a confounder might explain an observed difference between groups.</li>
 <li>Simulate a dataset, Use <code>set.seed()</code> to create a reproducible, fictional dataset that mirrors the design.</li>
-<li>Run the right test, Pick from the methods table by variable types (numerical → Welch <em>t</em>; binary → two-proportion <em>z</em>).</li>
-<li>Write for a classmate, Summarize your findings in one page for someone who asked the question but is not a statistician.</li>
+<li>Choose the right test to calculate a p-value, Pick from the methods table by variable types (numerical response→ Welch <em>t</em>; binary response → two-proportion <em>z or</em> <span class="math inline">\(\chi^2\)</span> test).</li>
+<li>Write down a feasible plan for your classmate. Summarize your findings in one page for collecting, analyzing and making a conclusion based on data.</li>
 </ol>
-<p>Your project stays limited to a single two-group comparison (one binary explanatory contrast). For a complete worked example, see the <a href="../projects/project-4-sample-notebook-yoga">Project 4 sample R notebook</a> (simulate → describe → test → check the confounder).</p>
-<hr>
-</section>
-<section id="three-things-that-can-go-wrong-when-comparing-groups" class="level2">
-<h2 class="anchored" data-anchor-id="three-things-that-can-go-wrong-when-comparing-groups">Three things that can go wrong when comparing groups</h2>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>1. Confounding
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A third variable affects both who ends up in each group and the outcome. Observational comparisons are vulnerable to confounding, even with large samples and small p-values.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>2. Using the wrong test
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Comparing two group <em>means</em>? Use the Welch two-sample <em>t</em>-test. Comparing two group <em>proportions</em>? Use a two-proportion <em>z</em>-test or chi-square. The <a href="../methods">methods map</a> will guide you.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>3. Overclaiming causation
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A p-value of 0.001 does not mean the treatment <em>caused</em> the difference in an observational study. Causal language requires a randomized experiment (or very careful design).</p>
-</div>
-</div>
 <hr>
 </section>
 <section id="module-4-learning-path" class="level2">
@@ -234,7 +230,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <table class="caption-top table">
 <colgroup>
 <col style="width: 40%">
-<col style="width: 60%">
+<col style="width: 59%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -252,44 +248,82 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Three sections: study design &amp; confounding · two-group tests/CIs · more than two groups</td>
 </tr>
 <tr class="odd">
-<td>Quiz A (Def &amp; Notation)</td>
+<td>Quiz A</td>
 <td>Study-design vocabulary + two-group methods &amp; output reading</td>
 </tr>
 <tr class="even">
-<td>Demo lab 1</td>
+<td>Demo Lab 1</td>
 <td>Simulate data by study design; compare groups with Module 3 plots/stats</td>
 </tr>
 <tr class="odd">
-<td>Demo lab 2</td>
-<td>Inference code: t-test, prop.test/chisq.test, paired tests, ANOVA, glm</td>
+<td>Demo Lab 2</td>
+<td>Inference for two groups, paired groups, and more than two groups</td>
 </tr>
 <tr class="even">
 <td>Exercise lab</td>
-<td>Practice problems → connect to Project 4 plan</td>
+<td>Practice problems based on demo labs</td>
 </tr>
 <tr class="odd">
 <td>Synthesis quiz</td>
-<td>Full integration: design + test + interpret</td>
+<td>Both R code from labs and concepts from Read 1</td>
 </tr>
 <tr class="even">
-<td>Milestone</td>
-<td>Optional worksheet: draft design plan for your assigned question</td>
+<td>Milestone 4</td>
+<td>Optional worksheet</td>
 </tr>
 <tr class="odd">
 <td>Project 4</td>
-<td>Final report + reproducible notebook</td>
+<td>One page report + reproducible notebook</td>
 </tr>
 </tbody>
 </table>
-<p>No lecture or lab numbers appear on the course path, just the content above.</p>
 <hr>
+</section>
+<section id="connecting-to-tools-you-already-have" class="level2">
+<h2 class="anchored" data-anchor-id="connecting-to-tools-you-already-have">Connecting to tools you already have</h2>
+<p>Module 4 reuses ideas you built earlier, so before proceeding, let’s review the four that matter most.</p>
+<section id="the-p-value-module-1-and-project-1" class="level3">
+<h3 class="anchored" data-anchor-id="the-p-value-module-1-and-project-1">The p-value (Module 1 and Project 1)</h3>
+<p>Recall the way we came to understand a p-value: it is a one-number summary of how surprising your data would be if the null hypothesis were true. More precisely, it is the probability of getting data at least as extreme as what you actually observed, assuming the null is correct. A two-group comparison just applies this same idea to a difference between groups.</p>
+</section>
+<section id="null-alternative-and-the-sampling-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="null-alternative-and-the-sampling-distribution">Null, alternative, and the sampling distribution</h3>
+<p>Every test starts with a null hypothesis (<span class="math inline">\(H_0\)</span>: no difference, nothing going on) and an alternative (<span class="math inline">\(H_a\)</span>: there is a difference). If the null were true, your statistic (here a sample proportion) would still bounce around from sample to sample according to its sampling distribution, centered at the null value. The p-value is the area in the tails past your observed value: the dashed line below is one observed proportion, and the shaded area is the p-value.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="module-4-read-00_files/figure-html/pvalue-sampling-dist-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>If the null were true (<span class="math inline">\(p = 0.5\)</span>, <span class="math inline">\(n = 100\)</span>), sample proportions vary like this. The dashed line is one observed value; the shaded tail area is the p-value, the chance of data at least this surprising under the null.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="decisions-and-the-two-ways-to-be-wrong" class="level3">
+<h3 class="anchored" data-anchor-id="decisions-and-the-two-ways-to-be-wrong">Decisions and the two ways to be wrong</h3>
+<p>A small p-value means the observed data sit far out in the tails, far from what the null predicts, so we reject the null. A large p-value means the data are consistent with the null, so we do not reject it. Two errors are possible:</p>
+<ul>
+<li>A Type I error is rejecting the null when it is actually true (a false alarm). You control its rate directly by your cutoff, the significance level (e.g.&nbsp;<span class="math inline">\(\alpha = 0.05\)</span>).</li>
+<li>A Type II error is failing to reject the null when it is actually false (a missed effect). You reduce it mainly with a larger sample size.</li>
+</ul>
+</section>
+<section id="choosing-the-method-module-3" class="level3">
+<h3 class="anchored" data-anchor-id="choosing-the-method-module-3">Choosing the method (Module 3)</h3>
+<p>To decide which test computes the p-value, do exactly what you did in Module 3: make the bivariate plot and summary, then count and classify the variables (numerical or categorical). The number and type of variables point you to the right row of the methods table. Don’t forget to check the conditions before using a test.</p>
+</section>
+<section id="testing-a-plan-by-simulation-modules-0-and-1" class="level3">
+<h3 class="anchored" data-anchor-id="testing-a-plan-by-simulation-modules-0-and-1">Testing a plan by simulation (Modules 0 and 1)</h3>
+<p>Before any real data exist, you can test your analysis plan on simulated data. This is the same simulation toolkit you used to estimate probabilities in Modules 0 and 1 (<code>set.seed()</code>, <code>sample()</code>, <code>rbinom()</code>, <code>rnorm()</code>): build a fictional dataset where you already know the truth, then confirm your chosen method behaves the way you expect.</p>
+<hr>
+</section>
 </section>
 <section id="quick-vocabulary-preview" class="level2">
 <h2 class="anchored" data-anchor-id="quick-vocabulary-preview">Quick vocabulary preview</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 28%">
-<col style="width: 71%">
+<col style="width: 30%">
+<col style="width: 69%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -300,52 +334,81 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td>Explanatory variable (EV)</td>
-<td>The group label, treatment, exposure, or condition</td>
+<td>The group label; the “’cause” you are interested in finding the effect of, e.g.&nbsp;treatment (drug or placebo).</td>
 </tr>
 <tr class="even">
 <td>Response variable (RV)</td>
-<td>The outcome you measure</td>
+<td>The outcome/effect you measure</td>
 </tr>
 <tr class="odd">
 <td>RCT</td>
-<td>Researcher flips a coin to assign groups, gold standard for causation</td>
+<td>Researcher flips a coin to assign groups, gold standard for high quality evidence</td>
 </tr>
 <tr class="even">
 <td>Observational study</td>
-<td>Groups form on their own, researcher just watches</td>
+<td>Groups form on their own, low quality evidence, but often the only feasible design</td>
 </tr>
 <tr class="odd">
 <td>Confounder</td>
-<td>A third variable that muddles the EV → RV comparison</td>
+<td>A third variable that prevents a direct comparison of the response variable between the groups of the explanatory variable.</td>
 </tr>
 <tr class="even">
 <td>DAG</td>
-<td>A picture of causal paths between variables</td>
-</tr>
-<tr class="odd">
-<td>Welch <em>t</em>-test</td>
-<td>The R default for comparing two group means</td>
+<td>A picture of assumed causal paths between variables</td>
 </tr>
 </tbody>
 </table>
 <hr>
-<div class="callout callout-style-default callout-note callout-titled">
+</section>
+<section id="a-quick-confounding-example-library-visits-and-gpa" class="level2">
+<h2 class="anchored" data-anchor-id="a-quick-confounding-example-library-visits-and-gpa">A quick confounding example: library visits and GPA</h2>
+<p>Question: Does going to the library increase GPA?</p>
+<ul>
+<li>Explanatory variable (<span class="math inline">\(A\)</span>): visits the library (yes/no).</li>
+<li>Response variable (<span class="math inline">\(Y\)</span>): GPA (number).</li>
+<li>Confounder: academic motivation.</li>
+</ul>
+<div class="cell" data-layout-align="default">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  M[Academic motivation]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  A[Visits library]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  Y[GPA]</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  M --&gt; A</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  M --&gt; Y</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  A --&gt; Y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  M[Academic motivation]
+  A[Visits library]
+  Y[GPA]
+  M --&gt; A
+  M --&gt; Y
+  A --&gt; Y
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Motivation is a confounder of the relationship between vising the library ($A$) and GPA ($Y$) : more motivated students both go to the library more and earn higher GPAs, so motivation feeds the two arrows that point into <span class="math inline">\(A\)</span> and <span class="math inline">\(Y\)</span>. That shared cause can make library visits look helpful even if sitting in the library changes nothing. To get a fairer comparison you would compare GPAs between library-goers and non-goers <em>within the same motivation level</em> (subclassification), or randomly assign library visits so motivation is balanced across groups.</p>
+<hr>
+<div class="callout callout-style-default callout-note callout-empty-content callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Before you begin Read 1
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Think of a comparison you have seen in the news recently, a diet study, a drug trial, a social intervention. Ask yourself:</p>
-<ol type="1">
-<li>How did people end up in each group?</li>
-<li>What else might differ between the groups?</li>
-<li>Was the response variable numerical or binary?</li>
-</ol>
-<p>You will have the vocabulary to answer these questions after Read 1.</p>
+
 </div>
 </div>
 
@@ -812,108 +875,156 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Module 4 — Read 0"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Project preview — Project 4 — Designing Fair Comparisons"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html: default</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf: default</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu"># Module 4, Read 0: Why fair comparisons are hard</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Project: <span class="co">[</span><span class="ot">Project 4, Designing Fair Comparisons</span><span class="co">](../projects/project-4)</span> · Next: <span class="co">[</span><span class="ot">Read 1</span><span class="co">](module-4-read-01)</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## The central question of Module 4</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Almost every interesting claim in science and public policy involves comparing two groups:</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Does this drug work better than a placebo?</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Does the tutoring program raise test scores?</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Are workers in remote roles more productive than in-office workers?</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>These questions look straightforward. They are not. How you compare two groups determines whether your answer means anything.</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## What you will do in Project 4</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Project 4 assigns you a research question about a two-group comparison. You will:</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Classify the design, Is it an RCT or an observational study? Who decides group membership?</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Identify confounders, Draw a simple DAG showing what else might explain the difference.</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Simulate a dataset, Use <span class="in">`set.seed()`</span> to create a reproducible, fictional dataset that mirrors the design.</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Run the right test, Pick from the methods table by variable types (numerical → Welch *t*; binary → two-proportion *z*).</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Write for a classmate, Summarize your findings in one page for someone who asked the question but is not a statistician.</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Your project stays limited to a single two-group comparison (one binary explanatory contrast). For a complete worked example, see the <span class="co">[</span><span class="ot">Project 4 sample R notebook</span><span class="co">](../projects/project-4-sample-notebook-yoga)</span> (simulate → describe → test → check the confounder).</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="fu">## Three things that can go wrong when comparing groups</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="fu">### 1. Confounding</span></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>A third variable affects both who ends up in each group and the outcome. Observational comparisons are vulnerable to confounding, even with large samples and small p-values.</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="fu">### 2. Using the wrong test</span></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Comparing two group *means*? Use the Welch two-sample *t*-test. Comparing two group *proportions*? Use a two-proportion *z*-test or chi-square. The <span class="co">[</span><span class="ot">methods map</span><span class="co">](../methods)</span> will guide you.</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="fu">### 3. Overclaiming causation</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>A p-value of 0.001 does not mean the treatment *caused* the difference in an observational study. Causal language requires a randomized experiment (or very careful design).</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 4 learning path</span></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Material <span class="pp">|</span></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|---------|</span></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 *(this page)* <span class="pp">|</span> Project preview, what makes comparisons fair <span class="pp">|</span></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 1 <span class="pp">|</span> Three sections: study design &amp; confounding · two-group tests/CIs · more than two groups <span class="pp">|</span></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz A (Def &amp; Notation) <span class="pp">|</span> Study-design vocabulary + two-group methods &amp; output reading <span class="pp">|</span></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Demo lab 1 <span class="pp">|</span> Simulate data by study design; compare groups with Module 3 plots/stats <span class="pp">|</span></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Demo lab 2 <span class="pp">|</span> Inference code: t-test, prop.test/chisq.test, paired tests, ANOVA, glm <span class="pp">|</span></span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Exercise lab <span class="pp">|</span> Practice problems → connect to Project 4 plan <span class="pp">|</span></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Synthesis quiz <span class="pp">|</span> Full integration: design + test + interpret <span class="pp">|</span></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Milestone <span class="pp">|</span> Optional worksheet: draft design plan for your assigned question <span class="pp">|</span></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project 4 <span class="pp">|</span> Final report + reproducible notebook <span class="pp">|</span></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>No lecture or lab numbers appear on the course path, just the content above.</span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quick vocabulary preview</span></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Term <span class="pp">|</span> Plain language <span class="pp">|</span></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="pp">|------|---------------|</span></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Explanatory variable (EV) <span class="pp">|</span> The group label, treatment, exposure, or condition <span class="pp">|</span></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Response variable (RV) <span class="pp">|</span> The outcome you measure <span class="pp">|</span></span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> RCT <span class="pp">|</span> Researcher flips a coin to assign groups, gold standard for causation <span class="pp">|</span></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Observational study <span class="pp">|</span> Groups form on their own, researcher just watches <span class="pp">|</span></span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Confounder <span class="pp">|</span> A third variable that muddles the EV → RV comparison <span class="pp">|</span></span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> DAG <span class="pp">|</span> A picture of causal paths between variables <span class="pp">|</span></span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Welch *t*-test <span class="pp">|</span> The R default for comparing two group means <span class="pp">|</span></span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a><span class="fu">## Before you begin Read 1</span></span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>Think of a comparison you have seen in the news recently, a diet study, a drug trial, a social intervention. Ask yourself:</span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>How did people end up in each group?</span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>What else might differ between the groups?</span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Was the response variable numerical or binary?</span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>You will have the vocabulary to answer these questions after Read 1.</span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Module 4 — Read 0"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Project preview — Project 4 — Designing Fair Comparisons"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html: default</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf: default</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu"># Module 4, Read 0: Why fair comparisons are hard</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>Project: <span class="co">[</span><span class="ot">Project 4, Designing Fair Comparisons</span><span class="co">](../projects/project-4)</span> · Next: <span class="co">[</span><span class="ot">Read 1</span><span class="co">](module-4-read-01)</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## The central question of Module 4</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>Many interesting question in science and public policy involves comparing two groups:</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Does this drug work better than a placebo?</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Does a tutoring program raise test scores?</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Are workers in remote roles more productive than in-office workers?</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>These questions look straightforward but finding high quality evidence to answer them is not easy and sometimes not possible.</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## What you will do in Project 4</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>Project 4 assigns you a research question from another STAT 109 student (remember that activity back in Module 0?) about a two-group comparison. You will:</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Classify the design, Is it an RCT or an observational study? Who decides group membership?</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Identify confounders, Draw a simple DAG showing how a confounder might explain an observed difference between groups.</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Simulate a dataset, Use <span class="in">`set.seed()`</span> to create a reproducible, fictional dataset that mirrors the design.</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>Choose the right test to calculate a p-value, Pick from the methods table by variable types (numerical response→ Welch *t*; binary response → two-proportion *z or* $\chi^2$ test).</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>Write down a feasible plan for your classmate. Summarize your findings in one page for collecting, analyzing and making a conclusion based on data.</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 4 learning path</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Step <span class="pp">|</span> Material <span class="pp">|</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----------------------------|-------------------------------------------|</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 0 *(this page)* <span class="pp">|</span> Project preview, what makes comparisons fair <span class="pp">|</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Read 1 <span class="pp">|</span> Three sections: study design &amp; confounding · two-group tests/CIs · more than two groups <span class="pp">|</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quiz A <span class="pp">|</span> Study-design vocabulary + two-group methods &amp; output reading <span class="pp">|</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Demo Lab 1 <span class="pp">|</span> Simulate data by study design; compare groups with Module 3 plots/stats <span class="pp">|</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Demo Lab 2 <span class="pp">|</span> Inference for two groups, paired groups, and more than two groups <span class="pp">|</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Exercise lab <span class="pp">|</span> Practice problems based on demo labs <span class="pp">|</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Synthesis quiz <span class="pp">|</span> Both R code from labs and concepts from Read 1 <span class="pp">|</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Milestone 4 <span class="pp">|</span> Optional worksheet <span class="pp">|</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Project 4 <span class="pp">|</span> One page report + reproducible notebook <span class="pp">|</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="fu">## Connecting to tools you already have</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>Module 4 reuses ideas you built earlier, so before proceeding, let's review the four that matter most.</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="fu">### The p-value (Module 1 and Project 1)</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>Recall the way we came to understand a p-value: it is a one-number summary of how surprising your data would be if the null hypothesis were true. More precisely, it is the probability of getting data at least as extreme as what you actually observed, assuming the null is correct. A two-group comparison just applies this same idea to a difference between groups.</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="fu">### Null, alternative, and the sampling distribution</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>Every test starts with a null hypothesis ($H_0$: no difference, nothing going on) and an alternative ($H_a$: there is a difference). If the null were true, your statistic (here a sample proportion) would still bounce around from sample to sample according to its sampling distribution, centered at the null value. The p-value is the area in the tails past your observed value: the dashed line below is one observed proportion, and the shaded area is the p-value.</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: pvalue-sampling-dist</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 3</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "If the null were true ($p = 0.5$, $n = 100$), sample proportions vary like this. The dashed line is one observed value; the shaded tail area is the p-value, the chance of data at least this surprising under the null."</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>p0  <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>n   <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>se  <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(p0 <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p0) <span class="sc">/</span> n)</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>obs <span class="ot">&lt;-</span> <span class="fl">0.62</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>d   <span class="ot">&lt;-</span> <span class="fu">abs</span>(obs <span class="sc">-</span> p0)</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>dens <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">phat =</span> <span class="fu">seq</span>(p0 <span class="sc">-</span> <span class="dv">4</span> <span class="sc">*</span> se, p0 <span class="sc">+</span> <span class="dv">4</span> <span class="sc">*</span> se, <span class="at">length.out =</span> <span class="dv">400</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">density =</span> <span class="fu">dnorm</span>(phat, <span class="at">mean =</span> p0, <span class="at">sd =</span> se))</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>tail <span class="ot">&lt;-</span> dens <span class="sc">|&gt;</span> <span class="fu">filter</span>(phat <span class="sc">&lt;=</span> p0 <span class="sc">-</span> d <span class="sc">|</span> phat <span class="sc">&gt;=</span> p0 <span class="sc">+</span> d)</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dens, <span class="fu">aes</span>(phat, density)) <span class="sc">+</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">data =</span> tail, <span class="at">fill =</span> <span class="st">"#c0392b"</span>, <span class="at">alpha =</span> <span class="fl">0.45</span>) <span class="sc">+</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> obs, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> obs, <span class="at">y =</span> <span class="fu">max</span>(dens<span class="sc">$</span>density) <span class="sc">*</span> <span class="fl">0.9</span>,</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"observed"</span>, <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.1</span>, <span class="at">size =</span> <span class="fl">3.2</span>) <span class="sc">+</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Sample proportion if the null were true"</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="fu">### Decisions and the two ways to be wrong</span></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>A small p-value means the observed data sit far out in the tails, far from what the null predicts, so we reject the null. A large p-value means the data are consistent with the null, so we do not reject it. Two errors are possible:</span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>A Type I error is rejecting the null when it is actually true (a false alarm). You control its rate directly by your cutoff, the significance level (e.g. $\alpha = 0.05$).</span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>A Type II error is failing to reject the null when it is actually false (a missed effect). You reduce it mainly with a larger sample size.</span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a><span class="fu">### Choosing the method (Module 3)</span></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>To decide which test computes the p-value, do exactly what you did in Module 3: make the bivariate plot and summary, then count and classify the variables (numerical or categorical). The number and type of variables point you to the right row of the methods table. Don't forget to check the conditions before using a test.</span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a><span class="fu">### Testing a plan by simulation (Modules 0 and 1)</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>Before any real data exist, you can test your analysis plan on simulated data. This is the same simulation toolkit you used to estimate probabilities in Modules 0 and 1 (<span class="in">`set.seed()`</span>, <span class="in">`sample()`</span>, <span class="in">`rbinom()`</span>, <span class="in">`rnorm()`</span>): build a fictional dataset where you already know the truth, then confirm your chosen method behaves the way you expect.</span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quick vocabulary preview</span></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Term <span class="pp">|</span> Plain language <span class="pp">|</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a><span class="pp">|----------------------|--------------------------------------------------|</span></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Explanatory variable (EV) <span class="pp">|</span> The group label; the "'cause" you are interested in finding the effect of, e.g. treatment (drug or placebo). <span class="pp">|</span></span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Response variable (RV) <span class="pp">|</span> The outcome/effect you measure <span class="pp">|</span></span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> RCT <span class="pp">|</span> Researcher flips a coin to assign groups, gold standard for high quality evidence <span class="pp">|</span></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Observational study <span class="pp">|</span> Groups form on their own, low quality evidence, but often the only feasible design <span class="pp">|</span></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Confounder <span class="pp">|</span> A third variable that prevents a direct comparison of the response variable between the groups of the explanatory variable. <span class="pp">|</span></span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> DAG <span class="pp">|</span> A picture of assumed causal paths between variables <span class="pp">|</span></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a><span class="fu">## A quick confounding example: library visits and GPA</span></span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>Question: Does going to the library increase GPA?</span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Explanatory variable ($A$): visits the library (yes/no).</span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Response variable ($Y$): GPA (number).</span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Confounder: academic motivation.</span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>  M[Academic motivation]</span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>  A[Visits library]</span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>  Y[GPA]</span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>  M --&gt; A</span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>  M --&gt; Y</span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>  A --&gt; Y</span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>Motivation is a confounder of the relationship between vising the library (\$A\$) and GPA (\$Y\$) : more motivated students both go to the library more and earn higher GPAs, so motivation feeds the two arrows that point into $A$ and $Y$. That shared cause can make library visits look helpful even if sitting in the library changes nothing. To get a fairer comparison you would compare GPAs between library-goers and non-goers *within the same motivation level* (subclassification), or randomly assign library visits so motivation is balanced across groups.</span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a>:::</span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
