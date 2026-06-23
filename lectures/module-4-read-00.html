@@ -288,13 +288,13 @@ window.Quarto = {
 </section>
 <section id="null-alternative-and-the-sampling-distribution" class="level3">
 <h3 class="anchored" data-anchor-id="null-alternative-and-the-sampling-distribution">Null, alternative, and the sampling distribution</h3>
-<p>Every test starts with a null hypothesis (<span class="math inline">\(H_0\)</span>: no difference, nothing going on) and an alternative (<span class="math inline">\(H_a\)</span>: there is a difference). If the null were true, your statistic (here a sample proportion) would still bounce around from sample to sample according to its sampling distribution, centered at the null value. The p-value is the area in the tails past your observed value: the dashed line below is one observed proportion, and the shaded area is the p-value.</p>
+<p>Every test starts with a null hypothesis (<span class="math inline">\(H_0\)</span>) and an alternative (<span class="math inline">\(H_a\)</span>). Take a concrete example: a redesign is said to be preferred by more than half of users, so we test <span class="math inline">\(H_0: p = 0.5\)</span> against the one-sided alternative <span class="math inline">\(H_a: p &gt; 0.5\)</span>. If the null were true, the sample proportion <span class="math inline">\(\hat{p}\)</span> would still bounce around from sample to sample according to its sampling distribution, centered at <span class="math inline">\(0.5\)</span>. The p-value is the area in the tail past your observed value: the dashed line below marks the observed <span class="math inline">\(\hat{p}\)</span>, and the shaded area to its right (values at least as large as <span class="math inline">\(\hat{p}\)</span>) is the p-value.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="module-4-read-00_files/figure-html/pvalue-sampling-dist-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>If the null were true (<span class="math inline">\(p = 0.5\)</span>, <span class="math inline">\(n = 100\)</span>), sample proportions vary like this. The dashed line is one observed value; the shaded tail area is the p-value, the chance of data at least this surprising under the null.</figcaption>
+<figcaption>If the null were true (<span class="math inline">\(H_0: p = 0.5\)</span>, <span class="math inline">\(n = 100\)</span>), the sample proportion <span class="math inline">\(\hat{p}\)</span> varies like this. The dashed line marks the observed <span class="math inline">\(\hat{p}\)</span>; the shaded upper-tail area is the one-sided p-value for <span class="math inline">\(H_a: p &gt; 0.5\)</span>, the chance of a result at least this large under the null. The curve height is the likelihood (density) of each <span class="math inline">\(\hat{p}\)</span>.</figcaption>
 </figure>
 </div>
 </div>
@@ -939,7 +939,7 @@ Note
 <span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="fu">### Null, alternative, and the sampling distribution</span></span>
 <span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>Every test starts with a null hypothesis ($H_0$: no difference, nothing going on) and an alternative ($H_a$: there is a difference). If the null were true, your statistic (here a sample proportion) would still bounce around from sample to sample according to its sampling distribution, centered at the null value. The p-value is the area in the tails past your observed value: the dashed line below is one observed proportion, and the shaded area is the p-value.</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>Every test starts with a null hypothesis ($H_0$) and an alternative ($H_a$). Take a concrete example: a redesign is said to be preferred by more than half of users, so we test $H_0: p = 0.5$ against the one-sided alternative $H_a: p &gt; 0.5$. If the null were true, the sample proportion $\hat{p}$ would still bounce around from sample to sample according to its sampling distribution, centered at $0.5$. The p-value is the area in the tail past your observed value: the dashed line below marks the observed $\hat{p}$, and the shaded area to its right (values at least as large as $\hat{p}$) is the p-value.</span>
 <span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: pvalue-sampling-dist</span></span>
@@ -947,83 +947,85 @@ Note
 <span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
 <span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
 <span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 3</span></span>
-<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "If the null were true ($p = 0.5$, $n = 100$), sample proportions vary like this. The dashed line is one observed value; the shaded tail area is the p-value, the chance of data at least this surprising under the null."</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "If the null were true ($H_0: p = 0.5$, $n = 100$), the sample proportion $\\hat{p}$ varies like this. The dashed line marks the observed $\\hat{p}$; the shaded upper-tail area is the one-sided p-value for $H_a: p &gt; 0.5$, the chance of a result at least this large under the null. The curve height is the likelihood (density) of each $\\hat{p}$."</span></span>
 <span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>p0  <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
-<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>n   <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>se  <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(p0 <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p0) <span class="sc">/</span> n)</span>
-<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>obs <span class="ot">&lt;-</span> <span class="fl">0.62</span></span>
-<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>d   <span class="ot">&lt;-</span> <span class="fu">abs</span>(obs <span class="sc">-</span> p0)</span>
-<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>dens <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">phat =</span> <span class="fu">seq</span>(p0 <span class="sc">-</span> <span class="dv">4</span> <span class="sc">*</span> se, p0 <span class="sc">+</span> <span class="dv">4</span> <span class="sc">*</span> se, <span class="at">length.out =</span> <span class="dv">400</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">density =</span> <span class="fu">dnorm</span>(phat, <span class="at">mean =</span> p0, <span class="at">sd =</span> se))</span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>tail <span class="ot">&lt;-</span> dens <span class="sc">|&gt;</span> <span class="fu">filter</span>(phat <span class="sc">&lt;=</span> p0 <span class="sc">-</span> d <span class="sc">|</span> phat <span class="sc">&gt;=</span> p0 <span class="sc">+</span> d)</span>
-<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dens, <span class="fu">aes</span>(phat, density)) <span class="sc">+</span></span>
-<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">data =</span> tail, <span class="at">fill =</span> <span class="st">"#c0392b"</span>, <span class="at">alpha =</span> <span class="fl">0.45</span>) <span class="sc">+</span></span>
-<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> obs, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> obs, <span class="at">y =</span> <span class="fu">max</span>(dens<span class="sc">$</span>density) <span class="sc">*</span> <span class="fl">0.9</span>,</span>
-<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"observed"</span>, <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.1</span>, <span class="at">size =</span> <span class="fl">3.2</span>) <span class="sc">+</span></span>
-<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Sample proportion if the null were true"</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
-<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="fu">### Decisions and the two ways to be wrong</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>p0   <span class="ot">&lt;-</span> <span class="fl">0.5</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>n    <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>se   <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(p0 <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> p0) <span class="sc">/</span> n)</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>phat <span class="ot">&lt;-</span> <span class="fl">0.62</span>                          <span class="co"># observed sample proportion</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>dens  <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">p =</span> <span class="fu">seq</span>(p0 <span class="sc">-</span> <span class="dv">4</span> <span class="sc">*</span> se, p0 <span class="sc">+</span> <span class="dv">4</span> <span class="sc">*</span> se, <span class="at">length.out =</span> <span class="dv">400</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">density =</span> <span class="fu">dnorm</span>(p, <span class="at">mean =</span> p0, <span class="at">sd =</span> se))</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>upper <span class="ot">&lt;-</span> dens <span class="sc">|&gt;</span> <span class="fu">filter</span>(p <span class="sc">&gt;=</span> phat)    <span class="co"># one-sided H_a: p &gt; 0.5, values at least as large as observed</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dens, <span class="fu">aes</span>(p, density)) <span class="sc">+</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">data =</span> upper, <span class="at">fill =</span> <span class="st">"#c0392b"</span>, <span class="at">alpha =</span> <span class="fl">0.45</span>) <span class="sc">+</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> phat, <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> phat, <span class="at">y =</span> <span class="fu">max</span>(dens<span class="sc">$</span>density) <span class="sc">*</span> <span class="fl">0.92</span>,</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"hat(p) == 0.62"</span>, <span class="at">parse =</span> <span class="cn">TRUE</span>, <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.1</span>, <span class="at">size =</span> <span class="fl">3.4</span>) <span class="sc">+</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> phat <span class="sc">+</span> <span class="fl">1.7</span> <span class="sc">*</span> se, <span class="at">y =</span> <span class="fu">max</span>(dens<span class="sc">$</span>density) <span class="sc">*</span> <span class="fl">0.16</span>,</span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"p-value"</span>, <span class="at">color =</span> <span class="st">"#c0392b"</span>, <span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="fl">3.4</span>) <span class="sc">+</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">expression</span>(<span class="st">"Sample proportion "</span> <span class="sc">*</span> <span class="fu">hat</span>(p) <span class="sc">*</span> <span class="st">" if "</span> <span class="sc">*</span> H[<span class="dv">0</span>] <span class="sc">*</span> <span class="st">" (p = 0.5) is true"</span>),</span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Likelihood of each sample proportion (curve height = density)"</span>) <span class="sc">+</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>A small p-value means the observed data sit far out in the tails, far from what the null predicts, so we reject the null. A large p-value means the data are consistent with the null, so we do not reject it. Two errors are possible:</span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a><span class="fu">### Decisions and the two ways to be wrong</span></span>
 <span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>A Type I error is rejecting the null when it is actually true (a false alarm). You control its rate directly by your cutoff, the significance level (e.g. $\alpha = 0.05$).</span>
-<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>A Type II error is failing to reject the null when it is actually false (a missed effect). You reduce it mainly with a larger sample size.</span>
-<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a><span class="fu">### Choosing the method (Module 3)</span></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>A small p-value means the observed data sit far out in the tails, far from what the null predicts, so we reject the null. A large p-value means the data are consistent with the null, so we do not reject it. Two errors are possible:</span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>A Type I error is rejecting the null when it is actually true (a false alarm). You control its rate directly by your cutoff, the significance level (e.g. $\alpha = 0.05$).</span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>A Type II error is failing to reject the null when it is actually false (a missed effect). You reduce it mainly with a larger sample size.</span>
 <span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>To decide which test computes the p-value, do exactly what you did in Module 3: make the bivariate plot and summary, then count and classify the variables (numerical or categorical). The number and type of variables point you to the right row of the methods table. Don't forget to check the conditions before using a test.</span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a><span class="fu">### Choosing the method (Module 3)</span></span>
 <span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a><span class="fu">### Testing a plan by simulation (Modules 0 and 1)</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>To decide which test computes the p-value, do exactly what you did in Module 3: make the bivariate plot and summary, then count and classify the variables (numerical or categorical). The number and type of variables point you to the right row of the methods table. Don't forget to check the conditions before using a test.</span>
 <span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>Before any real data exist, you can test your analysis plan on simulated data. This is the same simulation toolkit you used to estimate probabilities in Modules 0 and 1 (<span class="in">`set.seed()`</span>, <span class="in">`sample()`</span>, <span class="in">`rbinom()`</span>, <span class="in">`rnorm()`</span>): build a fictional dataset where you already know the truth, then confirm your chosen method behaves the way you expect.</span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a><span class="fu">### Testing a plan by simulation (Modules 0 and 1)</span></span>
 <span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>Before any real data exist, you can test your analysis plan on simulated data. This is the same simulation toolkit you used to estimate probabilities in Modules 0 and 1 (<span class="in">`set.seed()`</span>, <span class="in">`sample()`</span>, <span class="in">`rbinom()`</span>, <span class="in">`rnorm()`</span>): build a fictional dataset where you already know the truth, then confirm your chosen method behaves the way you expect.</span>
 <span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quick vocabulary preview</span></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Term <span class="pp">|</span> Plain language <span class="pp">|</span></span>
-<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a><span class="pp">|----------------------|--------------------------------------------------|</span></span>
-<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Explanatory variable (EV) <span class="pp">|</span> The group label; the "'cause" you are interested in finding the effect of, e.g. treatment (drug or placebo). <span class="pp">|</span></span>
-<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Response variable (RV) <span class="pp">|</span> The outcome/effect you measure <span class="pp">|</span></span>
-<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> RCT <span class="pp">|</span> Researcher flips a coin to assign groups, gold standard for high quality evidence <span class="pp">|</span></span>
-<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Observational study <span class="pp">|</span> Groups form on their own, low quality evidence, but often the only feasible design <span class="pp">|</span></span>
-<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Confounder <span class="pp">|</span> A third variable that prevents a direct comparison of the response variable between the groups of the explanatory variable. <span class="pp">|</span></span>
-<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> DAG <span class="pp">|</span> A picture of assumed causal paths between variables <span class="pp">|</span></span>
-<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quick vocabulary preview</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Term <span class="pp">|</span> Plain language <span class="pp">|</span></span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a><span class="pp">|----------------------|--------------------------------------------------|</span></span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Explanatory variable (EV) <span class="pp">|</span> The group label; the "'cause" you are interested in finding the effect of, e.g. treatment (drug or placebo). <span class="pp">|</span></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Response variable (RV) <span class="pp">|</span> The outcome/effect you measure <span class="pp">|</span></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> RCT <span class="pp">|</span> Researcher flips a coin to assign groups, gold standard for high quality evidence <span class="pp">|</span></span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Observational study <span class="pp">|</span> Groups form on their own, low quality evidence, but often the only feasible design <span class="pp">|</span></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Confounder <span class="pp">|</span> A third variable that prevents a direct comparison of the response variable between the groups of the explanatory variable. <span class="pp">|</span></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> DAG <span class="pp">|</span> A picture of assumed causal paths between variables <span class="pp">|</span></span>
 <span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a><span class="fu">## A quick confounding example: library visits and GPA</span></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>Question: Does going to the library increase GPA?</span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a><span class="fu">## A quick confounding example: library visits and GPA</span></span>
 <span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Explanatory variable ($A$): visits the library (yes/no).</span>
-<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Response variable ($Y$): GPA (number).</span>
-<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Confounder: academic motivation.</span>
-<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
-<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
-<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>  M[Academic motivation]</span>
-<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>  A[Visits library]</span>
-<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>  Y[GPA]</span>
-<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>  M --&gt; A</span>
-<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>  M --&gt; Y</span>
-<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>  A --&gt; Y</span>
-<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>Motivation is a confounder of the relationship between vising the library (\$A\$) and GPA (\$Y\$) : more motivated students both go to the library more and earn higher GPAs, so motivation feeds the two arrows that point into $A$ and $Y$. That shared cause can make library visits look helpful even if sitting in the library changes nothing. To get a fairer comparison you would compare GPAs between library-goers and non-goers *within the same motivation level* (subclassification), or randomly assign library visits so motivation is balanced across groups.</span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>Question: Does going to the library increase GPA?</span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Explanatory variable ($A$): visits the library (yes/no).</span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Response variable ($Y$): GPA (number).</span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Confounder: academic motivation.</span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>  M[Academic motivation]</span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>  A[Visits library]</span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>  Y[GPA]</span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>  M --&gt; A</span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>  M --&gt; Y</span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>  A --&gt; Y</span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>Motivation is a confounder of the relationship between vising the library (\$A\$) and GPA (\$Y\$) : more motivated students both go to the library more and earn higher GPAs, so motivation feeds the two arrows that point into $A$ and $Y$. That shared cause can make library visits look helpful even if sitting in the library changes nothing. To get a fairer comparison you would compare GPAs between library-goers and non-goers *within the same motivation level* (subclassification), or randomly assign library visits so motivation is balanced across groups.</span>
 <span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>:::</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
