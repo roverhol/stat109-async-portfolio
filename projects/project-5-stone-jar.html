@@ -115,21 +115,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#weigh-a-sample" id="toc-weigh-a-sample" class="nav-link active" data-scroll-target="#weigh-a-sample">Weigh a sample</a></li>
-  </ul>
-</nav>
-</nav>
+  
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -138,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div class="quarto-title-meta column-page-right">
+<div class="quarto-title-meta column-page">
 
     
   
@@ -153,24 +145,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="project-5-figures/jar.png" class="img-fluid figure-img" width="340"></p>
-<figcaption>A jar of 998 stones.</figcaption>
+<figcaption>Population: Rosanna’s stone jar</figcaption>
 </figure>
 </div>
-<div style="text-align:center; max-width:420px; margin:1.5em auto;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="project-5-figures/cup-mystery.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="260"></p>
+<p><img src="project-5-figures/cup-mystery.png" class="img-fluid figure-img" width="260"></p>
+<figcaption>Rosanna’s sample of stones in a cup</figcaption>
 </figure>
 </div>
-<p>How many stones do you think are in Rosanna’s cup? My cup is white, so you can’t see inside. It weighs 209.27 grams (cup + stones).</p>
-</div>
-<section id="weigh-a-sample" class="level2">
-<h2 class="anchored" data-anchor-id="weigh-a-sample">Weigh a sample</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="project-5-figures/scale-weighing.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="480"></p>
+<p><img src="project-5-figures/scale-weighing.png" class="img-fluid figure-img" width="480"></p>
+<figcaption>Weight of a random sample of stones in a cup</figcaption>
 </figure>
 </div>
+<p>Each weight shown includes the stones and the cup.</p>
 <div id="jar-widget" style="max-width:420px;margin:1em auto;padding:1em;border:1px solid #b8a98c;border-radius:8px;text-align:center;">
   <div style="display:flex;gap:0.5em;align-items:center;justify-content:center;flex-wrap:wrap;">
     <label for="jar-n">Number of stones to scoop:</label>
@@ -211,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       if (!resp.ok) throw new Error("status " + resp.status);
       const stoneWeight = await resp.json();
       const total = (Number(stoneWeight) + CUP_LID_G).toFixed(2);
-      out.textContent = n + " stones weigh " + total + " g.";
+      out.textContent = n + " stones in the cup weigh " + total + " g (stones + cup).";
     } catch (err) {
       out.textContent = "Could not reach the scale. Check your connection and try again.";
     } finally {
@@ -224,7 +214,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <!-- -->
 
-</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>Creative Commons Attribution-NonCommercial 4.0 International<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">(View License)</a></div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -689,69 +678,65 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html: default</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="al">![A jar of 998 stones.](project-5-figures/jar.png)</span>{width=340 fig-align="center"}</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="al">![Population: Rosanna's stone jar](project-5-figures/jar.png)</span>{width=340 fig-align="center"}</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>::: {style="text-align:center; max-width:420px; margin:1.5em auto;"}</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="al">![](project-5-figures/cup-mystery.png)</span>{width=260 fig-align="center"}</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>How many stones do you think are in Rosanna's cup? My cup is white, so you can't see inside. It weighs 209.27 grams (cup + stones).</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="al">![Rosanna's sample of stones in a cup](project-5-figures/cup-mystery.png)</span>{width=260 fig-align="center"}</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="al">![Weight of a random sample of stones in a cup](project-5-figures/scale-weighing.png)</span>{width=480 fig-align="center"}</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Each weight shown includes the stones and the cup.</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Weigh a sample</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="al">![](project-5-figures/scale-weighing.png)</span>{width=480 fig-align="center"}</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;div id="jar-widget" style="max-width:420px;margin:1em auto;padding:1em;border:1px solid #b8a98c;border-radius:8px;text-align:center;"&gt;</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="in">  &lt;div style="display:flex;gap:0.5em;align-items:center;justify-content:center;flex-wrap:wrap;"&gt;</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="in">    &lt;label for="jar-n"&gt;Number of stones to scoop:&lt;/label&gt;</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="in">    &lt;input id="jar-n" type="number" min="0" max="998" step="1" value="10" style="width:5em;background:#ffffff;color:#222222;border:1px solid #999999;border-radius:4px;padding:0.2em 0.35em;"&gt;</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="in">    &lt;button id="jar-go" type="button" style="background:#f3ede1;color:#3a2d1f;border:1px solid #b8a98c;border-radius:4px;padding:0.35em 0.9em;font-weight:600;cursor:pointer;"&gt;Weigh&lt;/button&gt;</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="in">  &lt;/div&gt;</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="in">  &lt;p id="jar-out" aria-live="polite" style="margin-top:0.75em;font-weight:600;min-height:1.4em;"&gt;&lt;/p&gt;</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/div&gt;</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;script&gt;</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="in">(function () {</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="in">  const SUPABASE_URL = "https://pquheujodaapzinhemgr.supabase.co";</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="in">  const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBxdWhldWpvZGFhcHppbmhlbWdyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIzMTA0NTQsImV4cCI6MjA5Nzg4NjQ1NH0.XGkHWVwRYzUrqeIraf84yxFKukhVrPWsJyuvD1TMPYk";</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="in">  const RPC_URL = SUPABASE_URL + "/rest/v1/rpc/weigh";</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="in">  const CUP_LID_G = 15.00;  // empty cup + lid, added to the stone weight</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;div id="jar-widget" style="max-width:420px;margin:1em auto;padding:1em;border:1px solid #b8a98c;border-radius:8px;text-align:center;"&gt;</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="in">  &lt;div style="display:flex;gap:0.5em;align-items:center;justify-content:center;flex-wrap:wrap;"&gt;</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="in">    &lt;label for="jar-n"&gt;Number of stones to scoop:&lt;/label&gt;</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="in">    &lt;input id="jar-n" type="number" min="0" max="998" step="1" value="10" style="width:5em;background:#ffffff;color:#222222;border:1px solid #999999;border-radius:4px;padding:0.2em 0.35em;"&gt;</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="in">    &lt;button id="jar-go" type="button" style="background:#f3ede1;color:#3a2d1f;border:1px solid #b8a98c;border-radius:4px;padding:0.35em 0.9em;font-weight:600;cursor:pointer;"&gt;Weigh&lt;/button&gt;</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="in">  &lt;/div&gt;</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="in">  &lt;p id="jar-out" aria-live="polite" style="margin-top:0.75em;font-weight:600;min-height:1.4em;"&gt;&lt;/p&gt;</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/div&gt;</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;script&gt;</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="in">(function () {</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="in">  const SUPABASE_URL = "https://pquheujodaapzinhemgr.supabase.co";</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="in">  const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBxdWhldWpvZGFhcHppbmhlbWdyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIzMTA0NTQsImV4cCI6MjA5Nzg4NjQ1NH0.XGkHWVwRYzUrqeIraf84yxFKukhVrPWsJyuvD1TMPYk";</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="in">  const RPC_URL = SUPABASE_URL + "/rest/v1/rpc/weigh";</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="in">  const CUP_LID_G = 15.00;  // empty cup + lid, added to the stone weight</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="in">  const nInput = document.getElementById("jar-n");</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="in">  const goBtn = document.getElementById("jar-go");</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="in">  const out = document.getElementById("jar-out");</span></span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="in">  const nInput = document.getElementById("jar-n");</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="in">  const goBtn = document.getElementById("jar-go");</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="in">  const out = document.getElementById("jar-out");</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="in">  goBtn.addEventListener("click", async function () {</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="in">    const n = parseInt(nInput.value, 10);</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="in">    if (!Number.isInteger(n) || n &lt; 0 || n &gt; 998) {</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="in">      out.textContent = "Please enter a whole number of stones from 0 to 998.";</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="in">      return;</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="in">    }</span></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="in">    goBtn.disabled = true;</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="in">    out.textContent = "Weighing...";</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="in">    try {</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="in">      const resp = await fetch(RPC_URL, {</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="in">        method: "POST",</span></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="in">        headers: {</span></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="in">          "apikey": SUPABASE_ANON_KEY,</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="in">          "Authorization": "Bearer " + SUPABASE_ANON_KEY,</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="in">          "Content-Type": "application/json"</span></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="in">        },</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="in">        body: JSON.stringify({ n: n })</span></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="in">      });</span></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="in">      if (!resp.ok) throw new Error("status " + resp.status);</span></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="in">      const stoneWeight = await resp.json();</span></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="in">      const total = (Number(stoneWeight) + CUP_LID_G).toFixed(2);</span></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="in">      out.textContent = n + " stones weigh " + total + " g.";</span></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="in">    } catch (err) {</span></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="in">      out.textContent = "Could not reach the scale. Check your connection and try again.";</span></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="in">    } finally {</span></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="in">      goBtn.disabled = false;</span></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="in">    }</span></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="in">  });</span></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="in">})();</span></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/script&gt;</span></span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="in">  goBtn.addEventListener("click", async function () {</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="in">    const n = parseInt(nInput.value, 10);</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="in">    if (!Number.isInteger(n) || n &lt; 0 || n &gt; 998) {</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="in">      out.textContent = "Please enter a whole number of stones from 0 to 998.";</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="in">      return;</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="in">    }</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="in">    goBtn.disabled = true;</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="in">    out.textContent = "Weighing...";</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="in">    try {</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="in">      const resp = await fetch(RPC_URL, {</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="in">        method: "POST",</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="in">        headers: {</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="in">          "apikey": SUPABASE_ANON_KEY,</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="in">          "Authorization": "Bearer " + SUPABASE_ANON_KEY,</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="in">          "Content-Type": "application/json"</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="in">        },</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="in">        body: JSON.stringify({ n: n })</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="in">      });</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="in">      if (!resp.ok) throw new Error("status " + resp.status);</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="in">      const stoneWeight = await resp.json();</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="in">      const total = (Number(stoneWeight) + CUP_LID_G).toFixed(2);</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="in">      out.textContent = n + " stones in the cup weigh " + total + " g (stones + cup).";</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="in">    } catch (err) {</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="in">      out.textContent = "Could not reach the scale. Check your connection and try again.";</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="in">    } finally {</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="in">      goBtn.disabled = false;</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="in">    }</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="in">  });</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="in">})();</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/script&gt;</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
