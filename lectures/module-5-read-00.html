@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Module 5 — Read 0 – STAT 109 - Introductory Biostatistics</title>
+<title>Module 5, Read 0 – STAT 109 - Introductory Biostatistics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -76,7 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-94b323657c735dfe3b1bf6ebb2c33a55.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-bba5ebae505b5c03f3f0d8040a416a6b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -149,12 +149,12 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#module-5-read-0-why-prediction-matters" id="toc-module-5-read-0-why-prediction-matters" class="nav-link active" data-scroll-target="#module-5-read-0-why-prediction-matters">Module 5, Read 0: Why prediction matters</a>
+  <li><a href="#module-5-read-0-prediction" id="toc-module-5-read-0-prediction" class="nav-link active" data-scroll-target="#module-5-read-0-prediction">Module 5, Read 0: Prediction</a>
   <ul class="collapse">
-  <li><a href="#the-story-in-one-pass" id="toc-the-story-in-one-pass" class="nav-link" data-scroll-target="#the-story-in-one-pass">The story in one pass</a></li>
-  <li><a href="#tour-the-project" id="toc-tour-the-project" class="nav-link" data-scroll-target="#tour-the-project">Tour the project</a></li>
-  <li><a href="#what-you-will-do" id="toc-what-you-will-do" class="nav-link" data-scroll-target="#what-you-will-do">What you will do</a></li>
-  <li><a href="#module-5-is-four-days" id="toc-module-5-is-four-days" class="nav-link" data-scroll-target="#module-5-is-four-days">Module 5 is four days</a></li>
+  <li><a href="#reading-a-scatterplot-form-direction-strength" id="toc-reading-a-scatterplot-form-direction-strength" class="nav-link" data-scroll-target="#reading-a-scatterplot-form-direction-strength">Reading a scatterplot: form, direction, strength</a></li>
+  <li><a href="#pearson-correlation-r" id="toc-pearson-correlation-r" class="nav-link" data-scroll-target="#pearson-correlation-r">Pearson correlation <span class="math inline">\(r\)</span></a></li>
+  <li><a href="#in-r-cor-and-a-scatterplot" id="toc-in-r-cor-and-a-scatterplot" class="nav-link" data-scroll-target="#in-r-cor-and-a-scatterplot">In R: <code>cor()</code> and a scatterplot</a></li>
+  <li><a href="#preview-of-project-5" id="toc-preview-of-project-5" class="nav-link" data-scroll-target="#preview-of-project-5">Preview of Project 5</a></li>
   <li><a href="#what-to-do-next" id="toc-what-to-do-next" class="nav-link" data-scroll-target="#what-to-do-next">What to do next</a></li>
   </ul></li>
   </ul>
@@ -169,8 +169,8 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Module 5 — Read 0</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
-<p class="subtitle lead">Project preview — Project 5 — Looking Ahead</p>
+<div class="quarto-title-block"><div><h1 class="title">Module 5, Read 0</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<p class="subtitle lead">Review of scatterplots and correlation and Preview of Project 5</p>
 </div>
 
 
@@ -187,140 +187,136 @@ window.Quarto = {
 </header>
 
 
-<section id="module-5-read-0-why-prediction-matters" class="level1">
-<h1>Module 5, Read 0: Why prediction matters</h1>
-<p><strong>Big question:</strong> You have a model — but how far into the future can you trust it, and what does an honest <strong>interval</strong> around a prediction actually mean?</p>
-<p><strong>Project:</strong> <a href="../projects/project-5">Project 5 — Looking Ahead</a> · <strong>Next:</strong> <a href="module-5-read-01">Read 1</a></p>
+<section id="module-5-read-0-prediction" class="level1">
+<h1>Module 5, Read 0: Prediction</h1>
+<p>In order to use data to make a prediction we need to <em>model</em> the relationship between what we want to predict and what we have to predict form. In this course, we only see linear model so first we’ll review the skill of assessing linearity.</p>
+<p>Project: <a href="../projects/project-5">Project 5, Looking Ahead</a> · Next: <a href="module-5-read-01">Read 1</a></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Short read — start here
+<span class="screen-reader-only">Note</span>Note:
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Five-minute orientation before <a href="module-5-read-01">Read 1</a>. Module 4 asked <em>“Did this treatment cause a difference?”</em> Module 5 asks <em>“Given what I measure today, what will happen tomorrow?”</em></p>
+<p>This is just a five-minute review, not new material. You already did scatterplots and Pearson correlation in <a href="../lectures/module-3-read-02">Module 3 Read 2</a>. Module 5 builds directly on them: in Read 1 we go from <em>describing</em> a linear relationship to <em>fitting a line and predicting</em> with it.</p>
 </div>
 </div>
-<section id="the-story-in-one-pass" class="level2">
-<h2 class="anchored" data-anchor-id="the-story-in-one-pass">The story in one pass</h2>
-<p>In Modules 1–4 you <strong>tested claims</strong> and <strong>estimated parameters</strong>. In Module 5 you build a <strong>predictive model</strong>: fit a line to two numerical variables, make a <strong>point prediction</strong> for a new case, and wrap it in an honest <strong>prediction interval</strong> that reflects real uncertainty.</p>
-<p>The core tool is <strong>simple linear regression</strong>: <span class="math inline">\(\hat{y} = b_0 + b_1 x\)</span>. Read 1 shows you how to fit the line and measure how well it works. Read 2 shows you how to attach <strong>confidence intervals</strong> (for the mean) and <strong>prediction intervals</strong> (for one individual) to your predictions.</p>
-<p>Project 5 uses real team data — nesting dolls or stone containers — so the prediction you report will be for an actual object your team measures.</p>
+<p>In Module 5 you will fit a line to two numerical variables and use it to predict. That only makes sense when the relationship is roughly linear, and the tools you use to decide that are exactly the ones from Module 3:</p>
+<ul>
+<li>the scatterplot (to see the form), and</li>
+<li>the Pearson correlation <span class="math inline">\(r\)</span> (to summarize the strength and direction of a <em>linear</em> form).</li>
+</ul>
+<section id="reading-a-scatterplot-form-direction-strength" class="level2">
+<h2 class="anchored" data-anchor-id="reading-a-scatterplot-form-direction-strength">Reading a scatterplot: form, direction, strength</h2>
+<p>For two numerical variables, put the explanatory variable on the <span class="math inline">\(x\)</span>-axis (what we have to predict from) and the response on the <span class="math inline">\(y\)</span>-axis (what we want to predict), then describe three things:</p>
+<ul>
+<li>Form, linear, curved, or no clear pattern.</li>
+<li>Direction, positive (up to the right), negative (down to the right), or none.</li>
+<li>Strength, how tightly the points cluster around the trend (strong, moderate, weak).</li>
+</ul>
+<p>Always note unusual points (outliers) too, since they can distort everything that follows.</p>
 </section>
-<section id="tour-the-project" class="level2">
-<h2 class="anchored" data-anchor-id="tour-the-project">Tour the project</h2>
-<p>Open <a href="../projects/project-5">Project 5 — Looking Ahead</a> and identify:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 15%">
-<col style="width: 26%">
-<col style="width: 58%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Section</th>
-<th>What to notice</th>
-<th>Why it matters for <em>your</em> project</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Option A or B</strong></td>
-<td>Nesting dolls (diameter → weight) or stone containers (width → weight)</td>
-<td>Choose one option with your team</td>
-</tr>
-<tr class="even">
-<td><strong>Data collection</strong></td>
-<td>Each team member measures the same objects independently</td>
-<td>Reproducibility matters for team data</td>
-</tr>
-<tr class="odd">
-<td><strong>Methods</strong></td>
-<td><code>lm()</code>, <code>cor()</code>, <code>predict(..., interval = "prediction")</code></td>
-<td>Match formula to your response/predictor types</td>
-</tr>
-<tr class="even">
-<td><strong>Results</strong></td>
-<td>Point prediction + <strong>95% prediction interval</strong> + CI for slope</td>
-<td>These three numbers are the core deliverable</td>
-</tr>
-<tr class="odd">
-<td><strong>Conclusion</strong></td>
-<td>Interpret the PI with the sentence template from Read 2</td>
-<td><em>“I predict with 95% confidence that…”</em></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="what-you-will-do" class="level2">
-<h2 class="anchored" data-anchor-id="what-you-will-do">What you will do</h2>
-<ol type="1">
-<li>Form a team (1–4 people); choose Option A (nesting dolls) or Option B (stone containers).</li>
-<li>Agree on measurement rules; collect data in a shared Google Sheet or CSV.</li>
-<li>Import data into R; make a scatterplot; compute <code>cor()</code>.</li>
-<li>Fit <code>lm(response ~ predictor)</code>, interpret slope and intercept.</li>
-<li>Use <code>predict(..., interval = "prediction")</code> for your target case.</li>
-<li>Submit a <strong>one-page PDF</strong> + <strong>runnable team notebook</strong>.</li>
-<li>Submit your <strong>portfolio package</strong> (both reference sheets + all five projects, polished).</li>
-</ol>
-</section>
-<section id="module-5-is-four-days" class="level2">
-<h2 class="anchored" data-anchor-id="module-5-is-four-days">Module 5 is four days</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 45%">
-<col style="width: 54%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Day</th>
-<th>Task</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Mon Jun 29</td>
-<td>Read 0 → Read 1</td>
-</tr>
-<tr class="even">
-<td>Tue Jun 30</td>
-<td>Quiz A → Read 2 → Quiz B</td>
-</tr>
-<tr class="odd">
-<td>Wed Jul 1</td>
-<td>Demo lab → Exercise lab</td>
-</tr>
-<tr class="even">
-<td><strong>Thu Jul 2</strong></td>
-<td><strong>Synthesis quiz · Milestone · Project 5 · Portfolio package — all due</strong></td>
-</tr>
-</tbody>
-</table>
+<section id="pearson-correlation-r" class="level2">
+<h2 class="anchored" data-anchor-id="pearson-correlation-r">Pearson correlation <span class="math inline">\(r\)</span></h2>
+<p>Pearson correlation <span class="math inline">\(r\)</span> is a single, unitless number between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span> that summarizes the direction and strength of a <em>linear</em> relationship:</p>
+<ul>
+<li>The sign gives direction: <span class="math inline">\(r &gt; 0\)</span> positive, <span class="math inline">\(r &lt; 0\)</span> negative.</li>
+<li>The magnitude <span class="math inline">\(|r|\)</span> gives strength: near <span class="math inline">\(1\)</span> is a tight linear trend, near <span class="math inline">\(0\)</span> is little or no <em>linear</em> trend.</li>
+</ul>
+<p>For sample data <span class="math inline">\((x_i, y_i)\)</span>, <span class="math inline">\(i = 1, \ldots, n\)</span>:</p>
+<p><span class="math display">\[
+r = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}
+{\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2}\;\sqrt{\sum_{i=1}^n (y_i - \bar{y})^2}}
+\]</span></p>
+<p>The numerator is large and positive when <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> tend to be above (or below) their means together; the denominator rescales by the spread in each variable so the result always lands between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Everything due Thursday July 2
+<span class="screen-reader-only">Warning</span><span class="math inline">\(r\)</span> only describes a <em>linear</em> trend
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Module 5 is compressed. There is <strong>no Sunday extension</strong> for Project 5. Plan to finish the exercise lab Wednesday so Thursday is for synthesis and polishing your portfolio.</p>
+<p>A correlation near <span class="math inline">\(0\)</span> does not mean “no relationship”, it means “no <em>linear</em> relationship.” A strong curved pattern (a U-shape, say) can have <span class="math inline">\(r \approx 0\)</span>. And a single outlier can pull <span class="math inline">\(r\)</span> toward or away from <span class="math inline">\(\pm 1\)</span>. Always look at the scatterplot before trusting <span class="math inline">\(r\)</span>.</p>
 </div>
 </div>
 </section>
+<section id="in-r-cor-and-a-scatterplot" class="level2">
+<h2 class="anchored" data-anchor-id="in-r-cor-and-a-scatterplot">In R: <code>cor()</code> and a scatterplot</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">509</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>review_dat <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">study_hours =</span> <span class="fu">runif</span>(<span class="dv">60</span>, <span class="dv">1</span>, <span class="dv">15</span>),</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">exam_score  =</span> <span class="dv">45</span> <span class="sc">+</span> <span class="fl">3.4</span> <span class="sc">*</span> study_hours <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">60</span>, <span class="dv">0</span>, <span class="dv">8</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(review_dat, <span class="fu">aes</span>(<span class="at">x =</span> study_hours, <span class="at">y =</span> exam_score)) <span class="sc">+</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">color =</span> <span class="st">"steelblue4"</span>) <span class="sc">+</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Exam score vs study hours"</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Study hours"</span>, <span class="at">y =</span> <span class="st">"Exam score"</span>) <span class="sc">+</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="module-5-read-00_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(review_dat<span class="sc">$</span>study_hours, review_dat<span class="sc">$</span>exam_score)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.817906</code></pre>
+</div>
+</div>
+<p>Here the form is roughly linear, the direction is positive, and <span class="math inline">\(r\)</span> is moderately strong, exactly the situation where fitting a line (Read 1) is reasonable.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Check yourself, scatterplots and correlation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>A scatterplot of two variables shows points falling tightly along a downward line. Describe form, direction, and strength, and give a plausible value of <span class="math inline">\(r\)</span>.</li>
+<li>A researcher reports <span class="math inline">\(r = 0.05\)</span> and concludes “these variables are unrelated.” Why might that conclusion be wrong?</li>
+<li>In R, what does <code>cor(x, y)</code> return, and what range can it take?</li>
+</ol>
+</div>
+</div>
+<details>
+<summary>
+Click to reveal answers
+</summary>
+<ol type="1">
+<li>Form: linear. Direction: negative. Strength: strong. A plausible value is <span class="math inline">\(r \approx -0.9\)</span>.</li>
+<li><span class="math inline">\(r\)</span> only measures <em>linear</em> association. A strong curved relationship (or one masked by an outlier) can give <span class="math inline">\(r \approx 0\)</span>, so the variables may be strongly related in a non-linear way. Look at the scatterplot.</li>
+<li><code>cor(x, y)</code> returns the Pearson correlation between two numerical vectors, a unitless number between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>.</li>
+</ol>
+</details>
+<hr>
+</section>
+<section id="preview-of-project-5" class="level2">
+<h2 class="anchored" data-anchor-id="preview-of-project-5">Preview of Project 5</h2>
+<p><a href="../projects/project-5">Project 5, Looking Ahead</a> is a prediction challenge: you collect your own data with the <a href="../projects/project-5-stone-jar">stone jar sampler</a>, fit a simple linear regression with <code>lm()</code>, and report a prediction with an 95% prediciton interval for the number of stones in Rosanna’s cup.</p>
+</section>
 <section id="what-to-do-next" class="level2">
 <h2 class="anchored" data-anchor-id="what-to-do-next">What to do next</h2>
-<ol type="1">
-<li>Open <a href="../projects/project-5">Project 5</a> and choose Option A or B with your team (5 minutes).</li>
-<li>Confirm your team in the Canvas Module 5 milestone.</li>
-<li>Start <strong><a href="module-5-read-01">Read 1</a></strong> — correlation through residuals and model performance.</li>
-</ol>
-<p>When you finish Read 1, take <a href="../quizzes/quiz-m5-def">Quiz A (Def &amp; Notation)</a>, then continue with <a href="module-5-read-02">Read 2</a>.</p>
+<p>Start <a href="module-5-read-01">Read 1</a>, simple linear regression, inference for the slope and correlation, prediction quality, and confidence and prediction intervals. When you finish, take <a href="../quizzes/quiz-m5-def">Quiz A</a>.</p>
 
 
 <!-- -->
@@ -785,78 +781,129 @@ window.Quarto = {
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Module 5 — Read 0"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Project preview — Project 5 — Looking Ahead"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html: default</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf: default</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu"># Module 5, Read 0: Why prediction matters</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>**Big question:** You have a model — but how far into the future can you trust it, and what does an honest **interval** around a prediction actually mean?</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>**Project:** [Project 5 — Looking Ahead](../projects/project-5) · **Next:** <span class="co">[</span><span class="ot">Read 1</span><span class="co">](module-5-read-01)</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Short read — start here</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Five-minute orientation before <span class="co">[</span><span class="ot">Read 1</span><span class="co">](module-5-read-01)</span>. Module 4 asked *"Did this treatment cause a difference?"* Module 5 asks *"Given what I measure today, what will happen tomorrow?"*</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## The story in one pass</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>In Modules 1–4 you **tested claims** and **estimated parameters**. In Module 5 you build a **predictive model**: fit a line to two numerical variables, make a **point prediction** for a new case, and wrap it in an honest **prediction interval** that reflects real uncertainty.</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>The core tool is **simple linear regression**: $\hat{y} = b_0 + b_1 x$. Read 1 shows you how to fit the line and measure how well it works. Read 2 shows you how to attach **confidence intervals** (for the mean) and **prediction intervals** (for one individual) to your predictions.</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>Project 5 uses real team data — nesting dolls or stone containers — so the prediction you report will be for an actual object your team measures.</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tour the project</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>Open <span class="co">[</span><span class="ot">Project 5 — Looking Ahead</span><span class="co">](../projects/project-5)</span> and identify:</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Section <span class="pp">|</span> What to notice <span class="pp">|</span> Why it matters for *your* project <span class="pp">|</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------|----------------|-----------------------------------|</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Option A or B** <span class="pp">|</span> Nesting dolls (diameter → weight) or stone containers (width → weight) <span class="pp">|</span> Choose one option with your team <span class="pp">|</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Data collection** <span class="pp">|</span> Each team member measures the same objects independently <span class="pp">|</span> Reproducibility matters for team data <span class="pp">|</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Methods** <span class="pp">|</span> <span class="in">`lm()`</span>, <span class="in">`cor()`</span>, <span class="in">`predict(..., interval = "prediction")`</span> <span class="pp">|</span> Match formula to your response/predictor types <span class="pp">|</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Results** | Point prediction + **95% prediction interval** + CI for slope <span class="pp">|</span> These three numbers are the core deliverable <span class="pp">|</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Conclusion** <span class="pp">|</span> Interpret the PI with the sentence template from Read 2 <span class="pp">|</span> *"I predict with 95% confidence that…"* <span class="pp">|</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="fu">## What you will do</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Form a team (1–4 people); choose Option A (nesting dolls) or Option B (stone containers).</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Agree on measurement rules; collect data in a shared Google Sheet or CSV.</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Import data into R; make a scatterplot; compute <span class="in">`cor()`</span>.</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Fit <span class="in">`lm(response ~ predictor)`</span>, interpret slope and intercept.</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Use <span class="in">`predict(..., interval = "prediction")`</span> for your target case.</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Submit a **one-page PDF** + **runnable team notebook**.</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>Submit your **portfolio package** (both reference sheets + all five projects, polished).</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="fu">## Module 5 is four days</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Day <span class="pp">|</span> Task <span class="pp">|</span></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----|------|</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Mon Jun 29 <span class="pp">|</span> Read 0 → Read 1 <span class="pp">|</span></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Tue Jun 30 <span class="pp">|</span> Quiz A → Read 2 → Quiz B <span class="pp">|</span></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Wed Jul 1 <span class="pp">|</span> Demo lab → Exercise lab <span class="pp">|</span></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Thu Jul 2** | **Synthesis quiz · Milestone · Project 5 · Portfolio package — all due** <span class="pp">|</span></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>::: {.callout-warning}</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="fu">## Everything due Thursday July 2</span></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>Module 5 is compressed. There is **no Sunday extension** for Project 5. Plan to finish the exercise lab Wednesday so Thursday is for synthesis and polishing your portfolio.</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="fu">## What to do next</span></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Open <span class="co">[</span><span class="ot">Project 5</span><span class="co">](../projects/project-5)</span> and choose Option A or B with your team (5 minutes).</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Confirm your team in the Canvas Module 5 milestone.</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Start **[Read 1](module-5-read-01)** — correlation through residuals and model performance.</span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>When you finish Read 1, take <span class="co">[</span><span class="ot">Quiz A (Def &amp; Notation)</span><span class="co">](../quizzes/quiz-m5-def)</span>, then continue with <span class="co">[</span><span class="ot">Read 2</span><span class="co">](module-5-read-02)</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Module 5, Read 0"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Review of scatterplots and correlation and Preview of Project 5"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html: default</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf: default</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu"># Module 5, Read 0: Prediction</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>In order to use data to make a prediction we need to *model* the relationship between what we want to predict and what we have to predict form. In this course, we only see linear model so first we'll review the skill of assessing linearity.</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>Project: <span class="co">[</span><span class="ot">Project 5, Looking Ahead</span><span class="co">](../projects/project-5)</span> · Next: <span class="co">[</span><span class="ot">Read 1</span><span class="co">](module-5-read-01)</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Note:</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>This is just a five-minute review, not new material. You already did scatterplots and Pearson correlation in <span class="co">[</span><span class="ot">Module 3 Read 2</span><span class="co">](../lectures/module-3-read-02)</span>. Module 5 builds directly on them: in Read 1 we go from *describing* a linear relationship to *fitting a line and predicting* with it.</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>In Module 5 you will fit a line to two numerical variables and use it to predict. That only makes sense when the relationship is roughly linear, and the tools you use to decide that are exactly the ones from Module 3:</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>the scatterplot (to see the form), and</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>the Pearson correlation $r$ (to summarize the strength and direction of a *linear* form).</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reading a scatterplot: form, direction, strength</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>For two numerical variables, put the explanatory variable on the $x$-axis (what we have to predict from) and the response on the $y$-axis (what we want to predict), then describe three things:</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Form, linear, curved, or no clear pattern.</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Direction, positive (up to the right), negative (down to the right), or none.</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Strength, how tightly the points cluster around the trend (strong, moderate, weak).</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>Always note unusual points (outliers) too, since they can distort everything that follows.</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Pearson correlation $r$</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>Pearson correlation $r$ is a single, unitless number between $-1$ and $1$ that summarizes the direction and strength of a *linear* relationship:</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The sign gives direction: $r &gt; 0$ positive, $r &lt; 0$ negative.</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The magnitude $|r|$ gives strength: near $1$ is a tight linear trend, near $0$ is little or no *linear* trend.</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>For sample data $(x_i, y_i)$, $i = 1, \ldots, n$:</span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>r = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}</span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>{\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2}\;\sqrt{\sum_{i=1}^n (y_i - \bar{y})^2}}</span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>The numerator is large and positive when $x$ and $y$ tend to be above (or below) their means together; the denominator rescales by the spread in each variable so the result always lands between $-1$ and $1$.</span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>::: callout-warning</span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="fu">## $r$ only describes a *linear* trend</span></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>A correlation near $0$ does not mean "no relationship", it means "no *linear* relationship." A strong curved pattern (a U-shape, say) can have $r \approx 0$. And a single outlier can pull $r$ toward or away from $\pm 1$. Always look at the scatterplot before trusting $r$.</span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="fu">## In R: `cor()` and a scatterplot</span></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">509</span>)</span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>review_dat <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a>  <span class="at">study_hours =</span> <span class="fu">runif</span>(<span class="dv">60</span>, <span class="dv">1</span>, <span class="dv">15</span>),</span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>  <span class="at">exam_score  =</span> <span class="dv">45</span> <span class="sc">+</span> <span class="fl">3.4</span> <span class="sc">*</span> study_hours <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">60</span>, <span class="dv">0</span>, <span class="dv">8</span>)</span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(review_dat, <span class="fu">aes</span>(<span class="at">x =</span> study_hours, <span class="at">y =</span> exam_score)) <span class="sc">+</span></span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">color =</span> <span class="st">"steelblue4"</span>) <span class="sc">+</span></span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Exam score vs study hours"</span>,</span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Study hours"</span>, <span class="at">y =</span> <span class="st">"Exam score"</span>) <span class="sc">+</span></span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(review_dat<span class="sc">$</span>study_hours, review_dat<span class="sc">$</span>exam_score)</span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a>Here the form is roughly linear, the direction is positive, and $r$ is moderately strong, exactly the situation where fitting a line (Read 1) is reasonable.</span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip icon="false"}</span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a><span class="fu">## Check yourself, scatterplots and correlation</span></span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>A scatterplot of two variables shows points falling tightly along a downward line. Describe form, direction, and strength, and give a plausible value of $r$.</span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>A researcher reports $r = 0.05$ and concludes "these variables are unrelated." Why might that conclusion be wrong?</span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>In R, what does <span class="in">`cor(x, y)`</span> return, and what range can it take?</span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="html"}</span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to reveal answers<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Form: linear. Direction: negative. Strength: strong. A plausible value is $r \approx -0.9$.</span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>$r$ only measures *linear* association. A strong curved relationship (or one masked by an outlier) can give $r \approx 0$, so the variables may be strongly related in a non-linear way. Look at the scatterplot.</span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span><span class="in">`cor(x, y)`</span> returns the Pearson correlation between two numerical vectors, a unitless number between $-1$ and $1$.</span>
+<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="pdf"}</span>
+<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a><span class="in">\pagebreak</span></span>
+<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Answers, scatterplots and correlation</span></span>
+<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-111"><a href="#cb4-111" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Form: linear. Direction: negative. Strength: strong. A plausible value is $r \approx -0.9$.</span>
+<span id="cb4-112"><a href="#cb4-112" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>$r$ only measures *linear* association. A strong curved relationship (or one masked by an outlier) can give $r \approx 0$, so the variables may be strongly related in a non-linear way. Look at the scatterplot.</span>
+<span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span><span class="in">`cor(x, y)`</span> returns the Pearson correlation between two numerical vectors, a unitless number between $-1$ and $1$.</span>
+<span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a><span class="fu">## Preview of Project 5</span></span>
+<span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Project 5, Looking Ahead</span><span class="co">](../projects/project-5)</span> is a prediction challenge: you collect your own data with the <span class="co">[</span><span class="ot">stone jar sampler</span><span class="co">](../projects/project-5-stone-jar)</span>, fit a simple linear regression with <span class="in">`lm()`</span>, and report a prediction with an 95% prediciton interval for the number of stones in Rosanna's cup.</span>
+<span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a><span class="fu">## What to do next</span></span>
+<span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-124"><a href="#cb4-124" aria-hidden="true" tabindex="-1"></a>Start <span class="co">[</span><span class="ot">Read 1</span><span class="co">](module-5-read-01)</span>, simple linear regression, inference for the slope and correlation, prediction quality, and confidence and prediction intervals. When you finish, take <span class="co">[</span><span class="ot">Quiz A</span><span class="co">](../quizzes/quiz-m5-def)</span>.</span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
