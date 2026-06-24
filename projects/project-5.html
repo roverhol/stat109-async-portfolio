@@ -105,6 +105,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../assets/css/humboldt-theme.css">
 </head>
@@ -120,26 +149,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#project-5-team-prediction-challenge" id="toc-project-5-team-prediction-challenge" class="nav-link active" data-scroll-target="#project-5-team-prediction-challenge">Project 5: Team prediction challenge</a>
+  <li><a href="#project-5-stone-prediction-challenge" id="toc-project-5-stone-prediction-challenge" class="nav-link active" data-scroll-target="#project-5-stone-prediction-challenge">Project 5: Stone prediction challenge</a>
   <ul class="collapse">
-  <li><a href="#timeline" id="toc-timeline" class="nav-link" data-scroll-target="#timeline">Timeline</a></li>
-  <li><a href="#team-structure-and-deliverables" id="toc-team-structure-and-deliverables" class="nav-link" data-scroll-target="#team-structure-and-deliverables">Team structure and deliverables</a></li>
-  <li><a href="#choose-one-project-option" id="toc-choose-one-project-option" class="nav-link" data-scroll-target="#choose-one-project-option">Choose one project option</a>
+  <li><a href="#what-you-will-do" id="toc-what-you-will-do" class="nav-link" data-scroll-target="#what-you-will-do">What you will do</a></li>
+  <li><a href="#collecting-your-data" id="toc-collecting-your-data" class="nav-link" data-scroll-target="#collecting-your-data">Collecting your data</a></li>
+  <li><a href="#your-notebook" id="toc-your-notebook" class="nav-link" data-scroll-target="#your-notebook">Your notebook</a></li>
+  <li><a href="#what-to-turn-in" id="toc-what-to-turn-in" class="nav-link" data-scroll-target="#what-to-turn-in">What to turn in</a>
   <ul class="collapse">
-  <li><a href="#option-a-nesting-doll-prediction" id="toc-option-a-nesting-doll-prediction" class="nav-link" data-scroll-target="#option-a-nesting-doll-prediction">Option A: Nesting doll prediction</a></li>
-  <li><a href="#option-b-stone-container-prediction" id="toc-option-b-stone-container-prediction" class="nav-link" data-scroll-target="#option-b-stone-container-prediction">Option B: Stone container prediction</a></li>
+  <li><a href="#one-page-report-sections" id="toc-one-page-report-sections" class="nav-link" data-scroll-target="#one-page-report-sections">One-page report sections</a></li>
+  <li><a href="#report-rubric-20-points" id="toc-report-rubric-20-points" class="nav-link" data-scroll-target="#report-rubric-20-points">Report rubric (20 points)</a></li>
   </ul></li>
-  <li><a href="#suggested-method-simple-linear-regression" id="toc-suggested-method-simple-linear-regression" class="nav-link" data-scroll-target="#suggested-method-simple-linear-regression">Suggested method: simple linear regression</a></li>
-  <li><a href="#data-collection-requirements" id="toc-data-collection-requirements" class="nav-link" data-scroll-target="#data-collection-requirements">Data collection requirements</a></li>
-  <li><a href="#data-recording" id="toc-data-recording" class="nav-link" data-scroll-target="#data-recording">Data Recording</a></li>
-  <li><a href="#data-analysis-workflow-lab-on-thursday" id="toc-data-analysis-workflow-lab-on-thursday" class="nav-link" data-scroll-target="#data-analysis-workflow-lab-on-thursday">Data analysis workflow (lab on Thursday)</a>
-  <ul class="collapse">
-  <li><a href="#data-loading-and-checking-types" id="toc-data-loading-and-checking-types" class="nav-link" data-scroll-target="#data-loading-and-checking-types">1) Data loading and checking types</a></li>
-  <li><a href="#descriptive-statistics-and-plots" id="toc-descriptive-statistics-and-plots" class="nav-link" data-scroll-target="#descriptive-statistics-and-plots">2) Descriptive statistics and plots</a></li>
-  <li><a href="#linear-regression-fit" id="toc-linear-regression-fit" class="nav-link" data-scroll-target="#linear-regression-fit">3) Linear regression fit</a></li>
-  <li><a href="#prediction" id="toc-prediction" class="nav-link" data-scroll-target="#prediction">4) Prediction</a></li>
-  </ul></li>
-  <li><a href="#format-for-one-page-summary-required-sections" id="toc-format-for-one-page-summary-required-sections" class="nav-link" data-scroll-target="#format-for-one-page-summary-required-sections">Format for one-page summary (required sections)</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="project-5.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
@@ -154,7 +173,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">Project 5 — Looking Ahead</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
-<p class="subtitle lead">Using data to make predictions.</p>
+<p class="subtitle lead">Prediction with a Linear Model</p>
 </div>
 
 
@@ -171,182 +190,118 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="project-5-team-prediction-challenge" class="level1">
-<h1>Project 5: Team prediction challenge</h1>
-<p><strong>Total points:</strong> 35</p>
-<p>In this final project, you will work in a team to use tools from STAT 109 to collect data and make a prediction for your choice of two problems. Each team then submits an <strong>one-page summary</strong> that includes a clear section describing team member contributions.</p>
+<section id="project-5-stone-prediction-challenge" class="level1">
+<h1>Project 5: Stone prediction challenge</h1>
+<p><strong>Total points:</strong> 40</p>
+<p>Your goal is to build, evaluate, and use a simple linear regression model to predict the number of stones in Rosanna’s cup given it’s total weight.</p>
+<p>This project is also practice for doing statistics on your own after this course. As a result, there is no sample notebook for this project: you will show that you can open your own notebook, write the code from scratch, and produce a short report. Use the demos, the <a href="../r-reference">R reference</a>, the internet, and AI tools as needed to work out the code, just as you will in real work after the course is over.</p>
 <hr>
-<section id="timeline" class="level2">
-<h2 class="anchored" data-anchor-id="timeline">Timeline</h2>
-<ul>
-<li><strong>Wednesday, May 6 (class):</strong> choose team, choose project option, finalize variables, collect data.</li>
-<li><strong>Thursday, May 7 (lab):</strong> analyze data in R, fit model, evaluate prediction quality.</li>
-<li><strong>Due Friday, May 15:</strong> submit final deliverable to Canvas, one per team.</li>
-<li>After submission, Rosanna will release the actual answer for your prediction target.</li>
-</ul>
-<hr>
-</section>
-<section id="team-structure-and-deliverables" class="level2">
-<h2 class="anchored" data-anchor-id="team-structure-and-deliverables">Team structure and deliverables</h2>
-<p>You will work in teams of between 1 and 4 students for data collection and analysis. Each team will turn in:</p>
+<section id="what-you-will-do" class="level2">
+<h2 class="anchored" data-anchor-id="what-you-will-do">What you will do</h2>
 <ol type="1">
-<li><strong>Team data file</strong> (<code>.csv or link to google sheet</code>) with your measured variables</li>
-<li><strong>Team analysis notebook</strong> (<code>.ipynb</code>) that runs top to bottom.</li>
-<li><strong>Team one-page PDF summary</strong> (one page, 8.5 by 11 in.).</li>
-</ol>
-<p>Your one-page summary should include:</p>
+<li><p>Collect data with the <a href="project-5-stone-jar">Rosanna’s Stone Jar</a> sampler. Choose a number of stones, weigh that random sample, and record your data. Repeat as often as you like.</p></li>
+<li><p>Organize your data in a spreadsheet (Google Sheets or Excel). A tidy format puts variables in columns and observations per unit in rows.</p></li>
+<li><p>Open <a href="https://colab.research.google.com">Google Colab</a>, switch the runtime to R, and save a copy to your own Google Drive. Then write code from scratch to:</p>
 <ul>
-<li>introduction stating the prediction problem,</li>
-<li>methods (data collection and data analysis),</li>
-<li>results (prediction equation, plugged-in prediction, and 95% prediction interval),</li>
-<li>conclusion in context,</li>
-<li><strong>team contributions section</strong> listing what each member did and each team member’s full name</li>
-</ul>
-<hr>
-</section>
-<section id="choose-one-project-option" class="level2">
-<h2 class="anchored" data-anchor-id="choose-one-project-option">Choose one project option</h2>
-<section id="option-a-nesting-doll-prediction" class="level3">
-<h3 class="anchored" data-anchor-id="option-a-nesting-doll-prediction">Option A: Nesting doll prediction</h3>
-<p>Goal: predict the <strong>heights of the inner dolls</strong> only using measurements from the outer doll</p>
-<p>Data source: your team will collect data from the 5 available doll sets in class. If you’d like, you may also use images of nesting dolls from the internet.</p>
-<p>Examples of doll set variables:</p>
-<ul>
-<li>outermost doll height,</li>
-<li>outermost width,</li>
-<li>weight of doll set,</li>
-<li>sound of doll set when shaken,</li>
-<li>eye color of outermost doll, or</li>
-<li>any other measurable outer features</li>
-</ul>
-<p>Be sure to collect data on the height of the inner dolls to create your prediction equation with! You may find it helpful to define <strong>depth</strong> as a variable, where depth 0 represents the outermost doll, depth 1 the next doll inside, and so on. Using the complete sets, you can record the height of each doll along with its depth and explore how height changes as depth increases. One possible approach is to model height as a linear function of depth and use this relationship to predict the heights of inner dolls for a new set when only the outermost height is known. If the outermost dolls vary in size across sets, you may instead consider working with the <strong>proportion of the outermost height</strong> at each depth (height at depth ÷ outer height), which can help account for differences in overall scale.</p>
-</section>
-<section id="option-b-stone-container-prediction" class="level3">
-<h3 class="anchored" data-anchor-id="option-b-stone-container-prediction">Option B: Stone container prediction</h3>
-<p>Goal: predict the <strong>number of stones in a container</strong> given the total weight of the container and the stones.</p>
-<p>Available tools include scales, rulers, and calipers.</p>
-<p>Examples of stone set variables:</p>
-<ul>
-<li>total container weight,</li>
-<li>sample mean weight per stone from small random samples,</li>
-<li>sample variation in stone weights,</li>
-<li>optional size measures (e.g., sample diameters).</li>
-</ul>
-<p>For the stone container problem, you may find it helpful to collect data on several samples with known numbers of stones and their corresponding total weights. This allows you to model the <strong>number of stones as a function of total weight</strong> using simple linear regression. In this setup, the slope represents how the number of stones changes with weight, and the intercept corresponds to the weight of the empty container. You can then use the given total weight of Rosanna’s container as the predictor value to estimate the number of stones.</p>
-<p>Collect your sample data at <a href="project-5-stone-jar">Rosanna’s Stone Jar</a>.</p>
-<hr>
-</section>
-</section>
-<section id="suggested-method-simple-linear-regression" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-method-simple-linear-regression">Suggested method: simple linear regression</h2>
-<p>You may wish to use <strong>simple linear regression</strong> as the prediction method:</p>
-<p><code>lm(response ~ predictor, data = ...)</code></p>
-<p>For this project:</p>
-<ul>
-<li>response = quantity to predict (height of doll,… or stone count),</li>
-<li>predictor = one chosen numerical or categorical predictor.</li>
-</ul>
-<p>You may create and compare additional candidate predictors, but you should report at least one simple linear model. Your final prediction can be based on whatever method your team likes.</p>
-<hr>
-</section>
-<section id="data-collection-requirements" class="level2">
-<h2 class="anchored" data-anchor-id="data-collection-requirements">Data collection requirements</h2>
-<ol type="1">
-<li><strong>Define variables before measuring.</strong>
-<ul>
-<li>Write measurement rules so another team could replicate your process.</li>
-</ul></li>
-<li><strong>Use consistent units</strong> (for example: centimeters or grams).</li>
-<li><strong>Double-check measurements</strong> when feasible.</li>
-<li><strong>Avoid convenience bias within your option</strong> where possible (for example, sample stones from different parts of container rather than only top layer, don’t avoid the fisherman nesting doll because it’s inconveniently being used in a selfie with a local fisherman..).</li>
-</ol>
-</section>
-<section id="data-recording" class="level2">
-<h2 class="anchored" data-anchor-id="data-recording">Data Recording</h2>
-<p>Record the data on a piece of paper and then tidy it up to share with your team for analysis in lab on Thursday. Remember our format for tidy data is to have the rows of a spreadsheet represent examples and the column the variables. It might be a good idea to have a team mate put the dataset into this format before your team is done with data collection so you can make sure you’ve collected all the appropriate information.</p>
-<p>Once you have data recorded physically and it is tidy, you can add it to a spreadsheet, either Google Sheets or Excel. Be sure to give each column an informative name and make sure data on the same row is from the same doll or stone sample.</p>
-<hr>
-</section>
-<section id="data-analysis-workflow-lab-on-thursday" class="level2">
-<h2 class="anchored" data-anchor-id="data-analysis-workflow-lab-on-thursday">Data analysis workflow (lab on Thursday)</h2>
-<p>Your notebook should include the following sections.</p>
-<section id="data-loading-and-checking-types" class="level3">
-<h3 class="anchored" data-anchor-id="data-loading-and-checking-types">1) Data loading and checking types</h3>
-<ul>
-<li><p>Use <code>read_csv</code> from the <code>tidyverse</code> library or <code>read.csv</code> to load your spreadsheet. Remember to first save as .csv and then upload to Colab using the file manager on the left side bar.</p></li>
-<li><p>Use <code>glimpse</code> or <code>str</code> to check the type of each variable. You can use <code>as.numeric</code> or <code>as.factor</code> as needed to make each variable have the appropriate type in R.</p></li>
-<li><p>show first rows and variable names in R,</p></li>
-<li><p>show sample size (number of rows in the data frame in R)</p></li>
-<li><p>Both of these can be obtained by either <code>glimpse</code> or <code>str</code>. Remember that the spreadsheet in R becomes a <code>tibble</code> if you loaded it using <code>read_csv</code> from the <code>tidyverse</code> or a <code>data.frame</code> if you used <code>read.csv</code>.</p></li>
-</ul>
-</section>
-<section id="descriptive-statistics-and-plots" class="level3">
-<h3 class="anchored" data-anchor-id="descriptive-statistics-and-plots">2) Descriptive statistics and plots</h3>
-<ul>
-<li>numerical summaries of response and predictor variables separately (be sure to include both a measure of center and spread). It is especially valuable to include the minimum and maximum values of the predictor variable as these will define what inputs are valid for your prediction model.</li>
-<li>numerical summary of the relationship between response and predictor (e.g.&nbsp;Pearson Correlation via <code>cor</code>)</li>
-<li>scatterplot with clear axis labels/units,</li>
-<li>brief statement on form, direction, and strength.</li>
-</ul>
-</section>
-<section id="linear-regression-fit" class="level3">
-<h3 class="anchored" data-anchor-id="linear-regression-fit">3) Linear regression fit</h3>
-<ul>
-<li>fit <code>lm(response ~ predictor)</code>,</li>
-<li>Give the equation for the prediction, reporting the slope and intercept with interpretation in context. Be sure to include units.</li>
-</ul>
-</section>
-<section id="prediction" class="level3">
-<h3 class="anchored" data-anchor-id="prediction">4) Prediction</h3>
-<ul>
-<li>generate one prediction with a 95% prediction interval for the project target. State what value of the predictor you plugged in from Rosanna’s doll set or stone container.</li>
-</ul>
-</section>
-</section>
-<section id="format-for-one-page-summary-required-sections" class="level2">
-<h2 class="anchored" data-anchor-id="format-for-one-page-summary-required-sections">Format for one-page summary (required sections)</h2>
-<p>Use short clear headings:</p>
-<ol type="1">
-<li><strong>Introduction (problem statement).</strong>
-<ul>
-<li>State which option you chose and exactly what quantity you are predicting and what information you are using to create that prediction.</li>
-</ul></li>
-<li><strong>Methods - data collection.</strong>
-<ul>
-<li>Describe how measurements were collected in just enough detail that another team in class could read this section and collect data the same way that your team did.</li>
-</ul></li>
-<li><strong>Methods - data analysis.</strong>
-<ul>
-<li>Describe how you analyzed the data to build a prediction equation. (E.g. we used a scatterplot to assess linearity, used <code>lm</code> to build simple linear regression model of ___ on ___ and _______ to obtain a 95% prediction interval at x=__________).</li>
-</ul></li>
-<li><strong>Results.</strong>
-<ul>
-<li>Show the scatterplot with appropriate labels and title, commenting on form, direction and strength.</li>
-<li>Report the value of Pearson’s correlation from <code>cor</code>.</li>
-<li>Write the prediction equation from the output of <code>lm</code>.</li>
-<li>Briefly summarize when to use the prediction equation (range of valid inputs, units of both predictor and response variables)</li>
-</ul></li>
-<li><strong>Conclusion.</strong>
-<ul>
-<li>Plug in your measurement from the outer doll of Rosanna’s doll set or the weight of Rosanna’s container to your prediction equation and report your predictions of her inner doll heights or or her number of stones. Report an appropriate interval for the target prediction (use a prediction interval for an individual target value, <code>predict</code> with <code>interval="prediction"`</code>).</li>
-</ul></li>
-<li><strong>Team contributions (required).</strong>
-<ul>
-<li>List each member’s full name and their specific contributions (for example: data collection, measuring, idea generation, write-up, data analysis, data entry, organization).</li>
+<li>load the libraries you need,</li>
+<li>load your data (read directly from your Google Sheet, or download it as a <code>.csv</code> and upload it with the Colab file manager as shown in a demo),</li>
+<li>check that your data loaded correctly and that the variable types are correct,</li>
+<li>explore the data with summaries and a scatterplot,</li>
+<li>fit a simple linear regression model,</li>
+<li>assess the model,</li>
+<li>make a prediction with a 95% prediction interval for the number of stones in Rosanna’s cup given that it’s total weight is 209.27 grams.</li>
 </ul></li>
 </ol>
-<p>Contribution section format example:</p>
+<hr>
+</section>
+<section id="collecting-your-data" class="level2">
+<h2 class="anchored" data-anchor-id="collecting-your-data">Collecting your data</h2>
 <ul>
-<li>Member A: collected measurements, and recorded them in a spreadsheet</li>
-<li>Member B: created plots and fit model.</li>
-<li>Member C: drafted the report.</li>
-<li>Member D: made initial suggestion for the predictor and edited final write-up.</li>
+<li>Use the <a href="project-5-stone-jar">Rosanna’s Stone Jar</a> sampler to weigh random samples of stones.</li>
+<li>Record each pair (number of stones, total weight in grams). The total weight already includes the cup and lid.</li>
+<li>Keep your spreadsheet tidy: one row per sample and informative column names.</li>
 </ul>
+<hr>
+</section>
+<section id="your-notebook" class="level2">
+<h2 class="anchored" data-anchor-id="your-notebook">Your notebook</h2>
+<p>Write your notebook so it runs top to bottom, in this order:</p>
+<ol type="1">
+<li><strong>Load and check the data.</strong> Load your spreadsheet, then show the first rows, the variable names, the number of rows, and the type of each variable.</li>
+<li><strong>Explore.</strong> Report numerical summaries of the response and predictor (center and spread, plus the minimum and maximum of the predictor, since these set the valid range for prediction), report the Pearson correlation, and make a labeled scatterplot. Comment on form, direction, and strength.</li>
+<li><strong>Fit.</strong> Fit a simple linear regression model thinking carefully about which variable should be predicted ($y$) and which variable should be used to predict from ($x$). Report the prediction equation and interpret the slope and intercept in context, with units.</li>
+<li><strong>Assess.</strong> Evaluate the model (for example, whether a straight line is appropriate, the residuals, and <span class="math inline">\(R^2\)</span> or MSE).</li>
+<li><strong>Predict.</strong> Predict the number of stones in Rosanna’s cup (it’s total weight is 209.27 g) and report a 95% prediction interval for this single number (<code>predict</code> with <code>interval = "prediction"</code>).</li>
+</ol>
+<hr>
+</section>
+<section id="what-to-turn-in" class="level2">
+<h2 class="anchored" data-anchor-id="what-to-turn-in">What to turn in</h2>
+<ol type="1">
+<li><strong>Analysis notebook</strong> (<code>.ipynb</code>) that runs top to bottom (5 points).</li>
+<li><strong>Data spreadsheet</strong> (a <code>.csv</code>, or a link to your Google Sheet, 5 points).</li>
+<li><strong>One-page report</strong> (PDF, 8.5 by 11 in.) with the sections below (20 points).</li>
+</ol>
+<section id="one-page-report-sections" class="level3">
+<h3 class="anchored" data-anchor-id="one-page-report-sections">One-page report sections</h3>
+<p>Use short, clear headings:</p>
+<ol type="1">
+<li><strong>Introduction.</strong> The problem context and a clear problem statement: what you are predicting and what you are predicting it from.</li>
+<li><strong>Methods: Data Collection.</strong> How you collected the data (for example, “I used the stone jar sampler to weigh random samples of stones, recording the number of stones and the total weight for each sample”). Include the number of times you weighted samples.</li>
+<li><strong>Methods: Data Analysis.</strong> The steps you took to build, assessed and use a prediction model. (for example, explored the relationship with a scatterplot and correlation, fit a simple linear regression of number of stones on total weight, and used <code>predict</code> for a 95% prediction interval). How you assessed model performance (e.g.&nbsp;scatterplot looked linear, MSE or <span class="math inline">\(R^2\)</span> value).</li>
+<li><strong>Results.</strong> The labeled scatterplot, the Pearson correlation, the prediction equation with interpreted slope and intercept, and the range of valid inputs with units. Give MSE or <span class="math inline">\(R^2\)</span>. (note: the methods section is where you describe what you did, the results section is what you got when you followed the methods section).</li>
+<li><strong>Conclusion.</strong> Your best prediction for the number of stones in Rosanna’s cup, with its 95% prediction interval, stated in context. State how you could get a more precise (narrower) prediction interval in the future and whether or not you think your prediction might be biased. (Hint: what would happen if you collected data from more samples? Does random sampling influence bias?).</li>
+</ol>
+</section>
+<section id="report-rubric-20-points" class="level3">
+<h3 class="anchored" data-anchor-id="report-rubric-20-points">Report rubric (20 points)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 72%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Section</th>
+<th>Points</th>
+<th>Full credit when</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Introduction</td>
+<td>3</td>
+<td>The problem context is given and the problem statement clearly says what you are predicting and what you are predicting it from.</td>
+</tr>
+<tr class="even">
+<td>Methods: Data Collection</td>
+<td>3</td>
+<td>The collection process is described clearly enough to replicate, including how the sampler was used and how many samples you weighed.</td>
+</tr>
+<tr class="odd">
+<td>Methods: Data Analysis</td>
+<td>4</td>
+<td>Describes how you built, assessed, and used the model (scatterplot and correlation, <code>lm</code> of number on total weight, <code>predict</code> for a 95% prediction interval) and how you judged model performance (linear scatterplot, MSE or <span class="math inline">\(R^2\)</span>).</td>
+</tr>
+<tr class="even">
+<td>Results</td>
+<td>6</td>
+<td>Includes a labeled scatterplot, the Pearson correlation, the prediction equation with slope and intercept interpreted in context with units, the valid range of inputs, and the MSE or <span class="math inline">\(R^2\)</span>.</td>
+</tr>
+<tr class="odd">
+<td>Conclusion</td>
+<td>4</td>
+<td>States the best prediction with its 95% prediction interval in context, explains how to obtain a narrower interval, and discusses whether the prediction may be biased.</td>
+</tr>
+</tbody>
+</table>
 <hr>
 
 
 <!-- -->
 
+</section>
 </section>
 </section>
 
@@ -809,173 +764,84 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Project 5 — Looking Ahead"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Using data to make predictions."</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Prediction with a Linear Model"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Project 5: Team prediction challenge</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Project 5: Stone prediction challenge</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>**Total points:** 35</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>**Total points:** 40</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>In this final project, you will work in a team to use tools from STAT 109 to collect data and make a prediction for your choice of two problems. Each team then submits an **one-page summary** that includes a clear section describing team member contributions.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Your goal is to build, evaluate, and use a simple linear regression model to predict the number of stones in Rosanna's cup given it's total weight.</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>This project is also practice for doing statistics on your own after this course. As a result, there is no sample notebook for this project: you will show that you can open your own notebook, write the code from scratch, and produce a short report. Use the demos, the <span class="co">[</span><span class="ot">R reference</span><span class="co">](../r-reference)</span>, the internet, and AI tools as needed to work out the code, just as you will in real work after the course is over.</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Timeline</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Wednesday, May 6 (class):** choose team, choose project option, finalize variables, collect data.</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Thursday, May 7 (lab):** analyze data in R, fit model, evaluate prediction quality.</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Due Friday, May 15:** submit final deliverable to Canvas, one per team.</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>After submission, Rosanna will release the actual answer for your prediction target.</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## Team structure and deliverables</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>You will work in teams of between 1 and 4 students for data collection and analysis. Each team will turn in:</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**Team data file** (<span class="in">`.csv or link to google sheet`</span>) with your measured variables</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Team analysis notebook** (<span class="in">`.ipynb`</span>) that runs top to bottom.</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**Team one-page PDF summary** (one page, 8.5 by 11 in.).</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>Your one-page summary should include:</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>introduction stating the prediction problem,</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>methods (data collection and data analysis),</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>results (prediction equation, plugged-in prediction, and 95% prediction interval),</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>conclusion in context,</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**team contributions section** listing what each member did and each team member's full name</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="fu">## Choose one project option</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="fu">### Option A: Nesting doll prediction</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>Goal: predict the **heights of the inner dolls** only using measurements from the outer doll</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>Data source: your team will collect data from the 5 available doll sets in class. If you'd like, you may also use images of nesting dolls from the internet.</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>Examples of doll set variables:</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>outermost doll height,</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>outermost width,</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>weight of doll set,</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>sound of doll set when shaken,</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>eye color of outermost doll, or</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>any other measurable outer features</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>Be sure to collect data on the height of the inner dolls to create your prediction equation with! You may find it helpful to define **depth** as a variable, where depth 0 represents the outermost doll, depth 1 the next doll inside, and so on. Using the complete sets, you can record the height of each doll along with its depth and explore how height changes as depth increases. One possible approach is to model height as a linear function of depth and use this relationship to predict the heights of inner dolls for a new set when only the outermost height is known. If the outermost dolls vary in size across sets, you may instead consider working with the **proportion of the outermost height** at each depth (height at depth ÷ outer height), which can help account for differences in overall scale.</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## What you will do</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Collect data with the <span class="co">[</span><span class="ot">Rosanna's Stone Jar</span><span class="co">](project-5-stone-jar)</span> sampler. Choose a number of stones, weigh that random sample, and record your data. Repeat as often as you like.</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Organize your data in a spreadsheet (Google Sheets or Excel). A tidy format puts variables in columns and observations per unit in rows.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Open <span class="co">[</span><span class="ot">Google Colab</span><span class="co">](https://colab.research.google.com)</span>, switch the runtime to R, and save a copy to your own Google Drive. Then write code from scratch to:</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>load the libraries you need,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>load your data (read directly from your Google Sheet, or download it as a <span class="in">`.csv`</span> and upload it with the Colab file manager as shown in a demo),</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>check that your data loaded correctly and that the variable types are correct,</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>explore the data with summaries and a scatterplot,</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>fit a simple linear regression model,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>assess the model,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>make a prediction with a 95% prediction interval for the number of stones in Rosanna's cup given that it's total weight is 209.27 grams.</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## Collecting your data</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use the <span class="co">[</span><span class="ot">Rosanna's Stone Jar</span><span class="co">](project-5-stone-jar)</span> sampler to weigh random samples of stones.</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Record each pair (number of stones, total weight in grams). The total weight already includes the cup and lid.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Keep your spreadsheet tidy: one row per sample and informative column names.</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">## Your notebook</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Write your notebook so it runs top to bottom, in this order:</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**Load and check the data.** Load your spreadsheet, then show the first rows, the variable names, the number of rows, and the type of each variable.</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Explore.** Report numerical summaries of the response and predictor (center and spread, plus the minimum and maximum of the predictor, since these set the valid range for prediction), report the Pearson correlation, and make a labeled scatterplot. Comment on form, direction, and strength.</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**Fit.** Fit a simple linear regression model thinking carefully about which variable should be predicted (\$y\$) and which variable should be used to predict from (\$x\$). Report the prediction equation and interpret the slope and intercept in context, with units.</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>**Assess.** Evaluate the model (for example, whether a straight line is appropriate, the residuals, and $R^2$ or MSE).</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>**Predict.** Predict the number of stones in Rosanna's cup (it's total weight is 209.27 g) and report a 95% prediction interval for this single number (<span class="in">`predict`</span> with <span class="in">`interval = "prediction"`</span>).</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="fu">## What to turn in</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**Analysis notebook** (<span class="in">`.ipynb`</span>) that runs top to bottom (5 points).</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Data spreadsheet** (a <span class="in">`.csv`</span>, or a link to your Google Sheet, 5 points).</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**One-page report** (PDF, 8.5 by 11 in.) with the sections below (20 points).</span>
 <span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="fu">### Option B: Stone container prediction</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="fu">### One-page report sections</span></span>
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>Goal: predict the **number of stones in a container** given the total weight of the container and the stones.</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>Use short, clear headings:</span>
 <span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>Available tools include scales, rulers, and calipers.</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>Examples of stone set variables:</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>total container weight,</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>sample mean weight per stone from small random samples,</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>sample variation in stone weights,</span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>optional size measures (e.g., sample diameters).</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>For the stone container problem, you may find it helpful to collect data on several samples with known numbers of stones and their corresponding total weights. This allows you to model the **number of stones as a function of total weight** using simple linear regression. In this setup, the slope represents how the number of stones changes with weight, and the intercept corresponds to the weight of the empty container. You can then use the given total weight of Rosanna’s container as the predictor value to estimate the number of stones.</span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>Collect your sample data at <span class="co">[</span><span class="ot">Rosanna's Stone Jar</span><span class="co">](project-5-stone-jar)</span>.</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="fu">## Suggested method: simple linear regression</span></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>You may wish to use **simple linear regression** as the prediction method:</span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="in">`lm(response ~ predictor, data = ...)`</span></span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>For this project:</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>response = quantity to predict (height of doll,... or stone count),</span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>predictor = one chosen numerical or categorical predictor.</span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>You may create and compare additional candidate predictors, but you should report at least one simple linear model. Your final prediction can be based on whatever method your team likes.</span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data collection requirements</span></span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**Define variables before measuring.**</span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Write measurement rules so another team could replicate your process.</span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Use consistent units** (for example: centimeters or grams).</span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**Double-check measurements** when feasible.</span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>**Avoid convenience bias within your option** where possible (for example, sample stones from different parts of container rather than only top layer, don't avoid the fisherman nesting doll because it's inconveniently being used in a selfie with a local fisherman..).</span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Recording</span></span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>Record the data on a piece of paper and then tidy it up to share with your team for analysis in lab on Thursday. Remember our format for tidy data is to have the rows of a spreadsheet represent examples and the column the variables. It might be a good idea to have a team mate put the dataset into this format before your team is done with data collection so you can make sure you've collected all the appropriate information.</span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>Once you have data recorded physically and it is tidy, you can add it to a spreadsheet, either Google Sheets or Excel. Be sure to give each column an informative name and make sure data on the same row is from the same doll or stone sample.</span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data analysis workflow (lab on Thursday)</span></span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>Your notebook should include the following sections.</span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a><span class="fu">### 1) Data loading and checking types</span></span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use <span class="in">`read_csv`</span> from the <span class="in">`tidyverse`</span> library or <span class="in">`read.csv`</span> to load your spreadsheet. Remember to first save as .csv and then upload to Colab using the file manager on the left side bar.</span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use <span class="in">`glimpse`</span> or <span class="in">`str`</span> to check the type of each variable. You can use <span class="in">`as.numeric`</span> or <span class="in">`as.factor`</span> as needed to make each variable have the appropriate type in R.</span>
-<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>show first rows and variable names in R,</span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>show sample size (number of rows in the data frame in R)</span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Both of these can be obtained by either <span class="in">`glimpse`</span> or <span class="in">`str`</span>. Remember that the spreadsheet in R becomes a <span class="in">`tibble`</span> if you loaded it using <span class="in">`read_csv`</span> from the <span class="in">`tidyverse`</span> or a <span class="in">`data.frame`</span> if you used <span class="in">`read.csv`</span>.</span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a><span class="fu">### 2) Descriptive statistics and plots</span></span>
-<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>numerical summaries of response and predictor variables separately (be sure to include both a measure of center and spread). It is especially valuable to include the minimum and maximum values of the predictor variable as these will define what inputs are valid for your prediction model.</span>
-<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>numerical summary of the relationship between response and predictor (e.g. Pearson Correlation via <span class="in">`cor`</span>)</span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>scatterplot with clear axis labels/units,</span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>brief statement on form, direction, and strength.</span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="fu">### 3) Linear regression fit</span></span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>fit <span class="in">`lm(response ~ predictor)`</span>,</span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Give the equation for the prediction, reporting the slope and intercept with interpretation in context. Be sure to include units.</span>
-<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a><span class="fu">### 4) Prediction</span></span>
-<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>generate one prediction with a 95% prediction interval for the project target. State what value of the predictor you plugged in from Rosanna's doll set or stone container.</span>
-<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a><span class="fu">## Format for one-page summary (required sections)</span></span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>Use short clear headings:</span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**Introduction (problem statement).**</span>
-<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>State which option you chose and exactly what quantity you are predicting and what information you are using to create that prediction.</span>
-<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Methods - data collection.**</span>
-<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Describe how measurements were collected in just enough detail that another team in class could read this section and collect data the same way that your team did.</span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**Methods - data analysis.**</span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Describe how you analyzed the data to build a prediction equation. (E.g. we used a scatterplot to assess linearity, used <span class="in">`lm`</span> to build simple linear regression model of <span class="sc">\_\_\_</span> on <span class="sc">\_\_\_</span> and <span class="sc">\_\_\_\_\_\_\_</span> to obtain a 95% prediction interval at x=<span class="sc">\_\_\_\_\_\_\_\_\_\_</span>).</span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>**Results.**</span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Show the scatterplot with appropriate labels and title, commenting on form, direction and strength.</span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Report the value of Pearson's correlation from <span class="in">`cor`</span>.</span>
-<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Write the prediction equation from the output of <span class="in">`lm`</span>.</span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Briefly summarize when to use the prediction equation (range of valid inputs, units of both predictor and response variables)</span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>**Conclusion.**</span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Plug in your measurement from the outer doll of Rosanna's doll set or the weight of Rosanna's container to your prediction equation and report your predictions of her inner doll heights or or her number of stones. Report an appropriate interval for the target prediction (use a prediction interval for an individual target value, <span class="in">`predict`</span> with `<span class="in">` interval="prediction"`</span> ``).</span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a><span class="ss">6.  </span>**Team contributions (required).**</span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>List each member's full name and their specific contributions (for example: data collection, measuring, idea generation, write-up, data analysis, data entry, organization).</span>
-<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>Contribution section format example:</span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Member A: collected measurements, and recorded them in a spreadsheet</span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Member B: created plots and fit model.</span>
-<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Member C: drafted the report.</span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Member D: made initial suggestion for the predictor and edited final write-up.</span>
-<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**Introduction.** The problem context and a clear problem statement: what you are predicting and what you are predicting it from.</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Methods: Data Collection.** How you collected the data (for example, "I used the stone jar sampler to weigh random samples of stones, recording the number of stones and the total weight for each sample"). Include the number of times you weighted samples.</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**Methods: Data Analysis.** The steps you took to build, assessed and use a prediction model. (for example, explored the relationship with a scatterplot and correlation, fit a simple linear regression of number of stones on total weight, and used <span class="in">`predict`</span> for a 95% prediction interval). How you assessed model performance (e.g. scatterplot looked linear, MSE or $R^2$ value).</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>**Results.** The labeled scatterplot, the Pearson correlation, the prediction equation with interpreted slope and intercept, and the range of valid inputs with units. Give MSE or $R^2$. (note: the methods section is where you describe what you did, the results section is what you got when you followed the methods section).</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>**Conclusion.** Your best prediction for the number of stones in Rosanna's cup, with its 95% prediction interval, stated in context. State how you could get a more precise (narrower) prediction interval in the future and whether or not you think your prediction might be biased. (Hint: what would happen if you collected data from more samples? Does random sampling influence bias?).</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="fu">### Report rubric (20 points)</span></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Section <span class="pp">|</span> Points <span class="pp">|</span> Full credit when <span class="pp">|</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="pp">|----------|----------|----------------------------------------------------|</span></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Introduction <span class="pp">|</span> 3 <span class="pp">|</span> The problem context is given and the problem statement clearly says what you are predicting and what you are predicting it from. <span class="pp">|</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Methods: Data Collection <span class="pp">|</span> 3 <span class="pp">|</span> The collection process is described clearly enough to replicate, including how the sampler was used and how many samples you weighed. <span class="pp">|</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Methods: Data Analysis <span class="pp">|</span> 4 <span class="pp">|</span> Describes how you built, assessed, and used the model (scatterplot and correlation, <span class="in">`lm`</span> of number on total weight, <span class="in">`predict`</span> for a 95% prediction interval) and how you judged model performance (linear scatterplot, MSE or $R^2$). <span class="pp">|</span></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Results <span class="pp">|</span> 6 <span class="pp">|</span> Includes a labeled scatterplot, the Pearson correlation, the prediction equation with slope and intercept interpreted in context with units, the valid range of inputs, and the MSE or $R^2$. <span class="pp">|</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Conclusion <span class="pp">|</span> 4 <span class="pp">|</span> States the best prediction with its 95% prediction interval in context, explains how to obtain a narrower interval, and discusses whether the prediction may be biased. <span class="pp">|</span></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
