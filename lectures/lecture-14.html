@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lecture 14 – STAT 109 - Introductory Biostatistics</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-bba5ebae505b5c03f3f0d8040a416a6b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/css/humboldt-theme.css">
+</head>
+
+<body class="floating quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#lecture-14-binomial-test-steps-and-examples" id="toc-lecture-14-binomial-test-steps-and-examples" class="nav-link active" data-scroll-target="#lecture-14-binomial-test-steps-and-examples">Lecture 14: Binomial Test — Steps and Examples</a>
+  <ul class="collapse">
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example 1:</a></li>
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example 2</a></li>
+  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example 3</a></li>
+  <li><a href="#example-4" id="toc-example-4" class="nav-link" data-scroll-target="#example-4">Example 4</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lecture-14.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Lecture 14</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<p class="subtitle lead">STAT 109: Introductory Biostatistics</p>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-right">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="lecture-14-binomial-test-steps-and-examples" class="level1">
+<h1>Lecture 14: Binomial Test — Steps and Examples</h1>
+<p>For each problem, follow these steps:</p>
+<ol type="1">
+<li>State the research question.</li>
+<li>Define the parameter of interest, <span class="math inline">\(p\)</span>, in words.</li>
+<li>State the null and alternative hypotheses using appropriate symbols.</li>
+<li>Identify <span class="math inline">\(n\)</span> and the value of <span class="math inline">\(p\)</span> under <span class="math inline">\(H_0\)</span> (for the null distribution).</li>
+<li>Verify that the 4 conditions of a Binomial Random Process (BRP) are satisfied by the data collection.</li>
+<li>Assuming the null hypothesis is true, create a plot of <span class="math inline">\(x\)</span> vs <span class="math inline">\(\text{dbinom}(x, n, p)\)</span> (the null distribution), e.g.&nbsp;by hand or with software. Do <strong>not</strong> shade yet — shading will be done by hand in the direction(s) of the alternative.</li>
+<li>Identify the observed value of <span class="math inline">\(x\)</span> from the dataset.</li>
+<li>On the plot, add a vertical line at the observed <span class="math inline">\(x\)</span> and shade the bar(s) in the direction(s) of the inequality in <span class="math inline">\(H_a\)</span> (by hand).</li>
+<li>Compute the <strong>p-value</strong>: the probability of observing data as or more extreme than the observed <span class="math inline">\(x\)</span> in the direction of <span class="math inline">\(H_a\)</span>, assuming <span class="math inline">\(H_0\)</span> is true. (For a two-sided <span class="math inline">\(H_a\)</span>, use both tails.)</li>
+<li>Make a conclusion in context (reject <span class="math inline">\(H_0\)</span> or fail to reject <span class="math inline">\(H_0\)</span>, and what that means for the research question).</li>
+</ol>
+<hr>
+<section id="example-1" class="level2">
+<h2 class="anchored" data-anchor-id="example-1">Example 1:</h2>
+<p><strong>Research question:</strong> Is the proportion of left-handed students at our school higher than the national rate of 10%?</p>
+<p><strong>Parameter:</strong> <span class="math inline">\(p\)</span> = probability that a randomly chosen student from our school is left-handed (i.e., the proportion of left-handers in the population we are sampling).</p>
+<p><strong>Hypotheses:</strong> <span class="math inline">\(H_0: p = 0.10\)</span> vs <span class="math inline">\(H_a: p &gt; 0.10\)</span></p>
+<p><span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span> under <span class="math inline">\(H_0\)</span>: <span class="math inline">\(n = 25\)</span> students, <span class="math inline">\(p = 0.10\)</span></p>
+<p><strong>BRP conditions (brief):</strong> Binary (left-handed or not), fixed <span class="math inline">\(n = 25\)</span>, fixed <span class="math inline">\(p\)</span> under null, independent students.</p>
+<p><strong>Plot:</strong> Create a bar plot of <span class="math inline">\(x\)</span> vs <span class="math inline">\(\text{dbinom}(x, 25, 0.10)\)</span> for <span class="math inline">\(x = 0, 1, \ldots, 25\)</span>. Leave unshaded; then by hand add a vertical line at <span class="math inline">\(x = 6\)</span> and shade the bars for <span class="math inline">\(x \geq 6\)</span> (right tail, in the direction of <span class="math inline">\(H_a\)</span>). Example code to produce the unshaded plot (display only):</p>
+<pre><code>n &lt;- 25
+p &lt;- 0.10
+x_vals &lt;- 0:n
+df &lt;- data.frame(x = x_vals, prob = dbinom(x_vals, n, p))
+library(ggplot2)
+ggplot(df, aes(x = x, y = prob)) +
+  geom_col() +
+  labs(x = "x", y = "P(X = x)")</code></pre>
+<p><strong>p-value:</strong> <span class="math inline">\(P(X \geq 6 \mid H_0) = 1 - P(X \leq 5)\)</span>. For example, <code>1 - pbinom(5, 25, 0.10)</code> <strong>Data:</strong> In a sample of 25 students, <span class="math inline">\(x = 6\)</span> were left-handed.<span class="math inline">\(\approx 0.03\)</span>. Small p-value.</p>
+<p><strong>Conclusion:</strong> Reject <span class="math inline">\(H_0\)</span>. The data are inconsistent with a 10% left-handed rate; we have evidence that the proportion of left-handed students at our school is higher than 10%.</p>
+<hr>
+</section>
+<section id="example-2" class="level2">
+<h2 class="anchored" data-anchor-id="example-2">Example 2</h2>
+<p><strong>Research question:</strong> Is the proportion of defective items from the new supplier less than 15%?</p>
+<p><strong>Parameter:</strong> <span class="math inline">\(p\)</span> = probability that a randomly selected item from the new supplier is defective (i.e., the proportion of defectives in the process).</p>
+<p><strong>Hypotheses:</strong> <span class="math inline">\(H_0: p = 0.15\)</span> vs <span class="math inline">\(H_a: p &lt; 0.15\)</span></p>
+<p><span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span> under <span class="math inline">\(H_0\)</span>: <span class="math inline">\(n = 25\)</span> items, <span class="math inline">\(p = 0.15\)</span></p>
+<p><strong>BRP conditions (brief):</strong> Binary (defective or not), fixed <span class="math inline">\(n = 25\)</span>, fixed <span class="math inline">\(p\)</span> under null, independent items.</p>
+<p><strong>Data:</strong> In a sample of 25 items, <span class="math inline">\(x = 3\)</span> were defective.</p>
+<p><strong>Plot:</strong> Bar plot of <span class="math inline">\(x\)</span> vs <span class="math inline">\(\text{dbinom}(x, 25, 0.15)\)</span> for <span class="math inline">\(x = 0, 1, \ldots, 25\)</span>. By hand, add a vertical line at <span class="math inline">\(x = 3\)</span> and shade the bars for <span class="math inline">\(x \leq 3\)</span> (left tail, in the direction of <span class="math inline">\(H_a\)</span>). Example code to produce the unshaded plot (display only):</p>
+<pre><code>n &lt;- 25
+p &lt;- 0.15
+x_vals &lt;- 0:n
+df &lt;- data.frame(x = x_vals, prob = dbinom(x_vals, n, p))
+library(ggplot2)
+ggplot(df, aes(x = x, y = prob)) +
+  geom_col() +
+  labs(x = "x", y = "P(X = x)")</code></pre>
+<p><strong>p-value:</strong> <span class="math inline">\(P(X \leq 3 \mid H_0) = \text{pbinom}(3, 25, 0.15)\)</span> <span class="math inline">\(\approx 0.47\)</span>. Large p-value.</p>
+<p><strong>Conclusion:</strong> Fail to reject <span class="math inline">\(H_0\)</span>. The data are consistent with a 15% defective rate; we do not have evidence that the proportion of defectives from the new supplier is less than 15%.</p>
+<hr>
+</section>
+<section id="example-3" class="level2">
+<h2 class="anchored" data-anchor-id="example-3">Example 3</h2>
+<p><strong>Research question:</strong> Are the two dice fair, in terms of the probability that the sum is 7 or 11? (With fair dice, that probability is <span class="math inline">\(8/36\)</span>: 6 ways to sum to 7 plus 2 ways to sum to 11, out of 36 equally likely outcomes.)</p>
+<p><strong>Parameter:</strong> <span class="math inline">\(p\)</span> = probability that a single roll of two dice gives a sum of 7 or 11.</p>
+<p><strong>Hypotheses:</strong> <span class="math inline">\(H_0: p = 8/36\)</span> vs <span class="math inline">\(H_a: p \neq 8/36\)</span></p>
+<p><span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span> under <span class="math inline">\(H_0\)</span>: <span class="math inline">\(n = 25\)</span> rolls of the two dice, <span class="math inline">\(p = 8/36\)</span> (under the null that the dice are fair).</p>
+<p><strong>BRP conditions (brief):</strong> Binary (sum is 7 or 11, or not), fixed <span class="math inline">\(n = 25\)</span>, fixed <span class="math inline">\(p\)</span> under null, independent rolls.</p>
+<p><strong>Data:</strong> In 25 rolls of the two dice, <span class="math inline">\(x = 2\)</span> times the sum was 7 or 11 (far from the expected <span class="math inline">\(25 \times (8/36) \approx 5.6\)</span> under <span class="math inline">\(H_0\)</span>).</p>
+<p><strong>Plot:</strong> Bar plot of <span class="math inline">\(x\)</span> vs <span class="math inline">\(\text{dbinom}(x, 25, 8/36)\)</span> for <span class="math inline">\(x = 0, 1, \ldots, 25\)</span>. By hand, add a vertical line at <span class="math inline">\(x = 2\)</span> and shade <strong>both</strong> tails: bars for <span class="math inline">\(x \leq 2\)</span> and for <span class="math inline">\(x \geq 9\)</span> (direction of “more extreme than” for a two-sided alternative). Example code to produce the unshaded plot (display only):</p>
+<pre><code>n &lt;- 25
+p &lt;- 8/36
+x_vals &lt;- 0:n
+df &lt;- data.frame(x = x_vals, prob = dbinom(x_vals, n, p))
+library(ggplot2)
+ggplot(df, aes(x = x, y = prob)) +
+  geom_col() +
+  labs(x = "x", y = "P(X = x)")</code></pre>
+<p><strong>p-value:</strong> <span class="math inline">\(P(X \leq 2) + P(X \geq 9)\)</span> under <span class="math inline">\(H_0\)</span>. For example, <code>pbinom(2, 25, 8/36) + (1 - pbinom(8, 25, 8/36))</code> <span class="math inline">\(\approx 0.04\)</span>. Small p-value.</p>
+<p><strong>Conclusion:</strong> Reject <span class="math inline">\(H_0\)</span>. The data are inconsistent with fair dice having probability <span class="math inline">\(8/36\)</span> for sum 7 or 11; we have evidence that <span class="math inline">\(p \neq 8/36\)</span>.</p>
+<hr>
+</section>
+<section id="example-4" class="level2">
+<h2 class="anchored" data-anchor-id="example-4">Example 4</h2>
+<p><strong>Research question:</strong> Do more than 20% of students at our school use the gym at least once per week?</p>
+<p><strong>Parameter:</strong> <span class="math inline">\(p\)</span> = probability that a randomly chosen student uses the gym at least once per week (i.e., the proportion of such students in the population).</p>
+<p><strong>Hypotheses:</strong> <span class="math inline">\(H_0: p = 0.20\)</span> vs <span class="math inline">\(H_a: p &gt; 0.20\)</span></p>
+<p><span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span> under <span class="math inline">\(H_0\)</span>: <span class="math inline">\(n = 25\)</span> students, <span class="math inline">\(p = 0.20\)</span></p>
+<p><strong>BRP conditions (brief):</strong> Binary (uses gym weekly or not), fixed <span class="math inline">\(n = 25\)</span>, fixed <span class="math inline">\(p\)</span> under null, independent students.</p>
+<p><strong>Data:</strong> In a sample of 25 students, <span class="math inline">\(x = 5\)</span> use the gym at least once per week.</p>
+<p><strong>Plot:</strong> Bar plot of <span class="math inline">\(x\)</span> vs <span class="math inline">\(\text{dbinom}(x, 25, 0.20)\)</span> for <span class="math inline">\(x = 0, 1, \ldots, 25\)</span>. By hand, add a vertical line at <span class="math inline">\(x = 5\)</span> and shade the bars for <span class="math inline">\(x \geq 5\)</span> (right tail, in the direction of <span class="math inline">\(H_a\)</span>). Example code to produce the unshaded plot (display only):</p>
+<pre><code>n &lt;- 25
+p &lt;- 0.20
+x_vals &lt;- 0:n
+df &lt;- data.frame(x = x_vals, prob = dbinom(x_vals, n, p))
+library(ggplot2)
+ggplot(df, aes(x = x, y = prob)) +
+  geom_col() +
+  labs(x = "x", y = "P(X = x)")</code></pre>
+<p><strong>p-value:</strong> <span class="math inline">\(P(X \geq 5 \mid H_0) = 1 - P(X \leq 4)\)</span>. For example, <code>1 - pbinom(4, 25, 0.20)</code> <span class="math inline">\(\approx 0.58\)</span>. Large p-value.</p>
+<p><strong>Conclusion:</strong> Fail to reject <span class="math inline">\(H_0\)</span>. The data are consistent with a 20% gym-use rate; we do not have evidence that more than 20% of students use the gym at least once per week.</p>
+<hr>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Example</th>
+<th><span class="math inline">\(H_a\)</span> direction</th>
+<th>Observed <span class="math inline">\(x\)</span></th>
+<th>p-value</th>
+<th>Conclusion</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><span class="math inline">\(p &gt; 0.10\)</span></td>
+<td>6</td>
+<td>Small</td>
+<td>Reject <span class="math inline">\(H_0\)</span></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><span class="math inline">\(p &lt; 0.15\)</span></td>
+<td>3</td>
+<td>Large</td>
+<td>Fail to reject</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><span class="math inline">\(p \neq 8/36\)</span> (two dice, sum 7 or 11)</td>
+<td>2</td>
+<td>Small</td>
+<td>Reject <span class="math inline">\(H_0\)</span></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><span class="math inline">\(p &gt; 0.20\)</span></td>
+<td>5</td>
+<td>Large</td>
+<td>Fail to reject</td>
+</tr>
+</tbody>
+</table>
+<p>In every case, the plot is <span class="math inline">\(x\)</span> vs <span class="math inline">\(\text{dbinom}(x, n, p)\)</span> with no shading in the code; shade the appropriate tail(s) by hand to match <span class="math inline">\(H_a\)</span> and double-check that the region you shaded compared to the total area of the bars corresponds to the size of the p-value relative to 1.</p>
+
+
+<!-- -->
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>Creative Commons Attribution-NonCommercial 4.0 International<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">(View License)</a></div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Lecture 14"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "STAT 109: Introductory Biostatistics"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Lecture 14: Binomial Test — Steps and Examples</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>For each problem, follow these steps:</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>State the research question.</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Define the parameter of interest, $p$, in words.</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>State the null and alternative hypotheses using appropriate symbols.</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>Identify $n$ and the value of $p$ under $H_0$ (for the null distribution).</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>Verify that the 4 conditions of a Binomial Random Process (BRP) are satisfied by the data collection.</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="ss">6.  </span>Assuming the null hypothesis is true, create a plot of $x$ vs $\text{dbinom}(x, n, p)$ (the null distribution), e.g. by hand or with software. Do **not** shade yet — shading will be done by hand in the direction(s) of the alternative.</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="ss">7.  </span>Identify the observed value of $x$ from the dataset.</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="ss">8.  </span>On the plot, add a vertical line at the observed $x$ and shade the bar(s) in the direction(s) of the inequality in $H_a$ (by hand).</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="ss">9.  </span>Compute the **p-value**: the probability of observing data as or more extreme than the observed $x$ in the direction of $H_a$, assuming $H_0$ is true. (For a two-sided $H_a$, use both tails.)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="ss">10. </span>Make a conclusion in context (reject $H_0$ or fail to reject $H_0$, and what that means for the research question).</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## Example 1:</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>**Research question:** Is the proportion of left-handed students at our school higher than the national rate of 10%?</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>**Parameter:** $p$ = probability that a randomly chosen student from our school is left-handed (i.e., the proportion of left-handers in the population we are sampling).</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>**Hypotheses:** $H_0: p = 0.10$ vs $H_a: p &gt; 0.10$</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>$n$ and $p$ under $H_0$: $n = 25$ students, $p = 0.10$</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>**BRP conditions (brief):** Binary (left-handed or not), fixed $n = 25$, fixed $p$ under null, independent students.</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>**Plot:** Create a bar plot of $x$ vs $\text{dbinom}(x, 25, 0.10)$ for $x = 0, 1, \ldots, 25$. Leave unshaded; then by hand add a vertical line at $x = 6$ and shade the bars for $x \geq 6$ (right tail, in the direction of $H_a$). Example code to produce the unshaded plot (display only):</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="in">```         </span></span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="in">n &lt;- 25</span></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="in">p &lt;- 0.10</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a><span class="in">x_vals &lt;- 0:n</span></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="in">df &lt;- data.frame(x = x_vals, prob = dbinom(x_vals, n, p))</span></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a><span class="in">library(ggplot2)</span></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(df, aes(x = x, y = prob)) +</span></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_col() +</span></span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(x = "x", y = "P(X = x)")</span></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>**p-value:** $P(X \geq 6 \mid H_0) = 1 - P(X \leq 5)$. For example, `1 - pbinom(5, 25, 0.10)` **Data:** In a sample of 25 students, $x = 6$ were left-handed.$\approx 0.03$. Small p-value.</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>**Conclusion:** Reject $H_0$. The data are inconsistent with a 10% left-handed rate; we have evidence that the proportion of left-handed students at our school is higher than 10%.</span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="fu">## Example 2</span></span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>**Research question:** Is the proportion of defective items from the new supplier less than 15%?</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>**Parameter:** $p$ = probability that a randomly selected item from the new supplier is defective (i.e., the proportion of defectives in the process).</span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>**Hypotheses:** $H_0: p = 0.15$ vs $H_a: p &lt; 0.15$</span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>$n$ and $p$ under $H_0$: $n = 25$ items, $p = 0.15$</span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>**BRP conditions (brief):** Binary (defective or not), fixed $n = 25$, fixed $p$ under null, independent items.</span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>**Data:** In a sample of 25 items, $x = 3$ were defective.</span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>**Plot:** Bar plot of $x$ vs $\text{dbinom}(x, 25, 0.15)$ for $x = 0, 1, \ldots, 25$. By hand, add a vertical line at $x = 3$ and shade the bars for $x \leq 3$ (left tail, in the direction of $H_a$). Example code to produce the unshaded plot (display only):</span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a><span class="in">```         </span></span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a><span class="in">n &lt;- 25</span></span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a><span class="in">p &lt;- 0.15</span></span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a><span class="in">x_vals &lt;- 0:n</span></span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a><span class="in">df &lt;- data.frame(x = x_vals, prob = dbinom(x_vals, n, p))</span></span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a><span class="in">library(ggplot2)</span></span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(df, aes(x = x, y = prob)) +</span></span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_col() +</span></span>
+<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(x = "x", y = "P(X = x)")</span></span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a>**p-value:** $P(X \leq 3 \mid H_0) = \text{pbinom}(3, 25, 0.15)$ $\approx 0.47$. Large p-value.</span>
+<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a>**Conclusion:** Fail to reject $H_0$. The data are consistent with a 15% defective rate; we do not have evidence that the proportion of defectives from the new supplier is less than 15%.</span>
+<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a><span class="fu">## Example 3</span></span>
+<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a>**Research question:** Are the two dice fair, in terms of the probability that the sum is 7 or 11? (With fair dice, that probability is $8/36$: 6 ways to sum to 7 plus 2 ways to sum to 11, out of 36 equally likely outcomes.)</span>
+<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a>**Parameter:** $p$ = probability that a single roll of two dice gives a sum of 7 or 11.</span>
+<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a>**Hypotheses:** $H_0: p = 8/36$ vs $H_a: p \neq 8/36$</span>
+<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a>$n$ and $p$ under $H_0$: $n = 25$ rolls of the two dice, $p = 8/36$ (under the null that the dice are fair).</span>
+<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a>**BRP conditions (brief):** Binary (sum is 7 or 11, or not), fixed $n = 25$, fixed $p$ under null, independent rolls.</span>
+<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a>**Data:** In 25 rolls of the two dice, $x = 2$ times the sum was 7 or 11 (far from the expected $25 \times (8/36) \approx 5.6$ under $H_0$).</span>
+<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a>**Plot:** Bar plot of $x$ vs $\text{dbinom}(x, 25, 8/36)$ for $x = 0, 1, \ldots, 25$. By hand, add a vertical line at $x = 2$ and shade **both** tails: bars for $x \leq 2$ and for $x \geq 9$ (direction of "more extreme than" for a two-sided alternative). Example code to produce the unshaded plot (display only):</span>
+<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a><span class="in">```         </span></span>
+<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a><span class="in">n &lt;- 25</span></span>
+<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a><span class="in">p &lt;- 8/36</span></span>
+<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a><span class="in">x_vals &lt;- 0:n</span></span>
+<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a><span class="in">df &lt;- data.frame(x = x_vals, prob = dbinom(x_vals, n, p))</span></span>
+<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a><span class="in">library(ggplot2)</span></span>
+<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(df, aes(x = x, y = prob)) +</span></span>
+<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_col() +</span></span>
+<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(x = "x", y = "P(X = x)")</span></span>
+<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a>**p-value:** $P(X \leq 2) + P(X \geq 9)$ under $H_0$. For example, <span class="in">`pbinom(2, 25, 8/36) + (1 - pbinom(8, 25, 8/36))`</span> $\approx 0.04$. Small p-value.</span>
+<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a>**Conclusion:** Reject $H_0$. The data are inconsistent with fair dice having probability $8/36$ for sum 7 or 11; we have evidence that $p \neq 8/36$.</span>
+<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a><span class="fu">## Example 4</span></span>
+<span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a>**Research question:** Do more than 20% of students at our school use the gym at least once per week?</span>
+<span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a>**Parameter:** $p$ = probability that a randomly chosen student uses the gym at least once per week (i.e., the proportion of such students in the population).</span>
+<span id="cb5-125"><a href="#cb5-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-126"><a href="#cb5-126" aria-hidden="true" tabindex="-1"></a>**Hypotheses:** $H_0: p = 0.20$ vs $H_a: p &gt; 0.20$</span>
+<span id="cb5-127"><a href="#cb5-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-128"><a href="#cb5-128" aria-hidden="true" tabindex="-1"></a>$n$ and $p$ under $H_0$: $n = 25$ students, $p = 0.20$</span>
+<span id="cb5-129"><a href="#cb5-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-130"><a href="#cb5-130" aria-hidden="true" tabindex="-1"></a>**BRP conditions (brief):** Binary (uses gym weekly or not), fixed $n = 25$, fixed $p$ under null, independent students.</span>
+<span id="cb5-131"><a href="#cb5-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-132"><a href="#cb5-132" aria-hidden="true" tabindex="-1"></a>**Data:** In a sample of 25 students, $x = 5$ use the gym at least once per week.</span>
+<span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a>**Plot:** Bar plot of $x$ vs $\text{dbinom}(x, 25, 0.20)$ for $x = 0, 1, \ldots, 25$. By hand, add a vertical line at $x = 5$ and shade the bars for $x \geq 5$ (right tail, in the direction of $H_a$). Example code to produce the unshaded plot (display only):</span>
+<span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a><span class="in">```         </span></span>
+<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a><span class="in">n &lt;- 25</span></span>
+<span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a><span class="in">p &lt;- 0.20</span></span>
+<span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a><span class="in">x_vals &lt;- 0:n</span></span>
+<span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a><span class="in">df &lt;- data.frame(x = x_vals, prob = dbinom(x_vals, n, p))</span></span>
+<span id="cb5-141"><a href="#cb5-141" aria-hidden="true" tabindex="-1"></a><span class="in">library(ggplot2)</span></span>
+<span id="cb5-142"><a href="#cb5-142" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(df, aes(x = x, y = prob)) +</span></span>
+<span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_col() +</span></span>
+<span id="cb5-144"><a href="#cb5-144" aria-hidden="true" tabindex="-1"></a><span class="in">  labs(x = "x", y = "P(X = x)")</span></span>
+<span id="cb5-145"><a href="#cb5-145" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-146"><a href="#cb5-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-147"><a href="#cb5-147" aria-hidden="true" tabindex="-1"></a>**p-value:** $P(X \geq 5 \mid H_0) = 1 - P(X \leq 4)$. For example, <span class="in">`1 - pbinom(4, 25, 0.20)`</span> $\approx 0.58$. Large p-value.</span>
+<span id="cb5-148"><a href="#cb5-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-149"><a href="#cb5-149" aria-hidden="true" tabindex="-1"></a>**Conclusion:** Fail to reject $H_0$. The data are consistent with a 20% gym-use rate; we do not have evidence that more than 20% of students use the gym at least once per week.</span>
+<span id="cb5-150"><a href="#cb5-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-151"><a href="#cb5-151" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb5-152"><a href="#cb5-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-153"><a href="#cb5-153" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary</span></span>
+<span id="cb5-154"><a href="#cb5-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-155"><a href="#cb5-155" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Example <span class="pp">|</span> $H_a$ direction <span class="pp">|</span> Observed $x$ <span class="pp">|</span> p-value <span class="pp">|</span> Conclusion <span class="pp">|</span></span>
+<span id="cb5-156"><a href="#cb5-156" aria-hidden="true" tabindex="-1"></a><span class="pp">|--------------|--------------|--------------|--------------|--------------|</span></span>
+<span id="cb5-157"><a href="#cb5-157" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 1 <span class="pp">|</span> $p &gt; 0.10$ <span class="pp">|</span> 6 <span class="pp">|</span> Small <span class="pp">|</span> Reject $H_0$ <span class="pp">|</span></span>
+<span id="cb5-158"><a href="#cb5-158" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 2 <span class="pp">|</span> $p &lt; 0.15$ <span class="pp">|</span> 3 <span class="pp">|</span> Large <span class="pp">|</span> Fail to reject <span class="pp">|</span></span>
+<span id="cb5-159"><a href="#cb5-159" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 3 <span class="pp">|</span> $p \neq 8/36$ (two dice, sum 7 or 11) <span class="pp">|</span> 2 <span class="pp">|</span> Small <span class="pp">|</span> Reject $H_0$ <span class="pp">|</span></span>
+<span id="cb5-160"><a href="#cb5-160" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 4 <span class="pp">|</span> $p &gt; 0.20$ <span class="pp">|</span> 5 <span class="pp">|</span> Large <span class="pp">|</span> Fail to reject <span class="pp">|</span></span>
+<span id="cb5-161"><a href="#cb5-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-162"><a href="#cb5-162" aria-hidden="true" tabindex="-1"></a>In every case, the plot is $x$ vs $\text{dbinom}(x, n, p)$ with no shading in the code; shade the appropriate tail(s) by hand to match $H_a$ and double-check that the region you shaded compared to the total area of the bars corresponds to the size of the p-value relative to 1.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

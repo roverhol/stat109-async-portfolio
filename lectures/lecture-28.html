@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lecture 28 – STAT 109 - Introductory Biostatistics</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-bba5ebae505b5c03f3f0d8040a416a6b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/css/humboldt-theme.css">
+</head>
+
+<body class="floating quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#lecture-28" id="toc-lecture-28" class="nav-link active" data-scroll-target="#lecture-28">Lecture 28</a>
+  <ul class="collapse">
+  <li><a href="#observational-studies-and-confounding" id="toc-observational-studies-and-confounding" class="nav-link" data-scroll-target="#observational-studies-and-confounding">Observational studies and confounding</a>
+  <ul class="collapse">
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  </ul></li>
+  <li><a href="#causal-questions-explanatory-and-response-variables" id="toc-causal-questions-explanatory-and-response-variables" class="nav-link" data-scroll-target="#causal-questions-explanatory-and-response-variables">Causal questions, explanatory and response variables</a></li>
+  <li><a href="#observational-studies" id="toc-observational-studies" class="nav-link" data-scroll-target="#observational-studies">Observational studies</a></li>
+  <li><a href="#which-university-is-better" id="toc-which-university-is-better" class="nav-link" data-scroll-target="#which-university-is-better">Which university is better?</a></li>
+  <li><a href="#crude-pass-rates" id="toc-crude-pass-rates" class="nav-link" data-scroll-target="#crude-pass-rates">Crude pass rates</a></li>
+  <li><a href="#more-students-passedbut-is-it-a-fair-comparison" id="toc-more-students-passedbut-is-it-a-fair-comparison" class="nav-link" data-scroll-target="#more-students-passedbut-is-it-a-fair-comparison">More students passed—but is it a fair comparison?</a></li>
+  <li><a href="#the-table-above-compares-observational-groups-students-chose-or-landed-at-a-university-the-chancellor-did-not-randomly-assign-them.-a-higher-crude-pass-rate-at-wild-horse-does-not-by-itself-answer-the-causal-question-does-attending-wild-horse-cause-a-higher-chance-of-passing-than-attending-timber-ridge-we-still-have-to-worry-about-chance-and-confounding-as-possible-explanations." id="toc-the-table-above-compares-observational-groups-students-chose-or-landed-at-a-university-the-chancellor-did-not-randomly-assign-them.-a-higher-crude-pass-rate-at-wild-horse-does-not-by-itself-answer-the-causal-question-does-attending-wild-horse-cause-a-higher-chance-of-passing-than-attending-timber-ridge-we-still-have-to-worry-about-chance-and-confounding-as-possible-explanations." class="nav-link" data-scroll-target="#the-table-above-compares-observational-groups-students-chose-or-landed-at-a-university-the-chancellor-did-not-randomly-assign-them.-a-higher-crude-pass-rate-at-wild-horse-does-not-by-itself-answer-the-causal-question-does-attending-wild-horse-cause-a-higher-chance-of-passing-than-attending-timber-ridge-we-still-have-to-worry-about-chance-and-confounding-as-possible-explanations.">The table above compares <strong>observational</strong> groups: students <strong>chose</strong> (or landed at) a university; the Chancellor did <strong>not</strong> randomly assign them. A higher <strong>crude</strong> pass rate at Wild Horse does <strong>not</strong> by itself answer the <strong>causal</strong> question: <em>Does attending Wild Horse <strong>cause</strong> a higher chance of passing than attending Timber Ridge?</em> We still have to worry about <strong>chance</strong> and <strong>confounding</strong> as possible explanations.</a></li>
+  <li><a href="#if-we-know-who-took-ap-calculus-in-high-school" id="toc-if-we-know-who-took-ap-calculus-in-high-school" class="nav-link" data-scroll-target="#if-we-know-who-took-ap-calculus-in-high-school">If we know who took AP Calculus in high school</a></li>
+  <li><a href="#if-we-know-who-used-the-campus-tutoring-center" id="toc-if-we-know-who-used-the-campus-tutoring-center" class="nav-link" data-scroll-target="#if-we-know-who-used-the-campus-tutoring-center">If we know who used the campus tutoring center</a></li>
+  <li><a href="#should-we-adjust-for-tutoring" id="toc-should-we-adjust-for-tutoring" class="nav-link" data-scroll-target="#should-we-adjust-for-tutoring">Should we “adjust” for tutoring?</a></li>
+  <li><a href="#a-tool-for-thinking-clearly-about-when-to-act" id="toc-a-tool-for-thinking-clearly-about-when-to-act" class="nav-link" data-scroll-target="#a-tool-for-thinking-clearly-about-when-to-act">A tool for thinking clearly about when to act</a></li>
+  <li><a href="#confounding-variable-definition" id="toc-confounding-variable-definition" class="nav-link" data-scroll-target="#confounding-variable-definition">Confounding variable (definition)</a></li>
+  <li><a href="#adjustment-sets-and-the-backdoor-idea" id="toc-adjustment-sets-and-the-backdoor-idea" class="nav-link" data-scroll-target="#adjustment-sets-and-the-backdoor-idea">Adjustment sets and the backdoor idea</a></li>
+  <li><a href="#if-you-believe-the-diagram-which-subclassification-is-appropriate" id="toc-if-you-believe-the-diagram-which-subclassification-is-appropriate" class="nav-link" data-scroll-target="#if-you-believe-the-diagram-which-subclassification-is-appropriate">If you believe the diagram, which subclassification is appropriate?</a></li>
+  <li><a href="#do-you-believe-the-diagram" id="toc-do-you-believe-the-diagram" class="nav-link" data-scroll-target="#do-you-believe-the-diagram">Do you believe the diagram?</a></li>
+  <li><a href="#finding-an-adjustment-set-by-hand-or-with-software" id="toc-finding-an-adjustment-set-by-hand-or-with-software" class="nav-link" data-scroll-target="#finding-an-adjustment-set-by-hand-or-with-software">Finding an adjustment set: by hand or with software</a></li>
+  <li><a href="#so-which-university-is-better" id="toc-so-which-university-is-better" class="nav-link" data-scroll-target="#so-which-university-is-better">So which university is better?</a></li>
+  <li><a href="#ruling-out-chance-not-confounding" id="toc-ruling-out-chance-not-confounding" class="nav-link" data-scroll-target="#ruling-out-chance-not-confounding">Ruling out <strong>chance</strong> (not confounding)</a>
+  <ul class="collapse">
+  <li><a href="#a.-randomization-based-nonparametric-inference-rossmanchance" id="toc-a.-randomization-based-nonparametric-inference-rossmanchance" class="nav-link" data-scroll-target="#a.-randomization-based-nonparametric-inference-rossmanchance">A. Randomization-based (nonparametric) inference — Rossman–Chance</a></li>
+  <li><a href="#b.-large-sample-tests-for-two-proportions-theory-based-p-values-in-r" id="toc-b.-large-sample-tests-for-two-proportions-theory-based-p-values-in-r" class="nav-link" data-scroll-target="#b.-large-sample-tests-for-two-proportions-theory-based-p-values-in-r">B. Large-sample tests for two proportions — theory-based <em>p</em>-values in R</a></li>
+  <li><a href="#stacked-bar-chart-lecture-27" id="toc-stacked-bar-chart-lecture-27" class="nav-link" data-scroll-target="#stacked-bar-chart-lecture-27">Stacked bar chart (Lecture 27)</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lecture-28.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Lecture 28</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<p class="subtitle lead">STAT 109: Introductory Biostatistics</p>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-right">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="lecture-28" class="level1">
+<h1>Lecture 28</h1>
+<section id="observational-studies-and-confounding" class="level2">
+<h2 class="anchored" data-anchor-id="observational-studies-and-confounding">Observational studies and confounding</h2>
+<p>This lecture demostrate how to do a fair comparison of two groups using the <strong>observational</strong> study design: the groups exist before you analyze them (which university, sleep habits in the wild, nightlight use, etc.). Lecture 27 gave you tables and plots for two categorical variables; here we connect those tools to <strong>causal</strong> questions, <strong>three</strong> competing explanations for any difference, and <strong>Causal Directed acyclic graphs (DAGs)</strong> and <strong>subclassification</strong> tell you what to measure and how to compare fairly within levels of a confounder when that is possible.</p>
+<section id="learning-objectives" class="level3">
+<h3 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h3>
+<ul>
+<li>Recognize an <strong>observational</strong> study design and list three explanations for a observed difference between two groups (<strong>causation</strong>, <strong>chance</strong>, <strong>confounding</strong>).</li>
+<li>Define a <strong>confounding variable</strong> both in words and in a DAG.</li>
+<li>Use the method of <strong>subclassification</strong> to adjust a group comparison for a confounding variable to get a fairer comparison.</li>
+<li>Perform a large-sample version of a hypothesis test or confidence interval for <strong>two proportions</strong> using <strong><code>prop.test()</code></strong> to elimiate chance as an explanation for the observed difference and estimate the causal effect of group membership on the effect of interest.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="causal-questions-explanatory-and-response-variables" class="level2">
+<h2 class="anchored" data-anchor-id="causal-questions-explanatory-and-response-variables">Causal questions, explanatory and response variables</h2>
+<p>A <strong>causal</strong> question asks about the <strong>effect</strong> of something. Name:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 44%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Role</th>
+<th>Other names</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Response</strong></td>
+<td>outcome, dependent</td>
+<td>The <strong>effect</strong> you want to compare.</td>
+</tr>
+<tr class="even">
+<td><strong>Explanatory</strong></td>
+<td>treatment, exposure</td>
+<td>The <strong>potential cause</strong> or group label.</td>
+</tr>
+</tbody>
+</table>
+<p>When writing a research question that is causal, it is best practice to:</p>
+<ol type="1">
+<li><p>Define variables precisely: State how each variable is measured and any cutoffs or rules (e.g.&nbsp;pass/fail, deprived vs unrestricted sleep, income in dollars). Vague labels make design and analysis impossible.</p></li>
+<li><p>Identify the observational units: The unit is the entity that gets a value for each variable—often one person at one time point for this unit (e.g.&nbsp;one student in one calculus term). Your dataset is usually one row per observational unit.</p></li>
+<li><p>If the response is numerical, you typically summarize comparison of two groups with means (or medians) and a Welch two-sample <em>t</em>-test** or randomization test on the difference in means (Lecture 29, Lecture 30). If the response is binary (or you reduce an outcome to two categories), you compare proportions or rates and use <code>prop.test</code> / <code>chisq.test</code> or a chi-square shuffle applet (this lecture, Lecture 30).</p></li>
+</ol>
+<p>Note: <strong>Project 4</strong> will asks you to <strong>plan</strong> a study to answer a causal question from one of your classamtes.</p>
+<hr>
+</section>
+<section id="observational-studies" class="level2">
+<h2 class="anchored" data-anchor-id="observational-studies">Observational studies</h2>
+<p>In an <strong>observational study</strong>, researchers <strong>record</strong> which group each unit is in; they do <strong>not</strong> <strong>randomly assign</strong> the explanatory variable. Examples: students <strong>choose</strong> a university; parents <strong>choose</strong> nightlight use for their children; people decide what to eat for lunch.</p>
+<p>A <strong>difference</strong> in sample proportions or means from an observational study can reflect:</p>
+<ol type="1">
+<li>A <strong>Causal effect</strong> of the explanatory variable on the response.</li>
+<li><strong>Chance</strong> (random variation—even numbers of heads from fair coins differ in 100 flips).</li>
+<li><strong>Confounding</strong>: a third variable influenes both the explanatory and response variables and mixes up relationship between the these two variables,making a fair comparison difficult (<strong>internal validity</strong> is weak for causation until you address it).</li>
+</ol>
+<p><strong>Lecture 29</strong> covers <strong>RCTs</strong>, where <strong>random assignment</strong> is used to <strong>balance</strong> confounders <strong>in expectation</strong> and support <strong>causal</strong> conclusions about the assigned treatment (with the usual caveats).</p>
+<p>Students often confuse <strong>random assignment</strong> (group assignment within the sample) with <strong>random sampling</strong> (selection of individuals from a population): both are useful, but for different goals. Random assignment is used to adjust for confounding between the groups, making a comparison between the groups more fair. Random sampling is used to elimated bias when generalizing from the study data back to a larger population.</p>
+<hr>
+</section>
+<section id="which-university-is-better" class="level2">
+<h2 class="anchored" data-anchor-id="which-university-is-better">Which university is better?</h2>
+<p>Suppose a certain state has two polytechnic universities and the Chancellor’s Office is trying to decide which one is doing a better job teaching <strong>calculus</strong> to <strong>incoming freshmen</strong>.</p>
+<p><em>This example is a modification of a story in Pearl, Judea, and Dana Mackenzie, <strong>The Book of Why: The New Science of Cause and Effect</strong> (Basic Books, 2018).</em></p>
+<hr>
+</section>
+<section id="crude-pass-rates" class="level2">
+<h2 class="anchored" data-anchor-id="crude-pass-rates">Crude pass rates</h2>
+<p>Both universities have a calculus class of <strong>200</strong> students. The number (and percentage) of students who <strong>passed</strong> is:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Passed calculus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Timber Ridge</strong></td>
+<td>150/200 (75%)</td>
+</tr>
+<tr class="even">
+<td><strong>Wild Horse</strong></td>
+<td>154/200 (77%)</td>
+</tr>
+</tbody>
+</table>
+<p>Wild Horse has <strong>more students who passed</strong> in this cohort (154 vs 150).</p>
+<hr>
+</section>
+<section id="more-students-passedbut-is-it-a-fair-comparison" class="level2">
+<h2 class="anchored" data-anchor-id="more-students-passedbut-is-it-a-fair-comparison">More students passed—but is it a fair comparison?</h2>
+</section>
+<section id="the-table-above-compares-observational-groups-students-chose-or-landed-at-a-university-the-chancellor-did-not-randomly-assign-them.-a-higher-crude-pass-rate-at-wild-horse-does-not-by-itself-answer-the-causal-question-does-attending-wild-horse-cause-a-higher-chance-of-passing-than-attending-timber-ridge-we-still-have-to-worry-about-chance-and-confounding-as-possible-explanations." class="level2">
+<h2 class="anchored" data-anchor-id="the-table-above-compares-observational-groups-students-chose-or-landed-at-a-university-the-chancellor-did-not-randomly-assign-them.-a-higher-crude-pass-rate-at-wild-horse-does-not-by-itself-answer-the-causal-question-does-attending-wild-horse-cause-a-higher-chance-of-passing-than-attending-timber-ridge-we-still-have-to-worry-about-chance-and-confounding-as-possible-explanations.">The table above compares <strong>observational</strong> groups: students <strong>chose</strong> (or landed at) a university; the Chancellor did <strong>not</strong> randomly assign them. A higher <strong>crude</strong> pass rate at Wild Horse does <strong>not</strong> by itself answer the <strong>causal</strong> question: <em>Does attending Wild Horse <strong>cause</strong> a higher chance of passing than attending Timber Ridge?</em> We still have to worry about <strong>chance</strong> and <strong>confounding</strong> as possible explanations.</h2>
+</section>
+<section id="if-we-know-who-took-ap-calculus-in-high-school" class="level2">
+<h2 class="anchored" data-anchor-id="if-we-know-who-took-ap-calculus-in-high-school">If we know who took AP Calculus in high school</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>AP calculus</th>
+<th>No AP calculus</th>
+<th>Combined</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Timber Ridge</strong></td>
+<td>45/50 (90%)</td>
+<td>105/150 (70%)</td>
+<td>150/200 (75%)</td>
+</tr>
+<tr class="even">
+<td><strong>Wild Horse</strong></td>
+<td>136/170 (80%)</td>
+<td>18/30 (60%)</td>
+<td>154/200 (77%)</td>
+</tr>
+</tbody>
+</table>
+<p>Each cell shows <strong>number who passed</strong> / <strong>number of students</strong> in that cell.</p>
+<p><strong>Read down each column</strong> (holding preparation fixed):</p>
+<ul>
+<li>Among students <strong>without</strong> AP calculus in high school, <strong>Timber Ridge</strong> has the higher pass rate (70% vs 60%).</li>
+<li>Among students <strong>with</strong> AP calculus, <strong>Timber Ridge</strong> again has the higher pass rate (90% vs 80%).</li>
+</ul>
+<p>So <strong>within</strong> each preparation level, Timber Ridge does better.</p>
+<hr>
+</section>
+<section id="if-we-know-who-used-the-campus-tutoring-center" class="level2">
+<h2 class="anchored" data-anchor-id="if-we-know-who-used-the-campus-tutoring-center">If we know who used the campus tutoring center</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Used tutoring center on campus</th>
+<th>Did not use tutoring center</th>
+<th>Combined</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Timber Ridge</strong></td>
+<td>86/120 (71%)</td>
+<td>64/80 (80%)</td>
+<td>150/200 (75%)</td>
+</tr>
+<tr class="even">
+<td><strong>Wild Horse</strong></td>
+<td>65/90 (72%)</td>
+<td>89/110 (81%)</td>
+<td>154/200 (77%)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Within</strong> “did not use tutoring,” Wild Horse’s pass rate is slightly higher (81% vs 80%). <strong>Within</strong> “used tutoring,” Wild Horse is also slightly higher (72% vs 71%). But does this breakdown make a fair comparison between the two universities?</p>
+<hr>
+</section>
+<section id="should-we-adjust-for-tutoring" class="level2">
+<h2 class="anchored" data-anchor-id="should-we-adjust-for-tutoring">Should we “adjust” for tutoring?</h2>
+<p>We should not treat the tutoring breakdown as the right way to fairly compare the causal effect of <strong>which university</strong> a student attends when tutoring centers are part of what the university provides. If we do breakdown the rates by tutoring or not, we’d remove part of how the university affects success: the tutoring center is on the causal pathway from university to passing, not merely a pre-enrollment mix of students like AP preparation in high school.</p>
+<hr>
+</section>
+<section id="a-tool-for-thinking-clearly-about-when-to-act" class="level2">
+<h2 class="anchored" data-anchor-id="a-tool-for-thinking-clearly-about-when-to-act">A tool for thinking clearly about when to act</h2>
+<p>When people see tables like these (even faculty audiences), votes are often split on “which school is better.” Causal DAGs are an easy way to see that AP calculus behaves like a confounder you may want to condition on for a fairer comparison of universities, while tutoring center use is not the same kind of adjustment target if tutoring is part of the university’s effect.</p>
+<hr>
+</section>
+<section id="confounding-variable-definition" class="level2">
+<h2 class="anchored" data-anchor-id="confounding-variable-definition">Confounding variable (definition)</h2>
+<p>A <strong>confounder</strong> (for the effect of explanatory variable <span class="math inline">\(X\)</span> on response <span class="math inline">\(Y\)</span>) is a variable that influes both** <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p>
+<p>Example: <strong>AP calculus</strong> in the story above confounds <strong>university</strong> and <strong>passing</strong> because it influenes <strong>both</strong> where students enroll and how likely they are to pass.</p>
+<p>Example: <strong>Nightlight and myopia</strong>: genetics and parental myopia may confound nightlight use and child myopia.</p>
+<hr>
+</section>
+<section id="adjustment-sets-and-the-backdoor-idea" class="level2">
+<h2 class="anchored" data-anchor-id="adjustment-sets-and-the-backdoor-idea">Adjustment sets and the backdoor idea</h2>
+<p><strong>DAG recap.</strong> <strong>Nodes</strong> = variables. <strong>Directed edge</strong> <span class="math inline">\(A \rightarrow B\)</span> = “<span class="math inline">\(A\)</span> is posited to help cause <span class="math inline">\(B\)</span> in this simplified story.” <strong>Acyclic</strong> = no directed cycles.</p>
+<p><strong>Backdoor path (informal definition).</strong> For the causal effect of <strong>university</strong> <span class="math inline">\(U\)</span> on <strong>passing</strong> <span class="math inline">\(P\)</span>, a <strong>backdoor</strong> path is a non-causal route that “leaks” association into the crude <span class="math inline">\(U\)</span>–<span class="math inline">\(P\)</span> link—e.g.&nbsp;<span class="math inline">\(U \leftarrow A \rightarrow P\)</span> when <span class="math inline">\(A\)</span> is <strong>AP calculus</strong>.</p>
+<p>An <strong>adjustment set</strong> (backdoor adjustment, introductory version) is a set of variables you <strong>condition</strong> on (here, mainly <strong>subclassification</strong>: compare universities <strong>within</strong> levels of <span class="math inline">\(A\)</span>) so that, <strong>if</strong> the DAG is correct and other assumptions hold, the <strong>conditional</strong> comparison is <strong>less biased</strong> for the effect of <span class="math inline">\(U\)</span> on <span class="math inline">\(P\)</span>.</p>
+<p>The figure below is a <strong>DAGitty</strong> graph for this teaching example (university, preparation, tutoring, passing, and related variables as you drew them in class). Use <a href="https://dagitty.net/"><strong>DAGitty</strong></a> to reopen the model and highlight <strong>adjustment sets</strong> under your assumptions.</p>
+<ul>
+<li><strong>AP calculus</strong> (or analogous preparation) typically sits on a <strong>backdoor</strong> path into the crude university–pass association: <span class="math inline">\(U \leftarrow \text{AP} \rightarrow P\)</span>. <strong>Conditioning on</strong> AP (the <strong>AP / no AP</strong> subtables) <strong>blocks</strong> that path.</li>
+<li><strong>Tutoring center use</strong> is <strong>downstream</strong> of <strong>university</strong> on a <strong>path</strong> to <strong>passing</strong> in the story where the center is part of what the university provides. <strong>Conditioning on</strong> tutoring can then <strong>block</strong> part of the <strong>total effect</strong> of university you want to describe when the policy question is the <strong>whole package</strong> at each school.</li>
+</ul>
+<div class="cell" data-layout-align="default">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  A[AP calculus in HS] --&gt; U[University]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  A --&gt; P[Pass calculus]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  U --&gt; P</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A[AP calculus in HS] --&gt; U[University]
+  A --&gt; P[Pass calculus]
+  U --&gt; P
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  U2[University] --&gt; T[Tutoring center use]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  U2 --&gt; P2[Pass calculus]</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  T --&gt; P2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  U2[University] --&gt; T[Tutoring center use]
+  U2 --&gt; P2[Pass calculus]
+  T --&gt; P2
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="if-you-believe-the-diagram-which-subclassification-is-appropriate" class="level2">
+<h2 class="anchored" data-anchor-id="if-you-believe-the-diagram-which-subclassification-is-appropriate">If you believe the diagram, which subclassification is appropriate?</h2>
+<p>Under the <strong>AP</strong> DAG, the appropriate breakdown for comparing universities on pass rates while addressing that backdoor is the AP vs no AP table—not the tutoring table used as if it were the same kind of confounder.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>AP calculus</th>
+<th>No AP calculus</th>
+<th>Combined</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Timber Ridge</strong></td>
+<td>45/50 (90%)</td>
+<td>105/150 (70%)</td>
+<td>150/200 (75%)</td>
+</tr>
+<tr class="even">
+<td><strong>Wild Horse</strong></td>
+<td>136/170 (80%)</td>
+<td>18/30 (60%)</td>
+<td>154/200 (77%)</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 21%">
+<col style="width: 31%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Used tutoring</th>
+<th>Did not use tutoring</th>
+<th>Combined</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Timber Ridge</strong></td>
+<td>86/120 (71%)</td>
+<td>64/80 (80%)</td>
+<td>150/200 (75%)</td>
+</tr>
+<tr class="even">
+<td><strong>Wild Horse</strong></td>
+<td>65/90 (72%)</td>
+<td>89/110 (81%)</td>
+<td>154/200 (77%)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="do-you-believe-the-diagram" class="level2">
+<h2 class="anchored" data-anchor-id="do-you-believe-the-diagram">Do you believe the diagram?</h2>
+<p>Before adjusting, ask: <strong>Did we include every variable that needs to be in the story</strong>, that is, every common cause or fork that links <strong>university</strong>, <strong>passing</strong>, and other measured variables? <strong>Residual confounding</strong> from <strong>unmeasured</strong> variables is always possible.</p>
+<hr>
+</section>
+<section id="finding-an-adjustment-set-by-hand-or-with-software" class="level2">
+<h2 class="anchored" data-anchor-id="finding-an-adjustment-set-by-hand-or-with-software">Finding an adjustment set: by hand or with software</h2>
+<p>You can <strong>trace</strong> backdoor paths on the board and list a set of variables to <strong>condition</strong> on, or use <a href="https://dagitty.net/"><strong>DAGitty</strong></a> under an <strong>assumed</strong> graph to suggest <strong>adjustment sets</strong>.</p>
+<hr>
+</section>
+<section id="so-which-university-is-better" class="level2">
+<h2 class="anchored" data-anchor-id="so-which-university-is-better">So which university is better?</h2>
+<p>To make a <strong>fairer</strong> comparison of <strong>calculus passage rates</strong> across universities—<strong>if</strong> you accept a DAG like the one above (and usual positivity / correct functional-form ideas we skip in this intro), we would want data on <strong>student motivation</strong>, <strong>socioeconomic status (SES)</strong>, and <strong>AP calculus</strong> (and <strong>university</strong> and <strong>pass/fail</strong>), then compare universities within levels of the variables in the adjustment set you defend. <strong>AP alone</strong> is already enough to change the story in this toy example; thinking about the data we don’t have on <strong>motivation</strong> and <strong>SES</strong> reminds us that real policy questions usually need datasets with more variables.</p>
+<hr>
+</section>
+<section id="ruling-out-chance-not-confounding" class="level2">
+<h2 class="anchored" data-anchor-id="ruling-out-chance-not-confounding">Ruling out <strong>chance</strong> (not confounding)</h2>
+<p>Hypothesis tests and p-values address explanation <strong>(2)</strong> only: could the data look like this by chance alone? That is, what would we expect to see if there were no causation or confounding model? A p-value does <strong>not</strong>, by itself, choose us choose between <strong>(1)</strong> causation and <strong>(3)</strong> confounding.</p>
+<section id="a.-randomization-based-nonparametric-inference-rossmanchance" class="level3">
+<h3 class="anchored" data-anchor-id="a.-randomization-based-nonparametric-inference-rossmanchance">A. Randomization-based (nonparametric) inference — Rossman–Chance</h3>
+<p>From the <a href="http://www.rossmanchance.com/applets.html">applet collection</a>:</p>
+<ul>
+<li><a href="http://www.rossmanchance.com/applets/randomization20/Randomization.html"><strong>Randomization test: two groups, quantitative</strong></a> — shuffle <strong>group labels</strong>; build a null distribution of the <strong>difference in means</strong> (or medians if the applet allows). <strong>No normality</strong> assumption for the <strong>randomization</strong> <em>p</em>-value; the logic is “<strong>if</strong> treatment labels were arbitrary, how often would we see a gap this big?”</li>
+<li><a href="http://www.rossmanchance.com/applets/ChisqShuffle.htm"><strong>Randomization: categorical / chi-square shuffle</strong></a> — shuffles consistent with <strong>testing no association</strong> in a table (see also <a href="http://www.rossmanchance.com/applets/ChiSqShuffle.html?dolphins=1"><strong>Dolphin study</strong></a>).</li>
+<li><a href="http://www.rossmanchance.com/applets/TwowaySim/TwowaySim.html"><strong>Two-way table simulation</strong></a> — builds intuition for <strong>counts</strong> under independence.</li>
+<li><a href="http://www.rossmanchance.com/applets/GuessPvalue.html"><strong>Guess the p-value</strong></a> — links <strong>tail areas</strong> to strength of evidence.</li>
+</ul>
+</section>
+<section id="b.-large-sample-tests-for-two-proportions-theory-based-p-values-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="b.-large-sample-tests-for-two-proportions-theory-based-p-values-in-r">B. Large-sample tests for two proportions — theory-based <em>p</em>-values in R</h3>
+<p>For <strong>binary</strong> outcomes (pass/fail, infected or not) compared across <strong>two</strong> groups, common large-sample tools are <strong><code>prop.test()</code></strong> (equivalent 2×2 logic to a <strong>z</strong>-test for two proportions) and <strong><code>chisq.test()</code></strong> on the <strong>contingency table</strong> of <strong>counts</strong>. <strong>Conditions</strong>:</p>
+<ol type="1">
+<li><strong>Independent</strong> observations.</li>
+<li><strong>Large expected counts</strong> under the null: typically <strong>all expected cell counts ≥ 5</strong> for Pearson’s chi-squared; inspect <strong><code>$expected</code></strong>. If violated, use <strong><code>simulate.p.value = TRUE</code></strong></li>
+</ol>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"tidyverse"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>, <span class="at">repos =</span> <span class="st">"https://cloud.r-project.org"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>uni_crude <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">university =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Timber Ridge"</span>, <span class="st">"Wild Horse"</span>), <span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">200</span>)),</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">passed =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>), <span class="fu">c</span>(<span class="dv">150</span>, <span class="dv">50</span>)), <span class="fu">rep</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>), <span class="fu">c</span>(<span class="dv">154</span>, <span class="dv">46</span>)))</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>tab_uni <span class="ot">&lt;-</span> <span class="fu">table</span>(uni_crude<span class="sc">$</span>university, uni_crude<span class="sc">$</span>passed)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>tab_uni</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>              
+               FALSE TRUE
+  Timber Ridge    50  150
+  Wild Horse      46  154</code></pre>
+</div>
+</div>
+<p><strong>Two-sample proportion test</strong>:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">150</span>, <span class="dv">154</span>), <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">200</span>), <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    2-sample test for equality of proportions without continuity correction
+
+data:  c(150, 154) out of c(200, 200)
+X-squared = 0.2193, df = 1, p-value = 0.6396
+alternative hypothesis: two.sided
+95 percent confidence interval:
+ -0.10368381  0.06368381
+sample estimates:
+prop 1 prop 2 
+  0.75   0.77 </code></pre>
+</div>
+</div>
+<p><strong>Chi-squared test of independence</strong> (check expected counts first):</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>cq <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(tab_uni)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>cq<span class="sc">$</span>expected</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>              
+               FALSE TRUE
+  Timber Ridge    48  152
+  Wild Horse      48  152</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cq</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's Chi-squared test with Yates' continuity correction
+
+data:  tab_uni
+X-squared = 0.12336, df = 1, p-value = 0.7254</code></pre>
+</div>
+</div>
+</section>
+<section id="stacked-bar-chart-lecture-27" class="level3">
+<h3 class="anchored" data-anchor-id="stacked-bar-chart-lecture-27">Stacked bar chart (Lecture 27)</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>uni_crude <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(university, passed) <span class="sc">|&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> university, <span class="at">y =</span> n, <span class="at">fill =</span> passed)) <span class="sc">+</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Calculus pass counts by university (crude)"</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Count"</span>,</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Passed"</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lecture-28_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Interpretation</strong>: A large or small p-value for speaks to only whether this data is consistent with a <strong>by chance explanation</strong>, not to whether attending Wild Horse causes a higher pass rate.</p>
+<hr>
+
+
+<!-- -->
+
+</section>
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>Creative Commons Attribution-NonCommercial 4.0 International<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">(View License)</a></div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Lecture 28"</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "STAT 109: Introductory Biostatistics"</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Lecture 28</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Observational studies and confounding</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>This lecture demostrate how to do a fair comparison of two groups using the **observational** study design: the groups exist before you analyze them (which university, sleep habits in the wild, nightlight use, etc.). Lecture 27 gave you tables and plots for two categorical variables; here we connect those tools to **causal** questions, **three** competing explanations for any difference, and **Causal Directed acyclic graphs (DAGs)** and **subclassification** tell you what to measure and how to compare fairly within levels of a confounder when that is possible.</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="fu">### Learning objectives</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="ss">-  </span>Recognize an **observational** study design and list three explanations for a observed difference between two groups (**causation**, **chance**, **confounding**).</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Define a **confounding variable** both in words and in a DAG.</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use the method of **subclassification** to adjust a group comparison for a confounding variable to get a fairer comparison.</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Perform a large-sample version of a hypothesis test or confidence interval for **two proportions** using **`prop.test()`** to elimiate chance as an explanation for the observed difference and estimate the causal effect of group membership on the effect of interest.</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## Causal questions, explanatory and response variables</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>A **causal** question asks about the **effect** of something. Name:</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Role <span class="pp">|</span> Other names <span class="pp">|</span> Meaning <span class="pp">|</span></span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a><span class="pp">|------------------|--------------------------------|----------------------|</span></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Response** | outcome, dependent | The **effect** you want to compare. <span class="pp">|</span></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Explanatory** | treatment, exposure | The **potential cause** or group label. <span class="pp">|</span></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>When writing a research question that is causal, it is best practice to:</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Define variables precisely: State how each variable is measured and any cutoffs or rules (e.g. pass/fail, deprived vs unrestricted sleep, income in dollars). Vague labels make design and analysis impossible.</span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Identify the observational units: The unit is the entity that gets a value for each variable—often one person at one time point for this unit (e.g. one student in one calculus term). Your dataset is usually one row per observational unit.</span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>If the response is numerical, you typically summarize comparison of two groups with means (or medians) and a Welch two-sample *t*-test** or randomization test on the difference in means (Lecture 29, Lecture 30). If the response is binary (or you reduce an outcome to two categories), you compare proportions or rates and use <span class="in">`prop.test`</span> / <span class="in">`chisq.test`</span> or a chi-square shuffle applet (this lecture, Lecture 30). </span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>Note: **Project 4** will asks you to **plan** a study to answer a causal question from one of your classamtes.</span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a><span class="fu">## Observational studies</span></span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>In an **observational study**, researchers **record** which group each unit is in; they do **not** **randomly assign** the explanatory variable. Examples: students **choose** a university; parents **choose** nightlight use for their children; people decide what to eat for lunch.</span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a>A **difference** in sample proportions or means from an observational study can reflect:</span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>A **Causal effect** of the explanatory variable on the response.</span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Chance** (random variation—even numbers of heads from fair coins differ in 100 flips).</span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**Confounding**: a third variable influenes both the explanatory and response variables and mixes up relationship between the these two variables,making a fair comparison difficult (**internal validity** is weak for causation until you address it).</span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a>**Lecture 29** covers **RCTs**, where **random assignment** is used to **balance** confounders **in expectation** and support **causal** conclusions about the assigned treatment (with the usual caveats).</span>
+<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a>Students often confuse **random assignment** (group assignment within the sample) with **random sampling** (selection of individuals from a population): both are useful, but for different goals. Random assignment is used to adjust for confounding between the groups, making a comparison between the groups more fair.  Random sampling is used to elimated bias when generalizing from the study data back to a larger population.</span>
+<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a><span class="fu">## Which university is better?</span></span>
+<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a>Suppose a certain state has two polytechnic universities and the Chancellor’s Office is trying to decide which one is doing a better job teaching **calculus** to **incoming freshmen**.</span>
+<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a>*This example is a modification of a story in Pearl, Judea, and Dana Mackenzie, **The Book of Why: The New Science of Cause and Effect** (Basic Books, 2018).*</span>
+<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a><span class="fu">## Crude pass rates</span></span>
+<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a>Both universities have a calculus class of **200** students. The number (and percentage) of students who **passed** is:</span>
+<span id="cb12-72"><a href="#cb12-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>                  <span class="pp">|</span> Passed calculus <span class="pp">|</span></span>
+<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a><span class="pp">|------------------|-----------------|</span></span>
+<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Timber Ridge** <span class="pp">|</span> 150/200 (75%)   <span class="pp">|</span></span>
+<span id="cb12-76"><a href="#cb12-76" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Wild Horse**   <span class="pp">|</span> 154/200 (77%)   <span class="pp">|</span></span>
+<span id="cb12-77"><a href="#cb12-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-78"><a href="#cb12-78" aria-hidden="true" tabindex="-1"></a>Wild Horse has **more students who passed** in this cohort (154 vs 150).</span>
+<span id="cb12-79"><a href="#cb12-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-80"><a href="#cb12-80" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb12-81"><a href="#cb12-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-82"><a href="#cb12-82" aria-hidden="true" tabindex="-1"></a><span class="fu">## More students passed—but is it a fair comparison?</span></span>
+<span id="cb12-83"><a href="#cb12-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-84"><a href="#cb12-84" aria-hidden="true" tabindex="-1"></a>The table above compares **observational** groups: students **chose** (or landed at) a university; the Chancellor did **not** randomly assign them. A higher **crude** pass rate at Wild Horse does **not** by itself answer the **causal** question: *Does attending Wild Horse **cause** a higher chance of passing than attending Timber Ridge?* We still have to worry about **chance** and **confounding** as possible explanations.</span>
+<span id="cb12-85"><a href="#cb12-85" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb12-86"><a href="#cb12-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-87"><a href="#cb12-87" aria-hidden="true" tabindex="-1"></a><span class="fu">## If we know who took AP Calculus in high school</span></span>
+<span id="cb12-88"><a href="#cb12-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-89"><a href="#cb12-89" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>                  <span class="pp">|</span> AP calculus   <span class="pp">|</span> No AP calculus <span class="pp">|</span> Combined      <span class="pp">|</span></span>
+<span id="cb12-90"><a href="#cb12-90" aria-hidden="true" tabindex="-1"></a><span class="pp">|------------------|---------------|----------------|---------------|</span></span>
+<span id="cb12-91"><a href="#cb12-91" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Timber Ridge** <span class="pp">|</span> 45/50 (90%)   <span class="pp">|</span> 105/150 (70%)  <span class="pp">|</span> 150/200 (75%) <span class="pp">|</span></span>
+<span id="cb12-92"><a href="#cb12-92" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Wild Horse**   <span class="pp">|</span> 136/170 (80%) <span class="pp">|</span> 18/30 (60%)    <span class="pp">|</span> 154/200 (77%) <span class="pp">|</span></span>
+<span id="cb12-93"><a href="#cb12-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-94"><a href="#cb12-94" aria-hidden="true" tabindex="-1"></a>Each cell shows **number who passed** / **number of students** in that cell.</span>
+<span id="cb12-95"><a href="#cb12-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-96"><a href="#cb12-96" aria-hidden="true" tabindex="-1"></a>**Read down each column** (holding preparation fixed):</span>
+<span id="cb12-97"><a href="#cb12-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-98"><a href="#cb12-98" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Among students **without** AP calculus in high school, **Timber Ridge** has the higher pass rate (70% vs 60%).</span>
+<span id="cb12-99"><a href="#cb12-99" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Among students **with** AP calculus, **Timber Ridge** again has the higher pass rate (90% vs 80%).</span>
+<span id="cb12-100"><a href="#cb12-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-101"><a href="#cb12-101" aria-hidden="true" tabindex="-1"></a>So **within** each preparation level, Timber Ridge does better.</span>
+<span id="cb12-102"><a href="#cb12-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-103"><a href="#cb12-103" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb12-104"><a href="#cb12-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-105"><a href="#cb12-105" aria-hidden="true" tabindex="-1"></a><span class="fu">## If we know who used the campus tutoring center</span></span>
+<span id="cb12-106"><a href="#cb12-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-107"><a href="#cb12-107" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>   <span class="pp">|</span> Used tutoring center on campus <span class="pp">|</span> Did not use tutoring center <span class="pp">|</span> Combined <span class="pp">|</span></span>
+<span id="cb12-108"><a href="#cb12-108" aria-hidden="true" tabindex="-1"></a><span class="pp">|------------------|------------------|------------------|------------------|</span></span>
+<span id="cb12-109"><a href="#cb12-109" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Timber Ridge** <span class="pp">|</span> 86/120 (71%) <span class="pp">|</span> 64/80 (80%) <span class="pp">|</span> 150/200 (75%) <span class="pp">|</span></span>
+<span id="cb12-110"><a href="#cb12-110" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Wild Horse** <span class="pp">|</span> 65/90 (72%) <span class="pp">|</span> 89/110 (81%) <span class="pp">|</span> 154/200 (77%) <span class="pp">|</span></span>
+<span id="cb12-111"><a href="#cb12-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-112"><a href="#cb12-112" aria-hidden="true" tabindex="-1"></a>**Within** “did not use tutoring,” Wild Horse’s pass rate is slightly higher (81% vs 80%). **Within** “used tutoring,” Wild Horse is also slightly higher (72% vs 71%). But does this breakdown make a fair comparison between the two universities?</span>
+<span id="cb12-113"><a href="#cb12-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-114"><a href="#cb12-114" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb12-115"><a href="#cb12-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-116"><a href="#cb12-116" aria-hidden="true" tabindex="-1"></a><span class="fu">## Should we “adjust” for tutoring?</span></span>
+<span id="cb12-117"><a href="#cb12-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-118"><a href="#cb12-118" aria-hidden="true" tabindex="-1"></a>We should not treat the tutoring breakdown as the right way to fairly compare the causal effect of **which university** a student attends when tutoring centers are part of what the university provides. If we do breakdown the rates by tutoring or not, we'd remove part of how the university affects success: the tutoring center is on the causal pathway from university to passing, not merely a pre-enrollment mix of students like AP preparation in high school.</span>
+<span id="cb12-119"><a href="#cb12-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-120"><a href="#cb12-120" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb12-121"><a href="#cb12-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-122"><a href="#cb12-122" aria-hidden="true" tabindex="-1"></a><span class="fu">## A tool for thinking clearly about when to act</span></span>
+<span id="cb12-123"><a href="#cb12-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-124"><a href="#cb12-124" aria-hidden="true" tabindex="-1"></a>When people see tables like these (even faculty audiences), votes are often split on “which school is better.” Causal DAGs are an easy way to see that AP calculus behaves like a confounder you may want to condition on for a fairer comparison of universities, while tutoring center use is not the same kind of adjustment target if tutoring is part of the university’s effect.</span>
+<span id="cb12-125"><a href="#cb12-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-126"><a href="#cb12-126" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb12-127"><a href="#cb12-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-128"><a href="#cb12-128" aria-hidden="true" tabindex="-1"></a><span class="fu">## Confounding variable (definition)</span></span>
+<span id="cb12-129"><a href="#cb12-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-130"><a href="#cb12-130" aria-hidden="true" tabindex="-1"></a>A **confounder** (for the effect of explanatory variable $X$ on response $Y$) is a variable that influes both** $X$ and $Y$.  </span>
+<span id="cb12-131"><a href="#cb12-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-132"><a href="#cb12-132" aria-hidden="true" tabindex="-1"></a>Example: **AP calculus** in the story above confounds **university** and **passing** because it influenes **both** where students enroll and how likely they are to pass.</span>
+<span id="cb12-133"><a href="#cb12-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-134"><a href="#cb12-134" aria-hidden="true" tabindex="-1"></a>Example: **Nightlight and myopia**: genetics and parental myopia may confound nightlight use and child myopia.</span>
+<span id="cb12-135"><a href="#cb12-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-136"><a href="#cb12-136" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb12-137"><a href="#cb12-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-138"><a href="#cb12-138" aria-hidden="true" tabindex="-1"></a><span class="fu">## Adjustment sets and the backdoor idea</span></span>
+<span id="cb12-139"><a href="#cb12-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-140"><a href="#cb12-140" aria-hidden="true" tabindex="-1"></a>**DAG recap.** **Nodes** = variables. **Directed edge** $A \rightarrow B$ = “$A$ is posited to help cause $B$ in this simplified story.” **Acyclic** = no directed cycles.</span>
+<span id="cb12-141"><a href="#cb12-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-142"><a href="#cb12-142" aria-hidden="true" tabindex="-1"></a>**Backdoor path (informal definition).** For the causal effect of **university** $U$ on **passing** $P$, a **backdoor** path is a non-causal route that “leaks” association into the crude $U$–$P$ link—e.g. $U \leftarrow A \rightarrow P$ when $A$ is **AP calculus**.</span>
+<span id="cb12-143"><a href="#cb12-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-144"><a href="#cb12-144" aria-hidden="true" tabindex="-1"></a>An **adjustment set** (backdoor adjustment, introductory version) is a set of variables you **condition** on (here, mainly **subclassification**: compare universities **within** levels of $A$) so that, **if** the DAG is correct and other assumptions hold, the **conditional** comparison is **less biased** for the effect of $U$ on $P$.</span>
+<span id="cb12-145"><a href="#cb12-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-146"><a href="#cb12-146" aria-hidden="true" tabindex="-1"></a>The figure below is a **DAGitty** graph for this teaching example (university, preparation, tutoring, passing, and related variables as you drew them in class). Use [**DAGitty**](https://dagitty.net/) to reopen the model and highlight **adjustment sets** under your assumptions.</span>
+<span id="cb12-147"><a href="#cb12-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-148"><a href="#cb12-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-149"><a href="#cb12-149" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**AP calculus** (or analogous preparation) typically sits on a **backdoor** path into the crude university–pass association: $U \leftarrow \text{AP} \rightarrow P$. **Conditioning on** AP (the **AP / no AP** subtables) **blocks** that path.</span>
+<span id="cb12-150"><a href="#cb12-150" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Tutoring center use** is **downstream** of **university** on a **path** to **passing** in the story where the center is part of what the university provides. **Conditioning on** tutoring can then **block** part of the **total effect** of university you want to describe when the policy question is the **whole package** at each school.</span>
+<span id="cb12-151"><a href="#cb12-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-152"><a href="#cb12-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-155"><a href="#cb12-155" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb12-156"><a href="#cb12-156" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
+<span id="cb12-157"><a href="#cb12-157" aria-hidden="true" tabindex="-1"></a>  A[AP calculus in HS] --&gt; U[University]</span>
+<span id="cb12-158"><a href="#cb12-158" aria-hidden="true" tabindex="-1"></a>  A --&gt; P[Pass calculus]</span>
+<span id="cb12-159"><a href="#cb12-159" aria-hidden="true" tabindex="-1"></a>  U --&gt; P</span>
+<span id="cb12-160"><a href="#cb12-160" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-161"><a href="#cb12-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-164"><a href="#cb12-164" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb12-165"><a href="#cb12-165" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
+<span id="cb12-166"><a href="#cb12-166" aria-hidden="true" tabindex="-1"></a>  U2[University] --&gt; T[Tutoring center <span class="fu">use</span>]</span>
+<span id="cb12-167"><a href="#cb12-167" aria-hidden="true" tabindex="-1"></a>  U2 --&gt; P2[Pass calculus]</span>
+<span id="cb12-168"><a href="#cb12-168" aria-hidden="true" tabindex="-1"></a>  T --&gt; P2</span>
+<span id="cb12-169"><a href="#cb12-169" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-170"><a href="#cb12-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-171"><a href="#cb12-171" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb12-172"><a href="#cb12-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-173"><a href="#cb12-173" aria-hidden="true" tabindex="-1"></a><span class="fu">## If you believe the diagram, which subclassification is appropriate?</span></span>
+<span id="cb12-174"><a href="#cb12-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-175"><a href="#cb12-175" aria-hidden="true" tabindex="-1"></a>Under the **AP** DAG, the appropriate breakdown for comparing universities on pass rates while addressing that backdoor is the AP vs no AP table—not the tutoring table used as if it were the same kind of confounder.</span>
+<span id="cb12-176"><a href="#cb12-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-177"><a href="#cb12-177" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>                  <span class="pp">|</span> AP calculus   <span class="pp">|</span> No AP calculus <span class="pp">|</span> Combined      <span class="pp">|</span></span>
+<span id="cb12-178"><a href="#cb12-178" aria-hidden="true" tabindex="-1"></a><span class="pp">|------------------|---------------|----------------|---------------|</span></span>
+<span id="cb12-179"><a href="#cb12-179" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Timber Ridge** <span class="pp">|</span> 45/50 (90%)   <span class="pp">|</span> 105/150 (70%)  <span class="pp">|</span> 150/200 (75%) <span class="pp">|</span></span>
+<span id="cb12-180"><a href="#cb12-180" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Wild Horse**   <span class="pp">|</span> 136/170 (80%) <span class="pp">|</span> 18/30 (60%)    <span class="pp">|</span> 154/200 (77%) <span class="pp">|</span></span>
+<span id="cb12-181"><a href="#cb12-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-182"><a href="#cb12-182" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>                  <span class="pp">|</span> Used tutoring <span class="pp">|</span> Did not use tutoring <span class="pp">|</span> Combined      <span class="pp">|</span></span>
+<span id="cb12-183"><a href="#cb12-183" aria-hidden="true" tabindex="-1"></a><span class="pp">|------------------|---------------|----------------------|---------------|</span></span>
+<span id="cb12-184"><a href="#cb12-184" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Timber Ridge** <span class="pp">|</span> 86/120 (71%)  <span class="pp">|</span> 64/80 (80%)          <span class="pp">|</span> 150/200 (75%) <span class="pp">|</span></span>
+<span id="cb12-185"><a href="#cb12-185" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Wild Horse**   <span class="pp">|</span> 65/90 (72%)   <span class="pp">|</span> 89/110 (81%)         <span class="pp">|</span> 154/200 (77%) <span class="pp">|</span></span>
+<span id="cb12-186"><a href="#cb12-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-187"><a href="#cb12-187" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb12-188"><a href="#cb12-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-189"><a href="#cb12-189" aria-hidden="true" tabindex="-1"></a><span class="fu">## Do you believe the diagram?</span></span>
+<span id="cb12-190"><a href="#cb12-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-191"><a href="#cb12-191" aria-hidden="true" tabindex="-1"></a>Before adjusting, ask: **Did we include every variable that needs to be in the story**, that is, every common cause or fork that links **university**, **passing**, and other measured variables? **Residual confounding** from **unmeasured** variables is always possible.</span>
+<span id="cb12-192"><a href="#cb12-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-193"><a href="#cb12-193" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb12-194"><a href="#cb12-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-195"><a href="#cb12-195" aria-hidden="true" tabindex="-1"></a><span class="fu">## Finding an adjustment set: by hand or with software</span></span>
+<span id="cb12-196"><a href="#cb12-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-197"><a href="#cb12-197" aria-hidden="true" tabindex="-1"></a>You can **trace** backdoor paths on the board and list a set of variables to **condition** on, or use [**DAGitty**](https://dagitty.net/) under an **assumed** graph to suggest **adjustment sets**. </span>
+<span id="cb12-198"><a href="#cb12-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-199"><a href="#cb12-199" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb12-200"><a href="#cb12-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-201"><a href="#cb12-201" aria-hidden="true" tabindex="-1"></a><span class="fu">## So which university is better?</span></span>
+<span id="cb12-202"><a href="#cb12-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-203"><a href="#cb12-203" aria-hidden="true" tabindex="-1"></a>To make a **fairer** comparison of **calculus passage rates** across universities—**if** you accept a DAG like the one above (and usual positivity / correct functional-form ideas we skip in this intro), we would want data on **student motivation**, **socioeconomic status (SES)**, and **AP calculus** (and **university** and **pass/fail**), then compare universities within levels of the variables in the adjustment set you defend. **AP alone** is already enough to change the story in this toy example; thinking about the data we don't have on **motivation** and **SES** reminds us that real policy questions usually need datasets with more variables.</span>
+<span id="cb12-204"><a href="#cb12-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-205"><a href="#cb12-205" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb12-206"><a href="#cb12-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-207"><a href="#cb12-207" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ruling out **chance** (not confounding)</span></span>
+<span id="cb12-208"><a href="#cb12-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-209"><a href="#cb12-209" aria-hidden="true" tabindex="-1"></a>Hypothesis tests and p-values address explanation **(2)** only: could the data look like this by chance alone? That is, what would we expect to see if there were no causation or confounding model? A p-value does **not**, by itself, choose us choose between **(1)** causation and **(3)** confounding.</span>
+<span id="cb12-210"><a href="#cb12-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-211"><a href="#cb12-211" aria-hidden="true" tabindex="-1"></a><span class="fu">### A. Randomization-based (nonparametric) inference — Rossman–Chance</span></span>
+<span id="cb12-212"><a href="#cb12-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-213"><a href="#cb12-213" aria-hidden="true" tabindex="-1"></a>From the <span class="co">[</span><span class="ot">applet collection</span><span class="co">](http://www.rossmanchance.com/applets.html)</span>:</span>
+<span id="cb12-214"><a href="#cb12-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-215"><a href="#cb12-215" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">**Randomization test: two groups, quantitative**</span><span class="co">](http://www.rossmanchance.com/applets/randomization20/Randomization.html)</span> — shuffle **group labels**; build a null distribution of the **difference in means** (or medians if the applet allows). **No normality** assumption for the **randomization** *p*-value; the logic is “**if** treatment labels were arbitrary, how often would we see a gap this big?”</span>
+<span id="cb12-216"><a href="#cb12-216" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">**Randomization: categorical / chi-square shuffle**</span><span class="co">](http://www.rossmanchance.com/applets/ChisqShuffle.htm)</span> — shuffles consistent with **testing no association** in a table (see also [**Dolphin study**](http://www.rossmanchance.com/applets/ChiSqShuffle.html?dolphins=1)).</span>
+<span id="cb12-217"><a href="#cb12-217" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">**Two-way table simulation**</span><span class="co">](http://www.rossmanchance.com/applets/TwowaySim/TwowaySim.html)</span> — builds intuition for **counts** under independence.</span>
+<span id="cb12-218"><a href="#cb12-218" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">**Guess the p-value**</span><span class="co">](http://www.rossmanchance.com/applets/GuessPvalue.html)</span> — links **tail areas** to strength of evidence.</span>
+<span id="cb12-219"><a href="#cb12-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-220"><a href="#cb12-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-221"><a href="#cb12-221" aria-hidden="true" tabindex="-1"></a><span class="fu">### B. Large-sample tests for two proportions — theory-based *p*-values in R</span></span>
+<span id="cb12-222"><a href="#cb12-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-223"><a href="#cb12-223" aria-hidden="true" tabindex="-1"></a>For **binary** outcomes (pass/fail, infected or not) compared across **two** groups, common large-sample tools are **`prop.test()`** (equivalent 2×2 logic to a **z**-test for two proportions) and **`chisq.test()`** on the **contingency table** of **counts**. **Conditions**:</span>
+<span id="cb12-224"><a href="#cb12-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-225"><a href="#cb12-225" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**Independent** observations.</span>
+<span id="cb12-226"><a href="#cb12-226" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Large expected counts** under the null: typically **all expected cell counts ≥ 5** for Pearson’s chi-squared; inspect **`$expected`**. If violated, use **`simulate.p.value = TRUE`**</span>
+<span id="cb12-227"><a href="#cb12-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-230"><a href="#cb12-230" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-231"><a href="#cb12-231" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"tidyverse"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb12-232"><a href="#cb12-232" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>, <span class="at">repos =</span> <span class="st">"https://cloud.r-project.org"</span>)</span>
+<span id="cb12-233"><a href="#cb12-233" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-234"><a href="#cb12-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-235"><a href="#cb12-235" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb12-236"><a href="#cb12-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-237"><a href="#cb12-237" aria-hidden="true" tabindex="-1"></a>uni_crude <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb12-238"><a href="#cb12-238" aria-hidden="true" tabindex="-1"></a>  <span class="at">university =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Timber Ridge"</span>, <span class="st">"Wild Horse"</span>), <span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">200</span>)),</span>
+<span id="cb12-239"><a href="#cb12-239" aria-hidden="true" tabindex="-1"></a>  <span class="at">passed =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>), <span class="fu">c</span>(<span class="dv">150</span>, <span class="dv">50</span>)), <span class="fu">rep</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>), <span class="fu">c</span>(<span class="dv">154</span>, <span class="dv">46</span>)))</span>
+<span id="cb12-240"><a href="#cb12-240" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-241"><a href="#cb12-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-242"><a href="#cb12-242" aria-hidden="true" tabindex="-1"></a>tab_uni <span class="ot">&lt;-</span> <span class="fu">table</span>(uni_crude<span class="sc">$</span>university, uni_crude<span class="sc">$</span>passed)</span>
+<span id="cb12-243"><a href="#cb12-243" aria-hidden="true" tabindex="-1"></a>tab_uni</span>
+<span id="cb12-244"><a href="#cb12-244" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-245"><a href="#cb12-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-246"><a href="#cb12-246" aria-hidden="true" tabindex="-1"></a>**Two-sample proportion test**:</span>
+<span id="cb12-247"><a href="#cb12-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-250"><a href="#cb12-250" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-251"><a href="#cb12-251" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">150</span>, <span class="dv">154</span>), <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">200</span>), <span class="at">correct =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb12-252"><a href="#cb12-252" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-253"><a href="#cb12-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-254"><a href="#cb12-254" aria-hidden="true" tabindex="-1"></a>**Chi-squared test of independence** (check expected counts first):</span>
+<span id="cb12-255"><a href="#cb12-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-258"><a href="#cb12-258" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-259"><a href="#cb12-259" aria-hidden="true" tabindex="-1"></a>cq <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(tab_uni)</span>
+<span id="cb12-260"><a href="#cb12-260" aria-hidden="true" tabindex="-1"></a>cq<span class="sc">$</span>expected</span>
+<span id="cb12-261"><a href="#cb12-261" aria-hidden="true" tabindex="-1"></a>cq</span>
+<span id="cb12-262"><a href="#cb12-262" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-263"><a href="#cb12-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-264"><a href="#cb12-264" aria-hidden="true" tabindex="-1"></a><span class="fu">### Stacked bar chart (Lecture 27)</span></span>
+<span id="cb12-265"><a href="#cb12-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-268"><a href="#cb12-268" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-269"><a href="#cb12-269" aria-hidden="true" tabindex="-1"></a>uni_crude <span class="sc">|&gt;</span></span>
+<span id="cb12-270"><a href="#cb12-270" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(university, passed) <span class="sc">|&gt;</span></span>
+<span id="cb12-271"><a href="#cb12-271" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> university, <span class="at">y =</span> n, <span class="at">fill =</span> passed)) <span class="sc">+</span></span>
+<span id="cb12-272"><a href="#cb12-272" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb12-273"><a href="#cb12-273" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb12-274"><a href="#cb12-274" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Calculus pass counts by university (crude)"</span>,</span>
+<span id="cb12-275"><a href="#cb12-275" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="cn">NULL</span>,</span>
+<span id="cb12-276"><a href="#cb12-276" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Count"</span>,</span>
+<span id="cb12-277"><a href="#cb12-277" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Passed"</span></span>
+<span id="cb12-278"><a href="#cb12-278" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb12-279"><a href="#cb12-279" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-280"><a href="#cb12-280" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-281"><a href="#cb12-281" aria-hidden="true" tabindex="-1"></a>**Interpretation**: A large or small p-value for speaks to only whether this data is consistent with a **by chance explanation**, not to whether attending Wild Horse causes a higher pass rate. </span>
+<span id="cb12-282"><a href="#cb12-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-283"><a href="#cb12-283" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

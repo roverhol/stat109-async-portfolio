@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lecture 29 – STAT 109 - Introductory Biostatistics</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-bba5ebae505b5c03f3f0d8040a416a6b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../assets/css/humboldt-theme.css">
+</head>
+
+<body class="floating quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#lecture-29" id="toc-lecture-29" class="nav-link active" data-scroll-target="#lecture-29">Lecture 29</a>
+  <ul class="collapse">
+  <li><a href="#random-assignment-and-what-it-buys-you" id="toc-random-assignment-and-what-it-buys-you" class="nav-link" data-scroll-target="#random-assignment-and-what-it-buys-you">Random assignment and what it buys you</a>
+  <ul class="collapse">
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  </ul></li>
+  <li><a href="#rct-definition" id="toc-rct-definition" class="nav-link" data-scroll-target="#rct-definition">RCT definition</a></li>
+  <li><a href="#a-randomized-controlled-trial-rct-is-a-study-design-where-the-researcher-randomly-assigns-peopleunits-to-one-of-two-or-more-groups.-this-assigned-group-membership-becames-the-explanatory-variable-and-a-response-variable-of-interest-is-measured-for-each-unit." id="toc-a-randomized-controlled-trial-rct-is-a-study-design-where-the-researcher-randomly-assigns-peopleunits-to-one-of-two-or-more-groups.-this-assigned-group-membership-becames-the-explanatory-variable-and-a-response-variable-of-interest-is-measured-for-each-unit." class="nav-link" data-scroll-target="#a-randomized-controlled-trial-rct-is-a-study-design-where-the-researcher-randomly-assigns-peopleunits-to-one-of-two-or-more-groups.-this-assigned-group-membership-becames-the-explanatory-variable-and-a-response-variable-of-interest-is-measured-for-each-unit.">A <strong>Randomized Controlled Trial (RCT)</strong> is a study design where the researcher randomly assigns people/units to one of two or more groups. This assigned group membership becames the explanatory variable and a response variable of interest is measured for each unit.</a></li>
+  <li><a href="#internal-validity-in-an-rct" id="toc-internal-validity-in-an-rct" class="nav-link" data-scroll-target="#internal-validity-in-an-rct">Internal validity in an RCT</a></li>
+  <li><a href="#numerical-outcome-sleep-condition-and-improvement" id="toc-numerical-outcome-sleep-condition-and-improvement" class="nav-link" data-scroll-target="#numerical-outcome-sleep-condition-and-improvement">Numerical outcome: sleep condition and improvement</a>
+  <ul class="collapse">
+  <li><a href="#data-n-21" id="toc-data-n-21" class="nav-link" data-scroll-target="#data-n-21">Data (<span class="math inline">\(n = 21\)</span>)</a></li>
+  <li><a href="#descriptive-statistics-lecture-25" id="toc-descriptive-statistics-lecture-25" class="nav-link" data-scroll-target="#descriptive-statistics-lecture-25">Descriptive statistics (Lecture 25)</a></li>
+  <li><a href="#plots" id="toc-plots" class="nav-link" data-scroll-target="#plots">Plots</a></li>
+  <li><a href="#welch-two-sample-t-test-lecture-25-recap" id="toc-welch-two-sample-t-test-lecture-25-recap" class="nav-link" data-scroll-target="#welch-two-sample-t-test-lecture-25-recap">Welch two-sample <em>t</em>-test (Lecture 25 recap)</a></li>
+  </ul></li>
+  <li><a href="#conclusion-from-rct.-if-the-design-is-truly-randomized-and-well-executed-a-small-p-value-supports-that-the-mean-improvement-differs-by-assigned-sleep-condition-beyond-what-chance-alone-would-typically-produce." id="toc-conclusion-from-rct.-if-the-design-is-truly-randomized-and-well-executed-a-small-p-value-supports-that-the-mean-improvement-differs-by-assigned-sleep-condition-beyond-what-chance-alone-would-typically-produce." class="nav-link" data-scroll-target="#conclusion-from-rct.-if-the-design-is-truly-randomized-and-well-executed-a-small-p-value-supports-that-the-mean-improvement-differs-by-assigned-sleep-condition-beyond-what-chance-alone-would-typically-produce."><strong>Conclusion from RCT.</strong> If the <strong>design</strong> is truly <strong>randomized</strong> and <strong>well executed</strong>, a <strong>small <em>p</em>-value</strong> supports that the <strong>mean improvement</strong> differs by <strong>assigned</strong> sleep condition <strong>beyond what chance</strong> alone would typically produce.</a></li>
+  <li><a href="#binary-outcome-in-an-rct" id="toc-binary-outcome-in-an-rct" class="nav-link" data-scroll-target="#binary-outcome-in-an-rct">Binary outcome in an RCT:</a></li>
+  <li><a href="#when-an-rct-is-impossible-or-unethical" id="toc-when-an-rct-is-impossible-or-unethical" class="nav-link" data-scroll-target="#when-an-rct-is-impossible-or-unethical">When an RCT is impossible or unethical</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lecture-29.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Lecture 29</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<p class="subtitle lead">STAT 109: Introductory Biostatistics — Randomized controlled trials and inference for experiments</p>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-right">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="lecture-29" class="level1">
+<h1>Lecture 29</h1>
+<section id="random-assignment-and-what-it-buys-you" class="level2">
+<h2 class="anchored" data-anchor-id="random-assignment-and-what-it-buys-you">Random assignment and what it buys you</h2>
+<p>This lecture focuses on <strong>randomized controlled trials (RCTs)</strong>. <strong>Random assignment</strong> of the group membership is the design feature that <strong>replaces</strong> the main threat to internal validity, confounding.</p>
+<section id="learning-objectives" class="level3">
+<h3 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h3>
+<ul>
+<li>Describe an <strong>RCT</strong> for a response and explanatory variable of interest and explain how random assignment could be carried out.</li>
+<li>List <strong>two</strong> primary explanations for an observed difference in an RCT (<strong>treatment effect</strong>, <strong>chance</strong>)</li>
+<li>Distinguish <strong>random assignment</strong> and <strong>random sampling</strong> and say what each</li>
+<li>For a <strong>numerical</strong> outcome and two groups, compute <strong>Lecture 25</strong> descriptives, plot <strong>boxplots / histograms</strong>, and run <strong>Welch’s</strong> two-sample <em>t</em>-test (<code>t.test(..., var.equal = FALSE)</code>) after checking <strong>conditions</strong>.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="rct-definition" class="level2">
+<h2 class="anchored" data-anchor-id="rct-definition">RCT definition</h2>
+</section>
+<section id="a-randomized-controlled-trial-rct-is-a-study-design-where-the-researcher-randomly-assigns-peopleunits-to-one-of-two-or-more-groups.-this-assigned-group-membership-becames-the-explanatory-variable-and-a-response-variable-of-interest-is-measured-for-each-unit." class="level2">
+<h2 class="anchored" data-anchor-id="a-randomized-controlled-trial-rct-is-a-study-design-where-the-researcher-randomly-assigns-peopleunits-to-one-of-two-or-more-groups.-this-assigned-group-membership-becames-the-explanatory-variable-and-a-response-variable-of-interest-is-measured-for-each-unit.">A <strong>Randomized Controlled Trial (RCT)</strong> is a study design where the researcher randomly assigns people/units to one of two or more groups. This assigned group membership becames the explanatory variable and a response variable of interest is measured for each unit.</h2>
+</section>
+<section id="internal-validity-in-an-rct" class="level2">
+<h2 class="anchored" data-anchor-id="internal-validity-in-an-rct">Internal validity in an RCT</h2>
+<p><strong>Internal validity</strong> = how well the study rules out alternative explanations for an observed difference between the groups within the study.</p>
+<p>Under ideal conditions, random assignment balances both measured and unmeasured baseline confounders on average.</p>
+<hr>
+</section>
+<section id="numerical-outcome-sleep-condition-and-improvement" class="level2">
+<h2 class="anchored" data-anchor-id="numerical-outcome-sleep-condition-and-improvement">Numerical outcome: sleep condition and improvement</h2>
+<p><strong>Research question.</strong> Does <strong>sleep deprivation</strong> change <strong>improvement</strong> in reaction time from a baseline test to a test three days later?</p>
+<p><strong>Design (for class).</strong> Suppose students were <strong>randomly assigned</strong> to <strong>deprived</strong> vs <strong>unrestricted</strong> sleep groups before the follow-up test of reaction times.</p>
+<p><strong>Hypotheses (population means).</strong> Let <span class="math inline">\(\mu_{\text{dep}}\)</span> and <span class="math inline">\(\mu_{\text{unr}}\)</span> be mean <strong>improvement</strong> in the two groups.</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\mu_{\text{dep}} = \mu_{\text{unr}}\)</span></li>
+<li><span class="math inline">\(H_a\)</span>: <span class="math inline">\(\mu_{\text{dep}} \neq \mu_{\text{unr}}\)</span></li>
+</ul>
+<section id="data-n-21" class="level3">
+<h3 class="anchored" data-anchor-id="data-n-21">Data (<span class="math inline">\(n = 21\)</span>)</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>sleep condition</th>
+<th style="text-align: right;">improvement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>unrestricted</td>
+<td style="text-align: right;">-14.7</td>
+</tr>
+<tr class="even">
+<td>unrestricted</td>
+<td style="text-align: right;">14.5</td>
+</tr>
+<tr class="odd">
+<td>deprived</td>
+<td style="text-align: right;">2.2</td>
+</tr>
+<tr class="even">
+<td>deprived</td>
+<td style="text-align: right;">21.3</td>
+</tr>
+<tr class="odd">
+<td>unrestricted</td>
+<td style="text-align: right;">11.5</td>
+</tr>
+<tr class="even">
+<td>deprived</td>
+<td style="text-align: right;">13.7</td>
+</tr>
+<tr class="odd">
+<td>deprived</td>
+<td style="text-align: right;">9.6</td>
+</tr>
+<tr class="even">
+<td>deprived</td>
+<td style="text-align: right;">22.4</td>
+</tr>
+<tr class="odd">
+<td>deprived</td>
+<td style="text-align: right;">21.1</td>
+</tr>
+<tr class="even">
+<td>deprived</td>
+<td style="text-align: right;">7.2</td>
+</tr>
+<tr class="odd">
+<td>deprived</td>
+<td style="text-align: right;">10.0</td>
+</tr>
+<tr class="even">
+<td>unrestricted</td>
+<td style="text-align: right;">25.2</td>
+</tr>
+<tr class="odd">
+<td>unrestricted</td>
+<td style="text-align: right;">-11.2</td>
+</tr>
+<tr class="even">
+<td>unrestricted</td>
+<td style="text-align: right;">7.0</td>
+</tr>
+<tr class="odd">
+<td>unrestricted</td>
+<td style="text-align: right;">14.7</td>
+</tr>
+<tr class="even">
+<td>deprived</td>
+<td style="text-align: right;">4.5</td>
+</tr>
+<tr class="odd">
+<td>unrestricted</td>
+<td style="text-align: right;">45.6</td>
+</tr>
+<tr class="even">
+<td>unrestricted</td>
+<td style="text-align: right;">15.6</td>
+</tr>
+<tr class="odd">
+<td>unrestricted</td>
+<td style="text-align: right;">18.8</td>
+</tr>
+<tr class="even">
+<td>unrestricted</td>
+<td style="text-align: right;">12.1</td>
+</tr>
+<tr class="odd">
+<td>unrestricted</td>
+<td style="text-align: right;">10.3</td>
+</tr>
+</tbody>
+</table>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"tidyverse"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>, <span class="at">repos =</span> <span class="st">"https://cloud.r-project.org"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>sleep_rct <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">sleepcondition =</span> <span class="fu">c</span>(</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"unrestricted"</span>, <span class="st">"unrestricted"</span>, <span class="st">"deprived"</span>, <span class="st">"deprived"</span>, <span class="st">"unrestricted"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"deprived"</span>, <span class="st">"deprived"</span>, <span class="st">"deprived"</span>, <span class="st">"deprived"</span>, <span class="st">"deprived"</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"deprived"</span>, <span class="st">"unrestricted"</span>, <span class="st">"unrestricted"</span>, <span class="st">"unrestricted"</span>, <span class="st">"unrestricted"</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"deprived"</span>, <span class="st">"unrestricted"</span>, <span class="st">"unrestricted"</span>, <span class="st">"unrestricted"</span>, <span class="st">"unrestricted"</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"unrestricted"</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">improvement =</span> <span class="fu">c</span>(</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="sc">-</span><span class="fl">14.7</span>, <span class="fl">14.5</span>, <span class="fl">2.2</span>, <span class="fl">21.3</span>, <span class="fl">11.5</span>, <span class="fl">13.7</span>, <span class="fl">9.6</span>, <span class="fl">22.4</span>, <span class="fl">21.1</span>, <span class="fl">7.2</span>, <span class="fl">10.0</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="fl">25.2</span>, <span class="sc">-</span><span class="fl">11.2</span>, <span class="fl">7.0</span>, <span class="fl">14.7</span>, <span class="fl">4.5</span>, <span class="fl">45.6</span>, <span class="fl">15.6</span>, <span class="fl">18.8</span>, <span class="fl">12.1</span>, <span class="fl">10.3</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">sleepcondition =</span> <span class="fu">factor</span>(sleepcondition, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"deprived"</span>, <span class="st">"unrestricted"</span>))</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="descriptive-statistics-lecture-25" class="level3">
+<h3 class="anchored" data-anchor-id="descriptive-statistics-lecture-25">Descriptive statistics (Lecture 25)</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sleep_rct <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sleepcondition) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_improvement =</span> <span class="fu">mean</span>(improvement),</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_improvement =</span> <span class="fu">sd</span>(improvement),</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_improvement =</span> <span class="fu">median</span>(improvement),</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">iqr_improvement =</span> <span class="fu">IQR</span>(improvement)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 6
+  sleepcondition     n mean_improvement sd_improvement median_improvement
+  &lt;fct&gt;          &lt;int&gt;            &lt;dbl&gt;          &lt;dbl&gt;              &lt;dbl&gt;
+1 deprived           9             12.4           7.61               10  
+2 unrestricted      12             12.4          15.5                13.3
+# ℹ 1 more variable: iqr_improvement &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="plots" class="level3">
+<h3 class="anchored" data-anchor-id="plots">Plots</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sleep_rct, <span class="fu">aes</span>(<span class="at">x =</span> sleepcondition, <span class="at">y =</span> improvement)) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Improvement in reaction time by assigned sleep condition (RCT framing)"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Sleep condition"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Improvement (study units)"</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lecture-29_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="welch-two-sample-t-test-lecture-25-recap" class="level3">
+<h3 class="anchored" data-anchor-id="welch-two-sample-t-test-lecture-25-recap">Welch two-sample <em>t</em>-test (Lecture 25 recap)</h3>
+<p><strong>Conditions (practical):</strong> <strong>Independence</strong> between all students in both groups; small sample sizes so we’ll have to assume the populations of improvement are approximately normal.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(improvement <span class="sc">~</span> sleepcondition, <span class="at">data =</span> sleep_rct, <span class="at">var.equal =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  improvement by sleepcondition
+t = -0.0010785, df = 16.806, p-value = 0.9992
+alternative hypothesis: true difference in means between group deprived and group unrestricted is not equal to 0
+95 percent confidence interval:
+ -10.88355  10.87244
+sample estimates:
+    mean in group deprived mean in group unrestricted 
+                  12.44444                   12.45000 </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="conclusion-from-rct.-if-the-design-is-truly-randomized-and-well-executed-a-small-p-value-supports-that-the-mean-improvement-differs-by-assigned-sleep-condition-beyond-what-chance-alone-would-typically-produce." class="level2">
+<h2 class="anchored" data-anchor-id="conclusion-from-rct.-if-the-design-is-truly-randomized-and-well-executed-a-small-p-value-supports-that-the-mean-improvement-differs-by-assigned-sleep-condition-beyond-what-chance-alone-would-typically-produce."><strong>Conclusion from RCT.</strong> If the <strong>design</strong> is truly <strong>randomized</strong> and <strong>well executed</strong>, a <strong>small <em>p</em>-value</strong> supports that the <strong>mean improvement</strong> differs by <strong>assigned</strong> sleep condition <strong>beyond what chance</strong> alone would typically produce.</h2>
+</section>
+<section id="binary-outcome-in-an-rct" class="level2">
+<h2 class="anchored" data-anchor-id="binary-outcome-in-an-rct">Binary outcome in an RCT:</h2>
+<p><strong>Story.</strong> 200 patients per arm; count <strong>infections</strong> (yes/no).</p>
+<p><strong>Hypotheses (population proportions).</strong> Let <span class="math inline">\(p_V\)</span> and <span class="math inline">\(p_P\)</span> be the <strong>population</strong> probabilities (or long-run proportions) of infection under <strong>vaccine</strong> and <strong>placebo</strong> assignment in the target setting.</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(p_V = p_P\)</span> (no difference in infection probability between the two groups).</li>
+<li><span class="math inline">\(H_a\)</span>: <span class="math inline">\(p_V \neq p_P\)</span> (there is a difference in infection probability between the two groups).</li>
+</ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2901</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>vax_trial <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">arm =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Vaccine"</span>, <span class="st">"Placebo"</span>), <span class="at">each =</span> <span class="dv">200</span>)),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">infected =</span> <span class="fu">c</span>(<span class="fu">rbinom</span>(<span class="dv">200</span>, <span class="dv">1</span>, <span class="fl">0.08</span>), <span class="fu">rbinom</span>(<span class="dv">200</span>, <span class="dv">1</span>, <span class="fl">0.14</span>))</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>tab_v <span class="ot">&lt;-</span> <span class="fu">table</span>(vax_trial<span class="sc">$</span>arm, vax_trial<span class="sc">$</span>infected)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>tab_v</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>         
+            0   1
+  Placebo 174  26
+  Vaccine 178  22</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>infected_vaccine <span class="ot">&lt;-</span> <span class="fu">sum</span>(vax_trial<span class="sc">$</span>infected[vax_trial<span class="sc">$</span>arm <span class="sc">==</span> <span class="st">"Vaccine"</span>])</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>n_vaccine <span class="ot">&lt;-</span> <span class="fu">sum</span>(vax_trial<span class="sc">$</span>arm <span class="sc">==</span> <span class="st">"Vaccine"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>infected_placebo <span class="ot">&lt;-</span> <span class="fu">sum</span>(vax_trial<span class="sc">$</span>infected[vax_trial<span class="sc">$</span>arm <span class="sc">==</span> <span class="st">"Placebo"</span>])</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>n_placebo <span class="ot">&lt;-</span> <span class="fu">sum</span>(vax_trial<span class="sc">$</span>arm <span class="sc">==</span> <span class="st">"Placebo"</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="fu">c</span>(infected_vaccine, infected_placebo), <span class="at">n =</span> <span class="fu">c</span>(n_vaccine, n_placebo), <span class="at">correct =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    2-sample test for equality of proportions without continuity correction
+
+data:  c(infected_vaccine, infected_placebo) out of c(n_vaccine, n_placebo)
+X-squared = 0.37879, df = 1, p-value = 0.5383
+alternative hypothesis: two.sided
+95 percent confidence interval:
+ -0.08366113  0.04366113
+sample estimates:
+prop 1 prop 2 
+  0.11   0.13 </code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(tab_v)<span class="sc">$</span>expected</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>         
+            0  1
+  Placebo 176 24
+  Vaccine 176 24</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(tab_v)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's Chi-squared test with Yates' continuity correction
+
+data:  tab_v
+X-squared = 0.21307, df = 1, p-value = 0.6444</code></pre>
+</div>
+</div>
+<p>Here <strong>random assignment</strong> makes a <strong>low</strong> infection rate in the vaccine arm <strong>more</strong> plausibly a <strong>treatment effect</strong> than the same table would be in an <strong>observational</strong> comparison.</p>
+<hr>
+</section>
+<section id="when-an-rct-is-impossible-or-unethical" class="level2">
+<h2 class="anchored" data-anchor-id="when-an-rct-is-impossible-or-unethical">When an RCT is impossible or unethical</h2>
+<p>Some groups cannot be randomly assigned (e.g.&nbsp;long-term <strong>smoking</strong> in teens).</p>
+<hr>
+
+
+<!-- -->
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>Creative Commons Attribution-NonCommercial 4.0 International<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">(View License)</a></div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Lecture 29"</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "STAT 109: Introductory Biostatistics — Randomized controlled trials and inference for experiments"</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Lecture 29</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Random assignment and what it buys you</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>This lecture focuses on **randomized controlled trials (RCTs)**. **Random assignment** of the group membership is the design feature that **replaces** the main threat to internal validity, confounding.  </span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="fu">### Learning objectives</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Describe an **RCT** for a response and explanatory variable of interest and explain how random assignment could be carried out.</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>List **two** primary explanations for an observed difference in an RCT (**treatment effect**, **chance**)</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Distinguish **random assignment** and **random sampling** and say what each </span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>For a **numerical** outcome and two groups, compute **Lecture 25** descriptives, plot **boxplots / histograms**, and run **Welch’s** two-sample *t*-test (`t.test(..., var.equal = FALSE)`) after checking **conditions**.</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## RCT definition</span></span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>A **Randomized Controlled Trial (RCT)** is a study design where the researcher randomly assigns people/units to one of two or more groups. This assigned group membership becames the explanatory variable and a response variable of interest is measured for each unit. </span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## Internal validity in an RCT</span></span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>**Internal validity** = how well the study rules out alternative explanations for an observed difference between the groups within the study.</span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>Under ideal conditions, random assignment balances both measured and unmeasured baseline confounders on average.</span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Numerical outcome: sleep condition and improvement</span></span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a>**Research question.** Does **sleep deprivation** change **improvement** in reaction time from a baseline test to a test three days later?</span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a>**Design (for class).** Suppose students were **randomly assigned** to **deprived** vs **unrestricted** sleep groups before the follow-up test of reaction times.</span>
+<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a>**Hypotheses (population means).** Let $\mu_{\text{dep}}$ and $\mu_{\text{unr}}$ be mean **improvement** in the two groups.</span>
+<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$H_0$: $\mu_{\text{dep}} = \mu_{\text{unr}}$</span>
+<span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$H_a$: $\mu_{\text{dep}} \neq \mu_{\text{unr}}$ </span>
+<span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data ($n = 21$)</span></span>
+<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> sleep condition <span class="pp">|</span> improvement <span class="pp">|</span></span>
+<span id="cb15-50"><a href="#cb15-50" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----------------|------------:|</span></span>
+<span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> unrestricted    <span class="pp">|</span>       -14.7 <span class="pp">|</span></span>
+<span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> unrestricted    <span class="pp">|</span>        14.5 <span class="pp">|</span></span>
+<span id="cb15-53"><a href="#cb15-53" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> deprived        <span class="pp">|</span>         2.2 <span class="pp">|</span></span>
+<span id="cb15-54"><a href="#cb15-54" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> deprived        <span class="pp">|</span>        21.3 <span class="pp">|</span></span>
+<span id="cb15-55"><a href="#cb15-55" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> unrestricted    <span class="pp">|</span>        11.5 <span class="pp">|</span></span>
+<span id="cb15-56"><a href="#cb15-56" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> deprived        <span class="pp">|</span>        13.7 <span class="pp">|</span></span>
+<span id="cb15-57"><a href="#cb15-57" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> deprived        <span class="pp">|</span>         9.6 <span class="pp">|</span></span>
+<span id="cb15-58"><a href="#cb15-58" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> deprived        <span class="pp">|</span>        22.4 <span class="pp">|</span></span>
+<span id="cb15-59"><a href="#cb15-59" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> deprived        <span class="pp">|</span>        21.1 <span class="pp">|</span></span>
+<span id="cb15-60"><a href="#cb15-60" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> deprived        <span class="pp">|</span>         7.2 <span class="pp">|</span></span>
+<span id="cb15-61"><a href="#cb15-61" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> deprived        <span class="pp">|</span>        10.0 <span class="pp">|</span></span>
+<span id="cb15-62"><a href="#cb15-62" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> unrestricted    <span class="pp">|</span>        25.2 <span class="pp">|</span></span>
+<span id="cb15-63"><a href="#cb15-63" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> unrestricted    <span class="pp">|</span>       -11.2 <span class="pp">|</span></span>
+<span id="cb15-64"><a href="#cb15-64" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> unrestricted    <span class="pp">|</span>         7.0 <span class="pp">|</span></span>
+<span id="cb15-65"><a href="#cb15-65" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> unrestricted    <span class="pp">|</span>        14.7 <span class="pp">|</span></span>
+<span id="cb15-66"><a href="#cb15-66" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> deprived        <span class="pp">|</span>         4.5 <span class="pp">|</span></span>
+<span id="cb15-67"><a href="#cb15-67" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> unrestricted    <span class="pp">|</span>        45.6 <span class="pp">|</span></span>
+<span id="cb15-68"><a href="#cb15-68" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> unrestricted    <span class="pp">|</span>        15.6 <span class="pp">|</span></span>
+<span id="cb15-69"><a href="#cb15-69" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> unrestricted    <span class="pp">|</span>        18.8 <span class="pp">|</span></span>
+<span id="cb15-70"><a href="#cb15-70" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> unrestricted    <span class="pp">|</span>        12.1 <span class="pp">|</span></span>
+<span id="cb15-71"><a href="#cb15-71" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> unrestricted    <span class="pp">|</span>        10.3 <span class="pp">|</span></span>
+<span id="cb15-72"><a href="#cb15-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-75"><a href="#cb15-75" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-76"><a href="#cb15-76" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"tidyverse"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb15-77"><a href="#cb15-77" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>, <span class="at">repos =</span> <span class="st">"https://cloud.r-project.org"</span>)</span>
+<span id="cb15-78"><a href="#cb15-78" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-79"><a href="#cb15-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-80"><a href="#cb15-80" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb15-81"><a href="#cb15-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-82"><a href="#cb15-82" aria-hidden="true" tabindex="-1"></a>sleep_rct <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb15-83"><a href="#cb15-83" aria-hidden="true" tabindex="-1"></a>  <span class="at">sleepcondition =</span> <span class="fu">c</span>(</span>
+<span id="cb15-84"><a href="#cb15-84" aria-hidden="true" tabindex="-1"></a>    <span class="st">"unrestricted"</span>, <span class="st">"unrestricted"</span>, <span class="st">"deprived"</span>, <span class="st">"deprived"</span>, <span class="st">"unrestricted"</span>,</span>
+<span id="cb15-85"><a href="#cb15-85" aria-hidden="true" tabindex="-1"></a>    <span class="st">"deprived"</span>, <span class="st">"deprived"</span>, <span class="st">"deprived"</span>, <span class="st">"deprived"</span>, <span class="st">"deprived"</span>,</span>
+<span id="cb15-86"><a href="#cb15-86" aria-hidden="true" tabindex="-1"></a>    <span class="st">"deprived"</span>, <span class="st">"unrestricted"</span>, <span class="st">"unrestricted"</span>, <span class="st">"unrestricted"</span>, <span class="st">"unrestricted"</span>,</span>
+<span id="cb15-87"><a href="#cb15-87" aria-hidden="true" tabindex="-1"></a>    <span class="st">"deprived"</span>, <span class="st">"unrestricted"</span>, <span class="st">"unrestricted"</span>, <span class="st">"unrestricted"</span>, <span class="st">"unrestricted"</span>,</span>
+<span id="cb15-88"><a href="#cb15-88" aria-hidden="true" tabindex="-1"></a>    <span class="st">"unrestricted"</span></span>
+<span id="cb15-89"><a href="#cb15-89" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb15-90"><a href="#cb15-90" aria-hidden="true" tabindex="-1"></a>  <span class="at">improvement =</span> <span class="fu">c</span>(</span>
+<span id="cb15-91"><a href="#cb15-91" aria-hidden="true" tabindex="-1"></a>    <span class="sc">-</span><span class="fl">14.7</span>, <span class="fl">14.5</span>, <span class="fl">2.2</span>, <span class="fl">21.3</span>, <span class="fl">11.5</span>, <span class="fl">13.7</span>, <span class="fl">9.6</span>, <span class="fl">22.4</span>, <span class="fl">21.1</span>, <span class="fl">7.2</span>, <span class="fl">10.0</span>,</span>
+<span id="cb15-92"><a href="#cb15-92" aria-hidden="true" tabindex="-1"></a>    <span class="fl">25.2</span>, <span class="sc">-</span><span class="fl">11.2</span>, <span class="fl">7.0</span>, <span class="fl">14.7</span>, <span class="fl">4.5</span>, <span class="fl">45.6</span>, <span class="fl">15.6</span>, <span class="fl">18.8</span>, <span class="fl">12.1</span>, <span class="fl">10.3</span></span>
+<span id="cb15-93"><a href="#cb15-93" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb15-94"><a href="#cb15-94" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb15-95"><a href="#cb15-95" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb15-96"><a href="#cb15-96" aria-hidden="true" tabindex="-1"></a>    <span class="at">sleepcondition =</span> <span class="fu">factor</span>(sleepcondition, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"deprived"</span>, <span class="st">"unrestricted"</span>))</span>
+<span id="cb15-97"><a href="#cb15-97" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb15-98"><a href="#cb15-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-99"><a href="#cb15-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-100"><a href="#cb15-100" aria-hidden="true" tabindex="-1"></a><span class="fu">### Descriptive statistics (Lecture 25)</span></span>
+<span id="cb15-101"><a href="#cb15-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-104"><a href="#cb15-104" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-105"><a href="#cb15-105" aria-hidden="true" tabindex="-1"></a>sleep_rct <span class="sc">|&gt;</span></span>
+<span id="cb15-106"><a href="#cb15-106" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sleepcondition) <span class="sc">|&gt;</span></span>
+<span id="cb15-107"><a href="#cb15-107" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb15-108"><a href="#cb15-108" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb15-109"><a href="#cb15-109" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_improvement =</span> <span class="fu">mean</span>(improvement),</span>
+<span id="cb15-110"><a href="#cb15-110" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_improvement =</span> <span class="fu">sd</span>(improvement),</span>
+<span id="cb15-111"><a href="#cb15-111" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_improvement =</span> <span class="fu">median</span>(improvement),</span>
+<span id="cb15-112"><a href="#cb15-112" aria-hidden="true" tabindex="-1"></a>    <span class="at">iqr_improvement =</span> <span class="fu">IQR</span>(improvement)</span>
+<span id="cb15-113"><a href="#cb15-113" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb15-114"><a href="#cb15-114" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-115"><a href="#cb15-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-116"><a href="#cb15-116" aria-hidden="true" tabindex="-1"></a><span class="fu">### Plots</span></span>
+<span id="cb15-117"><a href="#cb15-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-120"><a href="#cb15-120" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-121"><a href="#cb15-121" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(sleep_rct, <span class="fu">aes</span>(<span class="at">x =</span> sleepcondition, <span class="at">y =</span> improvement)) <span class="sc">+</span></span>
+<span id="cb15-122"><a href="#cb15-122" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb15-123"><a href="#cb15-123" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb15-124"><a href="#cb15-124" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Improvement in reaction time by assigned sleep condition (RCT framing)"</span>,</span>
+<span id="cb15-125"><a href="#cb15-125" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Sleep condition"</span>,</span>
+<span id="cb15-126"><a href="#cb15-126" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Improvement (study units)"</span></span>
+<span id="cb15-127"><a href="#cb15-127" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb15-128"><a href="#cb15-128" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-129"><a href="#cb15-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-130"><a href="#cb15-130" aria-hidden="true" tabindex="-1"></a><span class="fu">### Welch two-sample *t*-test (Lecture 25 recap)</span></span>
+<span id="cb15-131"><a href="#cb15-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-132"><a href="#cb15-132" aria-hidden="true" tabindex="-1"></a>**Conditions (practical):** **Independence** between all students in both groups; small sample sizes so we'll have to assume the populations of improvement are approximately normal.</span>
+<span id="cb15-133"><a href="#cb15-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-136"><a href="#cb15-136" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-137"><a href="#cb15-137" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(improvement <span class="sc">~</span> sleepcondition, <span class="at">data =</span> sleep_rct, <span class="at">var.equal =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb15-138"><a href="#cb15-138" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-139"><a href="#cb15-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-140"><a href="#cb15-140" aria-hidden="true" tabindex="-1"></a>**Conclusion from RCT.** If the **design** is truly **randomized** and **well executed**, a **small *p*-value** supports that the **mean improvement** differs by **assigned** sleep condition **beyond what chance** alone would typically produce.</span>
+<span id="cb15-141"><a href="#cb15-141" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb15-142"><a href="#cb15-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-143"><a href="#cb15-143" aria-hidden="true" tabindex="-1"></a><span class="fu">## Binary outcome in an RCT: </span></span>
+<span id="cb15-144"><a href="#cb15-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-145"><a href="#cb15-145" aria-hidden="true" tabindex="-1"></a>**Story.** 200 patients per arm; count **infections** (yes/no).</span>
+<span id="cb15-146"><a href="#cb15-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-147"><a href="#cb15-147" aria-hidden="true" tabindex="-1"></a>**Hypotheses (population proportions).** Let $p_V$ and $p_P$ be the **population** probabilities (or long-run proportions) of infection under **vaccine** and **placebo** assignment in the target setting.</span>
+<span id="cb15-148"><a href="#cb15-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-149"><a href="#cb15-149" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$H_0$: $p_V = p_P$ (no difference in infection probability between the two groups).</span>
+<span id="cb15-150"><a href="#cb15-150" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$H_a$: $p_V \neq p_P$ (there is a difference in infection probability between the two groups).</span>
+<span id="cb15-151"><a href="#cb15-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-152"><a href="#cb15-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-155"><a href="#cb15-155" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb15-156"><a href="#cb15-156" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2901</span>)</span>
+<span id="cb15-157"><a href="#cb15-157" aria-hidden="true" tabindex="-1"></a>vax_trial <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb15-158"><a href="#cb15-158" aria-hidden="true" tabindex="-1"></a>  <span class="at">arm =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Vaccine"</span>, <span class="st">"Placebo"</span>), <span class="at">each =</span> <span class="dv">200</span>)),</span>
+<span id="cb15-159"><a href="#cb15-159" aria-hidden="true" tabindex="-1"></a>  <span class="at">infected =</span> <span class="fu">c</span>(<span class="fu">rbinom</span>(<span class="dv">200</span>, <span class="dv">1</span>, <span class="fl">0.08</span>), <span class="fu">rbinom</span>(<span class="dv">200</span>, <span class="dv">1</span>, <span class="fl">0.14</span>))</span>
+<span id="cb15-160"><a href="#cb15-160" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-161"><a href="#cb15-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-162"><a href="#cb15-162" aria-hidden="true" tabindex="-1"></a>tab_v <span class="ot">&lt;-</span> <span class="fu">table</span>(vax_trial<span class="sc">$</span>arm, vax_trial<span class="sc">$</span>infected)</span>
+<span id="cb15-163"><a href="#cb15-163" aria-hidden="true" tabindex="-1"></a>tab_v</span>
+<span id="cb15-164"><a href="#cb15-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-165"><a href="#cb15-165" aria-hidden="true" tabindex="-1"></a>infected_vaccine <span class="ot">&lt;-</span> <span class="fu">sum</span>(vax_trial<span class="sc">$</span>infected[vax_trial<span class="sc">$</span>arm <span class="sc">==</span> <span class="st">"Vaccine"</span>])</span>
+<span id="cb15-166"><a href="#cb15-166" aria-hidden="true" tabindex="-1"></a>n_vaccine <span class="ot">&lt;-</span> <span class="fu">sum</span>(vax_trial<span class="sc">$</span>arm <span class="sc">==</span> <span class="st">"Vaccine"</span>)</span>
+<span id="cb15-167"><a href="#cb15-167" aria-hidden="true" tabindex="-1"></a>infected_placebo <span class="ot">&lt;-</span> <span class="fu">sum</span>(vax_trial<span class="sc">$</span>infected[vax_trial<span class="sc">$</span>arm <span class="sc">==</span> <span class="st">"Placebo"</span>])</span>
+<span id="cb15-168"><a href="#cb15-168" aria-hidden="true" tabindex="-1"></a>n_placebo <span class="ot">&lt;-</span> <span class="fu">sum</span>(vax_trial<span class="sc">$</span>arm <span class="sc">==</span> <span class="st">"Placebo"</span>)</span>
+<span id="cb15-169"><a href="#cb15-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-170"><a href="#cb15-170" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="fu">c</span>(infected_vaccine, infected_placebo), <span class="at">n =</span> <span class="fu">c</span>(n_vaccine, n_placebo), <span class="at">correct =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb15-171"><a href="#cb15-171" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(tab_v)<span class="sc">$</span>expected</span>
+<span id="cb15-172"><a href="#cb15-172" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(tab_v)</span>
+<span id="cb15-173"><a href="#cb15-173" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb15-174"><a href="#cb15-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-175"><a href="#cb15-175" aria-hidden="true" tabindex="-1"></a>Here **random assignment** makes a **low** infection rate in the vaccine arm **more** plausibly a **treatment effect** than the same table would be in an **observational** comparison.</span>
+<span id="cb15-176"><a href="#cb15-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-177"><a href="#cb15-177" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb15-178"><a href="#cb15-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-179"><a href="#cb15-179" aria-hidden="true" tabindex="-1"></a><span class="fu">## When an RCT is impossible or unethical</span></span>
+<span id="cb15-180"><a href="#cb15-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-181"><a href="#cb15-181" aria-hidden="true" tabindex="-1"></a>Some groups cannot be randomly assigned (e.g. long-term **smoking** in teens). </span>
+<span id="cb15-182"><a href="#cb15-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-183"><a href="#cb15-183" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
