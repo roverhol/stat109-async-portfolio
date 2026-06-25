@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Module 5 — Demo Lab (simple linear regression) – STAT 109 - Introductory Biostatistics</title>
+<title>Module 5, Demo Lab (simple linear regression) – STAT 109 - Introductory Biostatistics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -76,7 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-94b323657c735dfe3b1bf6ebb2c33a55.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-bba5ebae505b5c03f3f0d8040a416a6b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -121,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#module-5-demo-lab-five-regression-situations" id="toc-module-5-demo-lab-five-regression-situations" class="nav-link active" data-scroll-target="#module-5-demo-lab-five-regression-situations">Module 5, Demo lab: five regression situations</a></li>
+  <li><a href="#module-5-demo-lab-predicting-frozen-yogurt-sales" id="toc-module-5-demo-lab-predicting-frozen-yogurt-sales" class="nav-link active" data-scroll-target="#module-5-demo-lab-predicting-frozen-yogurt-sales">Module 5, Demo lab: predicting frozen yogurt sales</a></li>
   </ul>
 </nav>
 </nav>
@@ -134,7 +134,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Module 5 — Demo Lab (simple linear regression)</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Module 5, Demo Lab (simple linear regression)</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 <p class="subtitle lead">Follow along · not graded</p>
 </div>
 
@@ -152,9 +152,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="module-5-demo-lab-five-regression-situations" class="level1">
-<h1>Module 5, Demo lab: five regression situations</h1>
-<p><strong>When:</strong> After <a href="../quizzes/quiz-m5-concept">Quiz B</a>, before <a href="module-5-lab-exercise">exercise lab</a>.</p>
+<section id="module-5-demo-lab-predicting-frozen-yogurt-sales" class="level1">
+<h1>Module 5, Demo lab: predicting frozen yogurt sales</h1>
+<p>When: after <a href="../lectures/module-5-read-01">Read 1</a>, before the <a href="module-5-lab-exercise">exercise lab</a>.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -165,8 +165,8 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong><a href="module-5-lab-demo.ipynb">module-5-lab-demo.ipynb</a></strong> · <a href="https://colab.research.google.com/github/roverhol/stat109-async-portfolio/blob/main/labs/module-5-lab-demo.ipynb">Colab</a></p>
-<p>Walkthrough of all five regression situations used on <a href="../projects/project-5">Project 5</a>: scatterplot + cor; lm(); point prediction; CI for slope; CI for mean response vs prediction interval.</p>
+<p><a href="https://colab.research.google.com/github/roverhol/stat109-async-portfolio/blob/main/labs/module-5-lab-demo.ipynb">Open in Colab</a></p>
+<p>A start-to-finish walkthrough on one small dataset: get a Google Sheet into R, explore it, build a simple linear regression, assess the fit and conditions, then use the model to predict tomorrow’s sales with a prediction interval. After the notebook opens, use Runtime, Change runtime type, and choose R if it is not already selected.</p>
 </div>
 </div>
 <p><a href="module-5-lab-exercise">Exercise lab</a> → <a href="../quizzes/quiz-m5-synthesis">Synthesis</a> · <a href="../r-reference">R reference</a></p>
@@ -634,20 +634,20 @@ Important
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Module 5 — Demo Lab (simple linear regression)"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Module 5, Demo Lab (simple linear regression)"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Follow along · not graded"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">resources:</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - module-5-lab-demo.ipynb</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu"># Module 5, Demo lab: five regression situations</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu"># Module 5, Demo lab: predicting frozen yogurt sales</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>**When:** After <span class="co">[</span><span class="ot">Quiz B</span><span class="co">](../quizzes/quiz-m5-concept)</span>, before <span class="co">[</span><span class="ot">exercise lab</span><span class="co">](module-5-lab-exercise)</span>.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>When: after <span class="co">[</span><span class="ot">Read 1</span><span class="co">](../lectures/module-5-read-01)</span>, before the <span class="co">[</span><span class="ot">exercise lab</span><span class="co">](module-5-lab-exercise)</span>.</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>**[module-5-lab-demo.ipynb](module-5-lab-demo.ipynb)** · <span class="co">[</span><span class="ot">Colab</span><span class="co">](https://colab.research.google.com/github/roverhol/stat109-async-portfolio/blob/main/labs/module-5-lab-demo.ipynb)</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>::: callout-important</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Open in Colab</span><span class="co">](https://colab.research.google.com/github/roverhol/stat109-async-portfolio/blob/main/labs/module-5-lab-demo.ipynb)</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Walkthrough of all five regression situations used on <span class="co">[</span><span class="ot">Project 5</span><span class="co">](../projects/project-5)</span>: scatterplot + cor; lm(); point prediction; CI for slope; CI for mean response vs prediction interval.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>A start-to-finish walkthrough on one small dataset: get a Google Sheet into R, explore it, build a simple linear regression, assess the fit and conditions, then use the model to predict tomorrow's sales with a prediction interval. After the notebook opens, use Runtime, Change runtime type, and choose R if it is not already selected.</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Exercise lab</span><span class="co">](module-5-lab-exercise)</span> → <span class="co">[</span><span class="ot">Synthesis</span><span class="co">](../quizzes/quiz-m5-synthesis)</span> · <span class="co">[</span><span class="ot">R reference</span><span class="co">](../r-reference)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>

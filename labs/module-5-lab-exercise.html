@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Module 5 — Exercise Lab – STAT 109 - Introductory Biostatistics</title>
+<title>Module 5, Exercise Lab – STAT 109 - Introductory Biostatistics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -76,7 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-94b323657c735dfe3b1bf6ebb2c33a55.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-bba5ebae505b5c03f3f0d8040a416a6b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -134,7 +134,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Module 5 — Exercise Lab</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Module 5, Exercise Lab</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 <p class="subtitle lead">Practice · submit in Canvas</p>
 </div>
 
@@ -164,11 +164,11 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong><a href="module-5-lab-exercise.ipynb">module-5-lab-exercise.ipynb</a></strong> · <a href="https://colab.research.google.com/github/roverhol/stat109-async-portfolio/blob/main/labs/module-5-lab-exercise.ipynb">Colab</a></p>
-<p>Five problems — same structure as the <a href="module-5-lab-demo">demo</a>. Use your team’s Project 5 data or the simulated dataset. Submit completed notebook in Canvas.</p>
+<p><a href="https://colab.research.google.com/github/roverhol/stat109-async-portfolio/blob/main/labs/module-5-lab-exercise.ipynb">Open in Colab</a></p>
+<p>Work the same six steps as the <a href="module-5-lab-demo">demo</a> on a new dataset (a coffee cart): load and check the data, explore it, build a simple linear regression, assess it, then use it to predict with a prediction interval. The data is provided inline, so you can start right away. Submit your completed notebook in Canvas.</p>
 </div>
 </div>
-<p><a href="module-5-lab-demo">Demo lab</a> · <a href="../projects/project-5">Project 5</a> · <a href="../quizzes/quiz-m5-synthesis">Synthesis</a></p>
+<p><a href="module-5-lab-demo">Demo lab</a> · <a href="../quizzes/quiz-m5-synthesis">Synthesis</a> · <a href="../r-reference">R reference</a></p>
 
 
 <!-- -->
@@ -633,7 +633,7 @@ Note
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Module 5 — Exercise Lab"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Module 5, Exercise Lab"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "Practice · submit in Canvas"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">resources:</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - module-5-lab-exercise.ipynb</span></span>
@@ -641,13 +641,13 @@ Note
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu"># Module 5, Exercise lab</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>**[module-5-lab-exercise.ipynb](module-5-lab-exercise.ipynb)** · <span class="co">[</span><span class="ot">Colab</span><span class="co">](https://colab.research.google.com/github/roverhol/stat109-async-portfolio/blob/main/labs/module-5-lab-exercise.ipynb)</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Open in Colab</span><span class="co">](https://colab.research.google.com/github/roverhol/stat109-async-portfolio/blob/main/labs/module-5-lab-exercise.ipynb)</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Five problems — same structure as the <span class="co">[</span><span class="ot">demo</span><span class="co">](module-5-lab-demo)</span>. Use your team's Project 5 data or the simulated dataset. Submit completed notebook in Canvas.</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Work the same six steps as the <span class="co">[</span><span class="ot">demo</span><span class="co">](module-5-lab-demo)</span> on a new dataset (a coffee cart): load and check the data, explore it, build a simple linear regression, assess it, then use it to predict with a prediction interval. The data is provided inline, so you can start right away. Submit your completed notebook in Canvas.</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Demo lab</span><span class="co">](module-5-lab-demo)</span> · <span class="co">[</span><span class="ot">Project 5</span><span class="co">](../projects/project-5)</span> · <span class="co">[</span><span class="ot">Synthesis</span><span class="co">](../quizzes/quiz-m5-synthesis)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Demo lab</span><span class="co">](module-5-lab-demo)</span> · <span class="co">[</span><span class="ot">Synthesis</span><span class="co">](../quizzes/quiz-m5-synthesis)</span> · <span class="co">[</span><span class="ot">R reference</span><span class="co">](../r-reference)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
