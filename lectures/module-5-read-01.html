@@ -176,6 +176,7 @@ window.Quarto = {
   <li><a href="#confidence-interval-for-the-mean-response-at-x_0-estimation" id="toc-confidence-interval-for-the-mean-response-at-x_0-estimation" class="nav-link" data-scroll-target="#confidence-interval-for-the-mean-response-at-x_0-estimation">Confidence interval for the mean response at <span class="math inline">\(x_0\)</span> (estimation)</a></li>
   <li><a href="#prediction-interval-for-an-individual-at-x_0-prediction" id="toc-prediction-interval-for-an-individual-at-x_0-prediction" class="nav-link" data-scroll-target="#prediction-interval-for-an-individual-at-x_0-prediction">Prediction interval for an individual at <span class="math inline">\(x_0\)</span> (prediction)</a></li>
   </ul></li>
+  <li><a href="#interpretation-templates-at-a-glance" id="toc-interpretation-templates-at-a-glance" class="nav-link" data-scroll-target="#interpretation-templates-at-a-glance">Interpretation templates at a glance</a></li>
   <li><a href="#optional-beyond-the-simple-straight-line" id="toc-optional-beyond-the-simple-straight-line" class="nav-link" data-scroll-target="#optional-beyond-the-simple-straight-line">Optional: beyond the simple straight line</a>
   <ul class="collapse">
   <li><a href="#simple-logistic-regression-binary-response" id="toc-simple-logistic-regression-binary-response" class="nav-link" data-scroll-target="#simple-logistic-regression-binary-response">Simple logistic regression (binary response)</a></li>
@@ -1052,6 +1053,78 @@ Click to reveal answers
 </details>
 <hr>
 </section>
+</section>
+<section id="interpretation-templates-at-a-glance" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation-templates-at-a-glance">Interpretation templates at a glance</h2>
+<p>Use this as a quick reference for Quiz A. Replace the bracketed parts with the variable names and units from the problem, and read <span class="math inline">\(L\)</span> and <span class="math inline">\(U\)</span> as the lower and upper numbers an interval reports.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Quantity</th>
+<th>Where it comes from</th>
+<th>One-sentence interpretation template</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Slope <span class="math inline">\(b_1\)</span></td>
+<td><code>coef(fit)</code>, predictor row</td>
+<td>Each additional 1 [x-unit] is associated with a predicted change of <span class="math inline">\(b_1\)</span> [y-units] in [y].</td>
+</tr>
+<tr class="even">
+<td>Intercept <span class="math inline">\(b_0\)</span></td>
+<td><code>coef(fit)</code>, <code>(Intercept)</code> row</td>
+<td>The predicted [y] when [x] <span class="math inline">\(= 0\)</span> is <span class="math inline">\(b_0\)</span> [y-units] (meaningful only if <span class="math inline">\(x = 0\)</span> is realistic).</td>
+</tr>
+<tr class="odd">
+<td>Point prediction <span class="math inline">\(\hat{y}\)</span></td>
+<td><code>predict(fit, newdata)</code></td>
+<td>The predicted [y] for [x] <span class="math inline">\(= x_0\)</span> is <span class="math inline">\(\hat{y}\)</span> [y-units].</td>
+</tr>
+<tr class="even">
+<td>Residual</td>
+<td><span class="math inline">\(y - \hat{y}\)</span></td>
+<td>The observed [y] sits this many [y-units] above (or below) the line.</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(R^2\)</span> (test set)</td>
+<td><code>r2(test_y, yhat)</code></td>
+<td>About <span class="math inline">\(R^2 \times 100\%\)</span> of the variation in [y] is explained by [x]; judge it on held-out data.</td>
+</tr>
+<tr class="even">
+<td>MSE / RMSE (test set)</td>
+<td><code>mse(...)</code>, <code>sqrt(mse(...))</code></td>
+<td>RMSE: a typical prediction misses the actual [y] by about this many [y-units]. RMSE <span class="math inline">\(= \sqrt{\text{MSE}}\)</span>, back in [y]’s units.</td>
+</tr>
+<tr class="odd">
+<td>CI for the slope</td>
+<td><code>confint(fit, "x")</code></td>
+<td>We are 95% confident each additional 1 [x-unit] changes the mean [y] by between <span class="math inline">\(L\)</span> and <span class="math inline">\(U\)</span> [y-units].</td>
+</tr>
+<tr class="even">
+<td>CI for the intercept</td>
+<td><code>confint(fit, "(Intercept)")</code></td>
+<td>We are 95% confident the mean [y] when [x] <span class="math inline">\(= 0\)</span> is between <span class="math inline">\(L\)</span> and <span class="math inline">\(U\)</span> [y-units].</td>
+</tr>
+<tr class="odd">
+<td>CI for the mean response</td>
+<td><code>predict(..., interval = "confidence")</code></td>
+<td>We are 95% confident the mean [y] for all units with [x] <span class="math inline">\(= x_0\)</span> is between <span class="math inline">\(L\)</span> and <span class="math inline">\(U\)</span> [y-units].</td>
+</tr>
+<tr class="even">
+<td>Prediction interval</td>
+<td><code>predict(..., interval = "prediction")</code></td>
+<td>We are 95% confident one new individual with [x] <span class="math inline">\(= x_0\)</span> has [y] between <span class="math inline">\(L\)</span> and <span class="math inline">\(U\)</span> [y-units].</td>
+</tr>
+</tbody>
+</table>
+<p>The last four rows all report an interval <span class="math inline">\([L, U]\)</span>; what changes is the quantity it describes. <code>confint()</code> gives an interval for a coefficient (slope or intercept), <code>predict(..., interval = "confidence")</code> gives the mean response at <span class="math inline">\(x_0\)</span>, and <code>predict(..., interval = "prediction")</code> gives one individual at <span class="math inline">\(x_0\)</span> (always the widest). On Quiz A you match the R call to the matching template.</p>
+<hr>
 </section>
 <section id="optional-beyond-the-simple-straight-line" class="level2">
 <h2 class="anchored" data-anchor-id="optional-beyond-the-simple-straight-line">Optional: beyond the simple straight line</h2>
@@ -2161,37 +2234,58 @@ Click to reveal answers
 <span id="cb38-646"><a href="#cb38-646" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-647"><a href="#cb38-647" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
 <span id="cb38-648"><a href="#cb38-648" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-649"><a href="#cb38-649" aria-hidden="true" tabindex="-1"></a><span class="fu">## Optional: beyond the simple straight line</span></span>
+<span id="cb38-649"><a href="#cb38-649" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interpretation templates at a glance</span></span>
 <span id="cb38-650"><a href="#cb38-650" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-651"><a href="#cb38-651" aria-hidden="true" tabindex="-1"></a>These sections are not required for Project 5 or Quiz A, they show where the ideas go next.</span>
+<span id="cb38-651"><a href="#cb38-651" aria-hidden="true" tabindex="-1"></a>Use this as a quick reference for Quiz A. Replace the bracketed parts with the variable names and units from the problem, and read $L$ and $U$ as the lower and upper numbers an interval reports.</span>
 <span id="cb38-652"><a href="#cb38-652" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-653"><a href="#cb38-653" aria-hidden="true" tabindex="-1"></a><span class="fu">### Simple logistic regression (binary response)</span></span>
-<span id="cb38-654"><a href="#cb38-654" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-655"><a href="#cb38-655" aria-hidden="true" tabindex="-1"></a>When the response is binary (yes/no, success/failure) rather than numerical, a straight line can predict impossible values below 0 or above 1. Logistic regression instead models the *probability* of a "yes" with an S-shaped curve, fit with <span class="in">`glm(..., family = binomial)`</span>:</span>
-<span id="cb38-656"><a href="#cb38-656" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-659"><a href="#cb38-659" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb38-660"><a href="#cb38-660" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">3404</span>)</span>
-<span id="cb38-661"><a href="#cb38-661" aria-hidden="true" tabindex="-1"></a>logit_dat <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb38-662"><a href="#cb38-662" aria-hidden="true" tabindex="-1"></a>  <span class="at">hours  =</span> <span class="fu">runif</span>(<span class="dv">150</span>, <span class="dv">0</span>, <span class="dv">15</span>),</span>
-<span id="cb38-663"><a href="#cb38-663" aria-hidden="true" tabindex="-1"></a>  <span class="at">passed =</span> <span class="fu">rbinom</span>(<span class="dv">150</span>, <span class="dv">1</span>, <span class="fu">plogis</span>(<span class="sc">-</span><span class="dv">4</span> <span class="sc">+</span> <span class="fl">0.6</span> <span class="sc">*</span> hours))</span>
-<span id="cb38-664"><a href="#cb38-664" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb38-665"><a href="#cb38-665" aria-hidden="true" tabindex="-1"></a>fit_log <span class="ot">&lt;-</span> <span class="fu">glm</span>(passed <span class="sc">~</span> hours, <span class="at">data =</span> logit_dat, <span class="at">family =</span> binomial)</span>
-<span id="cb38-666"><a href="#cb38-666" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(fit_log)</span>
-<span id="cb38-667"><a href="#cb38-667" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb38-668"><a href="#cb38-668" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-669"><a href="#cb38-669" aria-hidden="true" tabindex="-1"></a>The coefficients are on the log-odds scale; exponentiating a slope gives an odds ratio (the multiplicative change in odds per one-unit increase in $x$). The mechanics are a full topic of their own.</span>
-<span id="cb38-670"><a href="#cb38-670" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-671"><a href="#cb38-671" aria-hidden="true" tabindex="-1"></a><span class="fu">### A preview of multiple regression (STAT 333)</span></span>
-<span id="cb38-672"><a href="#cb38-672" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-673"><a href="#cb38-673" aria-hidden="true" tabindex="-1"></a>Real predictions usually use several predictors at once. Multiple regression extends the same least-squares idea to</span>
-<span id="cb38-674"><a href="#cb38-674" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-675"><a href="#cb38-675" aria-hidden="true" tabindex="-1"></a>$$\hat{y} = b_0 + b_1 x_1 + b_2 x_2 + \cdots + b_k x_k,$$</span>
-<span id="cb38-676"><a href="#cb38-676" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-677"><a href="#cb38-677" aria-hidden="true" tabindex="-1"></a>fit with <span class="in">`lm(y ~ x1 + x2 + ...)`</span>, exactly the matrix formula from Section 1 with more columns in $\mathbf{X}$. Choosing predictors, checking conditions, and avoiding overfitting are the heart of STAT 333 (the second statistics course at Cal Poly Humboldt). Module 5 stays with a single predictor so you can see every piece clearly.</span>
-<span id="cb38-678"><a href="#cb38-678" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-679"><a href="#cb38-679" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
-<span id="cb38-680"><a href="#cb38-680" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-681"><a href="#cb38-681" aria-hidden="true" tabindex="-1"></a>When you finish, take <span class="co">[</span><span class="ot">Quiz A</span><span class="co">](../quizzes/quiz-m5-def)</span>, then move on to the <span class="co">[</span><span class="ot">demo lab</span><span class="co">](../labs/module-5-lab-demo)</span>.</span>
+<span id="cb38-653"><a href="#cb38-653" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Quantity <span class="pp">|</span> Where it comes from <span class="pp">|</span> One-sentence interpretation template <span class="pp">|</span></span>
+<span id="cb38-654"><a href="#cb38-654" aria-hidden="true" tabindex="-1"></a><span class="pp">|----|----|----|</span></span>
+<span id="cb38-655"><a href="#cb38-655" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Slope $b_1$ <span class="pp">|</span> <span class="in">`coef(fit)`</span>, predictor row <span class="pp">|</span> Each additional 1 <span class="sc">\[</span>x-unit<span class="sc">\]</span> is associated with a predicted change of $b_1$ <span class="sc">\[</span>y-units<span class="sc">\]</span> in <span class="sc">\[</span>y<span class="sc">\]</span>. <span class="pp">|</span></span>
+<span id="cb38-656"><a href="#cb38-656" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Intercept $b_0$ <span class="pp">|</span> <span class="in">`coef(fit)`</span>, <span class="in">`(Intercept)`</span> row <span class="pp">|</span> The predicted <span class="sc">\[</span>y<span class="sc">\]</span> when <span class="sc">\[</span>x<span class="sc">\]</span> $= 0$ is $b_0$ <span class="sc">\[</span>y-units<span class="sc">\]</span> (meaningful only if $x = 0$ is realistic). <span class="pp">|</span></span>
+<span id="cb38-657"><a href="#cb38-657" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Point prediction $\hat{y}$ <span class="pp">|</span> <span class="in">`predict(fit, newdata)`</span> <span class="pp">|</span> The predicted <span class="sc">\[</span>y<span class="sc">\]</span> for <span class="sc">\[</span>x<span class="sc">\]</span> $= x_0$ is $\hat{y}$ <span class="sc">\[</span>y-units<span class="sc">\]</span>. <span class="pp">|</span></span>
+<span id="cb38-658"><a href="#cb38-658" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Residual <span class="pp">|</span> $y - \hat{y}$ <span class="pp">|</span> The observed <span class="sc">\[</span>y<span class="sc">\]</span> sits this many <span class="sc">\[</span>y-units<span class="sc">\]</span> above (or below) the line. <span class="pp">|</span></span>
+<span id="cb38-659"><a href="#cb38-659" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $R^2$ (test set) <span class="pp">|</span> <span class="in">`r2(test_y, yhat)`</span> <span class="pp">|</span> About $R^2 \times 100\%$ of the variation in <span class="sc">\[</span>y<span class="sc">\]</span> is explained by <span class="sc">\[</span>x<span class="sc">\]</span>; judge it on held-out data. <span class="pp">|</span></span>
+<span id="cb38-660"><a href="#cb38-660" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> MSE / RMSE (test set) <span class="pp">|</span> <span class="in">`mse(...)`</span>, <span class="in">`sqrt(mse(...))`</span> <span class="pp">|</span> RMSE: a typical prediction misses the actual <span class="sc">\[</span>y<span class="sc">\]</span> by about this many <span class="sc">\[</span>y-units<span class="sc">\]</span>. RMSE $= \sqrt{\text{MSE}}$, back in <span class="sc">\[</span>y<span class="sc">\]</span>'s units. <span class="pp">|</span></span>
+<span id="cb38-661"><a href="#cb38-661" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> CI for the slope <span class="pp">|</span> <span class="in">`confint(fit, "x")`</span> <span class="pp">|</span> We are 95% confident each additional 1 <span class="sc">\[</span>x-unit<span class="sc">\]</span> changes the mean <span class="sc">\[</span>y<span class="sc">\]</span> by between $L$ and $U$ <span class="sc">\[</span>y-units<span class="sc">\]</span>. <span class="pp">|</span></span>
+<span id="cb38-662"><a href="#cb38-662" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> CI for the intercept <span class="pp">|</span> <span class="in">`confint(fit, "(Intercept)")`</span> <span class="pp">|</span> We are 95% confident the mean <span class="sc">\[</span>y<span class="sc">\]</span> when <span class="sc">\[</span>x<span class="sc">\]</span> $= 0$ is between $L$ and $U$ <span class="sc">\[</span>y-units<span class="sc">\]</span>. <span class="pp">|</span></span>
+<span id="cb38-663"><a href="#cb38-663" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> CI for the mean response <span class="pp">|</span> <span class="in">`predict(..., interval = "confidence")`</span> <span class="pp">|</span> We are 95% confident the mean <span class="sc">\[</span>y<span class="sc">\]</span> for all units with <span class="sc">\[</span>x<span class="sc">\]</span> $= x_0$ is between $L$ and $U$ <span class="sc">\[</span>y-units<span class="sc">\]</span>. <span class="pp">|</span></span>
+<span id="cb38-664"><a href="#cb38-664" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Prediction interval <span class="pp">|</span> <span class="in">`predict(..., interval = "prediction")`</span> <span class="pp">|</span> We are 95% confident one new individual with <span class="sc">\[</span>x<span class="sc">\]</span> $= x_0$ has <span class="sc">\[</span>y<span class="sc">\]</span> between $L$ and $U$ <span class="sc">\[</span>y-units<span class="sc">\]</span>. <span class="pp">|</span></span>
+<span id="cb38-665"><a href="#cb38-665" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-666"><a href="#cb38-666" aria-hidden="true" tabindex="-1"></a>The last four rows all report an interval $<span class="co">[</span><span class="ot">L, U</span><span class="co">]</span>$; what changes is the quantity it describes. <span class="in">`confint()`</span> gives an interval for a coefficient (slope or intercept), <span class="in">`predict(..., interval = "confidence")`</span> gives the mean response at $x_0$, and <span class="in">`predict(..., interval = "prediction")`</span> gives one individual at $x_0$ (always the widest). On Quiz A you match the R call to the matching template.</span>
+<span id="cb38-667"><a href="#cb38-667" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-668"><a href="#cb38-668" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb38-669"><a href="#cb38-669" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-670"><a href="#cb38-670" aria-hidden="true" tabindex="-1"></a><span class="fu">## Optional: beyond the simple straight line</span></span>
+<span id="cb38-671"><a href="#cb38-671" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-672"><a href="#cb38-672" aria-hidden="true" tabindex="-1"></a>These sections are not required for Project 5 or Quiz A, they show where the ideas go next.</span>
+<span id="cb38-673"><a href="#cb38-673" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-674"><a href="#cb38-674" aria-hidden="true" tabindex="-1"></a><span class="fu">### Simple logistic regression (binary response)</span></span>
+<span id="cb38-675"><a href="#cb38-675" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-676"><a href="#cb38-676" aria-hidden="true" tabindex="-1"></a>When the response is binary (yes/no, success/failure) rather than numerical, a straight line can predict impossible values below 0 or above 1. Logistic regression instead models the *probability* of a "yes" with an S-shaped curve, fit with <span class="in">`glm(..., family = binomial)`</span>:</span>
+<span id="cb38-677"><a href="#cb38-677" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-680"><a href="#cb38-680" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb38-681"><a href="#cb38-681" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">3404</span>)</span>
+<span id="cb38-682"><a href="#cb38-682" aria-hidden="true" tabindex="-1"></a>logit_dat <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb38-683"><a href="#cb38-683" aria-hidden="true" tabindex="-1"></a>  <span class="at">hours  =</span> <span class="fu">runif</span>(<span class="dv">150</span>, <span class="dv">0</span>, <span class="dv">15</span>),</span>
+<span id="cb38-684"><a href="#cb38-684" aria-hidden="true" tabindex="-1"></a>  <span class="at">passed =</span> <span class="fu">rbinom</span>(<span class="dv">150</span>, <span class="dv">1</span>, <span class="fu">plogis</span>(<span class="sc">-</span><span class="dv">4</span> <span class="sc">+</span> <span class="fl">0.6</span> <span class="sc">*</span> hours))</span>
+<span id="cb38-685"><a href="#cb38-685" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb38-686"><a href="#cb38-686" aria-hidden="true" tabindex="-1"></a>fit_log <span class="ot">&lt;-</span> <span class="fu">glm</span>(passed <span class="sc">~</span> hours, <span class="at">data =</span> logit_dat, <span class="at">family =</span> binomial)</span>
+<span id="cb38-687"><a href="#cb38-687" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(fit_log)</span>
+<span id="cb38-688"><a href="#cb38-688" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb38-689"><a href="#cb38-689" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-690"><a href="#cb38-690" aria-hidden="true" tabindex="-1"></a>The coefficients are on the log-odds scale; exponentiating a slope gives an odds ratio (the multiplicative change in odds per one-unit increase in $x$). The mechanics are a full topic of their own.</span>
+<span id="cb38-691"><a href="#cb38-691" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-692"><a href="#cb38-692" aria-hidden="true" tabindex="-1"></a><span class="fu">### A preview of multiple regression (STAT 333)</span></span>
+<span id="cb38-693"><a href="#cb38-693" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-694"><a href="#cb38-694" aria-hidden="true" tabindex="-1"></a>Real predictions usually use several predictors at once. Multiple regression extends the same least-squares idea to</span>
+<span id="cb38-695"><a href="#cb38-695" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-696"><a href="#cb38-696" aria-hidden="true" tabindex="-1"></a>$$\hat{y} = b_0 + b_1 x_1 + b_2 x_2 + \cdots + b_k x_k,$$</span>
+<span id="cb38-697"><a href="#cb38-697" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-698"><a href="#cb38-698" aria-hidden="true" tabindex="-1"></a>fit with <span class="in">`lm(y ~ x1 + x2 + ...)`</span>, exactly the matrix formula from Section 1 with more columns in $\mathbf{X}$. Choosing predictors, checking conditions, and avoiding overfitting are the heart of STAT 333 (the second statistics course at Cal Poly Humboldt). Module 5 stays with a single predictor so you can see every piece clearly.</span>
+<span id="cb38-699"><a href="#cb38-699" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-700"><a href="#cb38-700" aria-hidden="true" tabindex="-1"></a>------------------------------------------------------------------------</span>
+<span id="cb38-701"><a href="#cb38-701" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-702"><a href="#cb38-702" aria-hidden="true" tabindex="-1"></a>When you finish, take <span class="co">[</span><span class="ot">Quiz A</span><span class="co">](../quizzes/quiz-m5-def)</span>, then move on to the <span class="co">[</span><span class="ot">demo lab</span><span class="co">](../labs/module-5-lab-demo)</span>.</span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
